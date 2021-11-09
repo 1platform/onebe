@@ -15,7 +15,7 @@ export default class Mongo {
 
   private _init(resolve, reject): void {
     mongoose.connect(
-      Config.string("db.mongo.uri", "mongodb://localhost:27017/onebe"),
+      Config.string("db.mongo.url", "mongodb://localhost:27017/onebe"),
       {
         autoIndex: true,
         keepAlive: true,

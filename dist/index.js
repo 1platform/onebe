@@ -57,9 +57,9 @@ async function init(props) {
 
     (0, _Passport.default)(props);
     return _Router.default.register(_path.default.resolve(props.currentDir, props.controllersDir)).then(() => {
-      _App.default.HTTP.start();
-
       _App.default.Scheduler.run();
+
+      _App.default.HTTP.start();
     });
   };
 }

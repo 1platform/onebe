@@ -45,8 +45,8 @@ export default async function init(props: IOneBEOptions): Promise<any> {
     return Router.register(
       path.resolve(props.currentDir, props.controllersDir)
     ).then(() => {
-      app.HTTP.start();
       app.Scheduler.run();
+      app.HTTP.start();
     });
   };
 }

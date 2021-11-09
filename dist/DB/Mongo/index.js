@@ -29,7 +29,7 @@ class Mongo {
   }
 
   _init(resolve, reject) {
-    _mongoose.default.connect(_Config.default.string("db.mongo.uri", "mongodb://localhost:27017/onebe"), {
+    _mongoose.default.connect(_Config.default.string("db.mongo.url", "mongodb://localhost:27017/onebe"), {
       autoIndex: true,
       keepAlive: true,
       connectTimeoutMS: 10000,
