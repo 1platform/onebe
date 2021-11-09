@@ -3,13 +3,15 @@ import app from "./App";
 import initPassportStrategy, {
   IInitStrategyOptions,
 } from "./Authentication/Passport";
+
+import "./custom";
+import DB from "./DB";
 import HTTP from "./HTTP";
 import i18n from "./i18n";
 import Middlewares from "./Middlewares";
 import Router from "./Router";
+import Scheduler from "./Scheduler";
 import Config from "./System/Config";
-
-import "./custom";
 
 interface IOneBEOptions extends IInitStrategyOptions {
   currentDir?: string;
@@ -23,7 +25,7 @@ const defaultValues: IOneBEOptions = {
   controllersDir: "./controllers",
 };
 
-export default function OneBE(props: IOneBEOptions): Promise<any> {
+export default async function init(props: IOneBEOptions): Promise<any> {
   props = {
     ...defaultValues,
     ...props,
@@ -31,16 +33,20 @@ export default function OneBE(props: IOneBEOptions): Promise<any> {
   Config.init(path.resolve(props.currentDir, props.configDir));
 
   app.use(HTTP);
+  app.use(Scheduler);
 
-  return i18n(props.currentDir)
-    .then(() => {
-      app.HTTP.use(Middlewares);
-      return Router.register(
-        path.resolve(props.currentDir, props.controllersDir)
-      );
-    })
-    .then(() => {
-      initPassportStrategy(props);
-      return app;
+  await i18n(props.currentDir);
+  await DB();
+
+  return () => {
+    app.HTTP.use(Middlewares);
+    initPassportStrategy(props);
+
+    return Router.register(
+      path.resolve(props.currentDir, props.controllersDir)
+    ).then(() => {
+      app.HTTP.start();
+      app.Scheduler.run();
     });
+  };
 }
