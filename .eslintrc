@@ -1,0 +1,87 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/class-name-casing": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "template-curly-spacing": ["error", "always"],
+    "@typescript-eslint/no-namespace": [
+      "error",
+      { "allowDeclarations": true }
+    ],
+    "comma-dangle": 0,
+    "max-len": [
+      "error",
+      150,
+      2,
+      {
+        "ignoreComments": true
+      }
+    ],
+    "quote-props": [
+      "error",
+      "consistent-as-needed"
+    ],
+    "no-cond-assign": [
+      "warn",
+      "except-parens"
+    ],
+    "radix": 0,
+    "no-else-return": 0,
+    "no-param-reassign": 0,
+    "default-case": 0,
+    "new-cap": 0,
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "strict": [
+      0,
+      "global"
+    ],
+    "no-restricted-syntax": [
+      2,
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-continue": 0,
+    "no-await-in-loop": 0,
+    "array-bracket-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInArrays": false
+      }
+    ]
+  }
+}

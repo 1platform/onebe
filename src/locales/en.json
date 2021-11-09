@@ -1,0 +1,8 @@
+{
+  "errors": {
+    "default": {
+      "page-not-found": "Desired page was not found!",
+      "forbidden": "You don't have permission to access this page!"
+    }
+  }
+}

@@ -1,2 +1,3 @@
-# onebe
-Spark One Backend
+# Spark One Backend
+
+Version: 0.1.0
