@@ -8,6 +8,8 @@ import email from "./email";
 import http from "./http";
 import i18n from "./i18n";
 import logs from "./logs";
+import sms from "./sms";
+import upload from "./upload";
 
 const defaultConfig: IConfig = {
   api,
@@ -19,5 +21,7 @@ const defaultConfig: IConfig = {
   http,
   i18n,
   logs,
+  sms,
+  upload,
 };
 export default defaultConfig;
