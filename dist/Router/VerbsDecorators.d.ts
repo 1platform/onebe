@@ -1,0 +1,11 @@
+import { RouteDecorator } from "./RouteTypes";
+export declare function get<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function post<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function put<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function patch<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function del<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function GET<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function POST<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function PUT<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function PATCH<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;
+export declare function DELETE<Request = any, Response = any>(path: string, passRequest?: boolean): RouteDecorator;

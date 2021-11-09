@@ -1,0 +1,12 @@
+import { HTTPMiddleware } from "../HTTP/HTTPTypes";
+import Route from "./Route";
+import { IRouteHookParameter } from "./RouteInterfaces";
+import { RouteDecorator } from "./RouteTypes";
+export declare type RouteCallbacks = Array<(basePath: string, groupName: string) => void>;
+export declare type RouteHooksCallbacks = Array<(props: IRouteHookParameter) => void>;
+export declare function getRouteCallbacks(target: Route): RouteCallbacks;
+export declare function getBeforeHooksCallbacks(target: Route, property: string): RouteHooksCallbacks;
+export declare function getAfterHooksCallbacks(target: Route, property: string): RouteHooksCallbacks;
+export declare function getBeforeAllHooksCallbacks(target: Route): RouteHooksCallbacks;
+export declare function getAfterAllHooksCallbacks(target: Route): RouteHooksCallbacks;
+export declare function defineMiddleware(...middlewares: Array<HTTPMiddleware>): RouteDecorator;
