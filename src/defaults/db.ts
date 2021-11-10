@@ -1,6 +1,10 @@
 import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
+/**
+ * Default values for DB config in Env
+ */
+
 const defaultDBConfig: IConfig = {
   engine: Env.string("DATABASE_ENGINE", "mongodb"),
   mongo: {

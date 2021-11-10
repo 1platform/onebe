@@ -1,6 +1,10 @@
 import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
+/**
+ * Default values for JWT in Env
+ */
+
 const defaultAuthConfig: IConfig = {
   jwt: {
     secret: Env.string("JWT_SECRET", "thisisasecret"),

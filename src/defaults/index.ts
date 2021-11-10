@@ -11,6 +11,10 @@ import logs from "./logs";
 import sms from "./sms";
 import upload from "./upload";
 
+/**
+ * Exported defaults
+ */
+
 const defaultConfig: IConfig = {
   api,
   app,
