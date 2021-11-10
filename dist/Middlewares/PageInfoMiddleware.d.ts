@@ -5,7 +5,6 @@ declare global {
         interface Request {
             pageURL?: string;
             appURL?: string;
-            sysConfig?: Record<string, string | number | boolean | null>;
         }
     }
 }

@@ -13,9 +13,21 @@ import Router from "./Router";
 import Scheduler from "./Scheduler";
 import Config from "./System/Config";
 
-interface IOneBEOptions extends IInitStrategyOptions {
+/**
+ * Framework configuration options.
+ */
+export interface IOneBEOptions extends IInitStrategyOptions {
+  /**
+   * The folder in which the application runs.
+   */
   currentDir?: string;
+  /**
+   * The configuration directory.
+   */
   configDir?: string;
+  /**
+   * The controllers directory.
+   */
   controllersDir?: string;
 }
 
@@ -25,7 +37,15 @@ const defaultValues: IOneBEOptions = {
   controllersDir: "./controllers",
 };
 
-export default async function init(props: IOneBEOptions): Promise<any> {
+/**
+ * Framework init function. It initializes some elements of the framework
+ * to be later used when starting the application up.
+ *
+ * @param props The various properties you can pass to the init function.
+ */
+export default async function init(
+  props: IOneBEOptions
+): Promise<() => Promise<void>> {
   props = {
     ...defaultValues,
     ...props,

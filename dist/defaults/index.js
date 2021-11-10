@@ -29,6 +29,9 @@ var _upload = _interopRequireDefault(require("./upload"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Exported defaults
+ */
 const defaultConfig = {
   api: _api.default,
   app: _app.default,

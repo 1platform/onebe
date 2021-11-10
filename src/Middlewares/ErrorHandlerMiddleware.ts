@@ -6,7 +6,7 @@ import HTTPStatus from "../HTTP/HTTPStatus";
 import DefaultLogger from "../System/Logger";
 import IMiddleware from "./IMiddleware";
 
-type ErrorHandlerFunction = (
+export type ErrorHandlerFunction = (
   error: any,
   req: http.IncomingMessage,
   res: http.ServerResponse,

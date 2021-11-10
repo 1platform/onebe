@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default value for Docs config in Env
+ */
 const defaultDocsConfig = {
   expose: _Env.default.flag("EXPOSE_DOCS")
 };

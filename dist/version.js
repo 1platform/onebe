@@ -11,9 +11,20 @@ var _build = _interopRequireDefault(require("./build"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * The version codename of the framework.
+ */
 const codename = "No one knows yet...";
+/**
+ * The version of the framework.
+ */
+
 exports.codename = codename;
 const version = "0.1.0";
+/**
+ * Function that returns the full version string (version + buildId)
+ */
+
 exports.version = version;
 
 function getVersion() {

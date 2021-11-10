@@ -4,6 +4,11 @@ import { LanguageDetector } from "i18next-http-middleware";
 import path from "path";
 import Config from "./System/Config";
 
+/**
+ * Internationalisation init function.
+ *
+ * @param currentDir The current dir of the application.
+ */
 export default function i18n(currentDir = __dirname): Promise<any> {
   return i18next
     .use(Backend)

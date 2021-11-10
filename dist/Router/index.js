@@ -28,15 +28,32 @@ class RouterBase {
     _defineProperty(this, "_router", (0, _express.Router)());
   }
 
+  /**
+   * The getter for the base router we will use.
+   */
   get router() {
     return this._router;
   }
+  /**
+   * Register the controllers in the given path.
+   *
+   * @param controllersPath The path from which we will import controllers.
+   */
+
 
   async register(controllersPath) {
     const controllersStruct = this.fetchControllers(controllersPath);
     controllersStruct.section = "";
     await this.registerControllers(controllersPath, controllersStruct);
   }
+  /**
+   * The method used to register the controllers in a path. It will make recursive calls
+   * to itself if we have other folders inside the current path.
+   *
+   * @param basePath The base folder path from where we read.
+   * @param structure The current parent structure from where we read the controller structure.
+   */
+
 
   async registerControllers(basePath, structure) {
     _Logger.default.info(`[REGISTER] Controllers in section: ${structure.section || "DEFAULT"}`);
@@ -72,6 +89,12 @@ class RouterBase {
       await this.registerControllers(sectionPath, child);
     }
   }
+  /**
+   * Returns the controller structure from the current folder, together with children folders.
+   *
+   * @param basePath The base path from where we read the structure.
+   */
+
 
   fetchControllers(basePath) {
     const files = (0, _fs.readdirSync)(basePath);
@@ -86,8 +109,13 @@ class RouterBase {
   }
 
 }
+/**
+ * The global default Router that we are going to use in our application.
+ */
+
 
 exports.RouterBase = RouterBase;
 const Router = new RouterBase();
+global.router = Router;
 var _default = Router;
 exports.default = _default;

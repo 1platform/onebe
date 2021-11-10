@@ -6,12 +6,15 @@ const observer = new Observable();
 
 export { observer };
 
-type PluginFunction<DocType = Document, SchemaDefinitionType = undefined> = (
+export type PluginFunction<
+  DocType = Document,
+  SchemaDefinitionType = undefined
+> = (
   schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>,
   opts?: any
 ) => void;
 
-type HookNextFunction = (err?: CallbackError) => void;
+export type HookNextFunction = (err?: CallbackError) => void;
 
 /**
  * Creates an Observer plugin

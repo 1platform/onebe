@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _express = require("express");
-
 var _morgan = _interopRequireDefault(require("morgan"));
 
 var _Logger = _interopRequireDefault(require("../System/Logger"));

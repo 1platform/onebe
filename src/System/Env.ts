@@ -6,14 +6,12 @@ config();
  * The environment handling class. Use the object exported
  * by the module to get various environment variable values.
  */
-class Environment {
+export class Environment {
   /**
    * Returns the value of a given environment variable.
    *
-   * @param {string} field The name of the environment variable.
-   * @param {string|null} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return string
+   * @param field The name of the environment variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
   public get(field: string, defaultValue = null): string | null {
     return process.env[field] || defaultValue;
@@ -22,10 +20,8 @@ class Environment {
   /**
    * Returns the integer value of a given environment variable.
    *
-   * @param {string} field The name of the envionmental variable.
-   * @param {number|null} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return number
+   * @param field The name of the envionmental variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
   public int(field: string, defaultValue = 0): number {
     return parseInt(this.get(field)) || Math.floor(defaultValue);
@@ -34,9 +30,7 @@ class Environment {
   /**
    * Returns the boolean value of a given environment variable.
    *
-   * @param {string} field The name of the flag.
-   *
-   * @return boolean
+   * @param field The name of the flag.
    */
   public boolean(field: string): boolean {
     const fieldValue = this.get(field) || "";
@@ -46,10 +40,8 @@ class Environment {
   /**
    * An alias for the Env.get method.
    *
-   * @param {string} field The name of the environment variable.
-   * @param {string} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return string
+   * @param field The name of the environment variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
   public string(field: string, defaultValue = ""): string {
     return this.get(field) || defaultValue;
@@ -58,9 +50,7 @@ class Environment {
   /**
    * An alias for the Env.bool method.
    *
-   * @param {string} flagName The name of the flag.
-   *
-   * @return boolean
+   * @param flagName The name of the flag.
    */
   public flag(flagName: string): boolean {
     return this.boolean(flagName);

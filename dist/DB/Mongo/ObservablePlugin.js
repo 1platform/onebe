@@ -15,6 +15,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const observer = new _Observable.default();
 exports.observer = observer;
 
+/**
+ * Creates an Observer plugin
+ * @param name A name for the plugin
+ * */
 function observerPlugin(name) {
   return (schema, opts) => {
     schema.pre("save", next => {

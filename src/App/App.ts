@@ -6,12 +6,12 @@ import IAppInfo from "./IAppInfo";
 /**
  * The ApplicationObject we support to be attached to the App instance.
  */
-type ApplicationObject = Constructor;
+export type ApplicationObject = Constructor;
 
 /**
- * The GenericFunction type we support to .
+ * The GenericFunction type we support to be attached to the App instance.
  */
-type GenericFunction = (...args: any) => any;
+export type GenericFunction = (...args: any) => any;
 
 /**
  * Main App Definition class.

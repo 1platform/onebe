@@ -29,6 +29,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Passport strategies and serialization/deserialization initialisation function.
+ *
+ * @param props The properties passed to the init function.
+ */
 function initPassportStrategy(props) {
   _passport.default.serializeUser((user, done) => {
     done(null, "serializeUser" in props ? props.serializeUser(user) : {
@@ -60,3 +65,6 @@ function initPassportStrategy(props) {
     });
   }));
 }
+/**
+ * The passport instance used throughout the framework.
+ */

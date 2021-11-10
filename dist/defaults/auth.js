@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for JWT in Env
+ */
 const defaultAuthConfig = {
   jwt: {
     secret: _Env.default.string("JWT_SECRET", "thisisasecret"),

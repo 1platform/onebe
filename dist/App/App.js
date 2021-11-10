@@ -17,6 +17,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Main App Definition class.
+ */
 class App {
   constructor() {
     _defineProperty(this, "_elements", []);
@@ -31,9 +34,18 @@ class App {
     });
   }
 
+  /**
+   * Return the application information object.
+   */
   get app() {
     return this._appInfo;
   }
+  /**
+   * Set the application information object.
+   *
+   * @param appInfo The new application information object.
+   */
+
 
   set app(appInfo) {
     if (typeof appInfo !== "object") {
@@ -50,6 +62,12 @@ class App {
       version: this._appInfo.version
     }));
   }
+  /**
+   * Add an class instance to the application object.
+   *
+   * @param ElementInstance The class we want to create an object from and add to the application object.
+   */
+
 
   use(ElementInstance) {
     const element = new ElementInstance();
@@ -59,9 +77,15 @@ class App {
       configurable: true
     });
   }
+  /**
+   * Add a function to the application object.
+   *
+   * @param fn The function we want to attach to the application object.
+   */
+
 
   hook(fn) {
-    this._elements[fn.name] = fn;
+    this._elements[fn.name] = fn.bind(this);
     Object.defineProperty(this, fn.name, {
       get: () => this._elements[fn.name],
       configurable: true

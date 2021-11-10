@@ -5,22 +5,37 @@ import IScheduleDefinition, {
   TRunnerAsync,
 } from "./IScheduleDefinition";
 
+/**
+ * Task scheduler that runs the jobs registered in the application.
+ */
 export default class Scheduler {
+  /**
+   * A list with tasks that we registered to be ran by the task scheduler.
+   */
   private tasks: Array<IScheduleDefinition> = [];
 
+  /**
+   * Method used to register new jobs in the tasks scheduler.
+   *
+   * @param executionExpression The expression used to specify when to run the job.
+   * @param runner The task runner function.
+   */
   public register(
-    cronExpression: string,
+    executionExpression: string,
     runner: TRunner | TRunnerAsync
   ): void {
     this.tasks.push({
-      cronExpression,
+      executionExpression,
       runner,
     });
   }
 
+  /**
+   * Method used to start the task scheduler.
+   */
   public run(): void {
     this.tasks.forEach((task) => {
-      schedule(task.cronExpression, task.runner);
+      schedule(task.executionExpression, task.runner);
     });
 
     DefaultLogger.debug(`Registered ${ this.tasks.length } jobs!`);

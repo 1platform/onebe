@@ -133,5 +133,5 @@ export class RouterBase {
  */
 const Router = new RouterBase();
 
-global.Router = Router;
+global.router = Router;
 export default Router;

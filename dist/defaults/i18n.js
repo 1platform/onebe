@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for Language config in Env
+ */
 const defaultLangConfig = {
   defaultLang: _Env.default.string("DEFAULT_LANG", "en"),
   fallbackLang: _Env.default.string("DEFAULT_LANG", "en"),

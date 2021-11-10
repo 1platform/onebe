@@ -3,14 +3,6 @@ import morgan from "morgan";
 import DefaultLogger, { Logger } from "../System/Logger";
 import IMiddleware from "./IMiddleware";
 
-declare global {
-  namespace Express {
-    export interface Request {
-      version?: string;
-    }
-  }
-}
-
 export default class LoggerMiddleware implements IMiddleware {
   use(app: Application): void {
     app.use(

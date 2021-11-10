@@ -15,6 +15,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing a Mongo DB handler
+ */
 class Mongo {
   constructor() {
     _defineProperty(this, "_maxRetry", 5);
@@ -22,11 +25,18 @@ class Mongo {
     _defineProperty(this, "_try", 0);
   }
 
+  /**
+   * Calls the respective init method
+   */
   init() {
     return new Promise((resolve, reject) => {
       this._init(resolve, reject);
     });
   }
+  /**
+   * Initializes database connection
+   */
+
 
   _init(resolve, reject) {
     _mongoose.default.connect(_Config.default.string("db.mongo.url", "mongodb://localhost:27017/onebe"), {
