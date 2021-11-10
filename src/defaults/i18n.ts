@@ -1,6 +1,10 @@
 import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
+/**
+ * Default values for Language config in Env
+ */
+
 const defaultLangConfig: IConfig = {
   defaultLang: Env.string("DEFAULT_LANG", "en"),
   fallbackLang: Env.string("DEFAULT_LANG", "en"),

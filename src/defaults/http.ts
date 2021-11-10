@@ -1,6 +1,10 @@
 import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
+/**
+ * Default values for http config in Env
+ */
+
 const defaultHTTPConfig: IConfig = {
   listen: Env.string("HTTP_LISTEN", "127.0.0.1"),
   port: Env.int("HTTP_PORT", 7200),

@@ -1,6 +1,10 @@
 import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
+/**
+ * Default values for Email config in Env
+ */
+
 const defaultEmailConfig: IConfig = {
   enabled: Env.flag("EMAIL_ENABLED"),
   transport: Env.string("EMAIL_TRANSPORT", "test"),
