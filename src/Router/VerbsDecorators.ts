@@ -66,15 +66,15 @@ function verbAction<TRequest = any, TResponse = any>(
       isAuthenticated:
         Reflect.getMetadata("route:auth", props.target, props.propertyKey) ||
         false,
-      appSpecific:
+      basicSpecific:
         Reflect.getMetadata(
-          "route:auth:app",
+          "route:auth:basic",
           props.target,
           props.propertyKey
         ) || false,
-      userSpecific:
+      bearerSpecific:
         Reflect.getMetadata(
-          "route:auth:user",
+          "route:auth:bearer",
           props.target,
           props.propertyKey
         ) || false,

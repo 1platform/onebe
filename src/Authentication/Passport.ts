@@ -6,12 +6,24 @@ import IPayload from "./IPayload";
 import { IUser } from "./IUser";
 import { extractToken } from "./JWT";
 
+/**
+ * Passport strategy initialisation method options.
+ */
 export interface IInitStrategyOptions {
+  /**
+   * The function used for User serialization.
+   */
   serializeUser?: (user: IUser) => IPayload;
+  /**
+   * The function used for Payload deserialization.
+   */
   deserializeUser?: (
     payload: IPayload,
     done: (err: any, user?: IUser) => void
   ) => void;
+  /**
+   * The function used for basic authentication.
+   */
   basicAuth?: (
     username: string,
     password: string,
@@ -19,6 +31,11 @@ export interface IInitStrategyOptions {
   ) => void;
 }
 
+/**
+ * Passport strategies and serialization/deserialization initialisation function.
+ *
+ * @param props The properties passed to the init function.
+ */
 export default function initPassportStrategy(
   props: IInitStrategyOptions
 ): void {
@@ -28,7 +45,7 @@ export default function initPassportStrategy(
         null,
         "serializeUser" in props
           ? props.serializeUser(user)
-          : { userId: user.id }
+          : {userId: user.id}
       );
     }
   );
@@ -36,7 +53,7 @@ export default function initPassportStrategy(
     "deserializeUser" in props
       ? props.deserializeUser
       : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
-        done(null, { id: payload.userId, ...payload });
+        done(null, {id: payload.userId, ...payload});
       }
   );
   passport.use(
@@ -52,7 +69,7 @@ export default function initPassportStrategy(
       "deserializeUser" in props
         ? props.deserializeUser
         : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
-          done(null, { id: payload.userId, ...payload });
+          done(null, {id: payload.userId, ...payload});
         }
     )
   );
@@ -66,10 +83,13 @@ export default function initPassportStrategy(
           password: string,
           done: (err: any, user?: IUser) => void
         ) => {
-          done(null, { id: username });
+          done(null, {id: username});
         }
     )
   );
 }
 
+/**
+ * The passport instance used throughout the framework.
+ */
 export { passport };

@@ -1,3 +1,4 @@
+import { Constructor } from "../Router/RouteTypes";
 import Config from "../System/Config";
 import getVersion from "../version";
 import IAppInfo from "./IAppInfo";
@@ -5,7 +6,7 @@ import IAppInfo from "./IAppInfo";
 /**
  * The ApplicationObject we support to be attached to the App instance.
  */
-type ApplicationObject = { new(...args: any[]): any };
+type ApplicationObject = Constructor;
 
 /**
  * The GenericFunction type we support to .

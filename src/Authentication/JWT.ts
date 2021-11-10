@@ -68,6 +68,11 @@ export function decode(token: string): IPayload | string {
   return jwt.decode(token) as IPayload | string;
 }
 
+/**
+ * Extracts the token from the request object.
+ *
+ * @param req The request object.
+ */
 export function extractToken(req: Request): string {
   let authParams = parse(req.headers.authorization);
   if (authParams && authParams.scheme.toLowerCase() === "bearer") {

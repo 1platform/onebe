@@ -1565,7 +1565,8 @@ __metadata:
     twilio: ^3.71.1
     typedoc: ^0.22.8
     typedoc-plugin-extras: ^2.2.1
-    typedoc-plugin-merge-modules: ^3.0.2
+    typedoc-plugin-mdn-links: ^1.0.4
+    typedoc-plugin-rename-defaults: ^0.4.0
     typescript: ^4.4.4
     uuid: ^8.3.2
     winston: ^3.3.3
@@ -7428,12 +7429,21 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-merge-modules@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "typedoc-plugin-merge-modules@npm:3.0.2"
+"typedoc-plugin-mdn-links@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "typedoc-plugin-mdn-links@npm:1.0.4"
   peerDependencies:
-    typedoc: 0.21.x || 0.22.x
-  checksum: f45125e1113160526480a09e47e89d026abdebbc51dc32f554f4cba9da89aaf4bb32f9e57ca1868ef2e377fef6cd52bdc3db28c8f14473d14e26dfbb7d8b7dee
+    typedoc: 0.22.x
+  checksum: bd2176fb527d412afbad80996cf18967c52fda19208b9045201864cd7e22c9cbe59f17350b246b44d289022588116aacf60a7ba52cf7bd7bf8389638e08adb92
+  languageName: node
+  linkType: hard
+
+"typedoc-plugin-rename-defaults@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "typedoc-plugin-rename-defaults@npm:0.4.0"
+  peerDependencies:
+    typedoc: 0.22.x
+  checksum: 41787d3bb99952c3cf5e4850ac34400d7fc4b8ded87b69a371a777ee9c9813e6290b3466b63a0c8c37e834108c12281ef08433c72c9ce17032234db906d275ea
   languageName: node
   linkType: hard
 
