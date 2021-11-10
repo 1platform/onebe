@@ -7,6 +7,9 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "scripts": {
+    "docs:gen": "typedoc --tsconfig ./tsconfig.json --options ./typedoc.json",
+    "docs:dev": "yarn docs:gen --watch & yarn docs:serve",
+    "docs:serve": "serve docs -l 9600",
     "lint": "eslint --max-warnings 0 \"./src/**/*.ts\"",
     "lint:fix": "eslint --max-warnings 0 --fix \"./src/**/*.ts\"",
     "fix": "yarn prettier && yarn lint:fix",
@@ -53,6 +56,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-hbs": "^2.4.0",
+    "express-session": "^1.17.2",
     "flat": "^5.0.2",
     "helmet": "^4.6.0",
     "http-errors": "^1.8.0",
@@ -121,6 +125,10 @@
     "husky": "^7.0.4",
     "i18next-json-sync": "^2.3.1",
     "prettier": "^2.4.1",
+    "serve": "^13.0.2",
+    "typedoc": "^0.22.8",
+    "typedoc-plugin-extras": "^2.2.1",
+    "typedoc-plugin-merge-modules": "^3.0.2",
     "typescript": "^4.4.4"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "cleanOutputDir": true,
+  "entryPointStrategy": "expand",
+  "entryPoints": [
+    "./src"
+  ],
+  "hideGenerator": true,
+  "includeVersion": true,
+  "name": "Spark OneBE",
+  "out": "./docs",
+  "readme": "./README.md",
+  "externalPattern": "node_modules",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "disableSources": true,
+  "exclude": ["**/util/*.ts", "**/test/*.ts"]
+}
