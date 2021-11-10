@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+/**
+ * Log Level enumeration
+ *
+ * @enum
+ */
 var LogLevel;
 
 (function (LogLevel) {

@@ -19,10 +19,26 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * The Error Handler Middleware.
+ */
 class ErrorHandlerMiddleware {
+  /**
+   * A list of handlers to be ran before the Error Handler Middleware
+   */
+
+  /**
+   * Add a handler to the before error handler array.
+   */
   static addBeforeHandler(handler) {
     ErrorHandlerMiddleware._beforeHandler.push(handler);
   }
+  /**
+   * The middleware initialization method.
+   *
+   * @param app The express application on which we apply the middleware.
+   */
+
 
   use(app) {
     app.use((req, res, next) => {

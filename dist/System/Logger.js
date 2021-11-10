@@ -22,7 +22,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * The base logger class.
+ */
 class Logger {
+  /**
+   * The logger object we will use for logging.
+   */
+
+  /**
+   * The constructor of the logger class.
+   *
+   * @param logLevel The level of logging we will use in our application.
+   * @param transport The transport used for the winston logger.
+   */
   constructor(logLevel, transport) {
     _defineProperty(this, "_log", void 0);
 
@@ -32,49 +45,114 @@ class Logger {
       transports: [transport]
     });
   }
+  /**
+   * Getter for the logger object.
+   */
+
 
   get log() {
     return this._log;
   }
+  /**
+   * Method to log a info message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   info(message, ...meta) {
     return this.log.info(message, ...meta);
   }
+  /**
+   * Method to log a error message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   error(message, ...meta) {
     return this.log.error(message, ...meta);
   }
+  /**
+   * Method to log a warn message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   warn(message, ...meta) {
     return this.log.warn(message, ...meta);
   }
+  /**
+   * Method to log a debug message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   debug(message, ...meta) {
     return this.log.debug(message, ...meta);
   }
+  /**
+   * Method to log a verbose message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   verbose(message, ...meta) {
     return this.log.verbose(message, ...meta);
   }
+  /**
+   * Method to log a silly message.
+   *
+   * @param message The message to be logged.
+   * @param meta Various other meta elements passed to the log method.
+   */
+
 
   silly(message, ...meta) {
     return this.log.silly(message, ...meta);
   }
 
 }
+/**
+ * The console logger that can be used in our application.
+ */
+
 
 exports.Logger = Logger;
 
 class ConsoleLogger extends Logger {
+  /**
+   * The constructor of the logger class.
+   *
+   * @param logLevel The level of logging we will use in our application.
+   */
   constructor(logLevel) {
     super(logLevel, new _winston.default.transports.Console());
   }
 
 }
+/**
+ * The file logger that can be used in our application.
+ */
+
 
 exports.ConsoleLogger = ConsoleLogger;
 
 class FileLogger extends Logger {
+  /**
+   * The constructor of the logger class.
+   *
+   * @param logLevel The level of logging we will use in our application.
+   * @param options The options passed to the file logger transport.
+   */
   constructor(logLevel, options) {
     super(logLevel, new _winston.default.transports.File(_objectSpread({
       filename: _Config.default.string("logs.filename", "app.log"),
@@ -83,9 +161,18 @@ class FileLogger extends Logger {
   }
 
 }
+/**
+ * The default logger of the application.
+ */
+
 
 exports.FileLogger = FileLogger;
 let DefaultLogger = new ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]);
+/**
+ * Function used to change the default logger of the application.
+ *
+ * @param newLogger The new logger instance.
+ */
 
 function setDefaultLogger(newLogger) {
   DefaultLogger = newLogger;

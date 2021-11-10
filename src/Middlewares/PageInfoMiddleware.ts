@@ -1,17 +1,16 @@
 import { Application, NextFunction, Request, Response } from "express";
 import IMiddleware from "./IMiddleware";
 
-declare global {
-  namespace Express {
-    export interface Request {
-      pageURL?: string;
-      appURL?: string;
-    }
-  }
-}
-
+/**
+ * Page information middleware
+ */
 export default class PageInfoMiddleware implements IMiddleware {
-  use(app: Application): void {
+  /**
+   * The middleware initialization method.
+   *
+   * @param app The express application on which we apply the middleware.
+   */
+  public use(app: Application): void {
     app.use((req: Request, res: Response, next: NextFunction) => {
       req.pageURL = `${ app.locals.appURL }${ req.path }`.replace(
         /(https?:\/\/)|(\/)+/g,

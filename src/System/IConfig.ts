@@ -1,3 +1,6 @@
+/**
+ * Configuration interface.
+ */
 export default interface IConfig {
   [key: string]:
   | string

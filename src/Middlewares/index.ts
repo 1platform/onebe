@@ -6,6 +6,9 @@ import PageInfoMiddleware from "./PageInfoMiddleware";
 import PassportMiddleware from "./PassportMiddleware";
 import SparkMiddleware from "./SparkMiddleware";
 
+/**
+ * A list containing middlewares to be loaded in the application automatically.
+ */
 export default [
   new LoggerMiddleware(),
   new BodyParserMiddleware(),

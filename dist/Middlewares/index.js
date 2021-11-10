@@ -21,5 +21,8 @@ var _SparkMiddleware = _interopRequireDefault(require("./SparkMiddleware"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * A list containing middlewares to be loaded in the application automatically.
+ */
 var _default = [new _LoggerMiddleware.default(), new _BodyParserMiddleware.default(), new _CORSMiddleware.default(), new _I18NMiddleware.default(), new _PageInfoMiddleware.default(), new _PassportMiddleware.default(), new _SparkMiddleware.default()];
 exports.default = _default;

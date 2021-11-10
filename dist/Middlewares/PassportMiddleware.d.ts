@@ -1,15 +1,13 @@
 import { Application } from "express";
-import { IUser } from "../Authentication/IUser";
 import IMiddleware from "./IMiddleware";
-declare global {
-    namespace Express {
-        interface User extends IUser {
-        }
-        interface Request {
-            user?: User;
-        }
-    }
-}
+/**
+ * Passport middleware.
+ */
 export default class PassportMiddleware implements IMiddleware {
+    /**
+     * The middleware initialization method.
+     *
+     * @param app The express application on which we apply the middleware.
+     */
     use(app: Application): void;
 }
