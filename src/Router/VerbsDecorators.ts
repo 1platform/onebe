@@ -16,16 +16,21 @@ import {
   AppMethod,
   CallbackExtractorParameter,
   ResponseValue,
+  RouteCallbacks,
   RouteDecorator,
+  RouteHooksCallbacks,
 } from "./RouteTypes";
 import {
   getAfterHooksCallbacks,
   getBeforeHooksCallbacks,
   getRouteCallbacks,
-  RouteCallbacks,
-  RouteHooksCallbacks,
 } from "./RouteUtils";
 
+/**
+ * Function used to extract the Route callback from the middlewares list.
+ *
+ * @param fn The middlewares lists.
+ */
 function callbackExtractor<Request = any, Response = any>(
   fn: CallbackExtractorParameter<Request, Response>
 ): ICallbackExtracted<Request, Response> {
@@ -41,6 +46,16 @@ function callbackExtractor<Request = any, Response = any>(
   return { callback, middlewares };
 }
 
+/**
+ * A generic function that registers a HTTP Verb endpoint in the router.
+ *
+ * Attaches to the target the following metadata:
+ * - route:auth
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @param props The properties used to define the endpoint.
+ */
 function verbAction<TRequest = any, TResponse = any>(
   props: IVerbAction<TRequest, TResponse>
 ): void {
@@ -148,6 +163,11 @@ function verbAction<TRequest = any, TResponse = any>(
   );
 }
 
+/**
+ * A generic function that registers a HTTP Verb endpoint in a controller.
+ *
+ * @param props The properties used to define the endpoint.
+ */
 function verbDecorator<Request = any, Response = any>(
   props: IVerbDecorators
 ): void {
@@ -182,6 +202,13 @@ function verbDecorator<Request = any, Response = any>(
   });
 }
 
+/**
+ * Decorator used to define a GET endpoint.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function get<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -202,6 +229,13 @@ export function get<Request = any, Response = any>(
   };
 }
 
+/**
+ * Decorator used to define a POST endpoint.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function post<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -222,6 +256,13 @@ export function post<Request = any, Response = any>(
   };
 }
 
+/**
+ * Decorator used to define a PUT endpoint.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function put<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -242,6 +283,13 @@ export function put<Request = any, Response = any>(
   };
 }
 
+/**
+ * Decorator used to define a PATCH endpoint.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function patch<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -262,6 +310,13 @@ export function patch<Request = any, Response = any>(
   };
 }
 
+/**
+ * Decorator used to define a DELETE endpoint.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function del<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -282,6 +337,13 @@ export function del<Request = any, Response = any>(
   };
 }
 
+/**
+ * Decorator used to define a GET endpoint. This is an alias for the `get` decorator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function GET<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -289,6 +351,13 @@ export function GET<Request = any, Response = any>(
   return get<Request, Response>(path, passRequest);
 }
 
+/**
+ * Decorator used to define a POST endpoint. This is an alias for the `post` decorator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function POST<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -296,6 +365,13 @@ export function POST<Request = any, Response = any>(
   return post<Request, Response>(path, passRequest);
 }
 
+/**
+ * Decorator used to define a PUT endpoint. This is an alias for the `put` decorator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function PUT<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -303,6 +379,13 @@ export function PUT<Request = any, Response = any>(
   return put<Request, Response>(path, passRequest);
 }
 
+/**
+ * Decorator used to define a PATCH endpoint. This is an alias for the `patch` decorator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function PATCH<Request = any, Response = any>(
   path: string,
   passRequest = false
@@ -310,6 +393,13 @@ export function PATCH<Request = any, Response = any>(
   return patch<Request, Response>(path, passRequest);
 }
 
+/**
+ * Decorator used to define a DELETE endpoint. This is an alias for the `delete` decorator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param passRequest Should we pass the request and response objects to the route method.
+ */
 export function DELETE<Request = any, Response = any>(
   path: string,
   passRequest = false

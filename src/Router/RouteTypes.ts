@@ -1,7 +1,12 @@
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
-import { IAuthContext, IContext, IResponse } from "./RouteInterfaces";
+import {
+  IAuthContext,
+  IContext,
+  IResponse,
+  IRouteHookParameter,
+} from "./RouteInterfaces";
 
 /**
  * Type used to define a Route Decorator function.
@@ -65,7 +70,25 @@ export type AppMethod<TRequest = any, TResponse = any> = (
  */
 export type HeaderMethod = (header: string) => string | undefined;
 
+/**
+ * Type used to define the callback extractor parameter.
+ */
 export type CallbackExtractorParameter<Request = any, Response = any> =
   | Array<HTTPMiddleware | AppMethod<Request, Response>>
   | HTTPMiddleware
   | AppMethod<Request, Response>;
+
+/**
+ * A function used to define a route callback.
+ */
+export type RouteCallback = (basePath: string, groupName: string) => void;
+
+/**
+ * Array of Route Callback
+ */
+export type RouteCallbacks = Array<RouteCallback>;
+
+/**
+ * Array of Route Hook Callbacks.
+ */
+export type RouteHooksCallbacks = Array<(props: IRouteHookParameter) => void>;

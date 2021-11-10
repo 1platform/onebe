@@ -45,7 +45,7 @@ export default function initPassportStrategy(
         null,
         "serializeUser" in props
           ? props.serializeUser(user)
-          : {userId: user.id}
+          : { userId: user.id }
       );
     }
   );
@@ -53,7 +53,7 @@ export default function initPassportStrategy(
     "deserializeUser" in props
       ? props.deserializeUser
       : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
-        done(null, {id: payload.userId, ...payload});
+        done(null, { id: payload.userId, ...payload });
       }
   );
   passport.use(
@@ -69,7 +69,7 @@ export default function initPassportStrategy(
       "deserializeUser" in props
         ? props.deserializeUser
         : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
-          done(null, {id: payload.userId, ...payload});
+          done(null, { id: payload.userId, ...payload });
         }
     )
   );
@@ -83,7 +83,7 @@ export default function initPassportStrategy(
           password: string,
           done: (err: any, user?: IUser) => void
         ) => {
-          done(null, {id: username});
+          done(null, { id: username });
         }
     )
   );

@@ -1,13 +1,16 @@
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
-import { IRouteHookParameter } from "./RouteInterfaces";
-import { RouteDecorator } from "./RouteTypes";
+import {
+  RouteCallbacks,
+  RouteDecorator,
+  RouteHooksCallbacks,
+} from "./RouteTypes";
 
-export type RouteCallbacks = Array<
-(basePath: string, groupName: string) => void
->;
-export type RouteHooksCallbacks = Array<(props: IRouteHookParameter) => void>;
-
+/**
+ * Returns a list with Route Callbacks applied to a route.
+ *
+ * @param target The target on which we apply the callbacks.
+ */
 export function getRouteCallbacks(target: Route): RouteCallbacks {
   let callbacks: RouteCallbacks = Reflect.getMetadata(
     "route:path:callbacks",
@@ -21,6 +24,12 @@ export function getRouteCallbacks(target: Route): RouteCallbacks {
   return callbacks;
 }
 
+/**
+ * Returns a list with Route Hook Callbacks applied before a route definition is ran.
+ *
+ * @param target The target on which we apply the callbacks.
+ * @param property The property for which we apply the callback.
+ */
 export function getBeforeHooksCallbacks(
   target: Route,
   property: string
@@ -43,6 +52,12 @@ export function getBeforeHooksCallbacks(
   return callbacks;
 }
 
+/**
+ * Returns a list with Route Hook Callbacks applied after a route definition is ran.
+ *
+ * @param target The target on which we apply the callbacks.
+ * @param property The property for which we apply the callback.
+ */
 export function getAfterHooksCallbacks(
   target: Route,
   property: string
@@ -65,6 +80,11 @@ export function getAfterHooksCallbacks(
   return callbacks;
 }
 
+/**
+ * Returns a list with Route Hook Callbacks applied before all route definitions are ran.
+ *
+ * @param target The target on which we apply the callbacks.
+ */
 export function getBeforeAllHooksCallbacks(target: Route): RouteHooksCallbacks {
   let callbacks: RouteHooksCallbacks = Reflect.getMetadata(
     "route:before:callbacks",
@@ -78,6 +98,11 @@ export function getBeforeAllHooksCallbacks(target: Route): RouteHooksCallbacks {
   return callbacks;
 }
 
+/**
+ * Returns a list with Route Hook Callbacks applied after all route definitions are ran.
+ *
+ * @param target The target on which we apply the callbacks.
+ */
 export function getAfterAllHooksCallbacks(target: Route): RouteHooksCallbacks {
   let callbacks: RouteHooksCallbacks = Reflect.getMetadata(
     "route:after:callbacks",
@@ -91,6 +116,11 @@ export function getAfterAllHooksCallbacks(target: Route): RouteHooksCallbacks {
   return callbacks;
 }
 
+/**
+ * Function used to define a middleware decorator.
+ *
+ * @param middlewares A list of middlewares you want to apply on the route.
+ */
 export function defineMiddleware(
   ...middlewares: Array<HTTPMiddleware>
 ): RouteDecorator {
