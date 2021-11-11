@@ -1,11 +1,28 @@
-import nodemailer from "nodemailer";
+import { Transporter } from "nodemailer";
 import stringStripHtml from "string-strip-html";
 import Config from "../../System/Config";
 import DefaultLogger from "../../System/Logger";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
+/**
+ * Class representing a Base Transport
+ * @class
+ * @implements IEmailTransport
+ */
 export default class BaseTransport implements IEmailTransport {
-  protected _transporter: nodemailer.Transporter;
+  /**
+   * A protected property representing nodemailer Transporter
+   * @property
+   * @type Transporter
+   * @protected
+   */
+  protected _transporter: Transporter;
+
+  /**
+   * Public method for email sending
+   * @param options The IEmailOptions to be used
+   * @public
+   */
 
   public async send(options: IEmailOptions): Promise<void> {
     const info = await this._transporter.sendMail({

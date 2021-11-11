@@ -4,13 +4,33 @@ import IEmailTransport, { IEmailOptions } from "./Transports/IEmailTransport";
 import SMTPTransport from "./Transports/SMTPTransport";
 import TestTransport from "./Transports/TestTransport";
 
+/***
+ * Class representing the Email Service
+ * @class
+ * @extends ServiceBase
+ * @implements IEmailTransport
+ */
+
 export default class EmailService
   extends ServiceBase
   implements IEmailTransport
 {
+  /***
+   * @property
+   * @type boolean
+   * @private
+   */
   private readonly _enableService: boolean;
+  /***
+   * @property
+   * @type IEmailTransport
+   * @private
+   */
   private readonly _transport: IEmailTransport;
 
+  /***
+   * @constructor
+   */
   public constructor() {
     super();
 
@@ -27,6 +47,10 @@ export default class EmailService
     }
   }
 
+  /**
+   * Send method
+   * @param options The IEmailOptions to be used
+   */
   public send(options: IEmailOptions): Promise<void> {
     if (this._enableService && this._transport) {
       return this._transport.send(options);
