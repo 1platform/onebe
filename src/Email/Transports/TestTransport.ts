@@ -4,14 +4,14 @@ import BaseTransport from "./BaseTransport";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
- * Class representing a Transport test
+ * Email testing Transport class.
  */
 export default class TestTransport
   extends BaseTransport
   implements IEmailTransport
 {
-  /***
-   * @constructor
+  /**
+   * TestTransport constructor.
    */
   public constructor() {
     super();
@@ -28,12 +28,15 @@ export default class TestTransport
     });
   }
 
-  /***
-   * Send method
-   * @param options The email options to be used
+  /**
+   * Method used to send emails.
+   *
+   * @param options The parameters we use for sending an email.
    */
-  public async send(options: IEmailOptions): Promise<void> {
+  public async send(options: IEmailOptions): Promise<any> {
     const info = await super.send(options);
     DefaultLogger.debug(`Preview URL: ${ nodemailer.getTestMessageUrl(info) }`);
+
+    return info;
   }
 }

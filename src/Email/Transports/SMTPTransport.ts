@@ -4,15 +4,15 @@ import BaseTransport from "./BaseTransport";
 import IEmailTransport from "./IEmailTransport";
 
 /**
- * Class representing SMTPTransport
+ * SMTP Transport used for sending emails.
  */
 export default class SMTPTransport
   extends BaseTransport
   implements IEmailTransport
 {
   /**
-   * @constructor
-   * */
+   * SMTPTransport constructor.
+   */
   public constructor() {
     super();
     this._transporter = nodemailer.createTransport({

@@ -21,14 +21,35 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing the Docs store
+ */
 class DocsStore {
+  /**
+   * The list of routes
+   */
+
+  /**
+   * The list of interfaces
+   */
+
+  /**
+   * The constructor of the Docs store
+   */
   constructor() {// Do Nothing
 
     _defineProperty(this, "_routes", {});
 
     _defineProperty(this, "_interfaces", {});
   }
+  /**
+   * The Docs store instance
+   */
 
+
+  /**
+   * Get method to retrieve the Docs store instance
+   */
   static get instance() {
     if (!DocsStore._instance) {
       DocsStore._instance = new DocsStore();
@@ -36,6 +57,15 @@ class DocsStore {
 
     return DocsStore._instance;
   }
+  /**
+   * Method used to initialize a Group
+   *
+   * @param name The name
+   * @param basePath The base path
+   * @param description The description
+   * @param isAPI If it is an API
+   */
+
 
   initGroup(name, basePath, description = "", isAPI = false) {
     this._routes[name] = {
@@ -46,6 +76,14 @@ class DocsStore {
       routes: []
     };
   }
+  /**
+   * Method used to set a Group item
+   *
+   * @param name The name
+   * @param key The key (description or name)
+   * @param value The value to be set
+   */
+
 
   setGroupItem(name, key, value) {
     switch (key) {
@@ -55,6 +93,14 @@ class DocsStore {
         break;
     }
   }
+  /**
+   * Method for adding a new Route
+   *
+   * @param group The group in which to add the Route
+   * @param routeDefinition The Route definition
+   * @param docs The docs
+   */
+
 
   addRoute(group, routeDefinition, docs) {
     if (!this._routes[group]) {
@@ -97,6 +143,10 @@ class DocsStore {
       }), {})
     }));
   }
+  /**
+   * Method to get the routes
+   */
+
 
   getRoutes() {
     if (!_Config.default.boolean("docs.expose")) {
@@ -105,6 +155,10 @@ class DocsStore {
 
     return this._routes;
   }
+  /**
+   * Method to get docs in YAML format
+   */
+
 
   getYaml() {
     if (!_Config.default.boolean("docs.expose")) {
@@ -114,6 +168,13 @@ class DocsStore {
     const builder = new _SwaggerBuilder.default(this._routes, this._interfaces);
     return builder.getYaml();
   }
+  /**
+   * Method for defining an Interface
+   *
+   * @param name The name of the interface
+   * @param description The description
+   */
+
 
   defineInterface(name, description) {
     this._interfaces[name] = {
@@ -123,6 +184,13 @@ class DocsStore {
       properties: []
     };
   }
+  /**
+   * Method for adding interface property
+   *
+   * @param interfaceName The name of the Interface
+   * @param definition The definition of the property
+   */
+
 
   addInterfaceProperty(interfaceName, definition) {
     this._interfaces[interfaceName].properties.push(_objectSpread({

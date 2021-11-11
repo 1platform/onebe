@@ -36,6 +36,13 @@ export declare class Configuration {
      */
     get(key: string, defaultValue?: any): string;
     /**
+     * Returns the object value of the given configuration key.
+     *
+     * @param key The configuration key.
+     * @param defaultValue The default value if the configuration key doesn't exists.
+     */
+    object(key: string, defaultValue?: any): Record<string, unknown>;
+    /**
      * Returns all the configuration properties.
      */
     all(): IConfig;

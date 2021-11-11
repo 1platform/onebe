@@ -5,7 +5,6 @@ import IConfig from "../System/IConfig";
  * Default configuration for the Database
  */
 const defaultDBConfig: IConfig = {
-
   /**
    * The default value for the database engine which will be used in the application.
    */
@@ -15,7 +14,6 @@ const defaultDBConfig: IConfig = {
    * The default mongo configuration
    */
   mongo: {
-
     /**
      * The default value of the url used to connect to the mongo database.
      */

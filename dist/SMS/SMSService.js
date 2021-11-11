@@ -17,7 +17,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class exposing the SMS sending functionality.
+ */
 class SMSService extends _ServiceBase.default {
+  /**
+   * If the service is enabled or not.
+   */
+
+  /**
+   * The SMS Transport used by the application.
+   */
+
+  /**
+   * SMSService Constructor
+   */
   constructor() {
     super();
 
@@ -39,6 +53,14 @@ class SMSService extends _ServiceBase.default {
       }
     }
   }
+  /**
+   * Method used to send SMS messages
+   *
+   * @param to The receiver of the message
+   * @param text The text of the message
+   * @param from The sender of the message
+   */
+
 
   send(to, text, from) {
     if (this._enableService && this._transport) {

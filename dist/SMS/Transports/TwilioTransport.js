@@ -15,7 +15,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing the Twilio Transport handler
+ */
 class TwilioTransport {
+  /**
+   * The Twilio service
+   */
+
+  /**
+   * THe default phone config
+   */
+
+  /**
+   * TwilioTransport constructor
+   */
   constructor() {
     _defineProperty(this, "_twilio", void 0);
 
@@ -23,6 +37,14 @@ class TwilioTransport {
 
     this._twilio = (0, _twilio.default)(_Config.default.string("sms.config.account"), _Config.default.string("sms.config.password"));
   }
+  /**
+   * Method used to send an SMS.
+   *
+   * @param to The receiver of the message
+   * @param text The text of the message
+   * @param from The sender of the message
+   */
+
 
   async send(to, text, from) {
     try {

@@ -8,9 +8,26 @@ import Router from "../Router";
 import Config from "../System/Config";
 import DefaultLogger from "../System/Logger";
 
+/**
+ * The HTTP server handler class.
+ */
 export default class HTTP {
+  /**
+   * A list of middlewares that we load in our application.
+   */
   private _middlewares: Array<IMiddleware> = [];
+  /**
+   * The Express application instance.
+   */
+  private readonly _app: Application;
+  /**
+   * The Node.js HTTP Server instance.
+   */
+  private readonly _http: Server;
 
+  /**
+   * HTTP Class constructor.
+   */
   public constructor() {
     this._app = express();
     this._http = new Server(this._app);
@@ -35,31 +52,49 @@ export default class HTTP {
     );
   }
 
-  private _app: Application;
-
+  /**
+   * Express application getter.
+   */
   public get app(): Application {
     return this._app;
   }
 
-  private _http: Server;
-
+  /**
+   * HTTP Server instance getter.
+   */
   public get http(): Server {
     return this._http;
   }
 
+  /**
+   * The port on which we listen on for http requests.
+   */
   public get port(): number {
     return Config.number("http.port", 7200);
   }
 
+  /**
+   * The ip on which we listen on for http requests.
+   */
   public get host(): string {
     return Config.string("http.listen", "127.0.0.1");
   }
+
+  /**
+   * Set a local variable on the express application.
+   *
+   * @param variable The variable name.
+   * @param value The value of the variable.
+   */
 
   /* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
   public setLocal(variable: string, value: any): void {
     this._app.locals[variable] = value;
   }
 
+  /**
+   * Start the HTTP server.
+   */
   public start(): void {
     for (const middleware of this._middlewares) {
       middleware.use(this._app);
@@ -74,6 +109,11 @@ export default class HTTP {
     });
   }
 
+  /**
+   * Attach a middleware to the express application.
+   *
+   * @param middleware The middleware we want to attach.
+   */
   public use(middleware: IMiddleware | IMiddleware[]): void {
     if (!Array.isArray(middleware)) {
       middleware = [ middleware ];

@@ -17,7 +17,7 @@ export default class VonageTransport implements ISMSTransport {
   private readonly _defaultPhone = Config.string("sms.config.phone");
 
   /**
-   * @constructor
+   * VonageTransport constructor
    */
   public constructor() {
     this._vonage = new Vonage({
@@ -27,7 +27,8 @@ export default class VonageTransport implements ISMSTransport {
   }
 
   /**
-   * The send method
+   * Method used to send an SMS.
+   *
    * @param to The receiver of the message
    * @param text The text of the message
    * @param from The sender of the message

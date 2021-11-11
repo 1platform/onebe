@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+/**
+ * HTTP Status Codes enums
+ *
+ * @enum
+ */
 var HTTPStatus;
 
 (function (HTTPStatus) {

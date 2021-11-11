@@ -15,11 +15,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing the Base Transport.
+ */
 class BaseTransport {
   constructor() {
     _defineProperty(this, "_transporter", void 0);
   }
 
+  /**
+   * Method used to send emails.
+   *
+   * @param options The parameters we use for sending an email.
+   */
   async send(options) {
     const info = await this._transporter.sendMail({
       from: options.from || _Config.default.string("email.from"),
@@ -33,6 +41,8 @@ class BaseTransport {
     });
 
     _Logger.default.info(`Email Message sent: ${info.messageId}`);
+
+    return info;
   }
 
 }

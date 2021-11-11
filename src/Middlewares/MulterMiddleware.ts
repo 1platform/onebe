@@ -7,13 +7,13 @@ import { defineMiddleware } from "../Router/RouteUtils";
 import Config from "../System/Config";
 
 /**
- * @todo
+ * The base of the upload middleware that we can use in our application.
  */
 const upload = multer({
   dest: Config.string("upload.temp"),
 });
 /**
- * @todo
+ * The base of the URL signature utility.
  */
 const signature = signed({
   secret: Config.string("upload.secret"),

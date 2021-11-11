@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default values for DB config in Env
+ * Default configuration for the Database
  */
 declare const defaultDBConfig: IConfig;
 export default defaultDBConfig;

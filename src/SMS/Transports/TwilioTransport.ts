@@ -17,7 +17,7 @@ export default class TwilioTransport implements ISMSTransport {
   private readonly _defaultPhone = Config.string("sms.config.phone");
 
   /**
-   * @constructor
+   * TwilioTransport constructor
    */
   public constructor() {
     this._twilio = twilio(
@@ -27,11 +27,11 @@ export default class TwilioTransport implements ISMSTransport {
   }
 
   /**
-   * The send method
+   * Method used to send an SMS.
+   *
    * @param to The receiver of the message
    * @param text The text of the message
    * @param from The sender of the message
-   * @public
    */
   public async send(to: string, text: string, from?: string): Promise<void> {
     try {

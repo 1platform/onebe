@@ -6,7 +6,6 @@ import LogLevel from "../System/LogLevel";
  * The default configuration for the application logging.
  */
 const defaultLogsConfig: IConfig = {
-
   /**
    * The default level of logging throughout the application.
    */

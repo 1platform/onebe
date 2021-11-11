@@ -10,6 +10,7 @@ yarn compile:cleanup
 
 yarn compile
 yarn compile:check
+yarn docs:gen
 
 cat > ./dist/build.js << EOF
 "use strict";

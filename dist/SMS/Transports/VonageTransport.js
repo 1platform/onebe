@@ -15,7 +15,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing the Vonage Transport handler
+ */
 class VonageTransport {
+  /**
+   * The Vonage service
+   */
+
+  /**
+   * The default phone config
+   */
+
+  /**
+   * VonageTransport constructor
+   */
   constructor() {
     _defineProperty(this, "_vonage", void 0);
 
@@ -26,6 +40,14 @@ class VonageTransport {
       apiSecret: _Config.default.string("sms.config.password")
     });
   }
+  /**
+   * Method used to send an SMS.
+   *
+   * @param to The receiver of the message
+   * @param text The text of the message
+   * @param from The sender of the message
+   */
+
 
   send(to, text, from) {
     return new Promise((resolve, reject) => {

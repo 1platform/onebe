@@ -11,8 +11,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * Defines Observable Types
- * */
+ *
+ * @enum
+ */
 let ObservableType;
+/**
+ * The callback used to define/register callbacks.
+ *
+ * @param document The document we want to observe.
+ */
+
 exports.ObservableType = ObservableType;
 
 (function (ObservableType) {
@@ -22,14 +30,14 @@ exports.ObservableType = ObservableType;
 
 /**
  * Class representing an Observable
- * @class
- * */
+ */
 class Observable extends _events.default {
   /**
    * Registers an Observable
+   *
    * @param entityName The name of the entity
    * @param type The type of the Observable
-   * @param isPost if the action is a POST
+   * @param isPost if the action is a post action
    * @param callback The callback to be executed
    * */
   registerObservable(entityName, type, isPost, callback) {
@@ -37,6 +45,7 @@ class Observable extends _events.default {
   }
   /**
    * Registers a Save Post Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -47,6 +56,7 @@ class Observable extends _events.default {
   }
   /**
    * Registers a Remove Post Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -57,6 +67,7 @@ class Observable extends _events.default {
   }
   /**
    * Registers a Pre Save Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -67,6 +78,7 @@ class Observable extends _events.default {
   }
   /**
    * Registers a Pre Remove Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */

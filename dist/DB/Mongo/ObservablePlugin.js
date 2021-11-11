@@ -12,13 +12,17 @@ var _Observable = _interopRequireDefault(require("./Observable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * The observer instance we use to observe changes.
+ */
 const observer = new _Observable.default();
 exports.observer = observer;
 
 /**
- * Creates an Observer plugin
- * @param name A name for the plugin
- * */
+ * Creates an observer for our model.
+ *
+ * @param name The name of the model.
+ */
 function observerPlugin(name) {
   return (schema, opts) => {
     schema.pre("save", next => {

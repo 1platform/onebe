@@ -5,7 +5,6 @@ import IConfig from "../System/IConfig";
  * Default configuration for the Email services.
  */
 const defaultEmailConfig: IConfig = {
-
   /**
    * The default value indicating whether the services are enabled or not.
    */
@@ -25,7 +24,6 @@ const defaultEmailConfig: IConfig = {
    * The default configuration for the email service.
    */
   config: {
-
     /**
      * The default value of the email address which will be used to send emails.
      */

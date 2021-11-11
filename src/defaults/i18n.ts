@@ -5,7 +5,6 @@ import IConfig from "../System/IConfig";
  * Default Language configuration.
  */
 const defaultLangConfig: IConfig = {
-
   /**
    * The default value for the language of the application.
    */

@@ -25,7 +25,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * The HTTP server handler class.
+ */
 class HTTP {
+  /**
+   * A list of middlewares that we load in our application.
+   */
+
+  /**
+   * The Express application instance.
+   */
+
+  /**
+   * The Node.js HTTP Server instance.
+   */
+
+  /**
+   * HTTP Class constructor.
+   */
   constructor() {
     _defineProperty(this, "_middlewares", []);
 
@@ -60,28 +78,55 @@ class HTTP {
       contentSecurityPolicy: false
     }));
   }
+  /**
+   * Express application getter.
+   */
+
 
   get app() {
     return this._app;
   }
+  /**
+   * HTTP Server instance getter.
+   */
+
 
   get http() {
     return this._http;
   }
+  /**
+   * The port on which we listen on for http requests.
+   */
+
 
   get port() {
     return _Config.default.number("http.port", 7200);
   }
+  /**
+   * The ip on which we listen on for http requests.
+   */
+
 
   get host() {
     return _Config.default.string("http.listen", "127.0.0.1");
   }
+  /**
+   * Set a local variable on the express application.
+   *
+   * @param variable The variable name.
+   * @param value The value of the variable.
+   */
+
   /* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
 
 
   setLocal(variable, value) {
     this._app.locals[variable] = value;
   }
+  /**
+   * Start the HTTP server.
+   */
+
 
   start() {
     for (const middleware of this._middlewares) {
@@ -100,6 +145,12 @@ class HTTP {
       _Logger.default.info(`Application started: http://${host}:${port}`);
     });
   }
+  /**
+   * Attach a middleware to the express application.
+   *
+   * @param middleware The middleware we want to attach.
+   */
+
 
   use(middleware) {
     if (!Array.isArray(middleware)) {

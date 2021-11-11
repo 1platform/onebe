@@ -27,7 +27,6 @@ const defaultHTTPConfig: IConfig = {
    * The default values for the cookie configuration.
    */
   cookie: {
-
     /**
      * The default value of the domain for the cookie.
      */
@@ -37,6 +36,44 @@ const defaultHTTPConfig: IConfig = {
      * The default flag that indicates whether the cookie service is secure.
      */
     secure: Env.flag("COOKIE_SECURE"),
+  },
+
+  /**
+   * CORS configuration.
+   */
+  cors: {
+    /**
+     * The allowed request origin.
+     */
+    origin: Env.string("CORS_ORIGIN", "*"),
+    /**
+     * Configures the Access-Control-Allow-Methods CORS header.
+     */
+    methods: Env.string("CORS_METHODS", "GET,HEAD,PUT,PATCH,POST,DELETE"),
+    /**
+     * Configures the Access-Control-Allow-Headers CORS header.
+     */
+    allowedHeaders: Env.string("CORS_ALLOWED_HEADERS") ?? undefined,
+    /**
+     * Configures the Access-Control-Expose-Headers CORS header.
+     */
+    exposedHeaders: Env.string("CORS_EXPOSES_HEADERS") ?? undefined,
+    /**
+     * Configures the Access-Control-Allow-Credentials CORS header.
+     */
+    credentials: Env.boolean("CORS_CREDENTIALS") ?? undefined,
+    /**
+     * Configures the Access-Control-Max-Age CORS header.
+     */
+    maxAge: Env.int("CORS_MAX_AGE") ?? undefined,
+    /**
+     * Provides a status code to use for successful OPTIONS requests, since some legacy browsers (IE11, various SmartTVs) choke on 204.
+     */
+    optionsSuccessStatus: Env.int("CORS_OPTIONS_SUCCESS") ?? undefined,
+    /**
+     * Pass the CORS preflight response to the next handler.
+     */
+    preflightContinue: Env.boolean("CORS_PREFLIGHT") ?? undefined,
   },
 };
 

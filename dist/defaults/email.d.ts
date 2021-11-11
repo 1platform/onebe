@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default values for Email config in Env
+ * Default configuration for the Email services.
  */
 declare const defaultEmailConfig: IConfig;
 export default defaultEmailConfig;

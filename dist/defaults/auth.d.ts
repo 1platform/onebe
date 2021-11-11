@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default values for JWT in Env
+ * Default configuration for JsonWebToken
  */
 declare const defaultAuthConfig: IConfig;
 export default defaultAuthConfig;

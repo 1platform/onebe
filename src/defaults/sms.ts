@@ -5,7 +5,6 @@ import IConfig from "../System/IConfig";
  * Default configuration for SMS services.
  */
 const defaultSMSConfig: IConfig = {
-
   /**
    * The default flag that indicates whether SMS services are enabled for the application.
    */
@@ -20,7 +19,6 @@ const defaultSMSConfig: IConfig = {
    * The default configuration used by the provider.
    */
   config: {
-
     /**
      * The default phone number that will be used to send messages from.
      */

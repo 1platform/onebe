@@ -17,7 +17,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class exposing the Email sending functionality.
+ */
 class EmailService extends _ServiceBase.default {
+  /**
+   * Is the service enabled?
+   */
+
+  /**
+   * The used email transport.
+   */
+
+  /**
+   * Email Service constructor.
+   */
   constructor() {
     super();
 
@@ -39,6 +53,12 @@ class EmailService extends _ServiceBase.default {
       }
     }
   }
+  /**
+   * Method used to send emails.
+   *
+   * @param options The parameters we use for sending an email.
+   */
+
 
   send(options) {
     if (this._enableService && this._transport) {

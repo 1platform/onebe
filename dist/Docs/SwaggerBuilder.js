@@ -23,7 +23,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class representing a Swagger Builder
+ */
 class SwaggerBuilder {
+  /**
+   * The list of routes
+   */
+
+  /**
+   * The list of interfaces
+   */
+
+  /**
+   * The Swagger Builder constructor.
+   *
+   * @param routes The list of routes
+   * @param interfaces The list of interfaces
+   */
   constructor(routes, interfaces) {
     _defineProperty(this, "_routes", {});
 
@@ -32,6 +49,10 @@ class SwaggerBuilder {
     this._routes = routes;
     this._interfaces = interfaces;
   }
+  /**
+   * Method for returning the yaml docs
+   */
+
 
   getYaml() {
     return _jsYaml.default.dump({
@@ -52,6 +73,10 @@ class SwaggerBuilder {
       forceQuotes: true
     });
   }
+  /**
+   * Method for getting the Components
+   */
+
 
   getComponents() {
     const base = {
@@ -102,6 +127,10 @@ class SwaggerBuilder {
     }, {}));
     return base;
   }
+  /**
+   * Method for getting the tags
+   */
+
 
   getTags() {
     const routesList = Object.values(this._routes).map(route => ({
@@ -118,6 +147,10 @@ class SwaggerBuilder {
       description: routeDefinition.description || ""
     }));
   }
+  /**
+   * Method for getting the paths
+   */
+
 
   getPaths() {
     const routesList = Object.values(this._routes).reduce((accum, routeDefinition) => [...accum, ...routeDefinition.routes.map(route => _objectSpread({
@@ -136,11 +169,17 @@ class SwaggerBuilder {
       });
     }, {});
     return Object.keys(routeMapping).reduce((accum, key) => _objectSpread(_objectSpread({}, accum), {}, {
-      [key]: this._displayRouteGroup(Object.values(routeMapping[key]))
+      [key]: this.displayRouteGroup(Object.values(routeMapping[key]))
     }), {});
   }
+  /**
+   * Method for displaying a Route Group
+   *
+   * @param routeGroup The Route Group to be displayed
+   */
 
-  _displayRouteGroup(routeGroup) {
+
+  displayRouteGroup(routeGroup) {
     return routeGroup.reduce((accum, routeDefinition) => {
       const definition = {
         summary: "",
@@ -154,7 +193,7 @@ class SwaggerBuilder {
         }];
       }
 
-      const parameters = this._getParameters(routeDefinition);
+      const parameters = this.getParameters(routeDefinition);
 
       if (parameters) {
         definition.parameters = parameters;
@@ -162,9 +201,8 @@ class SwaggerBuilder {
 
       definition.operationId = `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
       definition.summary = `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
-      definition.responses = this._getDefaultResponse(routeDefinition);
-
-      const requestBody = this._getRequestBody(routeDefinition);
+      definition.responses = this.getDefaultResponse(routeDefinition);
+      const requestBody = this.getRequestBody(routeDefinition);
 
       if (requestBody) {
         definition.requestBody = requestBody;
@@ -175,8 +213,14 @@ class SwaggerBuilder {
       });
     }, {});
   }
+  /**
+   * Method for getting the Parameters
+   *
+   * @param routeDefinition The definition of the Route for which we want the Parameters
+   */
 
-  _getParameters(routeDefinition) {
+
+  getParameters(routeDefinition) {
     const parameters = Object.values(routeDefinition.parameters);
 
     if (parameters.length === 0) {
@@ -193,8 +237,14 @@ class SwaggerBuilder {
       }
     }));
   }
+  /**
+   * Method to get errors
+   *
+   * @param routeDefinition The definition of the Route for which we want the Errors
+   */
 
-  _getErrors(routeDefinition) {
+
+  getErrors(routeDefinition) {
     if (Object.keys(routeDefinition.errors).length === 0) {
       return {};
     }
@@ -216,8 +266,14 @@ class SwaggerBuilder {
       }
     }), {});
   }
+  /**
+   * Method for getting the default Response
+   *
+   * @param routeDefinition The Route definition
+   */
 
-  _getDefaultResponse(routeDefinition) {
+
+  getDefaultResponse(routeDefinition) {
     let defaultResponse = _HTTPStatus.default.OK;
     let description = "OK";
 
@@ -243,7 +299,7 @@ class SwaggerBuilder {
       [defaultResponse]: {
         description
       }
-    }, this._getErrors(routeDefinition)), {}, {
+    }, this.getErrors(routeDefinition)), {}, {
       500: {
         description: "General server error",
         content: {
@@ -256,8 +312,14 @@ class SwaggerBuilder {
       }
     });
   }
+  /**
+   * Method for getting the Request body
+   *
+   * @param routeDefinition The route definition
+   */
 
-  _getRequestBody(routeDefinition) {
+
+  getRequestBody(routeDefinition) {
     if (!routeDefinition.request || Object.keys(routeDefinition.request).length === 0) {
       return null;
     }

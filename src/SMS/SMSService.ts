@@ -5,20 +5,20 @@ import TwilioTransport from "./Transports/TwilioTransport";
 import VonageTransport from "./Transports/VonageTransport";
 
 /**
- * Class representing the SMS Service
+ * Class exposing the SMS sending functionality.
  */
 export default class SMSService extends ServiceBase implements ISMSTransport {
   /**
-   * If the service is enabled or not
+   * If the service is enabled or not.
    */
   private readonly _enableService: boolean;
   /**
-   * @todo
+   * The SMS Transport used by the application.
    */
   private readonly _transport: ISMSTransport;
 
   /**
-   * @constructor
+   * SMSService Constructor
    */
   public constructor() {
     super();
@@ -36,7 +36,8 @@ export default class SMSService extends ServiceBase implements ISMSTransport {
   }
 
   /**
-   * The send method
+   * Method used to send SMS messages
+   *
    * @param to The receiver of the message
    * @param text The text of the message
    * @param from The sender of the message

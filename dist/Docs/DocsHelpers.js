@@ -9,6 +9,14 @@ var _DocsStore = _interopRequireDefault(require("./DocsStore"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Interface property definition method.
+ *
+ * @param interfaceName The name of the interface we want to add documentation to.
+ * @param propertyName The name of the property we want to document.
+ * @param type The data type of the property.
+ * @param options The options passed to the documentation engine.
+ */
 const property = (interfaceName, propertyName, type, {
   description = "",
   required = true,
@@ -28,8 +36,18 @@ const property = (interfaceName, propertyName, type, {
     }
   };
 };
+/**
+ * Documentation helper function to document interfaces and properties.
+ */
+
 
 const docsHelpers = {
+  /**
+   * Interface definition method.
+   *
+   * @param name The name of the interface we want to document.
+   * @param description The description of the interface.
+   */
   interface: (name, description) => {
     _DocsStore.default.instance.defineInterface(name, description);
 

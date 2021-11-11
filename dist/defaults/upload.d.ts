@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default values for Upload config in Env
+ * Default configuration for Upload services.
  */
 declare const defaultUploadConfig: IConfig;
 export default defaultUploadConfig;

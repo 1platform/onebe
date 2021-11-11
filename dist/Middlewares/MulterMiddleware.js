@@ -21,9 +21,16 @@ var _Config = _interopRequireDefault(require("../System/Config"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * The base of the upload middleware that we can use in our application.
+ */
 const upload = (0, _multer.default)({
   dest: _Config.default.string("upload.temp")
 });
+/**
+ * The base of the URL signature utility.
+ */
+
 const signature = (0, _signed.default)({
   secret: _Config.default.string("upload.secret"),
   ttl: 60

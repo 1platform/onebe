@@ -5,7 +5,6 @@ import IConfig from "../System/IConfig";
  * Default configuration for Upload services.
  */
 const defaultUploadConfig: IConfig = {
-
   /**
    * The default value of the temporary storage.
    */

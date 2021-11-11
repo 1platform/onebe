@@ -5,19 +5,20 @@ import DefaultLogger from "../../System/Logger";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
- * Class representing a Base Transport
+ * Class representing the Base Transport.
  */
 export default class BaseTransport implements IEmailTransport {
   /**
-   * A protected property representing nodemailer Transporter
+   * The message transporter that we use for sending an email.
    */
   protected _transporter: Transporter;
 
   /**
-   * Public method for email sending
-   * @param options The IEmailOptions to be used
+   * Method used to send emails.
+   *
+   * @param options The parameters we use for sending an email.
    */
-  public async send(options: IEmailOptions): Promise<void> {
+  public async send(options: IEmailOptions): Promise<any> {
     const info = await this._transporter.sendMail({
       from: options.from || Config.string("email.from"),
       to:
@@ -40,5 +41,6 @@ export default class BaseTransport implements IEmailTransport {
     });
 
     DefaultLogger.info(`Email Message sent: ${ info.messageId }`);
+    return info;
   }
 }

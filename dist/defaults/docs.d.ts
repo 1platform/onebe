@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default value for Docs config in Env
+ * Default configuration for the Documentation.
  */
 declare const defaultDocsConfig: IConfig;
 export default defaultDocsConfig;

@@ -3,23 +3,20 @@
 - Codename: No one knows yet...
 - Version: 1.0.0
 
-This is a framework that we use internally at Spark Dev for most of our
-internal applications. To help others build applications fast using Typescript
-we published this framework free to use. The license under which we publish the
-code is MIT.
+This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
+applications fast using Typescript we published this framework free to use. The license under which we publish the code
+is MIT.
 
-If you find bugs while using our framework, please file an issue in 
+If you find bugs while using our framework, please file an issue in
 [Github](https://github.com/spark-development/onebe/issues).
 
-Also, if you manage to solve some of the issues, please create a Pull Request
-with the changes.
+Also, if you manage to solve some of the issues, please create a Pull Request with the changes.
 
 While this package is the framework base, we created an additional project with
-a [base project](https://github.com/spark-development/onebe-project) that you can
-use as the starter for your application: https://github.com/spark-development/onebe-project
+a [base project](https://github.com/spark-development/onebe-project) that you can use as the starter for your
+application: https://github.com/spark-development/onebe-project
 
-In the future we want to expose a command that will allow you to create a new project
-more easily from our base project.
+In the future we want to expose a command that will allow you to create a new project more easily from our base project.
 
 ## Features of the framework:
 
@@ -43,4 +40,10 @@ more easily from our base project.
   - Console
   - File
 - Scheduler system to schedule jobs in CRONTAB format
+- Multi Factor Authentication system
+  - Simple Code base
+  - Using the Google Authenticator (or Compatible application)
+- QRCode generator
+- UUID V1 and V4 generator
+- Shortid generator
 

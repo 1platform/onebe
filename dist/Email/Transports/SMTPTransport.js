@@ -13,7 +13,13 @@ var _BaseTransport = _interopRequireDefault(require("./BaseTransport"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * SMTP Transport used for sending emails.
+ */
 class SMTPTransport extends _BaseTransport.default {
+  /**
+   * SMTPTransport constructor.
+   */
   constructor() {
     super();
     this._transporter = _nodemailer.default.createTransport({

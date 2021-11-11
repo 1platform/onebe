@@ -1,6 +1,6 @@
 import IConfig from "../System/IConfig";
 /**
- * Default values for Logs config in Env
+ * The default configuration for the application logging.
  */
 declare const defaultLogsConfig: IConfig;
 export default defaultLogsConfig;
