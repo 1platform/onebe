@@ -13,9 +13,7 @@ export type ObserverCallback<T extends Document> = (document: T) => void;
 
 /**
  * Class representing an Observable
- * @class
- * */
-
+ */
 export default class Observable extends EventEmitter {
   /**
    * Registers an Observable

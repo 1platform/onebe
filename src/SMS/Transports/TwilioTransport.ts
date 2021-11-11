@@ -5,10 +5,7 @@ import ISMSTransport from "./ISMSTransport";
 
 /**
  * Class representing the Twilio Transport handler
- * @class
- * @implements ISMSTransport
  */
-
 export default class TwilioTransport implements ISMSTransport {
   /**
    * The Twilio service

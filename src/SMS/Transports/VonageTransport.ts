@@ -5,23 +5,16 @@ import ISMSTransport from "./ISMSTransport";
 
 /**
  * Class representing the Vonage Transport handler
- * @class
- * @implements ISMSTransport
  */
-
 export default class VonageTransport implements ISMSTransport {
   /**
    * The Vonage service
-   * @property
    * @type Vonage
-   * @private
    */
   private readonly _vonage: Vonage;
   /**
    * The default phone config
-   * @property
    * @type string
-   * @private
    */
   private readonly _defaultPhone = Config.string("sms.config.phone");
 

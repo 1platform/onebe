@@ -14,7 +14,6 @@ import upload from "./upload";
 /**
  * Exported defaults
  */
-
 const defaultConfig: IConfig = {
   api,
   app,

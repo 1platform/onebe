@@ -6,24 +6,18 @@ import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
  * Class representing a Base Transport
- * @class
- * @implements IEmailTransport
  */
 export default class BaseTransport implements IEmailTransport {
   /**
    * A protected property representing nodemailer Transporter
-   * @property
    * @type Transporter
-   * @protected
    */
   protected _transporter: Transporter;
 
   /**
    * Public method for email sending
    * @param options The IEmailOptions to be used
-   * @public
    */
-
   public async send(options: IEmailOptions): Promise<void> {
     const info = await this._transporter.sendMail({
       from: options.from || Config.string("email.from"),
