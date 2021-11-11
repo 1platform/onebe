@@ -12,8 +12,8 @@ export interface IRouteDoc {
     response?: string;
     responseStatus?: HTTPStatus;
     isAuthenticated: boolean;
-    userSpecific: boolean;
-    appSpecific: boolean;
+    bearerSpecific: boolean;
+    basicSpecific: boolean;
     tag?: string;
 }
 export declare enum ParameterType {

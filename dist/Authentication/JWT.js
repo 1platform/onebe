@@ -71,6 +71,12 @@ function verify(token) {
 function decode(token) {
   return _jsonwebtoken.default.decode(token);
 }
+/**
+ * Extracts the token from the request object.
+ *
+ * @param req The request object.
+ */
+
 
 function extractToken(req) {
   let authParams = (0, _auth_header.parse)(req.headers.authorization);

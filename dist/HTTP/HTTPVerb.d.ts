@@ -1,3 +1,8 @@
+/**
+ * The supported HTTP Verbs.
+ *
+ * @enum
+ */
 declare enum HTTPVerb {
     GET = "get",
     POST = "post",

@@ -2,8 +2,13 @@ import { ClassDocs, getElementDocs } from "../Docs/DocsDecorators";
 import DocsStore from "../Docs/DocsStore";
 import Config from "../System/Config";
 import DefaultLogger from "../System/Logger";
-import { Constructor, ControllerDecorator, ControllerDecoratorFunction, } from "./RouteTypes";
-import { getRouteCallbacks, RouteCallbacks } from "./RouteUtils";
+import {
+  Constructor,
+  ControllerDecorator,
+  ControllerDecoratorFunction,
+  RouteCallbacks,
+} from "./RouteTypes";
+import { getRouteCallbacks } from "./RouteUtils";
 
 /**
  * Decorator to define the path the controller will handle.

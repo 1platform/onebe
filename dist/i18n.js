@@ -17,6 +17,11 @@ var _Config = _interopRequireDefault(require("./System/Config"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Internationalisation init function.
+ *
+ * @param currentDir The current dir of the application.
+ */
 function i18n(currentDir = __dirname) {
   return _i18next.default.use(_i18nextFsBackend.default).use(_i18nextHttpMiddleware.LanguageDetector).init({
     lng: _Config.default.string("i18n.defaultLang", "en"),

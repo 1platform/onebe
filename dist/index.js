@@ -40,6 +40,12 @@ const defaultValues = {
   configDir: "./config",
   controllersDir: "./controllers"
 };
+/**
+ * Framework init function. It initializes some elements of the framework
+ * to be later used when starting the application up.
+ *
+ * @param props The various properties you can pass to the init function.
+ */
 
 async function init(props) {
   props = _objectSpread(_objectSpread({}, defaultValues), props);

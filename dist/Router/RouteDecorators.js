@@ -18,6 +18,23 @@ var _RouteUtils = require("./RouteUtils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Decorator to define the path the controller will handle.
+ *
+ * Attaches to the target the following metadata:
+ * - route:path
+ * - route:api - if the {@link api} decorator was used.
+ * - route:name
+ * - route:docs
+ * - route:path:callbacks
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param path The path on which we will register the routes of this controller.
+ * @param name The name of the controller. If no name is specified, it will take the name of the controller.
+ * @param description The description of the controller. If no description is passed, no description will be documented.
+ */
 function path(path, name, description) {
   return function (BaseClass) {
     let paths = Reflect.getMetadata("route:path", BaseClass.prototype);
@@ -54,6 +71,19 @@ function path(path, name, description) {
     return BaseClass;
   };
 }
+/**
+ * Decorator to define the controller as an API controller.
+ *
+ * Attaches to the target the following metadata:
+ * - route:path
+ * - route:api
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param BaseClass The Controller we want to decorate.
+ */
+
 
 function api(BaseClass) {
   let paths = Reflect.getMetadata("route:path", BaseClass.prototype);

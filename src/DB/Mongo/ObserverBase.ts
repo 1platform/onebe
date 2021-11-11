@@ -10,6 +10,5 @@ import { observer } from "./ObservablePlugin";
 export default abstract class ObserverBase extends ServiceBase {
   protected _observer: Observable = observer;
 
-
   public abstract register(): void;
 }

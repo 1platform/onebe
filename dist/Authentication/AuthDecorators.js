@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.jwt = exports.extractUser = exports.basic = void 0;
+exports.extractUser = exports.bearer = exports.basic = void 0;
 
 var _passport = _interopRequireDefault(require("passport"));
 
@@ -21,16 +21,45 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-const jwt = (target, propertyKey, descriptor) => {
+/**
+ * Decorator to enable Bearer Authentication for an endpoint.
+ *
+ * Attaches to the property of the target the following metadata:
+ * - route:auth
+ * - route:auth:bearer
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param target The target on which we apply the decorator.
+ * @param propertyKey The property key on which we apply the decorator.
+ * @param descriptor The descriptor of the property we want to decorate.
+ */
+const bearer = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
   Reflect.defineMetadata("route:auth", true, target, propertyKey);
-  Reflect.defineMetadata("route:auth:jwt", true, target, propertyKey);
-  descriptor.value = [_passport.default.authenticate("jwt", {
+  Reflect.defineMetadata("route:auth:bearer", true, target, propertyKey);
+  descriptor.value = [_passport.default.authenticate("bearer", {
     session: false
   }), ...original];
 };
+/**
+ * Decorator to enable Basic Authentication for an endpoint.
+ *
+ * Attaches to the property of the target the following metadata:
+ * - route:auth
+ * - route:auth:basic
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param target The target on which we apply the decorator.
+ * @param propertyKey The property key on which we apply the decorator.
+ * @param descriptor The descriptor of the property we want to decorate.
+ */
 
-exports.jwt = jwt;
+
+exports.bearer = bearer;
 
 const basic = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
@@ -40,6 +69,16 @@ const basic = (target, propertyKey, descriptor) => {
     session: false
   }), ...original];
 };
+/**
+ * Middleware used to extract the user from the request when using Bearer Authentication
+ * on a mixed route (Public and Protected).
+ *
+ * @decorator
+ * @param target The target on which we apply the decorator.
+ * @param propertyKey The property key on which we apply the decorator.
+ * @param descriptor The descriptor of the property we want to decorate.
+ */
+
 
 exports.basic = basic;
 const extractUser = (0, _RouteUtils.defineMiddleware)((req, res, next) => {

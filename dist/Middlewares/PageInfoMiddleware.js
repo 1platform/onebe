@@ -5,9 +5,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _express = require("express");
-
+/**
+ * Page information middleware
+ */
 class PageInfoMiddleware {
+  /**
+   * The middleware initialization method.
+   *
+   * @param app The express application on which we apply the middleware.
+   */
   use(app) {
     app.use((req, res, next) => {
       req.pageURL = `${app.locals.appURL}${req.path}`.replace(/(https?:\/\/)|(\/)+/g, "$1$2");

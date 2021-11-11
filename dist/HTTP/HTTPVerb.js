@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+/**
+ * The supported HTTP Verbs.
+ *
+ * @enum
+ */
 var HTTPVerb;
 
 (function (HTTPVerb) {

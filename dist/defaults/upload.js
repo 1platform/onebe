@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for Upload config in Env
+ */
 const defaultUploadConfig = {
   temp: _Env.default.string("UPLOAD_TEMP", "./tmp"),
   storage: _Env.default.string("UPLOAD_DESTINATION", "./storage"),

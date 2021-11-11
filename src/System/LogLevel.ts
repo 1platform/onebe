@@ -1,3 +1,8 @@
+/**
+ * Log Level enumeration
+ *
+ * @enum
+ */
 enum LogLevel {
   ERROR = "error",
   WARN = "warn",

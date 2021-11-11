@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = exports.Environment = void 0;
 
 var _dotenv = require("dotenv");
 
@@ -17,10 +17,8 @@ class Environment {
   /**
    * Returns the value of a given environment variable.
    *
-   * @param {string} field The name of the environment variable.
-   * @param {string|null} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return string
+   * @param field The name of the environment variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
   get(field, defaultValue = null) {
     return process.env[field] || defaultValue;
@@ -28,10 +26,8 @@ class Environment {
   /**
    * Returns the integer value of a given environment variable.
    *
-   * @param {string} field The name of the envionmental variable.
-   * @param {number|null} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return number
+   * @param field The name of the envionmental variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
 
 
@@ -41,9 +37,7 @@ class Environment {
   /**
    * Returns the boolean value of a given environment variable.
    *
-   * @param {string} field The name of the flag.
-   *
-   * @return boolean
+   * @param field The name of the flag.
    */
 
 
@@ -54,10 +48,8 @@ class Environment {
   /**
    * An alias for the Env.get method.
    *
-   * @param {string} field The name of the environment variable.
-   * @param {string} [defaultValue] The default value if the variable doesn't exists.
-   *
-   * @return string
+   * @param field The name of the environment variable.
+   * @param defaultValue The default value if the variable doesn't exists.
    */
 
 
@@ -67,9 +59,7 @@ class Environment {
   /**
    * An alias for the Env.bool method.
    *
-   * @param {string} flagName The name of the flag.
-   *
-   * @return boolean
+   * @param flagName The name of the flag.
    */
 
 
@@ -79,6 +69,7 @@ class Environment {
 
 }
 
+exports.Environment = Environment;
 const Env = new Environment();
 global.env = Env;
 var _default = Env;

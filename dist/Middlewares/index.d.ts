@@ -6,4 +6,7 @@ import PageInfoMiddleware from "./PageInfoMiddleware";
 import PassportMiddleware from "./PassportMiddleware";
 import SparkMiddleware from "./SparkMiddleware";
 declare const _default: (BodyParserMiddleware | CORSMiddleware | I18nMiddleware | LoggerMiddleware | PageInfoMiddleware | PassportMiddleware | SparkMiddleware)[];
+/**
+ * A list containing middlewares to be loaded in the application automatically.
+ */
 export default _default;

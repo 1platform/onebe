@@ -11,6 +11,9 @@ var _LogLevel = _interopRequireDefault(require("../System/LogLevel"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for Logs config in Env
+ */
 const defaultLogsConfig = {
   level: _Env.default.string("LOG_LEVEL", _LogLevel.default.INFO),
   file: _Env.default.string("LOG_FILE", "app.log"),

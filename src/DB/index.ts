@@ -1,7 +1,6 @@
 import Config from "../System/Config";
 import Mongo from "./Mongo";
 
-
 /**
  * Returns initialized Mongo object
  * */

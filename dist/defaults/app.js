@@ -11,6 +11,9 @@ var _version = _interopRequireDefault(require("../version"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for App Config in Env
+ */
 const defaultAppConfig = {
   debug: _Env.default.flag("APP_DEBUG"),
   appName: _Env.default.string("APP_NAME", "onebe by Spark"),

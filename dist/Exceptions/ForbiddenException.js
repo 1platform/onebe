@@ -11,11 +11,17 @@ var _HTTPError = _interopRequireDefault(require("./HTTPError"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class PageNotFoundException extends _HTTPError.default {
+/**
+ * Exception thrown when an endpoint has restricted access.
+ */
+class ForbiddenException extends _HTTPError.default {
+  /**
+   * Constructor of the ForbiddenException.
+   */
   constructor() {
     super("errors.default.forbidden", _HTTPStatus.default.FORBIDDEN);
   }
 
 }
 
-exports.default = PageNotFoundException;
+exports.default = ForbiddenException;

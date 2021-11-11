@@ -150,7 +150,7 @@ class SwaggerBuilder {
 
       if (routeDefinition.isAuthenticated) {
         definition.security = [{
-          [routeDefinition.appSpecific ? "BasicAuth" : "BearerAuth"]: []
+          [routeDefinition.basicSpecific ? "BasicAuth" : "BearerAuth"]: []
         }];
       }
 

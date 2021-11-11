@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for Email config in Env
+ */
 const defaultEmailConfig = {
   enabled: _Env.default.flag("EMAIL_ENABLED"),
   transport: _Env.default.string("EMAIL_TRANSPORT", "test"),

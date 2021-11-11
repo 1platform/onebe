@@ -3,17 +3,35 @@ import { merge } from "lodash";
 import defaultConfig from "../defaults";
 import IConfig from "./IConfig";
 
-class Configuration {
-  private _config: IConfig = {};
+/**
+ * The configuration store that we are using in our application.
+ */
+export class Configuration {
+  /**
+   * The internal configuration store.
+   */
+  protected _config: IConfig = {};
 
+  /**
+   * Constructor of the configuration class.
+   */
   public constructor() {
     this.load(defaultConfig);
   }
 
+  /**
+   * Clears the internal configuration store.
+   */
   public clear(): void {
     this._config = {};
   }
 
+  /**
+   * Initializes the configuration object with values from the
+   * configuration folder.
+   *
+   * @param configFolder The folder containing the configuration files.
+   */
   public init(configFolder = "./config"): void {
     const configFromFile = {};
     consign({
@@ -28,10 +46,21 @@ class Configuration {
     this.load(configFromFile["config"]);
   }
 
+  /**
+   * Loads configuration items into our application.
+   *
+   * @param configStore The configuration store that we want to merge into the local config.
+   */
   public load(configStore: IConfig): void {
     this._config = merge(this._config, configStore);
   }
 
+  /**
+   * Returns the string value of the given configuration key.
+   *
+   * @param key The configuration key.
+   * @param defaultValue The default value if the configuration key doesn't exists.
+   */
   public get(key: string, defaultValue = null): string {
     const keySplit = key.split(".");
 
@@ -45,22 +74,43 @@ class Configuration {
       : defaultValue;
   }
 
+  /**
+   * Returns all the configuration properties.
+   */
   public all(): IConfig {
     return this._config;
   }
 
+  /**
+   * Returns the string value of the given configuration key.
+   *
+   * @param key The configuration key.
+   * @param defaultValue The default value if the configuration key doesn't exists.
+   */
   public string(key: string, defaultValue = ""): string {
     return this.get(key) || defaultValue;
   }
 
+  /**
+   * Returns the numeric value of the given configuration key.
+   *
+   * @param key The configuration key.
+   * @param defaultValue The default value if the configuration key doesn't exists.
+   */
   public number(key: string, defaultValue = 0): number {
     return Number(this.get(key) || defaultValue);
   }
 
+  /**
+   * Returns the boolean value of the given configuration key.
+   *
+   * @param key The configuration key.
+   */
   public boolean(key: string): boolean {
     return this.get(key, "false").toUpperCase() === "TRUE";
   }
 }
 
 const Config = new Configuration();
+global.config = Config;
 export default Config;

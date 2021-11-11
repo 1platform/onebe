@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for DB config in Env
+ */
 const defaultDBConfig = {
   engine: _Env.default.string("DATABASE_ENGINE", "mongodb"),
   mongo: {

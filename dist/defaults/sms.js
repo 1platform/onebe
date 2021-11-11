@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for SMS config in Env
+ */
 const defaultSMSConfig = {
   enabled: _Env.default.flag("SMS_ENABLED"),
   provider: _Env.default.string("SMS_PROVIDER", ""),

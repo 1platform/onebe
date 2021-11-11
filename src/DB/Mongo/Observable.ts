@@ -4,12 +4,12 @@ import { Document } from "mongoose";
 /**
  * Defines Observable Types
  * */
-enum ObservableType {
+export enum ObservableType {
   SAVE = "save",
   REMOVE = "remove",
 }
 
-type ObserverCallback<T extends Document> = (document: T) => void;
+export type ObserverCallback<T extends Document> = (document: T) => void;
 
 /**
  * Class representing an Observable

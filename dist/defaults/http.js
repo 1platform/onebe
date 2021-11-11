@@ -9,6 +9,9 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Default values for http config in Env
+ */
 const defaultHTTPConfig = {
   listen: _Env.default.string("HTTP_LISTEN", "127.0.0.1"),
   port: _Env.default.int("HTTP_PORT", 7200),

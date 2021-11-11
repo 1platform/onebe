@@ -25,4 +25,9 @@ export declare function verify(token: string): boolean;
  * @param token The token to be token.
  */
 export declare function decode(token: string): IPayload | string;
+/**
+ * Extracts the token from the request object.
+ *
+ * @param req The request object.
+ */
 export declare function extractToken(req: Request): string;
