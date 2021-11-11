@@ -16,17 +16,16 @@ import {
 export default class SwaggerBuilder {
   /**
    * The list of routes
-   * @type TRoutesList
    */
   protected _routes: TRoutesList = {};
   /**
    * The list of interfaces
-   * @type Record<string, IInterfaceDoc>
    */
   protected _interfaces: Record<string, IInterfaceDoc> = {};
 
   /**
-   * @constructor
+   * The Swagger Builder constructor.
+   *
    * @param routes The list of routes
    * @param interfaces The list of interfaces
    */
@@ -152,6 +151,9 @@ export default class SwaggerBuilder {
     }));
   }
 
+  /**
+   * Method for getting the paths
+   */
   private getPaths(): Record<string, any> {
     const routesList = Object.values(this._routes).reduce(
       (accum, routeDefinition) => [
@@ -182,7 +184,7 @@ export default class SwaggerBuilder {
     return Object.keys(routeMapping).reduce(
       (accum, key) => ({
         ...accum,
-        [key]: this._displayRouteGroup(Object.values(routeMapping[key])),
+        [key]: this.displayRouteGroup(Object.values(routeMapping[key])),
       }),
       {}
     );
@@ -190,9 +192,10 @@ export default class SwaggerBuilder {
 
   /**
    * Method for displaying a Route Group
+   *
    * @param routeGroup The Route Group to be displayed
    */
-  private _displayRouteGroup(
+  private displayRouteGroup(
     routeGroup: Array<IRouteDoc>
   ): Record<string, any> {
     return routeGroup.reduce((accum, routeDefinition: IRouteDoc) => {
@@ -208,16 +211,16 @@ export default class SwaggerBuilder {
         ];
       }
 
-      const parameters = this._getParameters(routeDefinition);
+      const parameters = this.getParameters(routeDefinition);
       if (parameters) {
         definition.parameters = parameters;
       }
 
       definition.operationId = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
       definition.summary = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
-      definition.responses = this._getDefaultResponse(routeDefinition);
+      definition.responses = this.getDefaultResponse(routeDefinition);
 
-      const requestBody = this._getRequestBody(routeDefinition);
+      const requestBody = this.getRequestBody(routeDefinition);
       if (requestBody) {
         definition.requestBody = requestBody;
       }
@@ -227,9 +230,10 @@ export default class SwaggerBuilder {
 
   /**
    * Method for getting the Parameters
+   *
    * @param routeDefinition The definition of the Route for which we want the Parameters
    */
-  private _getParameters(routeDefinition: IRouteDoc): Record<string, any> {
+  private getParameters(routeDefinition: IRouteDoc): Record<string, any> {
     const parameters = Object.values(routeDefinition.parameters);
     if (parameters.length === 0) {
       return null;
@@ -248,9 +252,10 @@ export default class SwaggerBuilder {
 
   /**
    * Method to get errors
+   *
    * @param routeDefinition The definition of the Route for which we want the Errors
    */
-  private _getErrors(routeDefinition: IRouteDoc): Record<string, any> {
+  private getErrors(routeDefinition: IRouteDoc): Record<string, any> {
     if (Object.keys(routeDefinition.errors).length === 0) {
       return {};
     }
@@ -279,9 +284,10 @@ export default class SwaggerBuilder {
 
   /**
    * Method for getting the default Response
+   *
    * @param routeDefinition The Route definition
    */
-  private _getDefaultResponse(routeDefinition: IRouteDoc): Record<string, any> {
+  private getDefaultResponse(routeDefinition: IRouteDoc): Record<string, any> {
     let defaultResponse = HTTPStatus.OK;
     let description = "OK";
 
@@ -304,7 +310,7 @@ export default class SwaggerBuilder {
       [defaultResponse]: {
         description,
       },
-      ...this._getErrors(routeDefinition),
+      ...this.getErrors(routeDefinition),
       500: {
         description: "General server error",
         content: {
@@ -320,9 +326,10 @@ export default class SwaggerBuilder {
 
   /**
    * Method for getting the Request body
+   *
    * @param routeDefinition The route definition
    */
-  private _getRequestBody(routeDefinition: IRouteDoc): Record<string, any> {
+  private getRequestBody(routeDefinition: IRouteDoc): Record<string, any> {
     if (
       !routeDefinition.request ||
       Object.keys(routeDefinition.request).length === 0
