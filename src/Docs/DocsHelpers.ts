@@ -1,6 +1,7 @@
 import { BodyParameterType } from "./DocsInterfaces";
 import DocsStore from "./DocsStore";
 
+
 const property = (
   interfaceName: string,
   propertyName: string,
