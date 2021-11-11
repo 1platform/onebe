@@ -5,11 +5,7 @@ import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
  * Class representing a Transport test
- * @extends BaseTransport
- * @implements IEmailTransport
  */
-
-
 export default class TestTransport
   extends BaseTransport
   implements IEmailTransport
@@ -35,7 +31,6 @@ export default class TestTransport
   /***
    * Send method
    * @param options The email options to be used
-   * @public
    */
   public async send(options: IEmailOptions): Promise<void> {
     const info = await super.send(options);

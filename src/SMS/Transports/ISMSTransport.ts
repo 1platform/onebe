@@ -1,6 +1,5 @@
 /**
  * Interface representing the method needed for SMS Transport
- * @interface
  */
 export default interface ISMSTransport {
   /**

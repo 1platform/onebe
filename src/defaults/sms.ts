@@ -4,7 +4,6 @@ import IConfig from "../System/IConfig";
 /**
  * Default values for SMS config in Env
  */
-
 const defaultSMSConfig: IConfig = {
   enabled: Env.flag("SMS_ENABLED"),
   provider: Env.string("SMS_PROVIDER", ""),

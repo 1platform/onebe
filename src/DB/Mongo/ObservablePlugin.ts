@@ -20,7 +20,6 @@ export type HookNextFunction = (err?: CallbackError) => void;
  * Creates an Observer plugin
  * @param name A name for the plugin
  * */
-
 export function observerPlugin<
   DocType = Document,
   SchemaDefinitionType = undefined

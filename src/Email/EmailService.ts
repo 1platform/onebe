@@ -6,25 +6,17 @@ import TestTransport from "./Transports/TestTransport";
 
 /***
  * Class representing the Email Service
- * @class
- * @extends ServiceBase
- * @implements IEmailTransport
  */
-
 export default class EmailService
   extends ServiceBase
   implements IEmailTransport
 {
   /***
-   * @property
    * @type boolean
-   * @private
    */
   private readonly _enableService: boolean;
   /***
-   * @property
    * @type IEmailTransport
-   * @private
    */
   private readonly _transport: IEmailTransport;
 
