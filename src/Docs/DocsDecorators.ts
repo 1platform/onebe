@@ -9,12 +9,23 @@ import {
 } from "../Router/RouteTypes";
 import { BodyParameterType, DEFAULT_BODY_TAG } from "./DocsInterfaces";
 
+/**
+ * Type used to define a Class Docs
+ */
 export type ClassDocs = Record<string, string>;
+/**
+ * Type used to define a Route Docs
+ */
 export type RouteDocs = Record<
 MethodMetadataType,
 Record<string, ResponseValue<any>>
 >;
 
+/**
+ * A method that retrieves the element docs
+ * @param target The target route
+ * @param propertyKey The property key
+ */
 export function getElementDocs<Type = Record<string, unknown>>(
   target: Route,
   propertyKey?: string
@@ -28,6 +39,10 @@ export function getElementDocs<Type = Record<string, unknown>>(
   return docs;
 }
 
+/**
+ * Enum representing the Metadata Type
+ * @enum
+ */
 export enum MethodMetadataType {
   ROUTE = "route",
   PARAMETER = "parameter",
@@ -38,6 +53,13 @@ export enum MethodMetadataType {
   THROW = "throw",
 }
 
+/**
+ * Decorator used to define a method Metadata
+ * @decorator
+ * @param type The metadata type
+ * @param key The key on which to set the value
+ * @param value The value to be set
+ */
 function methodMetadataDecorator<TResponse = any>(
   type: MethodMetadataType,
   key: string,
@@ -93,6 +115,12 @@ function methodMetadataDecorator<TResponse = any>(
   };
 }
 
+/**
+ * Decorator used to define a class Metadata
+ * @decorator
+ * @param key The key on which to set the value
+ * @param value The value to be set
+ */
 function classMetadataDecorator<T extends Constructor>(
   key: string,
   value: string
@@ -104,6 +132,9 @@ function classMetadataDecorator<T extends Constructor>(
   };
 }
 
+/**
+ * Decorator to define a const controller as a Controller Decorator Function
+ */
 export const controller = {
   description: function <T extends Constructor>(
     description: string
@@ -118,6 +149,9 @@ export const controller = {
   },
 };
 
+/**
+ * Decorator to define a const method as a Route Decorator
+ */
 export const method = {
   description: function (description: string): RouteDecorator {
     return methodMetadataDecorator(

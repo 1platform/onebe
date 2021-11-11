@@ -13,16 +13,38 @@ import {
 } from "./DocsInterfaces";
 import SwaggerBuilder from "./SwaggerBuilder";
 
+/**
+ * Class representing the Docs store
+ */
 export default class DocsStore {
+  /**
+   * The list of routes
+   * @type TRoutesList
+   */
   protected _routes: TRoutesList = {};
+  /**
+   * The list of interfaces
+   * @type Record<string, IInterfaceDoc>
+   */
   protected _interfaces: Record<string, IInterfaceDoc> = {};
 
+  /**
+   * @constructor
+   * @private
+   */
   private constructor() {
     // Do Nothing
   }
 
+  /**
+   * The Docs store instance
+   * @type DocsStore
+   */
   protected static _instance: DocsStore;
 
+  /**
+   * Get method to retrieve the Docs store instance
+   */
   public static get instance(): DocsStore {
     if (!DocsStore._instance) {
       DocsStore._instance = new DocsStore();
@@ -31,6 +53,13 @@ export default class DocsStore {
     return DocsStore._instance;
   }
 
+  /**
+   * Method used to initialize a Group
+   * @param name The name
+   * @param basePath The base path
+   * @param description The description
+   * @param isAPI If it is an API
+   */
   public initGroup(
     name: string,
     basePath: string,
@@ -46,6 +75,12 @@ export default class DocsStore {
     };
   }
 
+  /**
+   * Method used to set a Group item
+   * @param name The name
+   * @param key The key (description or name)
+   * @param value The value to be set
+   */
   public setGroupItem(name: string, key: string, value: string): void {
     switch (key) {
       case "description":
@@ -55,6 +90,12 @@ export default class DocsStore {
     }
   }
 
+  /**
+   * Method for adding a new Route
+   * @param group The group in which to add the Route
+   * @param routeDefinition The Route definition
+   * @param docs The docs
+   */
   public addRoute(
     group: string,
     routeDefinition: IRouteDoc,
@@ -109,6 +150,9 @@ export default class DocsStore {
     });
   }
 
+  /**
+   * Method to get the routes
+   */
   public getRoutes(): any {
     if (!Config.boolean("docs.expose")) {
       return {};
@@ -116,6 +160,9 @@ export default class DocsStore {
     return this._routes;
   }
 
+  /**
+   * Method to get docs in YAML format
+   */
   public getYaml(): string {
     if (!Config.boolean("docs.expose")) {
       return "";
@@ -125,6 +172,11 @@ export default class DocsStore {
     return builder.getYaml();
   }
 
+  /**
+   * Method for defining an Interface
+   * @param name The name of the interface
+   * @param description The description
+   */
   public defineInterface(name: string, description?: string): void {
     this._interfaces[name] = {
       name,
@@ -134,6 +186,11 @@ export default class DocsStore {
     };
   }
 
+  /**
+   * Method for adding interface property
+   * @param interfaceName The name of the Interface
+   * @param definition The definition of the property
+   */
   public addInterfaceProperty(
     interfaceName: string,
     definition: IBodyDoc

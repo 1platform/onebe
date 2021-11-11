@@ -10,10 +10,26 @@ import {
   TRoutesList,
 } from "./DocsInterfaces";
 
+/**
+ * Class representing a Swagger Builder
+ */
 export default class SwaggerBuilder {
+  /**
+   * The list of routes
+   * @type TRoutesList
+   */
   protected _routes: TRoutesList = {};
+  /**
+   * The list of interfaces
+   * @type Record<string, IInterfaceDoc>
+   */
   protected _interfaces: Record<string, IInterfaceDoc> = {};
 
+  /**
+   * @constructor
+   * @param routes The list of routes
+   * @param interfaces The list of interfaces
+   */
   public constructor(
     routes: TRoutesList,
     interfaces: Record<string, IInterfaceDoc>
@@ -22,6 +38,9 @@ export default class SwaggerBuilder {
     this._interfaces = interfaces;
   }
 
+  /**
+   * Method for returning the yaml docs
+   */
   public getYaml(): string {
     return jsYaml.dump(
       {
@@ -45,6 +64,9 @@ export default class SwaggerBuilder {
     );
   }
 
+  /**
+   * Method for getting the Components
+   */
   private getComponents(): Record<string, any> {
     const base = {
       securitySchemes: {
@@ -111,6 +133,9 @@ export default class SwaggerBuilder {
     return base;
   }
 
+  /**
+   * Method for getting the tags
+   */
   private getTags(): Record<string, any> {
     const routesList = Object.values(this._routes).map((route) => ({
       name: route.name,
@@ -163,6 +188,10 @@ export default class SwaggerBuilder {
     );
   }
 
+  /**
+   * Method for displaying a Route Group
+   * @param routeGroup The Route Group to be displayed
+   */
   private _displayRouteGroup(
     routeGroup: Array<IRouteDoc>
   ): Record<string, any> {
@@ -196,6 +225,10 @@ export default class SwaggerBuilder {
     }, {});
   }
 
+  /**
+   * Method for getting the Parameters
+   * @param routeDefinition The definition of the Route for which we want the Parameters
+   */
   private _getParameters(routeDefinition: IRouteDoc): Record<string, any> {
     const parameters = Object.values(routeDefinition.parameters);
     if (parameters.length === 0) {
@@ -213,6 +246,10 @@ export default class SwaggerBuilder {
     }));
   }
 
+  /**
+   * Method to get errors
+   * @param routeDefinition The definition of the Route for which we want the Errors
+   */
   private _getErrors(routeDefinition: IRouteDoc): Record<string, any> {
     if (Object.keys(routeDefinition.errors).length === 0) {
       return {};
@@ -240,6 +277,10 @@ export default class SwaggerBuilder {
     );
   }
 
+  /**
+   * Method for getting the default Response
+   * @param routeDefinition The Route definition
+   */
   private _getDefaultResponse(routeDefinition: IRouteDoc): Record<string, any> {
     let defaultResponse = HTTPStatus.OK;
     let description = "OK";
@@ -277,6 +318,10 @@ export default class SwaggerBuilder {
     };
   }
 
+  /**
+   * Method for getting the Request body
+   * @param routeDefinition The route definition
+   */
   private _getRequestBody(routeDefinition: IRouteDoc): Record<string, any> {
     if (
       !routeDefinition.request ||
