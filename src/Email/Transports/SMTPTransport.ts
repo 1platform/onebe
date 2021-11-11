@@ -3,10 +3,21 @@ import Config from "../../System/Config";
 import BaseTransport from "./BaseTransport";
 import IEmailTransport from "./IEmailTransport";
 
+/**
+ * Class representing SMTPTransport
+ * @class
+ * @extends BaseTransport
+ * @implements IEmailTransport
+ */
+
 export default class SMTPTransport
   extends BaseTransport
   implements IEmailTransport
 {
+
+  /**
+   * @constructor
+   * */
   public constructor() {
     super();
     this._transporter = nodemailer.createTransport({

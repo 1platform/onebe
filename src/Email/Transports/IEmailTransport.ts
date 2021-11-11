@@ -1,3 +1,9 @@
+
+/**
+ * Interface representing Email Options
+ * @interface
+ */
+
 export interface IEmailOptions {
   to?: string | Array<string>;
   from?: string;
@@ -8,6 +14,11 @@ export interface IEmailOptions {
   text?: string;
   html?: string;
 }
+
+/**
+ * Interface for EmailTransport
+ * @interface
+ */
 
 export default interface IEmailTransport {
   send(options: IEmailOptions): Promise<void>;
