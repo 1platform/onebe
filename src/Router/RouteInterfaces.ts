@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as QueryString from "qs";
-import { IUser } from "../Authentication/IUser";
+import IUser from "../Authentication/IUser";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import HTTPVerb from "../HTTP/HTTPVerb";
 import Route from "./Route";

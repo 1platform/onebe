@@ -1,6 +1,6 @@
 import passport from "passport";
 import IPayload from "./IPayload";
-import { IUser } from "./IUser";
+import IUser from "./IUser";
 /**
  * Passport strategy initialisation method options.
  */

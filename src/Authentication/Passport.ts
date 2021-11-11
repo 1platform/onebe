@@ -3,7 +3,7 @@ import { BasicStrategy } from "passport-http";
 import { Strategy } from "passport-jwt";
 import Config from "../System/Config";
 import IPayload from "./IPayload";
-import { IUser } from "./IUser";
+import IUser from "./IUser";
 import { extractToken } from "./JWT";
 
 /**
