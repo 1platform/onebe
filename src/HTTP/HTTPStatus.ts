@@ -1,3 +1,8 @@
+/**
+ * HTTP Status Codes enums
+ *
+ * @enum
+ */
 enum HTTPStatus {
   OK = 200,
   CREATED = 201,
