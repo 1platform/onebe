@@ -19,7 +19,7 @@ export type ClassDocs = Record<string, string>;
 export type RouteDocs = Record<MethodMetadataType,Record<string, ResponseValue<any>>>;
 
 /**
- * A method that retrieves the element docs
+ * A method that retrieves the element Documentation
  *
  * @param target The target route
  * @param propertyKey The property key
@@ -161,9 +161,15 @@ export const controller = {
 };
 
 /**
- * A list of decorators to define properties of a route.
+ * A list of decorators to define properties of a method.
  */
 export const method = {
+  /**
+   * Decorator to add a description to a method.
+   *
+   * @decorator
+   * @param description Method Description
+   */
   description: function (description: string): RouteDecorator {
     return methodMetadataDecorator(
       MethodMetadataType.ROUTE,
@@ -171,6 +177,15 @@ export const method = {
       description
     );
   },
+
+  /**
+   * Decorator to add a throws property to a method.
+   *
+   * @decorator
+   * @param errorCode The error code
+   * @param description The description
+   * @param response The response value
+   */
   throws: function <TResponse>(
     errorCode: HTTPStatus,
     description: string,
@@ -185,6 +200,14 @@ export const method = {
       }
     );
   },
+
+  /**
+   * Decorator to add a response status to a method.
+   *
+   * @decorator
+   * @param statusCode An http status code
+   * @param description The description of the response
+   */
   responseStatus: function (
     statusCode: HTTPStatus,
     description?: string
@@ -195,6 +218,15 @@ export const method = {
       description
     );
   },
+
+  /**
+   * Decorator to add a body to a method.
+   *
+   * @decorator
+   * @param parameter The body parameter
+   * @param type The type of the parameter
+   * @param description The description of the parameter
+   */
   body: function (
     parameter: string,
     type: string,
@@ -205,6 +237,14 @@ export const method = {
       description,
     });
   },
+
+  /**
+   * Decorator to add a request to a method.
+   *
+   * @decorator
+   * @param type The type of the request
+   * @param description The description of the request
+   */
   request: function (type: string, description?: string): RouteDecorator {
     return methodMetadataDecorator(
       MethodMetadataType.BODY_REQUEST,

@@ -88,8 +88,9 @@ export interface IRouteDefinition {
 }
 
 /**
- * Type used to define a Routes list 
+ * Type used to define a Routes list
  */
 export type TRoutesList = Record<string, IRouteDefinition>;
+
 
 export const DEFAULT_BODY_TAG = "__DEFAULT__";

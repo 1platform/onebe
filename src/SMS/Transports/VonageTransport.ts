@@ -9,12 +9,10 @@ import ISMSTransport from "./ISMSTransport";
 export default class VonageTransport implements ISMSTransport {
   /**
    * The Vonage service
-   * @type Vonage
    */
   private readonly _vonage: Vonage;
   /**
    * The default phone config
-   * @type string
    */
   private readonly _defaultPhone = Config.string("sms.config.phone");
 
@@ -33,7 +31,6 @@ export default class VonageTransport implements ISMSTransport {
    * @param to The receiver of the message
    * @param text The text of the message
    * @param from The sender of the message
-   * @public
    */
   public send(to: string, text: string, from?: string): Promise<void> {
     return new Promise((resolve, reject) => {

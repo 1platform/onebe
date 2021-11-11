@@ -2,7 +2,11 @@ import { BodyParameterType } from "./DocsInterfaces";
 import DocsStore from "./DocsStore";
 
 
-const property = (interfaceName: string,  propertyName: string,  type: BodyParameterType,  { description = "", required = true, defaultValue = "" }): any => {
+const property = (interfaceName: string, propertyName: string, type: BodyParameterType, {
+  description = "",
+  required = true,
+  defaultValue = ""
+}): any => {
   DocsStore.instance.addInterfaceProperty(interfaceName, {
     name: propertyName,
     type,

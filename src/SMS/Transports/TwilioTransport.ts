@@ -9,16 +9,10 @@ import ISMSTransport from "./ISMSTransport";
 export default class TwilioTransport implements ISMSTransport {
   /**
    * The Twilio service
-   * @property
-   * @type Twilio
-   * @private
    */
   private readonly _twilio: twilio.Twilio;
   /**
    * THe default phone config
-   * @property
-   * @type string
-   * @private
    */
   private readonly _defaultPhone = Config.string("sms.config.phone");
 

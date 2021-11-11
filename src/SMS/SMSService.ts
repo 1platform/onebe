@@ -10,11 +10,10 @@ import VonageTransport from "./Transports/VonageTransport";
 export default class SMSService extends ServiceBase implements ISMSTransport {
   /**
    * If the service is enabled or not
-   * @type boolean
    */
   private readonly _enableService: boolean;
   /**
-   * @type ISMSTransport
+   * @todo
    */
   private readonly _transport: ISMSTransport;
 
