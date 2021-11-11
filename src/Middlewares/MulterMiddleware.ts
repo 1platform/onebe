@@ -6,10 +6,15 @@ import { RouteDecorator } from "../Router/RouteTypes";
 import { defineMiddleware } from "../Router/RouteUtils";
 import Config from "../System/Config";
 
+/**
+ * @todo
+ */
 const upload = multer({
   dest: Config.string("upload.temp"),
 });
-
+/**
+ * @todo
+ */
 const signature = signed({
   secret: Config.string("upload.secret"),
   ttl: 60,

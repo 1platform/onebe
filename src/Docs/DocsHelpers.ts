@@ -5,8 +5,8 @@ import DocsStore from "./DocsStore";
  * Extra parameters that can be passed to the property documentation method.
  */
 export interface IPropertyOptions {
-  description?: string,
-  required?: boolean,
+  description?: string;
+  required?: boolean;
   defaultValue?: string;
 }
 
@@ -17,7 +17,11 @@ export interface IPropertyOptions {
  * @param type The data type of the property.
  * @param options The options passed to the documentation engine.
  */
-export type PropertyDefinitionFunction = (propertyName: string, type: BodyParameterType, options: IPropertyOptions) => IPropertyResult;
+export type PropertyDefinitionFunction = (
+  propertyName: string,
+  type: BodyParameterType,
+  options: IPropertyOptions
+) => IPropertyResult;
 
 /**
  * The return value of the property definition method.
@@ -26,7 +30,7 @@ export interface IPropertyResult {
   /**
    * The property definition method, added in an object, in order to chain multiple calls and attach to the same method.
    */
-  property: PropertyDefinitionFunction
+  property: PropertyDefinitionFunction;
 }
 
 /**
@@ -37,11 +41,12 @@ export interface IPropertyResult {
  * @param type The data type of the property.
  * @param options The options passed to the documentation engine.
  */
-const property = (interfaceName: string, propertyName: string, type: BodyParameterType, {
-  description = "",
-  required = true,
-  defaultValue = ""
-}: IPropertyOptions): IPropertyResult => {
+const property = (
+  interfaceName: string,
+  propertyName: string,
+  type: BodyParameterType,
+  { description = "", required = true, defaultValue = "" }: IPropertyOptions
+): IPropertyResult => {
   DocsStore.instance.addInterfaceProperty(interfaceName, {
     name: propertyName,
     type,

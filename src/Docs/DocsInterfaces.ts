@@ -23,6 +23,7 @@ export interface IRouteDoc {
 
 /**
  * Enum representing a Parameter Type
+ *
  * @enum
  */
 export enum ParameterType {
@@ -32,6 +33,7 @@ export enum ParameterType {
 
 /**
  * Enum representing a Body Parameter Type
+ *
  * @enum
  */
 export enum BodyParameterType {
@@ -88,8 +90,11 @@ export interface IRouteDefinition {
 }
 
 /**
- * Type used to define a Routes list 
+ * Type used to define a Routes list
  */
 export type TRoutesList = Record<string, IRouteDefinition>;
 
+/**
+ * The default identifier for a the Response body when using interfaces for responses.
+ */
 export const DEFAULT_BODY_TAG = "__DEFAULT__";

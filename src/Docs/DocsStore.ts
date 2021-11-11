@@ -19,18 +19,15 @@ import SwaggerBuilder from "./SwaggerBuilder";
 export default class DocsStore {
   /**
    * The list of routes
-   * @type TRoutesList
    */
   protected _routes: TRoutesList = {};
   /**
    * The list of interfaces
-   * @type Record<string, IInterfaceDoc>
    */
   protected _interfaces: Record<string, IInterfaceDoc> = {};
 
   /**
-   * @constructor
-   * @private
+   * The constructor of the Docs store
    */
   private constructor() {
     // Do Nothing
@@ -38,7 +35,6 @@ export default class DocsStore {
 
   /**
    * The Docs store instance
-   * @type DocsStore
    */
   protected static _instance: DocsStore;
 
@@ -55,6 +51,7 @@ export default class DocsStore {
 
   /**
    * Method used to initialize a Group
+   *
    * @param name The name
    * @param basePath The base path
    * @param description The description
@@ -77,6 +74,7 @@ export default class DocsStore {
 
   /**
    * Method used to set a Group item
+   *
    * @param name The name
    * @param key The key (description or name)
    * @param value The value to be set
@@ -92,6 +90,7 @@ export default class DocsStore {
 
   /**
    * Method for adding a new Route
+   *
    * @param group The group in which to add the Route
    * @param routeDefinition The Route definition
    * @param docs The docs
@@ -174,6 +173,7 @@ export default class DocsStore {
 
   /**
    * Method for defining an Interface
+   *
    * @param name The name of the interface
    * @param description The description
    */
@@ -188,6 +188,7 @@ export default class DocsStore {
 
   /**
    * Method for adding interface property
+   *
    * @param interfaceName The name of the Interface
    * @param definition The definition of the property
    */

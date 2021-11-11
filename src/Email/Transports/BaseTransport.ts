@@ -10,7 +10,6 @@ import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 export default class BaseTransport implements IEmailTransport {
   /**
    * A protected property representing nodemailer Transporter
-   * @type Transporter
    */
   protected _transporter: Transporter;
 

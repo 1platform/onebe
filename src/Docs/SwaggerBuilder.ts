@@ -195,9 +195,7 @@ export default class SwaggerBuilder {
    *
    * @param routeGroup The Route Group to be displayed
    */
-  private displayRouteGroup(
-    routeGroup: Array<IRouteDoc>
-  ): Record<string, any> {
+  private displayRouteGroup(routeGroup: Array<IRouteDoc>): Record<string, any> {
     return routeGroup.reduce((accum, routeDefinition: IRouteDoc) => {
       const definition: Record<string, any> = {
         summary: "",

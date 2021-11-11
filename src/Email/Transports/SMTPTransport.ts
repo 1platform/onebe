@@ -10,7 +10,6 @@ export default class SMTPTransport
   extends BaseTransport
   implements IEmailTransport
 {
-
   /**
    * @constructor
    * */

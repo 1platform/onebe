@@ -3,12 +3,19 @@ import { Document } from "mongoose";
 
 /**
  * Defines Observable Types
- * */
+ *
+ * @enum
+ */
 export enum ObservableType {
   SAVE = "save",
   REMOVE = "remove",
 }
 
+/**
+ * The callback used to define/register callbacks.
+ *
+ * @param document The document we want to observe.
+ */
 export type ObserverCallback<T extends Document> = (document: T) => void;
 
 /**
@@ -17,9 +24,10 @@ export type ObserverCallback<T extends Document> = (document: T) => void;
 export default class Observable extends EventEmitter {
   /**
    * Registers an Observable
+   *
    * @param entityName The name of the entity
    * @param type The type of the Observable
-   * @param isPost if the action is a POST
+   * @param isPost if the action is a post action
    * @param callback The callback to be executed
    * */
   public registerObservable<T extends Document>(
@@ -36,6 +44,7 @@ export default class Observable extends EventEmitter {
 
   /**
    * Registers a Save Post Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -48,6 +57,7 @@ export default class Observable extends EventEmitter {
 
   /**
    * Registers a Remove Post Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -65,6 +75,7 @@ export default class Observable extends EventEmitter {
 
   /**
    * Registers a Pre Save Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
@@ -82,6 +93,7 @@ export default class Observable extends EventEmitter {
 
   /**
    * Registers a Pre Remove Observable
+   *
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
