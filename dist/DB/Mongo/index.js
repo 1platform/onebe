@@ -60,7 +60,7 @@ class Mongo {
         return;
       }
 
-      _Logger.default.info("Database connected.");
+      _Logger.default.info("Mongoose database connected.");
 
       resolve();
     });

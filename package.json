@@ -86,6 +86,7 @@
     "string-strip-html": "^8.3.0",
     "swagger-ui-express": "^4.1.6",
     "twilio": "^3.71.1",
+    "typeorm": "^0.2.40",
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },

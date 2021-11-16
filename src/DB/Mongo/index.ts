@@ -52,7 +52,7 @@ export default class Mongo {
           return;
         }
 
-        DefaultLogger.info("Database connected.");
+        DefaultLogger.info("Mongoose database connected.");
         resolve();
       }
     );

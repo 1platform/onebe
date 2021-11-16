@@ -91,7 +91,20 @@ class Configuration {
   object(key, defaultValue = null) {
     const keySplit = key.split(".");
     const value = keySplit.reduce((accum, value) => !accum ? defaultValue : accum[value], this._config);
-    return value.toString() ?? defaultValue;
+    return value ?? defaultValue;
+  }
+  /**
+   * Returns the array value of the given configuration key.
+   *
+   * @param key The configuration key.
+   * @param defaultValue The default value if the configuration key doesn't exists.
+   */
+
+
+  array(key, defaultValue = null) {
+    const keySplit = key.split(".");
+    const value = keySplit.reduce((accum, value) => !accum ? defaultValue : accum[value], this._config);
+    return value ?? defaultValue;
   }
   /**
    * Returns all the configuration properties.
