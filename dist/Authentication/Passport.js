@@ -47,7 +47,7 @@ function initPassportStrategy(props) {
     }, payload));
   });
 
-  _passport.default.use("jwt", new _passportJwt.Strategy({
+  _passport.default.use("bearer", new _passportJwt.Strategy({
     secretOrKey: _Config.default.string("auth.jwt.secret"),
     issuer: _Config.default.string("auth.jwt.issuer", "onebe.sprk.dev"),
     audience: _Config.default.string("auth.jwt.audience", "onebe.sprk.dev"),
