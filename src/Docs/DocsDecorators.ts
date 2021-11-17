@@ -248,7 +248,7 @@ export const method = {
     description?: string
   ): RouteDecorator {
     return methodMetadataDecorator(
-      MethodMetadataType.RESPONSE,
+      MethodMetadataType.RESPONSE_CODE,
       statusCode.toString(),
       description
     );

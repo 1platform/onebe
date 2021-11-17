@@ -219,7 +219,7 @@ const method = {
    * @param description The description of the response
    */
   responseStatus: function (statusCode, description) {
-    return methodMetadataDecorator(MethodMetadataType.RESPONSE, statusCode.toString(), description);
+    return methodMetadataDecorator(MethodMetadataType.RESPONSE_CODE, statusCode.toString(), description);
   },
 
   /**

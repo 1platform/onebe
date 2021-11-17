@@ -129,6 +129,7 @@ export default class DocsStore {
 
     if (docs.response) {
       routeDefinition.responseStatus = docs.response.statusCode as HTTPStatus;
+      routeDefinition.response = docs.response as Record<string, IBodyDoc>;
     }
 
     if (docs.body && Object.keys(docs.body).length > 0) {

@@ -129,6 +129,7 @@ class DocsStore {
 
     if (docs.response) {
       routeDefinition.responseStatus = docs.response.statusCode;
+      routeDefinition.response = docs.response;
     }
 
     if (docs.body && Object.keys(docs.body).length > 0) {
