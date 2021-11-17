@@ -57,7 +57,7 @@ export default function initPassportStrategy(
       }
   );
   passport.use(
-    "jwt",
+    "bearer",
     new Strategy(
       {
         secretOrKey: Config.string("auth.jwt.secret"),
