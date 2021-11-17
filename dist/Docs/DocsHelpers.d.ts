@@ -6,6 +6,7 @@ export interface IPropertyOptions {
     description?: string;
     required?: boolean;
     defaultValue?: string;
+    schema?: string;
 }
 /**
  * Interface property definition method.
@@ -35,5 +36,5 @@ export declare const docsHelpers: {
      * @param description The description of the interface.
      */
     interface: (name: string, description?: string) => IPropertyResult;
-    property: (interfaceName: string, propertyName: string, type: BodyParameterType, { description, required, defaultValue }: IPropertyOptions) => IPropertyResult;
+    property: (interfaceName: string, propertyName: string, type: BodyParameterType, { description, required, defaultValue, schema, }: IPropertyOptions) => IPropertyResult;
 };

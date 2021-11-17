@@ -119,7 +119,10 @@ class SwaggerBuilder {
           properties: value.properties.reduce((accum, property) => _objectSpread(_objectSpread({}, accum), {}, {
             [property.name]: _objectSpread(_objectSpread({}, property), {}, {
               name: undefined,
-              required: undefined
+              required: undefined,
+              schema: property.schema ? {
+                $ref: `#/components/schemas/${property.schema}`
+              } : undefined
             })
           }), {}),
           required: requiredFields.length > 0 ? requiredFields.map(property => property.name) : undefined
@@ -277,6 +280,7 @@ class SwaggerBuilder {
   getDefaultResponse(routeDefinition) {
     let defaultResponse = _HTTPStatus.default.OK;
     let description = "OK";
+    let response = {};
 
     if (routeDefinition.responseStatus) {
       switch (routeDefinition.responseStatus.toString()) {
@@ -296,10 +300,22 @@ class SwaggerBuilder {
       defaultResponse = routeDefinition.responseStatus;
     }
 
+    if (routeDefinition.response) {
+      response = {
+        content: {
+          "application/json": {
+            schema: {
+              $ref: `#/components/schemas/${routeDefinition.response.schema}`
+            }
+          }
+        }
+      };
+    }
+
     return _objectSpread(_objectSpread({
-      [defaultResponse]: {
+      [defaultResponse]: _objectSpread({
         description
-      }
+      }, response)
     }, this.getErrors(routeDefinition)), {}, {
       500: {
         description: "General server error",

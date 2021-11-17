@@ -14,7 +14,7 @@ export interface IRouteDoc {
   parameters?: Record<string, IParameterDoc>;
   request?: Record<string, IBodyDoc>;
   errors?: Record<string, string>;
-  response?: string;
+  response?: Record<string, IBodyDoc>;
   responseStatus?: HTTPStatus;
   isAuthenticated: boolean;
   bearerSpecific: boolean;

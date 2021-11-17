@@ -8,6 +8,7 @@ export interface IPropertyOptions {
   description?: string;
   required?: boolean;
   defaultValue?: string;
+  schema?: string;
 }
 
 /**
@@ -45,11 +46,17 @@ const property = (
   interfaceName: string,
   propertyName: string,
   type: BodyParameterType,
-  { description = "", required = true, defaultValue = "" }: IPropertyOptions
+  {
+    description = "",
+    required = true,
+    defaultValue = "",
+    schema = undefined,
+  }: IPropertyOptions
 ): IPropertyResult => {
   DocsStore.instance.addInterfaceProperty(interfaceName, {
     name: propertyName,
     type,
+    schema: schema || undefined,
     description: description || "",
     required: required ?? true,
     default: defaultValue || undefined,

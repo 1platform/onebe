@@ -20,11 +20,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const property = (interfaceName, propertyName, type, {
   description = "",
   required = true,
-  defaultValue = ""
+  defaultValue = "",
+  schema = undefined
 }) => {
   _DocsStore.default.instance.addInterfaceProperty(interfaceName, {
     name: propertyName,
     type,
+    schema: schema || undefined,
     description: description || "",
     required: required ?? true,
     default: defaultValue || undefined

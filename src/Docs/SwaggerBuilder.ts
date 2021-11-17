@@ -117,6 +117,11 @@ export default class SwaggerBuilder {
                   ...property,
                   name: undefined,
                   required: undefined,
+                  schema: property.schema
+                    ? {
+                      $ref: `#/components/schemas/${ property.schema }`,
+                    }
+                    : undefined,
                 },
               }),
               {}
@@ -291,6 +296,7 @@ export default class SwaggerBuilder {
   private getDefaultResponse(routeDefinition: IRouteDoc): Record<string, any> {
     let defaultResponse = HTTPStatus.OK;
     let description = "OK";
+    let response = {};
 
     if (routeDefinition.responseStatus) {
       switch (routeDefinition.responseStatus.toString()) {
@@ -307,9 +313,22 @@ export default class SwaggerBuilder {
       defaultResponse = routeDefinition.responseStatus;
     }
 
+    if (routeDefinition.response) {
+      response = {
+        content: {
+          "application/json": {
+            schema: {
+              $ref: `#/components/schemas/${ routeDefinition.response.schema }`,
+            },
+          },
+        },
+      };
+    }
+
     return {
       [defaultResponse]: {
         description,
+        ...response,
       },
       ...this.getErrors(routeDefinition),
       500: {
