@@ -1,6 +1,8 @@
 import path from "path";
 import app from "./App";
-import initPassportStrategy, { IInitStrategyOptions, } from "./Authentication/Passport";
+import initPassportStrategy, {
+  IInitStrategyOptions,
+} from "./Authentication/Passport";
 
 import "./custom";
 import DB from "./DB";
@@ -60,7 +62,7 @@ export default async function init(
     app.HTTP.use(Middlewares);
     initPassportStrategy({
       ...props,
-      ...(strategyProps || {})
+      ...(strategyProps || {}),
     });
 
     return Router.register(

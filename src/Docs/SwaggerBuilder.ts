@@ -109,6 +109,7 @@ export default class SwaggerBuilder {
           ...accum,
           [key]: {
             type: "object",
+            description: value.description || "",
             properties: value.properties.reduce(
               (accum, property) => ({
                 ...accum,
@@ -198,8 +199,8 @@ export default class SwaggerBuilder {
   private displayRouteGroup(routeGroup: Array<IRouteDoc>): Record<string, any> {
     return routeGroup.reduce((accum, routeDefinition: IRouteDoc) => {
       const definition: Record<string, any> = {
-        summary: "",
-        description: "",
+        summary: routeDefinition.description || "",
+        description: routeDefinition.description || "",
         tags: [ routeDefinition.tag ],
       };
 

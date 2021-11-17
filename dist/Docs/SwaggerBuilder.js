@@ -115,6 +115,7 @@ class SwaggerBuilder {
       return _objectSpread(_objectSpread({}, accum), {}, {
         [key]: {
           type: "object",
+          description: value.description || "",
           properties: value.properties.reduce((accum, property) => _objectSpread(_objectSpread({}, accum), {}, {
             [property.name]: _objectSpread(_objectSpread({}, property), {}, {
               name: undefined,
@@ -182,8 +183,8 @@ class SwaggerBuilder {
   displayRouteGroup(routeGroup) {
     return routeGroup.reduce((accum, routeDefinition) => {
       const definition = {
-        summary: "",
-        description: "",
+        summary: routeDefinition.description || "",
+        description: routeDefinition.description || "",
         tags: [routeDefinition.tag]
       };
 
