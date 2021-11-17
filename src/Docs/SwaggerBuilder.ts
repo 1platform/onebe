@@ -110,22 +110,26 @@ export default class SwaggerBuilder {
           [key]: {
             type: "object",
             description: value.description || "",
-            properties: value.properties.reduce(
-              (accum, property) => ({
+            properties: value.properties.reduce((accum, property) => {
+              let definition: Record<string, unknown> = {
+                ...property,
+                name: undefined,
+                required: undefined,
+              };
+
+              if (property.schema) {
+                definition = {
+                  schema: {
+                    $ref: `#/components/schemas/${ property.schema }`,
+                  },
+                };
+              }
+
+              return {
                 ...accum,
-                [property.name]: {
-                  ...property,
-                  name: undefined,
-                  required: undefined,
-                  schema: property.schema
-                    ? {
-                      $ref: `#/components/schemas/${ property.schema }`,
-                    }
-                    : undefined,
-                },
-              }),
-              {}
-            ),
+                [property.name]: definition,
+              };
+            }, {}),
             required:
               requiredFields.length > 0
                 ? requiredFields.map((property) => property.name)

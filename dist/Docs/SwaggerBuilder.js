@@ -116,15 +116,24 @@ class SwaggerBuilder {
         [key]: {
           type: "object",
           description: value.description || "",
-          properties: value.properties.reduce((accum, property) => _objectSpread(_objectSpread({}, accum), {}, {
-            [property.name]: _objectSpread(_objectSpread({}, property), {}, {
+          properties: value.properties.reduce((accum, property) => {
+            let definition = _objectSpread(_objectSpread({}, property), {}, {
               name: undefined,
-              required: undefined,
-              schema: property.schema ? {
-                $ref: `#/components/schemas/${property.schema}`
-              } : undefined
-            })
-          }), {}),
+              required: undefined
+            });
+
+            if (property.schema) {
+              definition = {
+                schema: {
+                  $ref: `#/components/schemas/${property.schema}`
+                }
+              };
+            }
+
+            return _objectSpread(_objectSpread({}, accum), {}, {
+              [property.name]: definition
+            });
+          }, {}),
           required: requiredFields.length > 0 ? requiredFields.map(property => property.name) : undefined
         }
       });
