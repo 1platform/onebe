@@ -22,6 +22,19 @@ export type RouteDecorator<T = Route> = (
 ) => void;
 
 /**
+ * Type used to define a Entity Decorator function.
+ *
+ * @param target The target on which we apply the decorator.
+ * @param propertyKey The property on which we apply the decorator.
+ * @param descriptor The property descriptor of the property we want to apply the decorator on.
+ */
+export type EntityDecorator<T = Constructor> = (
+  target: T,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) => void;
+
+/**
  * Type used to define a Class with a constructor.
  */
 export type Constructor = { new (...args: any[]): any };

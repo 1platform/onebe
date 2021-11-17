@@ -4,10 +4,12 @@ import Route from "../Router/Route";
 import {
   Constructor,
   ControllerDecoratorFunction,
+  EntityDecorator,
   ResponseValue,
   RouteDecorator,
 } from "../Router/RouteTypes";
 import { BodyParameterType, DEFAULT_BODY_TAG } from "./DocsInterfaces";
+import DocsStore from "./DocsStore";
 
 /**
  * Type used to define a Class Documentation
@@ -20,6 +22,10 @@ export type RouteDocs = Record<
 MethodMetadataType,
 Record<string, ResponseValue<any>>
 >;
+/**
+ * Type used to define a Route Documentation
+ */
+export type EntityDocs = Record<string, ResponseValue<any>>;
 
 /**
  * A method that retrieves the element Documentation
@@ -35,6 +41,25 @@ export function getElementDocs<Type = Record<string, unknown>>(
   if (!docs) {
     docs = {} as Type;
     Reflect.defineMetadata("route:docs", docs, target, propertyKey);
+  }
+
+  return docs;
+}
+
+/**
+ * A method that retrieves the entity Documentation
+ *
+ * @param target The target route
+ * @param propertyKey The property key
+ */
+export function getEntityDocs<Type = Record<string, unknown>>(
+  target: Constructor,
+  propertyKey?: string
+): Type {
+  let docs: Type = Reflect.getMetadata("entity:docs", target, propertyKey);
+  if (!docs) {
+    docs = {} as Type;
+    Reflect.defineMetadata("entity:docs", docs, target, propertyKey);
   }
 
   return docs;
@@ -280,5 +305,41 @@ export const method = {
       statusCode,
       description,
     });
+  },
+};
+
+export const schema = {
+  entity: function <T extends Constructor>(
+    name: string,
+    description: string
+  ): ControllerDecoratorFunction<T> {
+    return function (BaseClass: T): T {
+      const classDocs = getEntityDocs<ClassDocs>(BaseClass.prototype);
+      classDocs.name = name;
+      classDocs.description = description;
+      DocsStore.instance.defineInterface(name, description);
+      return BaseClass;
+    };
+  },
+
+  property: function (
+    type = BodyParameterType.STRING,
+    options?: Record<string, unknown>
+  ): EntityDecorator {
+    return (
+      target: Constructor,
+      propertyKey: string,
+      descriptor: PropertyDescriptor
+    ): void => {
+      const routeDocs = getEntityDocs<EntityDocs>(target);
+      DocsStore.instance.addInterfaceProperty(routeDocs.name as string, {
+        name: propertyKey,
+        type,
+        schema: (options.schema as string) || undefined,
+        description: (options.description as string) || "",
+        required: (options.required as boolean) ?? true,
+        default: (options.defaultValue as string) || undefined,
+      });
+    };
   },
 };

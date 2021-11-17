@@ -1,7 +1,8 @@
 import "reflect-metadata";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import Route from "../Router/Route";
-import { Constructor, ControllerDecoratorFunction, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
+import { Constructor, ControllerDecoratorFunction, EntityDecorator, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
+import { BodyParameterType } from "./DocsInterfaces";
 /**
  * Type used to define a Class Documentation
  */
@@ -11,12 +12,23 @@ export declare type ClassDocs = Record<string, string>;
  */
 export declare type RouteDocs = Record<MethodMetadataType, Record<string, ResponseValue<any>>>;
 /**
+ * Type used to define a Route Documentation
+ */
+export declare type EntityDocs = Record<string, ResponseValue<any>>;
+/**
  * A method that retrieves the element Documentation
  *
  * @param target The target route
  * @param propertyKey The property key
  */
 export declare function getElementDocs<Type = Record<string, unknown>>(target: Route, propertyKey?: string): Type;
+/**
+ * A method that retrieves the entity Documentation
+ *
+ * @param target The target route
+ * @param propertyKey The property key
+ */
+export declare function getEntityDocs<Type = Record<string, unknown>>(target: Constructor, propertyKey?: string): Type;
 /**
  * Enum representing the Metadata Type
  *
@@ -105,4 +117,8 @@ export declare const method: {
      * @param description The description of the response
      */
     response: (type: string, statusCode?: HTTPStatus, description?: string) => RouteDecorator;
+};
+export declare const schema: {
+    entity: <T extends Constructor>(name: string, description: string) => ControllerDecoratorFunction<T>;
+    property: (type?: BodyParameterType, options?: Record<string, unknown>) => EntityDecorator;
 };

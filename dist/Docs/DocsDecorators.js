@@ -5,13 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.controller = exports.MethodMetadataType = void 0;
 exports.getElementDocs = getElementDocs;
-exports.method = void 0;
+exports.getEntityDocs = getEntityDocs;
+exports.schema = exports.method = void 0;
 
 require("reflect-metadata");
 
 var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
 var _DocsInterfaces = require("./DocsInterfaces");
+
+var _DocsStore = _interopRequireDefault(require("./DocsStore"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33,6 +36,24 @@ function getElementDocs(target, propertyKey) {
   if (!docs) {
     docs = {};
     Reflect.defineMetadata("route:docs", docs, target, propertyKey);
+  }
+
+  return docs;
+}
+/**
+ * A method that retrieves the entity Documentation
+ *
+ * @param target The target route
+ * @param propertyKey The property key
+ */
+
+
+function getEntityDocs(target, propertyKey) {
+  let docs = Reflect.getMetadata("entity:docs", target, propertyKey);
+
+  if (!docs) {
+    docs = {};
+    Reflect.defineMetadata("entity:docs", docs, target, propertyKey);
   }
 
   return docs;
@@ -243,3 +264,31 @@ const method = {
   }
 };
 exports.method = method;
+const schema = {
+  entity: function (name, description) {
+    return function (BaseClass) {
+      const classDocs = getEntityDocs(BaseClass.prototype);
+      classDocs.name = name;
+      classDocs.description = description;
+
+      _DocsStore.default.instance.defineInterface(name, description);
+
+      return BaseClass;
+    };
+  },
+  property: function (type = _DocsInterfaces.BodyParameterType.STRING, options) {
+    return (target, propertyKey, descriptor) => {
+      const routeDocs = getEntityDocs(target);
+
+      _DocsStore.default.instance.addInterfaceProperty(routeDocs.name, {
+        name: propertyKey,
+        type,
+        schema: options.schema || undefined,
+        description: options.description || "",
+        required: options.required ?? true,
+        default: options.defaultValue || undefined
+      });
+    };
+  }
+};
+exports.schema = schema;
