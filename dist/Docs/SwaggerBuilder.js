@@ -326,7 +326,7 @@ class SwaggerBuilder {
     }
 
     const base = {
-      description: '""',
+      description: routeDefinition.description,
       required: true
     };
     const defaultTag = routeDefinition.request[_DocsInterfaces.DEFAULT_BODY_TAG];
@@ -346,6 +346,8 @@ class SwaggerBuilder {
           type: _DocsInterfaces.BodyParameterType.OBJECT,
           properties: []
         };
+      } else {
+        base.description = this._interfaces[defaultTag.schema].description ?? base.description;
       }
 
       return base;
