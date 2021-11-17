@@ -115,6 +115,8 @@ function methodMetadataDecorator<TResponse = any>(
       case MethodMetadataType.RESPONSE:
         routeDocs.response = {
           name: key,
+          type: BodyParameterType.SCHEMA,
+          schema: key,
           ...(value as Record<string, string>),
         };
         break;

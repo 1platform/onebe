@@ -107,7 +107,9 @@ function methodMetadataDecorator(type, key, value) {
 
       case MethodMetadataType.RESPONSE:
         routeDocs.response = _objectSpread({
-          name: key
+          name: key,
+          type: _DocsInterfaces.BodyParameterType.SCHEMA,
+          schema: key
         }, value);
         break;
 
