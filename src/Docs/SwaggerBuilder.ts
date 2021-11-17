@@ -2,7 +2,13 @@ import jsYaml from "js-yaml";
 import app from "../App";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import Config from "../System/Config";
-import { BodyParameterType, DEFAULT_BODY_TAG, IInterfaceDoc, IRouteDoc, TRoutesList, } from "./DocsInterfaces";
+import {
+  BodyParameterType,
+  DEFAULT_BODY_TAG,
+  IInterfaceDoc,
+  IRouteDoc,
+  TRoutesList,
+} from "./DocsInterfaces";
 
 /**
  * Class representing a Swagger Builder
@@ -53,7 +59,7 @@ export default class SwaggerBuilder {
         components: this.getComponents(),
         tags: this.getTags(),
       },
-      {forceQuotes: true}
+      { forceQuotes: true }
     );
   }
 
@@ -200,7 +206,7 @@ export default class SwaggerBuilder {
 
       if (routeDefinition.isAuthenticated) {
         definition.security = [
-          {[routeDefinition.basicSpecific ? "BasicAuth" : "BearerAuth"]: []},
+          { [routeDefinition.basicSpecific ? "BasicAuth" : "BearerAuth"]: [] },
         ];
       }
 
@@ -210,14 +216,16 @@ export default class SwaggerBuilder {
       }
 
       definition.operationId = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
-      definition.summary = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
+      definition.summary =
+        routeDefinition.description ||
+        `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
       definition.responses = this.getDefaultResponse(routeDefinition);
 
       const requestBody = this.getRequestBody(routeDefinition);
       if (requestBody) {
         definition.requestBody = requestBody;
       }
-      return {...accum, [routeDefinition.verb]: definition};
+      return { ...accum, [routeDefinition.verb]: definition };
     }, {});
   }
 
@@ -351,7 +359,8 @@ export default class SwaggerBuilder {
           properties: [],
         };
       } else {
-        base.description = this._interfaces[defaultTag.schema].description ?? base.description;
+        base.description =
+          this._interfaces[defaultTag.schema].description ?? base.description;
       }
       return base;
     }

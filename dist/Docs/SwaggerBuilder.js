@@ -201,7 +201,7 @@ class SwaggerBuilder {
       }
 
       definition.operationId = `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
-      definition.summary = `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
+      definition.summary = routeDefinition.description || `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
       definition.responses = this.getDefaultResponse(routeDefinition);
       const requestBody = this.getRequestBody(routeDefinition);
 
