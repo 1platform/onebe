@@ -124,9 +124,7 @@ class SwaggerBuilder {
 
             if (property.schema) {
               definition = {
-                schema: {
-                  $ref: `#/components/schemas/${property.schema}`
-                }
+                $ref: `#/components/schemas/${property.schema}`
               };
             }
 
