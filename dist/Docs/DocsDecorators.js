@@ -9,7 +9,11 @@ exports.method = void 0;
 
 require("reflect-metadata");
 
+var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
+
 var _DocsInterfaces = require("./DocsInterfaces");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -58,6 +62,7 @@ exports.MethodMetadataType = MethodMetadataType;
   MethodMetadataType["BODY"] = "body";
   MethodMetadataType["BODY_REQUEST"] = "body_request";
   MethodMetadataType["RESPONSE"] = "response";
+  MethodMetadataType["RESPONSE_CODE"] = "response_code";
   MethodMetadataType["THROW"] = "throw";
 })(MethodMetadataType || (exports.MethodMetadataType = MethodMetadataType = {}));
 
@@ -72,11 +77,17 @@ function methodMetadataDecorator(type, key, value) {
         });
         break;
 
-      case MethodMetadataType.RESPONSE:
+      case MethodMetadataType.RESPONSE_CODE:
         routeDocs.response = {
           statusCode: key,
           description: value
         };
+        break;
+
+      case MethodMetadataType.RESPONSE:
+        routeDocs.response = _objectSpread({
+          name: key
+        }, value);
         break;
 
       case MethodMetadataType.BODY:
@@ -214,6 +225,21 @@ const method = {
    */
   request: function (type, description) {
     return methodMetadataDecorator(MethodMetadataType.BODY_REQUEST, type, description);
+  },
+
+  /**
+   * Decorator to add a response to a method.
+   *
+   * @decorator
+   * @param type The type of the response
+   * @param statusCode The status code of the response
+   * @param description The description of the response
+   */
+  response: function (type, statusCode = _HTTPStatus.default.OK, description) {
+    return methodMetadataDecorator(MethodMetadataType.RESPONSE, type, {
+      statusCode,
+      description
+    });
   }
 };
 exports.method = method;

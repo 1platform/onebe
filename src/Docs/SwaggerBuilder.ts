@@ -199,7 +199,7 @@ export default class SwaggerBuilder {
   private displayRouteGroup(routeGroup: Array<IRouteDoc>): Record<string, any> {
     return routeGroup.reduce((accum, routeDefinition: IRouteDoc) => {
       const definition: Record<string, any> = {
-        summary: routeDefinition.description || "",
+        summary: routeDefinition.summary || routeDefinition.description || "",
         description: routeDefinition.description || "",
         tags: [ routeDefinition.tag ],
       };

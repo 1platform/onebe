@@ -7,6 +7,7 @@ export interface IRouteDoc {
     verb: HTTPVerb;
     path: string;
     description?: string;
+    summary?: string;
     methodName?: string;
     controllerName?: string;
     parameters?: Record<string, IParameterDoc>;

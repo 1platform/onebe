@@ -135,6 +135,11 @@ class DocsStore {
       routeDefinition.request = docs.body;
     }
 
+    if (docs.route && Object.keys(docs.route).length > 0) {
+      routeDefinition.description = docs.route.description ?? routeDefinition.description;
+      routeDefinition.summary = docs.route.summary ?? routeDefinition.summary;
+    }
+
     this._routes[group].routes.push(_objectSpread(_objectSpread({}, routeDefinition), {}, {
       path,
       parameters,

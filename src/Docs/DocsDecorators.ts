@@ -52,6 +52,7 @@ export enum MethodMetadataType {
   BODY = "body",
   BODY_REQUEST = "body_request",
   RESPONSE = "response",
+  RESPONSE_CODE = "response_code",
   THROW = "throw",
 }
 
@@ -80,10 +81,16 @@ function methodMetadataDecorator<TResponse = any>(
           [key]: value,
         };
         break;
-      case MethodMetadataType.RESPONSE:
+      case MethodMetadataType.RESPONSE_CODE:
         routeDocs.response = {
           statusCode: key,
           description: value as string,
+        };
+        break;
+      case MethodMetadataType.RESPONSE:
+        routeDocs.response = {
+          name: key,
+          ...(value as Record<string, string>),
         };
         break;
       case MethodMetadataType.BODY:
@@ -254,5 +261,24 @@ export const method = {
       type,
       description
     );
+  },
+
+  /**
+   * Decorator to add a response to a method.
+   *
+   * @decorator
+   * @param type The type of the response
+   * @param statusCode The status code of the response
+   * @param description The description of the response
+   */
+  response: function (
+    type: string,
+    statusCode = HTTPStatus.OK,
+    description?: string
+  ): RouteDecorator {
+    return methodMetadataDecorator(MethodMetadataType.RESPONSE, type, {
+      statusCode,
+      description,
+    });
   },
 };

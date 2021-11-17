@@ -183,7 +183,7 @@ class SwaggerBuilder {
   displayRouteGroup(routeGroup) {
     return routeGroup.reduce((accum, routeDefinition) => {
       const definition = {
-        summary: routeDefinition.description || "",
+        summary: routeDefinition.summary || routeDefinition.description || "",
         description: routeDefinition.description || "",
         tags: [routeDefinition.tag]
       };

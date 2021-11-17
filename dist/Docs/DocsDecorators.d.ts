@@ -29,6 +29,7 @@ export declare enum MethodMetadataType {
     BODY = "body",
     BODY_REQUEST = "body_request",
     RESPONSE = "response",
+    RESPONSE_CODE = "response_code",
     THROW = "throw"
 }
 /**
@@ -95,4 +96,13 @@ export declare const method: {
      * @param description The description of the request
      */
     request: (type: string, description?: string) => RouteDecorator;
+    /**
+     * Decorator to add a response to a method.
+     *
+     * @decorator
+     * @param type The type of the response
+     * @param statusCode The status code of the response
+     * @param description The description of the response
+     */
+    response: (type: string, statusCode?: HTTPStatus, description?: string) => RouteDecorator;
 };

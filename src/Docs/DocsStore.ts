@@ -135,6 +135,13 @@ export default class DocsStore {
       routeDefinition.request = docs.body as Record<string, IBodyDoc>;
     }
 
+    if (docs.route && Object.keys(docs.route).length > 0) {
+      routeDefinition.description =
+        (docs.route.description as string) ?? routeDefinition.description;
+      routeDefinition.summary =
+        (docs.route.summary as string) ?? routeDefinition.summary;
+    }
+
     this._routes[group].routes.push({
       ...routeDefinition,
       path,
