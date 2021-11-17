@@ -1,3 +1,4 @@
+import { compareSync, hashSync } from "bcryptjs";
 import shortId from "shortid";
 import formatter from "string-format";
 import * as uuid from "uuid";
@@ -16,6 +17,26 @@ export const uuidV1 = (): string => uuid.v1();
  * Generate an UUID V4 code.
  */
 export const uuidV4 = (): string => uuid.v4();
+
+/**
+ * Encrypt a password using the hash function from bcryptjs.
+ *
+ * @param password The password to be encrypted.
+ * @param saltSize The size of the salt.
+ */
+export const encryptPassword = (password: string, saltSize = 10): string =>
+  hashSync(password, saltSize);
+
+/**
+ * Compares an encrypted password with the one entered by the user.
+ *
+ * @param password The password to be compared.
+ * @param encryptedPassword The encrypted password,
+ */
+export const comparePassword = (
+  password: string,
+  encryptedPassword: string
+): boolean => compareSync(password, encryptedPassword);
 
 export {
   /**

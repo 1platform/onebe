@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.encryptPassword = exports.comparePassword = void 0;
 Object.defineProperty(exports, "formatter", {
   enumerable: true,
   get: function () {
@@ -10,6 +11,8 @@ Object.defineProperty(exports, "formatter", {
   }
 });
 exports.uuidV4 = exports.uuidV1 = exports.shortid = void 0;
+
+var _bcryptjs = require("bcryptjs");
 
 var _shortid = _interopRequireDefault(require("shortid"));
 
@@ -43,5 +46,27 @@ const uuidV1 = () => uuid.v1();
 exports.uuidV1 = uuidV1;
 
 const uuidV4 = () => uuid.v4();
+/**
+ * Encrypt a password using the hash function from bcryptjs.
+ *
+ * @param password The password to be encrypted.
+ * @param saltSize The size of the salt.
+ */
+
 
 exports.uuidV4 = uuidV4;
+
+const encryptPassword = (password, saltSize = 10) => (0, _bcryptjs.hashSync)(password, saltSize);
+/**
+ * Compares an encrypted password with the one entered by the user.
+ *
+ * @param password The password to be compared.
+ * @param encryptedPassword The encrypted password,
+ */
+
+
+exports.encryptPassword = encryptPassword;
+
+const comparePassword = (password, encryptedPassword) => (0, _bcryptjs.compareSync)(password, encryptedPassword);
+
+exports.comparePassword = comparePassword;

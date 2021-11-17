@@ -23,4 +23,4 @@ export interface IOneBEOptions extends IInitStrategyOptions {
  *
  * @param props The various properties you can pass to the init function.
  */
-export default function init(props: IOneBEOptions): Promise<() => Promise<void>>;
+export default function init(props: IOneBEOptions): Promise<(strategyProps?: IInitStrategyOptions) => Promise<void>>;

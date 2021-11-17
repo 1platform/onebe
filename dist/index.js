@@ -58,10 +58,10 @@ async function init(props) {
 
   await (0, _i18n.default)(props.currentDir);
   await (0, _DB.default)();
-  return () => {
+  return strategyProps => {
     _App.default.HTTP.use(_Middlewares.default);
 
-    (0, _Passport.default)(props);
+    (0, _Passport.default)(_objectSpread(_objectSpread({}, props), strategyProps || {}));
     return _Router.default.register(_path.default.resolve(props.currentDir, props.controllersDir)).then(() => {
       _App.default.Scheduler.run();
 

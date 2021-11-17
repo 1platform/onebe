@@ -1,8 +1,6 @@
 import path from "path";
 import app from "./App";
-import initPassportStrategy, {
-  IInitStrategyOptions,
-} from "./Authentication/Passport";
+import initPassportStrategy, { IInitStrategyOptions, } from "./Authentication/Passport";
 
 import "./custom";
 import DB from "./DB";
@@ -45,7 +43,7 @@ const defaultValues: IOneBEOptions = {
  */
 export default async function init(
   props: IOneBEOptions
-): Promise<() => Promise<void>> {
+): Promise<(strategyProps?: IInitStrategyOptions) => Promise<void>> {
   props = {
     ...defaultValues,
     ...props,
@@ -58,9 +56,12 @@ export default async function init(
   await i18n(props.currentDir);
   await DB();
 
-  return () => {
+  return (strategyProps?: IInitStrategyOptions) => {
     app.HTTP.use(Middlewares);
-    initPassportStrategy(props);
+    initPassportStrategy({
+      ...props,
+      ...(strategyProps || {})
+    });
 
     return Router.register(
       path.resolve(props.currentDir, props.controllersDir)
