@@ -15,7 +15,7 @@ export interface IPropertyOptions {
  * @param type The data type of the property.
  * @param options The options passed to the documentation engine.
  */
-export declare type PropertyDefinitionFunction = (propertyName: string, type: BodyParameterType, options: IPropertyOptions) => IPropertyResult;
+export declare type PropertyDefinitionFunction = (propertyName: string, type: BodyParameterType, options?: IPropertyOptions) => IPropertyResult;
 /**
  * The return value of the property definition method.
  */

@@ -34,7 +34,7 @@ const property = (interfaceName, propertyName, type, {
 
   return {
     property: (propertyName, type, options) => {
-      return property(interfaceName, propertyName, type, options);
+      return property(interfaceName, propertyName, type, options || {});
     }
   };
 };
@@ -55,7 +55,7 @@ const docsHelpers = {
 
     return {
       property: (propertyName, type, options) => {
-        return property(name, propertyName, type, options);
+        return property(name, propertyName, type, options || {});
       }
     };
   },

@@ -21,7 +21,7 @@ export interface IPropertyOptions {
 export type PropertyDefinitionFunction = (
   propertyName: string,
   type: BodyParameterType,
-  options: IPropertyOptions
+  options?: IPropertyOptions
 ) => IPropertyResult;
 
 /**
@@ -63,8 +63,8 @@ const property = (
   });
 
   return {
-    property: (propertyName, type, options): IPropertyResult => {
-      return property(interfaceName, propertyName, type, options);
+    property: (propertyName, type, options?): IPropertyResult => {
+      return property(interfaceName, propertyName, type, options || {});
     },
   };
 };
@@ -86,9 +86,9 @@ export const docsHelpers = {
       property: (
         propertyName: string,
         type: BodyParameterType,
-        options: IPropertyOptions
+        options?: IPropertyOptions
       ): IPropertyResult => {
-        return property(name, propertyName, type, options);
+        return property(name, propertyName, type, options || {});
       },
     };
   },
