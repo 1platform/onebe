@@ -117,8 +117,43 @@ export declare const method: {
      * @param description The description of the response
      */
     response: (type: string, statusCode?: HTTPStatus, description?: string) => RouteDecorator;
+    /**
+     * Decorator to add a URL parameter to a method.
+     *
+     * @decorator
+     * @param parameter The body parameter
+     * @param isNumeric Is the parameter a number or a string
+     * @param description The description of the parameter
+     */
+    parameter: (parameter: string, isNumeric?: boolean, description?: string) => RouteDecorator;
+    /**
+     * Decorator to add a query parameter to a method.
+     *
+     * @decorator
+     * @param parameter The body parameter
+     * @param type The type of the parameter
+     * @param description The description of the parameter
+     */
+    query: (parameter: string, type: string, description?: string) => RouteDecorator;
 };
+/**
+ * A list of decorators to define entities.
+ */
 export declare const schema: {
+    /**
+     * Entity decorator.
+     *
+     * @decorator
+     * @param name The name of the entity.
+     * @param description The description of the entity.
+     */
     entity: <T extends Constructor>(name: string, description: string) => ControllerDecoratorFunction<T>;
+    /**
+     * Entity property decorator.
+     *
+     * @decorator
+     * @param type The type of parameter.
+     * @param options Options required for documentation.
+     */
     property: (type?: BodyParameterType, options?: Record<string, unknown>) => EntityDecorator;
 };

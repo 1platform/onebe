@@ -47,6 +47,12 @@ export default class SwaggerBuilder {
      */
     private getParameters;
     /**
+     * Method for getting the Query Parameters
+     *
+     * @param routeDefinition The definition of the Route for which we want the Parameters
+     */
+    private getQueryParameters;
+    /**
      * Method to get errors
      *
      * @param routeDefinition The definition of the Route for which we want the Errors

@@ -62,6 +62,11 @@ export interface IAuthContext {
    * Method to check if the user is authenticated or not.
    */
   isAuthenticated?: () => boolean;
+
+  /**
+   * Indexer for any other authentication context option.
+   */
+  [key: string]: any;
 }
 
 /**

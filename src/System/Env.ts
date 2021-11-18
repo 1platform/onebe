@@ -10,7 +10,7 @@ export class Environment {
   /**
    * Returns the value of a given environment variable.
    *
-   * @param field The name of the environment variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
   public get(field: string, defaultValue = null): string | null {
@@ -20,11 +20,21 @@ export class Environment {
   /**
    * Returns the integer value of a given environment variable.
    *
-   * @param field The name of the envionmental variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
   public int(field: string, defaultValue = 0): number {
     return parseInt(this.get(field)) || Math.floor(defaultValue);
+  }
+
+  /**
+   * Returns the number value of a given environment variable.
+   *
+   * @param field The name of the environmental variable.
+   * @param defaultValue The default value if the variable doesn't exists.
+   */
+  public number(field: string, defaultValue = 0): number {
+    return Number(this.get(field)) || Math.floor(defaultValue);
   }
 
   /**
@@ -40,7 +50,7 @@ export class Environment {
   /**
    * An alias for the Env.get method.
    *
-   * @param field The name of the environment variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
   public string(field: string, defaultValue = ""): string {

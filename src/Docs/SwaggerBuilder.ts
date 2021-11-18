@@ -222,6 +222,14 @@ export default class SwaggerBuilder {
         definition.parameters = parameters;
       }
 
+      const queryParameters = this.getQueryParameters(routeDefinition);
+      if (queryParameters) {
+        definition.parameters = {
+          ...definition.parameters,
+          ...queryParameters,
+        };
+      }
+
       definition.operationId = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
       definition.summary =
         routeDefinition.description ||
@@ -254,6 +262,33 @@ export default class SwaggerBuilder {
       required: true,
       schema: {
         type: parameter.type,
+      },
+    }));
+  }
+
+  /**
+   * Method for getting the Query Parameters
+   *
+   * @param routeDefinition The definition of the Route for which we want the Parameters
+   */
+  private getQueryParameters(routeDefinition: IRouteDoc): Record<string, any> {
+    const parameters = Object.values(routeDefinition.query);
+    if (parameters.length === 0) {
+      return null;
+    }
+
+    return parameters.map((parameter) => ({
+      name: parameter.name,
+      in: "query",
+      description: parameter.description || '""',
+      required: parameter.isRequired || false,
+      schema: {
+        type: parameter.isArray ? "array" : parameter.type,
+        items: parameter.isArray
+          ? {
+            type: parameter.type,
+          }
+          : undefined,
       },
     }));
   }

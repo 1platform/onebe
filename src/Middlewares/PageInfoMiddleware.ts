@@ -18,6 +18,7 @@ export default class PageInfoMiddleware implements IMiddleware {
       );
       req.appURL = app.locals.appURL;
       res.locals.pageURL = req.pageURL;
+      req.authContext = {};
       next();
     });
   }

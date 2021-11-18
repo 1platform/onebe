@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ParameterType = exports.DEFAULT_BODY_TAG = exports.BodyParameterType = void 0;
+exports.QueryParameterType = exports.ParameterType = exports.DEFAULT_BODY_TAG = exports.BodyParameterType = void 0;
 
 /**
  * Interface for Route doc
@@ -16,7 +16,7 @@ exports.ParameterType = exports.DEFAULT_BODY_TAG = exports.BodyParameterType = v
  */
 let ParameterType;
 /**
- * Enum representing a Body Parameter Type
+ * Enum representing a Query Parameter Type
  *
  * @enum
  */
@@ -27,6 +27,25 @@ exports.ParameterType = ParameterType;
   ParameterType["STRING"] = "string";
   ParameterType["NUMBER"] = "number";
 })(ParameterType || (exports.ParameterType = ParameterType = {}));
+
+let QueryParameterType;
+/**
+ * Enum representing a Body Parameter Type
+ *
+ * @enum
+ */
+
+exports.QueryParameterType = QueryParameterType;
+
+(function (QueryParameterType) {
+  QueryParameterType["STRING"] = "string";
+  QueryParameterType["NUMBER"] = "number";
+  QueryParameterType["BOOLEAN"] = "boolean";
+  QueryParameterType["INTEGER"] = "integer";
+  QueryParameterType["NULL"] = "null";
+  QueryParameterType["OBJECT"] = "object";
+  QueryParameterType["ARRAY"] = "array";
+})(QueryParameterType || (exports.QueryParameterType = QueryParameterType = {}));
 
 let BodyParameterType;
 /**

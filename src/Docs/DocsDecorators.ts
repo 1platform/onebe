@@ -8,7 +8,11 @@ import {
   ResponseValue,
   RouteDecorator,
 } from "../Router/RouteTypes";
-import { BodyParameterType, DEFAULT_BODY_TAG } from "./DocsInterfaces";
+import {
+  BodyParameterType,
+  DEFAULT_BODY_TAG,
+  ParameterType,
+} from "./DocsInterfaces";
 import DocsStore from "./DocsStore";
 
 /**
@@ -129,6 +133,24 @@ function methodMetadataDecorator<TResponse = any>(
           },
         };
         break;
+      case MethodMetadataType.QUERY:
+        routeDocs.query = {
+          ...(routeDocs.query || {}),
+          [key]: {
+            name: key,
+            ...(value as Record<string, string>),
+          },
+        };
+        break;
+      case MethodMetadataType.PARAMETER:
+        routeDocs.parameter = {
+          ...(routeDocs.parameter || {}),
+          [key]: {
+            name: key,
+            ...(value as Record<string, string>),
+          },
+        };
+        break;
       case MethodMetadataType.BODY_REQUEST:
         routeDocs.body = {
           ...(routeDocs.body || {}),
@@ -234,6 +256,7 @@ export const method = {
       {
         statusCode: errorCode,
         body: description,
+        response,
       }
     );
   },
@@ -308,9 +331,57 @@ export const method = {
       description,
     });
   },
+
+  /**
+   * Decorator to add a URL parameter to a method.
+   *
+   * @decorator
+   * @param parameter The body parameter
+   * @param isNumeric Is the parameter a number or a string
+   * @param description The description of the parameter
+   */
+  parameter: function (
+    parameter: string,
+    isNumeric = false,
+    description?: string
+  ): RouteDecorator {
+    return methodMetadataDecorator(MethodMetadataType.PARAMETER, parameter, {
+      type: isNumeric ? ParameterType.NUMBER : ParameterType.STRING,
+      description,
+    });
+  },
+
+  /**
+   * Decorator to add a query parameter to a method.
+   *
+   * @decorator
+   * @param parameter The body parameter
+   * @param type The type of the parameter
+   * @param description The description of the parameter
+   */
+  query: function (
+    parameter: string,
+    type: string,
+    description?: string
+  ): RouteDecorator {
+    return methodMetadataDecorator(MethodMetadataType.QUERY, parameter, {
+      type,
+      description,
+    });
+  },
 };
 
+/**
+ * A list of decorators to define entities.
+ */
 export const schema = {
+  /**
+   * Entity decorator.
+   *
+   * @decorator
+   * @param name The name of the entity.
+   * @param description The description of the entity.
+   */
   entity: function <T extends Constructor>(
     name: string,
     description: string
@@ -324,6 +395,13 @@ export const schema = {
     };
   },
 
+  /**
+   * Entity property decorator.
+   *
+   * @decorator
+   * @param type The type of parameter.
+   * @param options Options required for documentation.
+   */
   property: function (
     type = BodyParameterType.STRING,
     options?: Record<string, unknown>

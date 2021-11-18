@@ -121,6 +121,22 @@ function methodMetadataDecorator(type, key, value) {
         });
         break;
 
+      case MethodMetadataType.QUERY:
+        routeDocs.query = _objectSpread(_objectSpread({}, routeDocs.query || {}), {}, {
+          [key]: _objectSpread({
+            name: key
+          }, value)
+        });
+        break;
+
+      case MethodMetadataType.PARAMETER:
+        routeDocs.parameter = _objectSpread(_objectSpread({}, routeDocs.parameter || {}), {}, {
+          [key]: _objectSpread({
+            name: key
+          }, value)
+        });
+        break;
+
       case MethodMetadataType.BODY_REQUEST:
         routeDocs.body = _objectSpread(_objectSpread({}, routeDocs.body || {}), {}, {
           [_DocsInterfaces.DEFAULT_BODY_TAG]: {
@@ -209,7 +225,8 @@ const method = {
   throws: function (errorCode, description, response) {
     return methodMetadataDecorator(MethodMetadataType.THROW, errorCode.toString(), {
       statusCode: errorCode,
-      body: description
+      body: description,
+      response
     });
   },
 
@@ -263,10 +280,51 @@ const method = {
       statusCode,
       description
     });
+  },
+
+  /**
+   * Decorator to add a URL parameter to a method.
+   *
+   * @decorator
+   * @param parameter The body parameter
+   * @param isNumeric Is the parameter a number or a string
+   * @param description The description of the parameter
+   */
+  parameter: function (parameter, isNumeric = false, description) {
+    return methodMetadataDecorator(MethodMetadataType.PARAMETER, parameter, {
+      type: isNumeric ? _DocsInterfaces.ParameterType.NUMBER : _DocsInterfaces.ParameterType.STRING,
+      description
+    });
+  },
+
+  /**
+   * Decorator to add a query parameter to a method.
+   *
+   * @decorator
+   * @param parameter The body parameter
+   * @param type The type of the parameter
+   * @param description The description of the parameter
+   */
+  query: function (parameter, type, description) {
+    return methodMetadataDecorator(MethodMetadataType.QUERY, parameter, {
+      type,
+      description
+    });
   }
 };
+/**
+ * A list of decorators to define entities.
+ */
+
 exports.method = method;
 const schema = {
+  /**
+   * Entity decorator.
+   *
+   * @decorator
+   * @param name The name of the entity.
+   * @param description The description of the entity.
+   */
   entity: function (name, description) {
     return function (BaseClass) {
       const classDocs = getEntityDocs(BaseClass.prototype);
@@ -278,6 +336,14 @@ const schema = {
       return BaseClass;
     };
   },
+
+  /**
+   * Entity property decorator.
+   *
+   * @decorator
+   * @param type The type of parameter.
+   * @param options Options required for documentation.
+   */
   property: function (type = _DocsInterfaces.BodyParameterType.STRING, options) {
     return (target, propertyKey, descriptor) => {
       const routeDocs = getEntityDocs(target);

@@ -83,7 +83,11 @@ export const docsHelpers = {
     DocsStore.instance.defineInterface(name, description);
 
     return {
-      property: (propertyName, type, options): IPropertyResult => {
+      property: (
+        propertyName: string,
+        type: BodyParameterType,
+        options: IPropertyOptions
+      ): IPropertyResult => {
         return property(name, propertyName, type, options);
       },
     };

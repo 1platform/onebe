@@ -7,6 +7,7 @@ import {
   BodyParameterType,
   IBodyDoc,
   IInterfaceDoc,
+  IQueryParameterDoc,
   IRouteDoc,
   ParameterType,
   TRoutesList,
@@ -113,11 +114,15 @@ export default class DocsStore {
       .filter((param) => typeof param !== "string")
       .reduce((accum, param) => {
         const name = (param as Key).name.toString();
+        const paramDoc: Record<string, string> = docs.parameter
+          ? (docs.parameter[name] as Record<string, string>)
+          : {};
         return {
           ...accum,
           [name]: {
             name,
-            type: ParameterType.STRING,
+            type: paramDoc.type || ParameterType.STRING,
+            description: paramDoc.description || "",
           },
         };
       }, {});
@@ -130,6 +135,10 @@ export default class DocsStore {
     if (docs.response) {
       routeDefinition.responseStatus = docs.response.statusCode as HTTPStatus;
       routeDefinition.response = docs.response as Record<string, IBodyDoc>;
+    }
+
+    if (docs.query) {
+      routeDefinition.query = docs.query as Record<string, IQueryParameterDoc>;
     }
 
     if (docs.body && Object.keys(docs.body).length > 0) {

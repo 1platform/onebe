@@ -115,10 +115,12 @@ class DocsStore {
 
     const parameters = (0, _pathToRegexp.parse)(routeDefinition.path).filter(param => typeof param !== "string").reduce((accum, param) => {
       const name = param.name.toString();
+      const paramDoc = docs.parameter ? docs.parameter[name] : {};
       return _objectSpread(_objectSpread({}, accum), {}, {
         [name]: {
           name,
-          type: _DocsInterfaces.ParameterType.STRING
+          type: paramDoc.type || _DocsInterfaces.ParameterType.STRING,
+          description: paramDoc.description || ""
         }
       });
     }, {});
@@ -130,6 +132,10 @@ class DocsStore {
     if (docs.response) {
       routeDefinition.responseStatus = docs.response.statusCode;
       routeDefinition.response = docs.response;
+    }
+
+    if (docs.query) {
+      routeDefinition.query = docs.query;
     }
 
     if (docs.body && Object.keys(docs.body).length > 0) {

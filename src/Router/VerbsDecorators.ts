@@ -122,6 +122,7 @@ function verbAction<TRequest = any, TResponse = any>(
           {
             user: req.user,
             isAuthenticated: req.isAuthenticated.bind(req),
+            ...(req.authContext || {}),
           }
         );
 

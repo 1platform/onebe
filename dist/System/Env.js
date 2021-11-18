@@ -17,7 +17,7 @@ class Environment {
   /**
    * Returns the value of a given environment variable.
    *
-   * @param field The name of the environment variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
   get(field, defaultValue = null) {
@@ -26,13 +26,24 @@ class Environment {
   /**
    * Returns the integer value of a given environment variable.
    *
-   * @param field The name of the envionmental variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
 
 
   int(field, defaultValue = 0) {
     return parseInt(this.get(field)) || Math.floor(defaultValue);
+  }
+  /**
+   * Returns the number value of a given environment variable.
+   *
+   * @param field The name of the environmental variable.
+   * @param defaultValue The default value if the variable doesn't exists.
+   */
+
+
+  number(field, defaultValue = 0) {
+    return Number(this.get(field)) || Math.floor(defaultValue);
   }
   /**
    * Returns the boolean value of a given environment variable.
@@ -48,7 +59,7 @@ class Environment {
   /**
    * An alias for the Env.get method.
    *
-   * @param field The name of the environment variable.
+   * @param field The name of the environmental variable.
    * @param defaultValue The default value if the variable doesn't exists.
    */
 

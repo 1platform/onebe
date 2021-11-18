@@ -34,6 +34,11 @@ declare global {
        * The app URL of the application.
        */
       appURL?: string;
+
+      /**
+       * Extra authentication context elements.
+       */
+      authContext?: Record<string, unknown>;
     }
   }
 }

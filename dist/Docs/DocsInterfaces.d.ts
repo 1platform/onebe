@@ -11,6 +11,7 @@ export interface IRouteDoc {
     methodName?: string;
     controllerName?: string;
     parameters?: Record<string, IParameterDoc>;
+    query?: Record<string, IQueryParameterDoc>;
     request?: Record<string, IBodyDoc>;
     errors?: Record<string, string>;
     response?: Record<string, IBodyDoc>;
@@ -28,6 +29,20 @@ export interface IRouteDoc {
 export declare enum ParameterType {
     STRING = "string",
     NUMBER = "number"
+}
+/**
+ * Enum representing a Query Parameter Type
+ *
+ * @enum
+ */
+export declare enum QueryParameterType {
+    STRING = "string",
+    NUMBER = "number",
+    BOOLEAN = "boolean",
+    INTEGER = "integer",
+    NULL = "null",
+    OBJECT = "object",
+    ARRAY = "array"
 }
 /**
  * Enum representing a Body Parameter Type
@@ -51,6 +66,16 @@ export interface IParameterDoc {
     name: string;
     description?: string;
     type?: ParameterType;
+}
+/**
+ * Interface representing a Query Parameter doc
+ */
+export interface IQueryParameterDoc {
+    name: string;
+    description?: string;
+    type?: QueryParameterType;
+    isArray?: boolean;
+    isRequired?: boolean;
 }
 /**
  * Interface representing a Body doc
