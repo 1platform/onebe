@@ -31,7 +31,13 @@ export default class TypeORM {
       password: dbConfig.password,
       database: dbConfig.database,
       entities: Config.array("db.entities", [ "./src/models/**/*.ts" ]),
-      synchronize: true,
+      migrationsTableName: Config.string("db.migrations.table", "_migrations"),
+      migrations: Config.array("db.migrations.files", [
+        "./src/migrations/*.js",
+      ]),
+      cli: {
+        migrationsDir: Config.string("db.migrations.dir", "./src/migrations"),
+      },
     } as ConnectionOptions;
 
     return createConnection(config)

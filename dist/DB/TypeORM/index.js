@@ -44,7 +44,11 @@ class TypeORM {
       password: dbConfig.password,
       database: dbConfig.database,
       entities: _Config.default.array("db.entities", ["./src/models/**/*.ts"]),
-      synchronize: true
+      migrationsTableName: _Config.default.string("db.migrations.table", "_migrations"),
+      migrations: _Config.default.array("db.migrations.files", ["./src/migrations/*.js"]),
+      cli: {
+        migrationsDir: _Config.default.string("db.migrations.dir", "./src/migrations")
+      }
     };
     return (0, _typeorm.createConnection)(config).then(connection => {
       _Logger.default.info("TypeORM database connected.");

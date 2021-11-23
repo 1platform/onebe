@@ -55,6 +55,26 @@ const defaultDBConfig: IConfig = {
    * only to connections made using TypeORM (engine !== "mongoose")
    */
   entities: [ Env.string("DATABASE_ENTITIES", "./src/models/**/*.ts") ],
+
+  /**
+   * The migrations configuration.
+   */
+  migrations: {
+    /**
+     * Where we store our migrations.
+     */
+    table: Env.string("DATABASE_MIGRATIONS_TABLE", "_migrations"),
+
+    /**
+     * The location where we can find our migrations.
+     */
+    files: [ Env.string("DATABASE_MIGRATIONS", "./src/migrations/**/*.ts") ],
+
+    /**
+     * The folder containing the migrations.
+     */
+    dir: Env.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/"),
+  },
 };
 
 export default defaultDBConfig;

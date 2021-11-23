@@ -67,7 +67,27 @@ const defaultDBConfig = {
    * All the locations where we can have entities defined. This setting applies
    * only to connections made using TypeORM (engine !== "mongoose")
    */
-  entities: [_Env.default.string("DATABASE_ENTITIES", "./src/models/**/*.ts")]
+  entities: [_Env.default.string("DATABASE_ENTITIES", "./src/models/**/*.ts")],
+
+  /**
+   * The migrations configuration.
+   */
+  migrations: {
+    /**
+     * Where we store our migrations.
+     */
+    table: _Env.default.string("DATABASE_MIGRATIONS_TABLE", "_migrations"),
+
+    /**
+     * The location where we can find our migrations.
+     */
+    files: [_Env.default.string("DATABASE_MIGRATIONS", "./src/migrations/**/*.ts")],
+
+    /**
+     * The folder containing the migrations.
+     */
+    dir: _Env.default.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/")
+  }
 };
 var _default = defaultDBConfig;
 exports.default = _default;
