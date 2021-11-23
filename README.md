@@ -21,6 +21,7 @@ In the future we want to expose a command that will allow you to create a new pr
 ## Features of the framework:
 
 - MongoDB already configured to be used
+- Relational Database ready using TypeORM
 - Authentication using Bearer Token and Basic Auth available
 - Email Sending system:
   - NodeMailer

@@ -272,7 +272,7 @@ export default class SwaggerBuilder {
    * @param routeDefinition The definition of the Route for which we want the Parameters
    */
   private getQueryParameters(routeDefinition: IRouteDoc): Record<string, any> {
-    const parameters = Object.values(routeDefinition.query);
+    const parameters = Object.values(routeDefinition.query || {});
     if (parameters.length === 0) {
       return null;
     }

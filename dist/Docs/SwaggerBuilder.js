@@ -262,7 +262,7 @@ class SwaggerBuilder {
 
 
   getQueryParameters(routeDefinition) {
-    const parameters = Object.values(routeDefinition.query);
+    const parameters = Object.values(routeDefinition.query || {});
 
     if (parameters.length === 0) {
       return null;
