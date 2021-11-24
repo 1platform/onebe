@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Exceptions/PageNotFoundException](../modules/Exceptions_PageNotFoundException.md) / PageNotFoundException
+[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / [Exceptions/PageNotFoundException](../modules/Exceptions_PageNotFoundException.md) / PageNotFoundException
 
 # Class: PageNotFoundException
 
