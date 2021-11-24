@@ -1,4 +1,4 @@
-[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / defaults/logs
+[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / defaults/logs
 
 # Module: defaults/logs
 

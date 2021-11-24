@@ -14,8 +14,8 @@ sed -i "s/export const version.*/export const version = \"$npm_package_version\"
 sed -i "s/- Version: .*/- Version: $npm_package_version/g" README.md
 
 yarn build
-#git commit -am "Version bump to $npm_package_version"
-#git tag $npm_package_version
+git commit -am "Version bump to $npm_package_version"
+git tag $npm_package_version
 
 rm -rf publish
 mkdir publish
@@ -30,10 +30,10 @@ cp ../yarn.lock ./
 node ../bin/build.js
 
 NODE_ENV=prod yarn install
-#yarn npm publish
-#git push
+yarn npm publish
+git push
 
-#cd ../
-#rm -rf publish
+cd ../
+rm -rf publish
 
 echo "Successfully released version $npm_package_version!"
