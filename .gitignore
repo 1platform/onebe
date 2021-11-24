@@ -350,7 +350,6 @@ $RECYCLE.BIN/
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
-!.yarn/versions
 !.yarn/patches
 
 # if you are NOT using Zero-installs, then:

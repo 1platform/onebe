@@ -1,6 +1,6 @@
 {
   "name": "@sparkdev/onebe",
-  "version": "0.9.10",
+  "version": "0.9.15",
   "packageManager": "yarn@3.0.1",
   "description": "One backend framework, for all our internal needs",
   "module": "./dist/index.js",
@@ -36,7 +36,11 @@
     "framework",
     "typescript"
   ],
-  "author": "Valentin Duricu <valentin@sprk.dev>",
+  "author": {
+    "email": "hello@onebe.dev",
+    "name": "Spark Development",
+    "url": "https://onebe.dev"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spark-development/onebe/issues"
