@@ -18,21 +18,20 @@ git commit -am "Version bump to v$npm_package_version"
 
 rm -rf /tmp/publish
 mkdir /tmp/publish
-cp -r ../dist/* /tmp/publish
-cp -r ../.yarn /tmp/publish
-cp ../.eslintrc /tmp/publish
-cp ../README.md /tmp/publish
-cp ../CHANGELOG.md /tmp/publish
-cp ../.yarnrc.yml /tmp/publish
-cp ../LICENSE.md /tmp/publish
-node ../bin/build.js
+cp -r ./dist/* /tmp/publish
+cp -r ./.yarn /tmp/publish
+cp ./.eslintrc /tmp/publish
+cp ./README.md /tmp/publish
+cp ./CHANGELOG.md /tmp/publish
+cp ./.yarnrc.yml /tmp/publish
+cp ./LICENSE.md /tmp/publish
+node ./bin/build.js
 
 cd /tmp/publish
 NODE_ENV=prod yarn install
 yarn npm publish
 git push
 
-cd ../
 rm -rf /tmp/publish
 
 echo "Successfully released version v$npm_package_version!"
