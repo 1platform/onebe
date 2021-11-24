@@ -8,7 +8,6 @@ import "./custom";
 import DB from "./DB";
 import HTTP from "./HTTP";
 import i18n from "./i18n";
-import Middlewares from "./Middlewares";
 import Router from "./Router";
 import Scheduler from "./Scheduler";
 import Config from "./System/Config";
@@ -67,7 +66,6 @@ export default async function init(
   }
 
   return (strategyProps?: IInitStrategyOptions) => {
-    app.HTTP.use(Middlewares);
     initPassportStrategy({
       ...props,
       ...(strategyProps || {}),

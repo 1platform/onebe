@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import helmet from "helmet";
 import { Server } from "http";
 import app from "../App";
+import Middlewares from "../Middlewares";
 import ErrorHandlerMiddleware from "../Middlewares/ErrorHandlerMiddleware";
 import IMiddleware from "../Middlewares/IMiddleware";
 import Router from "../Router";
@@ -15,7 +16,9 @@ export default class HTTP {
   /**
    * A list of middlewares that we load in our application.
    */
-  private _middlewares: Array<IMiddleware> = [];
+  private _middlewares: Array<IMiddleware> = [
+    ...Middlewares
+  ];
   /**
    * The Express application instance.
    */
