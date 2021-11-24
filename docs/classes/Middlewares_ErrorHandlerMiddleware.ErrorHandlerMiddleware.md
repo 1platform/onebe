@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.4](../README.md) / [Exports](../modules.md) / [Middlewares/ErrorHandlerMiddleware](../modules/Middlewares_ErrorHandlerMiddleware.md) / ErrorHandlerMiddleware
+[Spark OneBE - v1.0.5](../README.md) / [Exports](../modules.md) / [Middlewares/ErrorHandlerMiddleware](../modules/Middlewares_ErrorHandlerMiddleware.md) / ErrorHandlerMiddleware
 
 # Class: ErrorHandlerMiddleware
 

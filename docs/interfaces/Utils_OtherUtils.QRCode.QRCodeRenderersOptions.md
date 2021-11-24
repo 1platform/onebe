@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.4](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeRenderersOptions
+[Spark OneBE - v1.0.5](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeRenderersOptions
 
 # Interface: QRCodeRenderersOptions
 
