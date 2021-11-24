@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.3](../README.md) / [Exports](../modules.md) / [Docs/DocsStore](../modules/Docs_DocsStore.md) / DocsStore
+[Spark OneBE - v1.0.4](../README.md) / [Exports](../modules.md) / [Docs/DocsStore](../modules/Docs_DocsStore.md) / DocsStore
 
 # Class: DocsStore
 
