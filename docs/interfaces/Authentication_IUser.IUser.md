@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / [Authentication/IUser](../modules/Authentication_IUser.md) / IUser
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Authentication/IUser](../modules/Authentication_IUser.md) / IUser
 
 # Interface: IUser
 
