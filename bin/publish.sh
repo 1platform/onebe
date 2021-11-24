@@ -26,10 +26,9 @@ cp ../README.md ./
 cp ../CHANGELOG.md ./
 cp ../.yarnrc.yml ./
 cp ../LICENSE.md ./
-cp ../yarn.lock ./
 node ../bin/build.js
 
-NODE_ENV=prod yarn install
+NODE_ENV=prod yarn
 yarn npm publish
 git push
 
