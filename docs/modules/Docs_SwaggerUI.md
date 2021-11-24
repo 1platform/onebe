@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / Docs/SwaggerUI
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Docs/SwaggerUI
 
 # Module: Docs/SwaggerUI
 

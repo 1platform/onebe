@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / [DB/Mongo](../modules/DB_Mongo.md) / Mongo
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [DB/Mongo](../modules/DB_Mongo.md) / Mongo
 
 # Class: Mongo
 
