@@ -51,7 +51,7 @@ class ErrorHandlerMiddleware {
 
     app.use((error, req, res, next) => {
       const status = error.status || _HTTPStatus.default.SERVER_ERROR;
-      const message = req.t(error.message || "errors.something-wong", _objectSpread({}, error.parameters || {}));
+      const message = req.t ? req.t(error.message || "errors.something-wong", _objectSpread({}, error.parameters || {})) : error.message;
       let {
         details
       } = error;

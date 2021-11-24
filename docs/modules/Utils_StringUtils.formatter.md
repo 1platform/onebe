@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.2](../README.md) / [Exports](../modules.md) / [Utils/StringUtils](Utils_StringUtils.md) / formatter
+[Spark OneBE - v1.0.3](../README.md) / [Exports](../modules.md) / [Utils/StringUtils](Utils_StringUtils.md) / formatter
 
 # Namespace: formatter
 
