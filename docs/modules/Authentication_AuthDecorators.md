@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
+[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
 
 # Module: Authentication/AuthDecorators
 

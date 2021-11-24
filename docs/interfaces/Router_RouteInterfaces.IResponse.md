@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
+[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
 
 # Interface: IResponse<TResponse\>
 

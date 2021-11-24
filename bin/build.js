@@ -20,4 +20,4 @@ const newPkg = {
   dependencies: pkg.dependencies,
 }
 
-fs.writeFileSync(`${process.cwd()}/package.json`, JSON.stringify(newPkg, null, 2), "utf-8");
+fs.writeFileSync(`/tmp/publish/package.json`, JSON.stringify(newPkg, null, 2), "utf-8");
