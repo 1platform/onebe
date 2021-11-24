@@ -1,4 +1,4 @@
-[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / Utils/StringUtils
+[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / Utils/StringUtils
 
 # Module: Utils/StringUtils
 

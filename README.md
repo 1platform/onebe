@@ -1,7 +1,7 @@
 # OneBE Framework
 
 - Codename: No one knows yet...
-- Version: 0.0.0
+- Version: v1.0.0
 
 This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
 applications fast using Typescript we published this framework free to use. The license under which we publish the code

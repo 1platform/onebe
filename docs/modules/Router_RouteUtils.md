@@ -1,4 +1,4 @@
-[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / Router/RouteUtils
+[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / Router/RouteUtils
 
 # Module: Router/RouteUtils
 
