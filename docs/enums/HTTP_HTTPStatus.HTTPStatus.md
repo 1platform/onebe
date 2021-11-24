@@ -1,4 +1,4 @@
-[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
+[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
 
 # Enumeration: HTTPStatus
 
