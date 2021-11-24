@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 cd "$(dirname "$0")/.."
+WORKDIR=`pwd`
 
 MODE=$1
 
@@ -31,7 +32,7 @@ cd /tmp/publish
 NODE_ENV=prod yarn install
 yarn npm publish
 
-cd "$(dirname "$0")/.."
+cd $WORKDIR
 git push
 
 rm -rf /tmp/publish
