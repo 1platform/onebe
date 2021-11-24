@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.5](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IVerbAction
+[Spark OneBE - v1.0.6](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IVerbAction
 
 # Interface: IVerbAction<Request, Response\>
 

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.5](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToStringOptions
+[Spark OneBE - v1.0.6](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToStringOptions
 
 # Interface: QRCodeToStringOptions
 

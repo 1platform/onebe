@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.5](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / IInitStrategyOptions
+[Spark OneBE - v1.0.6](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / IInitStrategyOptions
 
 # Interface: IInitStrategyOptions
 
