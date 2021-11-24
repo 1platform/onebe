@@ -1572,6 +1572,7 @@ __metadata:
     twilio: ^3.71.1
     typedoc: ^0.22.8
     typedoc-plugin-extras: ^2.2.1
+    typedoc-plugin-markdown: ^3.11.7
     typedoc-plugin-mdn-links: ^1.0.4
     typedoc-plugin-rename-defaults: ^0.4.0
     typeorm: ^0.2.40
@@ -7776,6 +7777,17 @@ fsevents@~2.3.2:
   peerDependencies:
     typedoc: 0.22.x
   checksum: 217980cf47408586db3b3edd191cbd8b3653673ff914429c14b638d77e8531ad5cd7854b12bd2d810977996508b554e9ab668ac04bf89aa61f74c2fd0be947fd
+  languageName: node
+  linkType: hard
+
+"typedoc-plugin-markdown@npm:^3.11.7":
+  version: 3.11.7
+  resolution: "typedoc-plugin-markdown@npm:3.11.7"
+  dependencies:
+    handlebars: ^4.7.7
+  peerDependencies:
+    typedoc: ">=0.22.0"
+  checksum: ae21f898edf3d68a33d723ca149bb6d81485bc63bad1eb215f0af28c56672b5cfb329bf2c7a4e9e3b9215a46afaf306238d481abca6f6d9f1f4e84f1b6a698cd
   languageName: node
   linkType: hard
 

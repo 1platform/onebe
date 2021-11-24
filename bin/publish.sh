@@ -8,17 +8,21 @@ if [[ -e $MODE || ($MODE != "patch" && $MODE != "minor" && $MODE != "major") ]];
   MODE="patch"
 fi
 
-yarn version --$MODE
+yarn version $MODE
 #git tag $npm_package_version
 #git commit -am "Version bump to $npm_package_version"
 
-mkdir publish_build
-cd publish_build
-cp ../dist/* ./
-cp ../docs ./docs
+rm -rf publish
+mkdir publish
+cd publish
+cp -r ../dist/* ./
+cp -r ../docs ./docs
 node ../bin/build.js
 
-#yarn publish
+#yarn npm publish
 #git push
+
+# cd ../
+#rm -rf publish
 
 echo "Successfully released version $npm_package_version!"
