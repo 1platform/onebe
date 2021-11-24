@@ -1,4 +1,4 @@
-[Spark OneBE - v0.9.15](../README.md) / [Exports](../modules.md) / Authentication/JWT
+[Spark OneBE - v0.0.0](../README.md) / [Exports](../modules.md) / Authentication/JWT
 
 # Module: Authentication/JWT
 

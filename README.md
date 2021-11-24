@@ -1,7 +1,7 @@
-# Spark OneBE Framework
+# OneBE Framework
 
 - Codename: No one knows yet...
-- Version: 1.0.0
+- Version: MAIN
 
 This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
 applications fast using Typescript we published this framework free to use. The license under which we publish the code
@@ -10,7 +10,7 @@ is MIT.
 If you find bugs while using our framework, please file an issue in
 [Github](https://github.com/spark-development/onebe/issues).
 
-Also, if you manage to solve some of the issues, please create a Pull Request with the changes.
+Also, if you manage to solve some issues, please create a Pull Request with the changes.
 
 While this package is the framework base, we created an additional project with
 a [base project](https://github.com/spark-development/onebe-project) that you can use as the starter for your
