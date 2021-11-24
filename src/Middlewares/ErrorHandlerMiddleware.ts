@@ -57,9 +57,11 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
     app.use(
       (error: any, req: Request, res: Response, next: NextFunction): void => {
         const status = error.status || HTTPStatus.SERVER_ERROR;
-        const message = req.t(error.message || "errors.something-wong", {
-          ...(error.parameters || {}),
-        });
+        const message = req.t
+          ? req.t(error.message || "errors.something-wong", {
+            ...(error.parameters || {}),
+          })
+          : error.message;
         let { details } = error;
 
         if (details) {
