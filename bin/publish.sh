@@ -13,29 +13,7 @@ yarn compile:cleanup
 sed -i "s/export const version.*/export const version = \"$npm_package_version\";/g" src/version.ts
 sed -i "s/- Version: .*/- Version: $npm_package_version/g" README.md
 
-yarn
-yarn lint
-yarn compile:check
-
-yarn compile
-yarn compile:check
-
-cat > ./dist/build.js << EOF
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = "$BUILD_ID";
-exports.default = _default;
-EOF
-
-cat > ./dist/build.d.ts << EOF
-declare const _default: "$BUILD_ID";
-export default _default;
-EOF
-
+yarn build
 #git commit -am "Version bump to $npm_package_version"
 #git tag $npm_package_version
 
