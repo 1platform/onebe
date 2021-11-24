@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+cd "$(dirname "$0")/.."
 
 BUILD_ID=$(git rev-parse --short HEAD)
 

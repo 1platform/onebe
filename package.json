@@ -2,7 +2,7 @@
   "name": "@sparkdev/onebe",
   "version": "1.0.0",
   "packageManager": "yarn@3.0.1",
-  "description": "\"One backend framework, for all our internal needs\"",
+  "description": "One backend framework, for all our internal needs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
@@ -19,7 +19,9 @@
     "compile:check": "tsc",
     "i18n": "sync-i18n --files 'src/locales/*.json' --primary en --languages en,ro --space 2",
     "i18n:check": "yarn i18n --check",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "yarn fix && ./bin/build.sh && git add --force docs dist && git add . && git status",
+    "pub": "yarn build && ./bin/publish.sh"
   },
   "files": [
     "dist"
