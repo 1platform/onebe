@@ -37,4 +37,3 @@ git push
 rm -rf /tmp/publish
 
 echo "Successfully released version v$npm_package_version!"
-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
