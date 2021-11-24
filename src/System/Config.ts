@@ -33,17 +33,28 @@ export class Configuration {
    * @param configFolder The folder containing the configuration files.
    */
   public init(configFolder = "./config"): void {
-    const configFromFile = {};
+    let configFromFile = {};
+
     consign({
-      cwd: process.cwd(),
+      cwd: configFolder,
       verbose: false,
       extensions: [ ".js", ".json", ".node", ".ts" ],
       loggingType: "info",
     })
-      .include(configFolder)
+      .include(".")
       .into(configFromFile);
 
-    this.load(configFromFile["config"]);
+    configFromFile = Object.keys(configFromFile).reduce(
+      (accum, key) => ({
+        ...accum,
+        [key]: configFromFile[key]["default"]
+          ? configFromFile[key]["default"]
+          : configFromFile[key],
+      }),
+      {}
+    );
+
+    this.load(configFromFile);
   }
 
   /**

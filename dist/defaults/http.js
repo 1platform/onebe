@@ -60,12 +60,12 @@ const defaultHTTPConfig = {
     /**
      * Configures the Access-Control-Allow-Headers CORS header.
      */
-    allowedHeaders: _Env.default.string("CORS_ALLOWED_HEADERS") ?? undefined,
+    allowedHeaders: _Env.default.string("CORS_ALLOWED_HEADERS") || undefined,
 
     /**
      * Configures the Access-Control-Expose-Headers CORS header.
      */
-    exposedHeaders: _Env.default.string("CORS_EXPOSES_HEADERS") ?? undefined,
+    exposedHeaders: _Env.default.string("CORS_EXPOSES_HEADERS") || undefined,
 
     /**
      * Configures the Access-Control-Allow-Credentials CORS header.
@@ -75,12 +75,12 @@ const defaultHTTPConfig = {
     /**
      * Configures the Access-Control-Max-Age CORS header.
      */
-    maxAge: _Env.default.int("CORS_MAX_AGE") ?? undefined,
+    maxAge: _Env.default.int("CORS_MAX_AGE") || undefined,
 
     /**
      * Provides a status code to use for successful OPTIONS requests, since some legacy browsers (IE11, various SmartTVs) choke on 204.
      */
-    optionsSuccessStatus: _Env.default.int("CORS_OPTIONS_SUCCESS") ?? undefined,
+    optionsSuccessStatus: _Env.default.int("CORS_OPTIONS_SUCCESS", 204) || undefined,
 
     /**
      * Pass the CORS preflight response to the next handler.
