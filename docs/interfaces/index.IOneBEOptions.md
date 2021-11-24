@@ -19,6 +19,7 @@ Framework configuration options.
 - [configDir](index.IOneBEOptions.md#configdir)
 - [controllersDir](index.IOneBEOptions.md#controllersdir)
 - [currentDir](index.IOneBEOptions.md#currentdir)
+- [noDBConnection](index.IOneBEOptions.md#nodbconnection)
 
 ### Methods
 
@@ -49,6 +50,14 @@ ___
 • `Optional` **currentDir**: `string`
 
 The folder in which the application runs.
+
+___
+
+### noDBConnection
+
+• `Optional` **noDBConnection**: `boolean`
+
+Should the Database connection be made.
 
 ## Methods
 

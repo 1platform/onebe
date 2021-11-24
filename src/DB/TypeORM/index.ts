@@ -30,6 +30,8 @@ export default class TypeORM {
       username: dbConfig.username,
       password: dbConfig.password,
       database: dbConfig.database,
+      logging: dbConfig.logging ?? false,
+      synchronize: false,
       entities: Config.array("db.entities", [ "./src/models/**/*.ts" ]),
       migrationsTableName: Config.string("db.migrations.table", "_migrations"),
       migrations: Config.array("db.migrations.files", [

@@ -51,6 +51,11 @@ const defaultDBConfig: IConfig = {
   },
 
   /**
+   * Should the queries be logged.
+   */
+  logging: Env.flag("DATABASE_LOGGING"),
+
+  /**
    * All the locations where we can have entities defined. This setting applies
    * only to connections made using TypeORM (engine !== "mongoose")
    */

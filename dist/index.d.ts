@@ -16,6 +16,10 @@ export interface IOneBEOptions extends IInitStrategyOptions {
      * The controllers directory.
      */
     controllersDir?: string;
+    /**
+     * Should the Database connection be made.
+     */
+    noDBConnection?: boolean;
 }
 /**
  * Framework init function. It initializes some elements of the framework

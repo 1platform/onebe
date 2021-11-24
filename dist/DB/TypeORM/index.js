@@ -43,6 +43,8 @@ class TypeORM {
       username: dbConfig.username,
       password: dbConfig.password,
       database: dbConfig.database,
+      logging: dbConfig.logging ?? false,
+      synchronize: false,
       entities: _Config.default.array("db.entities", ["./src/models/**/*.ts"]),
       migrationsTableName: _Config.default.string("db.migrations.table", "_migrations"),
       migrations: _Config.default.array("db.migrations.files", ["./src/migrations/*.js"]),

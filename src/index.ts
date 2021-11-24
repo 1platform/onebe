@@ -29,12 +29,17 @@ export interface IOneBEOptions extends IInitStrategyOptions {
    * The controllers directory.
    */
   controllersDir?: string;
+  /**
+   * Should the Database connection be made.
+   */
+  noDBConnection?: boolean;
 }
 
 const defaultValues: IOneBEOptions = {
   currentDir: process.cwd(),
   configDir: "./config",
   controllersDir: "./controllers",
+  noDBConnection: false,
 };
 
 /**
@@ -56,7 +61,10 @@ export default async function init(
   app.use(Scheduler);
 
   await i18n(props.currentDir);
-  await DB();
+
+  if (!props.noDBConnection) {
+    await DB();
+  }
 
   return (strategyProps?: IInitStrategyOptions) => {
     app.HTTP.use(Middlewares);

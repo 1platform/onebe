@@ -38,7 +38,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 const defaultValues = {
   currentDir: process.cwd(),
   configDir: "./config",
-  controllersDir: "./controllers"
+  controllersDir: "./controllers",
+  noDBConnection: false
 };
 /**
  * Framework init function. It initializes some elements of the framework
@@ -57,7 +58,11 @@ async function init(props) {
   _App.default.use(_Scheduler.default);
 
   await (0, _i18n.default)(props.currentDir);
-  await (0, _DB.default)();
+
+  if (!props.noDBConnection) {
+    await (0, _DB.default)();
+  }
+
   return strategyProps => {
     _App.default.HTTP.use(_Middlewares.default);
 
