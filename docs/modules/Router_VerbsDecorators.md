@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.0](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
+[Spark OneBE - v1.0.1](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
 
 # Module: Router/VerbsDecorators
 
