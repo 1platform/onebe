@@ -19,8 +19,6 @@ var _HTTP = _interopRequireDefault(require("./HTTP"));
 
 var _i18n = _interopRequireDefault(require("./i18n"));
 
-var _Middlewares = _interopRequireDefault(require("./Middlewares"));
-
 var _Router = _interopRequireDefault(require("./Router"));
 
 var _Scheduler = _interopRequireDefault(require("./Scheduler"));
@@ -64,8 +62,6 @@ async function init(props) {
   }
 
   return strategyProps => {
-    _App.default.HTTP.use(_Middlewares.default);
-
     (0, _Passport.default)(_objectSpread(_objectSpread({}, props), strategyProps || {}));
     return _Router.default.register(_path.default.resolve(props.currentDir, props.controllersDir)).then(() => {
       _App.default.Scheduler.run();

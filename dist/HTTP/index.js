@@ -13,6 +13,8 @@ var _http = require("http");
 
 var _App = _interopRequireDefault(require("../App"));
 
+var _Middlewares = _interopRequireDefault(require("../Middlewares"));
+
 var _ErrorHandlerMiddleware = _interopRequireDefault(require("../Middlewares/ErrorHandlerMiddleware"));
 
 var _Router = _interopRequireDefault(require("../Router"));
@@ -45,7 +47,7 @@ class HTTP {
    * HTTP Class constructor.
    */
   constructor() {
-    _defineProperty(this, "_middlewares", []);
+    _defineProperty(this, "_middlewares", [..._Middlewares.default]);
 
     _defineProperty(this, "_app", void 0);
 

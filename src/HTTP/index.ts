@@ -16,9 +16,7 @@ export default class HTTP {
   /**
    * A list of middlewares that we load in our application.
    */
-  private _middlewares: Array<IMiddleware> = [
-    ...Middlewares
-  ];
+  private _middlewares: Array<IMiddleware> = [ ...Middlewares ];
   /**
    * The Express application instance.
    */
