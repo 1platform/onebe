@@ -24,6 +24,7 @@ cp -r ../dist/* ./
 cp -r ../.yarn ./
 cp ../.eslintrc ./
 cp ../README.md ./
+cp ../CHANGELOG.md ./
 cp ../.yarnrc.yml ./
 cp ../LICENSE.md ./
 cp ../yarn.lock ./
