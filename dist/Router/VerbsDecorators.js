@@ -99,13 +99,16 @@ function verbAction(props) {
         query: req.query,
         body: props.method !== _HTTPVerb.default.GET ? req.body : undefined,
         header: req.header,
-        req: props.passRequest ? req : undefined,
-        res: props.passRequest ? res : undefined,
+        request: props.passRequest ? req : undefined,
+        response: props.passRequest ? res : undefined,
         file: req.file || undefined,
         files: req.files || undefined
       }, _objectSpread({
         user: req.user,
-        isAuthenticated: req.isAuthenticated.bind(req)
+        isAuthenticated: req.isAuthenticated.bind(req),
+        logout: req.logout ? req.logout.bind(req) : () => {
+          /*NOPE*/
+        }
       }, req.authContext || {}));
       let status = _HTTPStatus.default.OK;
 

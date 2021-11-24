@@ -33,11 +33,11 @@ export interface IContext<TRequest = any> {
   /**
    * The request object.
    */
-  req?: Request;
+  request?: Request;
   /**
    * The response object.
    */
-  res?: Response;
+  response?: Response;
   /**
    * The file request object.
    */
@@ -62,6 +62,10 @@ export interface IAuthContext {
    * Method to check if the user is authenticated or not.
    */
   isAuthenticated?: () => boolean;
+  /**
+   * Logs a user out of the application.
+   */
+  logout?: () => void;
 
   /**
    * Indexer for any other authentication context option.

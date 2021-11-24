@@ -22,8 +22,8 @@ The request context parameter definition.
 - [header](Router_RouteInterfaces.IContext.md#header)
 - [params](Router_RouteInterfaces.IContext.md#params)
 - [query](Router_RouteInterfaces.IContext.md#query)
-- [req](Router_RouteInterfaces.IContext.md#req)
-- [res](Router_RouteInterfaces.IContext.md#res)
+- [request](Router_RouteInterfaces.IContext.md#request)
+- [response](Router_RouteInterfaces.IContext.md#response)
 
 ## Properties
 
@@ -75,16 +75,16 @@ A list with all the query parameters.
 
 ___
 
-### req
+### request
 
-• `Optional` **req**: `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>
+• `Optional` **request**: `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>
 
 The request object.
 
 ___
 
-### res
+### response
 
-• `Optional` **res**: `Response`<`any`, `Record`<`string`, `any`\>\>
+• `Optional` **response**: `Response`<`any`, `Record`<`string`, `any`\>\>
 
 The response object.

@@ -21,6 +21,7 @@ Indexer for any other authentication context option.
 ### Methods
 
 - [isAuthenticated](Router_RouteInterfaces.IAuthContext.md#isauthenticated)
+- [logout](Router_RouteInterfaces.IAuthContext.md#logout)
 
 ## Properties
 
@@ -41,3 +42,15 @@ Method to check if the user is authenticated or not.
 #### Returns
 
 `boolean`
+
+___
+
+### logout
+
+▸ `Optional` **logout**(): `void`
+
+Logs a user out of the application.
+
+#### Returns
+
+`void`
