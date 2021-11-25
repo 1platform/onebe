@@ -1,6 +1,6 @@
 {
   "name": "@sparkdev/onebe",
-  "version": "2.0.0",
+  "version": "1.0.6",
   "packageManager": "yarn@3.0.1",
   "description": "One backend framework, for all our internal needs",
   "module": "./dist/index.js",
@@ -21,7 +21,7 @@
     "i18n:check": "yarn i18n --check",
     "prepare": "husky install",
     "build": "yarn fix && ./bin/build.sh && git add --force docs dist && git add . && git status",
-    "publish": "yarn publish:major",
+    "publish": "yarn publish:patch",
     "publish:patch": "npm version patch",
     "publish:minor": "npm version minor",
     "publish:major": "npm version major",
