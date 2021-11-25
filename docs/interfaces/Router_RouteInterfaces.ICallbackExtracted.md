@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / ICallbackExtracted
+[Spark OneBE - v1.0.7](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / ICallbackExtracted
 
 # Interface: ICallbackExtracted<Request, Response\>
 

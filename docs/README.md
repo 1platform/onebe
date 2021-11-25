@@ -1,9 +1,9 @@
-Spark OneBE - v2.0.0 / [Exports](modules.md)
+Spark OneBE - v1.0.7 / [Exports](modules.md)
 
 # OneBE Framework
 
 - Codename: No one knows yet...
-- Version: v2.0.0
+- Version: v1.0.7
 
 This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
 applications fast using Typescript we published this framework free to use. The license under which we publish the code
