@@ -58,6 +58,38 @@ function callbackExtractor(fn) {
   };
 }
 /**
+ * Wrapper function to get the query parameter as a string.
+ *
+ * @param req The request object.
+ */
+
+
+const getQuery = req => (key, defaultValue) => req.query[key] || defaultValue;
+/**
+ * Wrapper function to get the query parameter as a number.
+ *
+ * @param req The request object.
+ */
+
+
+const getQueryNumber = req => (key, defaultValue) => Number(req.query[key]) || defaultValue;
+/**
+ * Wrapper function to get the query parameter as a boolean.
+ *
+ * @param req The request object.
+ */
+
+
+const getQueryBoolean = req => key => !!req.query[key] ?? false;
+/**
+ * Wrapper function to get the query parameter as an array.
+ *
+ * @param req The request object.
+ */
+
+
+const getQueryArray = req => (key, defaultValue) => req.query[key] || defaultValue;
+/**
  * A generic function that registers a HTTP Verb endpoint in the router.
  *
  * Attaches to the target the following metadata:
@@ -102,7 +134,11 @@ function verbAction(props) {
         request: props.passRequest ? req : undefined,
         response: props.passRequest ? res : undefined,
         file: req.file || undefined,
-        files: req.files || undefined
+        files: req.files || undefined,
+        getQuery: getQuery(req),
+        getQueryNumber: getQueryNumber(req),
+        getQueryBoolean: getQueryBoolean(req),
+        getQueryArray: getQueryArray(req)
       }, _objectSpread({
         user: req.user,
         isAuthenticated: req.isAuthenticated.bind(req),

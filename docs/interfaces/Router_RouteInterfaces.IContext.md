@@ -25,6 +25,13 @@ The request context parameter definition.
 - [request](Router_RouteInterfaces.IContext.md#request)
 - [response](Router_RouteInterfaces.IContext.md#response)
 
+### Methods
+
+- [getQuery](Router_RouteInterfaces.IContext.md#getquery)
+- [getQueryArray](Router_RouteInterfaces.IContext.md#getqueryarray)
+- [getQueryBoolean](Router_RouteInterfaces.IContext.md#getqueryboolean)
+- [getQueryNumber](Router_RouteInterfaces.IContext.md#getquerynumber)
+
 ## Properties
 
 ### body
@@ -88,3 +95,78 @@ ___
 • `Optional` **response**: `Response`<`any`, `Record`<`string`, `any`\>\>
 
 The response object.
+
+## Methods
+
+### getQuery
+
+▸ `Optional` **getQuery**(`key`, `defaultValue?`): `string`
+
+Get the query parameter as a string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string` | - |
+
+#### Returns
+
+`string`
+
+___
+
+### getQueryArray
+
+▸ `Optional` **getQueryArray**(`key`, `defaultValue?`): `string`[]
+
+Get the query parameter as an array.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string`[] | - |
+
+#### Returns
+
+`string`[]
+
+___
+
+### getQueryBoolean
+
+▸ `Optional` **getQueryBoolean**(`key`): `boolean`
+
+Get the query parameter as a boolean.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+
+#### Returns
+
+`boolean`
+
+___
+
+### getQueryNumber
+
+▸ `Optional` **getQueryNumber**(`key`, `defaultValue?`): `number`
+
+Get the query parameter as a number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `number` | - |
+
+#### Returns
+
+`number`

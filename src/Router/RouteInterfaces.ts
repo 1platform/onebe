@@ -23,6 +23,30 @@ export interface IContext<TRequest = any> {
    */
   query?: string | QueryString.ParsedQs | string[] | QueryString.ParsedQs[];
   /**
+   * Get the query parameter as a string.
+   *
+   * @param key The key we need from the query string.
+   */
+  getQuery?: (key: string, defaultValue?: string) => string;
+  /**
+   * Get the query parameter as a number.
+   *
+   * @param key The key we need from the query string.
+   */
+  getQueryNumber?: (key: string, defaultValue?: number) => number;
+  /**
+   * Get the query parameter as a boolean.
+   *
+   * @param key The key we need from the query string.
+   */
+  getQueryBoolean?: (key: string) => boolean;
+  /**
+   * Get the query parameter as an array.
+   *
+   * @param key The key we need from the query string.
+   */
+  getQueryArray?: (key: string, defaultValue?: string[]) => string[];
+  /**
    * The header data extractor function.
    */
   header: HeaderMethod;

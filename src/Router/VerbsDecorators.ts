@@ -47,6 +47,36 @@ function callbackExtractor<Request = any, Response = any>(
 }
 
 /**
+ * Wrapper function to get the query parameter as a string.
+ *
+ * @param req The request object.
+ */
+const getQuery = (req: Request) => (key: string, defaultValue?: string) =>
+  (req.query[key] as string) || defaultValue;
+/**
+ * Wrapper function to get the query parameter as a number.
+ *
+ * @param req The request object.
+ */
+const getQueryNumber = (req: Request) => (key: string, defaultValue?: number) =>
+  Number(req.query[key]) || defaultValue;
+/**
+ * Wrapper function to get the query parameter as a boolean.
+ *
+ * @param req The request object.
+ */
+const getQueryBoolean = (req: Request) => (key: string) =>
+  !!req.query[key] ?? false;
+/**
+ * Wrapper function to get the query parameter as an array.
+ *
+ * @param req The request object.
+ */
+const getQueryArray =
+  (req: Request) => (key: string, defaultValue?: string[]) =>
+    (req.query[key] as string[]) || defaultValue;
+
+/**
  * A generic function that registers a HTTP Verb endpoint in the router.
  *
  * Attaches to the target the following metadata:
@@ -118,6 +148,10 @@ function verbAction<TRequest = any, TResponse = any>(
             response: props.passRequest ? res : undefined,
             file: req.file || undefined,
             files: req.files || undefined,
+            getQuery: getQuery(req),
+            getQueryNumber: getQueryNumber(req),
+            getQueryBoolean: getQueryBoolean(req),
+            getQueryArray: getQueryArray(req),
           },
           {
             user: req.user,
