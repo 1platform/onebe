@@ -1,6 +1,6 @@
-[Spark OneBE - v1.0.6](README.md) / Exports
+[Spark OneBE - v2.0.0](README.md) / Exports
 
-# Spark OneBE - v1.0.6
+# Spark OneBE - v2.0.0
 
 ## Table of contents
 

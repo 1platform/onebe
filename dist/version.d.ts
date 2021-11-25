@@ -5,7 +5,7 @@ export declare const codename = "No one knows yet...";
 /**
  * The version of the framework.
  */
-export declare const version = "1.0.6";
+export declare const version = "2.0.0";
 /**
  * Function that returns the full version string (version + buildId)
  */
