@@ -8,6 +8,8 @@ Here we will note all the changes made to the framework.
 
 - Swagger Array parameters now support custom types.
 - Add custom path prefix decorator (`custom(path: string)`).
+- Allow to set the validtor using a setter.
+- Add express types for export from HTTP Types.
 
 ## Version 1.0.9
 

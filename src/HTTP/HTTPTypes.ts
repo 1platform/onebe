@@ -12,3 +12,7 @@ export type HTTPMiddleware = (
   res: Response,
   next?: NextFunction
 ) => void;
+
+export type ExpressRequest = Request;
+export type ExpressResponse = Response;
+export type ExpressNextFunction = NextFunction;

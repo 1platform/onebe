@@ -9,13 +9,22 @@ export default abstract class ServiceBase {
    * A default data validator schema that can be used to validate
    * some data used in the service.
    */
-  protected _validator?: AnySchema;
+  private _validator?: AnySchema;
 
   /**
    * Returns the default data validator of the service.
    */
   public get validator(): AnySchema {
     return this._validator;
+  }
+
+  /**
+   * Sets the validator value.
+   *
+   * @param newValidator The new validator to be set.
+   */
+  protected set validator(newValidator: AnySchema) {
+    this._validator = newValidator;
   }
 
   /**
