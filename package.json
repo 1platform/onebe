@@ -1,6 +1,6 @@
 {
   "name": "@sparkdev/onebe",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "packageManager": "yarn@3.0.1",
   "description": "One backend framework, for all our internal needs",
   "module": "./dist/index.js",
