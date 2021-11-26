@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.9](../README.md) / [Exports](../modules.md) / [Middlewares/SparkMiddleware](../modules/Middlewares_SparkMiddleware.md) / SparkMiddleware
+[Spark OneBE - v1.0.10](../README.md) / [Exports](../modules.md) / [Middlewares/SparkMiddleware](../modules/Middlewares_SparkMiddleware.md) / SparkMiddleware
 
 # Class: SparkMiddleware
 

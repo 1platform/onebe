@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.9](../README.md) / [Exports](../modules.md) / [Middlewares/BodyParserMiddleware](../modules/Middlewares_BodyParserMiddleware.md) / BodyParserMiddleware
+[Spark OneBE - v1.0.10](../README.md) / [Exports](../modules.md) / [Middlewares/BodyParserMiddleware](../modules/Middlewares_BodyParserMiddleware.md) / BodyParserMiddleware
 
 # Class: BodyParserMiddleware
 
