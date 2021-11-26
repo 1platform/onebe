@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.7](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18nMiddleware
+[Spark OneBE - v1.0.8](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18nMiddleware
 
 # Class: I18nMiddleware
 
