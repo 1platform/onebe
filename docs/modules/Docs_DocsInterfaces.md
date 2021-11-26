@@ -18,6 +18,7 @@
 - [IQueryParameterDoc](../interfaces/Docs_DocsInterfaces.IQueryParameterDoc.md)
 - [IRouteDefinition](../interfaces/Docs_DocsInterfaces.IRouteDefinition.md)
 - [IRouteDoc](../interfaces/Docs_DocsInterfaces.IRouteDoc.md)
+- [ISwaggerParameter](../interfaces/Docs_DocsInterfaces.ISwaggerParameter.md)
 
 ### Type aliases
 

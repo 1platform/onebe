@@ -7,6 +7,7 @@ import {
   DEFAULT_BODY_TAG,
   IInterfaceDoc,
   IRouteDoc,
+  ISwaggerParameter,
   TRoutesList,
 } from "./DocsInterfaces";
 
@@ -224,10 +225,7 @@ export default class SwaggerBuilder {
 
       const queryParameters = this.getQueryParameters(routeDefinition);
       if (queryParameters) {
-        definition.parameters = {
-          ...definition.parameters,
-          ...queryParameters,
-        };
+        definition.parameters = [ ...definition.parameters, ...queryParameters ];
       }
 
       definition.operationId = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;
@@ -249,7 +247,7 @@ export default class SwaggerBuilder {
    *
    * @param routeDefinition The definition of the Route for which we want the Parameters
    */
-  private getParameters(routeDefinition: IRouteDoc): Record<string, any> {
+  private getParameters(routeDefinition: IRouteDoc): Array<ISwaggerParameter> {
     const parameters = Object.values(routeDefinition.parameters);
     if (parameters.length === 0) {
       return null;
@@ -271,7 +269,9 @@ export default class SwaggerBuilder {
    *
    * @param routeDefinition The definition of the Route for which we want the Parameters
    */
-  private getQueryParameters(routeDefinition: IRouteDoc): Record<string, any> {
+  private getQueryParameters(
+    routeDefinition: IRouteDoc
+  ): Array<ISwaggerParameter> {
     const parameters = Object.values(routeDefinition.query || {});
     if (parameters.length === 0) {
       return null;
@@ -350,7 +350,7 @@ export default class SwaggerBuilder {
       defaultResponse = routeDefinition.responseStatus;
     }
 
-    if (routeDefinition.response) {
+    if (routeDefinition.response && routeDefinition.response.schema) {
       response = {
         content: {
           "application/json": {

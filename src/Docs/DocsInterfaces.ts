@@ -116,6 +116,17 @@ export interface IRouteDefinition {
 }
 
 /**
+ * Interface used to define swagger parameters.
+ */
+export interface ISwaggerParameter {
+  name: string;
+  in: string;
+  description: string;
+  required?: boolean;
+  schema: Record<string, any>;
+}
+
+/**
  * Type used to define a Routes list
  */
 export type TRoutesList = Record<string, IRouteDefinition>;

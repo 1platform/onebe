@@ -213,7 +213,7 @@ class SwaggerBuilder {
       const queryParameters = this.getQueryParameters(routeDefinition);
 
       if (queryParameters) {
-        definition.parameters = _objectSpread(_objectSpread({}, definition.parameters), queryParameters);
+        definition.parameters = [...definition.parameters, ...queryParameters];
       }
 
       definition.operationId = `${routeDefinition.controllerName}.${routeDefinition.methodName}`;
@@ -340,7 +340,7 @@ class SwaggerBuilder {
       defaultResponse = routeDefinition.responseStatus;
     }
 
-    if (routeDefinition.response) {
+    if (routeDefinition.response && routeDefinition.response.schema) {
       response = {
         content: {
           "application/json": {
