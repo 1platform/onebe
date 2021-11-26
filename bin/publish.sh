@@ -16,6 +16,7 @@ sed -i "s/- Version: .*/- Version: v$npm_package_version/g" README.md
 
 yarn build
 git commit -am "Version bump to v$npm_package_version"
+git tag $npm_package_version
 
 rm -rf /tmp/publish
 mkdir /tmp/publish

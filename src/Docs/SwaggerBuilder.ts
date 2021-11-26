@@ -225,7 +225,10 @@ export default class SwaggerBuilder {
 
       const queryParameters = this.getQueryParameters(routeDefinition);
       if (queryParameters) {
-        definition.parameters = [ ...definition.parameters, ...queryParameters ];
+        definition.parameters = [
+          ...(definition.parameters || []),
+          ...queryParameters,
+        ];
       }
 
       definition.operationId = `${ routeDefinition.controllerName }.${ routeDefinition.methodName }`;

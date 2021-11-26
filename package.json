@@ -22,9 +22,9 @@
     "prepare": "husky install",
     "build": "yarn fix && ./bin/build.sh && git add --force docs dist && git add . && git status",
     "publish": "yarn publish:patch",
-    "publish:patch": "npm version patch",
-    "publish:minor": "npm version minor",
-    "publish:major": "npm version major",
+    "publish:patch": "npm version --no-git-tag-version patch",
+    "publish:minor": "npm version --no-git-tag-version minor",
+    "publish:major": "npm version --no-git-tag-version major",
     "postversion": "./bin/publish.sh"
   },
   "files": [
