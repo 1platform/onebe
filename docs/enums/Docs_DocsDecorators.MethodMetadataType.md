@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.8](../README.md) / [Exports](../modules.md) / [Docs/DocsDecorators](../modules/Docs_DocsDecorators.md) / MethodMetadataType
+[Spark OneBE - v1.0.9](../README.md) / [Exports](../modules.md) / [Docs/DocsDecorators](../modules/Docs_DocsDecorators.md) / MethodMetadataType
 
 # Enumeration: MethodMetadataType
 

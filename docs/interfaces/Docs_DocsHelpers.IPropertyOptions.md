@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.8](../README.md) / [Exports](../modules.md) / [Docs/DocsHelpers](../modules/Docs_DocsHelpers.md) / IPropertyOptions
+[Spark OneBE - v1.0.9](../README.md) / [Exports](../modules.md) / [Docs/DocsHelpers](../modules/Docs_DocsHelpers.md) / IPropertyOptions
 
 # Interface: IPropertyOptions
 
