@@ -2,66 +2,87 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.10
+
+🌟 Improvements:
+
+- Swagger Array parameters now support custom types.
+- Add custom path prefix decorator (`custom(path: string)`).
+
 ## Version 1.0.9
 
 🔧 Fixes:
+
 - Issues with documentation generator for query.
 
 🌟 Improvements:
+
 - Add changelog information.
 
 ## Version 1.0.8
 
 🔧 Fixes:
+
 - Issue with Query Parameters definition in Swagger
 
 ## Version 1.0.7
 
 🔧 Fixes:
+
 - Change the default publish command to publish patch versions.
 
 🌟 Improvements:
+
 - Add Query Parameters fetching helper functions.
 
 ## Version 1.0.6
 
 🌟 Improvements:
+
 - Add `logout` method to the `IAuthContext` interface and the `authContext` options.
 - Change the naming of the `req` and `res` properties to `request` and `response`.
 
 ## Version 1.0.5
 
 🌟 Improvements:
+
 - Allow the `IUser` interface to contain multiple keys.
 
 ## Version 1.0.4
 
 🔧 Fixes:
+
 - Configuration loading.
 
 ## Version 1.0.3
 
 🔧 Fixes:
+
 - Error message translation fixes.
 
 ## Version 1.0.2
 
 🔧 Fixes:
+
 - Issues with publishing script.
 
-🌟 Improvements: 
+🌟 Improvements:
+
 - Move the middleware declaration up in the stack.
 
 ## Version 1.0.1
 
 🚀 New:
+
 - Allow the user to init the framework without connecting to the database (Required for TypeORM CLI configuration)
 - Enable/Disable TypeORM logging
 
 🔧 Fixes:
+
 - Issues with publishing script
 
-🌟 Improvements: 
+🌟 Improvements:
+
 - Disable the TypeORM syncing
 
 ## Version 1.0.0

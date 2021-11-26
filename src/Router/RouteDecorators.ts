@@ -100,3 +100,34 @@ export function api<T extends Constructor>(
   paths.unshift(Config.string("api.path"));
   return BaseClass;
 }
+
+/**
+ * Decorator to define a custom controller prefix.
+ *
+ * Attaches to the target the following metadata:
+ * - route:path
+ * - route:custom:path
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param path The custom controller path prefix.
+ */
+export function custom<T extends Constructor>(
+  path: string
+): ControllerDecoratorFunction<T> {
+  return function (BaseClass: T): ControllerDecorator<T> {
+    let paths: Array<string> = Reflect.getMetadata(
+      "route:path",
+      BaseClass.prototype
+    );
+    if (!paths) {
+      paths = [];
+      Reflect.defineMetadata("route:path", paths, BaseClass.prototype);
+    }
+
+    Reflect.defineMetadata("route:custom:path", true, BaseClass.prototype);
+    paths.unshift(path);
+    return BaseClass;
+  };
+}

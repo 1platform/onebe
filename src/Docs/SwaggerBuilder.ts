@@ -116,11 +116,27 @@ export default class SwaggerBuilder {
                 ...property,
                 name: undefined,
                 required: undefined,
+                arrayType: undefined,
               };
 
-              if (property.schema) {
+              if (
+                property.type !== BodyParameterType.ARRAY &&
+                property.schema
+              ) {
                 definition = {
                   $ref: `#/components/schemas/${ property.schema }`,
+                };
+              }
+
+              if (property.type === BodyParameterType.ARRAY) {
+                definition = {
+                  items: property.schema
+                    ? {
+                      $ref: `#/components/schemas/${ property.schema }`,
+                    }
+                    : {
+                      type: property.arrayType || BodyParameterType.STRING,
+                    },
                 };
               }
 
