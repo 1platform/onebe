@@ -7,6 +7,7 @@
 ### Functions
 
 - [api](Router_RouteDecorators.md#api)
+- [custom](Router_RouteDecorators.md#custom)
 - [path](Router_RouteDecorators.md#path)
 
 ## Functions
@@ -40,6 +41,38 @@ Based on this metadata we know what to generate in the Documentation generator.
 #### Returns
 
 [`ControllerDecorator`](Router_RouteTypes.md#controllerdecorator)<`T`\>
+
+___
+
+### custom
+
+▸ **custom**<`T`\>(`path`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+Decorator to define a custom controller prefix.
+
+Attaches to the target the following metadata:
+- route:path
+- route:custom:path
+
+Based on this metadata we know what to generate in the Documentation generator.
+
+**`decorator`**
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `path` | `string` | The custom controller path prefix. |
+
+#### Returns
+
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 ___
 

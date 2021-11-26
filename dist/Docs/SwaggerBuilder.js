@@ -119,12 +119,23 @@ class SwaggerBuilder {
           properties: value.properties.reduce((accum, property) => {
             let definition = _objectSpread(_objectSpread({}, property), {}, {
               name: undefined,
-              required: undefined
+              required: undefined,
+              arrayType: undefined
             });
 
-            if (property.schema) {
+            if (property.type !== _DocsInterfaces.BodyParameterType.ARRAY && property.schema) {
               definition = {
                 $ref: `#/components/schemas/${property.schema}`
+              };
+            }
+
+            if (property.type === _DocsInterfaces.BodyParameterType.ARRAY) {
+              definition = {
+                items: property.schema ? {
+                  $ref: `#/components/schemas/${property.schema}`
+                } : {
+                  type: property.arrayType || _DocsInterfaces.BodyParameterType.STRING
+                }
               };
             }
 

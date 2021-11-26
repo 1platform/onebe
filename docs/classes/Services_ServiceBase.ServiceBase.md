@@ -23,10 +23,6 @@ various actions in the application.
 
 - [constructor](Services_ServiceBase.ServiceBase.md#constructor)
 
-### Properties
-
-- [\_validator](Services_ServiceBase.ServiceBase.md#_validator)
-
 ### Accessors
 
 - [validator](Services_ServiceBase.ServiceBase.md#validator)
@@ -42,15 +38,6 @@ various actions in the application.
 
 • **new ServiceBase**()
 
-## Properties
-
-### \_validator
-
-• `Protected` `Optional` **\_validator**: `AnySchema`
-
-A default data validator schema that can be used to validate
-some data used in the service.
-
 ## Accessors
 
 ### validator
@@ -62,6 +49,20 @@ Returns the default data validator of the service.
 #### Returns
 
 `AnySchema`
+
+• `set` **validator**(`newValidator`): `void`
+
+Sets the validator value.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `newValidator` | `AnySchema` | The new validator to be set. |
+
+#### Returns
+
+`void`
 
 ## Methods
 

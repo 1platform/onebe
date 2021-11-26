@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.api = api;
+exports.custom = custom;
 exports.path = path;
 
 var _DocsDecorators = require("../Docs/DocsDecorators");
@@ -96,4 +97,32 @@ function api(BaseClass) {
   Reflect.defineMetadata("route:api", true, BaseClass.prototype);
   paths.unshift(_Config.default.string("api.path"));
   return BaseClass;
+}
+/**
+ * Decorator to define a custom controller prefix.
+ *
+ * Attaches to the target the following metadata:
+ * - route:path
+ * - route:custom:path
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param path The custom controller path prefix.
+ */
+
+
+function custom(path) {
+  return function (BaseClass) {
+    let paths = Reflect.getMetadata("route:path", BaseClass.prototype);
+
+    if (!paths) {
+      paths = [];
+      Reflect.defineMetadata("route:path", paths, BaseClass.prototype);
+    }
+
+    Reflect.defineMetadata("route:custom:path", true, BaseClass.prototype);
+    paths.unshift(path);
+    return BaseClass;
+  };
 }

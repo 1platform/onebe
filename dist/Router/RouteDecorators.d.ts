@@ -30,3 +30,16 @@ export declare function path<T extends Constructor>(path: string, name?: string,
  * @param BaseClass The Controller we want to decorate.
  */
 export declare function api<T extends Constructor>(BaseClass: T): ControllerDecorator<T>;
+/**
+ * Decorator to define a custom controller prefix.
+ *
+ * Attaches to the target the following metadata:
+ * - route:path
+ * - route:custom:path
+ *
+ * Based on this metadata we know what to generate in the Documentation generator.
+ *
+ * @decorator
+ * @param path The custom controller path prefix.
+ */
+export declare function custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T>;

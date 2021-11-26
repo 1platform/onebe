@@ -87,6 +87,7 @@ export interface IBodyDoc {
     schema?: string;
     default?: string;
     required?: boolean;
+    arrayType?: BodyParameterType;
 }
 /**
  * Interface representing an Interface doc

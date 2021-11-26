@@ -7,3 +7,6 @@ import { NextFunction, Request, Response } from "express";
  * @param next The next callback function in list.
  */
 export declare type HTTPMiddleware = (req: Request, res: Response, next?: NextFunction) => void;
+export declare type ExpressRequest = Request;
+export declare type ExpressResponse = Response;
+export declare type ExpressNextFunction = NextFunction;

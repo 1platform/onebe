@@ -22,10 +22,6 @@ Class exposing the Email sending functionality.
 
 - [constructor](Email_EmailService.EmailService.md#constructor)
 
-### Properties
-
-- [\_validator](Email_EmailService.EmailService.md#_validator)
-
 ### Accessors
 
 - [validator](Email_EmailService.EmailService.md#validator)
@@ -48,19 +44,6 @@ Email Service constructor.
 
 [ServiceBase](Services_ServiceBase.ServiceBase.md).[constructor](Services_ServiceBase.ServiceBase.md#constructor)
 
-## Properties
-
-### \_validator
-
-• `Protected` `Optional` **\_validator**: `AnySchema`
-
-A default data validator schema that can be used to validate
-some data used in the service.
-
-#### Inherited from
-
-[ServiceBase](Services_ServiceBase.ServiceBase.md).[_validator](Services_ServiceBase.ServiceBase.md#_validator)
-
 ## Accessors
 
 ### validator
@@ -72,6 +55,24 @@ Returns the default data validator of the service.
 #### Returns
 
 `AnySchema`
+
+#### Inherited from
+
+ServiceBase.validator
+
+• `set` **validator**(`newValidator`): `void`
+
+Sets the validator value.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `newValidator` | `AnySchema` | The new validator to be set. |
+
+#### Returns
+
+`void`
 
 #### Inherited from
 

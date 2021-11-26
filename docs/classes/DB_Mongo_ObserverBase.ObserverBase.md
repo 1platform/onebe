@@ -21,7 +21,6 @@ An abstract class representing an Observer base.
 ### Properties
 
 - [\_observer](DB_Mongo_ObserverBase.ObserverBase.md#_observer)
-- [\_validator](DB_Mongo_ObserverBase.ObserverBase.md#_validator)
 
 ### Accessors
 
@@ -51,19 +50,6 @@ An abstract class representing an Observer base.
 
 The observer plugin instance.
 
-___
-
-### \_validator
-
-• `Protected` `Optional` **\_validator**: `AnySchema`
-
-A default data validator schema that can be used to validate
-some data used in the service.
-
-#### Inherited from
-
-[ServiceBase](Services_ServiceBase.ServiceBase.md).[_validator](Services_ServiceBase.ServiceBase.md#_validator)
-
 ## Accessors
 
 ### validator
@@ -75,6 +61,24 @@ Returns the default data validator of the service.
 #### Returns
 
 `AnySchema`
+
+#### Inherited from
+
+ServiceBase.validator
+
+• `set` **validator**(`newValidator`): `void`
+
+Sets the validator value.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `newValidator` | `AnySchema` | The new validator to be set. |
+
+#### Returns
+
+`void`
 
 #### Inherited from
 

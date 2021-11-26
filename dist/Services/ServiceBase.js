@@ -23,6 +23,16 @@ class ServiceBase {
     return this._validator;
   }
   /**
+   * Sets the validator value.
+   *
+   * @param newValidator The new validator to be set.
+   */
+
+
+  set validator(newValidator) {
+    this._validator = newValidator;
+  }
+  /**
    * Validates the given data against the default validator and returns
    * the data after applying the validator on it.
    *

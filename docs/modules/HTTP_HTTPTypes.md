@@ -6,9 +6,30 @@
 
 ### Type aliases
 
+- [ExpressNextFunction](HTTP_HTTPTypes.md#expressnextfunction)
+- [ExpressRequest](HTTP_HTTPTypes.md#expressrequest)
+- [ExpressResponse](HTTP_HTTPTypes.md#expressresponse)
 - [HTTPMiddleware](HTTP_HTTPTypes.md#httpmiddleware)
 
 ## Type aliases
+
+### ExpressNextFunction
+
+Ƭ **ExpressNextFunction**: `NextFunction`
+
+___
+
+### ExpressRequest
+
+Ƭ **ExpressRequest**: `Request`
+
+___
+
+### ExpressResponse
+
+Ƭ **ExpressResponse**: `Response`
+
+___
 
 ### HTTPMiddleware
 
