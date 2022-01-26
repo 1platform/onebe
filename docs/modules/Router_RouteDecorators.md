@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.11](../README.md) / [Exports](../modules.md) / Router/RouteDecorators
+[Spark OneBE - v1.0.12](../README.md) / [Exports](../modules.md) / Router/RouteDecorators
 
 # Module: Router/RouteDecorators
 

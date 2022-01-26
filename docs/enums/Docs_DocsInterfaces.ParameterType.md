@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.11](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / ParameterType
+[Spark OneBE - v1.0.12](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / ParameterType
 
 # Enumeration: ParameterType
 

@@ -48,6 +48,7 @@ class TypeORM {
     const dbConfig = _Config.default.object(`db.${configurationName}`);
 
     const config = {
+      name: configurationName,
       type: dbConfig.engine,
       host: dbConfig.hostname,
       port: dbConfig.port,
