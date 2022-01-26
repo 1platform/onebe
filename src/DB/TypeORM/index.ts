@@ -37,6 +37,7 @@ export default class TypeORM {
   public connect(configurationName: string): Promise<Connection> {
     const dbConfig = Config.object(`db.${ configurationName }`);
     const config: ConnectionOptions = {
+      name: configurationName,
       type: dbConfig.engine as DatabaseType,
       host: dbConfig.hostname,
       port: dbConfig.port,
