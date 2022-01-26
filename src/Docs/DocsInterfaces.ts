@@ -92,6 +92,7 @@ export interface IBodyDoc {
   schema?: string;
   default?: string;
   required?: boolean;
+  enumOptions?: Array<string>;
   arrayType?: BodyParameterType;
 }
 

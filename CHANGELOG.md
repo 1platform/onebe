@@ -2,6 +2,15 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.11
+
+🌟 Improvements:
+
+- Document the exported interfaces for Express.
+- Add options to document enums.
+- Add the TypeORM instance object to be able to connect to multiple databases.
+- Add documentation to TypeORM handler class.
+
 ## Version 1.0.10
 
 🌟 Improvements:

@@ -6,6 +6,7 @@ import DocsStore from "./DocsStore";
  */
 export interface IPropertyOptions {
   description?: string;
+  enumOptions?: Array<string>;
   required?: boolean;
   defaultValue?: string;
   schema?: string;
@@ -50,6 +51,7 @@ const property = (
     description = "",
     required = true,
     defaultValue = "",
+    enumOptions = undefined,
     schema = undefined,
   }: IPropertyOptions
 ): IPropertyResult => {
@@ -57,6 +59,7 @@ const property = (
     name: propertyName,
     type,
     schema: schema || undefined,
+    enumOptions: enumOptions || undefined,
     description: description || "",
     required: required ?? true,
     default: defaultValue || undefined,

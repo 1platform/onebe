@@ -140,6 +140,10 @@ export default class SwaggerBuilder {
                 };
               }
 
+              if (property.enumOptions) {
+                definition.enum = property.enumOptions;
+              }
+
               return {
                 ...accum,
                 [property.name]: definition,

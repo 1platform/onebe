@@ -4,21 +4,34 @@ import Config from "../../System/Config";
 import DefaultLogger from "../../System/Logger";
 
 /**
- * Class representing a TypeORM handler
+ * TypeORM database handler class.
  */
 export default class TypeORM {
   protected static _connection: Connection = null;
 
+  /**
+   * Default connection handler.
+   */
   public static get connection(): Connection {
     return TypeORM._connection;
   }
 
+  protected static _instance: TypeORM = null;
+
   /**
-   * Calls the respective init method
+   * TypeORM instance getter.
+   */
+  public static get instance(): TypeORM {
+    return TypeORM._instance;
+  }
+
+  /**
+   * Calls the Database initialization method.
    */
   public async init(): Promise<void> {
     const engine = Config.string("db.engine", "mysql") as DatabaseType;
     TypeORM._connection = await this.connect(engine);
+    TypeORM._instance = this;
   }
 
   public connect(configurationName: string): Promise<Connection> {
