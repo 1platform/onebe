@@ -4,6 +4,7 @@ import { BodyParameterType } from "./DocsInterfaces";
  */
 export interface IPropertyOptions {
     description?: string;
+    enumOptions?: Array<string>;
     required?: boolean;
     defaultValue?: string;
     schema?: string;
@@ -36,5 +37,5 @@ export declare const docsHelpers: {
      * @param description The description of the interface.
      */
     interface: (name: string, description?: string) => IPropertyResult;
-    property: (interfaceName: string, propertyName: string, type: BodyParameterType, { description, required, defaultValue, schema, }: IPropertyOptions) => IPropertyResult;
+    property: (interfaceName: string, propertyName: string, type: BodyParameterType, { description, required, defaultValue, enumOptions, schema, }: IPropertyOptions) => IPropertyResult;
 };

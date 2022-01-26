@@ -1,12 +1,20 @@
 import { Connection } from "typeorm/connection/Connection";
 /**
- * Class representing a TypeORM handler
+ * TypeORM database handler class.
  */
 export default class TypeORM {
     protected static _connection: Connection;
-    static get connection(): Connection;
     /**
-     * Calls the respective init method
+     * Default connection handler.
+     */
+    static get connection(): Connection;
+    protected static _instance: TypeORM;
+    /**
+     * TypeORM instance getter.
+     */
+    static get instance(): TypeORM;
+    /**
+     * Calls the Database initialization method.
      */
     init(): Promise<void>;
     connect(configurationName: string): Promise<Connection>;

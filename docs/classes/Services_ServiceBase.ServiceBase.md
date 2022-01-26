@@ -42,13 +42,13 @@ various actions in the application.
 
 ### validator
 
-• `get` **validator**(): `AnySchema`
+• `get` **validator**(): `AnySchema`<`any`\>
 
 Returns the default data validator of the service.
 
 #### Returns
 
-`AnySchema`
+`AnySchema`<`any`\>
 
 • `set` **validator**(`newValidator`): `void`
 
@@ -58,7 +58,7 @@ Sets the validator value.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `newValidator` | `AnySchema` | The new validator to be set. |
+| `newValidator` | `AnySchema`<`any`\> | The new validator to be set. |
 
 #### Returns
 
@@ -84,7 +84,7 @@ the data after applying the validator on it.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `data` | `T` | The data to be validated. |
-| `validator` | `AnySchema` | The validator to be used. |
+| `validator` | `AnySchema`<`any`\> | The validator to be used. |
 
 #### Returns
 

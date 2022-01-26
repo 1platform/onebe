@@ -12,6 +12,7 @@ Extra parameters that can be passed to the property documentation method.
 
 - [defaultValue](Docs_DocsHelpers.IPropertyOptions.md#defaultvalue)
 - [description](Docs_DocsHelpers.IPropertyOptions.md#description)
+- [enumOptions](Docs_DocsHelpers.IPropertyOptions.md#enumoptions)
 - [required](Docs_DocsHelpers.IPropertyOptions.md#required)
 - [schema](Docs_DocsHelpers.IPropertyOptions.md#schema)
 
@@ -26,6 +27,12 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### enumOptions
+
+• `Optional` **enumOptions**: `string`[]
 
 ___
 

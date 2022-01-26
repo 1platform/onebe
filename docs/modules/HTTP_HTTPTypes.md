@@ -17,17 +17,23 @@
 
 Ƭ **ExpressNextFunction**: `NextFunction`
 
+Re-exported NextFunction Express type/interface.
+
 ___
 
 ### ExpressRequest
 
 Ƭ **ExpressRequest**: `Request`
 
+Re-exported Request Express type/interface.
+
 ___
 
 ### ExpressResponse
 
 Ƭ **ExpressResponse**: `Response`
+
+Re-exported Response Express type/interface.
 
 ___
 

@@ -4,7 +4,7 @@
 
 [DB/TypeORM](../modules/DB_TypeORM.md).TypeORM
 
-Class representing a TypeORM handler
+TypeORM database handler class.
 
 ## Table of contents
 
@@ -15,10 +15,12 @@ Class representing a TypeORM handler
 ### Properties
 
 - [\_connection](DB_TypeORM.TypeORM.md#_connection)
+- [\_instance](DB_TypeORM.TypeORM.md#_instance)
 
 ### Accessors
 
 - [connection](DB_TypeORM.TypeORM.md#connection)
+- [instance](DB_TypeORM.TypeORM.md#instance)
 
 ### Methods
 
@@ -37,15 +39,35 @@ Class representing a TypeORM handler
 
 ▪ `Static` `Protected` **\_connection**: `Connection` = `null`
 
+___
+
+### \_instance
+
+▪ `Static` `Protected` **\_instance**: [`TypeORM`](DB_TypeORM.TypeORM.md) = `null`
+
 ## Accessors
 
 ### connection
 
 • `Static` `get` **connection**(): `Connection`
 
+Default connection handler.
+
 #### Returns
 
 `Connection`
+
+___
+
+### instance
+
+• `Static` `get` **instance**(): [`TypeORM`](DB_TypeORM.TypeORM.md)
+
+TypeORM instance getter.
+
+#### Returns
+
+[`TypeORM`](DB_TypeORM.TypeORM.md)
 
 ## Methods
 
@@ -69,7 +91,7 @@ ___
 
 ▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-Calls the respective init method
+Calls the Database initialization method.
 
 #### Returns
 

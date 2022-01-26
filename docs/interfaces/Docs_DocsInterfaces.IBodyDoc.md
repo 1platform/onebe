@@ -13,6 +13,7 @@ Interface representing a Body doc
 - [arrayType](Docs_DocsInterfaces.IBodyDoc.md#arraytype)
 - [default](Docs_DocsInterfaces.IBodyDoc.md#default)
 - [description](Docs_DocsInterfaces.IBodyDoc.md#description)
+- [enumOptions](Docs_DocsInterfaces.IBodyDoc.md#enumoptions)
 - [name](Docs_DocsInterfaces.IBodyDoc.md#name)
 - [required](Docs_DocsInterfaces.IBodyDoc.md#required)
 - [schema](Docs_DocsInterfaces.IBodyDoc.md#schema)
@@ -35,6 +36,12 @@ ___
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### enumOptions
+
+• `Optional` **enumOptions**: `string`[]
 
 ___
 

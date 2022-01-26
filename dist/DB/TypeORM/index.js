@@ -16,14 +16,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Class representing a TypeORM handler
+ * TypeORM database handler class.
  */
 class TypeORM {
+  /**
+   * Default connection handler.
+   */
   static get connection() {
     return TypeORM._connection;
   }
+
   /**
-   * Calls the respective init method
+   * TypeORM instance getter.
+   */
+  static get instance() {
+    return TypeORM._instance;
+  }
+  /**
+   * Calls the Database initialization method.
    */
 
 
@@ -31,6 +41,7 @@ class TypeORM {
     const engine = _Config.default.string("db.engine", "mysql");
 
     TypeORM._connection = await this.connect(engine);
+    TypeORM._instance = this;
   }
 
   connect(configurationName) {
@@ -68,3 +79,5 @@ class TypeORM {
 exports.default = TypeORM;
 
 _defineProperty(TypeORM, "_connection", null);
+
+_defineProperty(TypeORM, "_instance", null);

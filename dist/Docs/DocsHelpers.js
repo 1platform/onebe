@@ -21,12 +21,14 @@ const property = (interfaceName, propertyName, type, {
   description = "",
   required = true,
   defaultValue = "",
+  enumOptions = undefined,
   schema = undefined
 }) => {
   _DocsStore.default.instance.addInterfaceProperty(interfaceName, {
     name: propertyName,
     type,
     schema: schema || undefined,
+    enumOptions: enumOptions || undefined,
     description: description || "",
     required: required ?? true,
     default: defaultValue || undefined
