@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.10](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / QueryParameterType
+[Spark OneBE - v1.0.11](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / QueryParameterType
 
 # Enumeration: QueryParameterType
 

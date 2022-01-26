@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.10](../README.md) / [Exports](../modules.md) / Scheduler/IScheduleDefinition
+[Spark OneBE - v1.0.11](../README.md) / [Exports](../modules.md) / Scheduler/IScheduleDefinition
 
 # Module: Scheduler/IScheduleDefinition
 
