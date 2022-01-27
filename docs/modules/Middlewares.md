@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.13](../README.md) / [Exports](../modules.md) / Middlewares
+[Spark OneBE - v1.0.14](../README.md) / [Exports](../modules.md) / Middlewares
 
 # Module: Middlewares
 
@@ -12,4 +12,4 @@
 
 ### default
 
-• **default**: ([`BodyParserMiddleware`](../classes/Middlewares_BodyParserMiddleware.BodyParserMiddleware.md) \| [`CORSMiddleware`](../classes/Middlewares_CORSMiddleware.CORSMiddleware.md) \| [`I18nMiddleware`](../classes/Middlewares_I18NMiddleware.I18nMiddleware.md) \| [`LoggerMiddleware`](../classes/Middlewares_LoggerMiddleware.LoggerMiddleware.md) \| [`PageInfoMiddleware`](../classes/Middlewares_PageInfoMiddleware.PageInfoMiddleware.md) \| [`PassportMiddleware`](../classes/Middlewares_PassportMiddleware.PassportMiddleware.md) \| [`SparkMiddleware`](../classes/Middlewares_SparkMiddleware.SparkMiddleware.md))[]
+• **default**: ([`BodyParserMiddleware`](../classes/Middlewares_BodyParserMiddleware.BodyParserMiddleware.md) \| [`CORSMiddleware`](../classes/Middlewares_CORSMiddleware.CORSMiddleware.md) \| [`I18nMiddleware`](../classes/Middlewares_I18NMiddleware.I18nMiddleware.md) \| [`LoggerMiddleware`](../classes/Middlewares_LoggerMiddleware.LoggerMiddleware.md) \| [`PageInfoMiddleware`](../classes/Middlewares_PageInfoMiddleware.PageInfoMiddleware.md) \| [`PassportMiddleware`](../classes/Middlewares_PassportMiddleware.PassportMiddleware.md) \| [`SessionMiddleware`](../classes/Middlewares_SessionMiddleware.SessionMiddleware.md) \| [`SparkMiddleware`](../classes/Middlewares_SparkMiddleware.SparkMiddleware.md))[]

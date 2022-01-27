@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.13](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / PassportStatic
+[Spark OneBE - v1.0.14](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / PassportStatic
 
 # Interface: PassportStatic
 
