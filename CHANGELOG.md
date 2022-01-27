@@ -2,6 +2,16 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.13
+
+🌟 Improvements:
+
+- Allow session store to be configured by the User.
+
+🔧 Fixes:
+
+- Add missing session required for passport.
+
 ## Version 1.0.12
 
 🌟 Improvements:

@@ -31,6 +31,16 @@ const defaultAuthConfig: IConfig = {
      */
     rememberMeTime: Env.string("JWT_REMEMBER_ME_TIME", "1y"),
   },
+
+  /**
+   * The session configuration object.
+   */
+  session: {
+    /**
+     * Session secret.
+     */
+    secret: Env.string("SESSION_SECRET", "s3creTDiscr3t"),
+  },
 };
 
 export default defaultAuthConfig;
