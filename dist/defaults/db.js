@@ -60,7 +60,12 @@ const defaultDBConfig = {
     /**
      * The database used to connect to the server.
      */
-    database: _Env.default.string("DATABASE_MYSQL_DATABASE", "onebe")
+    database: _Env.default.string("DATABASE_MYSQL_DATABASE", "onebe"),
+
+    /**
+     * Should bigint numbers be treated as strings or as integers.
+     */
+    bigNumberStrings: _Env.default.flag("DATABASE_MYSQL_BIG_NUMBERS")
   },
 
   /**
