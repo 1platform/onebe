@@ -52,6 +52,10 @@ const defaultDBConfig: IConfig = {
      * Should bigint numbers be treated as strings or as integers.
      */
     bigNumberStrings: Env.flag("DATABASE_MYSQL_BIG_NUMBERS"),
+    /**
+     * Timezone support for the backend.
+     */
+    timezone: Env.string("DATABASE_MYSQL_TIMEZONE", "Z"),
   },
 
   /**
