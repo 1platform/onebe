@@ -4,6 +4,7 @@ import I18nMiddleware from "./I18NMiddleware";
 import LoggerMiddleware from "./LoggerMiddleware";
 import PageInfoMiddleware from "./PageInfoMiddleware";
 import PassportMiddleware from "./PassportMiddleware";
+import SessionMiddleware from "./SessionMiddleware";
 import SparkMiddleware from "./SparkMiddleware";
 
 /**
@@ -13,6 +14,7 @@ export default [
   new LoggerMiddleware(),
   new BodyParserMiddleware(),
   new CORSMiddleware(),
+  new SessionMiddleware(),
   new I18nMiddleware(),
   new PageInfoMiddleware(),
   new PassportMiddleware(),

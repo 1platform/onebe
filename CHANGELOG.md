@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.14
+
+🔧 Fixes:
+
+- Add the session middleware to the middlewares list.
+
 ## Version 1.0.13
 
 🌟 Improvements:
