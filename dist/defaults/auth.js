@@ -38,6 +38,16 @@ const defaultAuthConfig = {
      * The default value of the expiration time in case the token is to be remembered.
      */
     rememberMeTime: _Env.default.string("JWT_REMEMBER_ME_TIME", "1y")
+  },
+
+  /**
+   * The session configuration object.
+   */
+  session: {
+    /**
+     * Session secret.
+     */
+    secret: _Env.default.string("SESSION_SECRET", "s3creTDiscr3t")
   }
 };
 var _default = defaultAuthConfig;

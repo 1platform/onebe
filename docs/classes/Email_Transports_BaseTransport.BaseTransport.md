@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.12](../README.md) / [Exports](../modules.md) / [Email/Transports/BaseTransport](../modules/Email_Transports_BaseTransport.md) / BaseTransport
+[Spark OneBE - v1.0.13](../README.md) / [Exports](../modules.md) / [Email/Transports/BaseTransport](../modules/Email_Transports_BaseTransport.md) / BaseTransport
 
 # Class: BaseTransport
 

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.12](../README.md) / [Exports](../modules.md) / [Middlewares/IMiddleware](../modules/Middlewares_IMiddleware.md) / IMiddleware
+[Spark OneBE - v1.0.13](../README.md) / [Exports](../modules.md) / [Middlewares/IMiddleware](../modules/Middlewares_IMiddleware.md) / IMiddleware
 
 # Interface: IMiddleware
 
@@ -15,6 +15,7 @@ The base definition of a middleware class.
 - [`LoggerMiddleware`](../classes/Middlewares_LoggerMiddleware.LoggerMiddleware.md)
 - [`PageInfoMiddleware`](../classes/Middlewares_PageInfoMiddleware.PageInfoMiddleware.md)
 - [`PassportMiddleware`](../classes/Middlewares_PassportMiddleware.PassportMiddleware.md)
+- [`SessionMiddleware`](../classes/Middlewares_SessionMiddleware.SessionMiddleware.md)
 - [`SparkMiddleware`](../classes/Middlewares_SparkMiddleware.SparkMiddleware.md)
 
 ## Table of contents

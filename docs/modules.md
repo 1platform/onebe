@@ -1,6 +1,6 @@
-[Spark OneBE - v1.0.12](README.md) / Exports
+[Spark OneBE - v1.0.13](README.md) / Exports
 
-# Spark OneBE - v1.0.12
+# Spark OneBE - v1.0.13
 
 ## Table of contents
 
@@ -50,6 +50,7 @@
 - [Middlewares/MulterMiddleware](modules/Middlewares_MulterMiddleware.md)
 - [Middlewares/PageInfoMiddleware](modules/Middlewares_PageInfoMiddleware.md)
 - [Middlewares/PassportMiddleware](modules/Middlewares_PassportMiddleware.md)
+- [Middlewares/SessionMiddleware](modules/Middlewares_SessionMiddleware.md)
 - [Middlewares/SparkMiddleware](modules/Middlewares_SparkMiddleware.md)
 - [Router](modules/Router.md)
 - [Router/Route](modules/Router_Route.md)
