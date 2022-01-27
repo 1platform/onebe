@@ -58,6 +58,7 @@ class TypeORM {
       logging: dbConfig.logging ?? false,
       synchronize: false,
       bigNumberStrings: dbConfig.bigNumberStrings ?? false,
+      timezone: dbConfig.timezone || "Z",
       entities: _Config.default.array("db.entities", ["./src/models/**/*.ts"]),
       migrationsTableName: _Config.default.string("db.migrations.table", "_migrations"),
       migrations: _Config.default.array("db.migrations.files", ["./src/migrations/*.js"]),
