@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.15
+
+🔧 Fixes:
+
+- TypeORM bigint string as integer fixes.
+
 ## Version 1.0.14
 
 🔧 Fixes:
