@@ -283,6 +283,22 @@ const method = {
   },
 
   /**
+   * Decorator to add a response to a method.
+   *
+   * @decorator
+   * @param type The type of the response
+   * @param statusCode The status code of the response
+   * @param description The description of the response
+   */
+  responseArray: function (type, statusCode = _HTTPStatus.default.OK, description) {
+    return methodMetadataDecorator(MethodMetadataType.RESPONSE, type, {
+      statusCode,
+      description,
+      isArray: true
+    });
+  },
+
+  /**
    * Decorator to add a URL parameter to a method.
    *
    * @decorator

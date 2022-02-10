@@ -118,6 +118,15 @@ export declare const method: {
      */
     response: (type: string, statusCode?: HTTPStatus, description?: string) => RouteDecorator;
     /**
+     * Decorator to add a response to a method.
+     *
+     * @decorator
+     * @param type The type of the response
+     * @param statusCode The status code of the response
+     * @param description The description of the response
+     */
+    responseArray: (type: string, statusCode?: HTTPStatus, description?: string) => RouteDecorator;
+    /**
      * Decorator to add a URL parameter to a method.
      *
      * @decorator

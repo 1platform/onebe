@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.16](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
+[Spark OneBE - v1.0.17](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
 
 # Class: Logger
 

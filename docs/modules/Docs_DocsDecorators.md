@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.16](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
+[Spark OneBE - v1.0.17](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
 
 # Module: Docs/DocsDecorators
 
@@ -82,6 +82,7 @@ A list of decorators to define properties of a method.
 | `query` | (`parameter`: `string`, `type`: `string`, `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `request` | (`type`: `string`, `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `response` | (`type`: `string`, `statusCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
+| `responseArray` | (`type`: `string`, `statusCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `responseStatus` | (`statusCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `throws` | <TResponse\>(`errorCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description`: `string`, `response?`: [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 

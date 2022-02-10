@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.16](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IVerbDecorators
+[Spark OneBE - v1.0.17](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IVerbDecorators
 
 # Interface: IVerbDecorators<Request, Response\>
 

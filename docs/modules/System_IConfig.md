@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.16](../README.md) / [Exports](../modules.md) / System/IConfig
+[Spark OneBE - v1.0.17](../README.md) / [Exports](../modules.md) / System/IConfig
 
 # Module: System/IConfig
 

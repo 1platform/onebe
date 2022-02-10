@@ -356,13 +356,26 @@ class SwaggerBuilder {
     }
 
     if (routeDefinition.response && routeDefinition.response.schema) {
-      response = {
-        content: {
-          "application/json": {
-            schema: {
-              $ref: `#/components/schemas/${routeDefinition.response.schema}`
+      let schemaResponse = {
+        schema: {
+          $ref: `#/components/schemas/${routeDefinition.response.schema}`
+        }
+      };
+
+      if (routeDefinition.response.isArray) {
+        schemaResponse = {
+          schema: {
+            items: {
+              $ref: routeDefinition.response.schema ? `#/components/schemas/${routeDefinition.response.schema}` : undefined,
+              type: !routeDefinition.response.schema ? routeDefinition.response.type : undefined
             }
           }
+        };
+      }
+
+      response = {
+        content: {
+          "application/json": schemaResponse
         }
       };
     }
