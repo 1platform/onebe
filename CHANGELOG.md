@@ -2,11 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.17
+
+🔧 Improvements:
+
+- Add documentation decorators to document response arrays.
+
 ## Version 1.0.16
 
 🔧 Improvements:
 
-- TypeORM support for timezone
+- TypeORM support for timezone.
 
 ## Version 1.0.15
 
