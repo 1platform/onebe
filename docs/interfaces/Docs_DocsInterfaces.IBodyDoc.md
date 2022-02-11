@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.18](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / IBodyDoc
+[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / IBodyDoc
 
 # Interface: IBodyDoc
 

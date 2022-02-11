@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.18](../README.md) / [Exports](../modules.md) / Router/RouteTypes
+[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Router/RouteTypes
 
 # Module: Router/RouteTypes
 

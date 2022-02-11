@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.18](../README.md) / [Exports](../modules.md) / Email/Transports/SMTPTransport
+[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Email/Transports/SMTPTransport
 
 # Module: Email/Transports/SMTPTransport
 
