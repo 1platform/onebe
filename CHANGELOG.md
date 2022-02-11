@@ -2,22 +2,30 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.19
+
+🔧 Bugfix:
+
+- Fix some emoji in changelog.
+- Fix yarnrc file to publish on npmjs registry.
+- Fix nodeignore to ignore .yarn folder.
+
 ## Version 1.0.18
 
-🔧 Improvements:
+🌟 Improvements:
 
 - Change how the array response is handled.
 - Add the token if available in the auth context.
 
 ## Version 1.0.17
 
-🔧 Improvements:
+🌟 Improvements:
 
 - Add documentation decorators to document response arrays.
 
 ## Version 1.0.16
 
-🔧 Improvements:
+🌟 Improvements:
 
 - TypeORM support for timezone.
 
