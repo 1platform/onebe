@@ -1,2 +1,2 @@
-declare const _default: "cf905d8";
+declare const _default: "1622036";
 export default _default;

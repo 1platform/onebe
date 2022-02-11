@@ -20,7 +20,7 @@ const codename = "No one knows yet...";
  */
 
 exports.codename = codename;
-const version = "1.0.17";
+const version = "1.0.18";
 /**
  * Function that returns the full version string (version + buildId)
  */

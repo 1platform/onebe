@@ -28,6 +28,8 @@ var _index = _interopRequireDefault(require("./index"));
 
 var _RouteUtils = require("./RouteUtils");
 
+var _JWT = require("../Authentication/JWT");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -141,6 +143,7 @@ function verbAction(props) {
         getQueryArray: getQueryArray(req)
       }, _objectSpread({
         user: req.user,
+        token: (0, _JWT.extractToken)(req),
         isAuthenticated: req.isAuthenticated.bind(req),
         logout: req.logout ? req.logout.bind(req) : () => {
           /*NOPE*/
