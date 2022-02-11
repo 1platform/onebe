@@ -381,15 +381,16 @@ export default class SwaggerBuilder {
       };
 
       if (routeDefinition.response.isArray) {
+        const isBaseType = [ "string", "number", "boolean" ].indexOf(
+          routeDefinition.response.schema as unknown as string
+        );
         schemaResponse = {
           schema: {
             items: {
-              $ref: routeDefinition.response.schema
+              $ref: !isBaseType
                 ? `#/components/schemas/${ routeDefinition.response.schema }`
                 : undefined,
-              type: !routeDefinition.response.schema
-                ? routeDefinition.response.type
-                : undefined,
+              type: !isBaseType ? routeDefinition.response.type : undefined,
             },
           },
         };

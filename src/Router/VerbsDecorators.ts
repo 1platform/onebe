@@ -25,6 +25,7 @@ import {
   getBeforeHooksCallbacks,
   getRouteCallbacks,
 } from "./RouteUtils";
+import { extractToken } from "../Authentication/JWT";
 
 /**
  * Function used to extract the Route callback from the middlewares list.
@@ -155,6 +156,7 @@ function verbAction<TRequest = any, TResponse = any>(
           },
           {
             user: req.user,
+            token: extractToken(req),
             isAuthenticated: req.isAuthenticated.bind(req),
             logout: req.logout
               ? req.logout.bind(req)

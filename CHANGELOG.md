@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.18
+
+🔧 Improvements:
+
+- Change how the array response is handled.
+- Add the token if available in the auth context.
+
 ## Version 1.0.17
 
 🔧 Improvements:
