@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Docs/DocsInterfaces
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Docs/DocsInterfaces
 
 # Module: Docs/DocsInterfaces
 
@@ -40,6 +40,6 @@ Type used to define a Routes list
 
 ### DEFAULT\_BODY\_TAG
 
-• **DEFAULT\_BODY\_TAG**: ``"__DEFAULT__"``
+• `Const` **DEFAULT\_BODY\_TAG**: ``"__DEFAULT__"``
 
 The default identifier for a the Response body when using interfaces for responses.

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / defaults/auth
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / defaults/auth
 
 # Module: defaults/auth
 
@@ -12,6 +12,6 @@
 
 ### defaultAuthConfig
 
-• **defaultAuthConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultAuthConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for JsonWebToken

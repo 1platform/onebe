@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Docs/DocsHelpers
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Docs/DocsHelpers
 
 # Module: Docs/DocsHelpers
 
@@ -45,7 +45,7 @@ Interface property definition method.
 
 ### docsHelpers
 
-• **docsHelpers**: `Object`
+• `Const` **docsHelpers**: `Object`
 
 Documentation helper function to document interfaces and properties.
 

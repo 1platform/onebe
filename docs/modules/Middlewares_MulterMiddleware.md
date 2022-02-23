@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
 
 # Module: Middlewares/MulterMiddleware
 
@@ -40,7 +40,7 @@ Sign method options.
 
 ### signURL
 
-• **signURL**: `any`
+• `Const` **signURL**: `any`
 
 Function used to create signed URLs.
 
@@ -112,7 +112,7 @@ ___
 
 ### verifierURL
 
-▸ `Const` **verifierURL**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **verifierURL**(`target`, `propertyKey`, `descriptor`): `void`
 
 Middleware used to verify if a signed URL is valid.
 

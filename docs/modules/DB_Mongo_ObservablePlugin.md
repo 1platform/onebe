@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
 
 # Module: DB/Mongo/ObservablePlugin
 
@@ -73,7 +73,7 @@ The definition of the observer plugin function returned by the observerPlugin fu
 
 ### observer
 
-• **observer**: [`Observable`](../classes/DB_Mongo_Observable.Observable.md)
+• `Const` **observer**: [`Observable`](../classes/DB_Mongo_Observable.Observable.md)
 
 The observer instance we use to observe changes.
 

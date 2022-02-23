@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
 
 # Module: Docs/DocsDecorators
 
@@ -53,7 +53,7 @@ Type used to define a Route Documentation
 
 ### controller
 
-• **controller**: `Object`
+• `Const` **controller**: `Object`
 
 A list of decorators to define properties of a controller.
 
@@ -68,7 +68,7 @@ ___
 
 ### method
 
-• **method**: `Object`
+• `Const` **method**: `Object`
 
 A list of decorators to define properties of a method.
 
@@ -90,7 +90,7 @@ ___
 
 ### schema
 
-• **schema**: `Object`
+• `Const` **schema**: `Object`
 
 A list of decorators to define entities.
 

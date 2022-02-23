@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / defaults/db
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / defaults/db
 
 # Module: defaults/db
 
@@ -12,6 +12,6 @@
 
 ### defaultDBConfig
 
-• **defaultDBConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultDBConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for the Database

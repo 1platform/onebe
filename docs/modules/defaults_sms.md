@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / defaults/sms
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / defaults/sms
 
 # Module: defaults/sms
 
@@ -12,6 +12,6 @@
 
 ### defaultSMSConfig
 
-• **defaultSMSConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultSMSConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for SMS services.

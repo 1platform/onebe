@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / defaults/api
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / defaults/api
 
 # Module: defaults/api
 
@@ -12,6 +12,6 @@
 
 ### defaultAPIConfig
 
-• **defaultAPIConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultAPIConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for Api

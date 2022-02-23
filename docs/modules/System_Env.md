@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / System/Env
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / System/Env
 
 # Module: System/Env
 
@@ -16,4 +16,4 @@
 
 ### Env
 
-• **Env**: [`Environment`](../classes/System_Env.Environment.md)
+• `Const` **Env**: [`Environment`](../classes/System_Env.Environment.md)

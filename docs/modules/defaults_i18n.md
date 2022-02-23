@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / defaults/i18n
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / defaults/i18n
 
 # Module: defaults/i18n
 
@@ -12,6 +12,6 @@
 
 ### defaultLangConfig
 
-• **defaultLangConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultLangConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default Language configuration.

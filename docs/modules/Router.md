@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Router
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Router
 
 # Module: Router
 
@@ -16,6 +16,6 @@
 
 ### Router
 
-• **Router**: [`RouterBase`](../classes/Router.RouterBase.md)
+• `Const` **Router**: [`RouterBase`](../classes/Router.RouterBase.md)
 
 The global default Router that we are going to use in our application.

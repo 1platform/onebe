@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
 
 # Module: Authentication/AuthDecorators
 
@@ -14,7 +14,7 @@
 
 ### basic
 
-▸ `Const` **basic**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **basic**(`target`, `propertyKey`, `descriptor`): `void`
 
 Decorator to enable Basic Authentication for an endpoint.
 
@@ -42,7 +42,7 @@ ___
 
 ### bearer
 
-▸ `Const` **bearer**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **bearer**(`target`, `propertyKey`, `descriptor`): `void`
 
 Decorator to enable Bearer Authentication for an endpoint.
 
@@ -70,7 +70,7 @@ ___
 
 ### extractUser
 
-▸ `Const` **extractUser**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **extractUser**(`target`, `propertyKey`, `descriptor`): `void`
 
 Middleware used to extract the user from the request when using Bearer Authentication
 on a mixed route (Public and Protected).

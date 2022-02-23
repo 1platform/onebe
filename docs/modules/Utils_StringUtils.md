@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.19](../README.md) / [Exports](../modules.md) / Utils/StringUtils
+[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / Utils/StringUtils
 
 # Module: Utils/StringUtils
 
@@ -21,7 +21,7 @@
 
 ### comparePassword
 
-▸ `Const` **comparePassword**(`password`, `encryptedPassword`): `boolean`
+▸ **comparePassword**(`password`, `encryptedPassword`): `boolean`
 
 Compares an encrypted password with the one entered by the user.
 
@@ -40,7 +40,7 @@ ___
 
 ### encryptPassword
 
-▸ `Const` **encryptPassword**(`password`, `saltSize?`): `string`
+▸ **encryptPassword**(`password`, `saltSize?`): `string`
 
 Encrypt a password using the hash function from bcryptjs.
 
@@ -66,7 +66,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `template` | `string` |
-| `...args` | (`string` \| { [k: string]: `any`;  })[] |
+| `...args` | (`string` \| { `[k: string]`: `any`;  })[] |
 
 #### Returns
 
@@ -76,7 +76,7 @@ ___
 
 ### shortid
 
-▸ `Const` **shortid**(): `string`
+▸ **shortid**(): `string`
 
 Generates a ShortID that can be used for various things.
 
@@ -88,7 +88,7 @@ ___
 
 ### uuidV1
 
-▸ `Const` **uuidV1**(): `string`
+▸ **uuidV1**(): `string`
 
 Generate an UUID V1 code.
 
@@ -100,7 +100,7 @@ ___
 
 ### uuidV4
 
-▸ `Const` **uuidV4**(): `string`
+▸ **uuidV4**(): `string`
 
 Generate an UUID V4 code.
 
