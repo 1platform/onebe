@@ -22,6 +22,8 @@ rm -rf /tmp/publish
 mkdir /tmp/publish
 cp -r ./dist/* /tmp/publish
 cp -r ./.yarn /tmp/publish
+cp -r ./.gitignore /tmp/publish
+cp -r ./.nodeignore /tmp/publish
 cp ./.eslintrc /tmp/publish
 cp ./README.md /tmp/publish
 cp ./CHANGELOG.md /tmp/publish

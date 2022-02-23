@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.20
+
+🌟 Improvements:
+
+- Update dependencies.
+
+🔧 Bugfix:
+
+- Fix yarnrc file to publish on npmjs registry.
+- Fix nodeignore to ignore .yarn folder.
+
 ## Version 1.0.19
 
 🔧 Bugfix:
