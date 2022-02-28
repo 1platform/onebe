@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.22
+
+🔧 Bugfix:
+
+- Invert the checks for the boolean query parameter
+
 ## Version 1.0.21
 
 🚀 New:
