@@ -2,6 +2,20 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.21
+
+🚀 New:
+
+- Add methods to get the parameter from the route as a given type.
+
+🌟 Improvements:
+
+- Upgrade dependencies
+
+🔧 Bugfix:
+
+- Fix an issue with the query parameters for boolean items.
+
 ## Version 1.0.20
 
 🌟 Improvements:

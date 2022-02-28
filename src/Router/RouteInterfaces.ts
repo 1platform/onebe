@@ -23,6 +23,18 @@ export interface IContext<TRequest = any> {
    */
   query?: string | QueryString.ParsedQs | string[] | QueryString.ParsedQs[];
   /**
+   * Get the router parameter as a string.
+   *
+   * @param key The key we need from the query string.
+   */
+  getParam?: (key: string, defaultValue?: string) => string;
+  /**
+   * Get the route parameter as a number.
+   *
+   * @param key The key we need from the query string.
+   */
+  getParamNumber?: (key: string, defaultValue?: number) => number;
+  /**
    * Get the query parameter as a string.
    *
    * @param key The key we need from the query string.
@@ -82,6 +94,10 @@ export interface IAuthContext {
    * The user object.
    */
   user?: IUser;
+  /**
+   * The token received from the bearer authorization header.
+   */
+  token?: string;
   /**
    * Method to check if the user is authenticated or not.
    */

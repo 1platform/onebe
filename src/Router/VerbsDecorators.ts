@@ -62,12 +62,26 @@ const getQuery = (req: Request) => (key: string, defaultValue?: string) =>
 const getQueryNumber = (req: Request) => (key: string, defaultValue?: number) =>
   Number(req.query[key]) || defaultValue;
 /**
+ * Wrapper function to get the query parameter as a string.
+ *
+ * @param req The request object.
+ */
+const getParam = (req: Request) => (key: string, defaultValue?: string) =>
+  (req.params[key] as string) || defaultValue;
+/**
+ * Wrapper function to get the query parameter as a number.
+ *
+ * @param req The request object.
+ */
+const getParamNumber = (req: Request) => (key: string, defaultValue?: number) =>
+  Number(req.params[key]) || defaultValue;
+/**
  * Wrapper function to get the query parameter as a boolean.
  *
  * @param req The request object.
  */
 const getQueryBoolean = (req: Request) => (key: string) =>
-  !!req.query[key] ?? false;
+  (req.query[key] ?? "false") === "false";
 /**
  * Wrapper function to get the query parameter as an array.
  *
@@ -149,6 +163,8 @@ function verbAction<TRequest = any, TResponse = any>(
             response: props.passRequest ? res : undefined,
             file: req.file || undefined,
             files: req.files || undefined,
+            getParam: getParam(req),
+            getParamNumber: getParamNumber(req),
             getQuery: getQuery(req),
             getQueryNumber: getQueryNumber(req),
             getQueryBoolean: getQueryBoolean(req),
