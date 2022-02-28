@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
+[Spark OneBE - v1.0.21](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
 
 # Interface: IContext<TRequest\>
 
@@ -27,6 +27,8 @@ The request context parameter definition.
 
 ### Methods
 
+- [getParam](Router_RouteInterfaces.IContext.md#getparam)
+- [getParamNumber](Router_RouteInterfaces.IContext.md#getparamnumber)
 - [getQuery](Router_RouteInterfaces.IContext.md#getquery)
 - [getQueryArray](Router_RouteInterfaces.IContext.md#getqueryarray)
 - [getQueryBoolean](Router_RouteInterfaces.IContext.md#getqueryboolean)
@@ -97,6 +99,44 @@ ___
 The response object.
 
 ## Methods
+
+### getParam
+
+▸ `Optional` **getParam**(`key`, `defaultValue?`): `string`
+
+Get the router parameter as a string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string` | - |
+
+#### Returns
+
+`string`
+
+___
+
+### getParamNumber
+
+▸ `Optional` **getParamNumber**(`key`, `defaultValue?`): `number`
+
+Get the route parameter as a number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `number` | - |
+
+#### Returns
+
+`number`
+
+___
 
 ### getQuery
 

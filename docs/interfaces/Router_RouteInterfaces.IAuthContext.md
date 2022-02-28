@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.20](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IAuthContext
+[Spark OneBE - v1.0.21](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IAuthContext
 
 # Interface: IAuthContext
 
@@ -16,6 +16,7 @@ Indexer for any other authentication context option.
 
 ### Properties
 
+- [token](Router_RouteInterfaces.IAuthContext.md#token)
 - [user](Router_RouteInterfaces.IAuthContext.md#user)
 
 ### Methods
@@ -24,6 +25,14 @@ Indexer for any other authentication context option.
 - [logout](Router_RouteInterfaces.IAuthContext.md#logout)
 
 ## Properties
+
+### token
+
+• `Optional` **token**: `string`
+
+The token received from the bearer authorization header.
+
+___
 
 ### user
 
