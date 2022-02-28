@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.21](../README.md) / [Exports](../modules.md) / [Docs/SwaggerBuilder](../modules/Docs_SwaggerBuilder.md) / SwaggerBuilder
+[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / [Docs/SwaggerBuilder](../modules/Docs_SwaggerBuilder.md) / SwaggerBuilder
 
 # Class: SwaggerBuilder
 

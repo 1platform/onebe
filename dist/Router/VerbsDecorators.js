@@ -98,7 +98,7 @@ const getParamNumber = req => (key, defaultValue) => Number(req.params[key]) || 
  */
 
 
-const getQueryBoolean = req => key => (req.query[key] ?? "false") === "false";
+const getQueryBoolean = req => key => (req.query[key] ?? "false") !== "false";
 /**
  * Wrapper function to get the query parameter as an array.
  *

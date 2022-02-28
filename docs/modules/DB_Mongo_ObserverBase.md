@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.21](../README.md) / [Exports](../modules.md) / DB/Mongo/ObserverBase
+[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / DB/Mongo/ObserverBase
 
 # Module: DB/Mongo/ObserverBase
 
