@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from "express";
-import { getElementDocs, RouteDocs } from "../Docs/DocsDecorators";
+import {NextFunction, Request, Response} from "express";
+import {getElementDocs, RouteDocs} from "../Docs/DocsDecorators";
 import DocsStore from "../Docs/DocsStore";
 import HTTPStatus from "../HTTP/HTTPStatus";
-import { HTTPMiddleware } from "../HTTP/HTTPTypes";
+import {HTTPMiddleware} from "../HTTP/HTTPTypes";
 import HTTPVerb from "../HTTP/HTTPVerb";
 import DefaultLogger from "../System/Logger";
 import Router from "./index";
@@ -25,7 +25,7 @@ import {
   getBeforeHooksCallbacks,
   getRouteCallbacks,
 } from "./RouteUtils";
-import { extractToken } from "../Authentication/JWT";
+import {extractToken} from "../Authentication/JWT";
 
 /**
  * Function used to extract the Route callback from the middlewares list.
@@ -38,13 +38,13 @@ function callbackExtractor<Request = any, Response = any>(
   let callback: AppMethod<Request, Response>;
   let middlewares: Array<HTTPMiddleware> = [];
   if (Array.isArray(fn)) {
-    middlewares = [ ...fn.slice(0, fn.length - 1) ] as Array<HTTPMiddleware>;
+    middlewares = [...fn.slice(0, fn.length - 1)] as Array<HTTPMiddleware>;
     callback = fn.pop() as AppMethod<Request, Response>;
   } else {
     callback = fn as AppMethod<Request, Response>;
   }
 
-  return { callback, middlewares };
+  return {callback, middlewares};
 }
 
 /**
@@ -90,6 +90,12 @@ const getQueryBoolean = (req: Request) => (key: string) =>
 const getQueryArray =
   (req: Request) => (key: string, defaultValue?: string[]) =>
     (req.query[key] as string[]) || defaultValue;
+/**
+ * Wrapper function to get the body content as the request type.
+ *
+ * @param req The request object.
+ */
+const getBody = <T = any>(req: Request) => (): T => req.body as T;
 
 /**
  * A generic function that registers a HTTP Verb endpoint in the router.
@@ -104,10 +110,10 @@ const getQueryArray =
 function verbAction<TRequest = any, TResponse = any>(
   props: IVerbAction<TRequest, TResponse>
 ): void {
-  const { callback, middlewares } = callbackExtractor<TRequest, TResponse>(
+  const {callback, middlewares} = callbackExtractor<TRequest, TResponse>(
     props.actionCallback
   );
-  let path = `/${ props.basePath }/${ props.path }`.replace(
+  let path = `/${props.basePath}/${props.path}`.replace(
     /(https?:\/\/)|(\/)+/g,
     "$1$2"
   );
@@ -140,10 +146,10 @@ function verbAction<TRequest = any, TResponse = any>(
         ) || false,
     },
     getElementDocs<RouteDocs>(props.target, props.propertyKey) ||
-      ({} as RouteDocs)
+    ({} as RouteDocs)
   );
 
-  DefaultLogger.debug(`[REGISTER] ${ props.method.toUpperCase() }: ${ path }`);
+  DefaultLogger.debug(`[REGISTER] ${props.method.toUpperCase()}: ${path}`);
 
   Router.router[props.method](
     path,
@@ -169,6 +175,7 @@ function verbAction<TRequest = any, TResponse = any>(
             getQueryNumber: getQueryNumber(req),
             getQueryBoolean: getQueryBoolean(req),
             getQueryArray: getQueryArray(req),
+            getBody: getBody<TRequest>(req),
           },
           {
             user: req.user,
@@ -229,7 +236,7 @@ function verbAction<TRequest = any, TResponse = any>(
 function verbDecorator<Request = any, Response = any>(
   props: IVerbDecorators
 ): void {
-  const { method, path, target, descriptor, passRequest, propertyKey } = props;
+  const {method, path, target, descriptor, passRequest, propertyKey} = props;
   const routeCallbacks: RouteCallbacks = getRouteCallbacks(target);
   const beforeHooksCallbacks: RouteHooksCallbacks = getBeforeHooksCallbacks(
     target,
@@ -242,7 +249,7 @@ function verbDecorator<Request = any, Response = any>(
 
   routeCallbacks.push((basePath: string, groupName: string) => {
     beforeHooksCallbacks.forEach((hook) =>
-      hook({ method, basePath, path, groupName })
+      hook({method, basePath, path, groupName})
     );
     verbAction<Request, Response>({
       method,
@@ -255,7 +262,7 @@ function verbDecorator<Request = any, Response = any>(
       groupName,
     });
     afterHooksCallbacks.forEach((hook) =>
-      hook({ method, basePath, path, groupName })
+      hook({method, basePath, path, groupName})
     );
   });
 }

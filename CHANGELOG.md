@@ -2,6 +2,16 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.23
+
+🚀 New:
+
+- Add methods to get the body of the request with a specific type.
+
+🌟 Improvements:
+
+- Upgrade dependencies.
+
 ## Version 1.0.22
 
 🔧 Bugfix:

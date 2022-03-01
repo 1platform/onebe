@@ -1709,7 +1709,7 @@ __metadata:
     js-yaml: ^4.1.0
     lodash: ^4.17.21
     mongodb: ^4.4.0
-    mongoose: ^6.2.3
+    mongoose: ^6.2.4
     morgan: ^1.10.0
     multer: ^1.4.4
     node-cron: ^3.0.0
@@ -1727,7 +1727,7 @@ __metadata:
     signed: ^2.0.3
     speakeasy: ^2.0.0
     string-format: ^2.0.0
-    string-strip-html: ^8.3.0
+    string-strip-html: 8.3.0
     swagger-ui-express: ^4.3.0
     twilio: ^3.75.0
     typedoc: ^0.22.12
@@ -1736,7 +1736,7 @@ __metadata:
     typedoc-plugin-mdn-links: ^1.0.5
     typedoc-plugin-rename-defaults: ^0.4.0
     typeorm: ^0.2.44
-    typescript: ^4.5.5
+    typescript: ^4.6.2
     uuid: ^8.3.2
     winston: ^3.6.0
   languageName: unknown
@@ -5777,9 +5777,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.2.3":
-  version: 6.2.3
-  resolution: "mongoose@npm:6.2.3"
+"mongoose@npm:^6.2.4":
+  version: 6.2.4
+  resolution: "mongoose@npm:6.2.4"
   dependencies:
     bson: ^4.2.2
     kareem: 2.3.4
@@ -5788,7 +5788,7 @@ fsevents@~2.3.2:
     mquery: 4.0.2
     ms: 2.1.3
     sift: 16.0.0
-  checksum: d18ff711bf2174255143641a8d37f9a536aa7d445754d9befa461f2bd12b78d29e0cf6ef65f5d8b8ec87959594be541c7cc565227230ae0a3c3a0fe708f62123
+  checksum: 7f163e4cedf7b6cbc19c41501f644db036b8b5272051ecb77b3dd9727fee4b595b6e17e4fd83a012b27eb72d8c1026864fc354fd39ec5830173f7a9b0fbad58a
   languageName: node
   linkType: hard
 
@@ -7551,9 +7551,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"string-strip-html@npm:^8.3.0":
+"string-strip-html@npm:8.3.0":
   version: 8.3.0
-  resolution: "string-strip-html@npm:8.3.0::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Fstring-strip-html%2F-%2Fstring-strip-html-8.3.0.tgz"
+  resolution: "string-strip-html@npm:8.3.0"
   dependencies:
     "@babel/runtime": ^7.14.0
     html-entities: ^2.3.2
@@ -8070,23 +8070,23 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-typescript@^4.5.5:
-  version: 4.5.5
-  resolution: "typescript@npm:4.5.5::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Ftypescript%2F-%2Ftypescript-4.5.5.tgz"
+typescript@^4.6.2:
+  version: 4.6.2
+  resolution: "typescript@npm:4.6.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 506f4c919dc8aeaafa92068c997f1d213b9df4d9756d0fae1a1e7ab66b585ab3498050e236113a1c9e57ee08c21ec6814ca7a7f61378c058d79af50a4b1f5a5e
+  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>":
-  version: 4.5.5
-  resolution: "typescript@patch:typescript@npm%3A4.5.5%3A%3A__archiveUrl=https%253A%252F%252Fregistry.npmjs.org%252Ftypescript%252F-%252Ftypescript-4.5.5.tgz#~builtin<compat/typescript>::version=4.5.5&hash=d8b4e7"
+"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+  version: 4.6.2
+  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=d8b4e7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ed34e0986bc395da29a9a749fc980741fcbf698c205d6dc282310a652ee4ae61b571c26fd62c8a264ec26ff23ef12d888d5db7b41031cfaad1798db0d090f5c3
+  checksum: 4b15830bdbd391a66f9f3bcc2dc81fdcaa8143adbf3f9e47dc67ab2d971646a1caf19b89c677afea066e22d3d111f3c1b7b137e3d9a7e8663a6bf9497d428041
   languageName: node
   linkType: hard
 
