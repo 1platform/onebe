@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / [Authentication/Passport](Authentication_Passport.md) / passport
+[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [Authentication/Passport](Authentication_Passport.md) / passport
 
 # Namespace: passport
 

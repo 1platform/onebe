@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / [Exceptions/HTTPError](../modules/Exceptions_HTTPError.md) / HTTPError
+[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [Exceptions/HTTPError](../modules/Exceptions_HTTPError.md) / HTTPError
 
 # Class: HTTPError
 

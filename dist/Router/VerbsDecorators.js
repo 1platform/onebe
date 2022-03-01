@@ -108,6 +108,14 @@ const getQueryBoolean = req => key => (req.query[key] ?? "false") !== "false";
 
 const getQueryArray = req => (key, defaultValue) => req.query[key] || defaultValue;
 /**
+ * Wrapper function to get the body content as the request type.
+ *
+ * @param req The request object.
+ */
+
+
+const getBody = req => () => req.body;
+/**
  * A generic function that registers a HTTP Verb endpoint in the router.
  *
  * Attaches to the target the following metadata:
@@ -158,7 +166,8 @@ function verbAction(props) {
         getQuery: getQuery(req),
         getQueryNumber: getQueryNumber(req),
         getQueryBoolean: getQueryBoolean(req),
-        getQueryArray: getQueryArray(req)
+        getQueryArray: getQueryArray(req),
+        getBody: getBody(req)
       }, _objectSpread({
         user: req.user,
         token: (0, _JWT.extractToken)(req),

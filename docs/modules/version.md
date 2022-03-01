@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / version
+[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / version
 
 # Module: version
 
@@ -25,7 +25,7 @@ ___
 
 ### version
 
-• `Const` **version**: ``"1.0.22"``
+• `Const` **version**: ``"1.0.23"``
 
 The version of the framework.
 

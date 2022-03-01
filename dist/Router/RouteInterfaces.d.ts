@@ -55,6 +55,12 @@ export interface IContext<TRequest = any> {
      */
     getQueryArray?: (key: string, defaultValue?: string[]) => string[];
     /**
+     * Get the query parameter as an array.
+     *
+     * @param key The key we need from the query string.
+     */
+    getBody?: () => TRequest;
+    /**
      * The header data extractor function.
      */
     header: HeaderMethod;

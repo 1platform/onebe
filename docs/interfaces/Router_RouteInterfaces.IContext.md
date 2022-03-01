@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.22](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
+[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
 
 # Interface: IContext<TRequest\>
 
@@ -27,6 +27,7 @@ The request context parameter definition.
 
 ### Methods
 
+- [getBody](Router_RouteInterfaces.IContext.md#getbody)
 - [getParam](Router_RouteInterfaces.IContext.md#getparam)
 - [getParamNumber](Router_RouteInterfaces.IContext.md#getparamnumber)
 - [getQuery](Router_RouteInterfaces.IContext.md#getquery)
@@ -99,6 +100,18 @@ ___
 The response object.
 
 ## Methods
+
+### getBody
+
+▸ `Optional` **getBody**(): `TRequest`
+
+Get the query parameter as an array.
+
+#### Returns
+
+`TRequest`
+
+___
 
 ### getParam
 
