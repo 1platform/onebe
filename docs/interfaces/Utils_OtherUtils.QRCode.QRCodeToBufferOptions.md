@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToBufferOptions
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToBufferOptions
 
 # Interface: QRCodeToBufferOptions
 

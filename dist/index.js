@@ -25,6 +25,12 @@ var _Scheduler = _interopRequireDefault(require("./Scheduler"));
 
 var _Config = _interopRequireDefault(require("./System/Config"));
 
+var _Logger = require("./System/Logger");
+
+var _LoggerType = _interopRequireDefault(require("./System/LoggerType"));
+
+var _LogLevel = _interopRequireDefault(require("./System/LogLevel"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -50,6 +56,20 @@ async function init(props) {
   props = _objectSpread(_objectSpread({}, defaultValues), props);
 
   _Config.default.init(_path.default.resolve(props.currentDir, props.configDir));
+
+  if (!_Config.default.boolean("logs.enabled")) {
+    (0, _Logger.setDefaultLogger)(new _Logger.NoLogger());
+  }
+
+  switch (_Config.default.string("logs.type")) {
+    case _LoggerType.default.CONSOLE:
+      (0, _Logger.setDefaultLogger)(new _Logger.ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
+      break;
+
+    case _LoggerType.default.FILE:
+      (0, _Logger.setDefaultLogger)(new _Logger.FileLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
+      break;
+  }
 
   _App.default.use(_HTTP.default);
 

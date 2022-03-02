@@ -16,6 +16,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 const defaultLogsConfig = {
   /**
+   * Should the logger be enabled or not?
+   */
+  enabled: _Env.default.flag("LOG_ENABLED"),
+
+  /**
+   * The default level of logging throughout the application.
+   */
+  type: _Env.default.string("LOGGER_TYPE", "console"),
+
+  /**
    * The default level of logging throughout the application.
    */
   level: _Env.default.string("LOG_LEVEL", _LogLevel.default.INFO),

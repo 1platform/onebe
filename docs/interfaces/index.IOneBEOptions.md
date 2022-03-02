@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [index](../modules/index.md) / IOneBEOptions
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [index](../modules/index.md) / IOneBEOptions
 
 # Interface: IOneBEOptions
 

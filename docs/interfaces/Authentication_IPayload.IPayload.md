@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [Authentication/IPayload](../modules/Authentication_IPayload.md) / IPayload
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [Authentication/IPayload](../modules/Authentication_IPayload.md) / IPayload
 
 # Interface: IPayload
 

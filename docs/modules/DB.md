@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / DB
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / DB
 
 # Module: DB
 

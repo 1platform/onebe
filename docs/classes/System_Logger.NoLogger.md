@@ -1,54 +1,47 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / ConsoleLogger
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / NoLogger
 
-# Class: ConsoleLogger
+# Class: NoLogger
 
-[System/Logger](../modules/System_Logger.md).ConsoleLogger
+[System/Logger](../modules/System_Logger.md).NoLogger
 
-The console logger that can be used in our application.
+The no logger logger that can be used in our application.
 
 ## Hierarchy
 
 - [`Logger`](System_Logger.Logger.md)
 
-  ↳ **`ConsoleLogger`**
+  ↳ **`NoLogger`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](System_Logger.ConsoleLogger.md#constructor)
+- [constructor](System_Logger.NoLogger.md#constructor)
 
 ### Properties
 
-- [\_log](System_Logger.ConsoleLogger.md#_log)
+- [\_log](System_Logger.NoLogger.md#_log)
 
 ### Accessors
 
-- [log](System_Logger.ConsoleLogger.md#log)
+- [log](System_Logger.NoLogger.md#log)
 
 ### Methods
 
-- [debug](System_Logger.ConsoleLogger.md#debug)
-- [error](System_Logger.ConsoleLogger.md#error)
-- [info](System_Logger.ConsoleLogger.md#info)
-- [silly](System_Logger.ConsoleLogger.md#silly)
-- [verbose](System_Logger.ConsoleLogger.md#verbose)
-- [warn](System_Logger.ConsoleLogger.md#warn)
+- [debug](System_Logger.NoLogger.md#debug)
+- [error](System_Logger.NoLogger.md#error)
+- [info](System_Logger.NoLogger.md#info)
+- [silly](System_Logger.NoLogger.md#silly)
+- [verbose](System_Logger.NoLogger.md#verbose)
+- [warn](System_Logger.NoLogger.md#warn)
 
 ## Constructors
 
 ### constructor
 
-• **new ConsoleLogger**(`logLevel`, `format?`)
+• **new NoLogger**()
 
 The constructor of the logger class.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `logLevel` | [`LogLevel`](../enums/System_LogLevel.LogLevel.md) | The level of logging we will use in our application. |
-| `format?` | `Format` | The message formatter. |
 
 #### Overrides
 

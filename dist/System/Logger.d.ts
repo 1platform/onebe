@@ -1,7 +1,8 @@
 import { Logger as WinstonLogger } from "winston";
-import * as Transport from "winston-transport";
+import Transport from "winston-transport";
 import { FileTransportOptions } from "winston/lib/winston/transports";
 import LogLevel from "./LogLevel";
+import * as logform from "logform";
 /**
  * The base logger class.
  */
@@ -72,8 +73,9 @@ export declare class ConsoleLogger extends Logger {
      * The constructor of the logger class.
      *
      * @param logLevel The level of logging we will use in our application.
+     * @param format The message formatter.
      */
-    constructor(logLevel: LogLevel);
+    constructor(logLevel: LogLevel, format?: logform.Format);
 }
 /**
  * The file logger that can be used in our application.
@@ -86,6 +88,15 @@ export declare class FileLogger extends Logger {
      * @param options The options passed to the file logger transport.
      */
     constructor(logLevel: LogLevel, options?: FileTransportOptions);
+}
+/**
+ * The no logger logger that can be used in our application.
+ */
+export declare class NoLogger extends Logger {
+    /**
+     * The constructor of the logger class.
+     */
+    constructor();
 }
 /**
  * The default logger of the application.

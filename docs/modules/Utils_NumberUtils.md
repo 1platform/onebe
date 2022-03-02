@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / Utils/NumberUtils
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / Utils/NumberUtils
 
 # Module: Utils/NumberUtils
 

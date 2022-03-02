@@ -3,12 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.Logger = exports.FileLogger = exports.ConsoleLogger = void 0;
+exports.default = exports.NoLogger = exports.Logger = exports.FileLogger = exports.ConsoleLogger = void 0;
 exports.setDefaultLogger = setDefaultLogger;
 
 var _path = _interopRequireDefault(require("path"));
 
 var _winston = _interopRequireDefault(require("winston"));
+
+var _winstonTransport = _interopRequireDefault(require("winston-transport"));
 
 var _Config = _interopRequireDefault(require("./Config"));
 
@@ -133,9 +135,12 @@ class ConsoleLogger extends Logger {
    * The constructor of the logger class.
    *
    * @param logLevel The level of logging we will use in our application.
+   * @param format The message formatter.
    */
-  constructor(logLevel) {
-    super(logLevel, new _winston.default.transports.Console());
+  constructor(logLevel, format) {
+    super(logLevel, new _winston.default.transports.Console({
+      format
+    }));
   }
 
 }
@@ -162,11 +167,48 @@ class FileLogger extends Logger {
 
 }
 /**
- * The default logger of the application.
+ * No Logger transport for the NoLogger.
  */
 
 
 exports.FileLogger = FileLogger;
+
+class NoLoggerTransport extends _winstonTransport.default {
+  /**
+   * NoLoggerTransport constructor
+   */
+  constructor() {
+    super();
+  }
+  /**
+   * Log the message.
+   */
+
+
+  log() {// NOP
+  }
+
+}
+/**
+ * The no logger logger that can be used in our application.
+ */
+
+
+class NoLogger extends Logger {
+  /**
+   * The constructor of the logger class.
+   */
+  constructor() {
+    super(_LogLevel.default.VERBOSE, new NoLoggerTransport());
+  }
+
+}
+/**
+ * The default logger of the application.
+ */
+
+
+exports.NoLogger = NoLogger;
 let DefaultLogger = new ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]);
 /**
  * Function used to change the default logger of the application.

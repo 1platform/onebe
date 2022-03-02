@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.23](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
+[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
 
 # Class: Logger
 
@@ -13,6 +13,8 @@ The base logger class.
   ↳ [`ConsoleLogger`](System_Logger.ConsoleLogger.md)
 
   ↳ [`FileLogger`](System_Logger.FileLogger.md)
+
+  ↳ [`NoLogger`](System_Logger.NoLogger.md)
 
 ## Table of contents
 

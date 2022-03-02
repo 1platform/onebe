@@ -1,6 +1,6 @@
-[Spark OneBE - v1.0.23](README.md) / Exports
+[Spark OneBE - v1.0.24](README.md) / Exports
 
-# Spark OneBE - v1.0.23
+# Spark OneBE - v1.0.24
 
 ## Table of contents
 
@@ -72,6 +72,7 @@
 - [System/IConfig](modules/System_IConfig.md)
 - [System/LogLevel](modules/System_LogLevel.md)
 - [System/Logger](modules/System_Logger.md)
+- [System/LoggerType](modules/System_LoggerType.md)
 - [Utils/NumberUtils](modules/Utils_NumberUtils.md)
 - [Utils/OtherUtils](modules/Utils_OtherUtils.md)
 - [Utils/StringUtils](modules/Utils_StringUtils.md)
