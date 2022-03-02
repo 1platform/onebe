@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
+[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IContext
 
 # Interface: IContext<TRequest\>
 

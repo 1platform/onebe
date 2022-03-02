@@ -59,16 +59,16 @@ async function init(props) {
 
   if (!_Config.default.boolean("logs.enabled")) {
     (0, _Logger.setDefaultLogger)(new _Logger.NoLogger());
-  }
+  } else {
+    switch (_Config.default.string("logs.type")) {
+      case _LoggerType.default.CONSOLE:
+        (0, _Logger.setDefaultLogger)(new _Logger.ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
+        break;
 
-  switch (_Config.default.string("logs.type")) {
-    case _LoggerType.default.CONSOLE:
-      (0, _Logger.setDefaultLogger)(new _Logger.ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
-      break;
-
-    case _LoggerType.default.FILE:
-      (0, _Logger.setDefaultLogger)(new _Logger.FileLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
-      break;
+      case _LoggerType.default.FILE:
+        (0, _Logger.setDefaultLogger)(new _Logger.FileLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
+        break;
+    }
   }
 
   _App.default.use(_HTTP.default);
