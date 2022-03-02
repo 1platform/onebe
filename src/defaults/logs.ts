@@ -7,6 +7,16 @@ import LogLevel from "../System/LogLevel";
  */
 const defaultLogsConfig: IConfig = {
   /**
+   * Should the logger be enabled or not?
+   */
+  enabled: Env.flag("LOG_ENABLED"),
+
+  /**
+   * The default level of logging throughout the application.
+   */
+  type: Env.string("LOGGER_TYPE", "console"),
+
+  /**
    * The default level of logging throughout the application.
    */
   level: Env.string("LOG_LEVEL", LogLevel.INFO),

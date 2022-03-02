@@ -1,9 +1,10 @@
 import path from "path";
 import winston, { Logger as WinstonLogger } from "winston";
-import * as Transport from "winston-transport";
+import Transport from "winston-transport";
 import { FileTransportOptions } from "winston/lib/winston/transports";
 import Config from "./Config";
 import LogLevel from "./LogLevel";
+import * as logform from "logform";
 
 /**
  * The base logger class.
@@ -104,9 +105,15 @@ export class ConsoleLogger extends Logger {
    * The constructor of the logger class.
    *
    * @param logLevel The level of logging we will use in our application.
+   * @param format The message formatter.
    */
-  public constructor(logLevel: LogLevel) {
-    super(logLevel, new winston.transports.Console());
+  public constructor(logLevel: LogLevel, format?: logform.Format) {
+    super(
+      logLevel,
+      new winston.transports.Console({
+        format,
+      })
+    );
   }
 }
 
@@ -132,6 +139,37 @@ export class FileLogger extends Logger {
         ...(options || {}),
       })
     );
+  }
+}
+
+/**
+ * No Logger transport for the NoLogger.
+ */
+class NoLoggerTransport extends Transport {
+  /**
+   * NoLoggerTransport constructor
+   */
+  public constructor() {
+    super();
+  }
+
+  /**
+   * Log the message.
+   */
+  public log(): void {
+    // NOP
+  }
+}
+
+/**
+ * The no logger logger that can be used in our application.
+ */
+export class NoLogger extends Logger {
+  /**
+   * The constructor of the logger class.
+   */
+  public constructor() {
+    super(LogLevel.VERBOSE, new NoLoggerTransport());
   }
 }
 

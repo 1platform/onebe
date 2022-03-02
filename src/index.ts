@@ -11,6 +11,14 @@ import i18n from "./i18n";
 import Router from "./Router";
 import Scheduler from "./Scheduler";
 import Config from "./System/Config";
+import {
+  ConsoleLogger,
+  FileLogger,
+  NoLogger,
+  setDefaultLogger,
+} from "./System/Logger";
+import LoggerType from "./System/LoggerType";
+import LogLevel from "./System/LogLevel";
 
 /**
  * Framework configuration options.
@@ -55,6 +63,26 @@ export default async function init(
     ...props,
   };
   Config.init(path.resolve(props.currentDir, props.configDir));
+
+  if (!Config.boolean("logs.enabled")) {
+    setDefaultLogger(new NoLogger());
+  }
+  switch (Config.string("logs.type")) {
+    case LoggerType.CONSOLE:
+      setDefaultLogger(
+        new ConsoleLogger(
+          LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
+        )
+      );
+      break;
+    case LoggerType.FILE:
+      setDefaultLogger(
+        new FileLogger(
+          LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
+        )
+      );
+      break;
+  }
 
   app.use(HTTP);
   app.use(Scheduler);

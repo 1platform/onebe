@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.24
+
+🚀 New:
+
+- Add possibility to disable the logger.
+
+🌟 Improvements:
+
+- Add the custom format console logger.
+- Allow the user to change the logger.
+
 ## Version 1.0.23
 
 🚀 New:
