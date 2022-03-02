@@ -66,22 +66,23 @@ export default async function init(
 
   if (!Config.boolean("logs.enabled")) {
     setDefaultLogger(new NoLogger());
-  }
-  switch (Config.string("logs.type")) {
-    case LoggerType.CONSOLE:
-      setDefaultLogger(
-        new ConsoleLogger(
-          LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
-        )
-      );
-      break;
-    case LoggerType.FILE:
-      setDefaultLogger(
-        new FileLogger(
-          LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
-        )
-      );
-      break;
+  } else {
+    switch (Config.string("logs.type")) {
+      case LoggerType.CONSOLE:
+        setDefaultLogger(
+          new ConsoleLogger(
+            LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
+          )
+        );
+        break;
+      case LoggerType.FILE:
+        setDefaultLogger(
+          new FileLogger(
+            LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
+          )
+        );
+        break;
+    }
   }
 
   app.use(HTTP);
