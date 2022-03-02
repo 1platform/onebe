@@ -3,7 +3,7 @@ import { IncomingMessage, ServerResponse } from "http";
 
 import PageNotFoundException from "../Exceptions/PageNotFoundException";
 import HTTPStatus from "../HTTP/HTTPStatus";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import IMiddleware from "./IMiddleware";
 
 /**
@@ -78,11 +78,11 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
           details = "";
         }
 
-        DefaultLogger.error(`[HTTP ${ status }]: ${ message }`);
-        DefaultLogger.debug(error);
-        DefaultLogger.debug(error.stack);
+        getDefaultLogger().error(`[HTTP ${ status }]: ${ message }`);
+        getDefaultLogger().debug(error);
+        getDefaultLogger().debug(error.stack);
         if (details) {
-          DefaultLogger.debug(JSON.stringify(details));
+          getDefaultLogger().debug(JSON.stringify(details));
         }
 
         res.status(status).json({

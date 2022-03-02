@@ -1,7 +1,7 @@
 import { Transporter } from "nodemailer";
 import stringStripHtml from "string-strip-html";
 import Config from "../../System/Config";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
@@ -40,7 +40,7 @@ export default class BaseTransport implements IEmailTransport {
       html: options.html,
     });
 
-    DefaultLogger.info(`Email Message sent: ${ info.messageId }`);
+    getDefaultLogger().info(`Email Message sent: ${ info.messageId }`);
     return info;
   }
 }

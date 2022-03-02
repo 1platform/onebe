@@ -1,6 +1,6 @@
 import Vonage from "@vonage/server-sdk";
 import Config from "../../System/Config";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**
@@ -42,13 +42,13 @@ export default class VonageTransport implements ISMSTransport {
         {},
         (err, responseData) => {
           if (err) {
-            DefaultLogger.error(err);
+            getDefaultLogger().error(err);
             return;
           }
           if (responseData.messages[0]["status"] === "0") {
-            DefaultLogger.info("Message sent successfully!");
+            getDefaultLogger().info("Message sent successfully!");
           } else {
-            DefaultLogger.error(
+            getDefaultLogger().error(
               `Message failed with error: ${ responseData.messages[0]["error-text"] }`
             );
           }

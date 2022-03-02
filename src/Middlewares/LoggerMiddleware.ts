@@ -1,6 +1,6 @@
 import { Application } from "express";
 import morgan from "morgan";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import IMiddleware from "./IMiddleware";
 
 /**
@@ -15,7 +15,7 @@ export default class LoggerMiddleware implements IMiddleware {
   public use(app: Application): void {
     app.use(
       morgan("dev", {
-        stream: { write: (message) => DefaultLogger.info(message.trim()) },
+        stream: { write: (message) => getDefaultLogger().info(message.trim()) },
       })
     );
   }

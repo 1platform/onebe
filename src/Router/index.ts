@@ -1,7 +1,7 @@
 import { Router as ExpressRouter } from "express";
 import { readdirSync, statSync } from "fs";
 import { basename, extname, join, resolve } from "path";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import Route from "./Route";
 
 /**
@@ -62,7 +62,7 @@ export class RouterBase {
     basePath: string,
     structure: IControllerStruct
   ): Promise<void> {
-    DefaultLogger.info(
+    getDefaultLogger().info(
       `[REGISTER] Controllers in section: ${ structure.section || "DEFAULT" }`
     );
     const sectionPath = join(basePath, structure.section);
@@ -83,11 +83,11 @@ export class RouterBase {
       } catch (err) {
         /* Since we might register folders that have API class defined in them
            and since they are ES6+ Classes, we cannot call them directly. */
-        DefaultLogger.error(
+        getDefaultLogger().error(
           `Unable to register the controller exposed by '${ modulePath }'.`
         );
-        DefaultLogger.debug(err.message);
-        DefaultLogger.debug(err.stack);
+        getDefaultLogger().debug(err.message);
+        getDefaultLogger().debug(err.stack);
       }
     }
 

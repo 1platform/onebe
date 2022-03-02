@@ -189,4 +189,9 @@ export function setDefaultLogger(newLogger: Logger): void {
   DefaultLogger = newLogger;
 }
 
-export default DefaultLogger;
+/**
+ * Function used to get the default logger of the application.
+ */
+export function getDefaultLogger(): Logger {
+  return DefaultLogger;
+}

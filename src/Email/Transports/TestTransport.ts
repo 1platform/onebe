@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 import BaseTransport from "./BaseTransport";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
@@ -35,7 +35,9 @@ export default class TestTransport
    */
   public async send(options: IEmailOptions): Promise<any> {
     const info = await super.send(options);
-    DefaultLogger.debug(`Preview URL: ${ nodemailer.getTestMessageUrl(info) }`);
+    getDefaultLogger().debug(
+      `Preview URL: ${ nodemailer.getTestMessageUrl(info) }`
+    );
 
     return info;
   }

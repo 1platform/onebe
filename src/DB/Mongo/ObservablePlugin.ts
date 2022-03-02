@@ -1,5 +1,5 @@
 import { CallbackError, Model, Schema } from "mongoose";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 import Observable from "./Observable";
 
 /**
@@ -45,25 +45,25 @@ export function observerPlugin<
   ) => {
     schema.pre("save", (next: HookNextFunction) => {
       const emitAction = `${ name }:save:pre`.toLowerCase();
-      DefaultLogger.debug(`Model: [${ name }] emits: [${ name }:save:pre]`);
+      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:save:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.pre("remove", (next: HookNextFunction) => {
       const emitAction = `${ name }:remove:pre`.toLowerCase();
-      DefaultLogger.debug(`Model: [${ name }] emits: [${ name }:remove:pre]`);
+      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:remove:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.post("save", (doc: Document, next: HookNextFunction) => {
       const emitAction = `${ name }:save:post`.toLowerCase();
-      DefaultLogger.debug(`Model: [${ name }] emits: [${ name }:save:post]`);
+      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:save:post]`);
       observer.emit(emitAction, doc);
       next();
     });
     schema.post("remove", (doc: Document, next: HookNextFunction) => {
       const emitAction = `${ name }:remove:post`.toLowerCase();
-      DefaultLogger.debug(`Model: [${ name }] emits: [${ name }:remove:post]`);
+      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:remove:post]`);
       observer.emit(emitAction, doc);
       next();
     });

@@ -1,6 +1,6 @@
-import twilio, { Twilio } from "twilio";
+import twilio from "twilio";
 import Config from "../../System/Config";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**
@@ -41,11 +41,11 @@ export default class TwilioTransport implements ISMSTransport {
         to,
       });
 
-      DefaultLogger.debug(response.sid);
-      DefaultLogger.info("Message sent successfully!");
+      getDefaultLogger().debug(response.sid);
+      getDefaultLogger().info("Message sent successfully!");
     } catch (err) {
-      DefaultLogger.error(err);
-      DefaultLogger.debug(err.stack);
+      getDefaultLogger().error(err);
+      getDefaultLogger().debug(err.stack);
     }
   }
 }

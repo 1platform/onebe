@@ -7,7 +7,7 @@ import ErrorHandlerMiddleware from "../Middlewares/ErrorHandlerMiddleware";
 import IMiddleware from "../Middlewares/IMiddleware";
 import Router from "../Router";
 import Config from "../System/Config";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 
 /**
  * The HTTP server handler class.
@@ -106,7 +106,7 @@ export default class HTTP {
 
     const { host, port } = this;
     this._http.listen(port, host, () => {
-      DefaultLogger.info(`Application started: http://${ host }:${ port }`);
+      getDefaultLogger().info(`Application started: http://${ host }:${ port }`);
     });
   }
 

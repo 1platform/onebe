@@ -4,7 +4,7 @@ import DocsStore from "../Docs/DocsStore";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import HTTPVerb from "../HTTP/HTTPVerb";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import Router from "./index";
 import Route from "./Route";
 import {
@@ -152,7 +152,7 @@ function verbAction<TRequest = any, TResponse = any>(
       ({} as RouteDocs)
   );
 
-  DefaultLogger.debug(`[REGISTER] ${ props.method.toUpperCase() }: ${ path }`);
+  getDefaultLogger().debug(`[REGISTER] ${ props.method.toUpperCase() }: ${ path }`);
 
   Router.router[props.method](
     path,

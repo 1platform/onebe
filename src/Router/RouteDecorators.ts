@@ -1,7 +1,7 @@
 import { ClassDocs, getElementDocs } from "../Docs/DocsDecorators";
 import DocsStore from "../Docs/DocsStore";
 import Config from "../System/Config";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import {
   Constructor,
   ControllerDecorator,
@@ -63,9 +63,9 @@ export function path<T extends Constructor>(
       BaseClass.prototype
     );
     if (routeCallbacks.length > 0) {
-      DefaultLogger.debug("---------------");
-      DefaultLogger.info(`[REGISTER] Routes at path: ${ basePath }`);
-      DefaultLogger.debug("---------------");
+      getDefaultLogger().debug("---------------");
+      getDefaultLogger().info(`[REGISTER] Routes at path: ${ basePath }`);
+      getDefaultLogger().debug("---------------");
       routeCallbacks.forEach((fn) => fn(basePath, groupName));
     }
     return BaseClass;

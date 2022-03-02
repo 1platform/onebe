@@ -1,7 +1,7 @@
 import { MongoError } from "mongodb";
 import mongoose from "mongoose";
 import Config from "../../System/Config";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 
 /**
  * Class representing a Mongo DB handler
@@ -41,7 +41,7 @@ export default class Mongo {
       (err: MongoError) => {
         this._try += 1;
         if (err) {
-          DefaultLogger.error(`Mongoose connection error: ${ err }`);
+          getDefaultLogger().error(`Mongoose connection error: ${ err }`);
 
           if (this._try < this._maxRetry) {
             setTimeout(() => this._init(resolve, reject), 5000);
@@ -52,7 +52,7 @@ export default class Mongo {
           return;
         }
 
-        DefaultLogger.info("Mongoose database connected.");
+        getDefaultLogger().info("Mongoose database connected.");
         resolve();
       }
     );

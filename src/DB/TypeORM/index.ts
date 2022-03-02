@@ -1,7 +1,7 @@
 import { ConnectionOptions, createConnection, DatabaseType } from "typeorm";
 import { Connection } from "typeorm/connection/Connection";
 import Config from "../../System/Config";
-import DefaultLogger from "../../System/Logger";
+import { getDefaultLogger } from "../../System/Logger";
 
 /**
  * TypeORM database handler class.
@@ -60,11 +60,11 @@ export default class TypeORM {
 
     return createConnection(config)
       .then((connection) => {
-        DefaultLogger.info("TypeORM database connected.");
+        getDefaultLogger().info("TypeORM database connected.");
         return connection;
       })
       .catch((error) => {
-        DefaultLogger.error(`TypeORM connection error: ${ error }`);
+        getDefaultLogger().error(`TypeORM connection error: ${ error }`);
         return error;
       });
   }

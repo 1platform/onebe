@@ -1,5 +1,5 @@
 import { schedule } from "node-cron";
-import DefaultLogger from "../System/Logger";
+import { getDefaultLogger } from "../System/Logger";
 import IScheduleDefinition, {
   TRunner,
   TRunnerAsync,
@@ -38,6 +38,6 @@ export default class Scheduler {
       schedule(task.executionExpression, task.runner);
     });
 
-    DefaultLogger.debug(`Registered ${ this.tasks.length } jobs!`);
+    getDefaultLogger().debug(`Registered ${ this.tasks.length } jobs!`);
   }
 }
