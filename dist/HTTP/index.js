@@ -21,7 +21,7 @@ var _Router = _interopRequireDefault(require("../Router"));
 
 var _Config = _interopRequireDefault(require("../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
+var _Logger = require("../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -144,7 +144,7 @@ class HTTP {
     } = this;
 
     this._http.listen(port, host, () => {
-      _Logger.default.info(`Application started: http://${host}:${port}`);
+      (0, _Logger.getDefaultLogger)().info(`Application started: http://${host}:${port}`);
     });
   }
   /**

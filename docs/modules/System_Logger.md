@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / System/Logger
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / System/Logger
 
 # Module: System/Logger
 
@@ -11,23 +11,24 @@
 - [Logger](../classes/System_Logger.Logger.md)
 - [NoLogger](../classes/System_Logger.NoLogger.md)
 
-### Variables
-
-- [DefaultLogger](System_Logger.md#defaultlogger)
-
 ### Functions
 
+- [getDefaultLogger](System_Logger.md#getdefaultlogger)
 - [setDefaultLogger](System_Logger.md#setdefaultlogger)
 
-## Variables
-
-### DefaultLogger
-
-• **DefaultLogger**: [`Logger`](../classes/System_Logger.Logger.md)
-
-The default logger of the application.
-
 ## Functions
+
+### getDefaultLogger
+
+▸ **getDefaultLogger**(): [`Logger`](../classes/System_Logger.Logger.md)
+
+Function used to get the default logger of the application.
+
+#### Returns
+
+[`Logger`](../classes/System_Logger.Logger.md)
+
+___
 
 ### setDefaultLogger
 

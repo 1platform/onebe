@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [Middlewares/LoggerMiddleware](../modules/Middlewares_LoggerMiddleware.md) / LoggerMiddleware
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / [Middlewares/LoggerMiddleware](../modules/Middlewares_LoggerMiddleware.md) / LoggerMiddleware
 
 # Class: LoggerMiddleware
 

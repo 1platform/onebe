@@ -9,7 +9,7 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49,7 +49,7 @@ class Mongo {
       this._try += 1;
 
       if (err) {
-        _Logger.default.error(`Mongoose connection error: ${err}`);
+        (0, _Logger.getDefaultLogger)().error(`Mongoose connection error: ${err}`);
 
         if (this._try < this._maxRetry) {
           setTimeout(() => this._init(resolve, reject), 5000);
@@ -60,8 +60,7 @@ class Mongo {
         return;
       }
 
-      _Logger.default.info("Mongoose database connected.");
-
+      (0, _Logger.getDefaultLogger)().info("Mongoose database connected.");
       resolve();
     });
   }

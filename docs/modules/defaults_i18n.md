@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / defaults/i18n
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / defaults/i18n
 
 # Module: defaults/i18n
 

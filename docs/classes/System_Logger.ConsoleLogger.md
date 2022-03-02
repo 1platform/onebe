@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / ConsoleLogger
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / ConsoleLogger
 
 # Class: ConsoleLogger
 

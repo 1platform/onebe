@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.NoLogger = exports.Logger = exports.FileLogger = exports.ConsoleLogger = void 0;
+exports.NoLogger = exports.Logger = exports.FileLogger = exports.ConsoleLogger = void 0;
+exports.getDefaultLogger = getDefaultLogger;
 exports.setDefaultLogger = setDefaultLogger;
 
 var _path = _interopRequireDefault(require("path"));
@@ -219,6 +220,11 @@ let DefaultLogger = new ConsoleLogger(_LogLevel.default[_Config.default.string("
 function setDefaultLogger(newLogger) {
   DefaultLogger = newLogger;
 }
+/**
+ * Function used to get the default logger of the application.
+ */
 
-var _default = DefaultLogger;
-exports.default = _default;
+
+function getDefaultLogger() {
+  return DefaultLogger;
+}

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / Email/EmailService
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / Email/EmailService
 
 # Module: Email/EmailService
 

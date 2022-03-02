@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _morgan = _interopRequireDefault(require("morgan"));
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
+var _Logger = require("../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,7 +23,7 @@ class LoggerMiddleware {
   use(app) {
     app.use((0, _morgan.default)("dev", {
       stream: {
-        write: message => _Logger.default.info(message.trim())
+        write: message => (0, _Logger.getDefaultLogger)().info(message.trim())
       }
     }));
   }

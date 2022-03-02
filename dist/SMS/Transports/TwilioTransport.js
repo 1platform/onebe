@@ -9,7 +9,7 @@ var _twilio = _interopRequireDefault(require("twilio"));
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,14 +53,11 @@ class TwilioTransport {
         from: from || this._defaultPhone,
         to
       });
-
-      _Logger.default.debug(response.sid);
-
-      _Logger.default.info("Message sent successfully!");
+      (0, _Logger.getDefaultLogger)().debug(response.sid);
+      (0, _Logger.getDefaultLogger)().info("Message sent successfully!");
     } catch (err) {
-      _Logger.default.error(err);
-
-      _Logger.default.debug(err.stack);
+      (0, _Logger.getDefaultLogger)().error(err);
+      (0, _Logger.getDefaultLogger)().debug(err.stack);
     }
   }
 

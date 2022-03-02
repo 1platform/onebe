@@ -9,7 +9,7 @@ var _PageNotFoundException = _interopRequireDefault(require("../Exceptions/PageN
 
 var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
+var _Logger = require("../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64,14 +64,12 @@ class ErrorHandlerMiddleware {
         details = "";
       }
 
-      _Logger.default.error(`[HTTP ${status}]: ${message}`);
-
-      _Logger.default.debug(error);
-
-      _Logger.default.debug(error.stack);
+      (0, _Logger.getDefaultLogger)().error(`[HTTP ${status}]: ${message}`);
+      (0, _Logger.getDefaultLogger)().debug(error);
+      (0, _Logger.getDefaultLogger)().debug(error.stack);
 
       if (details) {
-        _Logger.default.debug(JSON.stringify(details));
+        (0, _Logger.getDefaultLogger)().debug(JSON.stringify(details));
       }
 
       res.status(status).json({

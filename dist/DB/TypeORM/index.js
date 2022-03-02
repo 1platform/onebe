@@ -9,7 +9,7 @@ var _typeorm = require("typeorm");
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -67,12 +67,10 @@ class TypeORM {
       }
     };
     return (0, _typeorm.createConnection)(config).then(connection => {
-      _Logger.default.info("TypeORM database connected.");
-
+      (0, _Logger.getDefaultLogger)().info("TypeORM database connected.");
       return connection;
     }).catch(error => {
-      _Logger.default.error(`TypeORM connection error: ${error}`);
-
+      (0, _Logger.getDefaultLogger)().error(`TypeORM connection error: ${error}`);
       return error;
     });
   }

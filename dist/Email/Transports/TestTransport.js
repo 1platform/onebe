@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _nodemailer = _interopRequireDefault(require("nodemailer"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 var _BaseTransport = _interopRequireDefault(require("./BaseTransport"));
 
@@ -44,9 +44,7 @@ class TestTransport extends _BaseTransport.default {
 
   async send(options) {
     const info = await super.send(options);
-
-    _Logger.default.debug(`Preview URL: ${_nodemailer.default.getTestMessageUrl(info)}`);
-
+    (0, _Logger.getDefaultLogger)().debug(`Preview URL: ${_nodemailer.default.getTestMessageUrl(info)}`);
     return info;
   }
 

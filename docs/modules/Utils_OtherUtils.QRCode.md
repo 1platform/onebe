@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](Utils_OtherUtils.md) / QRCode
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](Utils_OtherUtils.md) / QRCode
 
 # Namespace: QRCode
 

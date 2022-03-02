@@ -11,9 +11,7 @@ var _fs = require("fs");
 
 var _path = require("path");
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Logger = require("../System/Logger");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -56,8 +54,7 @@ class RouterBase {
 
 
   async registerControllers(basePath, structure) {
-    _Logger.default.info(`[REGISTER] Controllers in section: ${structure.section || "DEFAULT"}`);
-
+    (0, _Logger.getDefaultLogger)().info(`[REGISTER] Controllers in section: ${structure.section || "DEFAULT"}`);
     const sectionPath = (0, _path.join)(basePath, structure.section);
 
     for (const controllerFile of structure.controllers) {
@@ -77,11 +74,9 @@ class RouterBase {
       } catch (err) {
         /* Since we might register folders that have API class defined in them
            and since they are ES6+ Classes, we cannot call them directly. */
-        _Logger.default.error(`Unable to register the controller exposed by '${modulePath}'.`);
-
-        _Logger.default.debug(err.message);
-
-        _Logger.default.debug(err.stack);
+        (0, _Logger.getDefaultLogger)().error(`Unable to register the controller exposed by '${modulePath}'.`);
+        (0, _Logger.getDefaultLogger)().debug(err.message);
+        (0, _Logger.getDefaultLogger)().debug(err.stack);
       }
     }
 

@@ -9,7 +9,7 @@ var _serverSdk = _interopRequireDefault(require("@vonage/server-sdk"));
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53,15 +53,14 @@ class VonageTransport {
     return new Promise((resolve, reject) => {
       this._vonage.message.sendSms(from || this._defaultPhone, to, text, {}, (err, responseData) => {
         if (err) {
-          _Logger.default.error(err);
-
+          (0, _Logger.getDefaultLogger)().error(err);
           return;
         }
 
         if (responseData.messages[0]["status"] === "0") {
-          _Logger.default.info("Message sent successfully!");
+          (0, _Logger.getDefaultLogger)().info("Message sent successfully!");
         } else {
-          _Logger.default.error(`Message failed with error: ${responseData.messages[0]["error-text"]}`);
+          (0, _Logger.getDefaultLogger)().error(`Message failed with error: ${responseData.messages[0]["error-text"]}`);
         }
       });
     });

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.24](../README.md) / [Exports](../modules.md) / Middlewares/CORSMiddleware
+[Spark OneBE - v1.0.25](../README.md) / [Exports](../modules.md) / Middlewares/CORSMiddleware
 
 # Module: Middlewares/CORSMiddleware
 

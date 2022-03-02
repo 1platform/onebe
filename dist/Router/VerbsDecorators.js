@@ -22,7 +22,7 @@ var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
 var _HTTPVerb = _interopRequireDefault(require("../HTTP/HTTPVerb"));
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
+var _Logger = require("../System/Logger");
 
 var _index = _interopRequireDefault(require("./index"));
 
@@ -148,7 +148,7 @@ function verbAction(props) {
     bearerSpecific: Reflect.getMetadata("route:auth:bearer", props.target, props.propertyKey) || false
   }, (0, _DocsDecorators.getElementDocs)(props.target, props.propertyKey) || {});
 
-  _Logger.default.debug(`[REGISTER] ${props.method.toUpperCase()}: ${path}`);
+  (0, _Logger.getDefaultLogger)().debug(`[REGISTER] ${props.method.toUpperCase()}: ${path}`);
 
   _index.default.router[props.method](path, ...middlewares, async function (req, res, next) {
     try {

@@ -9,7 +9,7 @@ var _stringStripHtml = _interopRequireDefault(require("string-strip-html"));
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../../System/Logger"));
+var _Logger = require("../../System/Logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39,9 +39,7 @@ class BaseTransport {
       text: options.text || _stringStripHtml.default.stripHtml(options.html).result || "",
       html: options.html
     });
-
-    _Logger.default.info(`Email Message sent: ${info.messageId}`);
-
+    (0, _Logger.getDefaultLogger)().info(`Email Message sent: ${info.messageId}`);
     return info;
   }
 

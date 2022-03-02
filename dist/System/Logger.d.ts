@@ -99,13 +99,12 @@ export declare class NoLogger extends Logger {
     constructor();
 }
 /**
- * The default logger of the application.
- */
-declare let DefaultLogger: Logger;
-/**
  * Function used to change the default logger of the application.
  *
  * @param newLogger The new logger instance.
  */
 export declare function setDefaultLogger(newLogger: Logger): void;
-export default DefaultLogger;
+/**
+ * Function used to get the default logger of the application.
+ */
+export declare function getDefaultLogger(): Logger;

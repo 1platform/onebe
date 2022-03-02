@@ -13,7 +13,7 @@ var _DocsStore = _interopRequireDefault(require("../Docs/DocsStore"));
 
 var _Config = _interopRequireDefault(require("../System/Config"));
 
-var _Logger = _interopRequireDefault(require("../System/Logger"));
+var _Logger = require("../System/Logger");
 
 var _RouteUtils = require("./RouteUtils");
 
@@ -60,12 +60,9 @@ function path(path, name, description) {
     const routeCallbacks = (0, _RouteUtils.getRouteCallbacks)(BaseClass.prototype);
 
     if (routeCallbacks.length > 0) {
-      _Logger.default.debug("---------------");
-
-      _Logger.default.info(`[REGISTER] Routes at path: ${basePath}`);
-
-      _Logger.default.debug("---------------");
-
+      (0, _Logger.getDefaultLogger)().debug("---------------");
+      (0, _Logger.getDefaultLogger)().info(`[REGISTER] Routes at path: ${basePath}`);
+      (0, _Logger.getDefaultLogger)().debug("---------------");
       routeCallbacks.forEach(fn => fn(basePath, groupName));
     }
 
