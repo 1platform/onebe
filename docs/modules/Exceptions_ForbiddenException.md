@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / Exceptions/ForbiddenException
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / Exceptions/ForbiddenException
 
 # Module: Exceptions/ForbiddenException
 

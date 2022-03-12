@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / Strategy
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / Strategy
 
 # Interface: Strategy
 
@@ -24,12 +24,13 @@
 
 ### authenticate
 
-▸ **authenticate**(`req`, `options?`): `any`
+▸ **authenticate**(`this`, `req`, `options?`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
+| `this` | [`StrategyCreated`](../modules/Authentication_Passport.passport.md#strategycreated)<[`Strategy`](Authentication_Passport.passport.Strategy.md), [`Strategy`](Authentication_Passport.passport.Strategy.md) & [`StrategyCreatedStatic`](Authentication_Passport.passport.StrategyCreatedStatic.md)\> |
 | `req` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> |
 | `options?` | `any` |
 

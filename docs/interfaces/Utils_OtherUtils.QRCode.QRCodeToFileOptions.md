@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToFileOptions
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](../modules/Utils_OtherUtils.md) / [QRCode](../modules/Utils_OtherUtils.QRCode.md) / QRCodeToFileOptions
 
 # Interface: QRCodeToFileOptions
 

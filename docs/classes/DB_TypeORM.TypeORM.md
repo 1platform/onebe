@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / TypeORM
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / TypeORM
 
 # Class: TypeORM
 

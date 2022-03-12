@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / defaults/auth
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / defaults/auth
 
 # Module: defaults/auth
 

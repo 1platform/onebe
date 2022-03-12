@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.26](../README.md) / [Exports](../modules.md) / [Middlewares/SessionMiddleware](../modules/Middlewares_SessionMiddleware.md) / SessionMiddleware
+[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Middlewares/SessionMiddleware](../modules/Middlewares_SessionMiddleware.md) / SessionMiddleware
 
 # Class: SessionMiddleware
 
