@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
+[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
 
 # Interface: IEmailOptions
 

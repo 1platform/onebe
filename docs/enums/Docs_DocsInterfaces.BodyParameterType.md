@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / BodyParameterType
+[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / BodyParameterType
 
 # Enumeration: BodyParameterType
 

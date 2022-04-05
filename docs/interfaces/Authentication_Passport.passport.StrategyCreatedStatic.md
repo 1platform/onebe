@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / StrategyCreatedStatic
+[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / StrategyCreatedStatic
 
 # Interface: StrategyCreatedStatic
 

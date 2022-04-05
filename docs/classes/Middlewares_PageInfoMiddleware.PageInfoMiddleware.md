@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Middlewares/PageInfoMiddleware](../modules/Middlewares_PageInfoMiddleware.md) / PageInfoMiddleware
+[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Middlewares/PageInfoMiddleware](../modules/Middlewares_PageInfoMiddleware.md) / PageInfoMiddleware
 
 # Class: PageInfoMiddleware
 

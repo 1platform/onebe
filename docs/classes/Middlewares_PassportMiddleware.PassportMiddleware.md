@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.27](../README.md) / [Exports](../modules.md) / [Middlewares/PassportMiddleware](../modules/Middlewares_PassportMiddleware.md) / PassportMiddleware
+[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Middlewares/PassportMiddleware](../modules/Middlewares_PassportMiddleware.md) / PassportMiddleware
 
 # Class: PassportMiddleware
 
