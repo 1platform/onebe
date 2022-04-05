@@ -23,7 +23,7 @@ export function random(start = 0, end = 100000): number {
  *
  * @param size The number of digits of the number.
  */
-export function fixedSizeRandom(size: number): number {
+export function fixedSizeRandom(size: number): string {
   const maxSize = Math.pow(10, size);
-  return Math.floor((Math.random() * maxSize) % maxSize);
+  return Math.floor((Math.random() * maxSize) % maxSize).toString();
 }

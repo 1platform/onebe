@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.28
+
+🌟 Improvements:
+
+- Bump versions.
+- Add strip command
+
+🔧 Bugfix:
+
+- Fix an issue with Number with a fixed size.
+
 ## Version 1.0.27
 
 🌟 Improvements:

@@ -2,6 +2,7 @@ import { compareSync, hashSync } from "bcryptjs";
 import shortId from "shortid";
 import formatter from "string-format";
 import * as uuid from "uuid";
+import { stripHtml } from "string-strip-html";
 
 /**
  * Generates a ShortID that can be used for various things.
@@ -46,3 +47,10 @@ export {
    */
   formatter,
 };
+
+/**
+ * Strips the HTML tags from a given text.
+ *
+ * @param text The text to be striped.
+ */
+export const stripHTML = (text: string): string => stripHtml(text).result;

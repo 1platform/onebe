@@ -1,5 +1,5 @@
 import { Transporter } from "nodemailer";
-import stringStripHtml from "string-strip-html";
+import { stripHtml } from "string-strip-html";
 import Config from "../../System/Config";
 import { getDefaultLogger } from "../../System/Logger";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
@@ -35,8 +35,7 @@ export default class BaseTransport implements IEmailTransport {
           : options.bcc,
       replyTo: options.replyTo,
       subject: options.subject,
-      text:
-        options.text || stringStripHtml.stripHtml(options.html).result || "",
+      text: options.text || stripHtml(options.html).result || "",
       html: options.html,
     });
 
