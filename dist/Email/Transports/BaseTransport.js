@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _stringStripHtml = _interopRequireDefault(require("string-strip-html"));
+var _stringStripHtml = require("string-strip-html");
 
 var _Config = _interopRequireDefault(require("../../System/Config"));
 
@@ -36,7 +36,7 @@ class BaseTransport {
       bcc: options.bcc && Array.isArray(options.bcc) ? options.bcc.join(", ") : options.bcc,
       replyTo: options.replyTo,
       subject: options.subject,
-      text: options.text || _stringStripHtml.default.stripHtml(options.html).result || "",
+      text: options.text || (0, _stringStripHtml.stripHtml)(options.html).result || "",
       html: options.html
     });
     (0, _Logger.getDefaultLogger)().info(`Email Message sent: ${info.messageId}`);

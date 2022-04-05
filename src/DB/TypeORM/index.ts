@@ -1,5 +1,9 @@
-import { ConnectionOptions, createConnection, DatabaseType } from "typeorm";
-import { Connection } from "typeorm/connection/Connection";
+import {
+  Connection,
+  ConnectionOptions,
+  createConnection,
+  DatabaseType,
+} from "typeorm";
 import Config from "../../System/Config";
 import { getDefaultLogger } from "../../System/Logger";
 

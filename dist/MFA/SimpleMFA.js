@@ -16,7 +16,7 @@ var _StringUtils = require("../Utils/StringUtils");
  * @param size The length of the MFA code.
  */
 function generateNumericCode(size = 6) {
-  return (0, _NumberUtils.fixedSizeRandom)(size).toFixed(0);
+  return (0, _NumberUtils.fixedSizeRandom)(size);
 }
 /**
  * Returns an AlphaNumeric MFA Code.

@@ -35,5 +35,5 @@ function random(start = 0, end = 100000) {
 
 function fixedSizeRandom(size) {
   const maxSize = Math.pow(10, size);
-  return Math.floor(Math.random() * maxSize % maxSize);
+  return Math.floor(Math.random() * maxSize % maxSize).toString();
 }

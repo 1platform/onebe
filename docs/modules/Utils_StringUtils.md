@@ -14,6 +14,7 @@
 - [encryptPassword](Utils_StringUtils.md#encryptpassword)
 - [formatter](Utils_StringUtils.md#formatter)
 - [shortid](Utils_StringUtils.md#shortid)
+- [stripHTML](Utils_StringUtils.md#striphtml)
 - [uuidV1](Utils_StringUtils.md#uuidv1)
 - [uuidV4](Utils_StringUtils.md#uuidv4)
 
@@ -79,6 +80,24 @@ ___
 ▸ **shortid**(): `string`
 
 Generates a ShortID that can be used for various things.
+
+#### Returns
+
+`string`
+
+___
+
+### stripHTML
+
+▸ **stripHTML**(`text`): `string`
+
+Strips the HTML tags from a given text.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `text` | `string` | The text to be striped. |
 
 #### Returns
 

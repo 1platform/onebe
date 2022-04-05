@@ -13,7 +13,7 @@
 
 ### fixedSizeRandom
 
-▸ **fixedSizeRandom**(`size`): `number`
+▸ **fixedSizeRandom**(`size`): `string`
 
 Generates a random number of a fixed size.
 
@@ -25,7 +25,7 @@ Generates a random number of a fixed size.
 
 #### Returns
 
-`number`
+`string`
 
 ___
 

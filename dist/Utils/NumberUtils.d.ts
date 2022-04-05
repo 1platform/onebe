@@ -10,4 +10,4 @@ export declare function random(start?: number, end?: number): number;
  *
  * @param size The number of digits of the number.
  */
-export declare function fixedSizeRandom(size: number): number;
+export declare function fixedSizeRandom(size: number): string;

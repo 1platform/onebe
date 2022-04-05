@@ -1,4 +1,4 @@
-import { Connection } from "typeorm/connection/Connection";
+import { Connection } from "typeorm";
 /**
  * TypeORM database handler class.
  */

@@ -25,7 +25,7 @@ ___
 
 ### version
 
-• `Const` **version**: ``"1.0.27"``
+• `Const` **version**: ``"1.0.28"``
 
 The version of the framework.
 

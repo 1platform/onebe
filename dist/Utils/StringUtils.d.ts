@@ -32,3 +32,9 @@ export {
  * @see {@link https://www.npmjs.com/package/string-format}
  */
 formatter, };
+/**
+ * Strips the HTML tags from a given text.
+ *
+ * @param text The text to be striped.
+ */
+export declare const stripHTML: (text: string) => string;

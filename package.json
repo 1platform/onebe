@@ -57,7 +57,7 @@
     }
   },
   "peerDependencies": {
-    "typeorm": "^0.3.4"
+    "typeorm": "^0.2.45"
   },
   "dependencies": {
     "@vonage/server-sdk": "^2.10.11",
@@ -99,7 +99,7 @@
     "string-strip-html": "8.3.0",
     "swagger-ui-express": "^4.3.0",
     "twilio": "^3.76.0",
-    "typeorm": "^0.3.4",
+    "typeorm": "^0.2.45",
     "uuid": "^8.3.2",
     "winston": "^3.7.2"
   },

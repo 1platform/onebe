@@ -10,7 +10,7 @@ Object.defineProperty(exports, "formatter", {
     return _stringFormat.default;
   }
 });
-exports.uuidV4 = exports.uuidV1 = exports.shortid = void 0;
+exports.uuidV4 = exports.uuidV1 = exports.stripHTML = exports.shortid = void 0;
 
 var _bcryptjs = require("bcryptjs");
 
@@ -19,6 +19,8 @@ var _shortid = _interopRequireDefault(require("shortid"));
 var _stringFormat = _interopRequireDefault(require("string-format"));
 
 var uuid = _interopRequireWildcard(require("uuid"));
+
+var _stringStripHtml = require("string-strip-html");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -70,3 +72,12 @@ exports.encryptPassword = encryptPassword;
 const comparePassword = (password, encryptedPassword) => (0, _bcryptjs.compareSync)(password, encryptedPassword);
 
 exports.comparePassword = comparePassword;
+
+/**
+ * Strips the HTML tags from a given text.
+ *
+ * @param text The text to be striped.
+ */
+const stripHTML = text => (0, _stringStripHtml.stripHtml)(text).result;
+
+exports.stripHTML = stripHTML;
