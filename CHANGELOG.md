@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.30
+
+🔧 Bugfix:
+
+- Revert the string-strip-html version to 8.3.0.
+
 ## Version 1.0.29
 
 🌟 Improvements:
