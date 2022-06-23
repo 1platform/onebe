@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
 
 # Enumeration: ObservableType
 

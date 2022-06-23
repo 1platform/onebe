@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
 
 # Class: Configuration
 
