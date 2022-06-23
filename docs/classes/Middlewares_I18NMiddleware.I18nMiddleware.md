@@ -1,8 +1,8 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18nMiddleware
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18NMiddleware
 
-# Class: I18nMiddleware
+# Class: I18NMiddleware
 
-[Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md).I18nMiddleware
+[Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md).I18NMiddleware
 
 The i18n middleware.
 
@@ -14,17 +14,17 @@ The i18n middleware.
 
 ### Constructors
 
-- [constructor](Middlewares_I18NMiddleware.I18nMiddleware.md#constructor)
+- [constructor](Middlewares_I18NMiddleware.I18NMiddleware.md#constructor)
 
 ### Methods
 
-- [use](Middlewares_I18NMiddleware.I18nMiddleware.md#use)
+- [use](Middlewares_I18NMiddleware.I18NMiddleware.md#use)
 
 ## Constructors
 
 ### constructor
 
-• **new I18nMiddleware**()
+• **new I18NMiddleware**()
 
 ## Methods
 

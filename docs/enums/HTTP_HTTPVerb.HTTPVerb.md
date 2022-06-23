@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [HTTP/HTTPVerb](../modules/HTTP_HTTPVerb.md) / HTTPVerb
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [HTTP/HTTPVerb](../modules/HTTP_HTTPVerb.md) / HTTPVerb
 
 # Enumeration: HTTPVerb
 
@@ -8,7 +8,7 @@ The supported HTTP Verbs.
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DELETE](HTTP_HTTPVerb.HTTPVerb.md#delete)
 - [GET](HTTP_HTTPVerb.HTTPVerb.md#get)
@@ -16,32 +16,32 @@ The supported HTTP Verbs.
 - [POST](HTTP_HTTPVerb.HTTPVerb.md#post)
 - [PUT](HTTP_HTTPVerb.HTTPVerb.md#put)
 
-## Enumeration members
+## Enumeration Members
 
 ### DELETE
 
-• **DELETE** = `"delete"`
+• **DELETE**
 
 ___
 
 ### GET
 
-• **GET** = `"get"`
+• **GET**
 
 ___
 
 ### PATCH
 
-• **PATCH** = `"patch"`
+• **PATCH**
 
 ___
 
 ### POST
 
-• **POST** = `"post"`
+• **POST**
 
 ___
 
 ### PUT
 
-• **PUT** = `"put"`
+• **PUT**

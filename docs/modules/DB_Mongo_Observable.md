@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / DB/Mongo/Observable
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / DB/Mongo/Observable
 
 # Module: DB/Mongo/Observable
 
@@ -12,11 +12,11 @@
 
 - [Observable](../classes/DB_Mongo_Observable.Observable.md)
 
-### Type aliases
+### Type Aliases
 
 - [ObserverCallback](DB_Mongo_Observable.md#observercallback)
 
-## Type aliases
+## Type Aliases
 
 ### ObserverCallback
 

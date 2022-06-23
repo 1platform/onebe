@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
 
 # Enumeration: HTTPStatus
 
@@ -8,7 +8,7 @@ HTTP Status Codes enums
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ACCEPTED](HTTP_HTTPStatus.HTTPStatus.md#accepted)
 - [BAD\_REQUEST](HTTP_HTTPStatus.HTTPStatus.md#bad_request)
@@ -21,62 +21,62 @@ HTTP Status Codes enums
 - [SERVER\_ERROR](HTTP_HTTPStatus.HTTPStatus.md#server_error)
 - [UNAUTHORIZED](HTTP_HTTPStatus.HTTPStatus.md#unauthorized)
 
-## Enumeration members
+## Enumeration Members
 
 ### ACCEPTED
 
-• **ACCEPTED** = `202`
+• **ACCEPTED**
 
 ___
 
 ### BAD\_REQUEST
 
-• **BAD\_REQUEST** = `400`
+• **BAD\_REQUEST**
 
 ___
 
 ### CREATED
 
-• **CREATED** = `201`
+• **CREATED**
 
 ___
 
 ### FORBIDDEN
 
-• **FORBIDDEN** = `403`
+• **FORBIDDEN**
 
 ___
 
 ### GONE
 
-• **GONE** = `410`
+• **GONE**
 
 ___
 
 ### NOT\_FOUND
 
-• **NOT\_FOUND** = `404`
+• **NOT\_FOUND**
 
 ___
 
 ### NO\_CONTENT
 
-• **NO\_CONTENT** = `204`
+• **NO\_CONTENT**
 
 ___
 
 ### OK
 
-• **OK** = `200`
+• **OK**
 
 ___
 
 ### SERVER\_ERROR
 
-• **SERVER\_ERROR** = `500`
+• **SERVER\_ERROR**
 
 ___
 
 ### UNAUTHORIZED
 
-• **UNAUTHORIZED** = `401`
+• **UNAUTHORIZED**

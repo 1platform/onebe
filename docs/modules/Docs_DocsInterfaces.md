@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Docs/DocsInterfaces
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Docs/DocsInterfaces
 
 # Module: Docs/DocsInterfaces
 
@@ -20,7 +20,7 @@
 - [IRouteDoc](../interfaces/Docs_DocsInterfaces.IRouteDoc.md)
 - [ISwaggerParameter](../interfaces/Docs_DocsInterfaces.ISwaggerParameter.md)
 
-### Type aliases
+### Type Aliases
 
 - [TRoutesList](Docs_DocsInterfaces.md#trouteslist)
 
@@ -28,7 +28,7 @@
 
 - [DEFAULT\_BODY\_TAG](Docs_DocsInterfaces.md#default_body_tag)
 
-## Type aliases
+## Type Aliases
 
 ### TRoutesList
 

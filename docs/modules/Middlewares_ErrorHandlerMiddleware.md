@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Middlewares/ErrorHandlerMiddleware
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Middlewares/ErrorHandlerMiddleware
 
 # Module: Middlewares/ErrorHandlerMiddleware
 
@@ -8,11 +8,11 @@
 
 - [ErrorHandlerMiddleware](../classes/Middlewares_ErrorHandlerMiddleware.ErrorHandlerMiddleware.md)
 
-### Type aliases
+### Type Aliases
 
 - [ErrorHandlerFunction](Middlewares_ErrorHandlerMiddleware.md#errorhandlerfunction)
 
-## Type aliases
+## Type Aliases
 
 ### ErrorHandlerFunction
 

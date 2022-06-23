@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / Authenticator
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / [passport](../modules/Authentication_Passport.passport.md) / Authenticator
 
 # Interface: Authenticator<InitializeRet, AuthenticateRet, AuthorizeRet, AuthorizeOptions\>
 

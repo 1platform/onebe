@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Docs/DocsHelpers
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Docs/DocsHelpers
 
 # Module: Docs/DocsHelpers
 
@@ -9,7 +9,7 @@
 - [IPropertyOptions](../interfaces/Docs_DocsHelpers.IPropertyOptions.md)
 - [IPropertyResult](../interfaces/Docs_DocsHelpers.IPropertyResult.md)
 
-### Type aliases
+### Type Aliases
 
 - [PropertyDefinitionFunction](Docs_DocsHelpers.md#propertydefinitionfunction)
 
@@ -17,7 +17,7 @@
 
 - [docsHelpers](Docs_DocsHelpers.md#docshelpers)
 
-## Type aliases
+## Type Aliases
 
 ### PropertyDefinitionFunction
 

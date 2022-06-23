@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / index
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / index
 
 # Module: index
 
@@ -10,13 +10,13 @@
 
 ### Functions
 
-- [init](index.md#init)
+- [index](index.md#index)
 
 ## Functions
 
-### init
+### index
 
-▸ **init**(`props`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<(`strategyProps?`: [`IInitStrategyOptions`](../interfaces/Authentication_Passport.IInitStrategyOptions.md)) => [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>\>
+▸ **index**(`props`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<(`strategyProps?`: [`IInitStrategyOptions`](../interfaces/Authentication_Passport.IInitStrategyOptions.md)) => [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>\>
 
 Framework init function. It initializes some elements of the framework
 to be later used when starting the application up.

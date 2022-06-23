@@ -1,15 +1,17 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / custom
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / custom
 
 # Module: custom
 
 ## Table of contents
 
-### Properties
+### Variables
 
-- [default](custom.md#default)
+- [custom](custom.md#custom)
 
-## Properties
+## Variables
 
-### default
+### custom
 
-• **default**: ``1``
+• **custom**: ``1``
+
+Some random value, just to be include in the app... no use

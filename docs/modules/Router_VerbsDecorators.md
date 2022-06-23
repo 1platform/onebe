@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
 
 # Module: Router/VerbsDecorators
 
@@ -12,10 +12,10 @@
 - [POST](Router_VerbsDecorators.md#post)
 - [PUT](Router_VerbsDecorators.md#put)
 - [del](Router_VerbsDecorators.md#del)
-- [get](Router_VerbsDecorators.md#get)
-- [patch](Router_VerbsDecorators.md#patch)
-- [post](Router_VerbsDecorators.md#post)
-- [put](Router_VerbsDecorators.md#put)
+- [get](Router_VerbsDecorators.md#get-1)
+- [patch](Router_VerbsDecorators.md#patch-1)
+- [post](Router_VerbsDecorators.md#post-1)
+- [put](Router_VerbsDecorators.md#put-1)
 
 ## Functions
 

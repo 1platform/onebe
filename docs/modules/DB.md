@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / DB
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / DB
 
 # Module: DB
 
@@ -6,14 +6,14 @@
 
 ### Functions
 
-- [default](DB.md#default)
+- [DB](DB.md#db)
 - [defaultConnection](DB.md#defaultconnection)
 
 ## Functions
 
-### default
+### DB
 
-▸ **default**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+▸ **DB**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
 Initializes the database engine we will use in the application.
 

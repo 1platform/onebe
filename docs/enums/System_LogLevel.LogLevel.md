@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [System/LogLevel](../modules/System_LogLevel.md) / LogLevel
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [System/LogLevel](../modules/System_LogLevel.md) / LogLevel
 
 # Enumeration: LogLevel
 
@@ -8,7 +8,7 @@ Log Level enumeration
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [DEBUG](System_LogLevel.LogLevel.md#debug)
 - [ERROR](System_LogLevel.LogLevel.md#error)
@@ -18,44 +18,44 @@ Log Level enumeration
 - [VERBOSE](System_LogLevel.LogLevel.md#verbose)
 - [WARN](System_LogLevel.LogLevel.md#warn)
 
-## Enumeration members
+## Enumeration Members
 
 ### DEBUG
 
-• **DEBUG** = `"debug"`
+• **DEBUG**
 
 ___
 
 ### ERROR
 
-• **ERROR** = `"error"`
+• **ERROR**
 
 ___
 
 ### HTTP
 
-• **HTTP** = `"http"`
+• **HTTP**
 
 ___
 
 ### INFO
 
-• **INFO** = `"info"`
+• **INFO**
 
 ___
 
 ### SILLY
 
-• **SILLY** = `"silly"`
+• **SILLY**
 
 ___
 
 ### VERBOSE
 
-• **VERBOSE** = `"verbose"`
+• **VERBOSE**
 
 ___
 
 ### WARN
 
-• **WARN** = `"warn"`
+• **WARN**

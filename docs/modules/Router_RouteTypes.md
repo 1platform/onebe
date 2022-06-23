@@ -1,10 +1,10 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Router/RouteTypes
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Router/RouteTypes
 
 # Module: Router/RouteTypes
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [AppMethod](Router_RouteTypes.md#appmethod)
 - [CallbackExtractorParameter](Router_RouteTypes.md#callbackextractorparameter)
@@ -19,7 +19,7 @@
 - [RouteDecorator](Router_RouteTypes.md#routedecorator)
 - [RouteHooksCallbacks](Router_RouteTypes.md#routehookscallbacks)
 
-## Type aliases
+## Type Aliases
 
 ### AppMethod
 

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Docs/DocsDecorators
 
 # Module: Docs/DocsDecorators
 
@@ -8,7 +8,7 @@
 
 - [MethodMetadataType](../enums/Docs_DocsDecorators.MethodMetadataType.md)
 
-### Type aliases
+### Type Aliases
 
 - [ClassDocs](Docs_DocsDecorators.md#classdocs)
 - [EntityDocs](Docs_DocsDecorators.md#entitydocs)
@@ -25,7 +25,7 @@
 - [getElementDocs](Docs_DocsDecorators.md#getelementdocs)
 - [getEntityDocs](Docs_DocsDecorators.md#getentitydocs)
 
-## Type aliases
+## Type Aliases
 
 ### ClassDocs
 

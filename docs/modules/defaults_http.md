@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / defaults/http
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / defaults/http
 
 # Module: defaults/http
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaultHTTPConfig](defaults_http.md#defaulthttpconfig)
+- [http](defaults_http.md#http)
 
 ## Variables
 
-### defaultHTTPConfig
+### http
 
-• `Const` **defaultHTTPConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **http**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for HTTP.

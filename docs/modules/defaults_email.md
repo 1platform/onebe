@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / defaults/email
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / defaults/email
 
 # Module: defaults/email
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaultEmailConfig](defaults_email.md#defaultemailconfig)
+- [email](defaults_email.md#email)
 
 ## Variables
 
-### defaultEmailConfig
+### email
 
-• `Const` **defaultEmailConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **email**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for the Email services.

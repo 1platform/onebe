@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / App
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / App
 
 # Module: App
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [app](App.md#app)
+- [App](App.md#app)
 
 ## Variables
 
-### app
+### App
 
-• `Const` **app**: [`App`](../classes/App_App.App.md)
+• `Const` **App**: [`App`](../classes/App_App.App.md)
 
 The instance of the application.

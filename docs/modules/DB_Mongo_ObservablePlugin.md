@@ -1,10 +1,10 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
 
 # Module: DB/Mongo/ObservablePlugin
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [HookNextFunction](DB_Mongo_ObservablePlugin.md#hooknextfunction)
 - [PluginFunction](DB_Mongo_ObservablePlugin.md#pluginfunction)
@@ -17,7 +17,7 @@
 
 - [observerPlugin](DB_Mongo_ObservablePlugin.md#observerplugin)
 
-## Type aliases
+## Type Aliases
 
 ### HookNextFunction
 

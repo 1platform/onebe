@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / BodyParameterType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / BodyParameterType
 
 # Enumeration: BodyParameterType
 
@@ -8,7 +8,7 @@ Enum representing a Body Parameter Type
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ARRAY](Docs_DocsInterfaces.BodyParameterType.md#array)
 - [BOOLEAN](Docs_DocsInterfaces.BodyParameterType.md#boolean)
@@ -19,50 +19,50 @@ Enum representing a Body Parameter Type
 - [SCHEMA](Docs_DocsInterfaces.BodyParameterType.md#schema)
 - [STRING](Docs_DocsInterfaces.BodyParameterType.md#string)
 
-## Enumeration members
+## Enumeration Members
 
 ### ARRAY
 
-• **ARRAY** = `"array"`
+• **ARRAY**
 
 ___
 
 ### BOOLEAN
 
-• **BOOLEAN** = `"boolean"`
+• **BOOLEAN**
 
 ___
 
 ### INTEGER
 
-• **INTEGER** = `"integer"`
+• **INTEGER**
 
 ___
 
 ### NULL
 
-• **NULL** = `"null"`
+• **NULL**
 
 ___
 
 ### NUMBER
 
-• **NUMBER** = `"number"`
+• **NUMBER**
 
 ___
 
 ### OBJECT
 
-• **OBJECT** = `"object"`
+• **OBJECT**
 
 ___
 
 ### SCHEMA
 
-• **SCHEMA** = `"schema"`
+• **SCHEMA**
 
 ___
 
 ### STRING
 
-• **STRING** = `"string"`
+• **STRING**

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / defaults/app
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / defaults/app
 
 # Module: defaults/app
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaultAppConfig](defaults_app.md#defaultappconfig)
+- [app](defaults_app.md#app)
 
 ## Variables
 
-### defaultAppConfig
+### app
 
-• `Const` **defaultAppConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **app**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for App

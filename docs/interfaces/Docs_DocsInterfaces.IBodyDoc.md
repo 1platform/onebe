@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / IBodyDoc
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / IBodyDoc
 
 # Interface: IBodyDoc
 
@@ -10,8 +10,8 @@ Interface representing a Body doc
 
 ### Properties
 
+- [IBodyDoc](Docs_DocsInterfaces.IBodyDoc.md#ibodydoc)
 - [arrayType](Docs_DocsInterfaces.IBodyDoc.md#arraytype)
-- [default](Docs_DocsInterfaces.IBodyDoc.md#default)
 - [description](Docs_DocsInterfaces.IBodyDoc.md#description)
 - [enumOptions](Docs_DocsInterfaces.IBodyDoc.md#enumoptions)
 - [name](Docs_DocsInterfaces.IBodyDoc.md#name)
@@ -21,15 +21,15 @@ Interface representing a Body doc
 
 ## Properties
 
-### arrayType
+### IBodyDoc
 
-• `Optional` **arrayType**: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md)
+• `Optional` **IBodyDoc**: `string`
 
 ___
 
-### default
+### arrayType
 
-• `Optional` **default**: `string`
+• `Optional` **arrayType**: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md)
 
 ___
 

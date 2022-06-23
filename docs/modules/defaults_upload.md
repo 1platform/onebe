@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / defaults/upload
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / defaults/upload
 
 # Module: defaults/upload
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaultUploadConfig](defaults_upload.md#defaultuploadconfig)
+- [upload](defaults_upload.md#upload)
 
 ## Variables
 
-### defaultUploadConfig
+### upload
 
-• `Const` **defaultUploadConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **upload**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for Upload services.

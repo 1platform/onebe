@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Authentication/Passport
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Authentication/Passport
 
 # Module: Authentication/Passport
 
@@ -18,7 +18,7 @@
 
 ### Functions
 
-- [initPassportStrategy](Authentication_Passport.md#initpassportstrategy)
+- [Passport](Authentication_Passport.md#passport-1)
 
 ## Variables
 
@@ -30,9 +30,9 @@ The passport instance used throughout the framework.
 
 ## Functions
 
-### initPassportStrategy
+### Passport
 
-▸ **initPassportStrategy**(`props`): `void`
+▸ **Passport**(`props`): `void`
 
 Passport strategies and serialization/deserialization initialisation function.
 

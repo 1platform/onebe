@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / App/App
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / App/App
 
 # Module: App/App
 
@@ -8,12 +8,12 @@
 
 - [App](../classes/App_App.App.md)
 
-### Type aliases
+### Type Aliases
 
 - [ApplicationObject](App_App.md#applicationobject)
 - [GenericFunction](App_App.md#genericfunction)
 
-## Type aliases
+## Type Aliases
 
 ### ApplicationObject
 

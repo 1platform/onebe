@@ -39,8 +39,8 @@ declare global {
         }
     }
 }
-declare const _default: 1;
 /**
  * Some random value, just to be include in the app... no use
  */
+declare const _default: 1;
 export default _default;

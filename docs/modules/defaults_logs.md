@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / defaults/logs
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / defaults/logs
 
 # Module: defaults/logs
 
@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaultLogsConfig](defaults_logs.md#defaultlogsconfig)
+- [logs](defaults_logs.md#logs)
 
 ## Variables
 
-### defaultLogsConfig
+### logs
 
-• `Const` **defaultLogsConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **logs**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 The default configuration for the application logging.

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / ParameterType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / ParameterType
 
 # Enumeration: ParameterType
 
@@ -8,19 +8,19 @@ Enum representing a Parameter Type
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [NUMBER](Docs_DocsInterfaces.ParameterType.md#number)
 - [STRING](Docs_DocsInterfaces.ParameterType.md#string)
 
-## Enumeration members
+## Enumeration Members
 
 ### NUMBER
 
-• **NUMBER** = `"number"`
+• **NUMBER**
 
 ___
 
 ### STRING
 
-• **STRING** = `"string"`
+• **STRING**

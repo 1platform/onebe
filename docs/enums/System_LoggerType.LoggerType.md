@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [System/LoggerType](../modules/System_LoggerType.md) / LoggerType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [System/LoggerType](../modules/System_LoggerType.md) / LoggerType
 
 # Enumeration: LoggerType
 
@@ -8,19 +8,19 @@ Logger type enumeration
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [CONSOLE](System_LoggerType.LoggerType.md#console)
 - [FILE](System_LoggerType.LoggerType.md#file)
 
-## Enumeration members
+## Enumeration Members
 
 ### CONSOLE
 
-• **CONSOLE** = `"console"`
+• **CONSOLE**
 
 ___
 
 ### FILE
 
-• **FILE** = `"file"`
+• **FILE**

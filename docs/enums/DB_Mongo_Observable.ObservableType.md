@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
 
 # Enumeration: ObservableType
 
@@ -8,19 +8,19 @@ Defines Observable Types
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [REMOVE](DB_Mongo_Observable.ObservableType.md#remove)
 - [SAVE](DB_Mongo_Observable.ObservableType.md#save)
 
-## Enumeration members
+## Enumeration Members
 
 ### REMOVE
 
-• **REMOVE** = `"remove"`
+• **REMOVE**
 
 ___
 
 ### SAVE
 
-• **SAVE** = `"save"`
+• **SAVE**

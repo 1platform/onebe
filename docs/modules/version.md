@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / version
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / version
 
 # Module: version
 
@@ -11,7 +11,7 @@
 
 ### Functions
 
-- [getVersion](version.md#getversion)
+- [version](version.md#version-1)
 
 ## Variables
 
@@ -25,15 +25,15 @@ ___
 
 ### version
 
-• `Const` **version**: ``"1.0.28"``
+• `Const` **version**: ``"1.0.29"``
 
 The version of the framework.
 
 ## Functions
 
-### getVersion
+### version
 
-▸ **getVersion**(): `string`
+▸ **version**(): `string`
 
 Function that returns the full version string (version + buildId)
 

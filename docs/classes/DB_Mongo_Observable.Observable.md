@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / Observable
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / Observable
 
 # Class: Observable
 
@@ -48,10 +48,10 @@ Class representing an Observable
 - [removeListener](DB_Mongo_Observable.Observable.md#removelistener)
 - [setMaxListeners](DB_Mongo_Observable.Observable.md#setmaxlisteners)
 - [getEventListeners](DB_Mongo_Observable.Observable.md#geteventlisteners)
-- [listenerCount](DB_Mongo_Observable.Observable.md#listenercount)
-- [on](DB_Mongo_Observable.Observable.md#on)
-- [once](DB_Mongo_Observable.Observable.md#once)
-- [setMaxListeners](DB_Mongo_Observable.Observable.md#setmaxlisteners)
+- [listenerCount](DB_Mongo_Observable.Observable.md#listenercount-1)
+- [on](DB_Mongo_Observable.Observable.md#on-1)
+- [once](DB_Mongo_Observable.Observable.md#once-1)
+- [setMaxListeners](DB_Mongo_Observable.Observable.md#setmaxlisteners-1)
 
 ## Constructors
 
@@ -875,7 +875,7 @@ const { getEventListeners, EventEmitter } = require('events');
 
 | Name | Type |
 | :------ | :------ |
-| `emitter` | `DOMEventTarget` \| `EventEmitter` |
+| `emitter` | `EventEmitter` \| `DOMEventTarget` |
 | `name` | `string` \| `symbol` |
 
 #### Returns
@@ -1130,31 +1130,26 @@ ___
 
 ▸ `Static` **setMaxListeners**(`n?`, ...`eventTargets`): `void`
 
-By default `EventEmitter`s will print a warning if more than `10` listeners are
-added for a particular event. This is a useful default that helps finding
-memory leaks. The `EventEmitter.setMaxListeners()` method allows the default limit to be
-modified (if eventTargets is empty) or modify the limit specified in every `EventTarget` | `EventEmitter` passed as arguments.
-The value can be set to`Infinity` (or `0`) to indicate an unlimited number of listeners.
-
 ```js
-EventEmitter.setMaxListeners(20);
-// Equivalent to
-EventEmitter.defaultMaxListeners = 20;
+const {
+  setMaxListeners,
+  EventEmitter
+} = require('events');
 
-const eventTarget = new EventTarget();
-// Only way to increase limit for `EventTarget` instances
-// as these doesn't expose its own `setMaxListeners` method
-EventEmitter.setMaxListeners(20, eventTarget);
+const target = new EventTarget();
+const emitter = new EventEmitter();
+
+setMaxListeners(5, target, emitter);
 ```
 
-**`since`** v15.3.0, v14.17.0
+**`since`** v15.4.0
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `n?` | `number` |
-| `...eventTargets` | (`DOMEventTarget` \| `EventEmitter`)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `n?` | `number` | A non-negative number. The maximum number of listeners per `EventTarget` event. |
+| `...eventTargets` | (`EventEmitter` \| `DOMEventTarget`)[] | - |
 
 #### Returns
 

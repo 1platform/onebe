@@ -1,10 +1,10 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
 
 # Module: Middlewares/MulterMiddleware
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [SignMethodOptions](Middlewares_MulterMiddleware.md#signmethodoptions)
 
@@ -19,7 +19,7 @@
 - [singleUpload](Middlewares_MulterMiddleware.md#singleupload)
 - [verifierURL](Middlewares_MulterMiddleware.md#verifierurl)
 
-## Type aliases
+## Type Aliases
 
 ### SignMethodOptions
 

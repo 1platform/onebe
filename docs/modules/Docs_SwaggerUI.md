@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Docs/SwaggerUI
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Docs/SwaggerUI
 
 # Module: Docs/SwaggerUI
 
@@ -6,10 +6,10 @@
 
 ### Properties
 
-- [default](Docs_SwaggerUI.md#default)
+- [SwaggerUI](Docs_SwaggerUI.md#swaggerui)
 
 ## Properties
 
-### default
+### SwaggerUI
 
-• **default**: `any`
+• **SwaggerUI**: `any`

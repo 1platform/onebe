@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](Utils_OtherUtils.md) / QRCode
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Utils/OtherUtils](Utils_OtherUtils.md) / QRCode
 
 # Namespace: QRCode
 
@@ -18,7 +18,7 @@
 - [QRCodeToFileStreamOptions](../interfaces/Utils_OtherUtils.QRCode.QRCodeToFileStreamOptions.md)
 - [QRCodeToStringOptions](../interfaces/Utils_OtherUtils.QRCode.QRCodeToStringOptions.md)
 
-### Type aliases
+### Type Aliases
 
 - [QRCodeErrorCorrectionLevel](Utils_OtherUtils.QRCode.md#qrcodeerrorcorrectionlevel)
 
@@ -32,7 +32,7 @@
 - [toFileStream](Utils_OtherUtils.QRCode.md#tofilestream)
 - [toString](Utils_OtherUtils.QRCode.md#tostring)
 
-## Type aliases
+## Type Aliases
 
 ### QRCodeErrorCorrectionLevel
 

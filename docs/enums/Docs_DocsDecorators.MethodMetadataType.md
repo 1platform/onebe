@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsDecorators](../modules/Docs_DocsDecorators.md) / MethodMetadataType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Docs/DocsDecorators](../modules/Docs_DocsDecorators.md) / MethodMetadataType
 
 # Enumeration: MethodMetadataType
 
@@ -8,7 +8,7 @@ Enum representing the Metadata Type
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [BODY](Docs_DocsDecorators.MethodMetadataType.md#body)
 - [BODY\_REQUEST](Docs_DocsDecorators.MethodMetadataType.md#body_request)
@@ -19,50 +19,50 @@ Enum representing the Metadata Type
 - [ROUTE](Docs_DocsDecorators.MethodMetadataType.md#route)
 - [THROW](Docs_DocsDecorators.MethodMetadataType.md#throw)
 
-## Enumeration members
+## Enumeration Members
 
 ### BODY
 
-• **BODY** = `"body"`
+• **BODY**
 
 ___
 
 ### BODY\_REQUEST
 
-• **BODY\_REQUEST** = `"body_request"`
+• **BODY\_REQUEST**
 
 ___
 
 ### PARAMETER
 
-• **PARAMETER** = `"parameter"`
+• **PARAMETER**
 
 ___
 
 ### QUERY
 
-• **QUERY** = `"query"`
+• **QUERY**
 
 ___
 
 ### RESPONSE
 
-• **RESPONSE** = `"response"`
+• **RESPONSE**
 
 ___
 
 ### RESPONSE\_CODE
 
-• **RESPONSE\_CODE** = `"response_code"`
+• **RESPONSE\_CODE**
 
 ___
 
 ### ROUTE
 
-• **ROUTE** = `"route"`
+• **ROUTE**
 
 ___
 
 ### THROW
 
-• **THROW** = `"throw"`
+• **THROW**

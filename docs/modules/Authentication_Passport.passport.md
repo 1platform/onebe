@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Authentication/Passport](Authentication_Passport.md) / passport
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Authentication/Passport](Authentication_Passport.md) / passport
 
 # Namespace: passport
 
@@ -18,11 +18,11 @@ The passport instance used throughout the framework.
 - [Strategy](../interfaces/Authentication_Passport.passport.Strategy.md)
 - [StrategyCreatedStatic](../interfaces/Authentication_Passport.passport.StrategyCreatedStatic.md)
 
-### Type aliases
+### Type Aliases
 
 - [StrategyCreated](Authentication_Passport.passport.md#strategycreated)
 
-## Type aliases
+## Type Aliases
 
 ### StrategyCreated
 

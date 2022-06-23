@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / Scheduler/IScheduleDefinition
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / Scheduler/IScheduleDefinition
 
 # Module: Scheduler/IScheduleDefinition
 
@@ -8,12 +8,12 @@
 
 - [IScheduleDefinition](../interfaces/Scheduler_IScheduleDefinition.IScheduleDefinition.md)
 
-### Type aliases
+### Type Aliases
 
 - [TRunner](Scheduler_IScheduleDefinition.md#trunner)
 - [TRunnerAsync](Scheduler_IScheduleDefinition.md#trunnerasync)
 
-## Type aliases
+## Type Aliases
 
 ### TRunner
 

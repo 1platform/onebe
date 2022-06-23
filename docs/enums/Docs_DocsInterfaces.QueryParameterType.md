@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / QueryParameterType
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / [Docs/DocsInterfaces](../modules/Docs_DocsInterfaces.md) / QueryParameterType
 
 # Enumeration: QueryParameterType
 
@@ -8,7 +8,7 @@ Enum representing a Query Parameter Type
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [ARRAY](Docs_DocsInterfaces.QueryParameterType.md#array)
 - [BOOLEAN](Docs_DocsInterfaces.QueryParameterType.md#boolean)
@@ -18,44 +18,44 @@ Enum representing a Query Parameter Type
 - [OBJECT](Docs_DocsInterfaces.QueryParameterType.md#object)
 - [STRING](Docs_DocsInterfaces.QueryParameterType.md#string)
 
-## Enumeration members
+## Enumeration Members
 
 ### ARRAY
 
-• **ARRAY** = `"array"`
+• **ARRAY**
 
 ___
 
 ### BOOLEAN
 
-• **BOOLEAN** = `"boolean"`
+• **BOOLEAN**
 
 ___
 
 ### INTEGER
 
-• **INTEGER** = `"integer"`
+• **INTEGER**
 
 ___
 
 ### NULL
 
-• **NULL** = `"null"`
+• **NULL**
 
 ___
 
 ### NUMBER
 
-• **NUMBER** = `"number"`
+• **NUMBER**
 
 ___
 
 ### OBJECT
 
-• **OBJECT** = `"object"`
+• **OBJECT**
 
 ___
 
 ### STRING
 
-• **STRING** = `"string"`
+• **STRING**

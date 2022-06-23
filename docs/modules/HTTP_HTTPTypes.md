@@ -1,17 +1,17 @@
-[Spark OneBE - v1.0.28](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
+[Spark OneBE - v1.0.29](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
 
 # Module: HTTP/HTTPTypes
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [ExpressNextFunction](HTTP_HTTPTypes.md#expressnextfunction)
 - [ExpressRequest](HTTP_HTTPTypes.md#expressrequest)
 - [ExpressResponse](HTTP_HTTPTypes.md#expressresponse)
 - [HTTPMiddleware](HTTP_HTTPTypes.md#httpmiddleware)
 
-## Type aliases
+## Type Aliases
 
 ### ExpressNextFunction
 
