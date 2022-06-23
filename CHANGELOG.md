@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.0.29
+
+🌟 Improvements:
+
+- Bump versions.
+
 ## Version 1.0.28
 
 🌟 Improvements:
