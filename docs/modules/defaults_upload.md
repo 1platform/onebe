@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [upload](defaults_upload.md#upload)
+- [defaultUploadConfig](defaults_upload.md#defaultuploadconfig)
 
 ## Variables
 
-### upload
+### defaultUploadConfig
 
-• `Const` **upload**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultUploadConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for Upload services.

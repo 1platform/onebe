@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [i18n](defaults_i18n.md#i18n)
+- [defaultLangConfig](defaults_i18n.md#defaultlangconfig)
 
 ## Variables
 
-### i18n
+### defaultLangConfig
 
-• `Const` **i18n**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultLangConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default Language configuration.

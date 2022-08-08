@@ -24,13 +24,13 @@ Attaches to the target the following metadata:
 
 Based on this metadata we know what to generate in the Documentation generator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 #### Parameters
 
@@ -56,13 +56,13 @@ Attaches to the target the following metadata:
 
 Based on this metadata we know what to generate in the Documentation generator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 #### Parameters
 
@@ -91,13 +91,13 @@ Attaches to the target the following metadata:
 
 Based on this metadata we know what to generate in the Documentation generator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 #### Parameters
 

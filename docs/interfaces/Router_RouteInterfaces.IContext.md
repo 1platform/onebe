@@ -19,14 +19,6 @@ The request context parameter definition.
 - [body](Router_RouteInterfaces.IContext.md#body)
 - [file](Router_RouteInterfaces.IContext.md#file)
 - [files](Router_RouteInterfaces.IContext.md#files)
-- [header](Router_RouteInterfaces.IContext.md#header)
-- [params](Router_RouteInterfaces.IContext.md#params)
-- [query](Router_RouteInterfaces.IContext.md#query)
-- [request](Router_RouteInterfaces.IContext.md#request)
-- [response](Router_RouteInterfaces.IContext.md#response)
-
-### Methods
-
 - [getBody](Router_RouteInterfaces.IContext.md#getbody)
 - [getParam](Router_RouteInterfaces.IContext.md#getparam)
 - [getParamNumber](Router_RouteInterfaces.IContext.md#getparamnumber)
@@ -34,6 +26,11 @@ The request context parameter definition.
 - [getQueryArray](Router_RouteInterfaces.IContext.md#getqueryarray)
 - [getQueryBoolean](Router_RouteInterfaces.IContext.md#getqueryboolean)
 - [getQueryNumber](Router_RouteInterfaces.IContext.md#getquerynumber)
+- [header](Router_RouteInterfaces.IContext.md#header)
+- [params](Router_RouteInterfaces.IContext.md#params)
+- [query](Router_RouteInterfaces.IContext.md#query)
+- [request](Router_RouteInterfaces.IContext.md#request)
+- [response](Router_RouteInterfaces.IContext.md#response)
 
 ## Properties
 
@@ -61,6 +58,159 @@ A list with uploaded files from the request.
 
 ___
 
+### getBody
+
+• `Optional` **getBody**: () => `TRequest`
+
+#### Type declaration
+
+▸ (): `TRequest`
+
+Get the query parameter as an array.
+
+##### Returns
+
+`TRequest`
+
+___
+
+### getParam
+
+• `Optional` **getParam**: (`key`: `string`, `defaultValue?`: `string`) => `string`
+
+#### Type declaration
+
+▸ (`key`, `defaultValue?`): `string`
+
+Get the router parameter as a string.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string` | - |
+
+##### Returns
+
+`string`
+
+___
+
+### getParamNumber
+
+• `Optional` **getParamNumber**: (`key`: `string`, `defaultValue?`: `number`) => `number`
+
+#### Type declaration
+
+▸ (`key`, `defaultValue?`): `number`
+
+Get the route parameter as a number.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `number` | - |
+
+##### Returns
+
+`number`
+
+___
+
+### getQuery
+
+• `Optional` **getQuery**: (`key`: `string`, `defaultValue?`: `string`) => `string`
+
+#### Type declaration
+
+▸ (`key`, `defaultValue?`): `string`
+
+Get the query parameter as a string.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string` | - |
+
+##### Returns
+
+`string`
+
+___
+
+### getQueryArray
+
+• `Optional` **getQueryArray**: (`key`: `string`, `defaultValue?`: `string`[]) => `string`[]
+
+#### Type declaration
+
+▸ (`key`, `defaultValue?`): `string`[]
+
+Get the query parameter as an array.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `string`[] | - |
+
+##### Returns
+
+`string`[]
+
+___
+
+### getQueryBoolean
+
+• `Optional` **getQueryBoolean**: (`key`: `string`) => `boolean`
+
+#### Type declaration
+
+▸ (`key`): `boolean`
+
+Get the query parameter as a boolean.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+
+##### Returns
+
+`boolean`
+
+___
+
+### getQueryNumber
+
+• `Optional` **getQueryNumber**: (`key`: `string`, `defaultValue?`: `number`) => `number`
+
+#### Type declaration
+
+▸ (`key`, `defaultValue?`): `number`
+
+Get the query parameter as a number.
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key we need from the query string. |
+| `defaultValue?` | `number` | - |
+
+##### Returns
+
+`number`
+
+___
+
 ### header
 
 • **header**: [`HeaderMethod`](../modules/Router_RouteTypes.md#headermethod)
@@ -79,7 +229,7 @@ ___
 
 ### query
 
-• `Optional` **query**: `string` \| `ParsedQs` \| `string`[] \| `ParsedQs`[]
+• `Optional` **query**: `string` \| `string`[] \| `ParsedQs` \| `ParsedQs`[]
 
 A list with all the query parameters.
 
@@ -98,128 +248,3 @@ ___
 • `Optional` **response**: `Response`<`any`, `Record`<`string`, `any`\>\>
 
 The response object.
-
-## Methods
-
-### getBody
-
-▸ `Optional` **getBody**(): `TRequest`
-
-Get the query parameter as an array.
-
-#### Returns
-
-`TRequest`
-
-___
-
-### getParam
-
-▸ `Optional` **getParam**(`key`, `defaultValue?`): `string`
-
-Get the router parameter as a string.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-| `defaultValue?` | `string` | - |
-
-#### Returns
-
-`string`
-
-___
-
-### getParamNumber
-
-▸ `Optional` **getParamNumber**(`key`, `defaultValue?`): `number`
-
-Get the route parameter as a number.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-| `defaultValue?` | `number` | - |
-
-#### Returns
-
-`number`
-
-___
-
-### getQuery
-
-▸ `Optional` **getQuery**(`key`, `defaultValue?`): `string`
-
-Get the query parameter as a string.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-| `defaultValue?` | `string` | - |
-
-#### Returns
-
-`string`
-
-___
-
-### getQueryArray
-
-▸ `Optional` **getQueryArray**(`key`, `defaultValue?`): `string`[]
-
-Get the query parameter as an array.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-| `defaultValue?` | `string`[] | - |
-
-#### Returns
-
-`string`[]
-
-___
-
-### getQueryBoolean
-
-▸ `Optional` **getQueryBoolean**(`key`): `boolean`
-
-Get the query parameter as a boolean.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-
-#### Returns
-
-`boolean`
-
-___
-
-### getQueryNumber
-
-▸ `Optional` **getQueryNumber**(`key`, `defaultValue?`): `number`
-
-Get the query parameter as a number.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `string` | The key we need from the query string. |
-| `defaultValue?` | `number` | - |
-
-#### Returns
-
-`number`

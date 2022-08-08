@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [db](defaults_db.md#db)
+- [defaultDBConfig](defaults_db.md#defaultdbconfig)
 
 ## Variables
 
-### db
+### defaultDBConfig
 
-• `Const` **db**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultDBConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for the Database

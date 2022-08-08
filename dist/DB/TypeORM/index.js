@@ -66,7 +66,8 @@ class TypeORM {
         migrationsDir: _Config.default.string("db.migrations.dir", "./src/migrations")
       }
     };
-    return (0, _typeorm.createConnection)(config).then(connection => {
+    const dataSource = new _typeorm.DataSource(config);
+    return dataSource.initialize().then(connection => {
       (0, _Logger.getDefaultLogger)().info("TypeORM database connected.");
       return connection;
     }).catch(error => {

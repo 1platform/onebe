@@ -1,8 +1,9 @@
 import "reflect-metadata";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import Route from "../Router/Route";
-import { Constructor, ControllerDecoratorFunction, EntityDecorator, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
+import { ControllerDecoratorFunction, EntityDecorator, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
 import { BodyParameterType } from "./DocsInterfaces";
+import { Constructor } from "../Documentation/MetadataTypes";
 /**
  * Type used to define a Class Documentation
  */

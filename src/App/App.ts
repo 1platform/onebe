@@ -1,7 +1,7 @@
-import { Constructor } from "../Router/RouteTypes";
 import Config from "../System/Config";
 import getVersion from "../version";
 import IAppInfo from "./IAppInfo";
+import { Constructor } from "../Documentation/MetadataTypes";
 
 /**
  * The ApplicationObject we support to be attached to the App instance.

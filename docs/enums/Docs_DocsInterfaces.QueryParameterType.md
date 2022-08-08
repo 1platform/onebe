@@ -22,40 +22,40 @@ Enum representing a Query Parameter Type
 
 ### ARRAY
 
-• **ARRAY**
+• **ARRAY** = ``"array"``
 
 ___
 
 ### BOOLEAN
 
-• **BOOLEAN**
+• **BOOLEAN** = ``"boolean"``
 
 ___
 
 ### INTEGER
 
-• **INTEGER**
+• **INTEGER** = ``"integer"``
 
 ___
 
 ### NULL
 
-• **NULL**
+• **NULL** = ``"null"``
 
 ___
 
 ### NUMBER
 
-• **NUMBER**
+• **NUMBER** = ``"number"``
 
 ___
 
 ### OBJECT
 
-• **OBJECT**
+• **OBJECT** = ``"object"``
 
 ___
 
 ### STRING
 
-• **STRING**
+• **STRING** = ``"string"``

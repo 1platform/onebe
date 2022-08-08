@@ -10,8 +10,6 @@ The payload that we store in a JWT Token.
 
 ▪ [key: `string`]: `any`
 
-Any other property that might be stored in the payload.
-
 ## Table of contents
 
 ### Properties

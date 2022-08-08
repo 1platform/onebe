@@ -6,4 +6,4 @@
 
 ### Classes
 
-- [Scheduler](../classes/Scheduler.Scheduler-1.md)
+- [Scheduler](../classes/Scheduler.Scheduler.md)

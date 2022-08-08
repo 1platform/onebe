@@ -3,12 +3,12 @@ import DocsStore from "../Docs/DocsStore";
 import Config from "../System/Config";
 import { getDefaultLogger } from "../System/Logger";
 import {
-  Constructor,
   ControllerDecorator,
   ControllerDecoratorFunction,
   RouteCallbacks,
 } from "./RouteTypes";
 import { getRouteCallbacks } from "./RouteUtils";
+import { Constructor } from "../Documentation/MetadataTypes";
 
 /**
  * Decorator to define the path the controller will handle.

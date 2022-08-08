@@ -2,6 +2,7 @@ import HTTPStatus from "../HTTP/HTTPStatus";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
 import { IAuthContext, IContext, IResponse, IRouteHookParameter } from "./RouteInterfaces";
+import { Constructor } from "../Documentation/MetadataTypes";
 /**
  * Type used to define a Route Decorator function.
  *
@@ -18,12 +19,6 @@ export declare type RouteDecorator<T = Route> = (target: T, propertyKey: string,
  * @param descriptor The property descriptor of the property we want to apply the decorator on.
  */
 export declare type EntityDecorator<T = Constructor> = (target: T, propertyKey: string, descriptor: PropertyDescriptor) => void;
-/**
- * Type used to define a Class with a constructor.
- */
-export declare type Constructor = {
-    new (...args: any[]): any;
-};
 /**
  * Type used to define a Controller Decorator function.
  *

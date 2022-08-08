@@ -44,11 +44,13 @@ Sign method options.
 
 Function used to create signed URLs.
 
-**`param`** The URL to be signed.
+**`Param`**
 
-**`param`** The options used for the URL signing.
+The URL to be signed.
 
-**`returns`**
+**`Param`**
+
+The options used for the URL signing.
 
 ## Functions
 
@@ -76,7 +78,7 @@ ___
 
 Multiple file upload middleware.
 
-**`decorator`**
+**`Decorator`**
 
 #### Parameters
 
@@ -96,7 +98,7 @@ ___
 
 Single file upload middleware.
 
-**`decorator`**
+**`Decorator`**
 
 #### Parameters
 
@@ -114,17 +116,15 @@ ___
 
 ▸ **verifierURL**(`target`, `propertyKey`, `descriptor`): `void`
 
-Middleware used to verify if a signed URL is valid.
-
-**`decorator`**
+Type used to define a Route Decorator function.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `target` | [`Route`](../classes/Router_Route.Route.md) | The target on which we apply the decorator. |
-| `propertyKey` | `string` | The property key on which we apply the decorator. |
-| `descriptor` | `PropertyDescriptor` | The descriptor of the property we want to decorate. |
+| `propertyKey` | `string` | The property on which we apply the decorator. |
+| `descriptor` | `PropertyDescriptor` | The property descriptor of the property we want to apply the decorator on. |
 
 #### Returns
 

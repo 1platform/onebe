@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [logs](defaults_logs.md#logs)
+- [defaultLogsConfig](defaults_logs.md#defaultlogsconfig)
 
 ## Variables
 
-### logs
+### defaultLogsConfig
 
-• `Const` **logs**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultLogsConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 The default configuration for the application logging.

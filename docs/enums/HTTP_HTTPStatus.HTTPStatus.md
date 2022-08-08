@@ -25,58 +25,58 @@ HTTP Status Codes enums
 
 ### ACCEPTED
 
-• **ACCEPTED**
+• **ACCEPTED** = ``202``
 
 ___
 
 ### BAD\_REQUEST
 
-• **BAD\_REQUEST**
+• **BAD\_REQUEST** = ``400``
 
 ___
 
 ### CREATED
 
-• **CREATED**
+• **CREATED** = ``201``
 
 ___
 
 ### FORBIDDEN
 
-• **FORBIDDEN**
+• **FORBIDDEN** = ``403``
 
 ___
 
 ### GONE
 
-• **GONE**
+• **GONE** = ``410``
 
 ___
 
 ### NOT\_FOUND
 
-• **NOT\_FOUND**
+• **NOT\_FOUND** = ``404``
 
 ___
 
 ### NO\_CONTENT
 
-• **NO\_CONTENT**
+• **NO\_CONTENT** = ``204``
 
 ___
 
 ### OK
 
-• **OK**
+• **OK** = ``200``
 
 ___
 
 ### SERVER\_ERROR
 
-• **SERVER\_ERROR**
+• **SERVER\_ERROR** = ``500``
 
 ___
 
 ### UNAUTHORIZED
 
-• **UNAUTHORIZED**
+• **UNAUTHORIZED** = ``401``

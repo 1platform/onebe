@@ -127,7 +127,9 @@ EventEmitter.errorMonitor
 
 Alias for `emitter.on(eventName, listener)`.
 
-**`since`** v0.1.26
+**`Since`**
+
+v0.1.26
 
 #### Parameters
 
@@ -188,7 +190,9 @@ myEmitter.emit('event', 1, 2, 3, 4, 5);
 // event with parameters 1, 2, 3, 4, 5 in third listener
 ```
 
-**`since`** v0.1.26
+**`Since`**
+
+v0.1.26
 
 #### Parameters
 
@@ -227,7 +231,9 @@ console.log(myEE.eventNames());
 // Prints: [ 'foo', 'bar', Symbol(symbol) ]
 ```
 
-**`since`** v6.0.0
+**`Since`**
+
+v6.0.0
 
 #### Returns
 
@@ -246,7 +252,9 @@ ___
 Returns the current max listener value for the `EventEmitter` which is either
 set by `emitter.setMaxListeners(n)` or defaults to [defaultMaxListeners](DB_Mongo_Observable.Observable.md#defaultmaxlisteners).
 
-**`since`** v1.0.0
+**`Since`**
+
+v1.0.0
 
 #### Returns
 
@@ -264,7 +272,9 @@ ___
 
 Returns the number of listeners listening to the event named `eventName`.
 
-**`since`** v3.2.0
+**`Since`**
+
+v3.2.0
 
 #### Parameters
 
@@ -296,7 +306,9 @@ console.log(util.inspect(server.listeners('connection')));
 // Prints: [ [Function] ]
 ```
 
-**`since`** v0.1.26
+**`Since`**
+
+v0.1.26
 
 #### Parameters
 
@@ -320,7 +332,9 @@ ___
 
 Alias for `emitter.removeListener()`.
 
-**`since`** v10.0.0
+**`Since`**
+
+v10.0.0
 
 #### Parameters
 
@@ -369,7 +383,9 @@ myEE.emit('foo');
 //   a
 ```
 
-**`since`** v0.1.101
+**`Since`**
+
+v0.1.101
 
 #### Parameters
 
@@ -416,7 +432,9 @@ myEE.emit('foo');
 //   a
 ```
 
-**`since`** v0.3.0
+**`Since`**
+
+v0.3.0
 
 #### Parameters
 
@@ -452,7 +470,9 @@ server.prependListener('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**`since`** v6.0.0
+**`Since`**
+
+v6.0.0
 
 #### Parameters
 
@@ -486,7 +506,9 @@ server.prependOnceListener('connection', (stream) => {
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**`since`** v6.0.0
+**`Since`**
+
+v6.0.0
 
 #### Parameters
 
@@ -536,7 +558,9 @@ newListeners[0]();
 emitter.emit('log');
 ```
 
-**`since`** v9.4.0
+**`Since`**
+
+v9.4.0
 
 #### Parameters
 
@@ -693,7 +717,9 @@ component or module (e.g. sockets or file streams).
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**`since`** v0.1.26
+**`Since`**
+
+v0.1.26
 
 #### Parameters
 
@@ -792,7 +818,9 @@ ee.emit('ping');
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**`since`** v0.1.26
+**`Since`**
+
+v0.1.26
 
 #### Parameters
 
@@ -822,7 +850,9 @@ modified for this specific `EventEmitter` instance. The value can be set to`Infi
 
 Returns a reference to the `EventEmitter`, so that calls can be chained.
 
-**`since`** v0.3.5
+**`Since`**
+
+v0.3.5
 
 #### Parameters
 
@@ -869,7 +899,9 @@ const { getEventListeners, EventEmitter } = require('events');
 }
 ```
 
-**`since`** v15.2.0, v14.17.0
+**`Since`**
+
+v15.2.0, v14.17.0
 
 #### Parameters
 
@@ -903,9 +935,13 @@ console.log(listenerCount(myEmitter, 'event'));
 // Prints: 2
 ```
 
-**`since`** v0.9.12
+**`Since`**
 
-**`deprecated`** Since v3.2.0 - Use `listenerCount` instead.
+v0.9.12
+
+**`Deprecated`**
+
+Since v3.2.0 - Use `listenerCount` instead.
 
 #### Parameters
 
@@ -982,7 +1018,9 @@ const ac = new AbortController();
 process.nextTick(() => ac.abort());
 ```
 
-**`since`** v13.6.0, v12.16.0
+**`Since`**
+
+v13.6.0, v12.16.0
 
 #### Parameters
 
@@ -1088,7 +1126,9 @@ ac.abort(); // Abort waiting for the event
 ee.emit('foo'); // Prints: Waiting for the event was canceled!
 ```
 
-**`since`** v11.13.0, v10.16.0
+**`Since`**
+
+v11.13.0, v10.16.0
 
 #### Parameters
 
@@ -1142,7 +1182,9 @@ const emitter = new EventEmitter();
 setMaxListeners(5, target, emitter);
 ```
 
-**`since`** v15.4.0
+**`Since`**
+
+v15.4.0
 
 #### Parameters
 

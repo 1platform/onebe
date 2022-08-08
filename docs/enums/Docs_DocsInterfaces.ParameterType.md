@@ -17,10 +17,10 @@ Enum representing a Parameter Type
 
 ### NUMBER
 
-• **NUMBER**
+• **NUMBER** = ``"number"``
 
 ___
 
 ### STRING
 
-• **STRING**
+• **STRING** = ``"string"``

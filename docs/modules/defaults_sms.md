@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [sms](defaults_sms.md#sms)
+- [defaultSMSConfig](defaults_sms.md#defaultsmsconfig)
 
 ## Variables
 
-### sms
+### defaultSMSConfig
 
-• `Const` **sms**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultSMSConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for SMS services.

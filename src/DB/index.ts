@@ -1,12 +1,12 @@
-import { Connection } from "typeorm/connection/Connection";
 import Config from "../System/Config";
 import Mongo from "./Mongo";
 import TypeORM from "./TypeORM";
+import { DataSource } from "typeorm";
 
 /**
  * Returns the default connection to TypeORM database.
  */
-export function defaultConnection(): Connection {
+export function defaultConnection(): DataSource {
   if (Config.string("db.engine", "mongoose") === "mongoose") {
     return null;
   }

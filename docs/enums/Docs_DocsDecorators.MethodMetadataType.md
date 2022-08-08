@@ -23,46 +23,46 @@ Enum representing the Metadata Type
 
 ### BODY
 
-• **BODY**
+• **BODY** = ``"body"``
 
 ___
 
 ### BODY\_REQUEST
 
-• **BODY\_REQUEST**
+• **BODY\_REQUEST** = ``"body_request"``
 
 ___
 
 ### PARAMETER
 
-• **PARAMETER**
+• **PARAMETER** = ``"parameter"``
 
 ___
 
 ### QUERY
 
-• **QUERY**
+• **QUERY** = ``"query"``
 
 ___
 
 ### RESPONSE
 
-• **RESPONSE**
+• **RESPONSE** = ``"response"``
 
 ___
 
 ### RESPONSE\_CODE
 
-• **RESPONSE\_CODE**
+• **RESPONSE\_CODE** = ``"response_code"``
 
 ___
 
 ### ROUTE
 
-• **ROUTE**
+• **ROUTE** = ``"route"``
 
 ___
 
 ### THROW
 
-• **THROW**
+• **THROW** = ``"throw"``

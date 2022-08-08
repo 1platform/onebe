@@ -10,8 +10,6 @@ Main App Definition class.
 
 ▪ [key: `string`]: `any`
 
-Any extra object or function defined in the Application Object.
-
 ## Table of contents
 
 ### Constructors
@@ -89,7 +87,7 @@ Add an class instance to the application object.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `ElementInstance` | [`Constructor`](../modules/Router_RouteTypes.md#constructor) | The class we want to create an object from and add to the application object. |
+| `ElementInstance` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor) | The class we want to create an object from and add to the application object. |
 
 #### Returns
 

@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [defaults](defaults.md#defaults)
+- [defaultConfig](defaults.md#defaultconfig)
 
 ## Variables
 
-### defaults
+### defaultConfig
 
-• `Const` **defaults**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Exported defaults

@@ -11,7 +11,7 @@ The base definition of a middleware class.
 - [`BodyParserMiddleware`](../classes/Middlewares_BodyParserMiddleware.BodyParserMiddleware.md)
 - [`CORSMiddleware`](../classes/Middlewares_CORSMiddleware.CORSMiddleware.md)
 - [`ErrorHandlerMiddleware`](../classes/Middlewares_ErrorHandlerMiddleware.ErrorHandlerMiddleware.md)
-- [`I18NMiddleware`](../classes/Middlewares_I18NMiddleware.I18NMiddleware.md)
+- [`I18nMiddleware`](../classes/Middlewares_I18NMiddleware.I18nMiddleware.md)
 - [`LoggerMiddleware`](../classes/Middlewares_LoggerMiddleware.LoggerMiddleware.md)
 - [`PageInfoMiddleware`](../classes/Middlewares_PageInfoMiddleware.PageInfoMiddleware.md)
 - [`PassportMiddleware`](../classes/Middlewares_PassportMiddleware.PassportMiddleware.md)

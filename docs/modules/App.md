@@ -6,12 +6,10 @@
 
 ### Variables
 
-- [App](App.md#app)
+- [app](App.md#app)
 
 ## Variables
 
-### App
+### app
 
-• `Const` **App**: [`App`](../classes/App_App.App.md)
-
-The instance of the application.
+• `Const` **app**: [`App`](../classes/App_App.App.md)

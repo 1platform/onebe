@@ -11,7 +11,7 @@
 
 ### Functions
 
-- [version](version.md#version-1)
+- [getVersion](version.md#getversion)
 
 ## Variables
 
@@ -31,9 +31,9 @@ The version of the framework.
 
 ## Functions
 
-### version
+### getVersion
 
-▸ **version**(): `string`
+▸ **getVersion**(): `string`
 
 Function that returns the full version string (version + buildId)
 

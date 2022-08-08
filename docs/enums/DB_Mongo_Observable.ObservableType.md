@@ -17,10 +17,10 @@ Defines Observable Types
 
 ### REMOVE
 
-• **REMOVE**
+• **REMOVE** = ``"remove"``
 
 ___
 
 ### SAVE
 
-• **SAVE**
+• **SAVE** = ``"save"``

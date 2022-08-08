@@ -20,28 +20,28 @@ The supported HTTP Verbs.
 
 ### DELETE
 
-• **DELETE**
+• **DELETE** = ``"delete"``
 
 ___
 
 ### GET
 
-• **GET**
+• **GET** = ``"get"``
 
 ___
 
 ### PATCH
 
-• **PATCH**
+• **PATCH** = ``"patch"``
 
 ___
 
 ### POST
 
-• **POST**
+• **POST** = ``"post"``
 
 ___
 
 ### PUT
 
-• **PUT**
+• **PUT** = ``"put"``

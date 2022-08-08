@@ -6,4 +6,4 @@
 
 ### Classes
 
-- [HTTP](../classes/HTTP.HTTP-1.md)
+- [HTTP](../classes/HTTP.HTTP.md)

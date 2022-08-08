@@ -10,12 +10,12 @@ Task scheduler that runs the jobs registered in the application.
 
 ### Constructors
 
-- [constructor](Scheduler.Scheduler-1.md#constructor)
+- [constructor](Scheduler.Scheduler.md#constructor)
 
 ### Methods
 
-- [register](Scheduler.Scheduler-1.md#register)
-- [run](Scheduler.Scheduler-1.md#run)
+- [register](Scheduler.Scheduler.md#register)
+- [run](Scheduler.Scheduler.md#run)
 
 ## Constructors
 

@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [api](defaults_api.md#api)
+- [defaultAPIConfig](defaults_api.md#defaultapiconfig)
 
 ## Variables
 
-### api
+### defaultAPIConfig
 
-• `Const` **api**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultAPIConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for Api

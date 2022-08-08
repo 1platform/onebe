@@ -86,9 +86,6 @@ ___
 
 • `Optional` **toSJISFunc**: (`codePoint`: `string`) => `number`
 
-Helper function used internally to convert a kanji to its Shift JIS value.
-Provide this function if you need support for Kanji mode.
-
 #### Type declaration
 
 ▸ (`codePoint`): `number`

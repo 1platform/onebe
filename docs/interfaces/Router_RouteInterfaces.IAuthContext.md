@@ -10,21 +10,48 @@ The authentication context parameter.
 
 ▪ [key: `string`]: `any`
 
-Indexer for any other authentication context option.
-
 ## Table of contents
 
 ### Properties
 
+- [isAuthenticated](Router_RouteInterfaces.IAuthContext.md#isauthenticated)
+- [logout](Router_RouteInterfaces.IAuthContext.md#logout)
 - [token](Router_RouteInterfaces.IAuthContext.md#token)
 - [user](Router_RouteInterfaces.IAuthContext.md#user)
 
-### Methods
-
-- [isAuthenticated](Router_RouteInterfaces.IAuthContext.md#isauthenticated)
-- [logout](Router_RouteInterfaces.IAuthContext.md#logout)
-
 ## Properties
+
+### isAuthenticated
+
+• `Optional` **isAuthenticated**: () => `boolean`
+
+#### Type declaration
+
+▸ (): `boolean`
+
+Method to check if the user is authenticated or not.
+
+##### Returns
+
+`boolean`
+
+___
+
+### logout
+
+• `Optional` **logout**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+Logs a user out of the application.
+
+##### Returns
+
+`void`
+
+___
 
 ### token
 
@@ -39,27 +66,3 @@ ___
 • `Optional` **user**: [`IUser`](Authentication_IUser.IUser.md)
 
 The user object.
-
-## Methods
-
-### isAuthenticated
-
-▸ `Optional` **isAuthenticated**(): `boolean`
-
-Method to check if the user is authenticated or not.
-
-#### Returns
-
-`boolean`
-
-___
-
-### logout
-
-▸ `Optional` **logout**(): `void`
-
-Logs a user out of the application.
-
-#### Returns
-
-`void`

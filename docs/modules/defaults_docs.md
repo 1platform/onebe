@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [docs](defaults_docs.md#docs)
+- [defaultDocsConfig](defaults_docs.md#defaultdocsconfig)
 
 ## Variables
 
-### docs
+### defaultDocsConfig
 
-• `Const` **docs**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultDocsConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for the Documentation.

@@ -17,10 +17,10 @@ Logger type enumeration
 
 ### CONSOLE
 
-• **CONSOLE**
+• **CONSOLE** = ``"console"``
 
 ___
 
 ### FILE
 
-• **FILE**
+• **FILE** = ``"file"``

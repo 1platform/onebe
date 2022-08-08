@@ -17,7 +17,7 @@
 
 ### ApplicationObject
 
-Ƭ **ApplicationObject**: [`Constructor`](Router_RouteTypes.md#constructor)
+Ƭ **ApplicationObject**: [`Constructor`](Documentation_MetadataTypes.md#constructor)
 
 The ApplicationObject we support to be attached to the App instance.
 

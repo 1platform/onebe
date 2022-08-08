@@ -13,6 +13,8 @@ var _DocsInterfaces = require("./DocsInterfaces");
 
 var _SwaggerBuilder = _interopRequireDefault(require("./SwaggerBuilder"));
 
+var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -163,9 +165,10 @@ class DocsStore {
   getRoutes() {
     if (!_Config.default.boolean("docs.expose")) {
       return {};
-    }
+    } // return this._routes;
 
-    return this._routes;
+
+    return _MetadataStore.default.instance.entity.buildEntityList();
   }
   /**
    * Method to get docs in YAML format

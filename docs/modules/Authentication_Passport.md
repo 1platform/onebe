@@ -18,7 +18,7 @@
 
 ### Functions
 
-- [Passport](Authentication_Passport.md#passport-1)
+- [initPassportStrategy](Authentication_Passport.md#initpassportstrategy)
 
 ## Variables
 
@@ -26,13 +26,11 @@
 
 • **passport**: [`PassportStatic`](../interfaces/Authentication_Passport.passport.PassportStatic.md)
 
-The passport instance used throughout the framework.
-
 ## Functions
 
-### Passport
+### initPassportStrategy
 
-▸ **Passport**(`props`): `void`
+▸ **initPassportStrategy**(`props`): `void`
 
 Passport strategies and serialization/deserialization initialisation function.
 

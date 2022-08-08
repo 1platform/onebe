@@ -6,10 +6,10 @@
 
 ### Properties
 
-- [SwaggerUI](Docs_SwaggerUI.md#swaggerui)
+- [unknown](Docs_SwaggerUI.md#unknown)
 
 ## Properties
 
-### SwaggerUI
+### unknown
 
-• **SwaggerUI**: `any`
+• **unknown**: `any`

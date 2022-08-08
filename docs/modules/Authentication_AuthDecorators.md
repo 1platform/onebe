@@ -24,7 +24,7 @@ Attaches to the property of the target the following metadata:
 
 Based on this metadata we know what to generate in the Documentation generator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Parameters
 
@@ -52,7 +52,7 @@ Attaches to the property of the target the following metadata:
 
 Based on this metadata we know what to generate in the Documentation generator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Parameters
 
@@ -72,18 +72,15 @@ ___
 
 ▸ **extractUser**(`target`, `propertyKey`, `descriptor`): `void`
 
-Middleware used to extract the user from the request when using Bearer Authentication
-on a mixed route (Public and Protected).
-
-**`decorator`**
+Type used to define a Route Decorator function.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `target` | [`Route`](../classes/Router_Route.Route.md) | The target on which we apply the decorator. |
-| `propertyKey` | `string` | The property key on which we apply the decorator. |
-| `descriptor` | `PropertyDescriptor` | The descriptor of the property we want to decorate. |
+| `propertyKey` | `string` | The property on which we apply the decorator. |
+| `descriptor` | `PropertyDescriptor` | The property descriptor of the property we want to apply the decorator on. |
 
 #### Returns
 

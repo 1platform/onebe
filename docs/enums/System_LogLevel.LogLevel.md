@@ -22,40 +22,40 @@ Log Level enumeration
 
 ### DEBUG
 
-• **DEBUG**
+• **DEBUG** = ``"debug"``
 
 ___
 
 ### ERROR
 
-• **ERROR**
+• **ERROR** = ``"error"``
 
 ___
 
 ### HTTP
 
-• **HTTP**
+• **HTTP** = ``"http"``
 
 ___
 
 ### INFO
 
-• **INFO**
+• **INFO** = ``"info"``
 
 ___
 
 ### SILLY
 
-• **SILLY**
+• **SILLY** = ``"silly"``
 
 ___
 
 ### VERBOSE
 
-• **VERBOSE**
+• **VERBOSE** = ``"verbose"``
 
 ___
 
 ### WARN
 
-• **WARN**
+• **WARN** = ``"warn"``

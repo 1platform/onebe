@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [app](defaults_app.md#app)
+- [defaultAppConfig](defaults_app.md#defaultappconfig)
 
 ## Variables
 
-### app
+### defaultAppConfig
 
-• `Const` **app**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultAppConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for App

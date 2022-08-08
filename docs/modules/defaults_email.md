@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [email](defaults_email.md#email)
+- [defaultEmailConfig](defaults_email.md#defaultemailconfig)
 
 ## Variables
 
-### email
+### defaultEmailConfig
 
-• `Const` **email**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultEmailConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for the Email services.

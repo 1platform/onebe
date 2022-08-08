@@ -10,20 +10,20 @@ The HTTP server handler class.
 
 ### Constructors
 
-- [constructor](HTTP.HTTP-1.md#constructor)
+- [constructor](HTTP.HTTP.md#constructor)
 
 ### Accessors
 
-- [app](HTTP.HTTP-1.md#app)
-- [host](HTTP.HTTP-1.md#host)
-- [http](HTTP.HTTP-1.md#http)
-- [port](HTTP.HTTP-1.md#port)
+- [app](HTTP.HTTP.md#app)
+- [host](HTTP.HTTP.md#host)
+- [http](HTTP.HTTP.md#http)
+- [port](HTTP.HTTP.md#port)
 
 ### Methods
 
-- [setLocal](HTTP.HTTP-1.md#setlocal)
-- [start](HTTP.HTTP-1.md#start)
-- [use](HTTP.HTTP-1.md#use)
+- [setLocal](HTTP.HTTP.md#setlocal)
+- [start](HTTP.HTTP.md#start)
+- [use](HTTP.HTTP.md#use)
 
 ## Constructors
 

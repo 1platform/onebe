@@ -14,21 +14,25 @@ Passport strategy initialisation method options.
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [basicAuth](Authentication_Passport.IInitStrategyOptions.md#basicauth)
 - [deserializeUser](Authentication_Passport.IInitStrategyOptions.md#deserializeuser)
 - [serializeUser](Authentication_Passport.IInitStrategyOptions.md#serializeuser)
 
-## Methods
+## Properties
 
 ### basicAuth
 
-▸ `Optional` **basicAuth**(`username`, `password`, `done`): `void`
+• `Optional` **basicAuth**: (`username`: `string`, `password`: `string`, `done`: (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void`) => `void`
+
+#### Type declaration
+
+▸ (`username`, `password`, `done`): `void`
 
 The function used for basic authentication.
 
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -36,7 +40,7 @@ The function used for basic authentication.
 | `password` | `string` |
 | `done` | (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void` |
 
-#### Returns
+##### Returns
 
 `void`
 
@@ -44,18 +48,22 @@ ___
 
 ### deserializeUser
 
-▸ `Optional` **deserializeUser**(`payload`, `done`): `void`
+• `Optional` **deserializeUser**: (`payload`: [`IPayload`](Authentication_IPayload.IPayload.md), `done`: (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void`) => `void`
+
+#### Type declaration
+
+▸ (`payload`, `done`): `void`
 
 The function used for Payload deserialization.
 
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `payload` | [`IPayload`](Authentication_IPayload.IPayload.md) |
 | `done` | (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void` |
 
-#### Returns
+##### Returns
 
 `void`
 
@@ -63,16 +71,20 @@ ___
 
 ### serializeUser
 
-▸ `Optional` **serializeUser**(`user`): [`IPayload`](Authentication_IPayload.IPayload.md)
+• `Optional` **serializeUser**: (`user`: [`IUser`](Authentication_IUser.IUser.md)) => [`IPayload`](Authentication_IPayload.IPayload.md)
+
+#### Type declaration
+
+▸ (`user`): [`IPayload`](Authentication_IPayload.IPayload.md)
 
 The function used for User serialization.
 
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `user` | [`IUser`](Authentication_IUser.IUser.md) |
 
-#### Returns
+##### Returns
 
 [`IPayload`](Authentication_IPayload.IPayload.md)

@@ -16,18 +16,43 @@ Framework configuration options.
 
 ### Properties
 
+- [basicAuth](index.IOneBEOptions.md#basicauth)
 - [configDir](index.IOneBEOptions.md#configdir)
 - [controllersDir](index.IOneBEOptions.md#controllersdir)
 - [currentDir](index.IOneBEOptions.md#currentdir)
-- [noDBConnection](index.IOneBEOptions.md#nodbconnection)
-
-### Methods
-
-- [basicAuth](index.IOneBEOptions.md#basicauth)
 - [deserializeUser](index.IOneBEOptions.md#deserializeuser)
+- [noDBConnection](index.IOneBEOptions.md#nodbconnection)
 - [serializeUser](index.IOneBEOptions.md#serializeuser)
 
 ## Properties
+
+### basicAuth
+
+• `Optional` **basicAuth**: (`username`: `string`, `password`: `string`, `done`: (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void`) => `void`
+
+#### Type declaration
+
+▸ (`username`, `password`, `done`): `void`
+
+The function used for basic authentication.
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `username` | `string` |
+| `password` | `string` |
+| `done` | (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void` |
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+[IInitStrategyOptions](Authentication_Passport.IInitStrategyOptions.md).[basicAuth](Authentication_Passport.IInitStrategyOptions.md#basicauth)
+
+___
 
 ### configDir
 
@@ -53,52 +78,24 @@ The folder in which the application runs.
 
 ___
 
-### noDBConnection
-
-• `Optional` **noDBConnection**: `boolean`
-
-Should the Database connection be made.
-
-## Methods
-
-### basicAuth
-
-▸ `Optional` **basicAuth**(`username`, `password`, `done`): `void`
-
-The function used for basic authentication.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `username` | `string` |
-| `password` | `string` |
-| `done` | (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-[IInitStrategyOptions](Authentication_Passport.IInitStrategyOptions.md).[basicAuth](Authentication_Passport.IInitStrategyOptions.md#basicauth)
-
-___
-
 ### deserializeUser
 
-▸ `Optional` **deserializeUser**(`payload`, `done`): `void`
+• `Optional` **deserializeUser**: (`payload`: [`IPayload`](Authentication_IPayload.IPayload.md), `done`: (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void`) => `void`
+
+#### Type declaration
+
+▸ (`payload`, `done`): `void`
 
 The function used for Payload deserialization.
 
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `payload` | [`IPayload`](Authentication_IPayload.IPayload.md) |
 | `done` | (`err`: `any`, `user?`: [`IUser`](Authentication_IUser.IUser.md)) => `void` |
 
-#### Returns
+##### Returns
 
 `void`
 
@@ -108,19 +105,31 @@ The function used for Payload deserialization.
 
 ___
 
+### noDBConnection
+
+• `Optional` **noDBConnection**: `boolean`
+
+Should the Database connection be made.
+
+___
+
 ### serializeUser
 
-▸ `Optional` **serializeUser**(`user`): [`IPayload`](Authentication_IPayload.IPayload.md)
+• `Optional` **serializeUser**: (`user`: [`IUser`](Authentication_IUser.IUser.md)) => [`IPayload`](Authentication_IPayload.IPayload.md)
+
+#### Type declaration
+
+▸ (`user`): [`IPayload`](Authentication_IPayload.IPayload.md)
 
 The function used for User serialization.
 
-#### Parameters
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `user` | [`IUser`](Authentication_IUser.IUser.md) |
 
-#### Returns
+##### Returns
 
 [`IPayload`](Authentication_IPayload.IPayload.md)
 

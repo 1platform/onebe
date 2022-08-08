@@ -10,8 +10,8 @@
   "name": "Spark OneBE",
   "out": "./docs",
   "readme": "./README.md",
-  "externalPattern": "node_modules",
+  "externalPattern": ["node_modules"],
   "excludePrivate": true,
   "disableSources": true,
-  "exclude": ["**/util/*.ts", "**/test/*.ts"]
+  "exclude": ["**/util/*.ts", "**/test/*.ts", "./src/DB/TypeORM/Decorators/Others.ts", "./node_modules/*"]
 }

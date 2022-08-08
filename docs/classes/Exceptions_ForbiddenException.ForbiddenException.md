@@ -104,15 +104,15 @@ ___
 
 ▪ `Static` `Optional` **prepareStackTrace**: (`err`: [`Error`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error ), `stackTraces`: `CallSite`[]) => `any`
 
-Optional override for formatting stack traces
-
 #### Type declaration
 
 ▸ (`err`, `stackTraces`): `any`
 
 Optional override for formatting stack traces
 
-**`see`** https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+**`See`**
+
+https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 ##### Parameters
 

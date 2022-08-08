@@ -8,7 +8,6 @@
 
 - [AppMethod](Router_RouteTypes.md#appmethod)
 - [CallbackExtractorParameter](Router_RouteTypes.md#callbackextractorparameter)
-- [Constructor](Router_RouteTypes.md#constructor)
 - [ControllerDecorator](Router_RouteTypes.md#controllerdecorator)
 - [ControllerDecoratorFunction](Router_RouteTypes.md#controllerdecoratorfunction)
 - [EntityDecorator](Router_RouteTypes.md#entitydecorator)
@@ -66,14 +65,6 @@ Type used to define the callback extractor parameter.
 
 ___
 
-### Constructor
-
-Ƭ **Constructor**: `Object`
-
-Type used to define a Class with a constructor.
-
-___
-
 ### ControllerDecorator
 
 Ƭ **ControllerDecorator**<`T`\>: `T`
@@ -84,7 +75,7 @@ Type used to define a Controller Decorator return value.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 ___
 
@@ -96,7 +87,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 #### Type declaration
 
@@ -124,7 +115,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](Router_RouteTypes.md#constructor) |
+| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
 
 #### Type declaration
 

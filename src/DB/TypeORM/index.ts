@@ -1,22 +1,18 @@
-import {
-  Connection,
-  ConnectionOptions,
-  createConnection,
-  DatabaseType,
-} from "typeorm";
+import { DatabaseType, DataSource } from "typeorm";
 import Config from "../../System/Config";
 import { getDefaultLogger } from "../../System/Logger";
+import { DataSourceOptions } from "typeorm/data-source/DataSourceOptions";
 
 /**
  * TypeORM database handler class.
  */
 export default class TypeORM {
-  protected static _connection: Connection = null;
+  protected static _connection: DataSource = null;
 
   /**
    * Default connection handler.
    */
-  public static get connection(): Connection {
+  public static get connection(): DataSource {
     return TypeORM._connection;
   }
 
@@ -38,9 +34,9 @@ export default class TypeORM {
     TypeORM._instance = this;
   }
 
-  public connect(configurationName: string): Promise<Connection> {
+  public connect(configurationName: string): Promise<DataSource> {
     const dbConfig = Config.object(`db.${ configurationName }`);
-    const config: ConnectionOptions = {
+    const config: DataSourceOptions = {
       name: configurationName,
       type: dbConfig.engine as DatabaseType,
       host: dbConfig.hostname,
@@ -60,9 +56,12 @@ export default class TypeORM {
       cli: {
         migrationsDir: Config.string("db.migrations.dir", "./src/migrations"),
       },
-    } as ConnectionOptions;
+    } as DataSourceOptions;
 
-    return createConnection(config)
+    const dataSource = new DataSource(config);
+
+    return dataSource
+      .initialize()
       .then((connection) => {
         getDefaultLogger().info("TypeORM database connected.");
         return connection;

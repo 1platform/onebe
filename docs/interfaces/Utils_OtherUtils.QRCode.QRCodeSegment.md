@@ -21,4 +21,4 @@ ___
 
 ### mode
 
-• **mode**: ``"alphanumeric"`` \| ``"numeric"`` \| ``"kanji"`` \| ``"byte"``
+• **mode**: ``"numeric"`` \| ``"alphanumeric"`` \| ``"kanji"`` \| ``"byte"``

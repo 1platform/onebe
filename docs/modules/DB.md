@@ -25,10 +25,10 @@ ___
 
 ### defaultConnection
 
-▸ **defaultConnection**(): `Connection`
+▸ **defaultConnection**(): `DataSource`
 
 Returns the default connection to TypeORM database.
 
 #### Returns
 
-`Connection`
+`DataSource`

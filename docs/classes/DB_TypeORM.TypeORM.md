@@ -37,7 +37,7 @@ TypeORM database handler class.
 
 ### \_connection
 
-▪ `Static` `Protected` **\_connection**: `Connection` = `null`
+▪ `Static` `Protected` **\_connection**: `DataSource` = `null`
 
 ___
 
@@ -49,13 +49,13 @@ ___
 
 ### connection
 
-• `Static` `get` **connection**(): `Connection`
+• `Static` `get` **connection**(): `DataSource`
 
 Default connection handler.
 
 #### Returns
 
-`Connection`
+`DataSource`
 
 ___
 
@@ -73,7 +73,7 @@ TypeORM instance getter.
 
 ### connect
 
-▸ **connect**(`configurationName`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Connection`\>
+▸ **connect**(`configurationName`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`DataSource`\>
 
 #### Parameters
 
@@ -83,7 +83,7 @@ TypeORM instance getter.
 
 #### Returns
 
-[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Connection`\>
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`DataSource`\>
 
 ___
 

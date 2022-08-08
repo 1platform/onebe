@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [http](defaults_http.md#http)
+- [defaultHTTPConfig](defaults_http.md#defaulthttpconfig)
 
 ## Variables
 
-### http
+### defaultHTTPConfig
 
-• `Const` **http**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultHTTPConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for HTTP.

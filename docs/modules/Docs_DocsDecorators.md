@@ -99,7 +99,7 @@ A list of decorators to define entities.
 | Name | Type |
 | :------ | :------ |
 | `entity` | <T\>(`name`: `string`, `description`: `string`) => [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\> |
-| `property` | (`type`: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md), `options?`: `Record`<`string`, `unknown`\>) => [`EntityDecorator`](Router_RouteTypes.md#entitydecorator)<[`Constructor`](Router_RouteTypes.md#constructor)\> |
+| `property` | (`type`: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md), `options?`: `Record`<`string`, `unknown`\>) => [`EntityDecorator`](Router_RouteTypes.md#entitydecorator)<[`Constructor`](Documentation_MetadataTypes.md#constructor)\> |
 
 ## Functions
 
@@ -144,7 +144,7 @@ A method that retrieves the entity Documentation
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `target` | [`Constructor`](Router_RouteTypes.md#constructor) | The target route |
+| `target` | [`Constructor`](Documentation_MetadataTypes.md#constructor) | The target route |
 | `propertyKey?` | `string` | The property key |
 
 #### Returns

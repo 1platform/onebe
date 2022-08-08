@@ -6,4 +6,4 @@
 
 ### Classes
 
-- [I18NMiddleware](../classes/Middlewares_I18NMiddleware.I18NMiddleware.md)
+- [I18nMiddleware](../classes/Middlewares_I18NMiddleware.I18nMiddleware.md)

@@ -25,7 +25,7 @@
 
 Decorator used to define a DELETE endpoint. This is an alias for the `delete` decorator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -53,7 +53,7 @@ ___
 
 Decorator used to define a GET endpoint. This is an alias for the `get` decorator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -81,7 +81,7 @@ ___
 
 Decorator used to define a PATCH endpoint. This is an alias for the `patch` decorator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -109,7 +109,7 @@ ___
 
 Decorator used to define a POST endpoint. This is an alias for the `post` decorator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -137,7 +137,7 @@ ___
 
 Decorator used to define a PUT endpoint. This is an alias for the `put` decorator.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -165,7 +165,7 @@ ___
 
 Decorator used to define a DELETE endpoint.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -193,7 +193,7 @@ ___
 
 Decorator used to define a GET endpoint.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -221,7 +221,7 @@ ___
 
 Decorator used to define a PATCH endpoint.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -249,7 +249,7 @@ ___
 
 Decorator used to define a POST endpoint.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 
@@ -277,7 +277,7 @@ ___
 
 Decorator used to define a PUT endpoint.
 
-**`decorator`**
+**`Decorator`**
 
 #### Type parameters
 

@@ -7,6 +7,7 @@ import {
   IResponse,
   IRouteHookParameter,
 } from "./RouteInterfaces";
+import { Constructor } from "../Documentation/MetadataTypes";
 
 /**
  * Type used to define a Route Decorator function.
@@ -33,11 +34,6 @@ export type EntityDecorator<T = Constructor> = (
   propertyKey: string,
   descriptor: PropertyDescriptor
 ) => void;
-
-/**
- * Type used to define a Class with a constructor.
- */
-export type Constructor = { new (...args: any[]): any };
 
 /**
  * Type used to define a Controller Decorator function.

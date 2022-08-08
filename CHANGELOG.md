@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 1.1.0
+
+🚀 New:
+
+- Upgrade TypeORM to the latest version available.
+- Redesign the Documentation system.
+
+🌟 Improvements:
+
+- Bump versions.
+
 ## Version 1.0.30
 
 🔧 Bugfix:

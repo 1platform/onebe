@@ -13,6 +13,7 @@ import {
   TRoutesList,
 } from "./DocsInterfaces";
 import SwaggerBuilder from "./SwaggerBuilder";
+import MetadataStore from "../Documentation/MetadataStore";
 
 /**
  * Class representing the Docs store
@@ -173,7 +174,8 @@ export default class DocsStore {
     if (!Config.boolean("docs.expose")) {
       return {};
     }
-    return this._routes;
+    // return this._routes;
+    return MetadataStore.instance.entity.buildEntityList();
   }
 
   /**

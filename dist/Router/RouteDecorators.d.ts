@@ -1,4 +1,5 @@
-import { Constructor, ControllerDecorator, ControllerDecoratorFunction } from "./RouteTypes";
+import { ControllerDecorator, ControllerDecoratorFunction } from "./RouteTypes";
+import { Constructor } from "../Documentation/MetadataTypes";
 /**
  * Decorator to define the path the controller will handle.
  *

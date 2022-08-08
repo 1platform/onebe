@@ -1,0 +1,16 @@
+import { Constructor, PropertyDecorator } from "../MetadataTypes";
+import { ControllerDecoratorFunction } from "../../Router/RouteTypes";
+import { EntityPropertyDataTypes, IEntityProperty } from "../Definition/EntityMetadata";
+export declare function Entity<T extends Constructor>(name?: string, description?: string): ControllerDecoratorFunction<T>;
+export declare function Property(options?: IEntityProperty): PropertyDecorator;
+export declare function IsRequired(object: Constructor, propertyName: string): void;
+export declare function RequiredProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function DateProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function DateTimeProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function StringProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function NumberProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function BooleanProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function IntegerProperty(options?: IEntityProperty): PropertyDecorator;
+export declare function ArrayProperty(dataType: EntityPropertyDataTypes.STRING, options?: IEntityProperty): PropertyDecorator;
+export declare function EntityArrayProperty(entityName: string, options?: IEntityProperty): PropertyDecorator;
+export declare function EntityProperty(entityName: string, options?: IEntityProperty): PropertyDecorator;

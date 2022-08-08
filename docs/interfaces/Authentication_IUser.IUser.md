@@ -10,8 +10,6 @@ The minimal required information about a User.
 
 ▪ [key: `string`]: `any`
 
-Iterator for all other properties that can be added to the User interface.
-
 ## Table of contents
 
 ### Properties

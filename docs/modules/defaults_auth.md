@@ -6,12 +6,12 @@
 
 ### Variables
 
-- [auth](defaults_auth.md#auth)
+- [defaultAuthConfig](defaults_auth.md#defaultauthconfig)
 
 ## Variables
 
-### auth
+### defaultAuthConfig
 
-• `Const` **auth**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
+• `Const` **defaultAuthConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
 Default configuration for JsonWebToken

@@ -10,8 +10,8 @@ Interface representing a Body doc
 
 ### Properties
 
-- [IBodyDoc](Docs_DocsInterfaces.IBodyDoc.md#ibodydoc)
 - [arrayType](Docs_DocsInterfaces.IBodyDoc.md#arraytype)
+- [default](Docs_DocsInterfaces.IBodyDoc.md#default)
 - [description](Docs_DocsInterfaces.IBodyDoc.md#description)
 - [enumOptions](Docs_DocsInterfaces.IBodyDoc.md#enumoptions)
 - [name](Docs_DocsInterfaces.IBodyDoc.md#name)
@@ -21,15 +21,15 @@ Interface representing a Body doc
 
 ## Properties
 
-### IBodyDoc
-
-• `Optional` **IBodyDoc**: `string`
-
-___
-
 ### arrayType
 
 • `Optional` **arrayType**: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md)
+
+___
+
+### default
+
+• `Optional` **default**: `string`
 
 ___
 
