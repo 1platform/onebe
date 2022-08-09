@@ -10,7 +10,6 @@
 - [CallbackExtractorParameter](Router_RouteTypes.md#callbackextractorparameter)
 - [ControllerDecorator](Router_RouteTypes.md#controllerdecorator)
 - [ControllerDecoratorFunction](Router_RouteTypes.md#controllerdecoratorfunction)
-- [EntityDecorator](Router_RouteTypes.md#entitydecorator)
 - [HeaderMethod](Router_RouteTypes.md#headermethod)
 - [ResponseValue](Router_RouteTypes.md#responsevalue)
 - [RouteCallback](Router_RouteTypes.md#routecallback)
@@ -22,7 +21,7 @@
 
 ### AppMethod
 
-Ƭ **AppMethod**<`TRequest`, `TResponse`\>: (`context`: [`IContext`](../interfaces/Router_RouteInterfaces.IContext.md)<`TRequest`\>, `authContext?`: [`IAuthContext`](../interfaces/Router_RouteInterfaces.IAuthContext.md)) => [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>
+Ƭ **AppMethod**<`TRequest`, `TResponse`\>: (`context`: [`ContextAPI`](../classes/Documentation_Helpers_ContextAPI.ContextAPI.md)<`TRequest`\>, `authContext?`: [`AuthContextAPI`](../classes/Documentation_Helpers_AuthContextAPI.AuthContextAPI.md)) => [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>
 
 #### Type parameters
 
@@ -41,8 +40,8 @@ Type used to define the method/function used to define an endpoint.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `context` | [`IContext`](../interfaces/Router_RouteInterfaces.IContext.md)<`TRequest`\> | The request contact of the application. It can contain the request and response object that are used by express. |
-| `authContext?` | [`IAuthContext`](../interfaces/Router_RouteInterfaces.IAuthContext.md) | The authentication context, used by the application, that contains the authentication information (user, isAuthenticated etc.) |
+| `context` | [`ContextAPI`](../classes/Documentation_Helpers_ContextAPI.ContextAPI.md)<`TRequest`\> | The request contact of the application. It can contain the request and response object that are used by express. |
+| `authContext?` | [`AuthContextAPI`](../classes/Documentation_Helpers_AuthContextAPI.AuthContextAPI.md) | The authentication context, used by the application, that contains the authentication information (user, isAuthenticated etc.) |
 
 ##### Returns
 
@@ -104,36 +103,6 @@ Type used to define a Controller Decorator function.
 ##### Returns
 
 `T`
-
-___
-
-### EntityDecorator
-
-Ƭ **EntityDecorator**<`T`\>: (`target`: `T`, `propertyKey`: `string`, `descriptor`: `PropertyDescriptor`) => `void`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
-
-#### Type declaration
-
-▸ (`target`, `propertyKey`, `descriptor`): `void`
-
-Type used to define a Entity Decorator function.
-
-##### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `target` | `T` | The target on which we apply the decorator. |
-| `propertyKey` | `string` | The property on which we apply the decorator. |
-| `descriptor` | `PropertyDescriptor` | The property descriptor of the property we want to apply the decorator on. |
-
-##### Returns
-
-`void`
 
 ___
 

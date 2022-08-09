@@ -6,6 +6,8 @@
 
 Interface representing a Parameter doc
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

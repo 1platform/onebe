@@ -6,6 +6,8 @@
 
 Enum representing a Query Parameter Type
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Enumeration Members

@@ -9,7 +9,6 @@
 - [Column](DB_TypeORM_Decorators_Column.md#column)
 - [CreateDateColumn](DB_TypeORM_Decorators_Column.md#createdatecolumn)
 - [DeleteDateColumn](DB_TypeORM_Decorators_Column.md#deletedatecolumn)
-- [JoinColumn](DB_TypeORM_Decorators_Column.md#joincolumn)
 - [ObjectIdColumn](DB_TypeORM_Decorators_Column.md#objectidcolumn)
 - [PrimaryColumn](DB_TypeORM_Decorators_Column.md#primarycolumn)
 - [PrimaryGeneratedColumn](DB_TypeORM_Decorators_Column.md#primarygeneratedcolumn)
@@ -60,22 +59,6 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `options?` | `IExtendedColumnOptions` |
-
-#### Returns
-
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
-
-___
-
-### JoinColumn
-
-▸ **JoinColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options?` | `JoinColumnOptions` & { `description?`: `string`  } |
 
 #### Returns
 

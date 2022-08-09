@@ -1,8 +1,7 @@
 import "reflect-metadata";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import Route from "../Router/Route";
-import { ControllerDecoratorFunction, EntityDecorator, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
-import { BodyParameterType } from "./DocsInterfaces";
+import { ControllerDecoratorFunction, ResponseValue, RouteDecorator } from "../Router/RouteTypes";
 import { Constructor } from "../Documentation/MetadataTypes";
 /**
  * Type used to define a Class Documentation
@@ -145,25 +144,4 @@ export declare const method: {
      * @param description The description of the parameter
      */
     query: (parameter: string, type: string, description?: string) => RouteDecorator;
-};
-/**
- * A list of decorators to define entities.
- */
-export declare const schema: {
-    /**
-     * Entity decorator.
-     *
-     * @decorator
-     * @param name The name of the entity.
-     * @param description The description of the entity.
-     */
-    entity: <T extends Constructor>(name: string, description: string) => ControllerDecoratorFunction<T>;
-    /**
-     * Entity property decorator.
-     *
-     * @decorator
-     * @param type The type of parameter.
-     * @param options Options required for documentation.
-     */
-    property: (type?: BodyParameterType, options?: Record<string, unknown>) => EntityDecorator;
 };

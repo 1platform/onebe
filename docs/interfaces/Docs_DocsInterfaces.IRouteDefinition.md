@@ -6,6 +6,8 @@
 
 Interface representing a Route definition
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

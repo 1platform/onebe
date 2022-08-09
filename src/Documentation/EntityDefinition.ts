@@ -1,11 +1,17 @@
 import {
+  EntityPropertyDataTypes,
   IEntityMetadata,
   IEntityProperty,
   IEntityPropertyMetadata,
+  IRelationMetadata,
 } from "./Definition/EntityMetadata";
+import { ObjectType } from "typeorm";
+import { Constructor } from "./MetadataTypes";
 
 export default class EntityDefinition {
   private _entities: Record<string, IEntityMetadata> = {};
+  private _relations: Record<string, Array<IRelationMetadata>> = {};
+  private _mapping: Record<string, Record<string, string>> = {};
 
   public get list(): Array<IEntityMetadata> {
     return Object.values(this._entities);
@@ -56,15 +62,42 @@ export default class EntityDefinition {
   public property(
     entity: string,
     propertyName: string,
-    propertyOptions: IEntityProperty
+    propertyOptions: IEntityProperty,
+    afterProperty?: string
   ): EntityDefinition {
+    const entityDoc = this.entity(entity);
+
+    if (this.hasProperty(entity, propertyName)) {
+      const propertyIndex = entityDoc.properties.findIndex(
+        (property) => property.name === propertyName
+      );
+      const property = entityDoc.properties[propertyIndex];
+      entityDoc.properties.splice(propertyIndex, 1, {
+        ...property,
+        dataType: propertyOptions.dataType,
+        options: {
+          ...property.options,
+          ...propertyOptions,
+        },
+      });
+
+      return this;
+    }
+
     const newProperty: IEntityPropertyMetadata = {
       name: propertyName,
       dataType: propertyOptions.dataType,
       options: propertyOptions,
     };
 
-    this.entity(entity).properties.push(newProperty);
+    if (afterProperty) {
+      const propertyIndex = entityDoc.properties.findIndex(
+        (property) => property.name === afterProperty
+      );
+      entityDoc.properties.splice(propertyIndex, 0, newProperty);
+    } else {
+      entityDoc.properties.push(newProperty);
+    }
     return this;
   }
 
@@ -150,6 +183,108 @@ export default class EntityDefinition {
       delete entity.extends;
       return entity;
     });
+  }
+
+  public addRelation<T = Constructor>(
+    entity: string,
+    propertyName: string,
+    typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
+    isArray?: boolean
+  ): void {
+    if (!this._relations[entity]) {
+      this._relations[entity] = [];
+    }
+
+    this._relations[entity].push({
+      propertyName,
+      typeFunctionOrTarget,
+      isArray: isArray ?? false,
+    });
+
+    this.property(entity, propertyName, {
+      dataType: isArray
+        ? EntityPropertyDataTypes.ARRAY
+        : EntityPropertyDataTypes.OBJECT,
+      fieldName: propertyName,
+    });
+  }
+
+  public relationField(
+    entity: string,
+    propertyName: string,
+    relationField: string
+  ): void {
+    if (!this._mapping[entity]) {
+      this._mapping[entity] = {};
+    }
+
+    this._mapping[entity][propertyName] = relationField;
+  }
+
+  public registerRelations(): void {
+    for (const entity of Object.keys(this._relations)) {
+      for (const relation of this._relations[entity]) {
+        this.registerRelation(entity, relation);
+      }
+    }
+  }
+
+  protected registerRelation(
+    entityName: string,
+    relation: IRelationMetadata
+  ): void {
+    let name = "";
+    let idField = "id";
+    let dataType = "integer";
+    let fieldName = "";
+
+    if (typeof relation.typeFunctionOrTarget !== "string") {
+      const result = relation.typeFunctionOrTarget();
+      if (!result) {
+        return;
+      }
+      name = result.name;
+      fieldName = `${ name.slice(0, 1).toLowerCase() }${ name.slice(1) }Id`;
+    } else {
+      name = relation.typeFunctionOrTarget;
+      fieldName = `${ name.slice(0, 1).toLowerCase() }${ name.slice(1) }Id`;
+    }
+
+    const primaryKeyList = this.getPrimaryKey(name);
+    if (primaryKeyList.length > 0) {
+      idField = primaryKeyList[0].name;
+      fieldName = `${ name.slice(0, 1).toLowerCase() }${ name.slice(1) }${ idField
+        .slice(0, 1)
+        .toUpperCase() }${ idField.slice(1) }`;
+      dataType = primaryKeyList[0].dataType;
+    }
+
+    if (
+      this._mapping[entityName] &&
+      this._mapping[entityName][relation.propertyName]
+    ) {
+      fieldName = this._mapping[entityName][relation.propertyName];
+    }
+
+    this.property(entityName, relation.propertyName, {
+      dataType: relation.isArray
+        ? EntityPropertyDataTypes.ARRAY
+        : EntityPropertyDataTypes.OBJECT,
+      fieldName,
+      reference: name,
+      referenceId: idField,
+    });
+
+    if (!this.hasProperty(name, fieldName) && !relation.isArray) {
+      this.property(
+        entityName,
+        fieldName,
+        {
+          dataType: dataType as EntityPropertyDataTypes,
+        },
+        relation.propertyName
+      );
+    }
   }
 
   protected getParentEntityProperties(

@@ -29,6 +29,8 @@
 
 Interface property definition method.
 
+**`Deprecated`**
+
 ##### Parameters
 
 | Name | Type | Description |
@@ -48,6 +50,8 @@ Interface property definition method.
 • `Const` **docsHelpers**: `Object`
 
 Documentation helper function to document interfaces and properties.
+
+**`Deprecated`**
 
 #### Type declaration
 

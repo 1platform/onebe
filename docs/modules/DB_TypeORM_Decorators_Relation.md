@@ -6,6 +6,7 @@
 
 ### Functions
 
+- [JoinColumn](DB_TypeORM_Decorators_Relation.md#joincolumn)
 - [JoinTable](DB_TypeORM_Decorators_Relation.md#jointable)
 - [ManyToMany](DB_TypeORM_Decorators_Relation.md#manytomany)
 - [ManyToOne](DB_TypeORM_Decorators_Relation.md#manytoone)
@@ -13,6 +14,22 @@
 - [OneToOne](DB_TypeORM_Decorators_Relation.md#onetoone)
 
 ## Functions
+
+### JoinColumn
+
+▸ **JoinColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `options?` | `JoinColumnOptions` & { `description?`: `string`  } |
+
+#### Returns
+
+[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+
+___
 
 ### JoinTable
 

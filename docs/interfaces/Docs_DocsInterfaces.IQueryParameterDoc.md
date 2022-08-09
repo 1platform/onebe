@@ -6,6 +6,8 @@
 
 Interface representing a Query Parameter doc
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

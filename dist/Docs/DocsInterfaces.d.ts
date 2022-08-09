@@ -2,6 +2,8 @@ import HTTPStatus from "../HTTP/HTTPStatus";
 import HTTPVerb from "../HTTP/HTTPVerb";
 /**
  * Interface for Route doc
+ *
+ * @deprecated
  */
 export interface IRouteDoc {
     verb: HTTPVerb;
@@ -24,6 +26,7 @@ export interface IRouteDoc {
 /**
  * Enum representing a Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export declare enum ParameterType {
@@ -33,6 +36,7 @@ export declare enum ParameterType {
 /**
  * Enum representing a Query Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export declare enum QueryParameterType {
@@ -47,6 +51,7 @@ export declare enum QueryParameterType {
 /**
  * Enum representing a Body Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export declare enum BodyParameterType {
@@ -61,6 +66,8 @@ export declare enum BodyParameterType {
 }
 /**
  * Interface representing a Parameter doc
+ *
+ * @deprecated
  */
 export interface IParameterDoc {
     name: string;
@@ -69,6 +76,8 @@ export interface IParameterDoc {
 }
 /**
  * Interface representing a Query Parameter doc
+ *
+ * @deprecated
  */
 export interface IQueryParameterDoc {
     name: string;
@@ -92,6 +101,8 @@ export interface IBodyDoc {
 }
 /**
  * Interface representing an Interface doc
+ *
+ * @deprecated
  */
 export interface IInterfaceDoc {
     name: string;
@@ -101,6 +112,8 @@ export interface IInterfaceDoc {
 }
 /**
  * Interface representing a Route definition
+ *
+ * @deprecated
  */
 export interface IRouteDefinition {
     name: string;
@@ -111,6 +124,8 @@ export interface IRouteDefinition {
 }
 /**
  * Interface used to define swagger parameters.
+ *
+ * @deprecated
  */
 export interface ISwaggerParameter {
     name: string;
@@ -121,9 +136,13 @@ export interface ISwaggerParameter {
 }
 /**
  * Type used to define a Routes list
+ *
+ * @deprecated
  */
 export declare type TRoutesList = Record<string, IRouteDefinition>;
 /**
  * The default identifier for a the Response body when using interfaces for responses.
+ *
+ * @deprecated
  */
 export declare const DEFAULT_BODY_TAG = "__DEFAULT__";

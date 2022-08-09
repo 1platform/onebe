@@ -7,17 +7,21 @@ exports.QueryParameterType = exports.ParameterType = exports.DEFAULT_BODY_TAG = 
 
 /**
  * Interface for Route doc
+ *
+ * @deprecated
  */
 
 /**
  * Enum representing a Parameter Type
  *
+ * @deprecated
  * @enum
  */
 let ParameterType;
 /**
  * Enum representing a Query Parameter Type
  *
+ * @deprecated
  * @enum
  */
 
@@ -32,6 +36,7 @@ let QueryParameterType;
 /**
  * Enum representing a Body Parameter Type
  *
+ * @deprecated
  * @enum
  */
 
@@ -50,6 +55,8 @@ exports.QueryParameterType = QueryParameterType;
 let BodyParameterType;
 /**
  * Interface representing a Parameter doc
+ *
+ * @deprecated
  */
 
 exports.BodyParameterType = BodyParameterType;
@@ -67,6 +74,8 @@ exports.BodyParameterType = BodyParameterType;
 
 /**
  * The default identifier for a the Response body when using interfaces for responses.
+ *
+ * @deprecated
  */
 const DEFAULT_BODY_TAG = "__DEFAULT__";
 exports.DEFAULT_BODY_TAG = DEFAULT_BODY_TAG;

@@ -11,7 +11,7 @@ var _Config = _interopRequireDefault(require("../System/Config"));
 
 var _DocsInterfaces = require("./DocsInterfaces");
 
-var _SwaggerBuilder = _interopRequireDefault(require("./SwaggerBuilder"));
+var _SwaggerBuilder = _interopRequireDefault(require("../Documentation/Swagger/SwaggerBuilder"));
 
 var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
 
@@ -168,7 +168,10 @@ class DocsStore {
     } // return this._routes;
 
 
-    return _MetadataStore.default.instance.entity.buildEntityList();
+    return {
+      entities: _MetadataStore.default.instance.entity.buildEntityList(),
+      routes: _MetadataStore.default.instance.routes
+    };
   }
   /**
    * Method to get docs in YAML format

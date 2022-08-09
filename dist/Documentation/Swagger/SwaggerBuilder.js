@@ -7,13 +7,13 @@ exports.default = void 0;
 
 var _jsYaml = _interopRequireDefault(require("js-yaml"));
 
-var _App = _interopRequireDefault(require("../App"));
+var _App = _interopRequireDefault(require("../../App"));
 
-var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
+var _HTTPStatus = _interopRequireDefault(require("../../HTTP/HTTPStatus"));
 
-var _Config = _interopRequireDefault(require("../System/Config"));
+var _Config = _interopRequireDefault(require("../../System/Config"));
 
-var _DocsInterfaces = require("./DocsInterfaces");
+var _DocsInterfaces = require("../../Docs/DocsInterfaces");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

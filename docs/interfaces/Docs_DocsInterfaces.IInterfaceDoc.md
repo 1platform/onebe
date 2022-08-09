@@ -6,6 +6,8 @@
 
 Interface representing an Interface doc
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

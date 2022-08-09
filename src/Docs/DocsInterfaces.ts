@@ -3,6 +3,8 @@ import HTTPVerb from "../HTTP/HTTPVerb";
 
 /**
  * Interface for Route doc
+ *
+ * @deprecated
  */
 export interface IRouteDoc {
   verb: HTTPVerb;
@@ -26,6 +28,7 @@ export interface IRouteDoc {
 /**
  * Enum representing a Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export enum ParameterType {
@@ -35,6 +38,7 @@ export enum ParameterType {
 /**
  * Enum representing a Query Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export enum QueryParameterType {
@@ -50,6 +54,7 @@ export enum QueryParameterType {
 /**
  * Enum representing a Body Parameter Type
  *
+ * @deprecated
  * @enum
  */
 export enum BodyParameterType {
@@ -65,6 +70,8 @@ export enum BodyParameterType {
 
 /**
  * Interface representing a Parameter doc
+ *
+ * @deprecated
  */
 export interface IParameterDoc {
   name: string;
@@ -73,6 +80,8 @@ export interface IParameterDoc {
 }
 /**
  * Interface representing a Query Parameter doc
+ *
+ * @deprecated
  */
 export interface IQueryParameterDoc {
   name: string;
@@ -98,6 +107,8 @@ export interface IBodyDoc {
 
 /**
  * Interface representing an Interface doc
+ *
+ * @deprecated
  */
 export interface IInterfaceDoc {
   name: string;
@@ -108,6 +119,8 @@ export interface IInterfaceDoc {
 
 /**
  * Interface representing a Route definition
+ *
+ * @deprecated
  */
 export interface IRouteDefinition {
   name: string;
@@ -119,6 +132,8 @@ export interface IRouteDefinition {
 
 /**
  * Interface used to define swagger parameters.
+ *
+ * @deprecated
  */
 export interface ISwaggerParameter {
   name: string;
@@ -130,10 +145,14 @@ export interface ISwaggerParameter {
 
 /**
  * Type used to define a Routes list
+ *
+ * @deprecated
  */
 export type TRoutesList = Record<string, IRouteDefinition>;
 
 /**
  * The default identifier for a the Response body when using interfaces for responses.
+ *
+ * @deprecated
  */
 export const DEFAULT_BODY_TAG = "__DEFAULT__";

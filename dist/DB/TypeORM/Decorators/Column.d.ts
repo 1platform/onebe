@@ -1,4 +1,4 @@
-import { ColumnOptions, JoinColumnOptions } from "typeorm";
+import { ColumnOptions } from "typeorm";
 import { PropertyDecorator } from "../../../Documentation/MetadataTypes";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
@@ -22,9 +22,6 @@ export declare function ViewColumn(options?: ViewColumnOptions & {
 }): PropertyDecorator;
 export declare function ObjectIdColumn(options?: IExtendedColumnOptions): PropertyDecorator;
 export declare function Column(options?: ColumnOptions & ColumnEmbeddedOptions & {
-    description?: string;
-}): PropertyDecorator;
-export declare function JoinColumn(options?: JoinColumnOptions & {
     description?: string;
 }): PropertyDecorator;
 export {};

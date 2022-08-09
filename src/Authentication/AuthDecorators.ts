@@ -5,6 +5,7 @@ import Route from "../Router/Route";
 import { defineMiddleware } from "../Router/RouteUtils";
 import IPayload from "./IPayload";
 import { decode, extractToken, verify } from "./JWT";
+import MetadataStore from "../Documentation/MetadataStore";
 
 /**
  * Decorator to enable Bearer Authentication for an endpoint.
@@ -29,8 +30,11 @@ export const bearer = (
     ? descriptor.value
     : [ descriptor.value ];
 
-  Reflect.defineMetadata("route:auth", true, target, propertyKey);
-  Reflect.defineMetadata("route:auth:bearer", true, target, propertyKey);
+  MetadataStore.instance.route.endpointAuth(
+    target.constructor.name,
+    propertyKey,
+    "bearer"
+  );
   descriptor.value = [
     passport.authenticate("bearer", { session: false }),
     ...original,
@@ -60,8 +64,11 @@ export const basic = (
     ? descriptor.value
     : [ descriptor.value ];
 
-  Reflect.defineMetadata("route:auth", true, target, propertyKey);
-  Reflect.defineMetadata("route:auth:basic", true, target, propertyKey);
+  MetadataStore.instance.route.endpointAuth(
+    target.constructor.name,
+    propertyKey,
+    "basic"
+  );
   descriptor.value = [
     passport.authenticate("basic", { session: false }),
     ...original,

@@ -36,6 +36,8 @@
 
 Type used to define a Routes list
 
+**`Deprecated`**
+
 ## Variables
 
 ### DEFAULT\_BODY\_TAG
@@ -43,3 +45,5 @@ Type used to define a Routes list
 • `Const` **DEFAULT\_BODY\_TAG**: ``"__DEFAULT__"``
 
 The default identifier for a the Response body when using interfaces for responses.
+
+**`Deprecated`**

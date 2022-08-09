@@ -12,7 +12,7 @@ import {
   ParameterType,
   TRoutesList,
 } from "./DocsInterfaces";
-import SwaggerBuilder from "./SwaggerBuilder";
+import SwaggerBuilder from "../Documentation/Swagger/SwaggerBuilder";
 import MetadataStore from "../Documentation/MetadataStore";
 
 /**
@@ -175,7 +175,10 @@ export default class DocsStore {
       return {};
     }
     // return this._routes;
-    return MetadataStore.instance.entity.buildEntityList();
+    return {
+      entities: MetadataStore.instance.entity.buildEntityList(),
+      routes: MetadataStore.instance.routes,
+    };
   }
 
   /**

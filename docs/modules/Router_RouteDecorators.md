@@ -6,15 +6,16 @@
 
 ### Functions
 
-- [api](Router_RouteDecorators.md#api)
-- [custom](Router_RouteDecorators.md#custom)
-- [path](Router_RouteDecorators.md#path)
+- [API](Router_RouteDecorators.md#api)
+- [Custom](Router_RouteDecorators.md#custom)
+- [Group](Router_RouteDecorators.md#group)
+- [Path](Router_RouteDecorators.md#path)
 
 ## Functions
 
-### api
+### API
 
-▸ **api**<`T`\>(`BaseClass`): [`ControllerDecorator`](Router_RouteTypes.md#controllerdecorator)<`T`\>
+▸ **API**<`T`\>(`BaseClass`): [`ControllerDecorator`](Router_RouteTypes.md#controllerdecorator)<`T`\>
 
 Decorator to define the controller as an API controller.
 
@@ -44,9 +45,9 @@ Based on this metadata we know what to generate in the Documentation generator.
 
 ___
 
-### custom
+### Custom
 
-▸ **custom**<`T`\>(`path`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+▸ **Custom**<`T`\>(`path`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 Decorator to define a custom controller prefix.
 
@@ -76,15 +77,37 @@ Based on this metadata we know what to generate in the Documentation generator.
 
 ___
 
-### path
+### Group
 
-▸ **path**<`T`\>(`path`, `name?`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+▸ **Group**<`T`\>(`groupName`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `groupName` | `string` |
+
+#### Returns
+
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+___
+
+### Path
+
+▸ **Path**<`T`\>(`path`, `name?`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 Decorator to define the path the controller will handle.
 
 Attaches to the target the following metadata:
 - route:path
-- route:api - if the [api](Router_RouteDecorators.md#api) decorator was used.
+- route:api - if the api decorator was used.
 - route:name
 - route:docs
 - route:path:callbacks

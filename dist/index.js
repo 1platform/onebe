@@ -31,6 +31,8 @@ var _LoggerType = _interopRequireDefault(require("./System/LoggerType"));
 
 var _LogLevel = _interopRequireDefault(require("./System/LogLevel"));
 
+var _MetadataStore = _interopRequireDefault(require("./Documentation/MetadataStore"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -78,7 +80,7 @@ async function init(props) {
   await (0, _i18n.default)(props.currentDir);
 
   if (!props.noDBConnection) {
-    await (0, _DB.default)();
+    await (0, _DB.default)().then(() => _MetadataStore.default.instance.entity.registerRelations());
   }
 
   return strategyProps => {

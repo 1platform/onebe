@@ -10,7 +10,9 @@
 
 - [childType](Documentation_Definition_EntityMetadata.IEntityProperty.md#childtype)
 - [dataType](Documentation_Definition_EntityMetadata.IEntityProperty.md#datatype)
+- [defaultValue](Documentation_Definition_EntityMetadata.IEntityProperty.md#defaultvalue)
 - [description](Documentation_Definition_EntityMetadata.IEntityProperty.md#description)
+- [enumOptions](Documentation_Definition_EntityMetadata.IEntityProperty.md#enumoptions)
 - [fieldName](Documentation_Definition_EntityMetadata.IEntityProperty.md#fieldname)
 - [isDate](Documentation_Definition_EntityMetadata.IEntityProperty.md#isdate)
 - [isDateTime](Documentation_Definition_EntityMetadata.IEntityProperty.md#isdatetime)
@@ -35,9 +37,21 @@ ___
 
 ___
 
+### defaultValue
+
+• `Optional` **defaultValue**: `string`
+
+___
+
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### enumOptions
+
+• `Optional` **enumOptions**: `string`
 
 ___
 

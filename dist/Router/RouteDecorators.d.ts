@@ -17,7 +17,7 @@ import { Constructor } from "../Documentation/MetadataTypes";
  * @param name The name of the controller. If no name is specified, it will take the name of the controller.
  * @param description The description of the controller. If no description is passed, no description will be documented.
  */
-export declare function path<T extends Constructor>(path: string, name?: string, description?: string): ControllerDecoratorFunction<T>;
+export declare function Path<T extends Constructor>(path: string, name?: string, description?: string): ControllerDecoratorFunction<T>;
 /**
  * Decorator to define the controller as an API controller.
  *
@@ -30,7 +30,7 @@ export declare function path<T extends Constructor>(path: string, name?: string,
  * @decorator
  * @param BaseClass The Controller we want to decorate.
  */
-export declare function api<T extends Constructor>(BaseClass: T): ControllerDecorator<T>;
+export declare function API<T extends Constructor>(BaseClass: T): ControllerDecorator<T>;
 /**
  * Decorator to define a custom controller prefix.
  *
@@ -43,4 +43,5 @@ export declare function api<T extends Constructor>(BaseClass: T): ControllerDeco
  * @decorator
  * @param path The custom controller path prefix.
  */
-export declare function custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T>;
+export declare function Custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T>;
+export declare function Group<T extends Constructor>(groupName: string): ControllerDecoratorFunction<T>;

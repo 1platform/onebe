@@ -1,8 +1,11 @@
 import { BodyParameterType } from "./DocsInterfaces";
-import DocsStore from "./DocsStore";
+import MetadataStore from "../Documentation/MetadataStore";
+import { EntityPropertyDataTypes } from "../Documentation/Definition/EntityMetadata";
 
 /**
  * Extra parameters that can be passed to the property documentation method.
+ *
+ * @deprecated
  */
 export interface IPropertyOptions {
   description?: string;
@@ -15,6 +18,7 @@ export interface IPropertyOptions {
 /**
  * Interface property definition method.
  *
+ * @deprecated
  * @param propertyName The name of the property we want to document.
  * @param type The data type of the property.
  * @param options The options passed to the documentation engine.
@@ -27,6 +31,7 @@ export type PropertyDefinitionFunction = (
 
 /**
  * The return value of the property definition method.
+ * @deprecated
  */
 export interface IPropertyResult {
   /**
@@ -38,6 +43,7 @@ export interface IPropertyResult {
 /**
  * Interface property definition method.
  *
+ * @deprecated
  * @param interfaceName The name of the interface we want to add documentation to.
  * @param propertyName The name of the property we want to document.
  * @param type The data type of the property.
@@ -55,14 +61,13 @@ const property = (
     schema = undefined,
   }: IPropertyOptions
 ): IPropertyResult => {
-  DocsStore.instance.addInterfaceProperty(interfaceName, {
-    name: propertyName,
-    type,
-    schema: schema || undefined,
-    enumOptions: enumOptions || undefined,
-    description: description || "",
-    required: required ?? true,
-    default: defaultValue || undefined,
+  MetadataStore.instance.entity.property(interfaceName, propertyName, {
+    dataType:
+      EntityPropertyDataTypes[type.toString()] ||
+      EntityPropertyDataTypes.STRING,
+    description,
+    reference: schema,
+    required,
   });
 
   return {
@@ -74,16 +79,19 @@ const property = (
 
 /**
  * Documentation helper function to document interfaces and properties.
+ *
+ * @deprecated
  */
 export const docsHelpers = {
   /**
    * Interface definition method.
    *
+   * @deprecated
    * @param name The name of the interface we want to document.
    * @param description The description of the interface.
    */
   interface: (name: string, description?: string): IPropertyResult => {
-    DocsStore.instance.defineInterface(name, description);
+    MetadataStore.instance.entity.add(name, description);
 
     return {
       property: (

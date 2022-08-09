@@ -1,8 +1,11 @@
 import { IEntityMetadata } from "./Definition/EntityMetadata";
 import EntityDefinition from "./EntityDefinition";
+import { IRouteMetadata } from "./Definition/RouteMetadata";
+import RouteDefinition from "./RouteDefinition";
 
 export default class MetadataStore {
   private readonly _entity: EntityDefinition = new EntityDefinition();
+  private readonly _route: RouteDefinition = new RouteDefinition();
 
   /**
    * The constructor of the Metadata store
@@ -33,5 +36,13 @@ export default class MetadataStore {
 
   public get entity(): EntityDefinition {
     return this._entity;
+  }
+
+  public get routes(): Array<IRouteMetadata> {
+    return this._route.list;
+  }
+
+  public get route(): RouteDefinition {
+    return this._route;
   }
 }

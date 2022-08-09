@@ -1,6 +1,8 @@
 import { BodyParameterType } from "./DocsInterfaces";
 /**
  * Extra parameters that can be passed to the property documentation method.
+ *
+ * @deprecated
  */
 export interface IPropertyOptions {
     description?: string;
@@ -12,6 +14,7 @@ export interface IPropertyOptions {
 /**
  * Interface property definition method.
  *
+ * @deprecated
  * @param propertyName The name of the property we want to document.
  * @param type The data type of the property.
  * @param options The options passed to the documentation engine.
@@ -19,6 +22,7 @@ export interface IPropertyOptions {
 export declare type PropertyDefinitionFunction = (propertyName: string, type: BodyParameterType, options?: IPropertyOptions) => IPropertyResult;
 /**
  * The return value of the property definition method.
+ * @deprecated
  */
 export interface IPropertyResult {
     /**
@@ -28,11 +32,14 @@ export interface IPropertyResult {
 }
 /**
  * Documentation helper function to document interfaces and properties.
+ *
+ * @deprecated
  */
 export declare const docsHelpers: {
     /**
      * Interface definition method.
      *
+     * @deprecated
      * @param name The name of the interface we want to document.
      * @param description The description of the interface.
      */

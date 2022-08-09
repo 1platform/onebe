@@ -6,6 +6,8 @@
 
 Interface used to define swagger parameters.
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

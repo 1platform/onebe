@@ -19,6 +19,7 @@ import {
 } from "./System/Logger";
 import LoggerType from "./System/LoggerType";
 import LogLevel from "./System/LogLevel";
+import MetadataStore from "./Documentation/MetadataStore";
 
 /**
  * Framework configuration options.
@@ -91,7 +92,7 @@ export default async function init(
   await i18n(props.currentDir);
 
   if (!props.noDBConnection) {
-    await DB();
+    await DB().then(() => MetadataStore.instance.entity.registerRelations());
   }
 
   return (strategyProps?: IInitStrategyOptions) => {

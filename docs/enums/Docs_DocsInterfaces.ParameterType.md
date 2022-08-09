@@ -6,6 +6,8 @@
 
 Enum representing a Parameter Type
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Enumeration Members

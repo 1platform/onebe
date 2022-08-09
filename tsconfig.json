@@ -3,6 +3,7 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "strict": false,
     "sourceMap": true,
     "target": "ES2021",
     "outDir": "./dist",

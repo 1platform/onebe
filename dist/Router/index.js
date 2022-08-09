@@ -13,6 +13,16 @@ var _path = require("path");
 
 var _Logger = require("../System/Logger");
 
+var _ContextAPI = _interopRequireDefault(require("../Documentation/Helpers/ContextAPI"));
+
+var _HTTPVerb = _interopRequireDefault(require("../HTTP/HTTPVerb"));
+
+var _AuthContextAPI = _interopRequireDefault(require("../Documentation/Helpers/AuthContextAPI"));
+
+var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -43,6 +53,57 @@ class RouterBase {
     const controllersStruct = this.fetchControllers(controllersPath);
     controllersStruct.section = "";
     await this.registerControllers(controllersPath, controllersStruct);
+  }
+
+  parseRoute(route) {
+    const basePath = route.basePath.filter(bp => bp).join("/");
+
+    for (const endpoint of Object.values(route.endpoints)) {
+      this.loadEndpoint(basePath, endpoint);
+    }
+  }
+
+  getPath(basePath, path) {
+    const newPath = `/${basePath}/${path}`.replace(/(https?:\/\/)|(\/)+/g, "$1$2");
+    return newPath.lastIndexOf("/") === newPath.length - 1 && newPath !== "/" ? newPath.substring(0, newPath.length - 1) : newPath;
+  }
+
+  loadEndpoint(basePath, endpoint) {
+    const path = this.getPath(basePath, endpoint.path);
+    (0, _Logger.getDefaultLogger)().debug(`[REGISTER] ${endpoint.verb.toUpperCase()}: ${path}`);
+    this.router[endpoint.verb](path, ...endpoint.middlewares, async function (req, res, next) {
+      try {
+        const original = await endpoint.callback(new _ContextAPI.default(req, res, endpoint.passRequest, endpoint.verb === _HTTPVerb.default.GET), new _AuthContextAPI.default(req, req.authContext || {}));
+        let status = _HTTPStatus.default.OK;
+
+        if (typeof original === "object" && "statusCode" in original) {
+          status = original?.statusCode || _HTTPStatus.default.OK;
+        } else if (Number.isInteger(original) && Object.values(_HTTPStatus.default).indexOf(original) >= 0) {
+          status = original;
+        }
+
+        if (status === _HTTPStatus.default.NO_CONTENT || status === _HTTPStatus.default.ACCEPTED) {
+          res.sendStatus(status);
+          return;
+        }
+
+        if (typeof original === "object" && "file" in original) {
+          res.contentType(original?.contentType || "text/plain");
+          res.sendFile(original?.body);
+          return;
+        }
+
+        if (typeof original === "object" && "contentType" in original) {
+          res.contentType(original?.contentType || "text/plain");
+          res.send(original?.body);
+          return;
+        }
+
+        res.status(status).json(original);
+      } catch (e) {
+        next(e);
+      }
+    });
   }
   /**
    * The method used to register the controllers in a path. It will make recursive calls

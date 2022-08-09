@@ -1,8 +1,8 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Docs/SwaggerBuilder](../modules/Docs_SwaggerBuilder.md) / SwaggerBuilder
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/SwaggerBuilder](../modules/Documentation_Swagger_SwaggerBuilder.md) / SwaggerBuilder
 
 # Class: SwaggerBuilder
 
-[Docs/SwaggerBuilder](../modules/Docs_SwaggerBuilder.md).SwaggerBuilder
+[Documentation/Swagger/SwaggerBuilder](../modules/Documentation_Swagger_SwaggerBuilder.md).SwaggerBuilder
 
 Class representing a Swagger Builder
 
@@ -10,16 +10,16 @@ Class representing a Swagger Builder
 
 ### Constructors
 
-- [constructor](Docs_SwaggerBuilder.SwaggerBuilder.md#constructor)
+- [constructor](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#constructor)
 
 ### Properties
 
-- [\_interfaces](Docs_SwaggerBuilder.SwaggerBuilder.md#_interfaces)
-- [\_routes](Docs_SwaggerBuilder.SwaggerBuilder.md#_routes)
+- [\_interfaces](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#_interfaces)
+- [\_routes](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#_routes)
 
 ### Methods
 
-- [getYaml](Docs_SwaggerBuilder.SwaggerBuilder.md#getyaml)
+- [getYaml](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#getyaml)
 
 ## Constructors
 

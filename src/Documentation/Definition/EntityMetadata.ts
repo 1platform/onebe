@@ -1,4 +1,5 @@
-import { ColumnType } from "typeorm";
+import { ColumnType, ObjectType } from "typeorm";
+import { Constructor } from "../MetadataTypes";
 
 export enum EntityPropertyDataTypes {
   STRING = "string",
@@ -29,6 +30,12 @@ export interface IEntityMetadata {
   properties?: Array<IEntityPropertyMetadata>;
 }
 
+export interface IRelationMetadata<T = Constructor> {
+  propertyName: string;
+  typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>);
+  isArray?: boolean;
+}
+
 export interface IEntityProperty {
   dataType: EntityPropertyDataTypes;
   length?: number | string;
@@ -42,6 +49,10 @@ export interface IEntityProperty {
   options?: any;
   isPrimaryKey?: boolean;
   required?: boolean;
+
+  // TODO: Add the following fields
+  defaultValue?: string;
+  enumOptions?: string;
 }
 
 const integers = [

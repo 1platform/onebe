@@ -1,7 +1,7 @@
 import jsYaml from "js-yaml";
-import app from "../App";
-import HTTPStatus from "../HTTP/HTTPStatus";
-import Config from "../System/Config";
+import app from "../../App";
+import HTTPStatus from "../../HTTP/HTTPStatus";
+import Config from "../../System/Config";
 import {
   BodyParameterType,
   DEFAULT_BODY_TAG,
@@ -9,7 +9,7 @@ import {
   IRouteDoc,
   ISwaggerParameter,
   TRoutesList,
-} from "./DocsInterfaces";
+} from "../../Docs/DocsInterfaces";
 
 /**
  * Class representing a Swagger Builder

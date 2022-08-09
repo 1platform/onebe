@@ -14,6 +14,8 @@
 
 - [entities](Documentation_MetadataStore.MetadataStore.md#entities)
 - [entity](Documentation_MetadataStore.MetadataStore.md#entity)
+- [route](Documentation_MetadataStore.MetadataStore.md#route)
+- [routes](Documentation_MetadataStore.MetadataStore.md#routes)
 - [instance](Documentation_MetadataStore.MetadataStore.md#instance)
 
 ## Properties
@@ -43,6 +45,26 @@ ___
 #### Returns
 
 [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+
+___
+
+### route
+
+• `get` **route**(): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+#### Returns
+
+[`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+___
+
+### routes
+
+• `get` **routes**(): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
+
+#### Returns
+
+[`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
 
 ___
 

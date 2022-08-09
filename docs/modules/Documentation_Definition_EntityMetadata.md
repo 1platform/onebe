@@ -13,6 +13,7 @@
 - [IEntityMetadata](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
 - [IEntityProperty](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)
 - [IEntityPropertyMetadata](../interfaces/Documentation_Definition_EntityMetadata.IEntityPropertyMetadata.md)
+- [IRelationMetadata](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)
 
 ### Functions
 

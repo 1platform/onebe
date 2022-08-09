@@ -1,5 +1,6 @@
 import { Router as ExpressRouter } from "express";
 import Route from "./Route";
+import { IEndpointMetadata, IRouteMetadata } from "../Documentation/Definition/RouteMetadata";
 export declare class RouterBase {
     /**
      * The list with controllers we want to register.
@@ -19,6 +20,9 @@ export declare class RouterBase {
      * @param controllersPath The path from which we will import controllers.
      */
     register(controllersPath: string): Promise<void>;
+    parseRoute(route: IRouteMetadata): void;
+    protected getPath(basePath: string, path: string): string;
+    protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata): void;
     /**
      * The method used to register the controllers in a path. It will make recursive calls
      * to itself if we have other folders inside the current path.

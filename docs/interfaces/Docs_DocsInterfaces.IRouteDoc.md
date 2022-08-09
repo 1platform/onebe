@@ -6,6 +6,8 @@
 
 Interface for Route doc
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

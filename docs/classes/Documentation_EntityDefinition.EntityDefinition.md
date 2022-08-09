@@ -17,6 +17,7 @@
 ### Methods
 
 - [add](Documentation_EntityDefinition.EntityDefinition.md#add)
+- [addRelation](Documentation_EntityDefinition.EntityDefinition.md#addrelation)
 - [buildEntityList](Documentation_EntityDefinition.EntityDefinition.md#buildentitylist)
 - [entity](Documentation_EntityDefinition.EntityDefinition.md#entity)
 - [extends](Documentation_EntityDefinition.EntityDefinition.md#extends)
@@ -26,6 +27,9 @@
 - [markPrimaryKey](Documentation_EntityDefinition.EntityDefinition.md#markprimarykey)
 - [markRequired](Documentation_EntityDefinition.EntityDefinition.md#markrequired)
 - [property](Documentation_EntityDefinition.EntityDefinition.md#property)
+- [registerRelation](Documentation_EntityDefinition.EntityDefinition.md#registerrelation)
+- [registerRelations](Documentation_EntityDefinition.EntityDefinition.md#registerrelations)
+- [relationField](Documentation_EntityDefinition.EntityDefinition.md#relationfield)
 - [tableName](Documentation_EntityDefinition.EntityDefinition.md#tablename)
 - [update](Documentation_EntityDefinition.EntityDefinition.md#update)
 
@@ -61,6 +65,31 @@
 #### Returns
 
 [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+
+___
+
+### addRelation
+
+▸ **addRelation**<`T`\>(`entity`, `propertyName`, `typeFunctionOrTarget`, `isArray?`): `void`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `entity` | `string` |
+| `propertyName` | `string` |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
+| `isArray?` | `boolean` |
+
+#### Returns
+
+`void`
 
 ___
 
@@ -192,7 +221,7 @@ ___
 
 ### property
 
-▸ **property**(`entity`, `propertyName`, `propertyOptions`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+▸ **property**(`entity`, `propertyName`, `propertyOptions`, `afterProperty?`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
 #### Parameters
 
@@ -201,10 +230,56 @@ ___
 | `entity` | `string` |
 | `propertyName` | `string` |
 | `propertyOptions` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| `afterProperty?` | `string` |
 
 #### Returns
 
 [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+
+___
+
+### registerRelation
+
+▸ `Protected` **registerRelation**(`entityName`, `relation`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `entityName` | `string` |
+| `relation` | [`IRelationMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)<[`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)\> |
+
+#### Returns
+
+`void`
+
+___
+
+### registerRelations
+
+▸ **registerRelations**(): `void`
+
+#### Returns
+
+`void`
+
+___
+
+### relationField
+
+▸ **relationField**(`entity`, `propertyName`, `relationField`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `entity` | `string` |
+| `propertyName` | `string` |
+| `relationField` | `string` |
+
+#### Returns
+
+`void`
 
 ___
 

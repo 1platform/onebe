@@ -5,13 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.docsHelpers = void 0;
 
-var _DocsStore = _interopRequireDefault(require("./DocsStore"));
+var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
+
+var _EntityMetadata = require("../Documentation/Definition/EntityMetadata");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Interface property definition method.
  *
+ * @deprecated
  * @param interfaceName The name of the interface we want to add documentation to.
  * @param propertyName The name of the property we want to document.
  * @param type The data type of the property.
@@ -24,14 +27,11 @@ const property = (interfaceName, propertyName, type, {
   enumOptions = undefined,
   schema = undefined
 }) => {
-  _DocsStore.default.instance.addInterfaceProperty(interfaceName, {
-    name: propertyName,
-    type,
-    schema: schema || undefined,
-    enumOptions: enumOptions || undefined,
-    description: description || "",
-    required: required ?? true,
-    default: defaultValue || undefined
+  _MetadataStore.default.instance.entity.property(interfaceName, propertyName, {
+    dataType: _EntityMetadata.EntityPropertyDataTypes[type.toString()] || _EntityMetadata.EntityPropertyDataTypes.STRING,
+    description,
+    reference: schema,
+    required
   });
 
   return {
@@ -42,6 +42,8 @@ const property = (interfaceName, propertyName, type, {
 };
 /**
  * Documentation helper function to document interfaces and properties.
+ *
+ * @deprecated
  */
 
 
@@ -49,11 +51,12 @@ const docsHelpers = {
   /**
    * Interface definition method.
    *
+   * @deprecated
    * @param name The name of the interface we want to document.
    * @param description The description of the interface.
    */
   interface: (name, description) => {
-    _DocsStore.default.instance.defineInterface(name, description);
+    _MetadataStore.default.instance.entity.add(name, description);
 
     return {
       property: (propertyName, type, options) => {

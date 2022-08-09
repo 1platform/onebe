@@ -222,7 +222,7 @@ export interface IVerbDecorators<Request = any, Response = any> {
   /**
    * The HTTP Verb used for the route endpoint.
    */
-  method: HTTPVerb;
+  verb: HTTPVerb;
   /**
    * The path of the route endpoint.
    */

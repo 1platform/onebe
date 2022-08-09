@@ -1,4 +1,4 @@
-import { IInterfaceDoc, TRoutesList } from "./DocsInterfaces";
+import { IInterfaceDoc, TRoutesList } from "../../Docs/DocsInterfaces";
 /**
  * Class representing a Swagger Builder
  */

@@ -1,8 +1,10 @@
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
-import { IAuthContext, IContext, IResponse, IRouteHookParameter } from "./RouteInterfaces";
+import { IResponse, IRouteHookParameter } from "./RouteInterfaces";
 import { Constructor } from "../Documentation/MetadataTypes";
+import AuthContextAPI from "../Documentation/Helpers/AuthContextAPI";
+import ContextAPI from "../Documentation/Helpers/ContextAPI";
 /**
  * Type used to define a Route Decorator function.
  *
@@ -11,14 +13,6 @@ import { Constructor } from "../Documentation/MetadataTypes";
  * @param descriptor The property descriptor of the property we want to apply the decorator on.
  */
 export declare type RouteDecorator<T = Route> = (target: T, propertyKey: string, descriptor: PropertyDescriptor) => void;
-/**
- * Type used to define a Entity Decorator function.
- *
- * @param target The target on which we apply the decorator.
- * @param propertyKey The property on which we apply the decorator.
- * @param descriptor The property descriptor of the property we want to apply the decorator on.
- */
-export declare type EntityDecorator<T = Constructor> = (target: T, propertyKey: string, descriptor: PropertyDescriptor) => void;
 /**
  * Type used to define a Controller Decorator function.
  *
@@ -39,7 +33,7 @@ export declare type ResponseValue<TResponse> = string | number | boolean | Array
  * @param context The request contact of the application. It can contain the request and response object that are used by express.
  * @param authContext The authentication context, used by the application, that contains the authentication information (user, isAuthenticated etc.)
  */
-export declare type AppMethod<TRequest = any, TResponse = any> = (context: IContext<TRequest>, authContext?: IAuthContext) => ResponseValue<TResponse>;
+export declare type AppMethod<TRequest = any, TResponse = any> = (context: ContextAPI<TRequest>, authContext?: AuthContextAPI) => ResponseValue<TResponse>;
 /**
  * Type used to define a method/function used to fetch information from the header.
  *

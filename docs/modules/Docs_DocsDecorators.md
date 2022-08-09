@@ -18,7 +18,6 @@
 
 - [controller](Docs_DocsDecorators.md#controller)
 - [method](Docs_DocsDecorators.md#method)
-- [schema](Docs_DocsDecorators.md#schema)
 
 ### Functions
 
@@ -85,21 +84,6 @@ A list of decorators to define properties of a method.
 | `responseArray` | (`type`: `string`, `statusCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `responseStatus` | (`statusCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description?`: `string`) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
 | `throws` | <TResponse\>(`errorCode`: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md), `description`: `string`, `response?`: [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>) => [`RouteDecorator`](Router_RouteTypes.md#routedecorator)<[`Route`](../classes/Router_Route.Route.md)\> |
-
-___
-
-### schema
-
-• `Const` **schema**: `Object`
-
-A list of decorators to define entities.
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `entity` | <T\>(`name`: `string`, `description`: `string`) => [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\> |
-| `property` | (`type`: [`BodyParameterType`](../enums/Docs_DocsInterfaces.BodyParameterType.md), `options?`: `Record`<`string`, `unknown`\>) => [`EntityDecorator`](Router_RouteTypes.md#entitydecorator)<[`Constructor`](Documentation_MetadataTypes.md#constructor)\> |
 
 ## Functions
 

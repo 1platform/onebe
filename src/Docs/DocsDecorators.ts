@@ -3,7 +3,6 @@ import HTTPStatus from "../HTTP/HTTPStatus";
 import Route from "../Router/Route";
 import {
   ControllerDecoratorFunction,
-  EntityDecorator,
   ResponseValue,
   RouteDecorator,
 } from "../Router/RouteTypes";
@@ -12,7 +11,6 @@ import {
   DEFAULT_BODY_TAG,
   ParameterType,
 } from "./DocsInterfaces";
-import DocsStore from "./DocsStore";
 import { Constructor } from "../Documentation/MetadataTypes";
 
 /**
@@ -388,58 +386,5 @@ export const method = {
       type,
       description,
     });
-  },
-};
-
-/**
- * A list of decorators to define entities.
- */
-export const schema = {
-  /**
-   * Entity decorator.
-   *
-   * @decorator
-   * @param name The name of the entity.
-   * @param description The description of the entity.
-   */
-  entity: function <T extends Constructor>(
-    name: string,
-    description: string
-  ): ControllerDecoratorFunction<T> {
-    return function (BaseClass: T): T {
-      const classDocs = getEntityDocs<ClassDocs>(BaseClass.prototype);
-      classDocs.name = name;
-      classDocs.description = description;
-      DocsStore.instance.defineInterface(name, description);
-      return BaseClass;
-    };
-  },
-
-  /**
-   * Entity property decorator.
-   *
-   * @decorator
-   * @param type The type of parameter.
-   * @param options Options required for documentation.
-   */
-  property: function (
-    type = BodyParameterType.STRING,
-    options?: Record<string, unknown>
-  ): EntityDecorator {
-    return (
-      target: Constructor,
-      propertyKey: string,
-      descriptor: PropertyDescriptor
-    ): void => {
-      const routeDocs = getEntityDocs<EntityDocs>(target);
-      DocsStore.instance.addInterfaceProperty(routeDocs.name as string, {
-        name: propertyKey,
-        type,
-        schema: (options.schema as string) || undefined,
-        description: (options.description as string) || "",
-        required: (options.required as boolean) ?? true,
-        default: (options.defaultValue as string) || undefined,
-      });
-    };
   },
 };

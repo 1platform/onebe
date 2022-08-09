@@ -6,15 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.controller = exports.MethodMetadataType = void 0;
 exports.getElementDocs = getElementDocs;
 exports.getEntityDocs = getEntityDocs;
-exports.schema = exports.method = void 0;
+exports.method = void 0;
 
 require("reflect-metadata");
 
 var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
 var _DocsInterfaces = require("./DocsInterfaces");
-
-var _DocsStore = _interopRequireDefault(require("./DocsStore"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -328,51 +326,4 @@ const method = {
     });
   }
 };
-/**
- * A list of decorators to define entities.
- */
-
 exports.method = method;
-const schema = {
-  /**
-   * Entity decorator.
-   *
-   * @decorator
-   * @param name The name of the entity.
-   * @param description The description of the entity.
-   */
-  entity: function (name, description) {
-    return function (BaseClass) {
-      const classDocs = getEntityDocs(BaseClass.prototype);
-      classDocs.name = name;
-      classDocs.description = description;
-
-      _DocsStore.default.instance.defineInterface(name, description);
-
-      return BaseClass;
-    };
-  },
-
-  /**
-   * Entity property decorator.
-   *
-   * @decorator
-   * @param type The type of parameter.
-   * @param options Options required for documentation.
-   */
-  property: function (type = _DocsInterfaces.BodyParameterType.STRING, options) {
-    return (target, propertyKey, descriptor) => {
-      const routeDocs = getEntityDocs(target);
-
-      _DocsStore.default.instance.addInterfaceProperty(routeDocs.name, {
-        name: propertyKey,
-        type,
-        schema: options.schema || undefined,
-        description: options.description || "",
-        required: options.required ?? true,
-        default: options.defaultValue || undefined
-      });
-    };
-  }
-};
-exports.schema = schema;

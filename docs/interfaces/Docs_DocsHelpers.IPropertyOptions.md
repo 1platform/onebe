@@ -6,6 +6,8 @@
 
 Extra parameters that can be passed to the property documentation method.
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

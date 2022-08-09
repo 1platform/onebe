@@ -13,6 +13,8 @@ var _RouteUtils = require("../Router/RouteUtils");
 
 var _JWT = require("./JWT");
 
+var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -37,8 +39,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  */
 const bearer = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
-  Reflect.defineMetadata("route:auth", true, target, propertyKey);
-  Reflect.defineMetadata("route:auth:bearer", true, target, propertyKey);
+
+  _MetadataStore.default.instance.route.endpointAuth(target.constructor.name, propertyKey, "bearer");
+
   descriptor.value = [_passport.default.authenticate("bearer", {
     session: false
   }), ...original];
@@ -63,8 +66,9 @@ exports.bearer = bearer;
 
 const basic = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
-  Reflect.defineMetadata("route:auth", true, target, propertyKey);
-  Reflect.defineMetadata("route:auth:basic", true, target, propertyKey);
+
+  _MetadataStore.default.instance.route.endpointAuth(target.constructor.name, propertyKey, "basic");
+
   descriptor.value = [_passport.default.authenticate("basic", {
     session: false
   }), ...original];

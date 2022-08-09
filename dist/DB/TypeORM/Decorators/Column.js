@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.Column = Column;
 exports.CreateDateColumn = CreateDateColumn;
 exports.DeleteDateColumn = DeleteDateColumn;
-exports.JoinColumn = JoinColumn;
 exports.ObjectIdColumn = ObjectIdColumn;
 exports.PrimaryColumn = PrimaryColumn;
 exports.PrimaryGeneratedColumn = PrimaryGeneratedColumn;
@@ -101,13 +100,6 @@ function ObjectIdColumn(options) {
 function Column(options) {
   return function (object, propertyName) {
     (0, _typeorm.Column)(options)(object, propertyName);
-    DocumentEntity(object, propertyName, options);
-  };
-}
-
-function JoinColumn(options) {
-  return function (object, propertyName) {
-    (0, _typeorm.JoinColumn)(options)(object, propertyName);
     DocumentEntity(object, propertyName, options);
   };
 }

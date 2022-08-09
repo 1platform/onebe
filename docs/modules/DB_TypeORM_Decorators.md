@@ -45,7 +45,7 @@ ___
 
 ### JoinColumn
 
-Re-exports [JoinColumn](DB_TypeORM_Decorators_Column.md#joincolumn)
+Re-exports [JoinColumn](DB_TypeORM_Decorators_Relation.md#joincolumn)
 
 ___
 

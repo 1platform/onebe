@@ -6,6 +6,8 @@
 
 The return value of the property definition method.
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Properties

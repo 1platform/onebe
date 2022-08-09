@@ -18,11 +18,11 @@ The VerbDecorators parameter contents.
 ### Properties
 
 - [descriptor](Router_RouteInterfaces.IVerbDecorators.md#descriptor)
-- [method](Router_RouteInterfaces.IVerbDecorators.md#method)
 - [passRequest](Router_RouteInterfaces.IVerbDecorators.md#passrequest)
 - [path](Router_RouteInterfaces.IVerbDecorators.md#path)
 - [propertyKey](Router_RouteInterfaces.IVerbDecorators.md#propertykey)
 - [target](Router_RouteInterfaces.IVerbDecorators.md#target)
+- [verb](Router_RouteInterfaces.IVerbDecorators.md#verb)
 
 ## Properties
 
@@ -31,14 +31,6 @@ The VerbDecorators parameter contents.
 • **descriptor**: `PropertyDescriptor`
 
 The property descriptor of the route endpoint function.
-
-___
-
-### method
-
-• **method**: [`HTTPVerb`](../enums/HTTP_HTTPVerb.HTTPVerb.md)
-
-The HTTP Verb used for the route endpoint.
 
 ___
 
@@ -71,3 +63,11 @@ ___
 • **target**: [`Route`](../classes/Router_Route.Route.md)
 
 The target Controller.
+
+___
+
+### verb
+
+• **verb**: [`HTTPVerb`](../enums/HTTP_HTTPVerb.HTTPVerb.md)
+
+The HTTP Verb used for the route endpoint.

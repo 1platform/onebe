@@ -6,6 +6,8 @@
 
 Enum representing a Body Parameter Type
 
+**`Deprecated`**
+
 ## Table of contents
 
 ### Enumeration Members

@@ -1,8 +1,22 @@
-import { Router as ExpressRouter } from "express";
+import {
+  NextFunction,
+  Request,
+  Response,
+  Router as ExpressRouter,
+} from "express";
 import { readdirSync, statSync } from "fs";
 import { basename, extname, join, resolve } from "path";
 import { getDefaultLogger } from "../System/Logger";
 import Route from "./Route";
+import {
+  IEndpointMetadata,
+  IRouteMetadata,
+} from "../Documentation/Definition/RouteMetadata";
+import { ResponseValue } from "./RouteTypes";
+import ContextAPI from "../Documentation/Helpers/ContextAPI";
+import HTTPVerb from "../HTTP/HTTPVerb";
+import AuthContextAPI from "../Documentation/Helpers/AuthContextAPI";
+import HTTPStatus from "../HTTP/HTTPStatus";
 
 /**
  * The structure of the folders containing the controllers of our application.
@@ -49,6 +63,83 @@ export class RouterBase {
     const controllersStruct = this.fetchControllers(controllersPath);
     controllersStruct.section = "";
     await this.registerControllers(controllersPath, controllersStruct);
+  }
+
+  public parseRoute(route: IRouteMetadata) {
+    const basePath = route.basePath.filter((bp) => bp).join("/");
+    for (const endpoint of Object.values(route.endpoints)) {
+      this.loadEndpoint(basePath, endpoint);
+    }
+  }
+
+  protected getPath(basePath: string, path: string): string {
+    const newPath = `/${ basePath }/${ path }`.replace(
+      /(https?:\/\/)|(\/)+/g,
+      "$1$2"
+    );
+
+    return newPath.lastIndexOf("/") === newPath.length - 1 && newPath !== "/"
+      ? newPath.substring(0, newPath.length - 1)
+      : newPath;
+  }
+
+  protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata) {
+    const path = this.getPath(basePath, endpoint.path);
+    getDefaultLogger().debug(
+      `[REGISTER] ${ endpoint.verb.toUpperCase() }: ${ path }`
+    );
+
+    this.router[endpoint.verb](
+      path,
+      ...endpoint.middlewares,
+      async function (req: Request, res: Response, next: NextFunction) {
+        try {
+          const original = await endpoint.callback(
+            new ContextAPI<any>(
+              req,
+              res,
+              endpoint.passRequest,
+              endpoint.verb === HTTPVerb.GET
+            ),
+            new AuthContextAPI(req, req.authContext || {})
+          );
+
+          let status = HTTPStatus.OK;
+          if (typeof original === "object" && "statusCode" in original) {
+            status = (original?.statusCode || HTTPStatus.OK) as HTTPStatus;
+          } else if (
+            Number.isInteger(original) &&
+            Object.values(HTTPStatus).indexOf(original as HTTPStatus) >= 0
+          ) {
+            status = original as HTTPStatus;
+          }
+
+          if (
+            status === HTTPStatus.NO_CONTENT ||
+            status === HTTPStatus.ACCEPTED
+          ) {
+            res.sendStatus(status);
+            return;
+          }
+
+          if (typeof original === "object" && "file" in original) {
+            res.contentType((original?.contentType || "text/plain") as string);
+            res.sendFile(original?.body as string);
+            return;
+          }
+
+          if (typeof original === "object" && "contentType" in original) {
+            res.contentType((original?.contentType || "text/plain") as string);
+            res.send(original?.body as string);
+            return;
+          }
+
+          res.status(status).json(original);
+        } catch (e) {
+          next(e);
+        }
+      }
+    );
   }
 
   /**

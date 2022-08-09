@@ -3,8 +3,6 @@ import {
   ColumnOptions,
   CreateDateColumn as TypeORMCreateDateColumn,
   DeleteDateColumn as TypeORMDeleteDateColumn,
-  JoinColumn as TypeORMJoinColumn,
-  JoinColumnOptions,
   ObjectIdColumn as TypeORMObjectIdColumn,
   PrimaryColumn as TypeORMPrimaryColumn,
   PrimaryGeneratedColumn as TypeORMPrimaryGeneratedColumn,
@@ -144,15 +142,6 @@ export function Column(
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMColumn(options)(object, propertyName);
-    DocumentEntity(object, propertyName, options);
-  };
-}
-
-export function JoinColumn(
-  options?: JoinColumnOptions & { description?: string }
-): PropertyDecorator {
-  return function (object: Constructor, propertyName: string) {
-    TypeORMJoinColumn(options)(object, propertyName);
     DocumentEntity(object, propertyName, options);
   };
 }

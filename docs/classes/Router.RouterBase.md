@@ -21,6 +21,9 @@
 
 ### Methods
 
+- [getPath](Router.RouterBase.md#getpath)
+- [loadEndpoint](Router.RouterBase.md#loadendpoint)
+- [parseRoute](Router.RouterBase.md#parseroute)
 - [register](Router.RouterBase.md#register)
 
 ## Constructors
@@ -58,6 +61,56 @@ The getter for the base router we will use.
 `Router`
 
 ## Methods
+
+### getPath
+
+▸ `Protected` **getPath**(`basePath`, `path`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `basePath` | `string` |
+| `path` | `string` |
+
+#### Returns
+
+`string`
+
+___
+
+### loadEndpoint
+
+▸ `Protected` **loadEndpoint**(`basePath`, `endpoint`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `basePath` | `string` |
+| `endpoint` | [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\> |
+
+#### Returns
+
+`void`
+
+___
+
+### parseRoute
+
+▸ **parseRoute**(`route`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `route` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md) |
+
+#### Returns
+
+`void`
+
+___
 
 ### register
 

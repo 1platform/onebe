@@ -1,14 +1,9 @@
-import { ClassDocs, getElementDocs } from "../Docs/DocsDecorators";
-import DocsStore from "../Docs/DocsStore";
 import Config from "../System/Config";
 import { getDefaultLogger } from "../System/Logger";
-import {
-  ControllerDecorator,
-  ControllerDecoratorFunction,
-  RouteCallbacks,
-} from "./RouteTypes";
-import { getRouteCallbacks } from "./RouteUtils";
+import { ControllerDecorator, ControllerDecoratorFunction } from "./RouteTypes";
 import { Constructor } from "../Documentation/MetadataTypes";
+import MetadataStore from "../Documentation/MetadataStore";
+import Router from "./index";
 
 /**
  * Decorator to define the path the controller will handle.
@@ -27,47 +22,31 @@ import { Constructor } from "../Documentation/MetadataTypes";
  * @param name The name of the controller. If no name is specified, it will take the name of the controller.
  * @param description The description of the controller. If no description is passed, no description will be documented.
  */
-export function path<T extends Constructor>(
+export function Path<T extends Constructor>(
   path: string,
   name?: string,
   description?: string
 ): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): T {
-    let paths: Array<string> = Reflect.getMetadata(
-      "route:path",
-      BaseClass.prototype
+    const routeMetadata = MetadataStore.instance.route;
+    const route = routeMetadata.update(
+      new BaseClass().constructor.name,
+      path,
+      description
     );
-    if (!paths) {
-      paths = [];
-      Reflect.defineMetadata("route:path", paths, BaseClass.prototype);
-    }
-    paths.push(path);
-    const basePath = paths.join("/").replace(/(https?:\/\/)|(\/)+/g, "$1$2");
-    const groupName = name || BaseClass.name;
+    route.name = name;
 
-    const isAPI = Reflect.getMetadata("route:api", BaseClass.prototype);
-    const controllerDocs = getElementDocs<ClassDocs>(BaseClass.prototype);
+    const basePath = route.basePath
+      .filter((basePath) => basePath)
+      .join("/")
+      .replace(/(https?:\/\/)|(\/)+/g, "$1$2");
 
-    Reflect.defineMetadata("route:name", groupName, BaseClass.prototype);
-    DocsStore.instance.initGroup(
-      groupName,
-      basePath,
-      description,
-      isAPI || false
+    getDefaultLogger().debug("---------------");
+    getDefaultLogger().info(
+      `[REGISTER] Routes for: ${ route.controller } [${ route.name }]: ${ basePath }`
     );
-    Object.keys(controllerDocs).forEach((key) => {
-      DocsStore.instance.setGroupItem(groupName, key, controllerDocs[key]);
-    });
-
-    const routeCallbacks: RouteCallbacks = getRouteCallbacks(
-      BaseClass.prototype
-    );
-    if (routeCallbacks.length > 0) {
-      getDefaultLogger().debug("---------------");
-      getDefaultLogger().info(`[REGISTER] Routes at path: ${ basePath }`);
-      getDefaultLogger().debug("---------------");
-      routeCallbacks.forEach((fn) => fn(basePath, groupName));
-    }
+    Router.parseRoute(route);
+    getDefaultLogger().debug("---------------");
     return BaseClass;
   };
 }
@@ -84,20 +63,13 @@ export function path<T extends Constructor>(
  * @decorator
  * @param BaseClass The Controller we want to decorate.
  */
-export function api<T extends Constructor>(
+export function API<T extends Constructor>(
   BaseClass: T
 ): ControllerDecorator<T> {
-  let paths: Array<string> = Reflect.getMetadata(
-    "route:path",
-    BaseClass.prototype
-  );
-  if (!paths) {
-    paths = [];
-    Reflect.defineMetadata("route:path", paths, BaseClass.prototype);
-  }
+  const route = new BaseClass();
+  const routeMetadata = MetadataStore.instance.route;
+  routeMetadata.markAsAPI(route.constructor.name, Config.string("api.path"));
 
-  Reflect.defineMetadata("route:api", true, BaseClass.prototype);
-  paths.unshift(Config.string("api.path"));
   return BaseClass;
 }
 
@@ -113,21 +85,24 @@ export function api<T extends Constructor>(
  * @decorator
  * @param path The custom controller path prefix.
  */
-export function custom<T extends Constructor>(
+export function Custom<T extends Constructor>(
   path: string
 ): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
-    let paths: Array<string> = Reflect.getMetadata(
-      "route:path",
-      BaseClass.prototype
-    );
-    if (!paths) {
-      paths = [];
-      Reflect.defineMetadata("route:path", paths, BaseClass.prototype);
-    }
+    const route = new BaseClass();
+    const routeMetadata = MetadataStore.instance.route;
+    routeMetadata.markAsCustom(route.constructor.name, path);
+    return BaseClass;
+  };
+}
 
-    Reflect.defineMetadata("route:custom:path", true, BaseClass.prototype);
-    paths.unshift(path);
+export function Group<T extends Constructor>(
+  groupName: string
+): ControllerDecoratorFunction<T> {
+  return function (BaseClass: T): ControllerDecorator<T> {
+    const route = new BaseClass();
+    const routeMetadata = MetadataStore.instance.route;
+    routeMetadata.group(route.constructor.name, groupName);
     return BaseClass;
   };
 }

@@ -8,10 +8,18 @@ Here we will note all the changes made to the framework.
 
 - Upgrade TypeORM to the latest version available.
 - Redesign the Documentation system.
+- Adds automatically documentation for the models defines through TypeORM.
+- Adds a new way to document Entities through the usage of the BaseEntity class and decorators.
 
 🌟 Improvements:
 
 - Bump versions.
+- Refactor the Route loading and documentation engine.
+- Refactor the Interface documentation engine and procedure.
+
+🗑️ Removed:
+
+-
 
 ## Version 1.0.30
 
