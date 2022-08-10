@@ -1,5 +1,4 @@
-import { RouteDocs } from "./DocsDecorators";
-import { IBodyDoc, IInterfaceDoc, IRouteDoc, TRoutesList } from "./DocsInterfaces";
+import { IBodyDoc, IInterfaceDoc, TRoutesList } from "./DocsInterfaces";
 /**
  * Class representing the Docs store
  */
@@ -41,14 +40,6 @@ export default class DocsStore {
      * @param value The value to be set
      */
     setGroupItem(name: string, key: string, value: string): void;
-    /**
-     * Method for adding a new Route
-     *
-     * @param group The group in which to add the Route
-     * @param routeDefinition The Route definition
-     * @param docs The docs
-     */
-    addRoute(group: string, routeDefinition: IRouteDoc, docs: RouteDocs): void;
     /**
      * Method to get the routes
      */

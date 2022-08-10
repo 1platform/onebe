@@ -21,7 +21,6 @@ Class representing the Docs store
 ### Methods
 
 - [addInterfaceProperty](Docs_DocsStore.DocsStore.md#addinterfaceproperty)
-- [addRoute](Docs_DocsStore.DocsStore.md#addroute)
 - [defineInterface](Docs_DocsStore.DocsStore.md#defineinterface)
 - [getRoutes](Docs_DocsStore.DocsStore.md#getroutes)
 - [getYaml](Docs_DocsStore.DocsStore.md#getyaml)
@@ -78,26 +77,6 @@ Method for adding interface property
 | :------ | :------ | :------ |
 | `interfaceName` | `string` | The name of the Interface |
 | `definition` | [`IBodyDoc`](../interfaces/Docs_DocsInterfaces.IBodyDoc.md) | The definition of the property |
-
-#### Returns
-
-`void`
-
-___
-
-### addRoute
-
-▸ **addRoute**(`group`, `routeDefinition`, `docs`): `void`
-
-Method for adding a new Route
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `group` | `string` | The group in which to add the Route |
-| `routeDefinition` | [`IRouteDoc`](../interfaces/Docs_DocsInterfaces.IRouteDoc.md) | The Route definition |
-| `docs` | [`RouteDocs`](../modules/Docs_DocsDecorators.md#routedocs) | The docs |
 
 #### Returns
 

@@ -1,5 +1,4 @@
 import {
-  EntityPropertyDataTypes,
   IEntityMetadata,
   IEntityProperty,
   IEntityPropertyMetadata,
@@ -7,6 +6,7 @@ import {
 } from "./Definition/EntityMetadata";
 import { ObjectType } from "typeorm";
 import { Constructor } from "./MetadataTypes";
+import { EntityPropertyDataTypes } from "./Definition/DataTypes";
 
 export default class EntityDefinition {
   private _entities: Record<string, IEntityMetadata> = {};

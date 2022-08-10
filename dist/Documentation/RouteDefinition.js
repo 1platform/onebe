@@ -9,6 +9,10 @@ var _HTTPVerb = _interopRequireDefault(require("../HTTP/HTTPVerb"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 class RouteDefinition {
@@ -45,6 +49,12 @@ class RouteDefinition {
   setName(controller, name) {
     const route = this.route(controller);
     route.name = name;
+    return route;
+  }
+
+  setDescription(controller, description) {
+    const route = this.route(controller);
+    route.description = description || "";
     return route;
   }
 
@@ -96,15 +106,128 @@ class RouteDefinition {
     return endpoint;
   }
 
+  endpointDescription(controller, methodName, description) {
+    const route = this.route(controller);
+    let endpoint = route.endpoints[methodName];
+
+    if (!endpoint) {
+      endpoint = this.getEndpoint(controller, methodName);
+    }
+
+    endpoint.description = description;
+    return endpoint;
+  }
+
+  endpointSummary(controller, methodName, summary) {
+    const route = this.route(controller);
+    let endpoint = route.endpoints[methodName];
+
+    if (!endpoint) {
+      endpoint = this.getEndpoint(controller, methodName);
+    }
+
+    endpoint.summary = summary;
+    return endpoint;
+  }
+
   endpointAuth(controller, methodName, method) {
     const endpoint = this.getEndpoint(controller, methodName);
     endpoint.isAuthenticated = true;
     endpoint.authenticationMethod = method;
+    return endpoint;
   }
 
   endpointThrows(controller, methodName, options) {
     const endpoint = this.getEndpoint(controller, methodName);
     endpoint.throws[options.statusCode] = options;
+    return endpoint;
+  }
+
+  endpointStatus(controller, methodName, statusCode, description) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.statuses[statusCode] = description;
+    return endpoint;
+  }
+
+  endpointResponse(controller, methodName, options) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.responses[options.statusCode] = options;
+    return endpoint;
+  }
+
+  endpointParameter(controller, methodName, options) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.parameters[options.name] = options;
+  }
+
+  endpointQuery(controller, methodName, options) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.query[options.name] = options;
+    return endpoint;
+  }
+
+  endpointBodyParameters(controller, methodName, parameters) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.body = undefined;
+    endpoint.bodyParameters = _objectSpread(_objectSpread({}, endpoint.bodyParameters || {}), parameters.reduce((accum, parameter) => _objectSpread(_objectSpread({}, accum), {}, {
+      [parameter.name]: parameter
+    }), {}));
+    return endpoint;
+  }
+
+  endpointBody(controller, methodName, options) {
+    const endpoint = this.getEndpoint(controller, methodName);
+    endpoint.body = options;
+    endpoint.bodyParameters = undefined;
+    return endpoint;
+  }
+
+  endpointDocumentation(controller, methodName, options) {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    if (Object.keys(options).length === 0) {
+      throw new Error("Please fill at least one item of the endpoint definition!");
+    }
+
+    if (options.body && options.bodyParameters) {
+      throw new Error("Please define only one option: body or bodyParameters!");
+    }
+
+    if (options.summary) {
+      endpoint.summary = options.summary;
+    }
+
+    if (options.description) {
+      endpoint.description = options.description;
+    }
+
+    if (options.query) {
+      options.query.forEach(queryItem => {
+        endpoint.query[queryItem.name] = queryItem;
+      });
+    }
+
+    if (options.parameters) {
+      options.parameters.forEach(parameter => {
+        endpoint.parameters[parameter.name] = parameter;
+      });
+    }
+
+    if (options.body) {
+      endpoint.body = options.body;
+    }
+
+    if (options.bodyParameters) {
+      options.bodyParameters.forEach(parameter => {
+        endpoint.bodyParameters[parameter.name] = parameter;
+      });
+    }
+
+    if (options.throws) {
+      options.throws.forEach(parameter => {
+        endpoint.throws[parameter.statusCode] = parameter;
+      });
+    }
   }
 
   getEndpoint(controller, methodName, options) {
@@ -112,13 +235,19 @@ class RouteDefinition {
       this.route(controller).endpoints[methodName] = {
         path: options?.path || "",
         verb: options?.verb || _HTTPVerb.default.GET,
+        description: options?.description || "",
+        summary: options?.summary || "",
         methodName: methodName,
         callback: null,
         middlewares: [],
         passRequest: options?.passRequest ?? false,
         isAuthenticated: false,
         authenticationMethod: "",
-        throws: {}
+        throws: {},
+        statuses: {},
+        responses: {},
+        parameters: {},
+        query: {}
       };
     }
 

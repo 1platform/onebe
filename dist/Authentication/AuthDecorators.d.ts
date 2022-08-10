@@ -13,7 +13,7 @@ import Route from "../Router/Route";
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export declare const bearer: (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => void;
+export declare const Bearer: (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => void;
 /**
  * Decorator to enable Basic Authentication for an endpoint.
  *
@@ -28,7 +28,7 @@ export declare const bearer: (target: Route, propertyKey: string, descriptor: Pr
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export declare const basic: (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => void;
+export declare const Basic: (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => void;
 /**
  * Middleware used to extract the user from the request when using Bearer Authentication
  * on a mixed route (Public and Protected).

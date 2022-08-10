@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _MetadataStore = _interopRequireDefault(require("../MetadataStore"));
 
-var _EntityMetadata = require("../Definition/EntityMetadata");
+var _DataTypes = require("../Definition/DataTypes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46,53 +46,53 @@ class CustomEntityHelper {
 
   dateProperty(propertyName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
       isDate: true
     }));
   }
 
   dateTimeProperty(propertyName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
       isDateTime: true
     }));
   }
 
   numberProperty(propertyName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.NUMBER
+      dataType: _DataTypes.EntityPropertyDataTypes.NUMBER
     }));
   }
 
   booleanProperty(propertyName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.BOOLEAN
+      dataType: _DataTypes.EntityPropertyDataTypes.BOOLEAN
     }));
   }
 
   integerProperty(propertyName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.INTEGER
+      dataType: _DataTypes.EntityPropertyDataTypes.INTEGER
     }));
   }
 
   arrayProperty(propertyName, dataType, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
       childType: dataType
     }));
   }
 
   entityArrayProperty(propertyName, referenceEntityName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
       reference: referenceEntityName
     }));
   }
 
   entityProperty(propertyName, referenceEntityName, propertyOptions) {
     return this.property(propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.OBJECT,
+      dataType: _DataTypes.EntityPropertyDataTypes.OBJECT,
       reference: referenceEntityName
     }));
   }
@@ -124,46 +124,46 @@ const EntityHelpers = {
   },
   dateProperty: (entityName, propertyName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
       isDate: true
     }));
   },
   dateTimeProperty: (entityName, propertyName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
       isDateTime: true
     }));
   },
   numberProperty: (entityName, propertyName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.NUMBER
+      dataType: _DataTypes.EntityPropertyDataTypes.NUMBER
     }));
   },
   booleanProperty: (entityName, propertyName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.BOOLEAN
+      dataType: _DataTypes.EntityPropertyDataTypes.BOOLEAN
     }));
   },
   integerProperty: (entityName, propertyName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.INTEGER
+      dataType: _DataTypes.EntityPropertyDataTypes.INTEGER
     }));
   },
   arrayProperty: (entityName, propertyName, dataType, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
       childType: dataType
     }));
   },
   entityArrayProperty: (entityName, propertyName, referenceEntityName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
       reference: referenceEntityName
     }));
   },
   entityProperty: (entityName, propertyName, referenceEntityName, propertyOptions) => {
     return EntityHelpers.property(entityName, propertyName, _objectSpread(_objectSpread({}, propertyOptions), {}, {
-      dataType: _EntityMetadata.EntityPropertyDataTypes.OBJECT,
+      dataType: _DataTypes.EntityPropertyDataTypes.OBJECT,
       reference: referenceEntityName
     }));
   }

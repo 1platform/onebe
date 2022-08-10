@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.extractUser = exports.bearer = exports.basic = void 0;
+exports.extractUser = exports.Bearer = exports.Basic = void 0;
 
 var _passport = _interopRequireDefault(require("passport"));
 
@@ -37,7 +37,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-const bearer = (target, propertyKey, descriptor) => {
+const Bearer = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
 
   _MetadataStore.default.instance.route.endpointAuth(target.constructor.name, propertyKey, "bearer");
@@ -62,9 +62,9 @@ const bearer = (target, propertyKey, descriptor) => {
  */
 
 
-exports.bearer = bearer;
+exports.Bearer = Bearer;
 
-const basic = (target, propertyKey, descriptor) => {
+const Basic = (target, propertyKey, descriptor) => {
   const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
 
   _MetadataStore.default.instance.route.endpointAuth(target.constructor.name, propertyKey, "basic");
@@ -84,7 +84,7 @@ const basic = (target, propertyKey, descriptor) => {
  */
 
 
-exports.basic = basic;
+exports.Basic = Basic;
 const extractUser = (0, _RouteUtils.defineMiddleware)((req, res, next) => {
   const token = (0, _JWT.extractToken)(req);
 

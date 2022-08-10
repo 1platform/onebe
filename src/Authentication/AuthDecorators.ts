@@ -21,7 +21,7 @@ import MetadataStore from "../Documentation/MetadataStore";
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const bearer = (
+export const Bearer = (
   target: Route,
   propertyKey: string,
   descriptor: PropertyDescriptor
@@ -55,7 +55,7 @@ export const bearer = (
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const basic = (
+export const Basic = (
   target: Route,
   propertyKey: string,
   descriptor: PropertyDescriptor

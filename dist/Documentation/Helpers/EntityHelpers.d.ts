@@ -1,4 +1,5 @@
-import { EntityPropertyDataTypes, IEntityProperty } from "../Definition/EntityMetadata";
+import { IEntityProperty } from "../Definition/EntityMetadata";
+import { EntityPropertyDataTypes } from "../Definition/DataTypes";
 declare class CustomEntityHelper {
     private readonly _entityName;
     constructor(entityName: string);

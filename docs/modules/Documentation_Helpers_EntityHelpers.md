@@ -18,7 +18,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `arrayProperty` | (`entityName`: `string`, `propertyName`: `string`, `dataType`: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md), `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => `CustomEntityHelper` |
+| `arrayProperty` | (`entityName`: `string`, `propertyName`: `string`, `dataType`: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md), `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => `CustomEntityHelper` |
 | `booleanProperty` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => `CustomEntityHelper` |
 | `dateProperty` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => `CustomEntityHelper` |
 | `dateTimeProperty` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => `CustomEntityHelper` |

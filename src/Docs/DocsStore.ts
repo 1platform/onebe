@@ -2,7 +2,6 @@ import { Key, parse } from "path-to-regexp";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { IResponse } from "../Router/RouteInterfaces";
 import Config from "../System/Config";
-import { RouteDocs } from "./DocsDecorators";
 import {
   BodyParameterType,
   IBodyDoc,
@@ -88,83 +87,6 @@ export default class DocsStore {
         this._routes[name][key] = value;
         break;
     }
-  }
-
-  /**
-   * Method for adding a new Route
-   *
-   * @param group The group in which to add the Route
-   * @param routeDefinition The Route definition
-   * @param docs The docs
-   */
-  public addRoute(
-    group: string,
-    routeDefinition: IRouteDoc,
-    docs: RouteDocs
-  ): void {
-    if (!this._routes[group]) {
-      this._routes[group] = {
-        name: group,
-        description: "",
-        path: group,
-        isAPI: false,
-        routes: [],
-      };
-    }
-    const parameters = parse(routeDefinition.path)
-      .filter((param) => typeof param !== "string")
-      .reduce((accum, param) => {
-        const name = (param as Key).name.toString();
-        const paramDoc: Record<string, string> = docs.parameter
-          ? (docs.parameter[name] as Record<string, string>)
-          : {};
-        return {
-          ...accum,
-          [name]: {
-            name,
-            type: paramDoc.type || ParameterType.STRING,
-            description: paramDoc.description || "",
-          },
-        };
-      }, {});
-
-    let path = routeDefinition.path;
-    Object.keys(parameters).forEach((parameter) => {
-      path = path.replaceAll(`:${ parameter }`, `{${ parameter }}`);
-    });
-
-    if (docs.response) {
-      routeDefinition.responseStatus = docs.response.statusCode as HTTPStatus;
-      routeDefinition.response = docs.response as Record<string, IBodyDoc>;
-    }
-
-    if (docs.query) {
-      routeDefinition.query = docs.query as Record<string, IQueryParameterDoc>;
-    }
-
-    if (docs.body && Object.keys(docs.body).length > 0) {
-      routeDefinition.request = docs.body as Record<string, IBodyDoc>;
-    }
-
-    if (docs.route && Object.keys(docs.route).length > 0) {
-      routeDefinition.description =
-        (docs.route.description as string) ?? routeDefinition.description;
-      routeDefinition.summary =
-        (docs.route.summary as string) ?? routeDefinition.summary;
-    }
-
-    this._routes[group].routes.push({
-      ...routeDefinition,
-      path,
-      parameters,
-      errors: Object.values(docs.throw || {}).reduce(
-        (accum: Record<string, string>, value: IResponse<string>) => ({
-          ...accum,
-          [value.statusCode.toString()]: value.body,
-        }),
-        {}
-      ) as Record<string, string>,
-    });
   }
 
   /**

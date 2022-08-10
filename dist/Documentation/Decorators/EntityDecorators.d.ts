@@ -1,6 +1,7 @@
 import { Constructor, PropertyDecorator } from "../MetadataTypes";
 import { ControllerDecoratorFunction } from "../../Router/RouteTypes";
-import { EntityPropertyDataTypes, IEntityProperty } from "../Definition/EntityMetadata";
+import { IEntityProperty } from "../Definition/EntityMetadata";
+import { EntityPropertyDataTypes } from "../Definition/DataTypes";
 export declare function Entity<T extends Constructor>(name?: string, description?: string): ControllerDecoratorFunction<T>;
 export declare function Property(options?: IEntityProperty): PropertyDecorator;
 export declare function IsRequired(object: Constructor, propertyName: string): void;

@@ -6,15 +6,15 @@
 
 ### Functions
 
-- [basic](Authentication_AuthDecorators.md#basic)
-- [bearer](Authentication_AuthDecorators.md#bearer)
+- [Basic](Authentication_AuthDecorators.md#basic)
+- [Bearer](Authentication_AuthDecorators.md#bearer)
 - [extractUser](Authentication_AuthDecorators.md#extractuser)
 
 ## Functions
 
-### basic
+### Basic
 
-▸ **basic**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **Basic**(`target`, `propertyKey`, `descriptor`): `void`
 
 Decorator to enable Basic Authentication for an endpoint.
 
@@ -40,9 +40,9 @@ Based on this metadata we know what to generate in the Documentation generator.
 
 ___
 
-### bearer
+### Bearer
 
-▸ **bearer**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **Bearer**(`target`, `propertyKey`, `descriptor`): `void`
 
 Decorator to enable Bearer Authentication for an endpoint.
 

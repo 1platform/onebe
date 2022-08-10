@@ -20,12 +20,22 @@
 - [callbackExtractor](Documentation_RouteDefinition.RouteDefinition.md#callbackextractor)
 - [endpoint](Documentation_RouteDefinition.RouteDefinition.md#endpoint)
 - [endpointAuth](Documentation_RouteDefinition.RouteDefinition.md#endpointauth)
+- [endpointBody](Documentation_RouteDefinition.RouteDefinition.md#endpointbody)
+- [endpointBodyParameters](Documentation_RouteDefinition.RouteDefinition.md#endpointbodyparameters)
+- [endpointDescription](Documentation_RouteDefinition.RouteDefinition.md#endpointdescription)
+- [endpointDocumentation](Documentation_RouteDefinition.RouteDefinition.md#endpointdocumentation)
+- [endpointParameter](Documentation_RouteDefinition.RouteDefinition.md#endpointparameter)
+- [endpointQuery](Documentation_RouteDefinition.RouteDefinition.md#endpointquery)
+- [endpointResponse](Documentation_RouteDefinition.RouteDefinition.md#endpointresponse)
+- [endpointStatus](Documentation_RouteDefinition.RouteDefinition.md#endpointstatus)
+- [endpointSummary](Documentation_RouteDefinition.RouteDefinition.md#endpointsummary)
 - [endpointThrows](Documentation_RouteDefinition.RouteDefinition.md#endpointthrows)
 - [getEndpoint](Documentation_RouteDefinition.RouteDefinition.md#getendpoint)
 - [group](Documentation_RouteDefinition.RouteDefinition.md#group)
 - [markAsAPI](Documentation_RouteDefinition.RouteDefinition.md#markasapi)
 - [markAsCustom](Documentation_RouteDefinition.RouteDefinition.md#markascustom)
 - [route](Documentation_RouteDefinition.RouteDefinition.md#route)
+- [setDescription](Documentation_RouteDefinition.RouteDefinition.md#setdescription)
 - [setName](Documentation_RouteDefinition.RouteDefinition.md#setname)
 - [update](Documentation_RouteDefinition.RouteDefinition.md#update)
 
@@ -116,7 +126,7 @@ ___
 
 ### endpointAuth
 
-▸ **endpointAuth**(`controller`, `methodName`, `method`): `void`
+▸ **endpointAuth**(`controller`, `methodName`, `method`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
 #### Parameters
 
@@ -128,25 +138,202 @@ ___
 
 #### Returns
 
-`void`
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
 ___
 
-### endpointThrows
+### endpointBody
 
-▸ **endpointThrows**(`controller`, `methodName`, `options`): `void`
+▸ **endpointBody**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `controller` | `any` |
-| `methodName` | `any` |
-| `options` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\> |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointBody`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBody.md) |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointBodyParameters
+
+▸ **endpointBodyParameters**(`controller`, `methodName`, `parameters`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `parameters` | [`IEndpointBodyParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md)[] |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointDescription
+
+▸ **endpointDescription**<`Request`, `Response`\>(`controller`, `methodName`, `description?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Request` | `any` |
+| `Response` | `any` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `description?` | `string` |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointDocumentation
+
+▸ **endpointDocumentation**(`controller`, `methodName`, `options`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointDocumentation`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointDocumentation.md) |
 
 #### Returns
 
 `void`
+
+___
+
+### endpointParameter
+
+▸ **endpointParameter**(`controller`, `methodName`, `options`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md) |
+
+#### Returns
+
+`void`
+
+___
+
+### endpointQuery
+
+▸ **endpointQuery**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointQuery`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointQuery.md) |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointResponse
+
+▸ **endpointResponse**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointResponse.md)<`any`\> |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointStatus
+
+▸ **endpointStatus**(`controller`, `methodName`, `statusCode`, `description?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
+| `description?` | `string` |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointSummary
+
+▸ **endpointSummary**<`Request`, `Response`\>(`controller`, `methodName`, `summary?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Request` | `any` |
+| `Response` | `any` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `summary?` | `string` |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+___
+
+### endpointThrows
+
+▸ **endpointThrows**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `methodName` | `string` |
+| `options` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\> |
+
+#### Returns
+
+[`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
 ___
 
@@ -165,8 +352,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `controller` | `any` |
-| `methodName` | `any` |
+| `controller` | `string` |
+| `methodName` | `string` |
 | `options?` | [`IEndpointOptions`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointOptions.md) |
 
 #### Returns
@@ -235,6 +422,23 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `controller` | `string` |
+
+#### Returns
+
+[`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
+
+___
+
+### setDescription
+
+▸ **setDescription**(`controller`, `description?`): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+| `description?` | `string` |
 
 #### Returns
 

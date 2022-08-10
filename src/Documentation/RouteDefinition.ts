@@ -1,6 +1,12 @@
 import {
+  IEndpointBody,
+  IEndpointBodyParameter,
+  IEndpointDocumentation,
   IEndpointMetadata,
   IEndpointOptions,
+  IEndpointParameter,
+  IEndpointQuery,
+  IEndpointResponse,
   IEndpointThrowResponse,
   IRouteMetadata,
 } from "./Definition/RouteMetadata";
@@ -49,6 +55,15 @@ export default class RouteDefinition {
   public setName(controller: string, name: string): IRouteMetadata {
     const route = this.route(controller);
     route.name = name;
+    return route;
+  }
+
+  public setDescription(
+    controller: string,
+    description?: string
+  ): IRouteMetadata {
+    const route = this.route(controller);
+    route.description = description || "";
     return route;
   }
 
@@ -105,31 +120,197 @@ export default class RouteDefinition {
     return endpoint;
   }
 
-  public endpointAuth(controller: string, methodName: string, method: string) {
+  public endpointDescription<Request = any, Response = any>(
+    controller: string,
+    methodName: string,
+    description?: string
+  ): IEndpointMetadata {
+    const route = this.route(controller);
+    let endpoint = route.endpoints[methodName];
+    if (!endpoint) {
+      endpoint = this.getEndpoint(controller, methodName);
+    }
+
+    endpoint.description = description;
+    return endpoint;
+  }
+
+  public endpointSummary<Request = any, Response = any>(
+    controller: string,
+    methodName: string,
+    summary?: string
+  ): IEndpointMetadata {
+    const route = this.route(controller);
+    let endpoint = route.endpoints[methodName];
+    if (!endpoint) {
+      endpoint = this.getEndpoint(controller, methodName);
+    }
+
+    endpoint.summary = summary;
+    return endpoint;
+  }
+
+  public endpointAuth(
+    controller: string,
+    methodName: string,
+    method: string
+  ): IEndpointMetadata {
     const endpoint = this.getEndpoint(controller, methodName);
     endpoint.isAuthenticated = true;
     endpoint.authenticationMethod = method;
+    return endpoint;
   }
 
   public endpointThrows(
-    controller,
-    methodName,
+    controller: string,
+    methodName: string,
     options: IEndpointThrowResponse
-  ) {
+  ): IEndpointMetadata {
     const endpoint = this.getEndpoint(controller, methodName);
 
     endpoint.throws[options.statusCode] = options;
+    return endpoint;
+  }
+
+  public endpointStatus(
+    controller: string,
+    methodName: string,
+    statusCode: HTTPStatus,
+    description?: string
+  ): IEndpointMetadata {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.statuses[statusCode] = description;
+    return endpoint;
+  }
+
+  public endpointResponse(
+    controller: string,
+    methodName: string,
+    options: IEndpointResponse
+  ): IEndpointMetadata {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.responses[options.statusCode] = options;
+    return endpoint;
+  }
+
+  public endpointParameter(
+    controller: string,
+    methodName: string,
+    options: IEndpointParameter
+  ) {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.parameters[options.name] = options;
+  }
+
+  public endpointQuery(
+    controller: string,
+    methodName: string,
+    options: IEndpointQuery
+  ): IEndpointMetadata {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.query[options.name] = options;
+    return endpoint;
+  }
+
+  public endpointBodyParameters(
+    controller: string,
+    methodName: string,
+    parameters: Array<IEndpointBodyParameter>
+  ): IEndpointMetadata {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.body = undefined;
+    endpoint.bodyParameters = {
+      ...(endpoint.bodyParameters || {}),
+      ...parameters.reduce(
+        (accum, parameter) => ({
+          ...accum,
+          [parameter.name]: parameter,
+        }),
+        {}
+      ),
+    };
+
+    return endpoint;
+  }
+
+  public endpointBody(
+    controller: string,
+    methodName: string,
+    options: IEndpointBody
+  ): IEndpointMetadata {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    endpoint.body = options;
+    endpoint.bodyParameters = undefined;
+
+    return endpoint;
+  }
+
+  public endpointDocumentation(
+    controller: string,
+    methodName: string,
+    options: IEndpointDocumentation
+  ): void {
+    const endpoint = this.getEndpoint(controller, methodName);
+
+    if (Object.keys(options).length === 0) {
+      throw new Error(
+        "Please fill at least one item of the endpoint definition!"
+      );
+    }
+
+    if (options.body && options.bodyParameters) {
+      throw new Error("Please define only one option: body or bodyParameters!");
+    }
+
+    if (options.summary) {
+      endpoint.summary = options.summary;
+    }
+    if (options.description) {
+      endpoint.description = options.description;
+    }
+    if (options.query) {
+      options.query.forEach((queryItem) => {
+        endpoint.query[queryItem.name] = queryItem;
+      });
+    }
+
+    if (options.parameters) {
+      options.parameters.forEach((parameter) => {
+        endpoint.parameters[parameter.name] = parameter;
+      });
+    }
+    if (options.body) {
+      endpoint.body = options.body;
+    }
+    if (options.bodyParameters) {
+      options.bodyParameters.forEach((parameter) => {
+        endpoint.bodyParameters[parameter.name] = parameter;
+      });
+    }
+    if (options.throws) {
+      options.throws.forEach((parameter) => {
+        endpoint.throws[parameter.statusCode] = parameter;
+      });
+    }
   }
 
   protected getEndpoint<Request, Response>(
-    controller,
-    methodName,
+    controller: string,
+    methodName: string,
     options?: IEndpointOptions
   ): IEndpointMetadata<Request, Response> {
     if (!this.route(controller).endpoints[methodName]) {
       this.route(controller).endpoints[methodName] = {
         path: options?.path || "",
         verb: options?.verb || HTTPVerb.GET,
+        description: options?.description || "",
+        summary: options?.summary || "",
         methodName: methodName,
         callback: null,
         middlewares: [],
@@ -137,6 +318,10 @@ export default class RouteDefinition {
         isAuthenticated: false,
         authenticationMethod: "",
         throws: {} as Record<HTTPStatus, IEndpointThrowResponse>,
+        statuses: {} as Record<HTTPStatus, string>,
+        responses: {} as Record<HTTPStatus, IEndpointResponse>,
+        parameters: {} as Record<string, IEndpointParameter>,
+        query: {} as Record<string, IEndpointQuery>,
       };
     }
 

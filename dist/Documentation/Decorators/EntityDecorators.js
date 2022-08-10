@@ -19,7 +19,7 @@ exports.StringProperty = StringProperty;
 
 var _MetadataStore = _interopRequireDefault(require("../MetadataStore"));
 
-var _EntityMetadata = require("../Definition/EntityMetadata");
+var _DataTypes = require("../Definition/DataTypes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59,59 +59,59 @@ function RequiredProperty(options) {
 
 function DateProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+    dataType: _DataTypes.EntityPropertyDataTypes.STRING,
     isDate: true
   }));
 }
 
 function DateTimeProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.STRING,
+    dataType: _DataTypes.EntityPropertyDataTypes.STRING,
     isDateTime: true
   }));
 }
 
 function StringProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.STRING
+    dataType: _DataTypes.EntityPropertyDataTypes.STRING
   }));
 }
 
 function NumberProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.NUMBER
+    dataType: _DataTypes.EntityPropertyDataTypes.NUMBER
   }));
 }
 
 function BooleanProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.BOOLEAN
+    dataType: _DataTypes.EntityPropertyDataTypes.BOOLEAN
   }));
 }
 
 function IntegerProperty(options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.INTEGER
+    dataType: _DataTypes.EntityPropertyDataTypes.INTEGER
   }));
 }
 
 function ArrayProperty(dataType, options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+    dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
     childType: dataType
   }));
 }
 
 function EntityArrayProperty(entityName, options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.ARRAY,
+    dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
     reference: entityName
   }));
 }
 
 function EntityProperty(entityName, options) {
   return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _EntityMetadata.EntityPropertyDataTypes.OBJECT,
+    dataType: _DataTypes.EntityPropertyDataTypes.OBJECT,
     reference: entityName
   }));
 }

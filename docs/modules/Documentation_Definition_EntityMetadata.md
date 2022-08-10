@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Enumerations
-
-- [EntityPropertyDataTypes](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md)
-
 ### Interfaces
 
 - [IEntityMetadata](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
@@ -23,7 +19,7 @@
 
 ### mapSQLToEntity
 
-▸ **mapSQLToEntity**(`dataType`): [`EntityPropertyDataTypes`](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md)
+▸ **mapSQLToEntity**(`dataType`): [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
 
 #### Parameters
 
@@ -33,4 +29,4 @@
 
 #### Returns
 
-[`EntityPropertyDataTypes`](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md)
+[`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)

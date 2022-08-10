@@ -1,8 +1,6 @@
 import MetadataStore from "../MetadataStore";
-import {
-  EntityPropertyDataTypes,
-  IEntityProperty,
-} from "../Definition/EntityMetadata";
+import { IEntityProperty } from "../Definition/EntityMetadata";
+import { EntityPropertyDataTypes } from "../Definition/DataTypes";
 
 class CustomEntityHelper {
   private readonly _entityName: string;

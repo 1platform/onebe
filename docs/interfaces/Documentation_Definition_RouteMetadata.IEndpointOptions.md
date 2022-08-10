@@ -8,13 +8,21 @@
 
 ### Properties
 
+- [description](Documentation_Definition_RouteMetadata.IEndpointOptions.md#description)
 - [descriptor](Documentation_Definition_RouteMetadata.IEndpointOptions.md#descriptor)
 - [methodName](Documentation_Definition_RouteMetadata.IEndpointOptions.md#methodname)
 - [passRequest](Documentation_Definition_RouteMetadata.IEndpointOptions.md#passrequest)
 - [path](Documentation_Definition_RouteMetadata.IEndpointOptions.md#path)
+- [summary](Documentation_Definition_RouteMetadata.IEndpointOptions.md#summary)
 - [verb](Documentation_Definition_RouteMetadata.IEndpointOptions.md#verb)
 
 ## Properties
+
+### description
+
+• `Optional` **description**: `string`
+
+___
 
 ### descriptor
 
@@ -37,6 +45,12 @@ ___
 ### path
 
 • **path**: `string`
+
+___
+
+### summary
+
+• `Optional` **summary**: `string`
 
 ___
 

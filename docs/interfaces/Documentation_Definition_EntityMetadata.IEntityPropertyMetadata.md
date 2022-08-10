@@ -22,7 +22,7 @@
 
 ### dataType
 
-• **dataType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md)
+• **dataType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
 
 ___
 

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _EntityMetadata = require("./Definition/EntityMetadata");
+var _DataTypes = require("./Definition/DataTypes");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -175,7 +175,7 @@ class EntityDefinition {
     });
 
     this.property(entity, propertyName, {
-      dataType: isArray ? _EntityMetadata.EntityPropertyDataTypes.ARRAY : _EntityMetadata.EntityPropertyDataTypes.OBJECT,
+      dataType: isArray ? _DataTypes.EntityPropertyDataTypes.ARRAY : _DataTypes.EntityPropertyDataTypes.OBJECT,
       fieldName: propertyName
     });
   }
@@ -229,7 +229,7 @@ class EntityDefinition {
     }
 
     this.property(entityName, relation.propertyName, {
-      dataType: relation.isArray ? _EntityMetadata.EntityPropertyDataTypes.ARRAY : _EntityMetadata.EntityPropertyDataTypes.OBJECT,
+      dataType: relation.isArray ? _DataTypes.EntityPropertyDataTypes.ARRAY : _DataTypes.EntityPropertyDataTypes.OBJECT,
       fieldName,
       reference: name,
       referenceId: idField

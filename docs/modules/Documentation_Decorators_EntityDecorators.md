@@ -30,7 +30,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `dataType` | [`STRING`](../enums/Documentation_Definition_EntityMetadata.EntityPropertyDataTypes.md#string) |
+| `dataType` | [`STRING`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md#string) |
 | `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
 
 #### Returns

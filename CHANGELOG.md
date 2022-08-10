@@ -2,7 +2,7 @@
 
 Here we will note all the changes made to the framework.
 
-## Version 1.1.0
+## Version 2.0.0
 
 🚀 New:
 
@@ -10,6 +10,7 @@ Here we will note all the changes made to the framework.
 - Redesign the Documentation system.
 - Adds automatically documentation for the models defines through TypeORM.
 - Adds a new way to document Entities through the usage of the BaseEntity class and decorators.
+- Adds a new way to document Controllers and Endpoints.
 
 🌟 Improvements:
 
@@ -19,7 +20,8 @@ Here we will note all the changes made to the framework.
 
 🗑️ Removed:
 
--
+- The old way of documenting entities and interfaces.
+- The old way of documenting controllers and endpoints.
 
 ## Version 1.0.30
 

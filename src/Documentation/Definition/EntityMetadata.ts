@@ -1,14 +1,6 @@
 import { ColumnType, ObjectType } from "typeorm";
 import { Constructor } from "../MetadataTypes";
-
-export enum EntityPropertyDataTypes {
-  STRING = "string",
-  NUMBER = "number",
-  INTEGER = "integer",
-  BOOLEAN = "boolean",
-  ARRAY = "array",
-  OBJECT = "object",
-}
+import { EntityPropertyDataTypes } from "./DataTypes";
 
 export interface IEntityPropertyMetadata {
   name: string;

@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _pathToRegexp = require("path-to-regexp");
-
 var _Config = _interopRequireDefault(require("../System/Config"));
 
 var _DocsInterfaces = require("./DocsInterfaces");
@@ -94,68 +92,6 @@ class DocsStore {
         this._routes[name][key] = value;
         break;
     }
-  }
-  /**
-   * Method for adding a new Route
-   *
-   * @param group The group in which to add the Route
-   * @param routeDefinition The Route definition
-   * @param docs The docs
-   */
-
-
-  addRoute(group, routeDefinition, docs) {
-    if (!this._routes[group]) {
-      this._routes[group] = {
-        name: group,
-        description: "",
-        path: group,
-        isAPI: false,
-        routes: []
-      };
-    }
-
-    const parameters = (0, _pathToRegexp.parse)(routeDefinition.path).filter(param => typeof param !== "string").reduce((accum, param) => {
-      const name = param.name.toString();
-      const paramDoc = docs.parameter ? docs.parameter[name] : {};
-      return _objectSpread(_objectSpread({}, accum), {}, {
-        [name]: {
-          name,
-          type: paramDoc.type || _DocsInterfaces.ParameterType.STRING,
-          description: paramDoc.description || ""
-        }
-      });
-    }, {});
-    let path = routeDefinition.path;
-    Object.keys(parameters).forEach(parameter => {
-      path = path.replaceAll(`:${parameter}`, `{${parameter}}`);
-    });
-
-    if (docs.response) {
-      routeDefinition.responseStatus = docs.response.statusCode;
-      routeDefinition.response = docs.response;
-    }
-
-    if (docs.query) {
-      routeDefinition.query = docs.query;
-    }
-
-    if (docs.body && Object.keys(docs.body).length > 0) {
-      routeDefinition.request = docs.body;
-    }
-
-    if (docs.route && Object.keys(docs.route).length > 0) {
-      routeDefinition.description = docs.route.description ?? routeDefinition.description;
-      routeDefinition.summary = docs.route.summary ?? routeDefinition.summary;
-    }
-
-    this._routes[group].routes.push(_objectSpread(_objectSpread({}, routeDefinition), {}, {
-      path,
-      parameters,
-      errors: Object.values(docs.throw || {}).reduce((accum, value) => _objectSpread(_objectSpread({}, accum), {}, {
-        [value.statusCode.toString()]: value.body
-      }), {})
-    }));
   }
   /**
    * Method to get the routes
