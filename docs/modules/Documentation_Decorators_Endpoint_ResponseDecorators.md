@@ -6,16 +6,54 @@
 
 ### Functions
 
-- [Response](Documentation_Decorators_Endpoint_ResponseDecorators.md#response)
-- [ResponseArray](Documentation_Decorators_Endpoint_ResponseDecorators.md#responsearray)
+- [Array](Documentation_Decorators_Endpoint_ResponseDecorators.md#array)
+- [ArraySchema](Documentation_Decorators_Endpoint_ResponseDecorators.md#arrayschema)
+- [Return](Documentation_Decorators_Endpoint_ResponseDecorators.md#return)
+- [Schema](Documentation_Decorators_Endpoint_ResponseDecorators.md#schema)
 - [Status](Documentation_Decorators_Endpoint_ResponseDecorators.md#status)
 - [Throws](Documentation_Decorators_Endpoint_ResponseDecorators.md#throws)
 
 ## Functions
 
-### Response
+### Array
 
-▸ **Response**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Array**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `type` | `string` | `undefined` |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` |
+| `description?` | `string` | `undefined` |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### ArraySchema
+
+▸ **ArraySchema**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `type` | `string` | `undefined` |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` |
+| `description?` | `string` | `undefined` |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### Return
+
+▸ **Return**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 Decorator to add a response to a method.
 
@@ -35,9 +73,9 @@ Decorator to add a response to a method.
 
 ___
 
-### ResponseArray
+### Schema
 
-▸ **ResponseArray**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Schema**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 #### Parameters
 
@@ -55,13 +93,13 @@ ___
 
 ### Status
 
-▸ **Status**(`errorCode`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Status**(`statusCode`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `errorCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
 | `description?` | `string` |
 
 #### Returns

@@ -37,6 +37,7 @@ export interface IEndpointResponse<Response = any> {
   statusCode: HTTPStatus;
   description?: string;
   schema: string;
+  isSchema?: boolean;
   isArray?: boolean;
 }
 
@@ -50,6 +51,8 @@ export interface IEndpointQuery {
   name: string;
   type: QueryParameterType;
   description?: string;
+  arrayItems?: QueryParameterType;
+  isRequired?: boolean;
 }
 
 export interface IEndpointBody {
@@ -62,8 +65,10 @@ export interface IEndpointBodyParameter {
   name: string;
   type: BodyParameterType;
   isArray?: boolean;
+  required?: boolean;
   entity?: string;
   description?: string;
+  defaultValue?: string;
 }
 
 export interface IEndpointMetadata<Request = any, Response = any> {

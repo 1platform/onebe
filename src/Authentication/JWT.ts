@@ -17,9 +17,7 @@ export function sign(payload: IPayload | string, rememberMe = false): string {
     payload as object | string,
     Config.string("auth.jwt.secret"),
     {
-      expiresIn: rememberMe
-        ? Config.string("auth.jwt.rememberMeTime", "1d")
-        : Config.string("auth.jwt.expireTime", "1d"),
+      expiresIn: rememberMe ? Config.string("auth.jwt.rememberMeTime", "1d") : Config.string("auth.jwt.expireTime", "1d"),
       issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
       audience: Config.string("auth.jwt.audience", "onebe.sprk.dev"),
     }

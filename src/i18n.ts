@@ -16,9 +16,7 @@ export default function i18n(currentDir = __dirname): Promise<any> {
     .init({
       lng: Config.string("i18n.defaultLang", "en"),
       fallbackLng: Config.string("i18n.fallbackLang", "en"),
-      supportedLngs: Config.string("i18n.supportedLanguages", "en,ro").split(
-        ","
-      ),
+      supportedLngs: Config.string("i18n.supportedLanguages", "en,ro").split(","),
       preload: Config.string("i18n.preload", "en,ro").split(","),
       debug: Config.boolean("app.debug"),
       backend: {

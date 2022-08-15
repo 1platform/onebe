@@ -12,10 +12,7 @@ export default class PageInfoMiddleware implements IMiddleware {
    */
   public use(app: Application): void {
     app.use((req: Request, res: Response, next: NextFunction) => {
-      req.pageURL = `${ app.locals.appURL }${ req.path }`.replace(
-        /(https?:\/\/)|(\/)+/g,
-        "$1$2"
-      );
+      req.pageURL = `${ app.locals.appURL }${ req.path }`.replace(/(https?:\/\/)|(\/)+/g, "$1$2");
       req.appURL = app.locals.appURL;
       res.locals.pageURL = req.pageURL;
       req.authContext = {};

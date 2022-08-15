@@ -8,30 +8,18 @@ export * as ResponseDocs from "./Endpoint/ResponseDecorators";
 
 export function EndpointDescription(description?: string): RouteDecorator {
   return (target: Route, propertyKey: string): void => {
-    MetadataStore.instance.route.endpointDescription(
-      target.constructor.name,
-      propertyKey,
-      description
-    );
+    MetadataStore.instance.route.endpointDescription(target.constructor.name, propertyKey, description);
   };
 }
 
 export function EndpointSummary(summary?: string): RouteDecorator {
   return (target: Route, propertyKey: string): void => {
-    MetadataStore.instance.route.endpointSummary(
-      target.constructor.name,
-      propertyKey,
-      summary
-    );
+    MetadataStore.instance.route.endpointSummary(target.constructor.name, propertyKey, summary);
   };
 }
 
 export function Endpoint(options: IEndpointDocumentation): RouteDecorator {
   return (target: Route, propertyKey: string): void => {
-    MetadataStore.instance.route.endpointDocumentation(
-      target.constructor.name,
-      propertyKey,
-      options
-    );
+    MetadataStore.instance.route.endpointDocumentation(target.constructor.name, propertyKey, options);
   };
 }

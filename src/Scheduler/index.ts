@@ -1,9 +1,6 @@
 import { schedule } from "node-cron";
 import { getDefaultLogger } from "../System/Logger";
-import IScheduleDefinition, {
-  TRunner,
-  TRunnerAsync,
-} from "./IScheduleDefinition";
+import IScheduleDefinition, { TRunner, TRunnerAsync } from "./IScheduleDefinition";
 
 /**
  * Task scheduler that runs the jobs registered in the application.
@@ -20,10 +17,7 @@ export default class Scheduler {
    * @param executionExpression The expression used to specify when to run the job.
    * @param runner The task runner function.
    */
-  public register(
-    executionExpression: string,
-    runner: TRunner | TRunnerAsync
-  ): void {
+  public register(executionExpression: string, runner: TRunner | TRunnerAsync): void {
     this.tasks.push({
       executionExpression,
       runner,

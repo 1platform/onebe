@@ -50,9 +50,7 @@ export default class TypeORM {
       timezone: dbConfig.timezone || "Z",
       entities: Config.array("db.entities", [ "./src/models/**/*.ts" ]),
       migrationsTableName: Config.string("db.migrations.table", "_migrations"),
-      migrations: Config.array("db.migrations.files", [
-        "./src/migrations/*.js",
-      ]),
+      migrations: Config.array("db.migrations.files", [ "./src/migrations/*.js" ]),
       cli: {
         migrationsDir: Config.string("db.migrations.dir", "./src/migrations"),
       },

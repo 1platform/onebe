@@ -47,9 +47,7 @@ export class Configuration {
     configFromFile = Object.keys(configFromFile).reduce(
       (accum, key) => ({
         ...accum,
-        [key]: configFromFile[key]["default"]
-          ? configFromFile[key]["default"]
-          : configFromFile[key],
+        [key]: configFromFile[key]["default"] ? configFromFile[key]["default"] : configFromFile[key],
       }),
       {}
     );
@@ -75,14 +73,9 @@ export class Configuration {
   public get(key: string, defaultValue = null): string {
     const keySplit = key.split(".");
 
-    const value = keySplit.reduce(
-      (accum, value) => (!accum ? defaultValue : accum[value]),
-      this._config
-    );
+    const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config);
 
-    return value !== null && value !== undefined
-      ? value.toString()
-      : defaultValue;
+    return value !== null && value !== undefined ? value.toString() : defaultValue;
   }
 
   /**
@@ -94,10 +87,7 @@ export class Configuration {
   public object(key: string, defaultValue = null): Record<string, unknown> {
     const keySplit = key.split(".");
 
-    const value = keySplit.reduce(
-      (accum, value) => (!accum ? defaultValue : accum[value]),
-      this._config
-    );
+    const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config);
 
     return value ?? defaultValue;
   }
@@ -111,10 +101,7 @@ export class Configuration {
   public array(key: string, defaultValue = null): Array<unknown> {
     const keySplit = key.split(".");
 
-    const value = keySplit.reduce(
-      (accum, value) => (!accum ? defaultValue : accum[value]),
-      this._config
-    );
+    const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config);
 
     return value ?? defaultValue;
   }

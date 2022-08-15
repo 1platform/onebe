@@ -20,10 +20,7 @@ export default class TwilioTransport implements ISMSTransport {
    * TwilioTransport constructor
    */
   public constructor() {
-    this._twilio = twilio(
-      Config.string("sms.config.account"),
-      Config.string("sms.config.password")
-    );
+    this._twilio = twilio(Config.string("sms.config.account"), Config.string("sms.config.password"));
   }
 
   /**

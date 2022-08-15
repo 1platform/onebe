@@ -7,11 +7,7 @@ import { NextFunction, Request, Response } from "express";
  * @param res The response object.
  * @param next The next callback function in list.
  */
-export type HTTPMiddleware = (
-  req: Request,
-  res: Response,
-  next?: NextFunction
-) => void;
+export type HTTPMiddleware = (req: Request, res: Response, next?: NextFunction) => void;
 
 /**
  * Re-exported Request Express type/interface.

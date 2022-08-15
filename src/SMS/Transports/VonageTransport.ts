@@ -35,25 +35,17 @@ export default class VonageTransport implements ISMSTransport {
    */
   public send(to: string, text: string, from?: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      this._vonage.message.sendSms(
-        from || this._defaultPhone,
-        to,
-        text,
-        {},
-        (err, responseData) => {
-          if (err) {
-            getDefaultLogger().error(err);
-            return;
-          }
-          if (responseData.messages[0]["status"] === "0") {
-            getDefaultLogger().info("Message sent successfully!");
-          } else {
-            getDefaultLogger().error(
-              `Message failed with error: ${ responseData.messages[0]["error-text"] }`
-            );
-          }
+      this._vonage.message.sendSms(from || this._defaultPhone, to, text, {}, (err, responseData) => {
+        if (err) {
+          getDefaultLogger().error(err);
+          return;
         }
-      );
+        if (responseData.messages[0]["status"] === "0") {
+          getDefaultLogger().info("Message sent successfully!");
+        } else {
+          getDefaultLogger().error(`Message failed with error: ${ responseData.messages[0]["error-text"] }`);
+        }
+      });
     });
   }
 }

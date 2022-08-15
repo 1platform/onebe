@@ -25,8 +25,7 @@ export const uuidV4 = (): string => uuid.v4();
  * @param password The password to be encrypted.
  * @param saltSize The size of the salt.
  */
-export const encryptPassword = (password: string, saltSize = 10): string =>
-  hashSync(password, saltSize);
+export const encryptPassword = (password: string, saltSize = 10): string => hashSync(password, saltSize);
 
 /**
  * Compares an encrypted password with the one entered by the user.
@@ -34,10 +33,7 @@ export const encryptPassword = (password: string, saltSize = 10): string =>
  * @param password The password to be compared.
  * @param encryptedPassword The encrypted password,
  */
-export const comparePassword = (
-  password: string,
-  encryptedPassword: string
-): boolean => compareSync(password, encryptedPassword);
+export const comparePassword = (password: string, encryptedPassword: string): boolean => compareSync(password, encryptedPassword);
 
 export {
   /**

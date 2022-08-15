@@ -20,10 +20,7 @@ export function Model<T extends Constructor>(
   nameOrOptions?: string | IExtendedModelOptions,
   maybeOptions?: IExtendedModelOptions
 ): ControllerDecoratorFunction<T> {
-  const options =
-    (ObjectUtils.isObject(nameOrOptions)
-      ? (nameOrOptions as IExtendedModelOptions)
-      : maybeOptions) || {};
+  const options = (ObjectUtils.isObject(nameOrOptions) ? (nameOrOptions as IExtendedModelOptions) : maybeOptions) || {};
   const name = typeof nameOrOptions === "string" ? nameOrOptions : options.name;
 
   return function (BaseClass: T): T {
@@ -33,10 +30,7 @@ export function Model<T extends Constructor>(
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.update(name, options.description ?? "");
     entityMetadata.tableName(entity.constructor.name, name);
-    entityMetadata.extends(
-      name,
-      Object.getPrototypeOf(Object.getPrototypeOf(entity)).constructor.name
-    );
+    entityMetadata.extends(name, Object.getPrototypeOf(Object.getPrototypeOf(entity)).constructor.name);
 
     return BaseClass;
   };

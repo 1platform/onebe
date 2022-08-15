@@ -1,9 +1,4 @@
-import {
-  IEntityMetadata,
-  IEntityProperty,
-  IEntityPropertyMetadata,
-  IRelationMetadata,
-} from "./Definition/EntityMetadata";
+import { IEntityMetadata, IEntityProperty, IEntityPropertyMetadata, IRelationMetadata } from "./Definition/EntityMetadata";
 import { ObjectType } from "typeorm";
 import { Constructor } from "./MetadataTypes";
 import { EntityPropertyDataTypes } from "./Definition/DataTypes";
@@ -50,27 +45,17 @@ export default class EntityDefinition {
   }
 
   public extends(entity: string, extendedEntity: string): EntityDefinition {
-    if (
-      extendedEntity.toLowerCase() !== "object" &&
-      extendedEntity.toLowerCase() !== "baseentity"
-    ) {
+    if (extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
       this._entities[entity].extends = extendedEntity;
     }
     return this;
   }
 
-  public property(
-    entity: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty,
-    afterProperty?: string
-  ): EntityDefinition {
+  public property(entity: string, propertyName: string, propertyOptions: IEntityProperty, afterProperty?: string): EntityDefinition {
     const entityDoc = this.entity(entity);
 
     if (this.hasProperty(entity, propertyName)) {
-      const propertyIndex = entityDoc.properties.findIndex(
-        (property) => property.name === propertyName
-      );
+      const propertyIndex = entityDoc.properties.findIndex((property) => property.name === propertyName);
       const property = entityDoc.properties[propertyIndex];
       entityDoc.properties.splice(propertyIndex, 1, {
         ...property,
@@ -91,9 +76,7 @@ export default class EntityDefinition {
     };
 
     if (afterProperty) {
-      const propertyIndex = entityDoc.properties.findIndex(
-        (property) => property.name === afterProperty
-      );
+      const propertyIndex = entityDoc.properties.findIndex((property) => property.name === afterProperty);
       entityDoc.properties.splice(propertyIndex, 0, newProperty);
     } else {
       entityDoc.properties.push(newProperty);
@@ -106,11 +89,7 @@ export default class EntityDefinition {
       return false;
     }
 
-    return (
-      this._entities[entity].properties.findIndex(
-        (property) => property.name === propertyName
-      ) >= 0
-    );
+    return this._entities[entity].properties.findIndex((property) => property.name === propertyName) >= 0;
   }
 
   public markPrimaryKey(entity: string, propertyName: string): void {
@@ -118,9 +97,7 @@ export default class EntityDefinition {
       return;
     }
 
-    const propertyItemIndex = this._entities[entity].properties.findIndex(
-      (property) => property.name === propertyName
-    );
+    const propertyItemIndex = this._entities[entity].properties.findIndex((property) => property.name === propertyName);
 
     if (propertyItemIndex < 0) {
       return;
@@ -129,11 +106,7 @@ export default class EntityDefinition {
     const propertyItem = this._entities[entity].properties[propertyItemIndex];
     propertyItem.isPrimaryKey = true;
     propertyItem.options.isPrimaryKey = true;
-    this._entities[entity].properties.splice(
-      propertyItemIndex,
-      1,
-      propertyItem
-    );
+    this._entities[entity].properties.splice(propertyItemIndex, 1, propertyItem);
   }
 
   public markRequired(entity: string, propertyName: string): void {
@@ -141,9 +114,7 @@ export default class EntityDefinition {
       return;
     }
 
-    const propertyItemIndex = this._entities[entity].properties.findIndex(
-      (property) => property.name === propertyName
-    );
+    const propertyItemIndex = this._entities[entity].properties.findIndex((property) => property.name === propertyName);
 
     if (propertyItemIndex < 0) {
       return;
@@ -152,11 +123,7 @@ export default class EntityDefinition {
     const propertyItem = this._entities[entity].properties[propertyItemIndex];
     propertyItem.required = true;
     propertyItem.options.required = true;
-    this._entities[entity].properties.splice(
-      propertyItemIndex,
-      1,
-      propertyItem
-    );
+    this._entities[entity].properties.splice(propertyItemIndex, 1, propertyItem);
   }
 
   public getPrimaryKey(entity: string): Array<IEntityPropertyMetadata> {
@@ -164,9 +131,7 @@ export default class EntityDefinition {
       return [];
     }
 
-    return this._entities[entity].properties.filter(
-      (property) => property.isPrimaryKey
-    );
+    return this._entities[entity].properties.filter((property) => property.isPrimaryKey);
   }
 
   public buildEntityList(): Array<IEntityMetadata> {
@@ -174,10 +139,7 @@ export default class EntityDefinition {
       const entity = { ...this._entities[entityName] };
       entity.properties = [ ...(entity.properties || []) ];
       if (entity.extends) {
-        entity.properties = [
-          ...this.getParentEntityProperties(entity.extends),
-          ...entity.properties,
-        ];
+        entity.properties = [ ...this.getParentEntityProperties(entity.extends), ...entity.properties ];
       }
 
       delete entity.extends;
@@ -202,18 +164,12 @@ export default class EntityDefinition {
     });
 
     this.property(entity, propertyName, {
-      dataType: isArray
-        ? EntityPropertyDataTypes.ARRAY
-        : EntityPropertyDataTypes.OBJECT,
+      dataType: isArray ? EntityPropertyDataTypes.ARRAY : EntityPropertyDataTypes.OBJECT,
       fieldName: propertyName,
     });
   }
 
-  public relationField(
-    entity: string,
-    propertyName: string,
-    relationField: string
-  ): void {
+  public relationField(entity: string, propertyName: string, relationField: string): void {
     if (!this._mapping[entity]) {
       this._mapping[entity] = {};
     }
@@ -229,10 +185,7 @@ export default class EntityDefinition {
     }
   }
 
-  protected registerRelation(
-    entityName: string,
-    relation: IRelationMetadata
-  ): void {
+  protected registerRelation(entityName: string, relation: IRelationMetadata): void {
     let name = "";
     let idField = "id";
     let dataType = "integer";
@@ -253,23 +206,16 @@ export default class EntityDefinition {
     const primaryKeyList = this.getPrimaryKey(name);
     if (primaryKeyList.length > 0) {
       idField = primaryKeyList[0].name;
-      fieldName = `${ name.slice(0, 1).toLowerCase() }${ name.slice(1) }${ idField
-        .slice(0, 1)
-        .toUpperCase() }${ idField.slice(1) }`;
+      fieldName = `${ name.slice(0, 1).toLowerCase() }${ name.slice(1) }${ idField.slice(0, 1).toUpperCase() }${ idField.slice(1) }`;
       dataType = primaryKeyList[0].dataType;
     }
 
-    if (
-      this._mapping[entityName] &&
-      this._mapping[entityName][relation.propertyName]
-    ) {
+    if (this._mapping[entityName] && this._mapping[entityName][relation.propertyName]) {
       fieldName = this._mapping[entityName][relation.propertyName];
     }
 
     this.property(entityName, relation.propertyName, {
-      dataType: relation.isArray
-        ? EntityPropertyDataTypes.ARRAY
-        : EntityPropertyDataTypes.OBJECT,
+      dataType: relation.isArray ? EntityPropertyDataTypes.ARRAY : EntityPropertyDataTypes.OBJECT,
       fieldName,
       reference: name,
       referenceId: idField,
@@ -287,15 +233,11 @@ export default class EntityDefinition {
     }
   }
 
-  protected getParentEntityProperties(
-    parentEntityName: string
-  ): Array<IEntityPropertyMetadata> {
+  protected getParentEntityProperties(parentEntityName: string): Array<IEntityPropertyMetadata> {
     const parentEntity = this._entities[parentEntityName];
     const properties = [ ...(parentEntity.properties || []) ];
     if (parentEntity.extends) {
-      properties.unshift(
-        ...this.getParentEntityProperties(parentEntity.extends)
-      );
+      properties.unshift(...this.getParentEntityProperties(parentEntity.extends));
     }
     return properties;
   }

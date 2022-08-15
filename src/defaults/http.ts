@@ -18,10 +18,7 @@ const defaultHTTPConfig: IConfig = {
   /**
    * The default value of the url on which the application will be running.
    */
-  url: Env.string("HTTP_URL", "http://localhost:7200").replace(
-    /(https?:\/\/)|(\/)+/g,
-    "$1$2"
-  ),
+  url: Env.string("HTTP_URL", "http://localhost:7200").replace(/(https?:\/\/)|(\/)+/g, "$1$2"),
 
   /**
    * The default values for the cookie configuration.

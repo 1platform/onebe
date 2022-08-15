@@ -21,18 +21,9 @@ export default class BaseTransport implements IEmailTransport {
   public async send(options: IEmailOptions): Promise<any> {
     const info = await this._transporter.sendMail({
       from: options.from || Config.string("email.from"),
-      to:
-        options.to && Array.isArray(options.to)
-          ? options.to.join(", ")
-          : options.to,
-      cc:
-        options.cc && Array.isArray(options.cc)
-          ? options.cc.join(", ")
-          : options.cc,
-      bcc:
-        options.bcc && Array.isArray(options.bcc)
-          ? options.bcc.join(", ")
-          : options.bcc,
+      to: options.to && Array.isArray(options.to) ? options.to.join(", ") : options.to,
+      cc: options.cc && Array.isArray(options.cc) ? options.cc.join(", ") : options.cc,
+      bcc: options.bcc && Array.isArray(options.bcc) ? options.bcc.join(", ") : options.bcc,
       replyTo: options.replyTo,
       subject: options.subject,
       text: options.text || stripHtml(options.html).result || "",

@@ -21,7 +21,6 @@ export declare class RouterBase {
      */
     register(controllersPath: string): Promise<void>;
     parseRoute(route: IRouteMetadata): void;
-    protected getPath(basePath: string, path: string): string;
     protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata): void;
     /**
      * The method used to register the controllers in a path. It will make recursive calls

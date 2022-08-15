@@ -6,6 +6,7 @@ import { defineMiddleware } from "../Router/RouteUtils";
 import IPayload from "./IPayload";
 import { decode, extractToken, verify } from "./JWT";
 import MetadataStore from "../Documentation/MetadataStore";
+import AuthenticationMethod from "./AuthenticationMethod";
 
 /**
  * Decorator to enable Bearer Authentication for an endpoint.
@@ -21,24 +22,11 @@ import MetadataStore from "../Documentation/MetadataStore";
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const Bearer = (
-  target: Route,
-  propertyKey: string,
-  descriptor: PropertyDescriptor
-): void => {
-  const original = Array.isArray(descriptor.value)
-    ? descriptor.value
-    : [ descriptor.value ];
+export const Bearer = (target: Route, propertyKey: string, descriptor: PropertyDescriptor): void => {
+  const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
 
-  MetadataStore.instance.route.endpointAuth(
-    target.constructor.name,
-    propertyKey,
-    "bearer"
-  );
-  descriptor.value = [
-    passport.authenticate("bearer", { session: false }),
-    ...original,
-  ];
+  MetadataStore.instance.route.endpointAuth(target.constructor.name, propertyKey, AuthenticationMethod.BEARER);
+  descriptor.value = [ passport.authenticate("bearer", { session: false }), ...original ];
 };
 
 /**
@@ -55,24 +43,11 @@ export const Bearer = (
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const Basic = (
-  target: Route,
-  propertyKey: string,
-  descriptor: PropertyDescriptor
-): void => {
-  const original = Array.isArray(descriptor.value)
-    ? descriptor.value
-    : [ descriptor.value ];
+export const Basic = (target: Route, propertyKey: string, descriptor: PropertyDescriptor): void => {
+  const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
 
-  MetadataStore.instance.route.endpointAuth(
-    target.constructor.name,
-    propertyKey,
-    "basic"
-  );
-  descriptor.value = [
-    passport.authenticate("basic", { session: false }),
-    ...original,
-  ];
+  MetadataStore.instance.route.endpointAuth(target.constructor.name, propertyKey, AuthenticationMethod.BASIC);
+  descriptor.value = [ passport.authenticate("basic", { session: false }), ...original ];
 };
 
 /**
@@ -84,32 +59,30 @@ export const Basic = (
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const extractUser = defineMiddleware(
-  (req: Request, res: Response, next: NextFunction): void => {
-    const token = extractToken(req);
-    try {
-      if (!verify(token)) {
-        return next();
-      }
-    } catch (err) {
+export const extractUser = defineMiddleware((req: Request, res: Response, next: NextFunction): void => {
+  const token = extractToken(req);
+  try {
+    if (!verify(token)) {
       return next();
     }
-
-    const decodedToken = decode(token) as IPayload;
-    if ("deserializeUser" in app) {
-      app.deserializeUser(decodedToken, (err, user) => {
-        if (!err) {
-          req.user = user;
-        }
-
-        next();
-      });
-      return;
-    }
-    req.user = {
-      ...decodedToken,
-      id: decodedToken.userId || decodedToken,
-    };
-    next();
+  } catch (err) {
+    return next();
   }
-);
+
+  const decodedToken = decode(token) as IPayload;
+  if ("deserializeUser" in app) {
+    app.deserializeUser(decodedToken, (err, user) => {
+      if (!err) {
+        req.user = user;
+      }
+
+      next();
+    });
+    return;
+  }
+  req.user = {
+    ...decodedToken,
+    id: decodedToken.userId || decodedToken,
+  };
+  next();
+});

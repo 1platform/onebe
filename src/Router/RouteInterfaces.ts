@@ -4,11 +4,7 @@ import IUser from "../Authentication/IUser";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import HTTPVerb from "../HTTP/HTTPVerb";
 import Route from "./Route";
-import {
-  AppMethod,
-  CallbackExtractorParameter,
-  HeaderMethod,
-} from "./RouteTypes";
+import { AppMethod, CallbackExtractorParameter, HeaderMethod } from "./RouteTypes";
 
 /**
  * The request context parameter definition.
@@ -87,9 +83,7 @@ export interface IContext<TRequest = any> {
   /**
    * A list with uploaded files from the request.
    */
-  files?:
-  | Array<Express.Multer.File>
-  | Record<string, Array<Express.Multer.File>>;
+  files?: Array<Express.Multer.File> | Record<string, Array<Express.Multer.File>>;
 }
 
 /**

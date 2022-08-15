@@ -10,25 +10,15 @@ import MetadataStore from "../Documentation/MetadataStore";
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function get<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
-  return function (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) {
-    MetadataStore.instance.route.endpoint<Request, Response>(
-      target.constructor.name,
-      {
-        path,
-        verb: HTTPVerb.GET,
-        methodName: propertyKey,
-        descriptor: descriptor,
-        passRequest,
-      }
-    );
+export function get<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+  return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
+    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+      path,
+      verb: HTTPVerb.GET,
+      methodName: propertyKey,
+      descriptor: descriptor,
+      passRequest,
+    });
   };
 }
 
@@ -39,25 +29,15 @@ export function get<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function post<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
-  return function (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) {
-    MetadataStore.instance.route.endpoint<Request, Response>(
-      target.constructor.name,
-      {
-        path,
-        verb: HTTPVerb.POST,
-        methodName: propertyKey,
-        descriptor: descriptor,
-        passRequest,
-      }
-    );
+export function post<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+  return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
+    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+      path,
+      verb: HTTPVerb.POST,
+      methodName: propertyKey,
+      descriptor: descriptor,
+      passRequest,
+    });
   };
 }
 
@@ -68,25 +48,15 @@ export function post<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function put<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
-  return function (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) {
-    MetadataStore.instance.route.endpoint<Request, Response>(
-      target.constructor.name,
-      {
-        path,
-        verb: HTTPVerb.PUT,
-        methodName: propertyKey,
-        descriptor: descriptor,
-        passRequest,
-      }
-    );
+export function put<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+  return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
+    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+      path,
+      verb: HTTPVerb.PUT,
+      methodName: propertyKey,
+      descriptor: descriptor,
+      passRequest,
+    });
   };
 }
 
@@ -97,25 +67,15 @@ export function put<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function patch<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
-  return function (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) {
-    MetadataStore.instance.route.endpoint<Request, Response>(
-      target.constructor.name,
-      {
-        path,
-        verb: HTTPVerb.PATCH,
-        methodName: propertyKey,
-        descriptor: descriptor,
-        passRequest,
-      }
-    );
+export function patch<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+  return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
+    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+      path,
+      verb: HTTPVerb.PATCH,
+      methodName: propertyKey,
+      descriptor: descriptor,
+      passRequest,
+    });
   };
 }
 
@@ -126,25 +86,15 @@ export function patch<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function del<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
-  return function (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) {
-    MetadataStore.instance.route.endpoint<Request, Response>(
-      target.constructor.name,
-      {
-        path,
-        verb: HTTPVerb.DELETE,
-        methodName: propertyKey,
-        descriptor: descriptor,
-        passRequest,
-      }
-    );
+export function del<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+  return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
+    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+      path,
+      verb: HTTPVerb.DELETE,
+      methodName: propertyKey,
+      descriptor: descriptor,
+      passRequest,
+    });
   };
 }
 
@@ -155,10 +105,7 @@ export function del<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function GET<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
+export function GET<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
   return get<Request, Response>(path, passRequest);
 }
 
@@ -169,10 +116,7 @@ export function GET<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function POST<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
+export function POST<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
   return post<Request, Response>(path, passRequest);
 }
 
@@ -183,10 +127,7 @@ export function POST<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function PUT<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
+export function PUT<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
   return put<Request, Response>(path, passRequest);
 }
 
@@ -197,10 +138,7 @@ export function PUT<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function PATCH<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
+export function PATCH<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
   return patch<Request, Response>(path, passRequest);
 }
 
@@ -211,9 +149,6 @@ export function PATCH<Request = any, Response = any>(
  * @param path The path on which we will register the routes of this controller.
  * @param passRequest Should we pass the request and response objects to the route method.
  */
-export function DELETE<Request = any, Response = any>(
-  path: string,
-  passRequest = false
-): RouteDecorator {
+export function DELETE<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
   return del<Request, Response>(path, passRequest);
 }

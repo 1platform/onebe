@@ -7,12 +7,7 @@ export default class ContextAPI<BodyRequest = any> {
   private readonly _request: Request;
   private readonly _response: Response;
 
-  public constructor(
-    request: Request,
-    response: Response,
-    exposeRequest = false,
-    isGet = false
-  ) {
+  public constructor(request: Request, response: Response, exposeRequest = false, isGet = false) {
     this._request = request;
     this._response = response;
     this._exposeRequest = exposeRequest;
@@ -94,9 +89,7 @@ export default class ContextAPI<BodyRequest = any> {
     this._response.header(headerName, value);
   }
 
-  public getFiles(
-    fileName?: string
-  ): Express.Multer.File | Express.Multer.File[] {
+  public getFiles(fileName?: string): Express.Multer.File | Express.Multer.File[] {
     if (fileName && this._request.files && this._request.files[fileName]) {
       return this._request.files[fileName];
     }

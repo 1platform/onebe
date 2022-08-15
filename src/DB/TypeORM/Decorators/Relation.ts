@@ -8,10 +8,7 @@ import {
   OneToOne as TypeORMOneToOne,
   RelationOptions,
 } from "typeorm";
-import {
-  Constructor,
-  PropertyDecorator,
-} from "../../../Documentation/MetadataTypes";
+import { Constructor, PropertyDecorator } from "../../../Documentation/MetadataTypes";
 import MetadataStore from "../../../Documentation/MetadataStore";
 
 export { JoinTable } from "typeorm";
@@ -22,12 +19,7 @@ function DocumentEntity<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
   isArray?: boolean
 ) {
-  MetadataStore.instance.entity.addRelation<T>(
-    object.constructor.name,
-    propertyName,
-    typeFunctionOrTarget,
-    isArray ?? false
-  );
+  MetadataStore.instance.entity.addRelation<T>(object.constructor.name, propertyName, typeFunctionOrTarget, isArray ?? false);
 }
 
 export function ManyToOne<T = Constructor>(
@@ -46,11 +38,7 @@ export function ManyToMany<T = Constructor>(
   options?: RelationOptions
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
-    TypeORMManyToMany(
-      typeFunctionOrTarget,
-      inverseSide,
-      options
-    )(object, propertyName);
+    TypeORMManyToMany(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
     DocumentEntity<T>(object, propertyName, typeFunctionOrTarget, true);
   };
 }
@@ -61,11 +49,7 @@ export function OneToMany<T = Constructor>(
   options?: RelationOptions
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
-    TypeORMOneToMany(
-      typeFunctionOrTarget,
-      inverseSide,
-      options
-    )(object, propertyName);
+    TypeORMOneToMany(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
     DocumentEntity<T>(object, propertyName, typeFunctionOrTarget, true);
   };
 }
@@ -80,16 +64,10 @@ export function OneToOne<T = Constructor>(
   };
 }
 
-export function JoinColumn(
-  options?: JoinColumnOptions & { description?: string }
-): PropertyDecorator {
+export function JoinColumn(options?: JoinColumnOptions & { description?: string }): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMJoinColumn(options)(object, propertyName);
 
-    MetadataStore.instance.entity.relationField(
-      object.constructor.name,
-      propertyName,
-      options.name
-    );
+    MetadataStore.instance.entity.relationField(object.constructor.name, propertyName, options.name);
   };
 }

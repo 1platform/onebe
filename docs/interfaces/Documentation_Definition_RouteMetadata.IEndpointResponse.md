@@ -16,6 +16,7 @@
 
 - [description](Documentation_Definition_RouteMetadata.IEndpointResponse.md#description)
 - [isArray](Documentation_Definition_RouteMetadata.IEndpointResponse.md#isarray)
+- [isSchema](Documentation_Definition_RouteMetadata.IEndpointResponse.md#isschema)
 - [schema](Documentation_Definition_RouteMetadata.IEndpointResponse.md#schema)
 - [statusCode](Documentation_Definition_RouteMetadata.IEndpointResponse.md#statuscode)
 
@@ -30,6 +31,12 @@ ___
 ### isArray
 
 • `Optional` **isArray**: `boolean`
+
+___
+
+### isSchema
+
+• `Optional` **isSchema**: `boolean`
 
 ___
 

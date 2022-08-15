@@ -14,12 +14,7 @@ import IMiddleware from "./IMiddleware";
  * @param res The response object
  * @param next The function with the next callback.
  */
-export type ErrorHandlerFunction = (
-  error: any,
-  req: IncomingMessage,
-  res: ServerResponse,
-  next: (error: any) => void
-) => void;
+export type ErrorHandlerFunction = (error: any, req: IncomingMessage, res: ServerResponse, next: (error: any) => void) => void;
 
 /**
  * The Error Handler Middleware.
@@ -47,50 +42,43 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
       next(new PageNotFoundException());
     });
 
-    if (
-      ErrorHandlerMiddleware._beforeHandler &&
-      ErrorHandlerMiddleware._beforeHandler.length > 0
-    ) {
+    if (ErrorHandlerMiddleware._beforeHandler && ErrorHandlerMiddleware._beforeHandler.length > 0) {
       app.use(...ErrorHandlerMiddleware._beforeHandler);
     }
 
-    app.use(
-      (error: any, req: Request, res: Response, next: NextFunction): void => {
-        const status = error.status || HTTPStatus.SERVER_ERROR;
-        const message = req.t
-          ? req.t(error.message || "errors.something-wong", {
-            ...(error.parameters || {}),
-          })
-          : error.message;
-        let { details } = error;
+    app.use((error: any, req: Request, res: Response, next: NextFunction): void => {
+      const status = error.status || HTTPStatus.SERVER_ERROR;
+      const message = req.t
+        ? req.t(error.message || "errors.something-wong", {
+          ...(error.parameters || {}),
+        })
+        : error.message;
+      let { details } = error;
 
-        if (details) {
-          details = details.reduce(
-            (accum, detail) => ({
-              ...accum,
-              [detail.path.join(".")]: `${ detail.message }${
-                detail.context && ` (Value: ${ detail.context.value })`
-              }`,
-            }),
-            {}
-          );
-        } else {
-          details = "";
-        }
-
-        getDefaultLogger().error(`[HTTP ${ status }]: ${ message }`);
-        getDefaultLogger().debug(error);
-        getDefaultLogger().debug(error.stack);
-        if (details) {
-          getDefaultLogger().debug(JSON.stringify(details));
-        }
-
-        res.status(status).json({
-          status,
-          message,
-          details,
-        });
+      if (details) {
+        details = details.reduce(
+          (accum, detail) => ({
+            ...accum,
+            [detail.path.join(".")]: `${ detail.message }${ detail.context && ` (Value: ${ detail.context.value })` }`,
+          }),
+          {}
+        );
+      } else {
+        details = "";
       }
-    );
+
+      getDefaultLogger().error(`[HTTP ${ status }]: ${ message }`);
+      getDefaultLogger().debug(error);
+      getDefaultLogger().debug(error.stack);
+      if (details) {
+        getDefaultLogger().debug(JSON.stringify(details));
+      }
+
+      res.status(status).json({
+        status,
+        message,
+        details,
+      });
+    });
   }
 }

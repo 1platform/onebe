@@ -8,13 +8,21 @@
 
 ### Properties
 
+- [defaultValue](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#defaultvalue)
 - [description](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#description)
 - [entity](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#entity)
 - [isArray](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#isarray)
 - [name](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#name)
+- [required](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#required)
 - [type](Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md#type)
 
 ## Properties
+
+### defaultValue
+
+• `Optional` **defaultValue**: `string`
+
+___
 
 ### description
 
@@ -37,6 +45,12 @@ ___
 ### name
 
 • **name**: `string`
+
+___
+
+### required
+
+• `Optional` **required**: `boolean`
 
 ___
 

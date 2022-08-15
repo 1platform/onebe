@@ -12,8 +12,4 @@ export type Constructor = { new (...args: any[]): any };
  * @param propertyKey The property on which we apply the decorator.
  * @param descriptor The property descriptor of the property we want to apply the decorator on.
  */
-export type PropertyDecorator<T = Constructor> = (
-  target: T,
-  propertyKey: string,
-  descriptor: PropertyDescriptor
-) => void;
+export type PropertyDecorator<T = Constructor> = (target: T, propertyKey: string, descriptor: PropertyDescriptor) => void;

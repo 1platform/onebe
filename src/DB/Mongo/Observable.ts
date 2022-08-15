@@ -30,16 +30,8 @@ export default class Observable extends EventEmitter {
    * @param isPost if the action is a post action
    * @param callback The callback to be executed
    * */
-  public registerObservable<T extends Document>(
-    entityName: string,
-    type: ObservableType,
-    isPost: boolean,
-    callback: ObserverCallback<T>
-  ): void {
-    this.on(
-      `${ entityName }:${ type }:${ isPost ? "post" : "pre" }`.toLowerCase(),
-      callback
-    );
+  public registerObservable<T extends Document>(entityName: string, type: ObservableType, isPost: boolean, callback: ObserverCallback<T>): void {
+    this.on(`${ entityName }:${ type }:${ isPost ? "post" : "pre" }`.toLowerCase(), callback);
   }
 
   /**
@@ -48,10 +40,7 @@ export default class Observable extends EventEmitter {
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
-  public registerSavePost<T extends Document>(
-    entityName: string,
-    callback: ObserverCallback<T>
-  ): void {
+  public registerSavePost<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
     this.registerObservable<T>(entityName, ObservableType.SAVE, true, callback);
   }
 
@@ -61,16 +50,8 @@ export default class Observable extends EventEmitter {
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
-  public registerRemovePost<T extends Document>(
-    entityName: string,
-    callback: ObserverCallback<T>
-  ): void {
-    this.registerObservable<T>(
-      entityName,
-      ObservableType.REMOVE,
-      true,
-      callback
-    );
+  public registerRemovePost<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
+    this.registerObservable<T>(entityName, ObservableType.REMOVE, true, callback);
   }
 
   /**
@@ -79,16 +60,8 @@ export default class Observable extends EventEmitter {
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
-  public registerSavePre<T extends Document>(
-    entityName: string,
-    callback: ObserverCallback<T>
-  ): void {
-    this.registerObservable<T>(
-      entityName,
-      ObservableType.SAVE,
-      false,
-      callback
-    );
+  public registerSavePre<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
+    this.registerObservable<T>(entityName, ObservableType.SAVE, false, callback);
   }
 
   /**
@@ -97,15 +70,7 @@ export default class Observable extends EventEmitter {
    * @param entityName The entity name
    * @param callback The callback to be executed
    * */
-  public registerRemovePre<T extends Document>(
-    entityName: string,
-    callback: ObserverCallback<T>
-  ): void {
-    this.registerObservable<T>(
-      entityName,
-      ObservableType.REMOVE,
-      false,
-      callback
-    );
+  public registerRemovePre<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
+    this.registerObservable<T>(entityName, ObservableType.REMOVE, false, callback);
   }
 }

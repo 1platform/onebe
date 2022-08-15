@@ -132,10 +132,7 @@ export class FileLogger extends Logger {
       logLevel,
       new winston.transports.File({
         filename: Config.string("logs.filename", "app.log"),
-        dirname: Config.string(
-          "logs.folder",
-          path.join(process.cwd(), "storage", "logs")
-        ),
+        dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
       })
     );
@@ -176,9 +173,7 @@ export class NoLogger extends Logger {
 /**
  * The default logger of the application.
  */
-let DefaultLogger: Logger = new ConsoleLogger(
-  LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]
-);
+let DefaultLogger: Logger = new ConsoleLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]);
 
 /**
  * Function used to change the default logger of the application.

@@ -6,10 +6,7 @@ import IEmailTransport from "./IEmailTransport";
 /**
  * SMTP Transport used for sending emails.
  */
-export default class SMTPTransport
-  extends BaseTransport
-  implements IEmailTransport
-{
+export default class SMTPTransport extends BaseTransport implements IEmailTransport {
   /**
    * SMTPTransport constructor.
    */

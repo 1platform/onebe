@@ -4,8 +4,6 @@
 
 [Documentation/Swagger/SwaggerBuilder](../modules/Documentation_Swagger_SwaggerBuilder.md).SwaggerBuilder
 
-Class representing a Swagger Builder
-
 ## Table of contents
 
 ### Constructors
@@ -14,51 +12,72 @@ Class representing a Swagger Builder
 
 ### Properties
 
-- [\_interfaces](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#_interfaces)
-- [\_routes](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#_routes)
+- [componentBuilder](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#componentbuilder)
+- [routesBuilder](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#routesbuilder)
+- [store](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#store)
+- [tagsBuilder](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#tagsbuilder)
 
 ### Methods
 
+- [build](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#build)
+- [getJSON](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#getjson)
 - [getYaml](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md#getyaml)
 
 ## Constructors
 
 ### constructor
 
-• **new SwaggerBuilder**(`routes`, `interfaces`)
-
-The Swagger Builder constructor.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `routes` | [`TRoutesList`](../modules/Docs_DocsInterfaces.md#trouteslist) | The list of routes |
-| `interfaces` | `Record`<`string`, [`IInterfaceDoc`](../interfaces/Docs_DocsInterfaces.IInterfaceDoc.md)\> | The list of interfaces |
+• **new SwaggerBuilder**()
 
 ## Properties
 
-### \_interfaces
+### componentBuilder
 
-• `Protected` **\_interfaces**: `Record`<`string`, [`IInterfaceDoc`](../interfaces/Docs_DocsInterfaces.IInterfaceDoc.md)\> = `{}`
-
-The list of interfaces
+• `Protected` `Readonly` **componentBuilder**: [`SwaggerComponents`](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md)
 
 ___
 
-### \_routes
+### routesBuilder
 
-• `Protected` **\_routes**: [`TRoutesList`](../modules/Docs_DocsInterfaces.md#trouteslist) = `{}`
+• `Protected` `Readonly` **routesBuilder**: [`SwaggerRoutes`](Documentation_Swagger_Modules_SwaggerRoutes.SwaggerRoutes.md)
 
-The list of routes
+___
+
+### store
+
+• `Protected` **store**: `Record`<`string`, `unknown`\> = `{}`
+
+___
+
+### tagsBuilder
+
+• `Protected` `Readonly` **tagsBuilder**: [`SwaggerTags`](Documentation_Swagger_Modules_SwaggerTags.SwaggerTags.md)
 
 ## Methods
+
+### build
+
+▸ **build**(): [`SwaggerBuilder`](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md)
+
+#### Returns
+
+[`SwaggerBuilder`](Documentation_Swagger_SwaggerBuilder.SwaggerBuilder.md)
+
+___
+
+### getJSON
+
+▸ **getJSON**(): `Record`<`string`, `unknown`\>
+
+#### Returns
+
+`Record`<`string`, `unknown`\>
+
+___
 
 ### getYaml
 
 ▸ **getYaml**(): `string`
-
-Method for returning the yaml docs
 
 #### Returns
 

@@ -7,6 +7,7 @@
 ### Functions
 
 - [defineMiddleware](Router_RouteUtils.md#definemiddleware)
+- [getPath](Router_RouteUtils.md#getpath)
 
 ## Functions
 
@@ -25,3 +26,19 @@ Function used to define a middleware decorator.
 #### Returns
 
 [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### getPath
+
+▸ **getPath**(...`pathElements`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...pathElements` | `string`[] |
+
+#### Returns
+
+`string`

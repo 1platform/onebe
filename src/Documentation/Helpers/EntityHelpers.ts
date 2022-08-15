@@ -16,10 +16,7 @@ class CustomEntityHelper {
     return this;
   }
 
-  public property(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  public property(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.property(this._entityName, propertyName, {
       required: false,
@@ -29,17 +26,11 @@ class CustomEntityHelper {
     return this;
   }
 
-  requiredProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  requiredProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, { ...propertyOptions, required: true });
   }
 
-  dateProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  dateProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.STRING,
@@ -47,10 +38,7 @@ class CustomEntityHelper {
     });
   }
 
-  dateTimeProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  dateTimeProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.STRING,
@@ -58,41 +46,28 @@ class CustomEntityHelper {
     });
   }
 
-  numberProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  numberProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.NUMBER,
     });
   }
 
-  booleanProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  booleanProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.BOOLEAN,
     });
   }
 
-  integerProperty(
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  integerProperty(propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.INTEGER,
     });
   }
 
-  arrayProperty(
-    propertyName: string,
-    dataType: EntityPropertyDataTypes,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  arrayProperty(propertyName: string, dataType: EntityPropertyDataTypes, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.ARRAY,
@@ -100,11 +75,7 @@ class CustomEntityHelper {
     });
   }
 
-  entityArrayProperty(
-    propertyName: string,
-    referenceEntityName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  entityArrayProperty(propertyName: string, referenceEntityName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.ARRAY,
@@ -112,11 +83,7 @@ class CustomEntityHelper {
     });
   }
 
-  entityProperty(
-    propertyName: string,
-    referenceEntityName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper {
+  entityProperty(propertyName: string, referenceEntityName: string, propertyOptions: IEntityProperty): CustomEntityHelper {
     return this.property(propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.OBJECT,
@@ -140,11 +107,7 @@ const EntityHelpers = {
     return new CustomEntityHelper(entityName);
   },
 
-  property: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  property: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.property(entityName, propertyName, {
       required: false,
@@ -153,63 +116,39 @@ const EntityHelpers = {
 
     return new CustomEntityHelper(entityName);
   },
-  requiredProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  requiredProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       required: true,
     });
   },
-  dateProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  dateProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.STRING,
       isDate: true,
     });
   },
-  dateTimeProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  dateTimeProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.STRING,
       isDateTime: true,
     });
   },
-  numberProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  numberProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.NUMBER,
     });
   },
-  booleanProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  booleanProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.BOOLEAN,
     });
   },
-  integerProperty: (
-    entityName: string,
-    propertyName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  integerProperty: (entityName: string, propertyName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.INTEGER,
@@ -239,12 +178,7 @@ const EntityHelpers = {
       reference: referenceEntityName,
     });
   },
-  entityProperty: (
-    entityName: string,
-    propertyName: string,
-    referenceEntityName: string,
-    propertyOptions: IEntityProperty
-  ): CustomEntityHelper => {
+  entityProperty: (entityName: string, propertyName: string, referenceEntityName: string, propertyOptions: IEntityProperty): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
       dataType: EntityPropertyDataTypes.OBJECT,

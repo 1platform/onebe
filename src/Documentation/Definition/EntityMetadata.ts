@@ -47,29 +47,8 @@ export interface IEntityProperty {
   enumOptions?: string;
 }
 
-const integers = [
-  "int",
-  "int2",
-  "int4",
-  "int8",
-  "integer",
-  "tinyint",
-  "smallint",
-  "mediumint",
-  "bigint",
-];
-const number = [
-  "dec",
-  "decimal",
-  "smalldecimal",
-  "fixed",
-  "numeric",
-  "number",
-  "float",
-  "double",
-  "real",
-  "double precision",
-];
+const integers = [ "int", "int2", "int4", "int8", "integer", "tinyint", "smallint", "mediumint", "bigint" ];
+const number = [ "dec", "decimal", "smalldecimal", "fixed", "numeric", "number", "float", "double", "real", "double precision" ];
 
 export function mapSQLToEntity(dataType: ColumnType): EntityPropertyDataTypes {
   if (integers.indexOf(dataType.toString()) >= 0) {

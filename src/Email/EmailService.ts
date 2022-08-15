@@ -7,10 +7,7 @@ import TestTransport from "./Transports/TestTransport";
 /**
  * Class exposing the Email sending functionality.
  */
-export default class EmailService
-  extends ServiceBase
-  implements IEmailTransport
-{
+export default class EmailService extends ServiceBase implements IEmailTransport {
   /**
    * Is the service enabled?
    */

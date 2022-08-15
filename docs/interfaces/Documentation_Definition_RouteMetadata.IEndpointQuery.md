@@ -8,15 +8,29 @@
 
 ### Properties
 
+- [arrayItems](Documentation_Definition_RouteMetadata.IEndpointQuery.md#arrayitems)
 - [description](Documentation_Definition_RouteMetadata.IEndpointQuery.md#description)
+- [isRequired](Documentation_Definition_RouteMetadata.IEndpointQuery.md#isrequired)
 - [name](Documentation_Definition_RouteMetadata.IEndpointQuery.md#name)
 - [type](Documentation_Definition_RouteMetadata.IEndpointQuery.md#type)
 
 ## Properties
 
+### arrayItems
+
+• `Optional` **arrayItems**: [`QueryParameterType`](../enums/Documentation_Definition_DataTypes.QueryParameterType.md)
+
+___
+
 ### description
 
 • `Optional` **description**: `string`
+
+___
+
+### isRequired
+
+• `Optional` **isRequired**: `boolean`
 
 ___
 

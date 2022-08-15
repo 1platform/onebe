@@ -15,10 +15,7 @@ export { observer };
  * @param schema The schema for which we want to observe changes.
  * @param opts Various other options passed by Mongoose.
  */
-export type PluginFunction<
-  DocType = Document,
-  SchemaDefinitionType = undefined
-> = (
+export type PluginFunction<DocType = Document, SchemaDefinitionType = undefined> = (
   schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>,
   opts?: any
 ) => void;
@@ -35,14 +32,8 @@ export type HookNextFunction = (err?: CallbackError) => void;
  *
  * @param name The name of the model.
  */
-export function observerPlugin<
-  DocType = Document,
-  SchemaDefinitionType = undefined
->(name: string): PluginFunction<DocType, SchemaDefinitionType> {
-  return (
-    schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>,
-    opts?: any
-  ) => {
+export function observerPlugin<DocType = Document, SchemaDefinitionType = undefined>(name: string): PluginFunction<DocType, SchemaDefinitionType> {
+  return (schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>, opts?: any) => {
     schema.pre("save", (next: HookNextFunction) => {
       const emitAction = `${ name }:save:pre`.toLowerCase();
       getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:save:pre]`);

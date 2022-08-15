@@ -22,18 +22,10 @@ import Router from "./index";
  * @param name The name of the controller. If no name is specified, it will take the name of the controller.
  * @param description The description of the controller. If no description is passed, no description will be documented.
  */
-export function Path<T extends Constructor>(
-  path: string,
-  name?: string,
-  description?: string
-): ControllerDecoratorFunction<T> {
+export function Path<T extends Constructor>(path: string, name?: string, description?: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): T {
     const routeMetadata = MetadataStore.instance.route;
-    const route = routeMetadata.update(
-      new BaseClass().constructor.name,
-      path,
-      description
-    );
+    const route = routeMetadata.update(new BaseClass().constructor.name, path, description);
     route.name = name;
 
     const basePath = route.basePath
@@ -42,9 +34,7 @@ export function Path<T extends Constructor>(
       .replace(/(https?:\/\/)|(\/)+/g, "$1$2");
 
     getDefaultLogger().debug("---------------");
-    getDefaultLogger().info(
-      `[REGISTER] Routes for: ${ route.controller } [${ route.name }]: ${ basePath }`
-    );
+    getDefaultLogger().info(`[REGISTER] Routes for: ${ route.controller } [${ route.name }]: ${ basePath }`);
     Router.parseRoute(route);
     getDefaultLogger().debug("---------------");
     return BaseClass;
@@ -63,9 +53,7 @@ export function Path<T extends Constructor>(
  * @decorator
  * @param BaseClass The Controller we want to decorate.
  */
-export function API<T extends Constructor>(
-  BaseClass: T
-): ControllerDecorator<T> {
+export function API<T extends Constructor>(BaseClass: T): ControllerDecorator<T> {
   const route = new BaseClass();
   const routeMetadata = MetadataStore.instance.route;
   routeMetadata.markAsAPI(route.constructor.name, Config.string("api.path"));
@@ -85,9 +73,7 @@ export function API<T extends Constructor>(
  * @decorator
  * @param path The custom controller path prefix.
  */
-export function Custom<T extends Constructor>(
-  path: string
-): ControllerDecoratorFunction<T> {
+export function Custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
     const route = new BaseClass();
     const routeMetadata = MetadataStore.instance.route;
@@ -96,9 +82,7 @@ export function Custom<T extends Constructor>(
   };
 }
 
-export function Group<T extends Constructor>(
-  groupName: string
-): ControllerDecoratorFunction<T> {
+export function Group<T extends Constructor>(groupName: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
     const route = new BaseClass();
     const routeMetadata = MetadataStore.instance.route;

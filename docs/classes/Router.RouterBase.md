@@ -21,7 +21,6 @@
 
 ### Methods
 
-- [getPath](Router.RouterBase.md#getpath)
 - [loadEndpoint](Router.RouterBase.md#loadendpoint)
 - [parseRoute](Router.RouterBase.md#parseroute)
 - [register](Router.RouterBase.md#register)
@@ -61,23 +60,6 @@ The getter for the base router we will use.
 `Router`
 
 ## Methods
-
-### getPath
-
-▸ `Protected` **getPath**(`basePath`, `path`): `string`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `basePath` | `string` |
-| `path` | `string` |
-
-#### Returns
-
-`string`
-
-___
 
 ### loadEndpoint
 

@@ -79,14 +79,8 @@ export const signURL = signature.sign.bind(signature);
  * @param fieldName The name of the field in the file uploader.
  */
 export function singleUpload(fieldName: string): RouteDecorator {
-  return (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) => {
-    const original = Array.isArray(descriptor.value)
-      ? descriptor.value
-      : [ descriptor.value ];
+  return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
     descriptor.value = [ upload.single(fieldName), ...original ];
   };
 }
@@ -98,17 +92,8 @@ export function singleUpload(fieldName: string): RouteDecorator {
  * @param names The names of the fields in the file uploader.
  */
 export function namedFiles(...names: string[]): RouteDecorator {
-  return (
-    target: Route,
-    propertyKey: string,
-    descriptor: PropertyDescriptor
-  ) => {
-    const original = Array.isArray(descriptor.value)
-      ? descriptor.value
-      : [ descriptor.value ];
-    descriptor.value = [
-      upload.fields(names.map((name) => ({ name, maxCount: 1 }))),
-      ...original,
-    ];
+  return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
+    descriptor.value = [ upload.fields(names.map((name) => ({ name, maxCount: 1 }))), ...original ];
   };
 }

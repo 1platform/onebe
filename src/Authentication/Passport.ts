@@ -17,18 +17,11 @@ export interface IInitStrategyOptions {
   /**
    * The function used for Payload deserialization.
    */
-  deserializeUser?: (
-    payload: IPayload,
-    done: (err: any, user?: IUser) => void
-  ) => void;
+  deserializeUser?: (payload: IPayload, done: (err: any, user?: IUser) => void) => void;
   /**
    * The function used for basic authentication.
    */
-  basicAuth?: (
-    username: string,
-    password: string,
-    done: (err: any, user?: IUser) => void
-  ) => void;
+  basicAuth?: (username: string, password: string, done: (err: any, user?: IUser) => void) => void;
 }
 
 /**
@@ -36,19 +29,10 @@ export interface IInitStrategyOptions {
  *
  * @param props The properties passed to the init function.
  */
-export default function initPassportStrategy(
-  props: IInitStrategyOptions
-): void {
-  passport.serializeUser(
-    (user: IUser, done: (err: Error, payload: IPayload) => void): void => {
-      done(
-        null,
-        "serializeUser" in props
-          ? props.serializeUser(user)
-          : { userId: user.id }
-      );
-    }
-  );
+export default function initPassportStrategy(props: IInitStrategyOptions): void {
+  passport.serializeUser((user: IUser, done: (err: Error, payload: IPayload) => void): void => {
+    done(null, "serializeUser" in props ? props.serializeUser(user) : { userId: user.id });
+  });
   passport.deserializeUser(
     "deserializeUser" in props
       ? props.deserializeUser
@@ -78,11 +62,7 @@ export default function initPassportStrategy(
     new BasicStrategy(
       "basicAuth" in props
         ? props.basicAuth
-        : (
-          username: string,
-          password: string,
-          done: (err: any, user?: IUser) => void
-        ) => {
+        : (username: string, password: string, done: (err: any, user?: IUser) => void) => {
           done(null, { id: username });
         }
     )

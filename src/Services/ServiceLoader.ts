@@ -47,10 +47,7 @@ export default class ServiceLoader {
    * @param serviceName The name of the service we want to add.
    * @param serviceInstance The service instance we want to add.
    */
-  public static set<T extends ServiceBase>(
-    serviceName: string,
-    serviceInstance: T
-  ): T {
+  public static set<T extends ServiceBase>(serviceName: string, serviceInstance: T): T {
     return ServiceLoader.instance._set<T>(serviceName, serviceInstance);
   }
 
@@ -69,10 +66,7 @@ export default class ServiceLoader {
    * @param serviceName The name of the service we want to add.
    * @param serviceInstance The service instance we want to add.
    */
-  protected _set<T extends ServiceBase>(
-    serviceName: string,
-    serviceInstance: T
-  ): T {
+  protected _set<T extends ServiceBase>(serviceName: string, serviceInstance: T): T {
     this._services[serviceName] = serviceInstance;
     return serviceInstance;
   }

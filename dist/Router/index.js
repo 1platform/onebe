@@ -21,6 +21,8 @@ var _AuthContextAPI = _interopRequireDefault(require("../Documentation/Helpers/A
 
 var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
+var _RouteUtils = require("./RouteUtils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -56,20 +58,15 @@ class RouterBase {
   }
 
   parseRoute(route) {
-    const basePath = route.basePath.filter(bp => bp).join("/");
+    const basePath = route.basePath.filter(bp => bp.length).join("/");
 
     for (const endpoint of Object.values(route.endpoints)) {
       this.loadEndpoint(basePath, endpoint);
     }
   }
 
-  getPath(basePath, path) {
-    const newPath = `/${basePath}/${path}`.replace(/(https?:\/\/)|(\/)+/g, "$1$2");
-    return newPath.lastIndexOf("/") === newPath.length - 1 && newPath !== "/" ? newPath.substring(0, newPath.length - 1) : newPath;
-  }
-
   loadEndpoint(basePath, endpoint) {
-    const path = this.getPath(basePath, endpoint.path);
+    const path = (0, _RouteUtils.getPath)(basePath, endpoint.path);
     (0, _Logger.getDefaultLogger)().debug(`[REGISTER] ${endpoint.verb.toUpperCase()}: ${path}`);
     this.router[endpoint.verb](path, ...endpoint.middlewares, async function (req, res, next) {
       try {

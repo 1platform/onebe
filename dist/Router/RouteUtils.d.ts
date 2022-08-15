@@ -6,3 +6,4 @@ import { RouteDecorator } from "./RouteTypes";
  * @param middlewares A list of middlewares you want to apply on the route.
  */
 export declare function defineMiddleware(...middlewares: Array<HTTPMiddleware>): RouteDecorator;
+export declare function getPath(...pathElements: string[]): string;
