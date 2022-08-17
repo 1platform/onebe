@@ -14,4 +14,5 @@
 
 • `Const` **defaultConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Exported defaults
+The configuration object, with some default values, that can be used
+in the application for configuring the behaviour of the application.

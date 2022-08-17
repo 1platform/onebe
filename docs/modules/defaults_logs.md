@@ -14,4 +14,7 @@
 
 • `Const` **defaultLogsConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-The default configuration for the application logging.
+The logging configuration object.
+
+In this file you can change various configuration parameters related to the
+logging of the application.

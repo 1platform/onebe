@@ -11,11 +11,6 @@ import * as logform from "logform";
  */
 export class Logger {
   /**
-   * The logger object we will use for logging.
-   */
-  protected readonly _log: WinstonLogger;
-
-  /**
    * The constructor of the logger class.
    *
    * @param logLevel The level of logging we will use in our application.
@@ -28,6 +23,11 @@ export class Logger {
       transports: [ transport ],
     });
   }
+
+  /**
+   * The logger object we will use for logging.
+   */
+  protected _log: WinstonLogger;
 
   /**
    * Getter for the logger object.
@@ -159,7 +159,7 @@ class NoLoggerTransport extends Transport {
 }
 
 /**
- * The no logger logger that can be used in our application.
+ * The NoLogger logger that can be used in our application.
  */
 export class NoLogger extends Logger {
   /**
@@ -167,6 +167,34 @@ export class NoLogger extends Logger {
    */
   public constructor() {
     super(LogLevel.VERBOSE, new NoLoggerTransport());
+  }
+}
+
+/**
+ *
+ */
+export class JSONLogger extends Logger {
+  public constructor(logLevel: LogLevel, isFile = false, options?: FileTransportOptions) {
+    super(logLevel, new NoLoggerTransport());
+
+    let transport;
+    if (options) {
+      transport = new winston.transports.File({
+        filename: Config.string("logs.filename", "app.log"),
+        dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
+        ...(options || {}),
+      });
+    } else {
+      transport = new winston.transports.Console({
+        format: winston.format.json(),
+      });
+    }
+
+    this._log = winston.createLogger({
+      level: logLevel.toString() || LogLevel.INFO,
+      format: winston.format.json(),
+      transports: [ transport ],
+    });
   }
 }
 

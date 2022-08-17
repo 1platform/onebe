@@ -14,4 +14,7 @@
 
 • `Const` **defaultUploadConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for Upload services.
+The upload middleware configuration object.
+
+In this file you can change various configuration parameters related to the
+Upload Middleware functionality of the application.

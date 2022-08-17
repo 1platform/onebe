@@ -7,53 +7,76 @@ exports.default = void 0;
 
 var _Env = _interopRequireDefault(require("../System/Env"));
 
+var _EmailTransport = _interopRequireDefault(require("../Email/EmailTransport"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Default configuration for the Email services.
+ * The Email configuration object.
+ *
+ * In this file you can change various configuration parameters related to the
+ * Email Handling Service.
  */
 const defaultEmailConfig = {
   /**
-   * The default value indicating whether the services are enabled or not.
+   * Flag used to enable or disable the email handling service.
+   *
+   * @default false
    */
   enabled: _Env.default.flag("EMAIL_ENABLED"),
 
   /**
-   * The default value for email transport.
+   * The desired email handling transport to be used in the application.
+   *
+   * @see EmailTransport
+   * @default EmailTransport.TEST
    */
-  transport: _Env.default.string("EMAIL_TRANSPORT", "test"),
+  transport: _Env.default.string("EMAIL_TRANSPORT", _EmailTransport.default.TEST),
 
   /**
-   * The default sender address.
+   * The email address used as the FROM address in the emails sent
+   * through the application.
+   *
+   * @default "onebe@localhost"
    */
-  from: _Env.default.string("EMAIL_FROM", "onebe@sprk.dev"),
+  from: _Env.default.string("EMAIL_FROM", "onebe@localhost"),
 
   /**
-   * The default configuration for the email service.
+   * Configuration parameters used for connecting to the email sending service (mailgun, sendgrid, smtp).
    */
   config: {
     /**
-     * The default value of the email address which will be used to send emails.
+     * The account or email address used to connect to the email sending server.
+     *
+     * @default "onebe@localhost"
      */
-    address: _Env.default.string("EMAIL_ADDRESS", "onebe@sprk.dev"),
+    address: _Env.default.string("EMAIL_ADDRESS", "onebe@localhost"),
 
     /**
-     * The default value for the password associated with the email address used.
+     * The password for the account used to send an email.
+     *
+     * @default ""
      */
     password: _Env.default.string("EMAIL_PASSWORD", ""),
 
     /**
-     * The default value for the used server.
+     * The URL or IP of the email sending server.
+     *
+     * @default "localhost"
      */
     server: _Env.default.string("EMAIL_SERVER", "localhost"),
 
     /**
-     * The default value for the used port.
+     * The port used to connect to the email server.
+     *
+     * @default "25"
      */
     port: _Env.default.string("EMAIL_PORT", "25"),
 
     /**
-     * The default flag that indicates whether the email services are secure.
+     * A flag used to define if the server is using a secure connection or not.
+     *
+     * @default false
      */
     secure: _Env.default.flag("EMAIL_SECURE")
   }

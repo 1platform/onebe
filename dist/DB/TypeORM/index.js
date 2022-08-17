@@ -16,33 +16,60 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * TypeORM database handler class.
+ * TypeORM connection handler class.
+ *
+ * Using this class you can connect and use any of the following database
+ * engines in your application: MongoDB, MySQL, MariaDB, Postgres. By using
+ * TypeORM you can easily define model classes that use all the features
+ * of TypeScript. Also, when using TypeORM, the entity/model documentation
+ * is done for you.
  */
 class TypeORM {
   /**
-   * Default connection handler.
+   * The default database connection object.
+   */
+
+  /**
+   * Getter for the default database connection object.
    */
   static get connection() {
     return TypeORM._connection;
   }
+  /**
+   * The singleton instance for the TypeORM class.
+   */
+
 
   /**
-   * TypeORM instance getter.
+   * Getter for the TypeORM instance object.
    */
   static get instance() {
     return TypeORM._instance;
   }
   /**
-   * Calls the Database initialization method.
+   * Database initialisation method.
+   *
+   * Through this method, the framework connects your application to a database
+   * server and stores that connection for later use.
    */
 
 
   async init() {
-    const engine = _Config.default.string("db.engine", "mysql");
+    const configurationObject = _Config.default.object(`db.${_Config.default.string("db.configuration")}`);
 
-    TypeORM._connection = await this.connect(engine);
+    TypeORM._connection = await this.connect(configurationObject.engine);
     TypeORM._instance = this;
   }
+  /**
+   * Method used to create a new database connection that can be used
+   * by your application.
+   *
+   * If needed, at any moment, you can create a new database connection
+   * to any other database that you might need.
+   *
+   * @param configurationName The name of the configuration object used to perform the connection.
+   */
+
 
   connect(configurationName) {
     const dbConfig = _Config.default.object(`db.${configurationName}`);

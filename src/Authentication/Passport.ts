@@ -7,7 +7,7 @@ import IUser from "./IUser";
 import { extractToken } from "./JWT";
 
 /**
- * Passport strategy initialisation method options.
+ * Definition of the Passport strategy initialization options.
  */
 export interface IInitStrategyOptions {
   /**
@@ -25,9 +25,13 @@ export interface IInitStrategyOptions {
 }
 
 /**
- * Passport strategies and serialization/deserialization initialisation function.
+ * Function used to initialise the passport strategies that are used in the application.
  *
- * @param props The properties passed to the init function.
+ * This function will perform some initialisation calls for the serialization and
+ * deserialization of the User object based on the Payload object. Also, it initialises
+ * all the authentication methods exposed by the framework: bearer and basic.
+ *
+ * @param props The properties used to initialise the passport strategies.
  */
 export default function initPassportStrategy(props: IInitStrategyOptions): void {
   passport.serializeUser((user: IUser, done: (err: Error, payload: IPayload) => void): void => {
@@ -70,6 +74,11 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
 }
 
 /**
- * The passport instance used throughout the framework.
+ * Since we want to use only one passport instance throughout the application,
+ * we export the passport instance used in the framework. To learn more about
+ * this, go to: https://www.passportjs.org/. If you need additional authentication
+ * methods, please create a new issue in GitHub.
+ *
+ * @link https://www.passportjs.org/
  */
 export { passport };

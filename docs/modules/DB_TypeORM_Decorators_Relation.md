@@ -19,11 +19,18 @@
 
 ▸ **JoinColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the relation key for a referenced model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `JoinColumnOptions` & { `description?`: `string`  } |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `JoinColumnOptions` & { `description?`: `string`  } | A list of options used for defining the join column. |
 
 #### Returns
 
@@ -78,6 +85,13 @@ ___
 
 ▸ **ManyToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a many-to-many relation between two models.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -86,11 +100,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
-| `inverseSide?` | `string` \| (`object`: `T`) => `any` |
-| `options?` | `RelationOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the many-to-many relation. |
+| `inverseSide?` | `string` \| (`object`: `T`) => `any` | The inverse side target of the many-to-many relation. |
+| `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
 
@@ -102,6 +116,13 @@ ___
 
 ▸ **ManyToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a many-to-one relation between two models.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -110,10 +131,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
-| `options?` | `RelationOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the many-to-one relation. |
+| `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
 
@@ -125,6 +146,13 @@ ___
 
 ▸ **OneToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a one-to-many relation between two models.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -133,11 +161,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
-| `inverseSide?` | `string` \| (`object`: `T`) => `any` |
-| `options?` | `RelationOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the one-to-many relation. |
+| `inverseSide?` | `string` \| (`object`: `T`) => `any` | The inverse side target of the one-to-many relation. |
+| `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
 
@@ -149,6 +177,13 @@ ___
 
 ▸ **OneToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a one-to-one relation between two models.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -157,10 +192,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
-| `options?` | `RelationOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the one-to-one relation. |
+| `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
 

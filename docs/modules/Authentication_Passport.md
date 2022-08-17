@@ -32,13 +32,17 @@
 
 ▸ **initPassportStrategy**(`props`): `void`
 
-Passport strategies and serialization/deserialization initialisation function.
+Function used to initialise the passport strategies that are used in the application.
+
+This function will perform some initialisation calls for the serialization and
+deserialization of the User object based on the Payload object. Also, it initialises
+all the authentication methods exposed by the framework: bearer and basic.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | [`IInitStrategyOptions`](../interfaces/Authentication_Passport.IInitStrategyOptions.md) | The properties passed to the init function. |
+| `props` | [`IInitStrategyOptions`](../interfaces/Authentication_Passport.IInitStrategyOptions.md) | The properties used to initialise the passport strategies. |
 
 #### Returns
 

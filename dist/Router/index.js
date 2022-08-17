@@ -13,15 +13,19 @@ var _path = require("path");
 
 var _Logger = require("../System/Logger");
 
-var _ContextAPI = _interopRequireDefault(require("../Documentation/Helpers/ContextAPI"));
+var _ContextAPI = _interopRequireDefault(require("./ContextAPI"));
 
 var _HTTPVerb = _interopRequireDefault(require("../HTTP/HTTPVerb"));
 
-var _AuthContextAPI = _interopRequireDefault(require("../Documentation/Helpers/AuthContextAPI"));
+var _AuthContextAPI = _interopRequireDefault(require("./AuthContextAPI"));
 
 var _HTTPStatus = _interopRequireDefault(require("../HTTP/HTTPStatus"));
 
 var _RouteUtils = require("./RouteUtils");
+
+var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
+
+var _Config = _interopRequireDefault(require("../System/Config"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55,6 +59,22 @@ class RouterBase {
     const controllersStruct = this.fetchControllers(controllersPath);
     controllersStruct.section = "";
     await this.registerControllers(controllersPath, controllersStruct);
+  }
+  /**
+   * Register a controller
+   *
+   * @param controller
+   */
+
+
+  async add(controller) {
+    if (_MetadataStore.default.instance.route.isDocs(controller.constructor.name) && !_Config.default.boolean("docs.expose")) {
+      (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The controller: ${controller.constructor.name} won't be loaded.`);
+      return;
+    } // controller.init();
+
+
+    this._controllers.push(controller);
   }
 
   parseRoute(route) {
@@ -127,6 +147,11 @@ class RouterBase {
         }
 
         const controller = new ClassModule();
+
+        if (_MetadataStore.default.instance.route.isDocs(controller.constructor.name) && !_Config.default.boolean("docs.expose")) {
+          (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The controller: ${controller.constructor.name} won't be loaded.`);
+          continue;
+        }
 
         this._controllers.push(controller);
       } catch (err) {

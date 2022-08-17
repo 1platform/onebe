@@ -32,7 +32,7 @@
 
 ▸ (`document`): `void`
 
-The callback used to define/register callbacks.
+Type used to define what a callback used to register an observer function should look like.
 
 ##### Parameters
 

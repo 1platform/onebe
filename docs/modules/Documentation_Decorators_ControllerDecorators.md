@@ -14,7 +14,7 @@
 
 ### Controller
 
-▸ **Controller**<`T`\>(`name`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Controller**<`T`\>(`name`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 #### Type parameters
 
@@ -31,13 +31,13 @@
 
 #### Returns
 
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 ___
 
 ### Description
 
-▸ **Description**<`T`\>(`description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Description**<`T`\>(`description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 #### Type parameters
 
@@ -53,13 +53,13 @@ ___
 
 #### Returns
 
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 ___
 
 ### Name
 
-▸ **Name**<`T`\>(`name`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **Name**<`T`\>(`name`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 #### Type parameters
 
@@ -75,4 +75,4 @@ ___
 
 #### Returns
 
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>

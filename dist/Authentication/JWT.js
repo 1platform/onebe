@@ -20,36 +20,36 @@ var _Config = _interopRequireDefault(require("../System/Config"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Signs in a user with the given payload.
+ * Creates a signed JWT Token that can be sent to the user and used
+ * for the Bearer authentication method.
  *
- * @param payload The payload to authenticate.
- * @param rememberMe Should the token be remembered for a longer period.
+ * @param payload The payload we want to sign.
+ * @param rememberMe Should the token be valid for a longer period.
  */
 function sign(payload, rememberMe = false) {
-  return _jsonwebtoken.default.sign( // eslint-disable-next-line @typescript-eslint/ban-types
-  payload, _Config.default.string("auth.jwt.secret"), {
+  return _jsonwebtoken.default.sign(payload, _Config.default.string("auth.jwt.secret"), {
     expiresIn: rememberMe ? _Config.default.string("auth.jwt.rememberMeTime", "1d") : _Config.default.string("auth.jwt.expireTime", "1d"),
     issuer: _Config.default.string("auth.jwt.issuer", "onebe.sprk.dev"),
     audience: _Config.default.string("auth.jwt.audience", "onebe.sprk.dev")
   });
 }
 /**
- * Signs in an application with the given payload.
+ * Creates a short timed signed JWT Token that can be sent to the user and used
+ * for the Bearer authentication method.
  *
- * @param payload The payload to authenticate.
+ * @param payload The payload we want to sign.
  */
 
 
 function shortLiveToken(payload) {
-  return _jsonwebtoken.default.sign( // eslint-disable-next-line @typescript-eslint/ban-types
-  payload, _Config.default.string("auth.jwt.secret"), {
+  return _jsonwebtoken.default.sign(payload, _Config.default.string("auth.jwt.secret"), {
     expiresIn: "1m",
     issuer: _Config.default.string("auth.jwt.issuer", "onebe.sprk.dev"),
     audience: _Config.default.string("auth.jwt.audience", "onebe.sprk.dev")
   });
 }
 /**
- * Verifies if the given token is valid or not.
+ * Checks if the given token is valid or not.
  *
  * @param token The token to be verified.
  */
@@ -64,7 +64,7 @@ function verify(token) {
 /**
  * Decodes the given token.
  *
- * @param token The token to be token.
+ * @param token The token to be decoded.
  */
 
 
@@ -74,17 +74,17 @@ function decode(token) {
 /**
  * Extracts the token from the request object.
  *
- * @param req The request object.
+ * @param request The request object.
  */
 
 
-function extractToken(req) {
-  let authParams = (0, _auth_header.parse)(req.headers.authorization);
+function extractToken(request) {
+  let authParams = (0, _auth_header.parse)(request.headers.authorization);
 
   if (authParams && authParams.scheme.toLowerCase() === "bearer") {
     return authParams.value;
   }
 
-  authParams = _passportJwt.ExtractJwt.fromUrlQueryParameter("bearer")(req);
+  authParams = _passportJwt.ExtractJwt.fromUrlQueryParameter("bearer")(request);
   return authParams || "";
 }

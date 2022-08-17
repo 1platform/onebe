@@ -4,7 +4,13 @@
 
 [DB/TypeORM](../modules/DB_TypeORM.md).TypeORM
 
-TypeORM database handler class.
+TypeORM connection handler class.
+
+Using this class you can connect and use any of the following database
+engines in your application: MongoDB, MySQL, MariaDB, Postgres. By using
+TypeORM you can easily define model classes that use all the features
+of TypeScript. Also, when using TypeORM, the entity/model documentation
+is done for you.
 
 ## Table of contents
 
@@ -39,11 +45,15 @@ TypeORM database handler class.
 
 ▪ `Static` `Protected` **\_connection**: `DataSource` = `null`
 
+The default database connection object.
+
 ___
 
 ### \_instance
 
 ▪ `Static` `Protected` **\_instance**: [`TypeORM`](DB_TypeORM.TypeORM.md) = `null`
+
+The singleton instance for the TypeORM class.
 
 ## Accessors
 
@@ -51,7 +61,7 @@ ___
 
 • `Static` `get` **connection**(): `DataSource`
 
-Default connection handler.
+Getter for the default database connection object.
 
 #### Returns
 
@@ -63,7 +73,7 @@ ___
 
 • `Static` `get` **instance**(): [`TypeORM`](DB_TypeORM.TypeORM.md)
 
-TypeORM instance getter.
+Getter for the TypeORM instance object.
 
 #### Returns
 
@@ -75,11 +85,17 @@ TypeORM instance getter.
 
 ▸ **connect**(`configurationName`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`DataSource`\>
 
+Method used to create a new database connection that can be used
+by your application.
+
+If needed, at any moment, you can create a new database connection
+to any other database that you might need.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `configurationName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `configurationName` | `string` | The name of the configuration object used to perform the connection. |
 
 #### Returns
 
@@ -91,7 +107,10 @@ ___
 
 ▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-Calls the Database initialization method.
+Database initialisation method.
+
+Through this method, the framework connects your application to a database
+server and stores that connection for later use.
 
 #### Returns
 

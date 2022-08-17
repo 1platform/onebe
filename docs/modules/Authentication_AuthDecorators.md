@@ -16,13 +16,16 @@
 
 ▸ **Basic**(`target`, `propertyKey`, `descriptor`): `void`
 
-Decorator to enable Basic Authentication for an endpoint.
+Decorator used to enable Basic Authentication for an endpoint.
 
-Attaches to the property of the target the following metadata:
-- route:auth
-- route:auth:basic
+Using this decorator you can restrict the access to an endpoint only to the users
+that are authenticated. Also, by using this decorator we mark the endpoint as
+authenticated in the generated documentation files.
 
-Based on this metadata we know what to generate in the Documentation generator.
+Using the basic authentication method, the authentication engine requires that
+the user pass a valid username and password combination to it. The credentials
+must be passed inside the `Authorization` header after the token `Basic` and
+in a base64 encoded version.
 
 **`Decorator`**
 
@@ -44,13 +47,15 @@ ___
 
 ▸ **Bearer**(`target`, `propertyKey`, `descriptor`): `void`
 
-Decorator to enable Bearer Authentication for an endpoint.
+Decorator used to enable Bearer Authentication for an endpoint.
 
-Attaches to the property of the target the following metadata:
-- route:auth
-- route:auth:bearer
+Using this decorator you can restrict the access to an endpoint only to the users
+that are authenticated. Also, by using this decorator we mark the endpoint as
+authenticated in the generated documentation files.
 
-Based on this metadata we know what to generate in the Documentation generator.
+Using the bearer authentication method, the authentication engine requires that
+the `Authorization` header be present in the request and have a valid value:
+the token Bearer followed by a JSON Web Token (JWT).
 
 **`Decorator`**
 

@@ -1,0 +1,24 @@
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Email/EmailTransport](../modules/Email_EmailTransport.md) / EmailTransport
+
+# Enumeration: EmailTransport
+
+[Email/EmailTransport](../modules/Email_EmailTransport.md).EmailTransport
+
+## Table of contents
+
+### Enumeration Members
+
+- [SMTP](Email_EmailTransport.EmailTransport.md#smtp)
+- [TEST](Email_EmailTransport.EmailTransport.md#test)
+
+## Enumeration Members
+
+### SMTP
+
+• **SMTP** = ``"smtp"``
+
+___
+
+### TEST
+
+• **TEST** = ``"test"``

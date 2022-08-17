@@ -4,7 +4,12 @@
 
 [DB/Mongo](../modules/DB_Mongo.md).Mongo
 
-Class representing a Mongo DB handler
+Mongo connection handler class.
+
+Using this class you can connect and use MongoDB and Mongoose in
+your application. We would recommend using TypeORM for the database
+handling part, but if you need a simpler ORM for your application,
+use this module.
 
 ## Table of contents
 
@@ -28,7 +33,7 @@ Class representing a Mongo DB handler
 
 ▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-Calls the respective init method
+Performs the database connection and initialisation.
 
 #### Returns
 

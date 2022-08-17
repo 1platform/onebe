@@ -10,13 +10,13 @@ var _events = _interopRequireDefault(require("events"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Defines Observable Types
+ * A list with what can be observed in a Mongoose model.
  *
  * @enum
  */
 let ObservableType;
 /**
- * The callback used to define/register callbacks.
+ * Type used to define what a callback used to register an observer function should look like.
  *
  * @param document The document we want to observe.
  */
@@ -29,63 +29,69 @@ exports.ObservableType = ObservableType;
 })(ObservableType || (exports.ObservableType = ObservableType = {}));
 
 /**
- * Class representing an Observable
+ * Class used to perform observable actions to a Mongoose model.
+ *
+ * Using this class we register observers that can perform various tasks
+ * on the Mongoose model when an action happens (Save or Remove).
+ * Through the usage of Observers we can do updates on related elements
+ * from other models (think at the cascade delete action).
  */
 class Observable extends _events.default {
   /**
-   * Registers an Observable
+   * Method used to register an observer for a given model, with a given type,
+   * at a given time moment (pre- or post-action).
    *
-   * @param entityName The name of the entity
-   * @param type The type of the Observable
-   * @param isPost if the action is a post action
-   * @param callback The callback to be executed
-   * */
-  registerObservable(entityName, type, isPost, callback) {
-    this.on(`${entityName}:${type}:${isPost ? "post" : "pre"}`.toLowerCase(), callback);
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param type The type of the Observable action.
+   * @param isPost The moment of the action (true = POST, false = PRE).
+   * @param observerCallback The observer to be executed.
+   */
+  registerObservable(modelName, type, isPost, observerCallback) {
+    this.on(`${modelName}:${type}:${isPost ? "post" : "pre"}`.toLowerCase(), observerCallback);
   }
   /**
-   * Registers a Save Post Observable
+   * Register a post save observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
-   * */
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
+   */
 
 
-  registerSavePost(entityName, callback) {
-    this.registerObservable(entityName, ObservableType.SAVE, true, callback);
+  registerSavePost(modelName, observerCallback) {
+    this.registerObservable(modelName, ObservableType.SAVE, true, observerCallback);
   }
   /**
-   * Registers a Remove Post Observable
+   * Register a post remove observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
 
 
-  registerRemovePost(entityName, callback) {
-    this.registerObservable(entityName, ObservableType.REMOVE, true, callback);
+  registerRemovePost(modelName, observerCallback) {
+    this.registerObservable(modelName, ObservableType.REMOVE, true, observerCallback);
   }
   /**
-   * Registers a Pre Save Observable
+   * Register a pre save observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
 
 
-  registerSavePre(entityName, callback) {
-    this.registerObservable(entityName, ObservableType.SAVE, false, callback);
+  registerSavePre(modelName, observerCallback) {
+    this.registerObservable(modelName, ObservableType.SAVE, false, observerCallback);
   }
   /**
-   * Registers a Pre Remove Observable
+   * Register a pre remove observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
 
 
-  registerRemovePre(entityName, callback) {
-    this.registerObservable(entityName, ObservableType.REMOVE, false, callback);
+  registerRemovePre(modelName, observerCallback) {
+    this.registerObservable(modelName, ObservableType.REMOVE, false, observerCallback);
   }
 
 }

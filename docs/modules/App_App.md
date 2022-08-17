@@ -19,7 +19,8 @@
 
 Ƭ **ApplicationObject**: [`Constructor`](Documentation_MetadataTypes.md#constructor)
 
-The ApplicationObject we support to be attached to the App instance.
+Custom type used to define an Object element that can be added to the
+Application object and reused throughout the application.
 
 ___
 
@@ -31,7 +32,8 @@ ___
 
 ▸ (...`args`): `any`
 
-The GenericFunction type we support to be attached to the App instance.
+Custom type used to define Functions that can be added to the Application
+object and reused throughout the application.
 
 ##### Parameters
 

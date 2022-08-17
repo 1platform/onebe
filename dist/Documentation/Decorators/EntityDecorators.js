@@ -31,10 +31,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function Entity(name, description) {
   return function (BaseClass) {
-    const entity = new BaseClass();
     const entityMetadata = _MetadataStore.default.instance.entity;
-    entityMetadata.update(name ?? entity.constructor.name, description ?? "");
-    entityMetadata.extends(name, Object.getPrototypeOf(Object.getPrototypeOf(entity)).constructor.name);
+    entityMetadata.update(name ?? BaseClass.name, description ?? "");
+    entityMetadata.extends(name, Object.getPrototypeOf(BaseClass).name);
     return BaseClass;
   };
 }

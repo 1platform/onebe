@@ -48,9 +48,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spark-development/onebe/issues"
+    "url": "https://github.com/1platform/onebe/issues"
   },
-  "homepage": "https://github.com/spark-development/onebe#readme",
+  "homepage": "https://github.com/1platform/onebe#readme",
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint:fix && yarn prettier && git add .",

@@ -4,7 +4,14 @@
 
 [Authentication/Passport](Authentication_Passport.md).passport
 
-The passport instance used throughout the framework.
+Since we want to use only one passport instance throughout the application,
+we export the passport instance used in the framework. To learn more about
+this, go to: https://www.passportjs.org/. If you need additional authentication
+methods, please create a new issue in GitHub.
+
+**`Link`**
+
+https://www.passportjs.org/
 
 ## Table of contents
 

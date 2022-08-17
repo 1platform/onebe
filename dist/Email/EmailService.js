@@ -13,6 +13,8 @@ var _SMTPTransport = _interopRequireDefault(require("./Transports/SMTPTransport"
 
 var _TestTransport = _interopRequireDefault(require("./Transports/TestTransport"));
 
+var _EmailTransport = _interopRequireDefault(require("./EmailTransport"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -43,11 +45,11 @@ class EmailService extends _ServiceBase.default {
 
     if (this._enableService) {
       switch (_Config.default.string("email.transport")) {
-        case "smtp":
+        case _EmailTransport.default.SMTP:
           this._transport = new _SMTPTransport.default();
           break;
 
-        case "test":
+        case _EmailTransport.default.TEST:
           this._transport = new _TestTransport.default();
           break;
       }

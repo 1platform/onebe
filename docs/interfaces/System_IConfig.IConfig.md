@@ -4,7 +4,7 @@
 
 [System/IConfig](../modules/System_IConfig.md).IConfig
 
-Configuration interface.
+The definition of the configuration object.
 
 ## Indexable
 

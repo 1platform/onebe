@@ -14,4 +14,7 @@
 
 • `Const` **defaultDocsConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for the Documentation.
+Documentation system configuration object.
+
+In this file you can change various configuration parameters related to the
+documentation system.

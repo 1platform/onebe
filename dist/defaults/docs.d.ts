@@ -1,6 +1,9 @@
 import IConfig from "../System/IConfig";
 /**
- * Default configuration for the Documentation.
+ * Documentation system configuration object.
+ *
+ * In this file you can change various configuration parameters related to the
+ * documentation system.
  */
 declare const defaultDocsConfig: IConfig;
 export default defaultDocsConfig;

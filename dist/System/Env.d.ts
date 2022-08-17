@@ -7,21 +7,21 @@ export declare class Environment {
      * Returns the value of a given environment variable.
      *
      * @param field The name of the environmental variable.
-     * @param defaultValue The default value if the variable doesn't exists.
+     * @param defaultValue The default value if the variable doesn't exist.
      */
     get(field: string, defaultValue?: any): string | null;
     /**
      * Returns the integer value of a given environment variable.
      *
      * @param field The name of the environmental variable.
-     * @param defaultValue The default value if the variable doesn't exists.
+     * @param defaultValue The default value if the variable doesn't exist.
      */
     int(field: string, defaultValue?: number): number;
     /**
      * Returns the number value of a given environment variable.
      *
      * @param field The name of the environmental variable.
-     * @param defaultValue The default value if the variable doesn't exists.
+     * @param defaultValue The default value if the variable doesn't exist.
      */
     number(field: string, defaultValue?: number): number;
     /**
@@ -34,7 +34,7 @@ export declare class Environment {
      * An alias for the Env.get method.
      *
      * @param field The name of the environmental variable.
-     * @param defaultValue The default value if the variable doesn't exists.
+     * @param defaultValue The default value if the variable doesn't exist.
      */
     string(field: string, defaultValue?: string): string;
     /**
@@ -43,6 +43,13 @@ export declare class Environment {
      * @param flagName The name of the flag.
      */
     flag(flagName: string): boolean;
+    /**
+     * Returns a valid URL value of a given environment variable.
+     *
+     * @param field The name of the flag.
+     * @param defaultValue The default value if the variable doesn't exist.
+     */
+    url(field: string, defaultValue?: string): string;
 }
 declare const Env: Environment;
 export default Env;

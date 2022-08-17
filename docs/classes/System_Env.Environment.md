@@ -21,6 +21,7 @@ by the module to get various environment variable values.
 - [int](System_Env.Environment.md#int)
 - [number](System_Env.Environment.md#number)
 - [string](System_Env.Environment.md#string)
+- [url](System_Env.Environment.md#url)
 
 ## Constructors
 
@@ -77,7 +78,7 @@ Returns the value of a given environment variable.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `field` | `string` | `undefined` | The name of the environmental variable. |
-| `defaultValue` | `any` | `null` | The default value if the variable doesn't exists. |
+| `defaultValue` | `any` | `null` | The default value if the variable doesn't exist. |
 
 #### Returns
 
@@ -96,7 +97,7 @@ Returns the integer value of a given environment variable.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `field` | `string` | `undefined` | The name of the environmental variable. |
-| `defaultValue` | `number` | `0` | The default value if the variable doesn't exists. |
+| `defaultValue` | `number` | `0` | The default value if the variable doesn't exist. |
 
 #### Returns
 
@@ -115,7 +116,7 @@ Returns the number value of a given environment variable.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `field` | `string` | `undefined` | The name of the environmental variable. |
-| `defaultValue` | `number` | `0` | The default value if the variable doesn't exists. |
+| `defaultValue` | `number` | `0` | The default value if the variable doesn't exist. |
 
 #### Returns
 
@@ -134,7 +135,26 @@ An alias for the Env.get method.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `field` | `string` | `undefined` | The name of the environmental variable. |
-| `defaultValue` | `string` | `""` | The default value if the variable doesn't exists. |
+| `defaultValue` | `string` | `""` | The default value if the variable doesn't exist. |
+
+#### Returns
+
+`string`
+
+___
+
+### url
+
+▸ **url**(`field`, `defaultValue?`): `string`
+
+Returns a valid URL value of a given environment variable.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `field` | `string` | `undefined` | The name of the flag. |
+| `defaultValue` | `string` | `""` | The default value if the variable doesn't exist. |
 
 #### Returns
 

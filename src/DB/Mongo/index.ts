@@ -4,7 +4,12 @@ import Config from "../../System/Config";
 import { getDefaultLogger } from "../../System/Logger";
 
 /**
- * Class representing a Mongo DB handler
+ * Mongo connection handler class.
+ *
+ * Using this class you can connect and use MongoDB and Mongoose in
+ * your application. We would recommend using TypeORM for the database
+ * handling part, but if you need a simpler ORM for your application,
+ * use this module.
  */
 export default class Mongo {
   /**
@@ -17,7 +22,7 @@ export default class Mongo {
   private _try = 0;
 
   /**
-   * Calls the respective init method
+   * Performs the database connection and initialisation.
    */
   public init(): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -26,9 +31,14 @@ export default class Mongo {
   }
 
   /**
-   * Initializes database connection
+   * Performs the database connection and initialisation. If the database connection fails,
+   * it will retry for the `_maxRetry` number of times, with a 5 seconds delay.
+   * If the connection fails after `_maxRetry` number of times, it will throw an error.
+   *
+   * @param resolve The function used to send a successful message to the caller function.
+   * @param reject The function used to send an error message to the caller function.
    */
-  private _init(resolve, reject): void {
+  private _init(resolve: (value?: any | PromiseLike<any>) => void, reject: (reason?: any) => void): void {
     mongoose.connect(
       Config.string("db.mongo.url", "mongodb://localhost:27017/onebe"),
       {

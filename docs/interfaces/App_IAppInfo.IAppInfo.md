@@ -4,7 +4,10 @@
 
 [App/IAppInfo](../modules/App_IAppInfo.md).IAppInfo
 
-Application Information interface.
+The Application Information interface.
+
+This interface describes the object with all the information about
+the application.
 
 ## Table of contents
 

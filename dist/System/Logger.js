@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.NoLogger = exports.Logger = exports.FileLogger = exports.ConsoleLogger = void 0;
+exports.NoLogger = exports.Logger = exports.JSONLogger = exports.FileLogger = exports.ConsoleLogger = void 0;
 exports.getDefaultLogger = getDefaultLogger;
 exports.setDefaultLogger = setDefaultLogger;
 
@@ -30,10 +30,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  */
 class Logger {
   /**
-   * The logger object we will use for logging.
-   */
-
-  /**
    * The constructor of the logger class.
    *
    * @param logLevel The level of logging we will use in our application.
@@ -49,10 +45,13 @@ class Logger {
     });
   }
   /**
-   * Getter for the logger object.
+   * The logger object we will use for logging.
    */
 
 
+  /**
+   * Getter for the logger object.
+   */
   get log() {
     return this._log;
   }
@@ -191,7 +190,7 @@ class NoLoggerTransport extends _winstonTransport.default {
 
 }
 /**
- * The no logger logger that can be used in our application.
+ * The NoLogger logger that can be used in our application.
  */
 
 
@@ -205,11 +204,42 @@ class NoLogger extends Logger {
 
 }
 /**
- * The default logger of the application.
+ *
  */
 
 
 exports.NoLogger = NoLogger;
+
+class JSONLogger extends Logger {
+  constructor(logLevel, isFile = false, options) {
+    super(logLevel, new NoLoggerTransport());
+    let transport;
+
+    if (options) {
+      transport = new _winston.default.transports.File(_objectSpread({
+        filename: _Config.default.string("logs.filename", "app.log"),
+        dirname: _Config.default.string("logs.folder", _path.default.join(process.cwd(), "storage", "logs"))
+      }, options || {}));
+    } else {
+      transport = new _winston.default.transports.Console({
+        format: _winston.default.format.json()
+      });
+    }
+
+    this._log = _winston.default.createLogger({
+      level: logLevel.toString() || _LogLevel.default.INFO,
+      format: _winston.default.format.json(),
+      transports: [transport]
+    });
+  }
+
+}
+/**
+ * The default logger of the application.
+ */
+
+
+exports.JSONLogger = JSONLogger;
 let DefaultLogger = new ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]);
 /**
  * Function used to change the default logger of the application.

@@ -4,7 +4,7 @@
 
 [Authentication/IPayload](../modules/Authentication_IPayload.md).IPayload
 
-The payload that we store in a JWT Token.
+The payload that the application will store in a JWT Token.
 
 ## Indexable
 

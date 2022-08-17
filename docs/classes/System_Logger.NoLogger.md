@@ -4,7 +4,7 @@
 
 [System/Logger](../modules/System_Logger.md).NoLogger
 
-The no logger logger that can be used in our application.
+The NoLogger logger that can be used in our application.
 
 ## Hierarchy
 
@@ -51,7 +51,7 @@ The constructor of the logger class.
 
 ### \_log
 
-• `Protected` `Readonly` **\_log**: `Logger`
+• `Protected` **\_log**: `Logger`
 
 The logger object we will use for logging.
 

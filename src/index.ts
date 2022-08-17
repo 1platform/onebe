@@ -9,10 +9,11 @@ import i18n from "./i18n";
 import Router from "./Router";
 import Scheduler from "./Scheduler";
 import Config from "./System/Config";
-import { ConsoleLogger, FileLogger, NoLogger, setDefaultLogger } from "./System/Logger";
+import { ConsoleLogger, FileLogger, JSONLogger, NoLogger, setDefaultLogger } from "./System/Logger";
 import LoggerType from "./System/LoggerType";
 import LogLevel from "./System/LogLevel";
 import MetadataStore from "./Documentation/MetadataStore";
+import DocsController from "./Documentation/DocsController";
 
 /**
  * Framework configuration options.
@@ -66,6 +67,12 @@ export default async function init(props: IOneBEOptions): Promise<(strategyProps
       case LoggerType.FILE:
         setDefaultLogger(new FileLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]));
         break;
+      case LoggerType.JSON:
+        setDefaultLogger(new JSONLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]));
+        break;
+      case LoggerType.JSON_FILE:
+        setDefaultLogger(new JSONLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()], true));
+        break;
     }
   }
 
@@ -85,6 +92,7 @@ export default async function init(props: IOneBEOptions): Promise<(strategyProps
     });
 
     return Router.register(path.resolve(props.currentDir, props.controllersDir)).then(() => {
+      Router.add(new DocsController());
       app.Scheduler.run();
       app.HTTP.start();
     });

@@ -1,0 +1,24 @@
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [SMS/SMSProvider](../modules/SMS_SMSProvider.md) / SMSProvider
+
+# Enumeration: SMSProvider
+
+[SMS/SMSProvider](../modules/SMS_SMSProvider.md).SMSProvider
+
+## Table of contents
+
+### Enumeration Members
+
+- [TWILIO](SMS_SMSProvider.SMSProvider.md#twilio)
+- [VONAGE](SMS_SMSProvider.SMSProvider.md#vonage)
+
+## Enumeration Members
+
+### TWILIO
+
+• **TWILIO** = ``"twilio"``
+
+___
+
+### VONAGE
+
+• **VONAGE** = ``"vonage"``

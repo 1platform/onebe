@@ -1,5 +1,8 @@
 /**
- * Application Information interface.
+ * The Application Information interface.
+ *
+ * This interface describes the object with all the information about
+ * the application.
  */
 export default interface IAppInfo {
   /**
@@ -18,6 +21,7 @@ export default interface IAppInfo {
    * The URL of the application.
    */
   appURL?: string;
+
   /**
    * The name of the backend framework used.
    */

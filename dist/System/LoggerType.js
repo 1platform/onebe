@@ -15,6 +15,8 @@ var LoggerType;
 (function (LoggerType) {
   LoggerType["CONSOLE"] = "console";
   LoggerType["FILE"] = "file";
+  LoggerType["JSON"] = "json";
+  LoggerType["JSON_FILE"] = "json_file";
 })(LoggerType || (LoggerType = {}));
 
 var _default = LoggerType;

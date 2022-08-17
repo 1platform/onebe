@@ -13,6 +13,8 @@ var _TwilioTransport = _interopRequireDefault(require("./Transports/TwilioTransp
 
 var _VonageTransport = _interopRequireDefault(require("./Transports/VonageTransport"));
 
+var _SMSProvider = _interopRequireDefault(require("./SMSProvider"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -43,11 +45,11 @@ class SMSService extends _ServiceBase.default {
 
     if (this._enableService) {
       switch (_Config.default.string("sms.provider")) {
-        case "vonage":
+        case _SMSProvider.default.VONAGE:
           this._transport = new _VonageTransport.default();
           break;
 
-        case "twilio":
+        case _SMSProvider.default.TWILIO:
           this._transport = new _TwilioTransport.default();
           break;
       }

@@ -4,36 +4,60 @@ import { getDefaultLogger } from "../../System/Logger";
 import { DataSourceOptions } from "typeorm/data-source/DataSourceOptions";
 
 /**
- * TypeORM database handler class.
+ * TypeORM connection handler class.
+ *
+ * Using this class you can connect and use any of the following database
+ * engines in your application: MongoDB, MySQL, MariaDB, Postgres. By using
+ * TypeORM you can easily define model classes that use all the features
+ * of TypeScript. Also, when using TypeORM, the entity/model documentation
+ * is done for you.
  */
 export default class TypeORM {
+  /**
+   * The default database connection object.
+   */
   protected static _connection: DataSource = null;
 
   /**
-   * Default connection handler.
+   * Getter for the default database connection object.
    */
   public static get connection(): DataSource {
     return TypeORM._connection;
   }
 
+  /**
+   * The singleton instance for the TypeORM class.
+   */
   protected static _instance: TypeORM = null;
 
   /**
-   * TypeORM instance getter.
+   * Getter for the TypeORM instance object.
    */
   public static get instance(): TypeORM {
     return TypeORM._instance;
   }
 
   /**
-   * Calls the Database initialization method.
+   * Database initialisation method.
+   *
+   * Through this method, the framework connects your application to a database
+   * server and stores that connection for later use.
    */
   public async init(): Promise<void> {
-    const engine = Config.string("db.engine", "mysql") as DatabaseType;
-    TypeORM._connection = await this.connect(engine);
+    const configurationObject = Config.object(`db.${ Config.string("db.configuration") }`);
+    TypeORM._connection = await this.connect(configurationObject.engine as DatabaseType);
     TypeORM._instance = this;
   }
 
+  /**
+   * Method used to create a new database connection that can be used
+   * by your application.
+   *
+   * If needed, at any moment, you can create a new database connection
+   * to any other database that you might need.
+   *
+   * @param configurationName The name of the configuration object used to perform the connection.
+   */
   public connect(configurationName: string): Promise<DataSource> {
     const dbConfig = Config.object(`db.${ configurationName }`);
     const config: DataSourceOptions = {

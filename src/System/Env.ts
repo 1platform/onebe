@@ -11,7 +11,7 @@ export class Environment {
    * Returns the value of a given environment variable.
    *
    * @param field The name of the environmental variable.
-   * @param defaultValue The default value if the variable doesn't exists.
+   * @param defaultValue The default value if the variable doesn't exist.
    */
   public get(field: string, defaultValue = null): string | null {
     return process.env[field] || defaultValue;
@@ -21,7 +21,7 @@ export class Environment {
    * Returns the integer value of a given environment variable.
    *
    * @param field The name of the environmental variable.
-   * @param defaultValue The default value if the variable doesn't exists.
+   * @param defaultValue The default value if the variable doesn't exist.
    */
   public int(field: string, defaultValue = 0): number {
     return parseInt(this.get(field)) || Math.floor(defaultValue);
@@ -31,7 +31,7 @@ export class Environment {
    * Returns the number value of a given environment variable.
    *
    * @param field The name of the environmental variable.
-   * @param defaultValue The default value if the variable doesn't exists.
+   * @param defaultValue The default value if the variable doesn't exist.
    */
   public number(field: string, defaultValue = 0): number {
     return Number(this.get(field)) || Math.floor(defaultValue);
@@ -51,7 +51,7 @@ export class Environment {
    * An alias for the Env.get method.
    *
    * @param field The name of the environmental variable.
-   * @param defaultValue The default value if the variable doesn't exists.
+   * @param defaultValue The default value if the variable doesn't exist.
    */
   public string(field: string, defaultValue = ""): string {
     return this.get(field) || defaultValue;
@@ -64,6 +64,16 @@ export class Environment {
    */
   public flag(flagName: string): boolean {
     return this.boolean(flagName);
+  }
+
+  /**
+   * Returns a valid URL value of a given environment variable.
+   *
+   * @param field The name of the flag.
+   * @param defaultValue The default value if the variable doesn't exist.
+   */
+  public url(field: string, defaultValue = ""): string {
+    return (this.get(field) || defaultValue).replace(/(https?:\/\/)|(\/)+/g, "$1$2");
   }
 }
 

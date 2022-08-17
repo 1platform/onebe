@@ -1,8 +1,8 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/ContextAPI](../modules/Documentation_Helpers_ContextAPI.md) / ContextAPI
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
 
 # Class: ContextAPI<BodyRequest\>
 
-[Documentation/Helpers/ContextAPI](../modules/Documentation_Helpers_ContextAPI.md).ContextAPI
+[Router/ContextAPI](../modules/Router_ContextAPI.md).ContextAPI
 
 ## Type parameters
 
@@ -14,35 +14,35 @@
 
 ### Constructors
 
-- [constructor](Documentation_Helpers_ContextAPI.ContextAPI.md#constructor)
+- [constructor](Router_ContextAPI.ContextAPI.md#constructor)
 
 ### Accessors
 
-- [appURL](Documentation_Helpers_ContextAPI.ContextAPI.md#appurl)
-- [body](Documentation_Helpers_ContextAPI.ContextAPI.md#body)
-- [files](Documentation_Helpers_ContextAPI.ContextAPI.md#files)
-- [headers](Documentation_Helpers_ContextAPI.ContextAPI.md#headers)
-- [pageURL](Documentation_Helpers_ContextAPI.ContextAPI.md#pageurl)
-- [parameters](Documentation_Helpers_ContextAPI.ContextAPI.md#parameters)
-- [queryParameters](Documentation_Helpers_ContextAPI.ContextAPI.md#queryparameters)
-- [request](Documentation_Helpers_ContextAPI.ContextAPI.md#request)
-- [response](Documentation_Helpers_ContextAPI.ContextAPI.md#response)
-- [sessionID](Documentation_Helpers_ContextAPI.ContextAPI.md#sessionid)
+- [appURL](Router_ContextAPI.ContextAPI.md#appurl)
+- [body](Router_ContextAPI.ContextAPI.md#body)
+- [files](Router_ContextAPI.ContextAPI.md#files)
+- [headers](Router_ContextAPI.ContextAPI.md#headers)
+- [pageURL](Router_ContextAPI.ContextAPI.md#pageurl)
+- [parameters](Router_ContextAPI.ContextAPI.md#parameters)
+- [queryParameters](Router_ContextAPI.ContextAPI.md#queryparameters)
+- [request](Router_ContextAPI.ContextAPI.md#request)
+- [response](Router_ContextAPI.ContextAPI.md#response)
+- [sessionID](Router_ContextAPI.ContextAPI.md#sessionid)
 
 ### Methods
 
-- [getBody](Documentation_Helpers_ContextAPI.ContextAPI.md#getbody)
-- [getBodyProperty](Documentation_Helpers_ContextAPI.ContextAPI.md#getbodyproperty)
-- [getFiles](Documentation_Helpers_ContextAPI.ContextAPI.md#getfiles)
-- [getHeader](Documentation_Helpers_ContextAPI.ContextAPI.md#getheader)
-- [getParameter](Documentation_Helpers_ContextAPI.ContextAPI.md#getparameter)
-- [getParameterNumber](Documentation_Helpers_ContextAPI.ContextAPI.md#getparameternumber)
-- [getQuery](Documentation_Helpers_ContextAPI.ContextAPI.md#getquery)
-- [getQueryArray](Documentation_Helpers_ContextAPI.ContextAPI.md#getqueryarray)
-- [getQueryBoolean](Documentation_Helpers_ContextAPI.ContextAPI.md#getqueryboolean)
-- [getQueryNumber](Documentation_Helpers_ContextAPI.ContextAPI.md#getquerynumber)
-- [getQueryString](Documentation_Helpers_ContextAPI.ContextAPI.md#getquerystring)
-- [setHeader](Documentation_Helpers_ContextAPI.ContextAPI.md#setheader)
+- [getBody](Router_ContextAPI.ContextAPI.md#getbody)
+- [getBodyProperty](Router_ContextAPI.ContextAPI.md#getbodyproperty)
+- [getFiles](Router_ContextAPI.ContextAPI.md#getfiles)
+- [getHeader](Router_ContextAPI.ContextAPI.md#getheader)
+- [getParameter](Router_ContextAPI.ContextAPI.md#getparameter)
+- [getParameterNumber](Router_ContextAPI.ContextAPI.md#getparameternumber)
+- [getQuery](Router_ContextAPI.ContextAPI.md#getquery)
+- [getQueryArray](Router_ContextAPI.ContextAPI.md#getqueryarray)
+- [getQueryBoolean](Router_ContextAPI.ContextAPI.md#getqueryboolean)
+- [getQueryNumber](Router_ContextAPI.ContextAPI.md#getquerynumber)
+- [getQueryString](Router_ContextAPI.ContextAPI.md#getquerystring)
+- [setHeader](Router_ContextAPI.ContextAPI.md#setheader)
 
 ## Constructors
 

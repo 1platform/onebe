@@ -32,8 +32,10 @@
 - [endpointThrows](Documentation_RouteDefinition.RouteDefinition.md#endpointthrows)
 - [getEndpoint](Documentation_RouteDefinition.RouteDefinition.md#getendpoint)
 - [group](Documentation_RouteDefinition.RouteDefinition.md#group)
+- [isDocs](Documentation_RouteDefinition.RouteDefinition.md#isdocs)
 - [markAsAPI](Documentation_RouteDefinition.RouteDefinition.md#markasapi)
 - [markAsCustom](Documentation_RouteDefinition.RouteDefinition.md#markascustom)
+- [markAsDocs](Documentation_RouteDefinition.RouteDefinition.md#markasdocs)
 - [route](Documentation_RouteDefinition.RouteDefinition.md#route)
 - [setDescription](Documentation_RouteDefinition.RouteDefinition.md#setdescription)
 - [setName](Documentation_RouteDefinition.RouteDefinition.md#setname)
@@ -379,6 +381,22 @@ ___
 
 ___
 
+### isDocs
+
+▸ **isDocs**(`controller`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
+
+#### Returns
+
+`boolean`
+
+___
+
 ### markAsAPI
 
 ▸ **markAsAPI**(`controller`, `basePath`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
@@ -406,6 +424,22 @@ ___
 | :------ | :------ |
 | `controller` | `string` |
 | `basePath` | `string` |
+
+#### Returns
+
+[`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+___
+
+### markAsDocs
+
+▸ **markAsDocs**(`controller`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | `string` |
 
 #### Returns
 

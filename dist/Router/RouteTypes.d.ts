@@ -3,8 +3,8 @@ import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
 import { IResponse, IRouteHookParameter } from "./RouteInterfaces";
 import { Constructor } from "../Documentation/MetadataTypes";
-import AuthContextAPI from "../Documentation/Helpers/AuthContextAPI";
-import ContextAPI from "../Documentation/Helpers/ContextAPI";
+import AuthContextAPI from "./AuthContextAPI";
+import ContextAPI from "./ContextAPI";
 /**
  * Type used to define a Route Decorator function.
  *

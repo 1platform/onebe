@@ -4,7 +4,7 @@
 
 [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md).ObservableType
 
-Defines Observable Types
+A list with what can be observed in a Mongoose model.
 
 ## Table of contents
 
@@ -19,8 +19,12 @@ Defines Observable Types
 
 • **REMOVE** = ``"remove"``
 
+Observe the remove/delete operation.
+
 ___
 
 ### SAVE
 
 • **SAVE** = ``"save"``
+
+Observe the save operation.

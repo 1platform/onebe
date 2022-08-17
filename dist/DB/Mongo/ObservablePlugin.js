@@ -13,39 +13,40 @@ var _Observable = _interopRequireDefault(require("./Observable"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The observer instance we use to observe changes.
+ * The observer instance we use to observe database changes.
  */
 const observer = new _Observable.default();
 exports.observer = observer;
 
 /**
- * Creates an observer for our model.
+ * Adds observable functionality to any Mongoose models that we want to be
+ * observable.
  *
- * @param name The name of the model.
+ * @param modelName The name of the model we want to observe.
  */
-function observerPlugin(name) {
+function observerPlugin(modelName) {
   return (schema, opts) => {
     schema.pre("save", next => {
-      const emitAction = `${name}:save:pre`.toLowerCase();
-      (0, _Logger.getDefaultLogger)().debug(`Model: [${name}] emits: [${name}:save:pre]`);
+      const emitAction = `${modelName}:save:pre`.toLowerCase();
+      (0, _Logger.getDefaultLogger)().debug(`Model: [${modelName}] emits: [${modelName}:save:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.pre("remove", next => {
-      const emitAction = `${name}:remove:pre`.toLowerCase();
-      (0, _Logger.getDefaultLogger)().debug(`Model: [${name}] emits: [${name}:remove:pre]`);
+      const emitAction = `${modelName}:remove:pre`.toLowerCase();
+      (0, _Logger.getDefaultLogger)().debug(`Model: [${modelName}] emits: [${modelName}:remove:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.post("save", (doc, next) => {
-      const emitAction = `${name}:save:post`.toLowerCase();
-      (0, _Logger.getDefaultLogger)().debug(`Model: [${name}] emits: [${name}:save:post]`);
+      const emitAction = `${modelName}:save:post`.toLowerCase();
+      (0, _Logger.getDefaultLogger)().debug(`Model: [${modelName}] emits: [${modelName}:save:post]`);
       observer.emit(emitAction, doc);
       next();
     });
     schema.post("remove", (doc, next) => {
-      const emitAction = `${name}:remove:post`.toLowerCase();
-      (0, _Logger.getDefaultLogger)().debug(`Model: [${name}] emits: [${name}:remove:post]`);
+      const emitAction = `${modelName}:remove:post`.toLowerCase();
+      (0, _Logger.getDefaultLogger)().debug(`Model: [${modelName}] emits: [${modelName}:remove:post]`);
       observer.emit(emitAction, doc);
       next();
     });

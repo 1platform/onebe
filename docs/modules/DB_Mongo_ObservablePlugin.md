@@ -27,7 +27,7 @@
 
 ▸ (`err?`): `void`
 
-The definition of the next hook function.
+Type definition for the function used to call the next available hook (callback).
 
 ##### Parameters
 
@@ -56,7 +56,7 @@ ___
 
 ▸ (`schema`, `opts?`): `void`
 
-The definition of the observer plugin function returned by the observerPlugin function.
+The definition of the observer plugin function returned by the Observer Plugin function.
 
 ##### Parameters
 
@@ -75,15 +75,16 @@ The definition of the observer plugin function returned by the observerPlugin fu
 
 • `Const` **observer**: [`Observable`](../classes/DB_Mongo_Observable.Observable.md)
 
-The observer instance we use to observe changes.
+The observer instance we use to observe database changes.
 
 ## Functions
 
 ### observerPlugin
 
-▸ **observerPlugin**<`DocType`, `SchemaDefinitionType`\>(`name`): [`PluginFunction`](DB_Mongo_ObservablePlugin.md#pluginfunction)<`DocType`, `SchemaDefinitionType`\>
+▸ **observerPlugin**<`DocType`, `SchemaDefinitionType`\>(`modelName`): [`PluginFunction`](DB_Mongo_ObservablePlugin.md#pluginfunction)<`DocType`, `SchemaDefinitionType`\>
 
-Creates an observer for our model.
+Adds observable functionality to any Mongoose models that we want to be
+observable.
 
 #### Type parameters
 
@@ -96,7 +97,7 @@ Creates an observer for our model.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `name` | `string` | The name of the model. |
+| `modelName` | `string` | The name of the model we want to observe. |
 
 #### Returns
 

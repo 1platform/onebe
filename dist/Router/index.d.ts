@@ -20,6 +20,12 @@ export declare class RouterBase {
      * @param controllersPath The path from which we will import controllers.
      */
     register(controllersPath: string): Promise<void>;
+    /**
+     * Register a controller
+     *
+     * @param controller
+     */
+    add(controller: Route): Promise<void>;
     parseRoute(route: IRouteMetadata): void;
     protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata): void;
     /**

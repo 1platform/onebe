@@ -6,44 +6,36 @@ import Config from "../System/Config";
 import IPayload from "./IPayload";
 
 /**
- * Signs in a user with the given payload.
+ * Creates a signed JWT Token that can be sent to the user and used
+ * for the Bearer authentication method.
  *
- * @param payload The payload to authenticate.
- * @param rememberMe Should the token be remembered for a longer period.
+ * @param payload The payload we want to sign.
+ * @param rememberMe Should the token be valid for a longer period.
  */
 export function sign(payload: IPayload | string, rememberMe = false): string {
-  return jwt.sign(
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    payload as object | string,
-    Config.string("auth.jwt.secret"),
-    {
-      expiresIn: rememberMe ? Config.string("auth.jwt.rememberMeTime", "1d") : Config.string("auth.jwt.expireTime", "1d"),
-      issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
-      audience: Config.string("auth.jwt.audience", "onebe.sprk.dev"),
-    }
-  );
+  return jwt.sign(payload as any, Config.string("auth.jwt.secret"), {
+    expiresIn: rememberMe ? Config.string("auth.jwt.rememberMeTime", "1d") : Config.string("auth.jwt.expireTime", "1d"),
+    issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
+    audience: Config.string("auth.jwt.audience", "onebe.sprk.dev"),
+  });
 }
 
 /**
- * Signs in an application with the given payload.
+ * Creates a short timed signed JWT Token that can be sent to the user and used
+ * for the Bearer authentication method.
  *
- * @param payload The payload to authenticate.
+ * @param payload The payload we want to sign.
  */
 export function shortLiveToken(payload: IPayload | string): string {
-  return jwt.sign(
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    payload as object | string,
-    Config.string("auth.jwt.secret"),
-    {
-      expiresIn: "1m",
-      issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
-      audience: Config.string("auth.jwt.audience", "onebe.sprk.dev"),
-    }
-  );
+  return jwt.sign(payload as any, Config.string("auth.jwt.secret"), {
+    expiresIn: "1m",
+    issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
+    audience: Config.string("auth.jwt.audience", "onebe.sprk.dev"),
+  });
 }
 
 /**
- * Verifies if the given token is valid or not.
+ * Checks if the given token is valid or not.
  *
  * @param token The token to be verified.
  */
@@ -60,7 +52,7 @@ export function verify(token: string): boolean {
 /**
  * Decodes the given token.
  *
- * @param token The token to be token.
+ * @param token The token to be decoded.
  */
 export function decode(token: string): IPayload | string {
   return jwt.decode(token) as IPayload | string;
@@ -69,14 +61,14 @@ export function decode(token: string): IPayload | string {
 /**
  * Extracts the token from the request object.
  *
- * @param req The request object.
+ * @param request The request object.
  */
-export function extractToken(req: Request): string {
-  let authParams = parse(req.headers.authorization);
+export function extractToken(request: Request): string {
+  let authParams = parse(request.headers.authorization);
   if (authParams && authParams.scheme.toLowerCase() === "bearer") {
     return authParams.value;
   }
 
-  authParams = ExtractJwt.fromUrlQueryParameter("bearer")(req);
+  authParams = ExtractJwt.fromUrlQueryParameter("bearer")(request);
   return authParams || "";
 }

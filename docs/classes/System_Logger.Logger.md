@@ -16,6 +16,8 @@ The base logger class.
 
   ↳ [`NoLogger`](System_Logger.NoLogger.md)
 
+  ↳ [`JSONLogger`](System_Logger.JSONLogger.md)
+
 ## Table of contents
 
 ### Constructors
@@ -58,7 +60,7 @@ The constructor of the logger class.
 
 ### \_log
 
-• `Protected` `Readonly` **\_log**: `Logger`
+• `Protected` **\_log**: `Logger`
 
 The logger object we will use for logging.
 

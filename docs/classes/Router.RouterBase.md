@@ -21,6 +21,7 @@
 
 ### Methods
 
+- [add](Router.RouterBase.md#add)
 - [loadEndpoint](Router.RouterBase.md#loadendpoint)
 - [parseRoute](Router.RouterBase.md#parseroute)
 - [register](Router.RouterBase.md#register)
@@ -60,6 +61,24 @@ The getter for the base router we will use.
 `Router`
 
 ## Methods
+
+### add
+
+▸ **add**(`controller`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Register a controller
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `controller` | [`Route`](Router_Route.Route.md) |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
 
 ### loadEndpoint
 

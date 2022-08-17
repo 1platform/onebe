@@ -6,10 +6,9 @@ import { EntityPropertyDataTypes } from "../Definition/DataTypes";
 
 export function Entity<T extends Constructor>(name?: string, description?: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): T {
-    const entity = new BaseClass();
     const entityMetadata = MetadataStore.instance.entity;
-    entityMetadata.update(name ?? entity.constructor.name, description ?? "");
-    entityMetadata.extends(name, Object.getPrototypeOf(Object.getPrototypeOf(entity)).constructor.name);
+    entityMetadata.update(name ?? BaseClass.name, description ?? "");
+    entityMetadata.extends(name, Object.getPrototypeOf(BaseClass).name);
 
     return BaseClass;
   };

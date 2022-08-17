@@ -79,6 +79,17 @@ export default class RouteDefinition {
     return this;
   }
 
+  public markAsDocs(controller: string): RouteDefinition {
+    const route = this.route(controller);
+    route.isDocs = true;
+
+    return this;
+  }
+
+  public isDocs(controller: string): boolean {
+    return this.route(controller).isDocs;
+  }
+
   public group(controller: string, groupName: string): RouteDefinition {
     const route = this.route(controller);
     route.group = groupName.split("/");

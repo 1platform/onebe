@@ -1,5 +1,5 @@
 /**
- * The payload that we store in a JWT Token.
+ * The payload that the application will store in a JWT Token.
  */
 export default interface IPayload {
   /**

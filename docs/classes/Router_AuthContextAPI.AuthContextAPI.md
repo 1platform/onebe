@@ -1,26 +1,26 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/AuthContextAPI](../modules/Documentation_Helpers_AuthContextAPI.md) / AuthContextAPI
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Router/AuthContextAPI](../modules/Router_AuthContextAPI.md) / AuthContextAPI
 
 # Class: AuthContextAPI
 
-[Documentation/Helpers/AuthContextAPI](../modules/Documentation_Helpers_AuthContextAPI.md).AuthContextAPI
+[Router/AuthContextAPI](../modules/Router_AuthContextAPI.md).AuthContextAPI
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#constructor)
+- [constructor](Router_AuthContextAPI.AuthContextAPI.md#constructor)
 
 ### Accessors
 
-- [isAuthenticated](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#isauthenticated)
-- [token](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#token)
-- [user](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#user)
+- [isAuthenticated](Router_AuthContextAPI.AuthContextAPI.md#isauthenticated)
+- [token](Router_AuthContextAPI.AuthContextAPI.md#token)
+- [user](Router_AuthContextAPI.AuthContextAPI.md#user)
 
 ### Methods
 
-- [get](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#get)
-- [logout](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#logout)
-- [set](Documentation_Helpers_AuthContextAPI.AuthContextAPI.md#set)
+- [get](Router_AuthContextAPI.AuthContextAPI.md#get)
+- [logout](Router_AuthContextAPI.AuthContextAPI.md#logout)
+- [set](Router_AuthContextAPI.AuthContextAPI.md#set)
 
 ## Constructors
 

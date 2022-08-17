@@ -12,6 +12,8 @@ export default class RouteDefinition {
     route(controller: string): IRouteMetadata;
     markAsAPI(controller: string, basePath: string): RouteDefinition;
     markAsCustom(controller: string, basePath: string): RouteDefinition;
+    markAsDocs(controller: string): RouteDefinition;
+    isDocs(controller: string): boolean;
     group(controller: string, groupName: string): RouteDefinition;
     endpoint<Request = any, Response = any>(controller: string, options: IEndpointOptions): IEndpointMetadata;
     endpointDescription<Request = any, Response = any>(controller: string, methodName: string, description?: string): IEndpointMetadata;

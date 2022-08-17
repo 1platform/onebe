@@ -24,7 +24,7 @@ Decodes the given token.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `token` | `string` | The token to be token. |
+| `token` | `string` | The token to be decoded. |
 
 #### Returns
 
@@ -34,7 +34,7 @@ ___
 
 ### extractToken
 
-▸ **extractToken**(`req`): `string`
+▸ **extractToken**(`request`): `string`
 
 Extracts the token from the request object.
 
@@ -42,7 +42,7 @@ Extracts the token from the request object.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `req` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> | The request object. |
+| `request` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> | The request object. |
 
 #### Returns
 
@@ -54,13 +54,14 @@ ___
 
 ▸ **shortLiveToken**(`payload`): `string`
 
-Signs in an application with the given payload.
+Creates a short timed signed JWT Token that can be sent to the user and used
+for the Bearer authentication method.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `payload` | `string` \| [`IPayload`](../interfaces/Authentication_IPayload.IPayload.md) | The payload to authenticate. |
+| `payload` | `string` \| [`IPayload`](../interfaces/Authentication_IPayload.IPayload.md) | The payload we want to sign. |
 
 #### Returns
 
@@ -72,14 +73,15 @@ ___
 
 ▸ **sign**(`payload`, `rememberMe?`): `string`
 
-Signs in a user with the given payload.
+Creates a signed JWT Token that can be sent to the user and used
+for the Bearer authentication method.
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `payload` | `string` \| [`IPayload`](../interfaces/Authentication_IPayload.IPayload.md) | `undefined` | The payload to authenticate. |
-| `rememberMe` | `boolean` | `false` | Should the token be remembered for a longer period. |
+| `payload` | `string` \| [`IPayload`](../interfaces/Authentication_IPayload.IPayload.md) | `undefined` | The payload we want to sign. |
+| `rememberMe` | `boolean` | `false` | Should the token be valid for a longer period. |
 
 #### Returns
 
@@ -91,7 +93,7 @@ ___
 
 ▸ **verify**(`token`): `boolean`
 
-Verifies if the given token is valid or not.
+Checks if the given token is valid or not.
 
 #### Parameters
 

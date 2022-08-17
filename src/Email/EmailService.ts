@@ -3,6 +3,7 @@ import Config from "../System/Config";
 import IEmailTransport, { IEmailOptions } from "./Transports/IEmailTransport";
 import SMTPTransport from "./Transports/SMTPTransport";
 import TestTransport from "./Transports/TestTransport";
+import EmailTransport from "./EmailTransport";
 
 /**
  * Class exposing the Email sending functionality.
@@ -26,10 +27,10 @@ export default class EmailService extends ServiceBase implements IEmailTransport
     this._enableService = Config.boolean("email.enabled");
     if (this._enableService) {
       switch (Config.string("email.transport")) {
-        case "smtp":
+        case EmailTransport.SMTP:
           this._transport = new SMTPTransport();
           break;
-        case "test":
+        case EmailTransport.TEST:
           this._transport = new TestTransport();
           break;
       }

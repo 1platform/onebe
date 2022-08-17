@@ -10,11 +10,16 @@ var _Env = _interopRequireDefault(require("../System/Env"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Default configuration for Api
+ * The API routing configuration object.
+ *
+ * In this file you can change various configuration parameters related to the
+ * REST API endpoints.
  */
 const defaultAPIConfig = {
   /**
-   * The base path value, a prefix for all the paths in the app.
+   * The base path used to expose the REST API endpoints.
+   *
+   * @default /api
    */
   path: _Env.default.string("API_PATH", "/api")
 };

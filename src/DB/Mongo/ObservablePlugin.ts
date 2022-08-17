@@ -3,14 +3,14 @@ import { getDefaultLogger } from "../../System/Logger";
 import Observable from "./Observable";
 
 /**
- * The observer instance we use to observe changes.
+ * The observer instance we use to observe database changes.
  */
-const observer = new Observable();
+const observer: Observable = new Observable();
 
 export { observer };
 
 /**
- * The definition of the observer plugin function returned by the observerPlugin function.
+ * The definition of the observer plugin function returned by the Observer Plugin function.
  *
  * @param schema The schema for which we want to observe changes.
  * @param opts Various other options passed by Mongoose.
@@ -21,40 +21,43 @@ export type PluginFunction<DocType = Document, SchemaDefinitionType = undefined>
 ) => void;
 
 /**
- * The definition of the next hook function.
+ * Type definition for the function used to call the next available hook (callback).
  *
  * @param err The errors, if any, passed to the next callback.
  */
 export type HookNextFunction = (err?: CallbackError) => void;
 
 /**
- * Creates an observer for our model.
+ * Adds observable functionality to any Mongoose models that we want to be
+ * observable.
  *
- * @param name The name of the model.
+ * @param modelName The name of the model we want to observe.
  */
-export function observerPlugin<DocType = Document, SchemaDefinitionType = undefined>(name: string): PluginFunction<DocType, SchemaDefinitionType> {
+export function observerPlugin<DocType = Document, SchemaDefinitionType = undefined>(
+  modelName: string
+): PluginFunction<DocType, SchemaDefinitionType> {
   return (schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>, opts?: any) => {
     schema.pre("save", (next: HookNextFunction) => {
-      const emitAction = `${ name }:save:pre`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:save:pre]`);
+      const emitAction = `${ modelName }:save:pre`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:save:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.pre("remove", (next: HookNextFunction) => {
-      const emitAction = `${ name }:remove:pre`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:remove:pre]`);
+      const emitAction = `${ modelName }:remove:pre`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:remove:pre]`);
       observer.emit(emitAction);
       next();
     });
     schema.post("save", (doc: Document, next: HookNextFunction) => {
-      const emitAction = `${ name }:save:post`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:save:post]`);
+      const emitAction = `${ modelName }:save:post`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:save:post]`);
       observer.emit(emitAction, doc);
       next();
     });
     schema.post("remove", (doc: Document, next: HookNextFunction) => {
-      const emitAction = `${ name }:remove:post`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ name }] emits: [${ name }:remove:post]`);
+      const emitAction = `${ modelName }:remove:post`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:remove:post]`);
       observer.emit(emitAction, doc);
       next();
     });

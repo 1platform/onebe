@@ -14,4 +14,7 @@
 
 • `Const` **defaultDBConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for the Database
+The database configuration object.
+
+In this file you can change various configuration parameters related to the
+database functionality of the application.

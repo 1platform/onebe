@@ -1,13 +1,19 @@
 import App from "./App";
 
-const app = new App();
+const app: App = new App();
 
 /**
- * The global instance of the application.
+ * The Application instance that can be used throughout the application to get various pieces
+ * of information or to enable the reuse of code.
+ */
+export default app;
+
+/**
+ * The global reference to the Application object.
  */
 global.app = app;
 
 /**
- * The instance of the application.
+ * An alias for the global reference of the Application object.
  */
-export default app;
+global.onebe = app;

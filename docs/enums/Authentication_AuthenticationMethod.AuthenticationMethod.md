@@ -4,6 +4,8 @@
 
 [Authentication/AuthenticationMethod](../modules/Authentication_AuthenticationMethod.md).AuthenticationMethod
 
+A list with the supported authentication methods that can be used in your application.
+
 ## Table of contents
 
 ### Enumeration Members
@@ -17,8 +19,12 @@
 
 • **BASIC** = ``"BasicAuth"``
 
+Basic authentication method.
+
 ___
 
 ### BEARER
 
 • **BEARER** = ``"BearerAuth"``
+
+Bearer authentication method.

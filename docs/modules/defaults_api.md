@@ -14,4 +14,7 @@
 
 • `Const` **defaultAPIConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for Api
+The API routing configuration object.
+
+In this file you can change various configuration parameters related to the
+REST API endpoints.

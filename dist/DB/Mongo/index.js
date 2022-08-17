@@ -16,7 +16,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Class representing a Mongo DB handler
+ * Mongo connection handler class.
+ *
+ * Using this class you can connect and use MongoDB and Mongoose in
+ * your application. We would recommend using TypeORM for the database
+ * handling part, but if you need a simpler ORM for your application,
+ * use this module.
  */
 class Mongo {
   constructor() {
@@ -26,7 +31,7 @@ class Mongo {
   }
 
   /**
-   * Calls the respective init method
+   * Performs the database connection and initialisation.
    */
   init() {
     return new Promise((resolve, reject) => {
@@ -34,7 +39,12 @@ class Mongo {
     });
   }
   /**
-   * Initializes database connection
+   * Performs the database connection and initialisation. If the database connection fails,
+   * it will retry for the `_maxRetry` number of times, with a 5 seconds delay.
+   * If the connection fails after `_maxRetry` number of times, it will throw an error.
+   *
+   * @param resolve The function used to send a successful message to the caller function.
+   * @param reject The function used to send an error message to the caller function.
    */
 
 

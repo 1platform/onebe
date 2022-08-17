@@ -20,6 +20,7 @@ export interface IRouteMetadata {
   group?: string[];
   description?: string;
   isAPI?: boolean;
+  isDocs?: boolean;
   basePath: string[];
   customPath?: string;
   parent?: string;

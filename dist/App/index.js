@@ -11,13 +11,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const app = new _App.default();
 /**
- * The global instance of the application.
- */
-
-global.app = app;
-/**
- * The instance of the application.
+ * The Application instance that can be used throughout the application to get various pieces
+ * of information or to enable the reuse of code.
  */
 
 var _default = app;
+/**
+ * The global reference to the Application object.
+ */
+
 exports.default = _default;
+global.app = app;
+/**
+ * An alias for the global reference of the Application object.
+ */
+
+global.onebe = app;

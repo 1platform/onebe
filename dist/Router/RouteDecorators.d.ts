@@ -44,4 +44,5 @@ export declare function API<T extends Constructor>(BaseClass: T): ControllerDeco
  * @param path The custom controller path prefix.
  */
 export declare function Custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T>;
+export declare function Docs<T extends Constructor>(path?: string): ControllerDecoratorFunction<T>;
 export declare function Group<T extends Constructor>(groupName: string): ControllerDecoratorFunction<T>;

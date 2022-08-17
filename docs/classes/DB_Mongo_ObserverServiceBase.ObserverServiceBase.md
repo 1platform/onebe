@@ -1,42 +1,43 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [DB/Mongo/ObserverBase](../modules/DB_Mongo_ObserverBase.md) / ObserverBase
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [DB/Mongo/ObserverServiceBase](../modules/DB_Mongo_ObserverServiceBase.md) / ObserverServiceBase
 
-# Class: ObserverBase
+# Class: ObserverServiceBase
 
-[DB/Mongo/ObserverBase](../modules/DB_Mongo_ObserverBase.md).ObserverBase
+[DB/Mongo/ObserverServiceBase](../modules/DB_Mongo_ObserverServiceBase.md).ObserverServiceBase
 
-An abstract class representing an Observer base.
+A base abstract class used to define Services that use Mongoose models
+and require observers in order to perform various tasks.
 
 ## Hierarchy
 
 - [`ServiceBase`](Services_ServiceBase.ServiceBase.md)
 
-  ↳ **`ObserverBase`**
+  ↳ **`ObserverServiceBase`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](DB_Mongo_ObserverBase.ObserverBase.md#constructor)
+- [constructor](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#constructor)
 
 ### Properties
 
-- [\_observer](DB_Mongo_ObserverBase.ObserverBase.md#_observer)
+- [\_observer](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#_observer)
 
 ### Accessors
 
-- [validator](DB_Mongo_ObserverBase.ObserverBase.md#validator)
+- [validator](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#validator)
 
 ### Methods
 
-- [customValidate](DB_Mongo_ObserverBase.ObserverBase.md#customvalidate)
-- [register](DB_Mongo_ObserverBase.ObserverBase.md#register)
-- [validate](DB_Mongo_ObserverBase.ObserverBase.md#validate)
+- [customValidate](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#customvalidate)
+- [register](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#register)
+- [validate](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#validate)
 
 ## Constructors
 
 ### constructor
 
-• **new ObserverBase**()
+• **new ObserverServiceBase**()
 
 #### Inherited from
 
@@ -48,7 +49,8 @@ An abstract class representing an Observer base.
 
 • `Protected` **\_observer**: [`Observable`](DB_Mongo_Observable.Observable.md) = `observer`
 
-The observer plugin instance.
+The default instance of the Observable plugin that can be used
+to attach observers to a given model.
 
 ## Accessors
 
@@ -120,7 +122,8 @@ ___
 
 ▸ `Abstract` **register**(): `void`
 
-The method used to register a new observer.
+The method used to register observers for the models handled by
+the services defined in this class.
 
 #### Returns
 

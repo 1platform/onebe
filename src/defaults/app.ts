@@ -3,26 +3,37 @@ import IConfig from "../System/IConfig";
 import getVersion from "../version";
 
 /**
- * Default configuration for App
+ * The Application configuration object.
+ *
+ * In this file you can change various configuration parameters related to the
+ * application.
  */
 const defaultAppConfig: IConfig = {
   /**
-   * The default flag that indicates whether the application will run in debug mode.
+   * Flag used to indicate whether the application will run in debug mode.
+   *
+   * @default false
    */
   debug: Env.flag("APP_DEBUG"),
 
   /**
-   * The default application name.
+   * The name of the application you are developing.
+   *
+   * @default "One Backend by Spark"
    */
-  appName: Env.string("APP_NAME", "onebe by Spark"),
+  appName: Env.string("APP_NAME", "One Backend by Spark"),
 
   /**
-   * The default version of the application. Usually 1.0.0 for a new application.
+   * The version of the application you are developing.
+   *
+   * @default "1.0.0"
    */
   appVersion: Env.string("APP_VERSION", getVersion()),
 
   /**
-   * The default description of the application. A short text meant to give insight about the app.
+   * A short text that describes the application you are developing.
+   *
+   * @default ""
    */
   appDescription: Env.string("APP_DESCRIPTION", ""),
 };

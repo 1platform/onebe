@@ -1,5 +1,8 @@
 /**
- * Application Information interface.
+ * The Application Information interface.
+ *
+ * This interface describes the object with all the information about
+ * the application.
  */
 export default interface IAppInfo {
     /**

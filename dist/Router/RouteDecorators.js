@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.API = API;
 exports.Custom = Custom;
+exports.Docs = Docs;
 exports.Group = Group;
 exports.Path = Path;
 
@@ -38,8 +39,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Path(path, name, description) {
   return function (BaseClass) {
     const routeMetadata = _MetadataStore.default.instance.route;
-    const route = routeMetadata.update(new BaseClass().constructor.name, path, description);
+    const route = routeMetadata.update(BaseClass.name, path, description);
     route.name = name;
+
+    if (route.isDocs && !_Config.default.boolean("docs.expose")) {
+      return BaseClass;
+    }
+
     const basePath = route.basePath.filter(basePath => basePath).join("/").replace(/(https?:\/\/)|(\/)+/g, "$1$2");
     (0, _Logger.getDefaultLogger)().debug("---------------");
     (0, _Logger.getDefaultLogger)().info(`[REGISTER] Routes for: ${route.controller} [${route.name}]: ${basePath}`);
@@ -65,9 +71,8 @@ function Path(path, name, description) {
 
 
 function API(BaseClass) {
-  const route = new BaseClass();
   const routeMetadata = _MetadataStore.default.instance.route;
-  routeMetadata.markAsAPI(route.constructor.name, _Config.default.string("api.path"));
+  routeMetadata.markAsAPI(BaseClass.name, _Config.default.string("api.path"));
   return BaseClass;
 }
 /**
@@ -86,18 +91,25 @@ function API(BaseClass) {
 
 function Custom(path) {
   return function (BaseClass) {
-    const route = new BaseClass();
     const routeMetadata = _MetadataStore.default.instance.route;
-    routeMetadata.markAsCustom(route.constructor.name, path);
+    routeMetadata.markAsCustom(BaseClass.name, path);
+    return BaseClass;
+  };
+}
+
+function Docs(path) {
+  return function (BaseClass) {
+    const routeMetadata = _MetadataStore.default.instance.route;
+    routeMetadata.markAsDocs(BaseClass.name);
+    routeMetadata.markAsCustom(BaseClass.name, path ?? _Config.default.string("docs.basePath"));
     return BaseClass;
   };
 }
 
 function Group(groupName) {
   return function (BaseClass) {
-    const route = new BaseClass();
     const routeMetadata = _MetadataStore.default.instance.route;
-    routeMetadata.group(route.constructor.name, groupName);
+    routeMetadata.group(BaseClass.name, groupName);
     return BaseClass;
   };
 }

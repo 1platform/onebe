@@ -8,6 +8,7 @@
 
 - [ConsoleLogger](../classes/System_Logger.ConsoleLogger.md)
 - [FileLogger](../classes/System_Logger.FileLogger.md)
+- [JSONLogger](../classes/System_Logger.JSONLogger.md)
 - [Logger](../classes/System_Logger.Logger.md)
 - [NoLogger](../classes/System_Logger.NoLogger.md)
 

@@ -25,8 +25,12 @@ import Router from "./index";
 export function Path<T extends Constructor>(path: string, name?: string, description?: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): T {
     const routeMetadata = MetadataStore.instance.route;
-    const route = routeMetadata.update(new BaseClass().constructor.name, path, description);
+    const route = routeMetadata.update(BaseClass.name, path, description);
     route.name = name;
+
+    if (route.isDocs && !Config.boolean("docs.expose")) {
+      return BaseClass;
+    }
 
     const basePath = route.basePath
       .filter((basePath) => basePath)
@@ -54,9 +58,8 @@ export function Path<T extends Constructor>(path: string, name?: string, descrip
  * @param BaseClass The Controller we want to decorate.
  */
 export function API<T extends Constructor>(BaseClass: T): ControllerDecorator<T> {
-  const route = new BaseClass();
   const routeMetadata = MetadataStore.instance.route;
-  routeMetadata.markAsAPI(route.constructor.name, Config.string("api.path"));
+  routeMetadata.markAsAPI(BaseClass.name, Config.string("api.path"));
 
   return BaseClass;
 }
@@ -75,18 +78,25 @@ export function API<T extends Constructor>(BaseClass: T): ControllerDecorator<T>
  */
 export function Custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
-    const route = new BaseClass();
     const routeMetadata = MetadataStore.instance.route;
-    routeMetadata.markAsCustom(route.constructor.name, path);
+    routeMetadata.markAsCustom(BaseClass.name, path);
+    return BaseClass;
+  };
+}
+
+export function Docs<T extends Constructor>(path?: string): ControllerDecoratorFunction<T> {
+  return function (BaseClass: T): ControllerDecorator<T> {
+    const routeMetadata = MetadataStore.instance.route;
+    routeMetadata.markAsDocs(BaseClass.name);
+    routeMetadata.markAsCustom(BaseClass.name, path ?? Config.string("docs.basePath"));
     return BaseClass;
   };
 }
 
 export function Group<T extends Constructor>(groupName: string): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
-    const route = new BaseClass();
     const routeMetadata = MetadataStore.instance.route;
-    routeMetadata.group(route.constructor.name, groupName);
+    routeMetadata.group(BaseClass.name, groupName);
     return BaseClass;
   };
 }

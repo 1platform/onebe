@@ -5,6 +5,8 @@
  */
 declare enum LoggerType {
     CONSOLE = "console",
-    FILE = "file"
+    FILE = "file",
+    JSON = "json",
+    JSON_FILE = "json_file"
 }
 export default LoggerType;

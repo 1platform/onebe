@@ -4,12 +4,13 @@ import { basename, extname, join, resolve } from "path";
 import { getDefaultLogger } from "../System/Logger";
 import Route from "./Route";
 import { IEndpointMetadata, IRouteMetadata } from "../Documentation/Definition/RouteMetadata";
-import { ResponseValue } from "./RouteTypes";
-import ContextAPI from "../Documentation/Helpers/ContextAPI";
+import ContextAPI from "./ContextAPI";
 import HTTPVerb from "../HTTP/HTTPVerb";
-import AuthContextAPI from "../Documentation/Helpers/AuthContextAPI";
+import AuthContextAPI from "./AuthContextAPI";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { getPath } from "./RouteUtils";
+import MetadataStore from "../Documentation/MetadataStore";
+import Config from "../System/Config";
 
 /**
  * The structure of the folders containing the controllers of our application.
@@ -56,6 +57,21 @@ export class RouterBase {
     const controllersStruct = this.fetchControllers(controllersPath);
     controllersStruct.section = "";
     await this.registerControllers(controllersPath, controllersStruct);
+  }
+
+  /**
+   * Register a controller
+   *
+   * @param controller
+   */
+  public async add(controller: Route): Promise<void> {
+    if (MetadataStore.instance.route.isDocs(controller.constructor.name) && !Config.boolean("docs.expose")) {
+      getDefaultLogger().debug(`Documentation has been disabled. The controller: ${ controller.constructor.name } won't be loaded.`);
+      return;
+    }
+
+    // controller.init();
+    this._controllers.push(controller);
   }
 
   public parseRoute(route: IRouteMetadata) {
@@ -127,6 +143,10 @@ export class RouterBase {
         }
 
         const controller: Route = new ClassModule();
+        if (MetadataStore.instance.route.isDocs(controller.constructor.name) && !Config.boolean("docs.expose")) {
+          getDefaultLogger().debug(`Documentation has been disabled. The controller: ${ controller.constructor.name } won't be loaded.`);
+          continue;
+        }
         this._controllers.push(controller);
       } catch (err) {
         /* Since we might register folders that have API class defined in them

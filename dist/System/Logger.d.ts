@@ -8,16 +8,16 @@ import * as logform from "logform";
  */
 export declare class Logger {
     /**
-     * The logger object we will use for logging.
-     */
-    protected readonly _log: WinstonLogger;
-    /**
      * The constructor of the logger class.
      *
      * @param logLevel The level of logging we will use in our application.
      * @param transport The transport used for the winston logger.
      */
     constructor(logLevel: LogLevel, transport: Transport);
+    /**
+     * The logger object we will use for logging.
+     */
+    protected _log: WinstonLogger;
     /**
      * Getter for the logger object.
      */
@@ -90,13 +90,19 @@ export declare class FileLogger extends Logger {
     constructor(logLevel: LogLevel, options?: FileTransportOptions);
 }
 /**
- * The no logger logger that can be used in our application.
+ * The NoLogger logger that can be used in our application.
  */
 export declare class NoLogger extends Logger {
     /**
      * The constructor of the logger class.
      */
     constructor();
+}
+/**
+ *
+ */
+export declare class JSONLogger extends Logger {
+    constructor(logLevel: LogLevel, isFile?: boolean, options?: FileTransportOptions);
 }
 /**
  * Function used to change the default logger of the application.

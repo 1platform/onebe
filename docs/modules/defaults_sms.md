@@ -14,4 +14,7 @@
 
 • `Const` **defaultSMSConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for SMS services.
+The SMS Sending configuration object.
+
+In this file you can change various configuration parameters related to the
+SMS sending functionality of the application.

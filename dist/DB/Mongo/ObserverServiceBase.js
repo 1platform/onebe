@@ -14,9 +14,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * An abstract class representing an Observer base.
+ * A base abstract class used to define Services that use Mongoose models
+ * and require observers in order to perform various tasks.
  */
-class ObserverBase extends _ServiceBase.default {
+class ObserverServiceBase extends _ServiceBase.default {
   constructor(...args) {
     super(...args);
 
@@ -25,4 +26,4 @@ class ObserverBase extends _ServiceBase.default {
 
 }
 
-exports.default = ObserverBase;
+exports.default = ObserverServiceBase;

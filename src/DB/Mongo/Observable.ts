@@ -2,75 +2,92 @@ import EventEmitter from "events";
 import { Document } from "mongoose";
 
 /**
- * Defines Observable Types
+ * A list with what can be observed in a Mongoose model.
  *
  * @enum
  */
 export enum ObservableType {
+  /**
+   * Observe the save operation.
+   */
   SAVE = "save",
+  /**
+   * Observe the remove/delete operation.
+   */
   REMOVE = "remove",
 }
 
 /**
- * The callback used to define/register callbacks.
+ * Type used to define what a callback used to register an observer function should look like.
  *
  * @param document The document we want to observe.
  */
 export type ObserverCallback<T extends Document> = (document: T) => void;
 
 /**
- * Class representing an Observable
+ * Class used to perform observable actions to a Mongoose model.
+ *
+ * Using this class we register observers that can perform various tasks
+ * on the Mongoose model when an action happens (Save or Remove).
+ * Through the usage of Observers we can do updates on related elements
+ * from other models (think at the cascade delete action).
  */
 export default class Observable extends EventEmitter {
   /**
-   * Registers an Observable
+   * Method used to register an observer for a given model, with a given type,
+   * at a given time moment (pre- or post-action).
    *
-   * @param entityName The name of the entity
-   * @param type The type of the Observable
-   * @param isPost if the action is a post action
-   * @param callback The callback to be executed
-   * */
-  public registerObservable<T extends Document>(entityName: string, type: ObservableType, isPost: boolean, callback: ObserverCallback<T>): void {
-    this.on(`${ entityName }:${ type }:${ isPost ? "post" : "pre" }`.toLowerCase(), callback);
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param type The type of the Observable action.
+   * @param isPost The moment of the action (true = POST, false = PRE).
+   * @param observerCallback The observer to be executed.
+   */
+  public registerObservable<T extends Document>(
+    modelName: string,
+    type: ObservableType,
+    isPost: boolean,
+    observerCallback: ObserverCallback<T>
+  ): void {
+    this.on(`${ modelName }:${ type }:${ isPost ? "post" : "pre" }`.toLowerCase(), observerCallback);
   }
 
   /**
-   * Registers a Save Post Observable
+   * Register a post save observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
-   * */
-  public registerSavePost<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
-    this.registerObservable<T>(entityName, ObservableType.SAVE, true, callback);
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
+   */
+  public registerSavePost<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
+    this.registerObservable<T>(modelName, ObservableType.SAVE, true, observerCallback);
   }
 
   /**
-   * Registers a Remove Post Observable
+   * Register a post remove observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
-  public registerRemovePost<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
-    this.registerObservable<T>(entityName, ObservableType.REMOVE, true, callback);
+  public registerRemovePost<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
+    this.registerObservable<T>(modelName, ObservableType.REMOVE, true, observerCallback);
   }
 
   /**
-   * Registers a Pre Save Observable
+   * Register a pre save observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
-  public registerSavePre<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
-    this.registerObservable<T>(entityName, ObservableType.SAVE, false, callback);
+  public registerSavePre<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
+    this.registerObservable<T>(modelName, ObservableType.SAVE, false, observerCallback);
   }
 
   /**
-   * Registers a Pre Remove Observable
+   * Register a pre remove observer for a given model.
    *
-   * @param entityName The entity name
-   * @param callback The callback to be executed
+   * @param modelName The name of the model for which we want to register the observer.
+   * @param observerCallback The observer to be executed.
    * */
-  public registerRemovePre<T extends Document>(entityName: string, callback: ObserverCallback<T>): void {
-    this.registerObservable<T>(entityName, ObservableType.REMOVE, false, callback);
+  public registerRemovePre<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
+    this.registerObservable<T>(modelName, ObservableType.REMOVE, false, observerCallback);
   }
 }

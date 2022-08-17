@@ -15,6 +15,7 @@
 - [endpoints](Documentation_Definition_RouteMetadata.IRouteMetadata.md#endpoints)
 - [group](Documentation_Definition_RouteMetadata.IRouteMetadata.md#group)
 - [isAPI](Documentation_Definition_RouteMetadata.IRouteMetadata.md#isapi)
+- [isDocs](Documentation_Definition_RouteMetadata.IRouteMetadata.md#isdocs)
 - [name](Documentation_Definition_RouteMetadata.IRouteMetadata.md#name)
 - [parent](Documentation_Definition_RouteMetadata.IRouteMetadata.md#parent)
 
@@ -59,6 +60,12 @@ ___
 ### isAPI
 
 • `Optional` **isAPI**: `boolean`
+
+___
+
+### isDocs
+
+• `Optional` **isDocs**: `boolean`
 
 ___
 

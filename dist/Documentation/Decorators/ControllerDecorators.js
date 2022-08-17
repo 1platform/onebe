@@ -13,11 +13,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Controller(name, description) {
   return function (BaseClass) {
-    const instance = new BaseClass();
+    _MetadataStore.default.instance.route.setName(BaseClass.name, name);
 
-    _MetadataStore.default.instance.route.setName(instance.constructor.name, name);
-
-    _MetadataStore.default.instance.route.setDescription(instance.constructor.name, description);
+    _MetadataStore.default.instance.route.setDescription(BaseClass.name, description);
 
     return BaseClass;
   };
@@ -25,9 +23,7 @@ function Controller(name, description) {
 
 function Name(name) {
   return function (BaseClass) {
-    const instance = new BaseClass();
-
-    _MetadataStore.default.instance.route.setName(instance.constructor.name, name);
+    _MetadataStore.default.instance.route.setName(BaseClass.name, name);
 
     return BaseClass;
   };
@@ -35,9 +31,7 @@ function Name(name) {
 
 function Description(description) {
   return function (BaseClass) {
-    const instance = new BaseClass();
-
-    _MetadataStore.default.instance.route.setDescription(instance.constructor.name, description);
+    _MetadataStore.default.instance.route.setDescription(BaseClass.name, description);
 
     return BaseClass;
   };

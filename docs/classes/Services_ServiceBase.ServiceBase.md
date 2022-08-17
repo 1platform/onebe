@@ -11,7 +11,7 @@ various actions in the application.
 
 - **`ServiceBase`**
 
-  ↳ [`ObserverBase`](DB_Mongo_ObserverBase.ObserverBase.md)
+  ↳ [`ObserverServiceBase`](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md)
 
   ↳ [`EmailService`](Email_EmailService.EmailService.md)
 

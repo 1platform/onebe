@@ -8,6 +8,7 @@
 
 - [API](Router_RouteDecorators.md#api)
 - [Custom](Router_RouteDecorators.md#custom)
+- [Docs](Router_RouteDecorators.md#docs)
 - [Group](Router_RouteDecorators.md#group)
 - [Path](Router_RouteDecorators.md#path)
 
@@ -70,6 +71,28 @@ Based on this metadata we know what to generate in the Documentation generator.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `path` | `string` | The custom controller path prefix. |
+
+#### Returns
+
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+___
+
+### Docs
+
+▸ **Docs**<`T`\>(`path?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `path?` | `string` |
 
 #### Returns
 

@@ -2,35 +2,56 @@ import Env from "../System/Env";
 import IConfig from "../System/IConfig";
 
 /**
- * Default configuration for SMS services.
+ * The SMS Sending configuration object.
+ *
+ * In this file you can change various configuration parameters related to the
+ * SMS sending functionality of the application.
  */
 const defaultSMSConfig: IConfig = {
   /**
-   * The default flag that indicates whether SMS services are enabled for the application.
+   * Flag used to enable or disable the SMS Sending functionality.
+   *
+   * @default false
    */
   enabled: Env.flag("SMS_ENABLED"),
 
   /**
-   * The default value for the SMS provider.
+   * In order to be able to send SMS messages we need to specify a provider.
+   * In the framework 2 providers are supported: `vonage` and `twilio`.
+   *
+   * @see SMSProvider
+   * @default ""
    */
   provider: Env.string("SMS_PROVIDER", ""),
 
   /**
-   * The default configuration used by the provider.
+   * While using the SMS Service, we need to provide some additional configuration
+   * to the provider services. In this configuration object we provide additional information
+   * that can be used in order to access any of the supported providers.
    */
   config: {
     /**
-     * The default phone number that will be used to send messages from.
+     * The phone number used to send the SMS message.
+     *
+     * @default ""
      */
     phone: Env.string("SMS_PHONE_NUMBER"),
 
     /**
-     * The default value of the account that will be used.
+     * The account used to connect to the SMS provider. This account will be provided to
+     * you by the service you are using. Do not use your email address and password
+     * that you use to connect to any of the service providers.
+     *
+     * @default ""
      */
     account: Env.string("SMS_ACCOUNT"),
 
     /**
-     * The default value of the password for the used account.
+     * The password used to connect to the SMS provider. This password will be provided to
+     * you by the service you are using. Do not use your email address and password
+     * that you use to connect to any of the service providers.
+     *
+     * @default ""
      */
     password: Env.string("SMS_PASSWORD"),
   },

@@ -3,6 +3,7 @@ import Config from "../System/Config";
 import ISMSTransport from "./Transports/ISMSTransport";
 import TwilioTransport from "./Transports/TwilioTransport";
 import VonageTransport from "./Transports/VonageTransport";
+import SMSProvider from "./SMSProvider";
 
 /**
  * Class exposing the SMS sending functionality.
@@ -25,10 +26,10 @@ export default class SMSService extends ServiceBase implements ISMSTransport {
     this._enableService = Config.boolean("sms.enabled");
     if (this._enableService) {
       switch (Config.string("sms.provider")) {
-        case "vonage":
+        case SMSProvider.VONAGE:
           this._transport = new VonageTransport();
           break;
-        case "twilio":
+        case SMSProvider.TWILIO:
           this._transport = new TwilioTransport();
           break;
       }

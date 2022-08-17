@@ -80,6 +80,16 @@ class RouteDefinition {
     return this;
   }
 
+  markAsDocs(controller) {
+    const route = this.route(controller);
+    route.isDocs = true;
+    return this;
+  }
+
+  isDocs(controller) {
+    return this.route(controller).isDocs;
+  }
+
   group(controller, groupName) {
     const route = this.route(controller);
     route.group = groupName.split("/");

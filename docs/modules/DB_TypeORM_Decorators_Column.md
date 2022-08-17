@@ -22,11 +22,18 @@
 
 ▸ **Column**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define the column of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `ColumnOptions` & `ColumnEmbeddedOptions` & { `description?`: `string`  } |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & `ColumnEmbeddedOptions` & { `description?`: `string`  } | A list of options used for defining the column. |
 
 #### Returns
 
@@ -38,11 +45,18 @@ ___
 
 ▸ **CreateDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the creation date of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `IExtendedColumnOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `description?`: `string`  } | A list of options used for defining the creation date column. |
 
 #### Returns
 
@@ -54,11 +68,20 @@ ___
 
 ▸ **DeleteDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the deletion date of a model.
+This kind of column is usually used when you want to do soft deletion in your
+application.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `IExtendedColumnOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `description?`: `string`  } | A list of options used for defining the deletion date column. |
 
 #### Returns
 
@@ -70,11 +93,18 @@ ___
 
 ▸ **ObjectIdColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to mark a column of a model as an ObjectId column.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `IExtendedColumnOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `description?`: `string`  } | A list of options used for defining the ObjectId column. |
 
 #### Returns
 
@@ -86,11 +116,18 @@ ___
 
 ▸ **PrimaryColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the primary key of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `ColumnOptions` & { `nullable?`: ``false``  } & { `description?`: `string`  } |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `nullable?`: ``false``  } & { `description?`: `string`  } | A list of options used for defining the primary key column. |
 
 #### Returns
 
@@ -102,12 +139,19 @@ ___
 
 ▸ **PrimaryGeneratedColumn**(`strategy`, `options`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store a generated primary key of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `strategy` | `string` \| `PrimaryGeneratedColumnNumericOptions` |
-| `options` | `PrimaryGeneratedColumnNumericOptions` & { `description?`: `string`  } |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `strategy` | `string` \| `PrimaryGeneratedColumnNumericOptions` | The strategy used for generating the primary key or the list of options used for                 defining the generated primary key column. |
+| `options` | `PrimaryGeneratedColumnNumericOptions` & { `description?`: `string`  } | A list of options used for defining the generated primary key column. |
 
 #### Returns
 
@@ -119,11 +163,18 @@ ___
 
 ▸ **UpdateDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the modification date of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `IExtendedColumnOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `description?`: `string`  } | A list of options used for defining the modification date column. |
 
 #### Returns
 
@@ -135,11 +186,18 @@ ___
 
 ▸ **VersionColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to define a column used to store the version of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `IExtendedColumnOptions` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ColumnOptions` & { `description?`: `string`  } | A list of options used for defining the version column. |
 
 #### Returns
 
@@ -151,11 +209,18 @@ ___
 
 ▸ **ViewColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
 
+Decorator used to mark a column of a model as a view column.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `ViewColumnOptions` & { `description?`: `string`  } |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ViewColumnOptions` & { `description?`: `string`  } | A list of options used for defining the view column. |
 
 #### Returns
 

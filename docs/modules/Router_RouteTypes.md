@@ -21,7 +21,7 @@
 
 ### AppMethod
 
-Ƭ **AppMethod**<`TRequest`, `TResponse`\>: (`context`: [`ContextAPI`](../classes/Documentation_Helpers_ContextAPI.ContextAPI.md)<`TRequest`\>, `authContext?`: [`AuthContextAPI`](../classes/Documentation_Helpers_AuthContextAPI.AuthContextAPI.md)) => [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>
+Ƭ **AppMethod**<`TRequest`, `TResponse`\>: (`context`: [`ContextAPI`](../classes/Router_ContextAPI.ContextAPI.md)<`TRequest`\>, `authContext?`: [`AuthContextAPI`](../classes/Router_AuthContextAPI.AuthContextAPI.md)) => [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`TResponse`\>
 
 #### Type parameters
 
@@ -40,8 +40,8 @@ Type used to define the method/function used to define an endpoint.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `context` | [`ContextAPI`](../classes/Documentation_Helpers_ContextAPI.ContextAPI.md)<`TRequest`\> | The request contact of the application. It can contain the request and response object that are used by express. |
-| `authContext?` | [`AuthContextAPI`](../classes/Documentation_Helpers_AuthContextAPI.AuthContextAPI.md) | The authentication context, used by the application, that contains the authentication information (user, isAuthenticated etc.) |
+| `context` | [`ContextAPI`](../classes/Router_ContextAPI.ContextAPI.md)<`TRequest`\> | The request contact of the application. It can contain the request and response object that are used by express. |
+| `authContext?` | [`AuthContextAPI`](../classes/Router_AuthContextAPI.AuthContextAPI.md) | The authentication context, used by the application, that contains the authentication information (user, isAuthenticated etc.) |
 
 ##### Returns
 

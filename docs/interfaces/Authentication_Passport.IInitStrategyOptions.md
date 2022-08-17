@@ -4,7 +4,7 @@
 
 [Authentication/Passport](../modules/Authentication_Passport.md).IInitStrategyOptions
 
-Passport strategy initialisation method options.
+Definition of the Passport strategy initialization options.
 
 ## Hierarchy
 

@@ -12,6 +12,8 @@ Logger type enumeration
 
 - [CONSOLE](System_LoggerType.LoggerType.md#console)
 - [FILE](System_LoggerType.LoggerType.md#file)
+- [JSON](System_LoggerType.LoggerType.md#json)
+- [JSON\_FILE](System_LoggerType.LoggerType.md#json_file)
 
 ## Enumeration Members
 
@@ -24,3 +26,15 @@ ___
 ### FILE
 
 • **FILE** = ``"file"``
+
+___
+
+### JSON
+
+• **JSON** = ``"json"``
+
+___
+
+### JSON\_FILE
+
+• **JSON\_FILE** = ``"json_file"``

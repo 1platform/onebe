@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { extractToken } from "../../Authentication/JWT";
+import { extractToken } from "../Authentication/JWT";
 
 export default class AuthContextAPI {
   private readonly _request: Request;

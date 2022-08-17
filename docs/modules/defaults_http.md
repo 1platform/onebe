@@ -14,4 +14,7 @@
 
 • `Const` **defaultHTTPConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default configuration for HTTP.
+The HTTP server configuration object.
+
+In this file you can change various configuration parameters related to the
+HTTP server.

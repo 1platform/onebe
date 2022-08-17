@@ -17,6 +17,9 @@ Here we will note all the changes made to the framework.
 - Bump versions.
 - Refactor the Route loading and documentation engine.
 - Refactor the Interface documentation engine and procedure.
+- Enhance the code documentation for the Classes, Methods, Functions, Properties and Variables exposed
+  by the framework
+- 
 
 🗑️ Removed:
 

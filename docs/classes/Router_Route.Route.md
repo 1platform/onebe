@@ -6,6 +6,12 @@
 
 A base class used for all the routes exposed by the final application.
 
+## Hierarchy
+
+- **`Route`**
+
+  ↳ [`DocsController`](Documentation_DocsController.DocsController.md)
+
 ## Table of contents
 
 ### Constructors

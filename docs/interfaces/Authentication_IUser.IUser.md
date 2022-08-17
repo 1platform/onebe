@@ -4,7 +4,11 @@
 
 [Authentication/IUser](../modules/Authentication_IUser.md).IUser
 
-The minimal required information about a User.
+The basic information exposed by the application regarding a user.
+
+This interface allows you to extend the data that you store in the
+request object when a user is deserialized from the authentication
+method.
 
 ## Indexable
 

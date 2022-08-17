@@ -14,4 +14,7 @@
 
 • `Const` **defaultLangConfig**: [`IConfig`](../interfaces/System_IConfig.IConfig.md)
 
-Default Language configuration.
+The Internationalisation (i18n) configuration object.
+
+In this file you can change various configuration parameters related to the
+translation of the application.
