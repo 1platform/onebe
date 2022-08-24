@@ -6,11 +6,11 @@ import VonageTransport from "./Transports/VonageTransport";
 import SMSProvider from "./SMSProvider";
 
 /**
- * Class exposing the SMS sending functionality.
+ * Service used to handle SMS Sending from the application.
  */
 export default class SMSService extends ServiceBase implements ISMSTransport {
   /**
-   * If the service is enabled or not.
+   * Flag used to enable or disable the SMS Service.
    */
   private readonly _enableService: boolean;
   /**

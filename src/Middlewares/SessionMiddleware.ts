@@ -4,11 +4,20 @@ import Config from "../System/Config";
 import IMiddleware from "./IMiddleware";
 
 /**
- * Session middleware.
+ * Middleware used to create a session store for the application, together
+ * with adding that session to the Express application.
  */
 export default class SessionMiddleware implements IMiddleware {
+  /**
+   * Session store object used by application to store session data.
+   */
   private static _store: session.Store = new MemoryStore();
 
+  /**
+   * Setter method for the session store.
+   *
+   * @param newStore The new session store to be used in the application.
+   */
   public static set store(newStore: session.Store) {
     SessionMiddleware._store = newStore;
   }

@@ -13,5 +13,11 @@
   "externalPattern": ["node_modules"],
   "excludePrivate": true,
   "disableSources": true,
-  "exclude": ["**/util/*.ts", "**/test/*.ts", "./src/DB/TypeORM/Decorators/Others.ts", "./node_modules/*"]
+  "exclude": [
+    "**/test/*.ts",
+    "./src/DB/TypeORM/Decorators/Others.ts",
+    "./src/**/*.d.ts",
+    "./node_modules/**/*.d.ts",
+    "./node_modules/@types/node/events.d.ts"
+  ]
 }

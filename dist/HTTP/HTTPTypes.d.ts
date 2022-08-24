@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 /**
- * Route endpoint Middleware function definition.
+ * Definition of how a Middleware Function should look like.
  *
- * @param req The request object.
- * @param res The response object.
+ * @param request The request object.
+ * @param response The response object.
  * @param next The next callback function in list.
  */
-export declare type HTTPMiddleware = (req: Request, res: Response, next?: NextFunction) => void;
+export declare type HTTPMiddleware = (request: Request, response: Response, next?: NextFunction) => void;
 /**
  * Re-exported Request Express type/interface.
  */

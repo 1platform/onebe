@@ -12,7 +12,9 @@ var _i18nextHttpMiddleware = require("i18next-http-middleware");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The i18n middleware.
+ * Middleware used to enable the Internationalisation (i18n) support for the application endpoints.
+ * Since you might want to have the messages translated to the language chosen by the user
+ * when the request was made, the i18n support needs to be added to the request object.
  */
 class I18nMiddleware {
   /**

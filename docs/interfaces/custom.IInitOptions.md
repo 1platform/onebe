@@ -1,28 +1,31 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [index](../modules/index.md) / IOneBEOptions
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [custom](../modules/custom.md) / IInitOptions
 
-# Interface: IOneBEOptions
+# Interface: IInitOptions
 
-[index](../modules/index.md).IOneBEOptions
+[custom](../modules/custom.md).IInitOptions
 
-Framework configuration options.
+Framework initialisation options.
+
+When starting the application, you need to pass some information
+for configuring the startup procedures of the framework.
 
 ## Hierarchy
 
 - [`IInitStrategyOptions`](Authentication_Passport.IInitStrategyOptions.md)
 
-  ↳ **`IOneBEOptions`**
+  ↳ **`IInitOptions`**
 
 ## Table of contents
 
 ### Properties
 
-- [basicAuth](index.IOneBEOptions.md#basicauth)
-- [configDir](index.IOneBEOptions.md#configdir)
-- [controllersDir](index.IOneBEOptions.md#controllersdir)
-- [currentDir](index.IOneBEOptions.md#currentdir)
-- [deserializeUser](index.IOneBEOptions.md#deserializeuser)
-- [noDBConnection](index.IOneBEOptions.md#nodbconnection)
-- [serializeUser](index.IOneBEOptions.md#serializeuser)
+- [basicAuth](custom.IInitOptions.md#basicauth)
+- [configDir](custom.IInitOptions.md#configdir)
+- [controllersDir](custom.IInitOptions.md#controllersdir)
+- [currentDir](custom.IInitOptions.md#currentdir)
+- [deserializeUser](custom.IInitOptions.md#deserializeuser)
+- [noDBConnection](custom.IInitOptions.md#nodbconnection)
+- [serializeUser](custom.IInitOptions.md#serializeuser)
 
 ## Properties
 
@@ -58,7 +61,9 @@ ___
 
 • `Optional` **configDir**: `string`
 
-The configuration directory.
+The location of the configuration files. The framework needs only a
+relative path to be provided, relative to the `currentDir` parameter
+specified above.
 
 ___
 
@@ -66,7 +71,9 @@ ___
 
 • `Optional` **controllersDir**: `string`
 
-The controllers directory.
+The location of the controllers used in the application. The framework
+needs only a relative path to be provided, relative to the `currentDir`
+parameter specified above.
 
 ___
 
@@ -74,7 +81,11 @@ ___
 
 • `Optional` **currentDir**: `string`
 
-The folder in which the application runs.
+The folder in which the application runs. Based on this folder,
+some configuration for various other files and subsystems is generated
+and used. For example, the Configuration loader and Internationalisation
+file loader are started and made to look for various files starting from
+the current folder.
 
 ___
 
@@ -109,7 +120,9 @@ ___
 
 • `Optional` **noDBConnection**: `boolean`
 
-Should the Database connection be made.
+Flag to mark if you need a database connection to be initialised
+on startup or not. This flag is used when launching the TypeORM
+migration system.
 
 ___
 

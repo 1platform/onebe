@@ -8,8 +8,10 @@ exports.default = void 0;
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * The Service base class. Using this class we can perform
- * various actions in the application.
+ * The base class for your services.
+ *
+ * We recommend using a service to perform all the actions in your application. Database handling should
+ * happen through a service using a repository.
  */
 class ServiceBase {
   constructor() {

@@ -4,15 +4,10 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [formatter](Utils_StringUtils.formatter.md)
-
 ### Functions
 
 - [comparePassword](Utils_StringUtils.md#comparepassword)
 - [encryptPassword](Utils_StringUtils.md#encryptpassword)
-- [formatter](Utils_StringUtils.md#formatter)
 - [shortid](Utils_StringUtils.md#shortid)
 - [stripHTML](Utils_StringUtils.md#striphtml)
 - [uuidV1](Utils_StringUtils.md#uuidv1)
@@ -24,7 +19,7 @@
 
 ▸ **comparePassword**(`password`, `encryptedPassword`): `boolean`
 
-Compares an encrypted password with the one entered by the user.
+Method used to compare an encrypted password with the one entered by the user.
 
 #### Parameters
 
@@ -43,7 +38,7 @@ ___
 
 ▸ **encryptPassword**(`password`, `saltSize?`): `string`
 
-Encrypt a password using the hash function from bcryptjs.
+Method used to encrypt a password using the hash function from bcryptjs.
 
 #### Parameters
 
@@ -58,28 +53,11 @@ Encrypt a password using the hash function from bcryptjs.
 
 ___
 
-### formatter
-
-▸ **formatter**(`template`, ...`args`): `string`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `template` | `string` |
-| `...args` | (`string` \| { `[k: string]`: `any`;  })[] |
-
-#### Returns
-
-`string`
-
-___
-
 ### shortid
 
 ▸ **shortid**(): `string`
 
-Generates a ShortID that can be used for various things.
+Generator for a ShortID that can be used for various things.
 
 #### Returns
 
@@ -109,7 +87,7 @@ ___
 
 ▸ **uuidV1**(): `string`
 
-Generate an UUID V1 code.
+Generator for a UUID V1 code.
 
 #### Returns
 
@@ -121,7 +99,7 @@ ___
 
 ▸ **uuidV4**(): `string`
 
-Generate an UUID V4 code.
+Generator for a UUID V4 code.
 
 #### Returns
 

@@ -4,7 +4,8 @@
 
 [Middlewares/PassportMiddleware](../modules/Middlewares_PassportMiddleware.md).PassportMiddleware
 
-Passport middleware.
+Middleware used to initialize the passport engine for the authentication
+in the application.
 
 ## Implements
 

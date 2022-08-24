@@ -4,7 +4,8 @@
 
 [Middlewares/SessionMiddleware](../modules/Middlewares_SessionMiddleware.md).SessionMiddleware
 
-Session middleware.
+Middleware used to create a session store for the application, together
+with adding that session to the Express application.
 
 ## Implements
 
@@ -36,11 +37,13 @@ Session middleware.
 
 • `Static` `set` **store**(`newStore`): `void`
 
+Setter method for the session store.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `newStore` | `Store` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `newStore` | `Store` | The new session store to be used in the application. |
 
 #### Returns
 

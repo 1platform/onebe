@@ -14,14 +14,15 @@ var _BaseTransport = _interopRequireDefault(require("./BaseTransport"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Email testing Transport class.
+ * Transport class that can be used for testing email sending.
+ * !!!DO NOT USE IN PRODUCTION!!!
  */
 class TestTransport extends _BaseTransport.default {
   /**
-   * TestTransport constructor.
+   * Transport constructor.
    */
   constructor() {
-    super();
+    super(null);
 
     _nodemailer.default.createTestAccount().then(account => {
       this._transporter = _nodemailer.default.createTransport({

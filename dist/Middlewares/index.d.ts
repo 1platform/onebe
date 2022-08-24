@@ -5,9 +5,9 @@ import LoggerMiddleware from "./LoggerMiddleware";
 import PageInfoMiddleware from "./PageInfoMiddleware";
 import PassportMiddleware from "./PassportMiddleware";
 import SessionMiddleware from "./SessionMiddleware";
-import SparkMiddleware from "./SparkMiddleware";
+import OneBEMiddleware from "./OneBEMiddleware";
 /**
  * A list containing middlewares to be loaded in the application automatically.
  */
-declare const _default: (BodyParserMiddleware | CORSMiddleware | I18nMiddleware | LoggerMiddleware | PageInfoMiddleware | PassportMiddleware | SessionMiddleware | SparkMiddleware)[];
+declare const _default: (BodyParserMiddleware | CORSMiddleware | I18nMiddleware | LoggerMiddleware | PageInfoMiddleware | PassportMiddleware | SessionMiddleware | OneBEMiddleware)[];
 export default _default;

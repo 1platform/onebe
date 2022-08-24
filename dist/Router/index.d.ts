@@ -1,6 +1,13 @@
 import { Router as ExpressRouter } from "express";
 import Route from "./Route";
 import { IEndpointMetadata, IRouteMetadata } from "../Documentation/Definition/RouteMetadata";
+/**
+ * Class used to define the Router base of the application.
+ *
+ * Inside this class the magic happens:
+ * - All the endpoints are registered under their specific path.
+ * - All controllers are loaded where and when they should.
+ */
 export declare class RouterBase {
     /**
      * The list with controllers we want to register.
@@ -15,18 +22,31 @@ export declare class RouterBase {
      */
     get router(): ExpressRouter;
     /**
-     * Register the controllers in the given path.
+     * Register the controllers under the given path.
      *
      * @param controllersPath The path from which we will import controllers.
      */
     register(controllersPath: string): Promise<void>;
     /**
-     * Register a controller
+     * Method used to manually register a controller in the application.
      *
-     * @param controller
+     * @param controller The controller instance you want registered.
      */
-    add(controller: Route): Promise<void>;
+    add(controller: Route): void;
+    /**
+     * Method used to parse the given route metadata and register all the endpoints under that
+     * router.
+     *
+     * @param route The route metadata we want to load.
+     */
     parseRoute(route: IRouteMetadata): void;
+    /**
+     * Method used to register endpoints in the router under a given base path and with the
+     * given endpoint metadata.
+     *
+     * @param basePath The base path under which the application registers the endpoint.
+     * @param endpoint The endpoint metadata you need to be registered.
+     */
     protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata): void;
     /**
      * The method used to register the controllers in a path. It will make recursive calls
@@ -44,7 +64,7 @@ export declare class RouterBase {
     private fetchControllers;
 }
 /**
- * The global default Router that we are going to use in our application.
+ * The global default Router that the application is going to use.
  */
 declare const Router: RouterBase;
 export default Router;

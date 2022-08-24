@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 /**
- * Log Level enumeration
+ * A list with the supported logging levels.
  *
  * @enum
  */

@@ -10,7 +10,8 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The Body Parser middleware.
+ * Middleware used to parse the body of the request and return the right data
+ * in the `body` parameter of the `request` object.
  */
 class BodyParserMiddleware {
   /**

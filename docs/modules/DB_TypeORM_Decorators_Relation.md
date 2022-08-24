@@ -7,7 +7,6 @@
 ### Functions
 
 - [JoinColumn](DB_TypeORM_Decorators_Relation.md#joincolumn)
-- [JoinTable](DB_TypeORM_Decorators_Relation.md#jointable)
 - [ManyToMany](DB_TypeORM_Decorators_Relation.md#manytomany)
 - [ManyToOne](DB_TypeORM_Decorators_Relation.md#manytoone)
 - [OneToMany](DB_TypeORM_Decorators_Relation.md#onetomany)
@@ -17,7 +16,7 @@
 
 ### JoinColumn
 
-▸ **JoinColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **JoinColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the relation key for a referenced model.
 
@@ -34,56 +33,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
-
-___
-
-### JoinTable
-
-▸ **JoinTable**(): `PropertyDecorator`
-
-JoinTable decorator is used in many-to-many relationship to specify owner side of relationship.
-Its also used to set a custom junction table's name, column names and referenced columns.
-
-#### Returns
-
-`PropertyDecorator`
-
-▸ **JoinTable**(`options`): `PropertyDecorator`
-
-JoinTable decorator is used in many-to-many relationship to specify owner side of relationship.
-Its also used to set a custom junction table's name, column names and referenced columns.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options` | `JoinTableOptions` |
-
-#### Returns
-
-`PropertyDecorator`
-
-▸ **JoinTable**(`options`): `PropertyDecorator`
-
-JoinTable decorator is used in many-to-many relationship to specify owner side of relationship.
-Its also used to set a custom junction table's name, column names and referenced columns.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `options` | `JoinTableMultipleColumnsOptions` |
-
-#### Returns
-
 `PropertyDecorator`
 
 ___
 
 ### ManyToMany
 
-▸ **ManyToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **ManyToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): `PropertyDecorator`
 
 Decorator used to define a many-to-many relation between two models.
 
@@ -108,13 +64,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### ManyToOne
 
-▸ **ManyToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **ManyToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): `PropertyDecorator`
 
 Decorator used to define a many-to-one relation between two models.
 
@@ -138,13 +94,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### OneToMany
 
-▸ **OneToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **OneToMany**<`T`\>(`typeFunctionOrTarget`, `inverseSide?`, `options?`): `PropertyDecorator`
 
 Decorator used to define a one-to-many relation between two models.
 
@@ -169,13 +125,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### OneToOne
 
-▸ **OneToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **OneToOne**<`T`\>(`typeFunctionOrTarget`, `options?`): `PropertyDecorator`
 
 Decorator used to define a one-to-one relation between two models.
 
@@ -199,4 +155,4 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`

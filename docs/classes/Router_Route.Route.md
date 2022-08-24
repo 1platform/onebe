@@ -4,7 +4,7 @@
 
 [Router/Route](../modules/Router_Route.md).Route
 
-A base class used for all the routes exposed by the final application.
+A base class used for all the routes exposed by your application.
 
 ## Hierarchy
 

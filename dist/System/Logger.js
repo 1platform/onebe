@@ -26,7 +26,11 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * The base logger class.
+ * The base logger class to be used in the application.
+ *
+ * This class is the base of the available loggers in the application. In order
+ * to use this class you need a transport and the level of information you
+ * want to log.
  */
 class Logger {
   /**
@@ -45,7 +49,7 @@ class Logger {
     });
   }
   /**
-   * The logger object we will use for logging.
+   * The logger object the application will use for logging.
    */
 
 
@@ -56,7 +60,7 @@ class Logger {
     return this._log;
   }
   /**
-   * Method to log a info message.
+   * Method to log an information message.
    *
    * @param message The message to be logged.
    * @param meta Various other meta elements passed to the log method.
@@ -67,7 +71,7 @@ class Logger {
     return this.log.info(message, ...meta);
   }
   /**
-   * Method to log a error message.
+   * Method to log an error message.
    *
    * @param message The message to be logged.
    * @param meta Various other meta elements passed to the log method.
@@ -78,7 +82,7 @@ class Logger {
     return this.log.error(message, ...meta);
   }
   /**
-   * Method to log a warn message.
+   * Method to log a warning message.
    *
    * @param message The message to be logged.
    * @param meta Various other meta elements passed to the log method.
@@ -124,7 +128,7 @@ class Logger {
 
 }
 /**
- * The console logger that can be used in our application.
+ * The console logger that can be used in your application.
  */
 
 
@@ -145,7 +149,7 @@ class ConsoleLogger extends Logger {
 
 }
 /**
- * The file logger that can be used in our application.
+ * The file logger that can be used in your application.
  */
 
 
@@ -167,7 +171,7 @@ class FileLogger extends Logger {
 
 }
 /**
- * No Logger transport for the NoLogger.
+ * No Logger transport for the NoLogger logger class.
  */
 
 
@@ -190,7 +194,9 @@ class NoLoggerTransport extends _winstonTransport.default {
 
 }
 /**
- * The NoLogger logger that can be used in our application.
+ * The NoLogger logger that can be used in your application.
+ *
+ * Use this logger if you want to disable the logging possibility.
  */
 
 
@@ -204,13 +210,21 @@ class NoLogger extends Logger {
 
 }
 /**
- *
+ * Logger that can be used to log information in JSON objects. This
+ * logger can be used when logging information into AWS, Elastic Search.
  */
 
 
 exports.NoLogger = NoLogger;
 
 class JSONLogger extends Logger {
+  /**
+   * The constructor of the logger class.
+   *
+   * @param logLevel The level of logging we will use in our application.
+   * @param isFile If the logger should log the messages in a file.
+   * @param options The options passed to the file logger transport.
+   */
   constructor(logLevel, isFile = false, options) {
     super(logLevel, new NoLoggerTransport());
     let transport;

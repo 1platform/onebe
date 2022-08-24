@@ -4,6 +4,9 @@
 
 [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md).IEntityPropertyMetadata
 
+Interface describing an object used to hold the metadata information
+for an entity property.
+
 ## Table of contents
 
 ### Properties
@@ -24,11 +27,15 @@
 
 • **dataType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
 
+The data type of the property.
+
 ___
 
 ### description
 
 • `Optional` **description**: `string`
+
+A short description of the property.
 
 ___
 
@@ -36,11 +43,15 @@ ___
 
 • `Optional` **entity**: `string`
 
+The name of the entity used to describe the value of the property.
+
 ___
 
 ### isArray
 
 • `Optional` **isArray**: `boolean`
+
+Flag to mark if the value held in the property is an array or not.
 
 ___
 
@@ -48,11 +59,15 @@ ___
 
 • `Optional` **isPrimaryKey**: `boolean`
 
+Flag to mark the property as a primary key for the entity.
+
 ___
 
 ### maxLength
 
 • `Optional` **maxLength**: `number`
+
+The maximum length of the value held in the property.
 
 ___
 
@@ -60,14 +75,20 @@ ___
 
 • **name**: `string`
 
+The name of the property.
+
 ___
 
 ### options
 
 • `Optional` **options**: `Record`<`string`, `any`\>
 
+Other metadata information that you might need for documentation.
+
 ___
 
 ### required
 
 • `Optional` **required**: `boolean`
+
+Flag to mark the property as required.

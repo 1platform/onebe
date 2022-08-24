@@ -31,7 +31,7 @@ Method used to send emails.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options` | [`IEmailOptions`](Email_Transports_IEmailTransport.IEmailOptions.md) | The parameters we use for sending an email. |
+| `options` | [`IEmailOptions`](Email_Transports_IEmailTransport.IEmailOptions.md) | The parameters you have to use when sending an email. |
 
 #### Returns
 

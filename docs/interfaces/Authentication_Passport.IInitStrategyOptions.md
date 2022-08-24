@@ -10,7 +10,7 @@ Definition of the Passport strategy initialization options.
 
 - **`IInitStrategyOptions`**
 
-  ↳ [`IOneBEOptions`](index.IOneBEOptions.md)
+  ↳ [`IInitOptions`](custom.IInitOptions.md)
 
 ## Table of contents
 

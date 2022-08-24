@@ -1,26 +1,26 @@
-import Route from "../Router/Route";
 import { RouteDecorator } from "../Router/RouteTypes";
 /**
- * Sign method options.
+ * A list with all the options that you can pass to the sign method.
  */
 export declare type SignMethodOptions = {
     /**
-     * if specified, only this method will be allowed
-     * may be string of few methods separated by comma, or array of strings
+     * The method or a list of methods allowed to access the endpoint
+     * secured by the signed URL.
      */
     method?: string | string[];
     /**
-     * URL time to live.
+     * How many seconds should the URL be valid.
      */
-    ttl?: number;
+    timeToLive?: number;
     /**
-     * Expiration timestamp (if ttl isn't specified)
+     * If you don't specify the Time To Live (TTL) parameter, you can specify a timestamp
+     * at which the URL will not be valid.
      */
-    exp?: number;
+    expireAt?: number;
     /**
-     * if set, only request from this address will be allowed
+     * If specified, the URL will be valid only when this Address parameter is specified.
      */
-    addr?: string;
+    address?: string;
 };
 /**
  * Function used to get the destination folder/file from the upload destination folder.
@@ -29,34 +29,38 @@ export declare type SignMethodOptions = {
  */
 export declare function getDestinationFolder(...pathLike: string[]): string;
 /**
- * Middleware used to verify if a signed URL is valid.
- *
- * @decorator
- * @param target The target on which we apply the decorator.
- * @param propertyKey The property key on which we apply the decorator.
- * @param descriptor The descriptor of the property we want to decorate.
- */
-export declare const verifierURL: RouteDecorator<Route>;
-/**
  * Function used to create signed URLs.
  *
- * @param {string} url The URL to be signed.
- * @param {SignMethodOptions} [options] The options used for the URL signing.
+ * @param url The URL to be signed.
+ * @param [options] The options used for the URL signing.
  *
  * @return {string}
  */
-export declare const signURL: any;
+export declare const signURL: (url: string, options?: SignMethodOptions) => string;
 /**
- * Single file upload middleware.
+ * Decorator to add the Single file upload middleware.
  *
  * @decorator
  * @param fieldName The name of the field in the file uploader.
  */
-export declare function singleUpload(fieldName: string): RouteDecorator;
+export declare function SingleUpload(fieldName: string): RouteDecorator;
 /**
- * Multiple file upload middleware.
+ * Decorator to add the Multiple file upload with different names middleware.
  *
  * @decorator
  * @param names The names of the fields in the file uploader.
  */
-export declare function namedFiles(...names: string[]): RouteDecorator;
+export declare function NamedFilesUpload(...names: string[]): RouteDecorator;
+/**
+ * Decorator to add the Multiple file upload under the same name middleware.
+ *
+ * @decorator
+ * @param fieldName The name of the field in the file uploader.
+ */
+export declare function ArrayUpload(fieldName: string): RouteDecorator;
+/**
+ * Middleware used to verify if a signed URL is valid.
+ *
+ * @decorator
+ */
+export declare function VerifyURL(): RouteDecorator;

@@ -4,7 +4,7 @@
 
 [SMS/Transports/VonageTransport](../modules/SMS_Transports_VonageTransport.md).VonageTransport
 
-Class representing the Vonage Transport handler
+SMS Transport using the Vonage/Nexmo engine.
 
 ## Implements
 

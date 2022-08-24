@@ -4,7 +4,8 @@
 
 [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md).IMFAConfiguration
 
-The MFA configuration response.
+Multi-Factor Authentication configuration object that is used when configuring
+the Advanced MFA system for a specific user.
 
 ## Table of contents
 
@@ -27,4 +28,4 @@ ___
 
 • **otpAuthUrl**: `string`
 
-The OTP Authentication URL
+The OneTimp Password (OTP) Authentication URL

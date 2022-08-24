@@ -4,7 +4,8 @@
 
 [Middlewares/CORSMiddleware](../modules/Middlewares_CORSMiddleware.md).CORSMiddleware
 
-The CORS middleware.
+Middleware used to enable the Cross-Origin Resource Sharing functionality for
+your application.
 
 ## Implements
 

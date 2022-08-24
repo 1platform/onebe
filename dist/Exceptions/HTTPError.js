@@ -12,11 +12,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Generic Exception with HTTP Status Code.
+ * A Generic Error with HTTP Status Code that can be thrown from your application.
+ *
+ * Using the HTTPError class you can easily specify the HTTP Status Code of the response
+ * when the error is triggered.
  */
 class HTTPError extends Error {
   /**
-   * The HTTP Status code.
+   * The HTTP Status code of the error.
    */
 
   /**
@@ -24,14 +27,13 @@ class HTTPError extends Error {
    */
 
   /**
-   * Constructor of the HTTPError.
+   * Constructor of the Generic HTTP Error.
    *
    * @param message The message of the exception.
    * @param status The status code of the exception.
    * @param parameters Some extra parameters sent to the error.
    */
-  constructor(message, status = _HTTPStatus.default.SERVER_ERROR, // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  parameters) {
+  constructor(message, status = _HTTPStatus.default.SERVER_ERROR, parameters) {
     super(message);
 
     _defineProperty(this, "status", _HTTPStatus.default.SERVER_ERROR);

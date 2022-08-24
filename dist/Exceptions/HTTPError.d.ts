@@ -1,10 +1,13 @@
 import HTTPStatus from "../HTTP/HTTPStatus";
 /**
- * Generic Exception with HTTP Status Code.
+ * A Generic Error with HTTP Status Code that can be thrown from your application.
+ *
+ * Using the HTTPError class you can easily specify the HTTP Status Code of the response
+ * when the error is triggered.
  */
 export default class HTTPError extends Error {
     /**
-     * The HTTP Status code.
+     * The HTTP Status code of the error.
      */
     status: HTTPStatus;
     /**
@@ -12,7 +15,7 @@ export default class HTTPError extends Error {
      */
     parameters: any;
     /**
-     * Constructor of the HTTPError.
+     * Constructor of the Generic HTTP Error.
      *
      * @param message The message of the exception.
      * @param status The status code of the exception.

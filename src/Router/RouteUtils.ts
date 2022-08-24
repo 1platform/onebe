@@ -3,7 +3,7 @@ import Route from "./Route";
 import { RouteDecorator } from "./RouteTypes";
 
 /**
- * Function used to define a middleware decorator.
+ * Function used to create a middleware decorator.
  *
  * @param middlewares A list of middlewares you want to apply on the route.
  */
@@ -14,6 +14,11 @@ export function defineMiddleware(...middlewares: Array<HTTPMiddleware>): RouteDe
   };
 }
 
+/**
+ * Function used to get the full URL based on the given partial URL path elements.
+ *
+ * @param pathElements The list of path elements to be converted to a valid URL path.
+ */
 export function getPath(...pathElements: string[]): string {
   const newPath = pathElements
     .filter((path) => path.length)

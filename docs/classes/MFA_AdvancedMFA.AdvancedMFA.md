@@ -4,7 +4,11 @@
 
 [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md).AdvancedMFA
 
-An advanced MFA authentication method.
+A service used to enable an Advanced MFA system to authenticate users through
+an authentication application like Google Authenticator, Microsoft Authenticator etc.
+
+This class provides you with everything needed to easily implement the MFA using an
+authenticator app (QRCode, OTP verifications etc).
 
 ## Table of contents
 
@@ -30,7 +34,7 @@ An advanced MFA authentication method.
 
 ▸ **getMFAConfig**(): [`IMFAConfiguration`](../interfaces/MFA_AdvancedMFA.IMFAConfiguration.md)
 
-Returns an MFA Configuration.
+Returns the MFA Configuration that you can reuse in your application.
 
 #### Returns
 

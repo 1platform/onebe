@@ -4,14 +4,6 @@
 
 ## Table of contents
 
-### Variables
+### Interfaces
 
-- [custom](custom.md#custom)
-
-## Variables
-
-### custom
-
-• **custom**: ``1``
-
-Some random value, just to be include in the app... no use
+- [IInitOptions](../interfaces/custom.IInitOptions.md)

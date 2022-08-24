@@ -4,7 +4,7 @@
 
 [Scheduler](../modules/Scheduler.md).Scheduler
 
-Task scheduler that runs the jobs registered in the application.
+Task scheduler that runs the various background jobs registered in the application.
 
 ## Table of contents
 
@@ -29,7 +29,7 @@ Task scheduler that runs the jobs registered in the application.
 
 ▸ **register**(`executionExpression`, `runner`): `void`
 
-Method used to register new jobs in the tasks scheduler.
+Method used to register new jobs in the task scheduler.
 
 #### Parameters
 

@@ -4,6 +4,9 @@
 
 [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md).IEntityMetadata
 
+Interface describing an object used to hold the metadata information
+for an entity.
+
 ## Table of contents
 
 ### Properties
@@ -20,11 +23,15 @@
 
 • `Optional` **description**: `string`
 
+The description of the entity.
+
 ___
 
 ### extends
 
 • `Optional` **extends**: `string`
+
+The name of the entity our entity extends from.
 
 ___
 
@@ -32,14 +39,21 @@ ___
 
 • **name**: `string`
 
+The name of the entity.
+
 ___
 
 ### properties
 
 • `Optional` **properties**: [`IEntityPropertyMetadata`](Documentation_Definition_EntityMetadata.IEntityPropertyMetadata.md)[]
 
+A list of properties metadata related to the entity.
+
 ___
 
 ### tableName
 
 • `Optional` **tableName**: `string`
+
+The database table name of the entity. Used only when documenting
+the database entities.

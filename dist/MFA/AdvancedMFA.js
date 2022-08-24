@@ -14,11 +14,15 @@ var _App = _interopRequireDefault(require("../App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * An advanced MFA authentication method.
+ * A service used to enable an Advanced MFA system to authenticate users through
+ * an authentication application like Google Authenticator, Microsoft Authenticator etc.
+ *
+ * This class provides you with everything needed to easily implement the MFA using an
+ * authenticator app (QRCode, OTP verifications etc).
  */
 class AdvancedMFA {
   /**
-   * Returns an MFA Configuration.
+   * Returns the MFA Configuration that you can reuse in your application.
    */
   getMFAConfig() {
     const secretCode = _speakeasy.default.generateSecret({

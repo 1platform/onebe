@@ -4,7 +4,10 @@
 
 [HTTP](../modules/HTTP.md).HTTP
 
-The HTTP server handler class.
+The HTTP service used to create the HTTP server.
+
+Through this service you can start an HTTP server using Express, secured with
+Helmet and having some default Middlewares/Plugins loaded in the application.
 
 ## Table of contents
 
@@ -39,7 +42,7 @@ HTTP Class constructor.
 
 • `get` **app**(): `Application`
 
-Express application getter.
+Getter for the Express instance.
 
 #### Returns
 
@@ -51,7 +54,7 @@ ___
 
 • `get` **host**(): `string`
 
-The ip on which we listen on for http requests.
+Getter for the Host IP used to serve the HTTP server.
 
 #### Returns
 
@@ -63,7 +66,7 @@ ___
 
 • `get` **http**(): `Server`
 
-HTTP Server instance getter.
+Getter for the HTTP server.
 
 #### Returns
 
@@ -75,7 +78,7 @@ ___
 
 • `get` **port**(): `number`
 
-The port on which we listen on for http requests.
+Getter for the port used to serve the HTTP server.
 
 #### Returns
 
@@ -104,13 +107,13 @@ ___
 
 ### start
 
-▸ **start**(): `void`
+▸ **start**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-Start the HTTP server.
+Method used to start the HTTP server created by the service.
 
 #### Returns
 
-`void`
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
 ___
 
@@ -118,13 +121,13 @@ ___
 
 ▸ **use**(`middleware`): `void`
 
-Attach a middleware to the express application.
+Attach a middleware or a list of middlewares to the express application.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `middleware` | [`IMiddleware`](../interfaces/Middlewares_IMiddleware.IMiddleware.md) \| [`IMiddleware`](../interfaces/Middlewares_IMiddleware.IMiddleware.md)[] | The middleware we want to attach. |
+| `middleware` | [`IMiddleware`](../interfaces/Middlewares_IMiddleware.IMiddleware.md) \| [`IMiddleware`](../interfaces/Middlewares_IMiddleware.IMiddleware.md)[] | A middleware or a list of middlewares you want to attach. |
 
 #### Returns
 

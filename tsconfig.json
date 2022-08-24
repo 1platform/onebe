@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "strict": false,
     "sourceMap": true,
     "target": "ES2021",
@@ -17,11 +17,16 @@
     "emitDecoratorMetadata": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.tsx"
   ],
   "exclude": [
     "node_modules"

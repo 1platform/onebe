@@ -8,12 +8,23 @@ import {
   IEndpointThrowResponse,
   IRouteMetadata,
 } from "../../Definition/RouteMetadata";
-import { EntityPropertyDataTypes, QueryParameterType } from "../../Definition/DataTypes";
+import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "../../Definition/DataTypes";
 import HTTPStatus from "../../../HTTP/HTTPStatus";
 import { getPath } from "../../../Router/RouteUtils";
 import MetadataStore from "../../MetadataStore";
 
+/**
+ * Swagger Routes Builder tool.
+ *
+ * Using this class the Documentation system will create everything needed
+ * by the OpenAPI 3 paths specification.
+ */
 export default class SwaggerRoutes {
+  /**
+   * Method that extracts the routes from the route definition metadata.
+   *
+   * @param routesMetadata The list of documented routes from the metadata store.
+   */
   public getRoutes(routesMetadata: Array<IRouteMetadata>): Record<string, unknown> {
     if (routesMetadata.length === 0) {
       return {};
@@ -28,15 +39,29 @@ export default class SwaggerRoutes {
     );
   }
 
+  /**
+   * Method used to generate the full path of the endpoint, from the route
+   * base path.
+   *
+   * @param basePath The base path from the route.
+   * @param path The path of the endpoint.
+   * @param parameters The list of parameters that appear in the endpoint URL.
+   */
   protected getPath(basePath: string[], path: string, parameters: string[]): string {
     let newPath = getPath(...basePath, path);
-    parameters.forEach((parameter) => {
+    (parameters || []).forEach((parameter) => {
       newPath = newPath.replaceAll(`:${ parameter }`, `{${ parameter }}`);
     });
 
     return newPath;
   }
 
+  /**
+   * Group the endpoint calls based on the Endpoint URL and the HTTP verb used
+   * to access the code.
+   *
+   * @param route The route metadata for which we create the groups.
+   */
   protected groupPaths(route: IRouteMetadata): Record<string, Record<string, Record<string, unknown>>> {
     const groups = {};
 
@@ -52,6 +77,14 @@ export default class SwaggerRoutes {
     return groups;
   }
 
+  /**
+   * Method used to parse the endpoint metadata information and generate
+   * the OpenAPI 3 path specification object.
+   *
+   * @param endpoint The endpoint metadata.
+   * @param controller The route where the endpoint is located.
+   * @param tags A list of tags that are used to group the endpoint.
+   */
   protected parsePath(endpoint: IEndpointMetadata, controller: string, tags: string[]): Record<string, unknown> {
     const definition: Record<string, unknown> = {
       summary: endpoint.summary || endpoint.description || `${ controller }.${ endpoint.methodName }`,
@@ -86,6 +119,12 @@ export default class SwaggerRoutes {
     return definition;
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 responses object for an endpoint based
+   * on an Endpoint Response metadata object.
+   *
+   * @param responses The list of responses that can be returned by the endpoint.
+   */
   protected getResponseSchemas(responses: Array<IEndpointResponse>): Record<string, Record<string, unknown>> {
     if (responses.length === 0) {
       return {};
@@ -97,7 +136,7 @@ export default class SwaggerRoutes {
         [response.statusCode]: {
           description: this.getStatusDescription(response.statusCode.toString(), response.description),
           content: {
-            "application/json": {
+            [response.contentType || "application/json"]: {
               schema: {
                 type: response.isArray ? "array" : !response.isSchema ? response.schema : undefined,
                 items: !response.isArray
@@ -115,6 +154,13 @@ export default class SwaggerRoutes {
     );
   }
 
+  /**
+   * Method used to convert the HTTP status to a string value that can be used
+   * as a status description.
+   *
+   * @param status The status we want to convert.
+   * @param defaultValue A default value to be returned when the status isn't in the supported list.
+   */
   protected getStatusDescription(status: string, defaultValue?: string) {
     switch (status) {
       case HTTPStatus.OK.toString():
@@ -125,11 +171,27 @@ export default class SwaggerRoutes {
         return "Created";
       case HTTPStatus.ACCEPTED.toString():
         return "Accepted";
+      case HTTPStatus.BAD_REQUEST.toString():
+        return "Bad Request";
+      case HTTPStatus.FORBIDDEN.toString():
+        return "Forbidden";
+      case HTTPStatus.SERVER_ERROR.toString():
+        return "Server Error";
+      case HTTPStatus.UNAUTHORIZED.toString():
+        return "Unauthorized";
+      case HTTPStatus.NOT_FOUND.toString():
+        return "Not Found";
     }
 
     return defaultValue || "";
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 responses object for an endpoint based
+   * on a list with statuses and descriptions.
+   *
+   * @param statuses The list of statuses that can be returned by the endpoint.
+   */
   protected getStatusesSchemas(statuses: Array<[string, string]>): Record<string, Record<string, unknown>> {
     if (statuses.length === 0) {
       return {};
@@ -146,6 +208,12 @@ export default class SwaggerRoutes {
     );
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 responses object for an endpoint based
+   * on a list with Error Response metadata objects.
+   *
+   * @param errors The list of errors that can be returned by the endpoint.
+   */
   protected getErrors(errors: Array<IEndpointThrowResponse>): Record<string, any> {
     if (errors.length === 0) {
       return {};
@@ -172,6 +240,12 @@ export default class SwaggerRoutes {
     );
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 responses object for an endpoint based
+   * on its metadata information.
+   *
+   * @param endpoint The endpoint metadata.
+   */
   protected getResponses(endpoint: IEndpointMetadata): Record<string, any> {
     return {
       ...this.getResponseSchemas(Object.values(endpoint.responses)),
@@ -190,6 +264,12 @@ export default class SwaggerRoutes {
     };
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 parameters object for an endpoint based
+   * on an Endpoint Parameter metadata object.
+   *
+   * @param parameters The list of URL parameters supported by the endpoint.
+   */
   protected getParameters(parameters: Array<IEndpointParameter>): Array<Record<string, unknown>> {
     return parameters.map((parameter) => ({
       name: parameter.name,
@@ -202,6 +282,12 @@ export default class SwaggerRoutes {
     }));
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 parameters object for an endpoint based
+   * on an Endpoint Query Parameter metadata object.
+   *
+   * @param queryParameters The list of Query parameters supported by the endpoint.
+   */
   protected getQueryParameters(queryParameters: Array<IEndpointQuery>): Array<Record<string, unknown>> {
     return queryParameters.map((parameter) => ({
       name: parameter.name,
@@ -220,16 +306,27 @@ export default class SwaggerRoutes {
     }));
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 request body object for an endpoint based
+   * on a list with Body Parameters Metadata objects.
+   *
+   * @param bodyDefinition The list with body parameters.
+   */
   protected getRequestBodyDefinition(bodyDefinition: Array<IEndpointBodyParameter>): Record<string, unknown> {
     let required = bodyDefinition.filter((parameter) => parameter.required).map((parameter) => parameter.name);
     if (required.length === 0) {
       required = undefined;
     }
+    let contentType = "application/json";
+    if (bodyDefinition.find((parameter) => parameter.type === BodyParameterType.FILE)) {
+      contentType = "multipart/form-data";
+    }
+
     return {
       description: "Request body",
       required: true,
       content: {
-        "application/json": {
+        [contentType]: {
           schema: {
             type: EntityPropertyDataTypes.OBJECT,
             properties: bodyDefinition.reduce((accum, parameter) => {
@@ -237,6 +334,7 @@ export default class SwaggerRoutes {
                 type: parameter.type,
                 default: parameter.defaultValue,
                 description: parameter.description ?? "",
+                format: parameter.type === BodyParameterType.FILE ? "binary" : undefined,
               };
 
               if (parameter.entity) {
@@ -248,11 +346,18 @@ export default class SwaggerRoutes {
               if (parameter.isArray) {
                 schema = {
                   type: EntityPropertyDataTypes.ARRAY,
-                  items: {
-                    $ref: `#/components/schemas/${ parameter.entity }`,
-                  },
+                  items:
+                    parameter.type === BodyParameterType.SCHEMA
+                      ? {
+                        $ref: `#/components/schemas/${ parameter.entity }`,
+                      }
+                      : {
+                        type: parameter.type,
+                        format: parameter.type === BodyParameterType.FILE ? "binary" : undefined,
+                      },
                 };
               }
+
               return {
                 ...accum,
                 [parameter.name]: schema,
@@ -265,6 +370,12 @@ export default class SwaggerRoutes {
     };
   }
 
+  /**
+   * Method used to generate the OpenAPI 3 request body object for an endpoint based
+   * on a Predefined Entity exposed by the Entity Metadata.
+   *
+   * @param bodyDefinition The body definition metadata information.
+   */
   protected getRequestBody(bodyDefinition: IEndpointBody): Record<string, unknown> {
     let schema: Record<string, unknown> = {};
 

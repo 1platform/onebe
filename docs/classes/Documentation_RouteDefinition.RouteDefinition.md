@@ -4,6 +4,12 @@
 
 [Documentation/RouteDefinition](../modules/Documentation_RouteDefinition.md).RouteDefinition
 
+Route Definition Metadata store.
+
+In this class the framework store information about all the routes exposed
+by your application, like: the base path, the name of the route, the
+endpoints that are exposed by the route etc.
+
 ## Table of contents
 
 ### Constructors
@@ -33,6 +39,8 @@
 - [getEndpoint](Documentation_RouteDefinition.RouteDefinition.md#getendpoint)
 - [group](Documentation_RouteDefinition.RouteDefinition.md#group)
 - [isDocs](Documentation_RouteDefinition.RouteDefinition.md#isdocs)
+- [isSigned](Documentation_RouteDefinition.RouteDefinition.md#issigned)
+- [isUpload](Documentation_RouteDefinition.RouteDefinition.md#isupload)
 - [markAsAPI](Documentation_RouteDefinition.RouteDefinition.md#markasapi)
 - [markAsCustom](Documentation_RouteDefinition.RouteDefinition.md#markascustom)
 - [markAsDocs](Documentation_RouteDefinition.RouteDefinition.md#markasdocs)
@@ -53,6 +61,8 @@
 
 • `get` **list**(): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
 
+Getter for the list of routes available in the application.
+
 #### Returns
 
 [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
@@ -63,13 +73,15 @@
 
 ▸ **add**(`controller`, `basePath?`, `description?`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
 
+Method used to add a new Route into the Route Metadata store.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `basePath?` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to add. |
+| `basePath?` | `string` | The basePath of the controller. |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 
@@ -81,7 +93,7 @@ ___
 
 ▸ `Protected` **callbackExtractor**<`Request`, `Response`\>(`fn`): [`ICallbackExtracted`](../interfaces/Router_RouteInterfaces.ICallbackExtracted.md)<`Request`, `Response`\>
 
-Function used to extract the Route callback from the middlewares list.
+Method used to extract the Route callback from the middlewares list of an endpoint.
 
 #### Type parameters
 
@@ -106,6 +118,8 @@ ___
 
 ▸ **endpoint**<`Request`, `Response`\>(`controller`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to create (or update) an endpoint of a route.
+
 #### Type parameters
 
 | Name | Type |
@@ -115,10 +129,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `options` | [`IEndpointOptions`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointOptions.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `options` | [`IEndpointOptions`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointOptions.md) | Options used to define an endpoint. |
 
 #### Returns
 
@@ -128,15 +142,17 @@ ___
 
 ### endpointAuth
 
-▸ **endpointAuth**(`controller`, `methodName`, `method`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+▸ **endpointAuth**(`controller`, `methodName`, `authenticationMethod`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
+
+Method used to set the authentication method to an endpoint.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `method` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `authenticationMethod` | `string` | The authentication method used on the endpoint. |
 
 #### Returns
 
@@ -148,13 +164,15 @@ ___
 
 ▸ **endpointBody**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set details about the request body of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointBody`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBody.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointBody`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBody.md) | Information about the used entity as the body request of the endpoint. |
 
 #### Returns
 
@@ -166,13 +184,15 @@ ___
 
 ▸ **endpointBodyParameters**(`controller`, `methodName`, `parameters`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set details about the request body of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `parameters` | [`IEndpointBodyParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `parameters` | [`IEndpointBodyParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md)[] | A list with parameters found in the request body. |
 
 #### Returns
 
@@ -184,6 +204,8 @@ ___
 
 ▸ **endpointDescription**<`Request`, `Response`\>(`controller`, `methodName`, `description?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set a description to an endpoint.
+
 #### Type parameters
 
 | Name | Type |
@@ -193,11 +215,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `description?` | `string` | Detailed information about what the endpoint does. |
 
 #### Returns
 
@@ -209,13 +231,15 @@ ___
 
 ▸ **endpointDocumentation**(`controller`, `methodName`, `options`): `void`
 
+Method used to set all the documentation details of the endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointDocumentation`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointDocumentation.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update.sn |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointDocumentation`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointDocumentation.md) | A list of options used for documenting the endpoint directly, without using multiple decorators. |
 
 #### Returns
 
@@ -227,13 +251,15 @@ ___
 
 ▸ **endpointParameter**(`controller`, `methodName`, `options`): `void`
 
+Method used to set information about a URL parameter of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md) | Information about the parameter received by the endpoint. |
 
 #### Returns
 
@@ -245,13 +271,15 @@ ___
 
 ▸ **endpointQuery**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set information about a Query parameter of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointQuery`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointQuery.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointQuery`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointQuery.md) | Information about the parameter received by the endpoint. |
 
 #### Returns
 
@@ -263,13 +291,15 @@ ___
 
 ▸ **endpointResponse**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set information about a response of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointResponse.md)<`any`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointResponse.md)<`any`\> | Information about the response object returned by the endpoint. |
 
 #### Returns
 
@@ -281,14 +311,16 @@ ___
 
 ▸ **endpointStatus**(`controller`, `methodName`, `statusCode`, `description?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set information about a status of an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | The status code returned by the endpoint. |
+| `description?` | `string` | A short description of the returned status code. |
 
 #### Returns
 
@@ -300,6 +332,8 @@ ___
 
 ▸ **endpointSummary**<`Request`, `Response`\>(`controller`, `methodName`, `summary?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set a summary to an endpoint.
+
 #### Type parameters
 
 | Name | Type |
@@ -309,11 +343,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `summary?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `summary?` | `string` | A short description of the endpoint |
 
 #### Returns
 
@@ -325,13 +359,15 @@ ___
 
 ▸ **endpointThrows**(`controller`, `methodName`, `options`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\>
 
+Method used to set information about an error thrown by an endpoint.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\> | A list with options related to the error thrown. |
 
 #### Returns
 
@@ -343,6 +379,10 @@ ___
 
 ▸ `Protected` **getEndpoint**<`Request`, `Response`\>(`controller`, `methodName`, `options?`): [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`Request`, `Response`\>
 
+Method used to get metadata information about an endpoint. Using this method the
+documentation system will check if the endpoint exists in the route. If it doesn't exist,
+the endpoint is created with the given default values.
+
 #### Type parameters
 
 | Name |
@@ -352,11 +392,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `methodName` | `string` |
-| `options?` | [`IEndpointOptions`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointOptions.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `options?` | [`IEndpointOptions`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointOptions.md) | A list of endpoint metadata information used as the base for creation when it doesn't exist. |
 
 #### Returns
 
@@ -368,12 +408,14 @@ ___
 
 ▸ **group**(`controller`, `groupName`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
 
+Defines the group the route is a member of.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `groupName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `groupName` | `string` | A list of groups the route is member of. |
 
 #### Returns
 
@@ -385,11 +427,13 @@ ___
 
 ▸ **isDocs**(`controller`): `boolean`
 
+Checks if a route is a Documentation one.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
 
 #### Returns
 
@@ -397,16 +441,57 @@ ___
 
 ___
 
+### isSigned
+
+▸ **isSigned**(`controller`, `methodName`): `void`
+
+Method used to mark an endpoint as protected by a Signed URL.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+
+#### Returns
+
+`void`
+
+___
+
+### isUpload
+
+▸ **isUpload**(`controller`, `methodName`, `isMultiFile?`): `void`
+
+Method used to mark an endpoint as one that accepts files for upload.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `controller` | `string` | `undefined` | The controller we want to update. |
+| `methodName` | `string` | `undefined` | The name of the method on which we want to add information. |
+| `isMultiFile?` | `boolean` | `false` | The endpoint supports single or multiple file upload. |
+
+#### Returns
+
+`void`
+
+___
+
 ### markAsAPI
 
 ▸ **markAsAPI**(`controller`, `basePath`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
 
+Method used to mark a route as an API route.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `basePath` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `basePath` | `string` | The base path we want to prepend to the controller base path. |
 
 #### Returns
 
@@ -418,12 +503,14 @@ ___
 
 ▸ **markAsCustom**(`controller`, `basePath`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
 
+Method used to mark a route as a Custom route.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `basePath` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `basePath` | `string` | The base path we want to prepend to the controller base path. |
 
 #### Returns
 
@@ -435,11 +522,13 @@ ___
 
 ▸ **markAsDocs**(`controller`): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
 
+Method used to mark a route as a Documentation route.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
 
 #### Returns
 
@@ -451,11 +540,14 @@ ___
 
 ▸ **route**(`controller`): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
 
+Method used to get (and create if it doesn't exist yet) a route from
+the metadata store.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
 
 #### Returns
 
@@ -467,12 +559,14 @@ ___
 
 ▸ **setDescription**(`controller`, `description?`): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
 
+Method used to set the description of a route.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 
@@ -484,12 +578,14 @@ ___
 
 ▸ **setName**(`controller`, `name`): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
 
+Method used to set the name of a route.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `name` | `string` | The name of the route. |
 
 #### Returns
 
@@ -501,13 +597,15 @@ ___
 
 ▸ **update**(`controller`, `basePath?`, `description?`): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
 
+Method used to update Route information.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `controller` | `string` |
-| `basePath?` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `basePath?` | `string` | The basePath of the controller. |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 

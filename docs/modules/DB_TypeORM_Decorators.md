@@ -10,7 +10,6 @@
 - [CreateDateColumn](DB_TypeORM_Decorators.md#createdatecolumn)
 - [DeleteDateColumn](DB_TypeORM_Decorators.md#deletedatecolumn)
 - [JoinColumn](DB_TypeORM_Decorators.md#joincolumn)
-- [JoinTable](DB_TypeORM_Decorators.md#jointable)
 - [ManyToMany](DB_TypeORM_Decorators.md#manytomany)
 - [ManyToOne](DB_TypeORM_Decorators.md#manytoone)
 - [Model](DB_TypeORM_Decorators.md#model)
@@ -46,12 +45,6 @@ ___
 ### JoinColumn
 
 Re-exports [JoinColumn](DB_TypeORM_Decorators_Relation.md#joincolumn)
-
-___
-
-### JoinTable
-
-Re-exports [JoinTable](DB_TypeORM_Decorators_Relation.md#jointable)
 
 ___
 

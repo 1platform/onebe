@@ -6,11 +6,17 @@ Object.defineProperty(exports, "__esModule", {
 exports.QueryParameterType = exports.EntityPropertyDataTypes = exports.BodyParameterType = void 0;
 
 /**
- * Enum representing a Query Parameter Type
+ * A list of possible types for a query parameter.
  *
  * @enum
  */
 let QueryParameterType;
+/**
+ * A list of possible types for a the entity properties.
+ *
+ * @enum
+ */
+
 exports.QueryParameterType = QueryParameterType;
 
 (function (QueryParameterType) {
@@ -25,7 +31,7 @@ exports.QueryParameterType = QueryParameterType;
 
 let EntityPropertyDataTypes;
 /**
- * Enum representing a Body Parameter Type
+ * A list of possible types for a body parameter.
  *
  * @enum
  */
@@ -52,4 +58,5 @@ exports.BodyParameterType = BodyParameterType;
   BodyParameterType["INTEGER"] = "integer";
   BodyParameterType["NULL"] = "null";
   BodyParameterType["OBJECT"] = "object";
+  BodyParameterType["FILE"] = "file";
 })(BodyParameterType || (exports.BodyParameterType = BodyParameterType = {}));

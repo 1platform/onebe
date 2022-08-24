@@ -1,7 +1,10 @@
 import { Application } from "express";
 
 /**
- * The base definition of a middleware class.
+ * An interface used to describe how a Middleware class should look like. When you
+ * want to create a middleware or add support for an existing functionality into the
+ * application, use this interface as the base and look into how the other middlewares
+ * are loaded.
  */
 export default interface IMiddleware {
   /**

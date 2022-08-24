@@ -4,22 +4,23 @@ import BaseTransport from "./BaseTransport";
 import IEmailTransport from "./IEmailTransport";
 
 /**
- * SMTP Transport used for sending emails.
+ * SMTP Transport that can be used for sending emails.
  */
 export default class SMTPTransport extends BaseTransport implements IEmailTransport {
   /**
-   * SMTPTransport constructor.
+   * Transport constructor.
    */
   public constructor() {
-    super();
-    this._transporter = nodemailer.createTransport({
-      host: Config.string("email.config.server"),
-      port: Config.number("email.config.port", 587),
-      secure: Config.boolean("email.config.secure"),
-      auth: {
-        user: Config.string("email.config.address"),
-        pass: Config.string("email.config.password"),
-      },
-    });
+    super(
+      nodemailer.createTransport({
+        host: Config.string("email.config.server"),
+        port: Config.number("email.config.port", 587),
+        secure: Config.boolean("email.config.secure"),
+        auth: {
+          user: Config.string("email.config.address"),
+          pass: Config.string("email.config.password"),
+        },
+      })
+    );
   }
 }

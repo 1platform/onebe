@@ -16,22 +16,22 @@
 
 ### ErrorHandlerFunction
 
-Ƭ **ErrorHandlerFunction**: (`error`: `any`, `req`: `IncomingMessage`, `res`: `ServerResponse`, `next`: (`error`: `any`) => `void`) => `void`
+Ƭ **ErrorHandlerFunction**: (`error`: `any`, `request`: `IncomingMessage`, `response`: `ServerResponse`, `next`: (`error`: `any`) => `void`) => `void`
 
 #### Type declaration
 
-▸ (`error`, `req`, `res`, `next`): `void`
+▸ (`error`, `request`, `response`, `next`): `void`
 
-The type of the error handler function.
+Type declaration for a function that can be used as an error handler.
 
 ##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `error` | `any` | The error to be shown. |
-| `req` | `IncomingMessage` | The request object. |
-| `res` | `ServerResponse` | The response object |
-| `next` | (`error`: `any`) => `void` | The function with the next callback. |
+| `error` | `any` | The error to be returned. |
+| `request` | `IncomingMessage` | The request object. |
+| `response` | `ServerResponse` | The response object |
+| `next` | (`error`: `any`) => `void` | Callback for the next function to be called. |
 
 ##### Returns
 

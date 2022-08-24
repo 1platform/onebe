@@ -1,4 +1,4 @@
 /**
- * A base class used for all the routes exposed by the final application.
+ * A base class used for all the routes exposed by your application.
  */
 export default abstract class Route {}

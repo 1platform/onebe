@@ -29,11 +29,11 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Generates a ShortID that can be used for various things.
+ * Generator for a ShortID that can be used for various things.
  */
 const shortid = () => _shortid.default.generate();
 /**
- * Generate an UUID V1 code.
+ * Generator for a UUID V1 code.
  */
 
 
@@ -41,7 +41,7 @@ exports.shortid = shortid;
 
 const uuidV1 = () => uuid.v1();
 /**
- * Generate an UUID V4 code.
+ * Generator for a UUID V4 code.
  */
 
 
@@ -49,7 +49,7 @@ exports.uuidV1 = uuidV1;
 
 const uuidV4 = () => uuid.v4();
 /**
- * Encrypt a password using the hash function from bcryptjs.
+ * Method used to encrypt a password using the hash function from bcryptjs.
  *
  * @param password The password to be encrypted.
  * @param saltSize The size of the salt.
@@ -60,7 +60,7 @@ exports.uuidV4 = uuidV4;
 
 const encryptPassword = (password, saltSize = 10) => (0, _bcryptjs.hashSync)(password, saltSize);
 /**
- * Compares an encrypted password with the one entered by the user.
+ * Method used to compare an encrypted password with the one entered by the user.
  *
  * @param password The password to be compared.
  * @param encryptedPassword The encrypted password,

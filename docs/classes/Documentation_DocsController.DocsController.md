@@ -4,7 +4,7 @@
 
 [Documentation/DocsController](../modules/Documentation_DocsController.md).DocsController
 
-A base class used for all the routes exposed by the final application.
+A base class used for all the routes exposed by your application.
 
 ## Hierarchy
 
@@ -21,7 +21,8 @@ A base class used for all the routes exposed by the final application.
 ### Methods
 
 - [getAppInfo](Documentation_DocsController.DocsController.md#getappinfo)
-- [getOpenAPI](Documentation_DocsController.DocsController.md#getopenapi)
+- [getOpenAPIJSON](Documentation_DocsController.DocsController.md#getopenapijson)
+- [getOpenAPIYaml](Documentation_DocsController.DocsController.md#getopenapiyaml)
 - [getRoutes](Documentation_DocsController.DocsController.md#getroutes)
 
 ## Constructors
@@ -38,13 +39,7 @@ A base class used for all the routes exposed by the final application.
 
 ### getAppInfo
 
-▸ **getAppInfo**(`context`): `Record`<`string`, `unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `context` | [`ContextAPI`](Router_ContextAPI.ContextAPI.md)<`any`\> |
+▸ **getAppInfo**(): `Record`<`string`, `unknown`\>
 
 #### Returns
 
@@ -52,15 +47,19 @@ A base class used for all the routes exposed by the final application.
 
 ___
 
-### getOpenAPI
+### getOpenAPIJSON
 
-▸ **getOpenAPI**(`context`): `Record`<`string`, `string`\>
+▸ **getOpenAPIJSON**(): `Record`<`string`, `any`\>
 
-#### Parameters
+#### Returns
 
-| Name | Type |
-| :------ | :------ |
-| `context` | [`ContextAPI`](Router_ContextAPI.ContextAPI.md)<`any`\> |
+`Record`<`string`, `any`\>
+
+___
+
+### getOpenAPIYaml
+
+▸ **getOpenAPIYaml**(): `Record`<`string`, `string`\>
 
 #### Returns
 
@@ -70,13 +69,7 @@ ___
 
 ### getRoutes
 
-▸ **getRoutes**(`context`): `Record`<`string`, `unknown`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `context` | [`ContextAPI`](Router_ContextAPI.ContextAPI.md)<`any`\> |
+▸ **getRoutes**(): `Record`<`string`, `unknown`\>
 
 #### Returns
 

@@ -4,7 +4,7 @@
 
 [System/LoggerType](../modules/System_LoggerType.md).LoggerType
 
-Logger type enumeration
+A list with supported loggers from the application.
 
 ## Table of contents
 
@@ -14,6 +14,7 @@ Logger type enumeration
 - [FILE](System_LoggerType.LoggerType.md#file)
 - [JSON](System_LoggerType.LoggerType.md#json)
 - [JSON\_FILE](System_LoggerType.LoggerType.md#json_file)
+- [NO\_LOGGER](System_LoggerType.LoggerType.md#no_logger)
 
 ## Enumeration Members
 
@@ -38,3 +39,9 @@ ___
 ### JSON\_FILE
 
 • **JSON\_FILE** = ``"json_file"``
+
+___
+
+### NO\_LOGGER
+
+• **NO\_LOGGER** = ``"no_logger"``

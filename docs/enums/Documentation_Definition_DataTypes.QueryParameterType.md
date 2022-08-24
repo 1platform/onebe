@@ -4,7 +4,7 @@
 
 [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md).QueryParameterType
 
-Enum representing a Query Parameter Type
+A list of possible types for a query parameter.
 
 ## Table of contents
 

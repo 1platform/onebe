@@ -1,5 +1,4 @@
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
-import HTTPVerb from "../HTTP/HTTPVerb";
 import { AppMethod } from "./RouteTypes";
 
 /**
@@ -22,28 +21,6 @@ export interface IResponse<TResponse> {
    * The content type of the response.
    */
   contentType?: string;
-}
-
-/**
- * The parameter used for the definition of a Route Hook.
- */
-export interface IRouteHookParameter {
-  /**
-   * The HTTP Verb used for the route endpoint.
-   */
-  method: HTTPVerb;
-  /**
-   * The base path of the route endpoint.
-   */
-  basePath: string;
-  /**
-   * The path of the route endpoint.
-   */
-  path: string;
-  /**
-   * The name of the controller.
-   */
-  groupName: string;
 }
 
 /**

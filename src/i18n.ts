@@ -1,4 +1,4 @@
-import i18next from "i18next";
+import i18next, { TFunction } from "i18next";
 import Backend from "i18next-fs-backend";
 import { LanguageDetector } from "i18next-http-middleware";
 import path from "path";
@@ -7,9 +7,9 @@ import Config from "./System/Config";
 /**
  * Internationalisation init function.
  *
- * @param currentDir The current dir of the application.
+ * @param currentDir The current folder of the application.
  */
-export default function i18n(currentDir = __dirname): Promise<any> {
+export default function i18n(currentDir: string = __dirname): Promise<TFunction> {
   return i18next
     .use(Backend)
     .use(LanguageDetector)
@@ -21,7 +21,7 @@ export default function i18n(currentDir = __dirname): Promise<any> {
       debug: Config.boolean("app.debug"),
       backend: {
         loadPath: path.resolve(currentDir, "./locales/{{lng}}.json"),
-        addPath: path.resolve(currentDir, "./locales/{{lng}}.missing.json"),
+        addPath: path.resolve(currentDir, "./locales/{{lng}}.json"),
       },
       detection: {
         // order and from where user language should be detected

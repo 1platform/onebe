@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _Env = _interopRequireDefault(require("../System/Env"));
 
-var _version = _interopRequireDefault(require("../version"));
+var _version = require("../version");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,7 +37,7 @@ const defaultAppConfig = {
    *
    * @default "1.0.0"
    */
-  appVersion: _Env.default.string("APP_VERSION", (0, _version.default)()),
+  appVersion: _Env.default.string("APP_VERSION", (0, _version.getVersion)()),
 
   /**
    * A short text that describes the application you are developing.

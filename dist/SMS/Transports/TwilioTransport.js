@@ -16,15 +16,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Class representing the Twilio Transport handler
+ * SMS Transport using the Twilio engine.
  */
 class TwilioTransport {
   /**
-   * The Twilio service
+   * Twilio service handler.
    */
 
   /**
-   * THe default phone config
+   * The default phone configuration.
    */
 
   /**

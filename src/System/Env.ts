@@ -3,8 +3,10 @@ import { config } from "dotenv";
 config();
 
 /**
- * The environment handling class. Use the object exported
- * by the module to get various environment variable values.
+ * Class used to interact with the environment
+ *
+ *
+ * The environment handling class. Use the object exported by the module to get various environment variable values.
  */
 export class Environment {
   /**
@@ -79,4 +81,5 @@ export class Environment {
 
 const Env = new Environment();
 global.env = Env;
+
 export default Env;

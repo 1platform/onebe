@@ -2,7 +2,7 @@ import path from "path";
 import app from "./App";
 import initPassportStrategy, { IInitStrategyOptions } from "./Authentication/Passport";
 
-import "./custom";
+import { IInitOptions } from "./custom";
 import DB from "./DB";
 import HTTP from "./HTTP";
 import i18n from "./i18n";
@@ -16,28 +16,9 @@ import MetadataStore from "./Documentation/MetadataStore";
 import DocsController from "./Documentation/DocsController";
 
 /**
- * Framework configuration options.
+ * Default values to be used for the framework configuration.
  */
-export interface IOneBEOptions extends IInitStrategyOptions {
-  /**
-   * The folder in which the application runs.
-   */
-  currentDir?: string;
-  /**
-   * The configuration directory.
-   */
-  configDir?: string;
-  /**
-   * The controllers directory.
-   */
-  controllersDir?: string;
-  /**
-   * Should the Database connection be made.
-   */
-  noDBConnection?: boolean;
-}
-
-const defaultValues: IOneBEOptions = {
+const defaultValues: IInitOptions = {
   currentDir: process.cwd(),
   configDir: "./config",
   controllersDir: "./controllers",
@@ -45,12 +26,12 @@ const defaultValues: IOneBEOptions = {
 };
 
 /**
- * Framework init function. It initializes some elements of the framework
+ * Framework initialisation function. It initializes some elements of the framework
  * to be later used when starting the application up.
  *
  * @param props The various properties you can pass to the init function.
  */
-export default async function init(props: IOneBEOptions): Promise<(strategyProps?: IInitStrategyOptions) => Promise<void>> {
+export default async function init(props: IInitOptions): Promise<(strategyProps?: IInitStrategyOptions) => Promise<void>> {
   props = {
     ...defaultValues,
     ...props,
@@ -60,7 +41,7 @@ export default async function init(props: IOneBEOptions): Promise<(strategyProps
   if (!Config.boolean("logs.enabled")) {
     setDefaultLogger(new NoLogger());
   } else {
-    switch (Config.string("logs.type")) {
+    switch (Config.string("logs.type", LoggerType.CONSOLE)) {
       case LoggerType.CONSOLE:
         setDefaultLogger(new ConsoleLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()]));
         break;
@@ -72,6 +53,10 @@ export default async function init(props: IOneBEOptions): Promise<(strategyProps
         break;
       case LoggerType.JSON_FILE:
         setDefaultLogger(new JSONLogger(LogLevel[Config.string("logs.level", LogLevel.INFO).toUpperCase()], true));
+        break;
+      case LoggerType.NO_LOGGER:
+      default:
+        setDefaultLogger(new NoLogger());
         break;
     }
   }

@@ -4,7 +4,7 @@
 
 [Middlewares/LoggerMiddleware](../modules/Middlewares_LoggerMiddleware.md).LoggerMiddleware
 
-The logger middleware.
+Middleware used to add logging support to the Express application.
 
 ## Implements
 

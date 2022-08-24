@@ -4,7 +4,10 @@
 
 [Email/Transports/BaseTransport](../modules/Email_Transports_BaseTransport.md).BaseTransport
 
-Class representing the Base Transport.
+Base class that can be used to create a new Email Transport Service.
+
+You need to extend this class and attach a transporter service
+that supports email sending.
 
 ## Hierarchy
 
@@ -36,7 +39,15 @@ Class representing the Base Transport.
 
 ### constructor
 
-• **new BaseTransport**()
+• `Protected` **new BaseTransport**(`transporter?`)
+
+Constructor that initialises the transporter service.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `transporter?` | `Transporter`<`any`\> |
 
 ## Properties
 

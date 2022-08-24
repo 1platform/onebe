@@ -33,11 +33,15 @@ Renames and re-exports [Documentation/Decorators/Endpoint/ResponseDecorators](Do
 
 ▸ **Endpoint**(`options`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to fully document an endpoint.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | [`IEndpointDocumentation`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointDocumentation.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | [`IEndpointDocumentation`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointDocumentation.md) | A list of options that describe the endpoint. |
 
 #### Returns
 
@@ -49,11 +53,15 @@ ___
 
 ▸ **EndpointDescription**(`description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to add a description to an endpoint.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 
@@ -65,11 +73,15 @@ ___
 
 ▸ **EndpointSummary**(`summary?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to add a summary to an endpoint.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `summary?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `summary?` | `string` | A short description of the controller. |
 
 #### Returns
 

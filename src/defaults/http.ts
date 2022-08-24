@@ -37,6 +37,13 @@ const defaultHTTPConfig: IConfig = {
   url: Env.url("HTTP_URL", `http://${ Env.string("HTTP_LISTEN", "127.0.0.1") }:${ Env.int("HTTP_PORT", 7200) }`),
 
   /**
+   * The format used to display the log information for HTTP requests.
+   *
+   * The supported formats are: "combined", "compact", "dev", "short", "tiny"
+   */
+  logFormat: Env.string("HTTP_LOG_FORMAT", "combined"),
+
+  /**
    * Cookie configuration object.
    *
    * Through these parameters we can limit the scope of our cookies and who

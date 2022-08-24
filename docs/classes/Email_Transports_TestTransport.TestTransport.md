@@ -4,7 +4,8 @@
 
 [Email/Transports/TestTransport](../modules/Email_Transports_TestTransport.md).TestTransport
 
-Email testing Transport class.
+Transport class that can be used for testing email sending.
+!!!DO NOT USE IN PRODUCTION!!!
 
 ## Hierarchy
 
@@ -36,7 +37,7 @@ Email testing Transport class.
 
 • **new TestTransport**()
 
-TestTransport constructor.
+Transport constructor.
 
 #### Overrides
 

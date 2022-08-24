@@ -4,7 +4,18 @@
 
 [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md).HTTPStatus
 
-HTTP Status Codes enums
+A list with the supported HTTP Status codes that can be used
+in the application.
+
+Statuses starting with 2 (200, 201, 202, 204 etc.) are usually
+sent when you want to show a successful response.
+
+Statuses starting with 4 (400, 401, 403 etc.) are usually sent
+when you want to show that the response has failed, based on the
+input received from the user.
+
+Statuses starting with 5 (500, 501, 503 etc.) are usually sent
+when you or the server want to show that something failed.
 
 ## Table of contents
 

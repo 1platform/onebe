@@ -4,6 +4,8 @@
 
 [Documentation/GetDocs](../modules/Documentation_GetDocs.md).DocsType
 
+A list of supported documentation generators.
+
 ## Table of contents
 
 ### Enumeration Members

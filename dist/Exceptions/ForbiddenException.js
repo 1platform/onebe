@@ -19,7 +19,7 @@ class ForbiddenException extends _HTTPError.default {
    * Constructor of the ForbiddenException.
    */
   constructor() {
-    super("errors.default.forbidden", _HTTPStatus.default.FORBIDDEN);
+    super("onebe.errors.forbidden", _HTTPStatus.default.FORBIDDEN);
   }
 
 }

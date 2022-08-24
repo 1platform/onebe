@@ -1,5 +1,5 @@
 import { JoinColumnOptions, ObjectType, RelationOptions } from "typeorm";
-import { Constructor, PropertyDecorator } from "../../../Documentation/MetadataTypes";
+import { Constructor } from "../../../Documentation/MetadataTypes";
 export { JoinTable } from "typeorm";
 /**
  * Decorator used to define a many-to-one relation between two models.

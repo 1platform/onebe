@@ -15,7 +15,9 @@
 
 ▸ **generateAlfaCode**(): `string`
 
-Returns an AlphaNumeric MFA Code.
+Function used to generate a random string code that can be used as a way
+to check if the real user tried to perform an action or log into their
+account.
 
 #### Returns
 
@@ -27,13 +29,15 @@ ___
 
 ▸ **generateNumericCode**(`size?`): `string`
 
-Generate a numeric MFA code.
+Function used to generate a random numeric code that can be used as a way
+to check if the real user tried to perform an action or log into their
+account.
 
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `size` | `number` | `6` | The length of the MFA code. |
+| `size?` | `number` | `6` | The length of the MFA code. |
 
 #### Returns
 

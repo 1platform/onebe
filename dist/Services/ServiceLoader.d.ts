@@ -1,10 +1,10 @@
 import ServiceBase from "./ServiceBase";
 /**
- * The application service loader singleton.
+ * A system to load services into the application and reuse them as needed.
  */
 export default class ServiceLoader {
     /**
-     * A map containing all the instantiated services of the application.
+     * A map containing all the instantiated services in the application.
      */
     protected _services: Record<string, ServiceBase>;
     /**

@@ -1,11 +1,11 @@
 import { Application, NextFunction, Request, Response } from "express";
-import getVersion from "../version";
+import { getVersion } from "../version";
 import IMiddleware from "./IMiddleware";
 
 /**
- * The Spark Middleware.
+ * Middleware used to add information about the framework.
  */
-export default class SparkMiddleware implements IMiddleware {
+export default class OneBEMiddleware implements IMiddleware {
   /**
    * The middleware initialization method.
    *
@@ -13,8 +13,7 @@ export default class SparkMiddleware implements IMiddleware {
    */
   public use(app: Application): void {
     app.use((req: Request, res: Response, next: NextFunction) => {
-      res.setHeader("X-Powered-By", "onebe");
-      res.setHeader("X-Onebe-App", `v${ getVersion() }`);
+      res.setHeader("X-OneBE-Version", `v${ getVersion() }`);
       next();
     });
   }

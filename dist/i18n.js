@@ -20,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Internationalisation init function.
  *
- * @param currentDir The current dir of the application.
+ * @param currentDir The current folder of the application.
  */
 function i18n(currentDir = __dirname) {
   return _i18next.default.use(_i18nextFsBackend.default).use(_i18nextHttpMiddleware.LanguageDetector).init({
@@ -31,7 +31,7 @@ function i18n(currentDir = __dirname) {
     debug: _Config.default.boolean("app.debug"),
     backend: {
       loadPath: _path.default.resolve(currentDir, "./locales/{{lng}}.json"),
-      addPath: _path.default.resolve(currentDir, "./locales/{{lng}}.missing.json")
+      addPath: _path.default.resolve(currentDir, "./locales/{{lng}}.json")
     },
     detection: {
       // order and from where user language should be detected

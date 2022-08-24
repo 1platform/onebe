@@ -16,6 +16,18 @@
 
 ▸ **Controller**<`T`\>(`name`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
+Decorator used to document a controller.
+
+Use this decorator when you want to specifically mark a class as a controller
+in the documentation. Otherwise, by using the
+
+**`Path`**
+
+decorator you can add
+the same documentation elements like this decorator.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -24,10 +36,10 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the controller. |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 
@@ -39,6 +51,18 @@ ___
 
 ▸ **Description**<`T`\>(`description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
+Decorator used to give a description to a controller.
+
+Use this decorator when you want to specifically give a description to a controller.
+Otherwise, by using the
+
+**`Path`**
+
+decorator you can add the same documentation
+elements like this decorator.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -47,9 +71,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `description?` | `string` | A short description of the controller. |
 
 #### Returns
 
@@ -61,6 +85,18 @@ ___
 
 ▸ **Name**<`T`\>(`name`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
+Decorator used to give a name to a controller.
+
+Use this decorator when you want to specifically give a name to a controller.
+Otherwise, by using the
+
+**`Path`**
+
+decorator you can add the same documentation
+elements like this decorator.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -69,9 +105,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the controller. |
 
 #### Returns
 

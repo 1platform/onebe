@@ -5,7 +5,7 @@ import LoggerMiddleware from "./LoggerMiddleware";
 import PageInfoMiddleware from "./PageInfoMiddleware";
 import PassportMiddleware from "./PassportMiddleware";
 import SessionMiddleware from "./SessionMiddleware";
-import SparkMiddleware from "./SparkMiddleware";
+import OneBEMiddleware from "./OneBEMiddleware";
 
 /**
  * A list containing middlewares to be loaded in the application automatically.
@@ -18,5 +18,5 @@ export default [
   new I18nMiddleware(),
   new PageInfoMiddleware(),
   new PassportMiddleware(),
-  new SparkMiddleware(),
+  new OneBEMiddleware(),
 ];

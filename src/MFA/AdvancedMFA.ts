@@ -3,11 +3,12 @@ import speakeasy from "speakeasy";
 import app from "../App";
 
 /**
- * The MFA configuration response.
+ * Multi-Factor Authentication configuration object that is used when configuring
+ * the Advanced MFA system for a specific user.
  */
 export interface IMFAConfiguration {
   /**
-   * The OTP Authentication URL
+   * The OneTimp Password (OTP) Authentication URL
    */
   otpAuthUrl: string;
   /**
@@ -17,11 +18,15 @@ export interface IMFAConfiguration {
 }
 
 /**
- * An advanced MFA authentication method.
+ * A service used to enable an Advanced MFA system to authenticate users through
+ * an authentication application like Google Authenticator, Microsoft Authenticator etc.
+ *
+ * This class provides you with everything needed to easily implement the MFA using an
+ * authenticator app (QRCode, OTP verifications etc).
  */
 export class AdvancedMFA {
   /**
-   * Returns an MFA Configuration.
+   * Returns the MFA Configuration that you can reuse in your application.
    */
   public getMFAConfig(): IMFAConfiguration {
     const secretCode = speakeasy.generateSecret({

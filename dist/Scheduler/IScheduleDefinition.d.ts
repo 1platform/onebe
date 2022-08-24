@@ -1,13 +1,13 @@
 /**
- * The runner function definition.
+ * Type used to define how a task runner job should look like.
  */
 export declare type TRunner = () => void;
 /**
- * The async runner function definition.
+ * Type used to define how an async task runner job should look like.
  */
 export declare type TRunnerAsync = () => Promise<void>;
 /**
- * Task scheduler parameter definition.
+ * Detailed information about a scheduled job.
  */
 export default interface IScheduleDefinition {
     /**

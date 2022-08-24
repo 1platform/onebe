@@ -10,15 +10,18 @@ import Config from "../System/Config";
 import { getDefaultLogger } from "../System/Logger";
 
 /**
- * The HTTP server handler class.
+ * The HTTP service used to create the HTTP server.
+ *
+ * Through this service you can start an HTTP server using Express, secured with
+ * Helmet and having some default Middlewares/Plugins loaded in the application.
  */
 export default class HTTP {
   /**
-   * A list of middlewares that we load in our application.
+   * A list of middlewares that are loaded in your application.
    */
   private _middlewares: Array<IMiddleware> = [ ...Middlewares ];
   /**
-   * The Express application instance.
+   * Express instance that is used for the HTTP server.
    */
   private readonly _app: Application;
   /**
@@ -54,28 +57,28 @@ export default class HTTP {
   }
 
   /**
-   * Express application getter.
+   * Getter for the Express instance.
    */
   public get app(): Application {
     return this._app;
   }
 
   /**
-   * HTTP Server instance getter.
+   * Getter for the HTTP server.
    */
   public get http(): Server {
     return this._http;
   }
 
   /**
-   * The port on which we listen on for http requests.
+   * Getter for the port used to serve the HTTP server.
    */
   public get port(): number {
     return Config.number("http.port", 7200);
   }
 
   /**
-   * The ip on which we listen on for http requests.
+   * Getter for the Host IP used to serve the HTTP server.
    */
   public get host(): string {
     return Config.string("http.listen", "127.0.0.1");
@@ -87,33 +90,35 @@ export default class HTTP {
    * @param variable The variable name.
    * @param value The value of the variable.
    */
-
-  /* eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types */
   public setLocal(variable: string, value: any): void {
     this._app.locals[variable] = value;
   }
 
   /**
-   * Start the HTTP server.
+   * Method used to start the HTTP server created by the service.
    */
-  public start(): void {
-    for (const middleware of this._middlewares) {
-      middleware.use(this._app);
-    }
+  public start(): Promise<void> {
+    return new Promise((resolve) => {
+      for (const middleware of this._middlewares) {
+        middleware.use(this._app);
+      }
 
-    this._app.use(Router.router);
-    new ErrorHandlerMiddleware().use(this._app);
+      this._app.use(Router.router);
+      new ErrorHandlerMiddleware().use(this._app);
 
-    const { host, port } = this;
-    this._http.listen(port, host, () => {
-      getDefaultLogger().info(`Application started: http://${ host }:${ port }`);
+      const { host, port } = this;
+
+      this._http.listen(port, host, () => {
+        getDefaultLogger().info(`Application started: http://${ host }:${ port }`);
+        resolve();
+      });
     });
   }
 
   /**
-   * Attach a middleware to the express application.
+   * Attach a middleware or a list of middlewares to the express application.
    *
-   * @param middleware The middleware we want to attach.
+   * @param middleware A middleware or a list of middlewares you want to attach.
    */
   public use(middleware: IMiddleware | IMiddleware[]): void {
     if (!Array.isArray(middleware)) {

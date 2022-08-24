@@ -20,21 +20,22 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * The Error Handler Middleware.
+ * Middleware used to catch all the errors returned by the application and send
+ * a consolidated object
  */
 class ErrorHandlerMiddleware {
   /**
-   * A list of handlers to be ran before the Error Handler Middleware
+   * A list of error handler functions to be run before the final Error Handler Middleware.
    */
 
   /**
-   * Add a handler to the before error handler array.
+   * Add an error handler function to be run before the final Error Handler Middleware.
    */
   static addBeforeHandler(handler) {
     ErrorHandlerMiddleware._beforeHandler.push(handler);
   }
   /**
-   * The middleware initialization method.
+   * Method used to attach the error handler to the Express instance.
    *
    * @param app The express application on which we apply the middleware.
    */
@@ -51,7 +52,7 @@ class ErrorHandlerMiddleware {
 
     app.use((error, req, res, next) => {
       const status = error.status || _HTTPStatus.default.SERVER_ERROR;
-      const message = req.t ? req.t(error.message || "errors.something-wong", _objectSpread({}, error.parameters || {})) : error.message;
+      const message = req.t ? req.t(error.message || "onebe.errors.something-wong", _objectSpread({}, error.parameters || {})) : error.message;
       let {
         details
       } = error;

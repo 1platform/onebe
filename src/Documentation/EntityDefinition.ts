@@ -4,17 +4,54 @@ import { Constructor } from "./MetadataTypes";
 import { EntityPropertyDataTypes } from "./Definition/DataTypes";
 
 export default class EntityDefinition {
+  /**
+   * A map with all the entities you defined in the application.
+   */
   private _entities: Record<string, IEntityMetadata> = {};
+
+  /**
+   * A map with all the relations between entities defined in the application.
+   */
   private _relations: Record<string, Array<IRelationMetadata>> = {};
+
+  /**
+   * A map with the mapping fields between relations and entities.
+   */
   private _mapping: Record<string, Record<string, string>> = {};
 
+  /**
+   * Getter used to list all the entities defined in the application.
+   */
   public get list(): Array<IEntityMetadata> {
     return Object.values(this._entities);
   }
 
-  public add(name: string, description?: string): EntityDefinition {
-    this._entities[name] = {
-      name,
+  /**
+   * Builds the list of entities, based on the relation between them and
+   * the parents defined for each of them.
+   */
+  public buildEntityList(): Array<IEntityMetadata> {
+    return Object.keys(this._entities).map((entityName) => {
+      const entity = { ...this._entities[entityName] };
+      entity.properties = [ ...(entity.properties || []) ];
+      if (entity.extends) {
+        entity.properties = [ ...this.getParentEntityProperties(entity.extends), ...entity.properties ];
+      }
+
+      delete entity.extends;
+      return entity;
+    });
+  }
+
+  /**
+   *  Method used to add a new entity in the entity metadata store.
+   *
+   * @param entity The entity on which we add information.
+   * @param [description] A short description of the entity.
+   */
+  public add(entity: string, description?: string): EntityDefinition {
+    this._entities[entity] = {
+      name: entity,
       description: description ?? "",
       properties: [],
       extends: "",
@@ -23,27 +60,52 @@ export default class EntityDefinition {
     return this;
   }
 
-  public entity(name: string): IEntityMetadata {
-    if (!this._entities[name]) {
-      this.add(name);
+  /**
+   * Method used to get an entity from the entity metadata store. If the entity does
+   * not exist yet, it will create it.
+   *
+   * @param entity The entity on which we add information.
+   */
+  public entity(entity: string): IEntityMetadata {
+    if (!this._entities[entity]) {
+      this.add(entity);
     }
-    return this._entities[name];
+    return this._entities[entity];
   }
 
-  public update(name: string, description?: string): IEntityMetadata {
-    if (!this._entities[name]) {
-      this.add(name, description);
+  /**
+   * Method used to update the information about an entity. If the entity does not exist
+   * it will be created.
+   *
+   * @param entity The entity on which we add information.
+   * @param [description] A short description of the entity.
+   */
+  public update(entity: string, description?: string): IEntityMetadata {
+    if (!this._entities[entity]) {
+      this.add(entity, description);
     } else {
-      this._entities[name].description = description;
+      this._entities[entity].description = description;
     }
-    return this._entities[name];
+    return this._entities[entity];
   }
 
+  /**
+   * Method used to attach a table name to an entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param tableName The name of the table attached to the entity.
+   */
   public tableName(entity: string, tableName: string): EntityDefinition {
     this._entities[entity].tableName = tableName;
     return this;
   }
 
+  /**
+   * Method used to define the parent entity of the current entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param extendedEntity The entity from which we get additional information.
+   */
   public extends(entity: string, extendedEntity: string): EntityDefinition {
     if (extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
       this._entities[entity].extends = extendedEntity;
@@ -51,6 +113,14 @@ export default class EntityDefinition {
     return this;
   }
 
+  /**
+   * Method used to document properties of the entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param propertyName The name of the property on which we add information.
+   * @param propertyOptions The list of options related to the property.
+   * @param [afterProperty] The name of the property after which we add the property.
+   */
   public property(entity: string, propertyName: string, propertyOptions: IEntityProperty, afterProperty?: string): EntityDefinition {
     const entityDoc = this.entity(entity);
 
@@ -84,6 +154,12 @@ export default class EntityDefinition {
     return this;
   }
 
+  /**
+   * Check if an entity has the given property.
+   *
+   * @param entity The entity on which we perform the check.
+   * @param propertyName The name of the property which we want to check after.
+   */
   public hasProperty(entity: string, propertyName: string): boolean {
     if (!this._entities[entity]) {
       return false;
@@ -92,6 +168,12 @@ export default class EntityDefinition {
     return this._entities[entity].properties.findIndex((property) => property.name === propertyName) >= 0;
   }
 
+  /**
+   * Method used to mark a property as a primary key.
+   *
+   * @param entity The entity on which we add information.
+   * @param propertyName The name of the property on which we add information.
+   */
   public markPrimaryKey(entity: string, propertyName: string): void {
     if (!this._entities[entity]) {
       return;
@@ -109,6 +191,12 @@ export default class EntityDefinition {
     this._entities[entity].properties.splice(propertyItemIndex, 1, propertyItem);
   }
 
+  /**
+   * Method used to mark a property as required.
+   *
+   * @param entity The entity on which we add information.
+   * @param propertyName The name of the property on which we add information.
+   */
   public markRequired(entity: string, propertyName: string): void {
     if (!this._entities[entity]) {
       return;
@@ -126,6 +214,11 @@ export default class EntityDefinition {
     this._entities[entity].properties.splice(propertyItemIndex, 1, propertyItem);
   }
 
+  /**
+   * Returns an array of items marked as primary keys.
+   *
+   * @param entity The entity on which we add information.
+   */
   public getPrimaryKey(entity: string): Array<IEntityPropertyMetadata> {
     if (!this._entities[entity]) {
       return [];
@@ -134,19 +227,14 @@ export default class EntityDefinition {
     return this._entities[entity].properties.filter((property) => property.isPrimaryKey);
   }
 
-  public buildEntityList(): Array<IEntityMetadata> {
-    return Object.keys(this._entities).map((entityName) => {
-      const entity = { ...this._entities[entityName] };
-      entity.properties = [ ...(entity.properties || []) ];
-      if (entity.extends) {
-        entity.properties = [ ...this.getParentEntityProperties(entity.extends), ...entity.properties ];
-      }
-
-      delete entity.extends;
-      return entity;
-    });
-  }
-
+  /**
+   * Method used to add a relation between entities.
+   *
+   * @param entity The entity on which we add information.
+   * @param propertyName The name of the property on which we add information.
+   * @param typeFunctionOrTarget The target of the relation.
+   * @param [isArray] Flag to mark the relation as one-to-many or many-to-many.
+   */
   public addRelation<T = Constructor>(
     entity: string,
     propertyName: string,
@@ -169,6 +257,14 @@ export default class EntityDefinition {
     });
   }
 
+  /**
+   * Method used to define the relation between the property and the destination
+   * entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param propertyName The name of the property on which we add information.
+   * @param relationField The field used for the relation.
+   */
   public relationField(entity: string, propertyName: string, relationField: string): void {
     if (!this._mapping[entity]) {
       this._mapping[entity] = {};
@@ -177,6 +273,9 @@ export default class EntityDefinition {
     this._mapping[entity][propertyName] = relationField;
   }
 
+  /**
+   * Method used to register all the relations between entities.
+   */
   public registerRelations(): void {
     for (const entity of Object.keys(this._relations)) {
       for (const relation of this._relations[entity]) {
@@ -185,7 +284,13 @@ export default class EntityDefinition {
     }
   }
 
-  protected registerRelation(entityName: string, relation: IRelationMetadata): void {
+  /**
+   * Method used internally to add all the relations for an entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param relation Relation metadata for an entity.
+   */
+  protected registerRelation(entity: string, relation: IRelationMetadata): void {
     let name = "";
     let idField = "id";
     let dataType = "integer";
@@ -210,11 +315,11 @@ export default class EntityDefinition {
       dataType = primaryKeyList[0].dataType;
     }
 
-    if (this._mapping[entityName] && this._mapping[entityName][relation.propertyName]) {
-      fieldName = this._mapping[entityName][relation.propertyName];
+    if (this._mapping[entity] && this._mapping[entity][relation.propertyName]) {
+      fieldName = this._mapping[entity][relation.propertyName];
     }
 
-    this.property(entityName, relation.propertyName, {
+    this.property(entity, relation.propertyName, {
       dataType: relation.isArray ? EntityPropertyDataTypes.ARRAY : EntityPropertyDataTypes.OBJECT,
       fieldName,
       reference: name,
@@ -223,7 +328,7 @@ export default class EntityDefinition {
 
     if (!this.hasProperty(name, fieldName) && !relation.isArray) {
       this.property(
-        entityName,
+        entity,
         fieldName,
         {
           dataType: dataType as EntityPropertyDataTypes,
@@ -233,6 +338,11 @@ export default class EntityDefinition {
     }
   }
 
+  /**
+   * Method used internally to get properties of the parent entities of an entity.
+   *
+   * @param parentEntityName The name of the parent entity.
+   */
   protected getParentEntityProperties(parentEntityName: string): Array<IEntityPropertyMetadata> {
     const parentEntity = this._entities[parentEntityName];
     const properties = [ ...(parentEntity.properties || []) ];

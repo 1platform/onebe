@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+/**
+ * A list with supported SMS Service providers.
+ */
 var SMSProvider;
 
 (function (SMSProvider) {

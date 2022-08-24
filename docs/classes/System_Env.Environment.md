@@ -4,8 +4,9 @@
 
 [System/Env](../modules/System_Env.md).Environment
 
-The environment handling class. Use the object exported
-by the module to get various environment variable values.
+Class used to interact with the environment
+
+The environment handling class. Use the object exported by the module to get various environment variable values.
 
 ## Table of contents
 

@@ -23,7 +23,7 @@
 
 ▸ (): `void`
 
-The runner function definition.
+Type used to define how a task runner job should look like.
 
 ##### Returns
 
@@ -39,7 +39,7 @@ ___
 
 ▸ (): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-The async runner function definition.
+Type used to define how an async task runner job should look like.
 
 ##### Returns
 

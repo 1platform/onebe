@@ -4,6 +4,12 @@
 
 [Router/ContextAPI](../modules/Router_ContextAPI.md).ContextAPI
 
+Endpoint request Context information class.
+
+Through this class you can interact with the data received from your users. This Context API allows
+you to get data from the Parameters, Query Parameters or Body easily, through specific methods
+and specific data types.
+
 ## Type parameters
 
 | Name | Type |
@@ -50,6 +56,8 @@
 
 • **new ContextAPI**<`BodyRequest`\>(`request`, `response`, `exposeRequest?`, `isGet?`)
 
+Context API constructor.
+
 #### Type parameters
 
 | Name | Type |
@@ -58,18 +66,20 @@
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `request` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> | `undefined` |
-| `response` | `Response`<`any`, `Record`<`string`, `any`\>\> | `undefined` |
-| `exposeRequest` | `boolean` | `false` |
-| `isGet` | `boolean` | `false` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `request` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> | `undefined` | The request object for which you need context. |
+| `response` | `Response`<`any`, `Record`<`string`, `any`\>\> | `undefined` | The response object for which you need context. |
+| `exposeRequest?` | `boolean` | `false` | Flag to let the Context API know if you need the request object exposed in the endpoint method or not. |
+| `isGet?` | `boolean` | `false` | Flag to let the Context API know that the request is a GET request. |
 
 ## Accessors
 
 ### appURL
 
 • `get` **appURL**(): `string`
+
+Getter for the Application URL from the request.
 
 #### Returns
 
@@ -81,6 +91,8 @@ ___
 
 • `get` **body**(): `BodyRequest`
 
+Getter for the Body of the request. If the request is a GET one, then it will return undefined.
+
 #### Returns
 
 `BodyRequest`
@@ -90,6 +102,8 @@ ___
 ### files
 
 • `get` **files**(): `File`[]
+
+Getter for the list of files uploaded through the Endpoint.
 
 #### Returns
 
@@ -101,6 +115,8 @@ ___
 
 • `get` **headers**(): `Record`<`string`, `string`\>
 
+Getter for the list of Headers exposed by the endpoint.
+
 #### Returns
 
 `Record`<`string`, `string`\>
@@ -110,6 +126,8 @@ ___
 ### pageURL
 
 • `get` **pageURL**(): `string`
+
+Getter for the Page URL from the request.
 
 #### Returns
 
@@ -121,6 +139,8 @@ ___
 
 • `get` **parameters**(): `Record`<`string`, `string`\>
 
+Getter for the list of URL Parameters exposed by the endpoint.
+
 #### Returns
 
 `Record`<`string`, `string`\>
@@ -130,6 +150,8 @@ ___
 ### queryParameters
 
 • `get` **queryParameters**(): `ParsedQs`
+
+Getter for the list of Query Parameters exposed by the endpoint.
 
 #### Returns
 
@@ -141,6 +163,9 @@ ___
 
 • `get` **request**(): `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>
 
+Getter for the request object. If the flag `exposeRequest` is set to false, the getter will
+return undefined.
+
 #### Returns
 
 `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\>
@@ -150,6 +175,9 @@ ___
 ### response
 
 • `get` **response**(): `Response`<`any`, `Record`<`string`, `any`\>\>
+
+Getter for the response object. If the flag `exposeRequest` is set to false, the getter will
+return undefined.
 
 #### Returns
 
@@ -161,6 +189,8 @@ ___
 
 • `get` **sessionID**(): `string`
 
+Getter for the session ID of the request.
+
 #### Returns
 
 `string`
@@ -170,6 +200,8 @@ ___
 ### getBody
 
 ▸ **getBody**(): `BodyRequest`
+
+Method used to get the contents of the body as the given type passed when defining the endpoint.
 
 #### Returns
 
@@ -181,6 +213,8 @@ ___
 
 ▸ **getBodyProperty**<`T`\>(`property`): `T`
 
+Method used to get a property from the body using a name and a specific type.
+
 #### Type parameters
 
 | Name | Type |
@@ -189,9 +223,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `property` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `property` | `string` | The property we want from the body. |
 
 #### Returns
 
@@ -203,11 +237,14 @@ ___
 
 ▸ **getFiles**(`fileName?`): `File` \| `File`[]
 
+Method used to get a file by its name from the request. When using the single upload
+middleware, you can skip the fileName parameter.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `fileName?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fileName?` | `string` | The name of the file. When using the single file upload middleware, you can skip the parameter. |
 
 #### Returns
 
@@ -219,11 +256,13 @@ ___
 
 ▸ **getHeader**(`headerName`): `string`
 
+Method used to get the header value from the request.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `headerName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `headerName` | `string` | The name of the header value needed. |
 
 #### Returns
 
@@ -235,11 +274,13 @@ ___
 
 ▸ **getParameter**(`name`): `string`
 
+Method used to get the value of a URL Parameter by its name.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the parameter. |
 
 #### Returns
 
@@ -251,11 +292,13 @@ ___
 
 ▸ **getParameterNumber**(`name`): `number`
 
+Method used to get a numeric URL Parameter by its name.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the parameter. |
 
 #### Returns
 
@@ -267,12 +310,14 @@ ___
 
 ▸ **getQuery**(`name`, `defaultValue?`): `ParsedQs`
 
+Method used to get the value of a Query Parameter by its name.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `name` | `string` | `undefined` |
-| `defaultValue` | `string` | `""` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `name` | `string` | `undefined` | The name of the parameter. |
+| `defaultValue` | `string` | `""` | The default value of the parameter. |
 
 #### Returns
 
@@ -284,6 +329,8 @@ ___
 
 ▸ **getQueryArray**<`T`\>(`name`): `T`[]
 
+Method used to get the array value of a Query Parameter by its name.
+
 #### Type parameters
 
 | Name | Type |
@@ -292,9 +339,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the parameter. |
 
 #### Returns
 
@@ -306,11 +353,13 @@ ___
 
 ▸ **getQueryBoolean**(`name`): `boolean`
 
+Method used to get the boolean value of a Query Parameter by its name.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the parameter. |
 
 #### Returns
 
@@ -322,12 +371,14 @@ ___
 
 ▸ **getQueryNumber**(`name`, `defaultValue?`): `number`
 
+Method used to get the numeric value of a Query Parameter by its name.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `name` | `string` | `undefined` |
-| `defaultValue` | `number` | `0` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `name` | `string` | `undefined` | The name of the parameter. |
+| `defaultValue` | `number` | `0` | The default value of the parameter. |
 
 #### Returns
 
@@ -339,12 +390,14 @@ ___
 
 ▸ **getQueryString**(`name`, `defaultValue?`): `string`
 
+Method used to get the string value of a Query Parameter by its name.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `name` | `string` | `undefined` |
-| `defaultValue` | `string` | `""` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `name` | `string` | `undefined` | The name of the parameter. |
+| `defaultValue` | `string` | `""` | The default value of the parameter. |
 
 #### Returns
 
@@ -356,12 +409,14 @@ ___
 
 ▸ **setHeader**(`headerName`, `value`): `void`
 
+Method used to set a header value for the response.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `headerName` | `string` |
-| `value` | `string` \| `string`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `headerName` | `string` | The name of the header for which you set the value. |
+| `value` | `string` \| `string`[] | The value you want to set. |
 
 #### Returns
 

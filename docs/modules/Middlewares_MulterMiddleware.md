@@ -8,16 +8,14 @@
 
 - [SignMethodOptions](Middlewares_MulterMiddleware.md#signmethodoptions)
 
-### Variables
-
-- [signURL](Middlewares_MulterMiddleware.md#signurl)
-
 ### Functions
 
+- [ArrayUpload](Middlewares_MulterMiddleware.md#arrayupload)
+- [NamedFilesUpload](Middlewares_MulterMiddleware.md#namedfilesupload)
+- [SingleUpload](Middlewares_MulterMiddleware.md#singleupload)
+- [VerifyURL](Middlewares_MulterMiddleware.md#verifyurl)
 - [getDestinationFolder](Middlewares_MulterMiddleware.md#getdestinationfolder)
-- [namedFiles](Middlewares_MulterMiddleware.md#namedfiles)
-- [singleUpload](Middlewares_MulterMiddleware.md#singleupload)
-- [verifierURL](Middlewares_MulterMiddleware.md#verifierurl)
+- [signURL](Middlewares_MulterMiddleware.md#signurl)
 
 ## Type Aliases
 
@@ -25,34 +23,92 @@
 
 Ƭ **SignMethodOptions**: `Object`
 
-Sign method options.
+A list with all the options that you can pass to the sign method.
 
 #### Type declaration
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `addr?` | `string` | if set, only request from this address will be allowed |
-| `exp?` | `number` | Expiration timestamp (if ttl isn't specified) |
-| `method?` | `string` \| `string`[] | if specified, only this method will be allowed may be string of few methods separated by comma, or array of strings |
-| `ttl?` | `number` | URL time to live. |
-
-## Variables
-
-### signURL
-
-• `Const` **signURL**: `any`
-
-Function used to create signed URLs.
-
-**`Param`**
-
-The URL to be signed.
-
-**`Param`**
-
-The options used for the URL signing.
+| `address?` | `string` | If specified, the URL will be valid only when this Address parameter is specified. |
+| `expireAt?` | `number` | If you don't specify the Time To Live (TTL) parameter, you can specify a timestamp at which the URL will not be valid. |
+| `method?` | `string` \| `string`[] | The method or a list of methods allowed to access the endpoint secured by the signed URL. |
+| `timeToLive?` | `number` | How many seconds should the URL be valid. |
 
 ## Functions
+
+### ArrayUpload
+
+▸ **ArrayUpload**(`fieldName`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Decorator to add the Multiple file upload under the same name middleware.
+
+**`Decorator`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fieldName` | `string` | The name of the field in the file uploader. |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### NamedFilesUpload
+
+▸ **NamedFilesUpload**(...`names`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Decorator to add the Multiple file upload with different names middleware.
+
+**`Decorator`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...names` | `string`[] | The names of the fields in the file uploader. |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### SingleUpload
+
+▸ **SingleUpload**(`fieldName`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Decorator to add the Single file upload middleware.
+
+**`Decorator`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `fieldName` | `string` | The name of the field in the file uploader. |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
+### VerifyURL
+
+▸ **VerifyURL**(): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Middleware used to verify if a signed URL is valid.
+
+**`Decorator`**
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
 
 ### getDestinationFolder
 
@@ -72,60 +128,19 @@ Function used to get the destination folder/file from the upload destination fol
 
 ___
 
-### namedFiles
+### signURL
 
-▸ **namedFiles**(...`names`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **signURL**(`url`, `options?`): `string`
 
-Multiple file upload middleware.
-
-**`Decorator`**
+Function used to create signed URLs.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...names` | `string`[] | The names of the fields in the file uploader. |
+| `url` | `string` | The URL to be signed. |
+| `options?` | [`SignMethodOptions`](Middlewares_MulterMiddleware.md#signmethodoptions) | The options used for the URL signing. |
 
 #### Returns
 
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
-
-___
-
-### singleUpload
-
-▸ **singleUpload**(`fieldName`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
-
-Single file upload middleware.
-
-**`Decorator`**
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `fieldName` | `string` | The name of the field in the file uploader. |
-
-#### Returns
-
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
-
-___
-
-### verifierURL
-
-▸ **verifierURL**(`target`, `propertyKey`, `descriptor`): `void`
-
-Type used to define a Route Decorator function.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `target` | [`Route`](../classes/Router_Route.Route.md) | The target on which we apply the decorator. |
-| `propertyKey` | `string` | The property on which we apply the decorator. |
-| `descriptor` | `PropertyDescriptor` | The property descriptor of the property we want to apply the decorator on. |
-
-#### Returns
-
-`void`
+`string`

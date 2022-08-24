@@ -1,5 +1,5 @@
 /**
- * Log Level enumeration
+ * A list with the supported logging levels.
  *
  * @enum
  */

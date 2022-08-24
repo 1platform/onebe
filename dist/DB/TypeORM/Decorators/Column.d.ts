@@ -1,5 +1,4 @@
 import { ColumnOptions } from "typeorm";
-import { PropertyDecorator } from "../../../Documentation/MetadataTypes";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
 import { ViewColumnOptions } from "typeorm/decorator/options/ViewColumnOptions";

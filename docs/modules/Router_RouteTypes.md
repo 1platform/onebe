@@ -10,12 +10,9 @@
 - [CallbackExtractorParameter](Router_RouteTypes.md#callbackextractorparameter)
 - [ControllerDecorator](Router_RouteTypes.md#controllerdecorator)
 - [ControllerDecoratorFunction](Router_RouteTypes.md#controllerdecoratorfunction)
-- [HeaderMethod](Router_RouteTypes.md#headermethod)
 - [ResponseValue](Router_RouteTypes.md#responsevalue)
 - [RouteCallback](Router_RouteTypes.md#routecallback)
-- [RouteCallbacks](Router_RouteTypes.md#routecallbacks)
 - [RouteDecorator](Router_RouteTypes.md#routedecorator)
-- [RouteHooksCallbacks](Router_RouteTypes.md#routehookscallbacks)
 
 ## Type Aliases
 
@@ -106,28 +103,6 @@ Type used to define a Controller Decorator function.
 
 ___
 
-### HeaderMethod
-
-Ƭ **HeaderMethod**: (`header`: `string`) => `string` \| `undefined`
-
-#### Type declaration
-
-▸ (`header`): `string` \| `undefined`
-
-Type used to define a method/function used to fetch information from the header.
-
-##### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `header` | `string` | The header element from which we want information. |
-
-##### Returns
-
-`string` \| `undefined`
-
-___
-
 ### ResponseValue
 
 Ƭ **ResponseValue**<`TResponse`\>: `string` \| `number` \| `boolean` \| `any`[] \| `Record`<`string`, `unknown`\> \| [`IResponse`](../interfaces/Router_RouteInterfaces.IResponse.md)<`TResponse`\> \| [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md)
@@ -165,14 +140,6 @@ A function used to define a route callback.
 
 ___
 
-### RouteCallbacks
-
-Ƭ **RouteCallbacks**: [`RouteCallback`](Router_RouteTypes.md#routecallback)[]
-
-Array of Route Callback
-
-___
-
 ### RouteDecorator
 
 Ƭ **RouteDecorator**<`T`\>: (`target`: `T`, `propertyKey`: `string`, `descriptor`: `PropertyDescriptor`) => `void`
@@ -200,11 +167,3 @@ Type used to define a Route Decorator function.
 ##### Returns
 
 `void`
-
-___
-
-### RouteHooksCallbacks
-
-Ƭ **RouteHooksCallbacks**: (`props`: [`IRouteHookParameter`](../interfaces/Router_RouteInterfaces.IRouteHookParameter.md)) => `void`[]
-
-Array of Route Hook Callbacks.

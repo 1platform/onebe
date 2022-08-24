@@ -20,7 +20,7 @@
 
 ### Column
 
-▸ **Column**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **Column**(`options?`): `PropertyDecorator`
 
 Decorator used to define the column of a model.
 
@@ -37,13 +37,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### CreateDateColumn
 
-▸ **CreateDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **CreateDateColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the creation date of a model.
 
@@ -60,13 +60,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### DeleteDateColumn
 
-▸ **DeleteDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **DeleteDateColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the deletion date of a model.
 This kind of column is usually used when you want to do soft deletion in your
@@ -85,13 +85,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### ObjectIdColumn
 
-▸ **ObjectIdColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **ObjectIdColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to mark a column of a model as an ObjectId column.
 
@@ -108,13 +108,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### PrimaryColumn
 
-▸ **PrimaryColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **PrimaryColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the primary key of a model.
 
@@ -127,17 +127,17 @@ will be used for documentation.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `ColumnOptions` & { `nullable?`: ``false``  } & { `description?`: `string`  } | A list of options used for defining the primary key column. |
+| `options?` | `ColumnOptions` & {} & { `description?`: `string`  } | A list of options used for defining the primary key column. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### PrimaryGeneratedColumn
 
-▸ **PrimaryGeneratedColumn**(`strategy`, `options`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **PrimaryGeneratedColumn**(`strategy`, `options`): `PropertyDecorator`
 
 Decorator used to define a column used to store a generated primary key of a model.
 
@@ -155,13 +155,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### UpdateDateColumn
 
-▸ **UpdateDateColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **UpdateDateColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the modification date of a model.
 
@@ -178,13 +178,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### VersionColumn
 
-▸ **VersionColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **VersionColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to define a column used to store the version of a model.
 
@@ -201,13 +201,13 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### ViewColumn
 
-▸ **ViewColumn**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **ViewColumn**(`options?`): `PropertyDecorator`
 
 Decorator used to mark a column of a model as a view column.
 
@@ -224,4 +224,4 @@ will be used for documentation.
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`

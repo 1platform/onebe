@@ -4,7 +4,8 @@
 
 [Middlewares/ErrorHandlerMiddleware](../modules/Middlewares_ErrorHandlerMiddleware.md).ErrorHandlerMiddleware
 
-The Error Handler Middleware.
+Middleware used to catch all the errors returned by the application and send
+a consolidated object
 
 ## Implements
 
@@ -37,7 +38,7 @@ The Error Handler Middleware.
 
 ▪ `Static` `Protected` **\_beforeHandler**: [`ErrorHandlerFunction`](../modules/Middlewares_ErrorHandlerMiddleware.md#errorhandlerfunction)[] = `[]`
 
-A list of handlers to be ran before the Error Handler Middleware
+A list of error handler functions to be run before the final Error Handler Middleware.
 
 ## Methods
 
@@ -45,7 +46,7 @@ A list of handlers to be ran before the Error Handler Middleware
 
 ▸ **use**(`app`): `void`
 
-The middleware initialization method.
+Method used to attach the error handler to the Express instance.
 
 #### Parameters
 
@@ -67,7 +68,7 @@ ___
 
 ▸ `Static` **addBeforeHandler**(`handler`): `void`
 
-Add a handler to the before error handler array.
+Add an error handler function to be run before the final Error Handler Middleware.
 
 #### Parameters
 

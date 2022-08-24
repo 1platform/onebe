@@ -1,11 +1,11 @@
 import ServiceBase from "../Services/ServiceBase";
 import ISMSTransport from "./Transports/ISMSTransport";
 /**
- * Class exposing the SMS sending functionality.
+ * Service used to handle SMS Sending from the application.
  */
 export default class SMSService extends ServiceBase implements ISMSTransport {
     /**
-     * If the service is enabled or not.
+     * Flag used to enable or disable the SMS Service.
      */
     private readonly _enableService;
     /**

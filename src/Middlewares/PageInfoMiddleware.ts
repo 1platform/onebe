@@ -2,7 +2,9 @@ import { Application, NextFunction, Request, Response } from "express";
 import IMiddleware from "./IMiddleware";
 
 /**
- * Page information middleware
+ * Middleware that adds additional information to the request object. Through this
+ * middleware you get access to the full App URL string and to the specific path your user
+ * tried to access.
  */
 export default class PageInfoMiddleware implements IMiddleware {
   /**

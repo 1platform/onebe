@@ -1,6 +1,8 @@
 import IConfig from "./IConfig";
 /**
- * The configuration store that we are using in our application.
+ * Configuration store, used to fetch (and store) configuration parameters that
+ * can be used to enable/disable or setup various functionalities of the
+ * application.
  */
 export declare class Configuration {
     /**

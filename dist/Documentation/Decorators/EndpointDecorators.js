@@ -24,17 +24,45 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * All the request documentation decorators.
+ */
+
+/**
+ * All the response documentation decorators.
+ */
+
+/**
+ * Decorator used to add a description to an endpoint.
+ *
+ * @decorator
+ * @param [description] A short description of the controller.
+ */
 function EndpointDescription(description) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointDescription(target.constructor.name, propertyKey, description);
   };
 }
+/**
+ * Decorator used to add a summary to an endpoint.
+ *
+ * @decorator
+ * @param [summary] A short description of the controller.
+ */
+
 
 function EndpointSummary(summary) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointSummary(target.constructor.name, propertyKey, summary);
   };
 }
+/**
+ * Decorator used to fully document an endpoint.
+ *
+ * @decorator
+ * @param options A list of options that describe the endpoint.
+ */
+
 
 function Endpoint(options) {
   return (target, propertyKey) => {

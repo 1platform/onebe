@@ -14,15 +14,14 @@ var _BaseTransport = _interopRequireDefault(require("./BaseTransport"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * SMTP Transport used for sending emails.
+ * SMTP Transport that can be used for sending emails.
  */
 class SMTPTransport extends _BaseTransport.default {
   /**
-   * SMTPTransport constructor.
+   * Transport constructor.
    */
   constructor() {
-    super();
-    this._transporter = _nodemailer.default.createTransport({
+    super(_nodemailer.default.createTransport({
       host: _Config.default.string("email.config.server"),
       port: _Config.default.number("email.config.port", 587),
       secure: _Config.default.boolean("email.config.secure"),
@@ -30,7 +29,7 @@ class SMTPTransport extends _BaseTransport.default {
         user: _Config.default.string("email.config.address"),
         pass: _Config.default.string("email.config.password")
       }
-    });
+    }));
   }
 
 }

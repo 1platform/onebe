@@ -1,7 +1,7 @@
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { HTTPMiddleware } from "../HTTP/HTTPTypes";
 import Route from "./Route";
-import { IResponse, IRouteHookParameter } from "./RouteInterfaces";
+import { IResponse } from "./RouteInterfaces";
 import { Constructor } from "../Documentation/MetadataTypes";
 import AuthContextAPI from "./AuthContextAPI";
 import ContextAPI from "./ContextAPI";
@@ -35,12 +35,6 @@ export declare type ResponseValue<TResponse> = string | number | boolean | Array
  */
 export declare type AppMethod<TRequest = any, TResponse = any> = (context: ContextAPI<TRequest>, authContext?: AuthContextAPI) => ResponseValue<TResponse>;
 /**
- * Type used to define a method/function used to fetch information from the header.
- *
- * @param header The header element from which we want information.
- */
-export declare type HeaderMethod = (header: string) => string | undefined;
-/**
  * Type used to define the callback extractor parameter.
  */
 export declare type CallbackExtractorParameter<Request = any, Response = any> = Array<HTTPMiddleware | AppMethod<Request, Response>> | HTTPMiddleware | AppMethod<Request, Response>;
@@ -48,11 +42,3 @@ export declare type CallbackExtractorParameter<Request = any, Response = any> = 
  * A function used to define a route callback.
  */
 export declare type RouteCallback = (basePath: string, groupName: string) => void;
-/**
- * Array of Route Callback
- */
-export declare type RouteCallbacks = Array<RouteCallback>;
-/**
- * Array of Route Hook Callbacks.
- */
-export declare type RouteHooksCallbacks = Array<(props: IRouteHookParameter) => void>;

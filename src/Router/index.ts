@@ -13,7 +13,7 @@ import MetadataStore from "../Documentation/MetadataStore";
 import Config from "../System/Config";
 
 /**
- * The structure of the folders containing the controllers of our application.
+ * Interface used to describe the controllers folder structure of your application.
  */
 interface IControllerStruct {
   /**
@@ -30,6 +30,13 @@ interface IControllerStruct {
   children?: Array<IControllerStruct>;
 }
 
+/**
+ * Class used to define the Router base of the application.
+ *
+ * Inside this class the magic happens:
+ * - All the endpoints are registered under their specific path.
+ * - All controllers are loaded where and when they should.
+ */
 export class RouterBase {
   /**
    * The list with controllers we want to register.
@@ -49,7 +56,7 @@ export class RouterBase {
   }
 
   /**
-   * Register the controllers in the given path.
+   * Register the controllers under the given path.
    *
    * @param controllersPath The path from which we will import controllers.
    */
@@ -60,20 +67,25 @@ export class RouterBase {
   }
 
   /**
-   * Register a controller
+   * Method used to manually register a controller in the application.
    *
-   * @param controller
+   * @param controller The controller instance you want registered.
    */
-  public async add(controller: Route): Promise<void> {
+  public add(controller: Route): void {
     if (MetadataStore.instance.route.isDocs(controller.constructor.name) && !Config.boolean("docs.expose")) {
       getDefaultLogger().debug(`Documentation has been disabled. The controller: ${ controller.constructor.name } won't be loaded.`);
       return;
     }
 
-    // controller.init();
     this._controllers.push(controller);
   }
 
+  /**
+   * Method used to parse the given route metadata and register all the endpoints under that
+   * router.
+   *
+   * @param route The route metadata we want to load.
+   */
   public parseRoute(route: IRouteMetadata) {
     const basePath = route.basePath.filter((bp) => bp.length).join("/");
     for (const endpoint of Object.values(route.endpoints)) {
@@ -81,6 +93,13 @@ export class RouterBase {
     }
   }
 
+  /**
+   * Method used to register endpoints in the router under a given base path and with the
+   * given endpoint metadata.
+   *
+   * @param basePath The base path under which the application registers the endpoint.
+   * @param endpoint The endpoint metadata you need to be registered.
+   */
   protected loadEndpoint(basePath: string, endpoint: IEndpointMetadata) {
     const path = getPath(basePath, endpoint.path);
     getDefaultLogger().debug(`[REGISTER] ${ endpoint.verb.toUpperCase() }: ${ path }`);
@@ -189,7 +208,7 @@ export class RouterBase {
 }
 
 /**
- * The global default Router that we are going to use in our application.
+ * The global default Router that the application is going to use.
  */
 const Router = new RouterBase();
 

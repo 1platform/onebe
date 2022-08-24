@@ -4,7 +4,7 @@
 
 [Email/EmailService](../modules/Email_EmailService.md).EmailService
 
-Class exposing the Email sending functionality.
+Service used to handle Email communications from the application.
 
 ## Hierarchy
 
@@ -120,7 +120,7 @@ Method used to send emails.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options` | [`IEmailOptions`](../interfaces/Email_Transports_IEmailTransport.IEmailOptions.md) | The parameters we use for sending an email. |
+| `options` | [`IEmailOptions`](../interfaces/Email_Transports_IEmailTransport.IEmailOptions.md) | The parameters you have to use when sending an email. |
 
 #### Returns
 

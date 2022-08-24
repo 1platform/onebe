@@ -13,9 +13,41 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * A list of audit fields that will be skipped from the component definition.
+ */
 const AUDIT = ["createdAt", "updatedAt", "deletedAt", "created_at", "updated_at", "deleted_at", "createdBy", "updatedBy", "deletedBy", "created_by", "updated_by", "deleted_by"];
+/**
+ * Swagger Components Builder tool.
+ *
+ * Using this class the Documentation system will create everything needed
+ * by the OpenAPI 3 components specification.
+ */
 
 class SwaggerComponents {
+  /**
+   * Method that extracts the components from the entities definition metadata.
+   *
+   * @param entities The list of documented entities from the metadata store.
+   */
+  getComponents(entities) {
+    const components = _objectSpread(_objectSpread({}, this.getSecuritySchemes()), {}, {
+      schemas: _objectSpread({}, this.getErrorEntity())
+    });
+
+    for (const entity of entities) {
+      const definition = this.getComponent(entity);
+      components.schemas[definition.name] = definition.definition;
+    }
+
+    return components;
+  }
+  /**
+   * Method used to generate the security schemas based on the authentication
+   * methods supported by the framework.
+   */
+
+
   getSecuritySchemes() {
     return {
       securitySchemes: {
@@ -30,6 +62,12 @@ class SwaggerComponents {
       }
     };
   }
+  /**
+   * Method used to generate the error entity definition. Since all the errors
+   * returned by the application follow the same pattern we can easily define a
+   * generic error entity and reuse it everywhere we need to return an error.
+   */
+
 
   getErrorEntity() {
     return {
@@ -52,19 +90,13 @@ class SwaggerComponents {
       }
     };
   }
+  /**
+   * Method used to generate the definition of a component. It takes as parameter
+   * the entity metadata information.
+   *
+   * @param entity The entity we want to generate a component from.
+   */
 
-  buildComponents(entities) {
-    const components = _objectSpread(_objectSpread({}, this.getSecuritySchemes()), {}, {
-      schemas: _objectSpread({}, this.getErrorEntity())
-    });
-
-    for (const entity of entities) {
-      const definition = this.getComponent(entity);
-      components.schemas[definition.name] = definition.definition;
-    }
-
-    return components;
-  }
 
   getComponent(entity) {
     const componentDefinition = {

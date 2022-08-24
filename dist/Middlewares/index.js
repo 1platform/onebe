@@ -19,12 +19,12 @@ var _PassportMiddleware = _interopRequireDefault(require("./PassportMiddleware")
 
 var _SessionMiddleware = _interopRequireDefault(require("./SessionMiddleware"));
 
-var _SparkMiddleware = _interopRequireDefault(require("./SparkMiddleware"));
+var _OneBEMiddleware = _interopRequireDefault(require("./OneBEMiddleware"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * A list containing middlewares to be loaded in the application automatically.
  */
-var _default = [new _LoggerMiddleware.default(), new _BodyParserMiddleware.default(), new _CORSMiddleware.default(), new _SessionMiddleware.default(), new _I18NMiddleware.default(), new _PageInfoMiddleware.default(), new _PassportMiddleware.default(), new _SparkMiddleware.default()];
+var _default = [new _LoggerMiddleware.default(), new _BodyParserMiddleware.default(), new _CORSMiddleware.default(), new _SessionMiddleware.default(), new _I18NMiddleware.default(), new _PageInfoMiddleware.default(), new _PassportMiddleware.default(), new _OneBEMiddleware.default()];
 exports.default = _default;

@@ -4,7 +4,11 @@
 
 [System/Logger](../modules/System_Logger.md).Logger
 
-The base logger class.
+The base logger class to be used in the application.
+
+This class is the base of the available loggers in the application. In order
+to use this class you need a transport and the level of information you
+want to log.
 
 ## Hierarchy
 
@@ -62,7 +66,7 @@ The constructor of the logger class.
 
 • `Protected` **\_log**: `Logger`
 
-The logger object we will use for logging.
+The logger object the application will use for logging.
 
 ## Accessors
 
@@ -101,7 +105,7 @@ ___
 
 ▸ **error**(`message`, ...`meta`): `Logger`
 
-Method to log a error message.
+Method to log an error message.
 
 #### Parameters
 
@@ -120,7 +124,7 @@ ___
 
 ▸ **info**(`message`, ...`meta`): `Logger`
 
-Method to log a info message.
+Method to log an information message.
 
 #### Parameters
 
@@ -177,7 +181,7 @@ ___
 
 ▸ **warn**(`message`, ...`meta`): `Logger`
 
-Method to log a warn message.
+Method to log a warning message.
 
 #### Parameters
 

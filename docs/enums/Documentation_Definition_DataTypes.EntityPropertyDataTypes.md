@@ -4,6 +4,8 @@
 
 [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md).EntityPropertyDataTypes
 
+A list of possible types for a the entity properties.
+
 ## Table of contents
 
 ### Enumeration Members

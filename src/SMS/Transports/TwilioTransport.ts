@@ -4,15 +4,15 @@ import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**
- * Class representing the Twilio Transport handler
+ * SMS Transport using the Twilio engine.
  */
 export default class TwilioTransport implements ISMSTransport {
   /**
-   * The Twilio service
+   * Twilio service handler.
    */
   private readonly _twilio: twilio.Twilio;
   /**
-   * THe default phone config
+   * The default phone configuration.
    */
   private readonly _defaultPhone = Config.string("sms.config.phone");
 

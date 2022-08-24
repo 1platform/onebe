@@ -4,7 +4,9 @@
 
 [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md).I18nMiddleware
 
-The i18n middleware.
+Middleware used to enable the Internationalisation (i18n) support for the application endpoints.
+Since you might want to have the messages translated to the language chosen by the user
+when the request was made, the i18n support needs to be added to the request object.
 
 ## Implements
 

@@ -4,7 +4,7 @@
 
 [SMS/Transports/ISMSTransport](../modules/SMS_Transports_ISMSTransport.md).ISMSTransport
 
-Interface representing the method needed for SMS Transport
+How should the SMS Transport classes look like.
 
 ## Implemented by
 

@@ -29,88 +29,220 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function Entity(name, description) {
+/**
+ * Decorator used to describe a custom entity that is extending the
+ * BaseEntity class.
+ *
+ * Using this decorator we can give a custom entity a name and define
+ * what other entity it extends. When the Documentation API is exposing
+ * the metadata, it will look in the hierarchy of the class and list
+ * all the properties in one place.
+ *
+ * @decorator
+ * @param [description] A short description of the entity.
+ */
+function Entity(description) {
   return function (BaseClass) {
     const entityMetadata = _MetadataStore.default.instance.entity;
-    entityMetadata.update(name ?? BaseClass.name, description ?? "");
-    entityMetadata.extends(name, Object.getPrototypeOf(BaseClass).name);
+    entityMetadata.update(BaseClass.name, description ?? "");
+    entityMetadata.extends(BaseClass.name, Object.getPrototypeOf(BaseClass).name);
     return BaseClass;
   };
 }
+/**
+ * Function used to document a property from an entity.
+ *
+ * @param entity The entity to be documented.
+ * @param propertyName The name of the property to be documented.
+ * @param [options] Additional options to be passed for documentation purposes.
+ */
+
+
+function DocumentProperty(entity, propertyName, options) {
+  _MetadataStore.default.instance.entity.property(entity, propertyName, _objectSpread({
+    required: false,
+    dataType: _DataTypes.EntityPropertyDataTypes.STRING
+  }, options || {}));
+}
+/**
+ * Decorator used to describe the property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function Property(options) {
   return function (object, propertyName) {
-    _MetadataStore.default.instance.entity.property(object.constructor.name, propertyName, _objectSpread({
-      required: false
-    }, options));
+    DocumentProperty(object.constructor.name, propertyName, options);
   };
 }
+/**
+ * Decorator used to mark the property of a custom entity as required.
+ *
+ * @decorator
+ * @param object The entity on which we apply the decorator.
+ * @param propertyName The name of the property on which we apply the decorator.
+ */
+
 
 function IsRequired(object, propertyName) {
   _MetadataStore.default.instance.entity.markRequired(object.constructor.name, propertyName);
 }
+/**
+ * Decorator used to describe a required property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function RequiredProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    required: true
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      required: true
+    }));
+  };
 }
+/**
+ * Decorator used to describe a date property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function DateProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.STRING,
-    isDate: true
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
+      isDate: true
+    }));
+  };
 }
+/**
+ * Decorator used to describe a date-time property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function DateTimeProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.STRING,
-    isDateTime: true
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING,
+      isDateTime: true
+    }));
+  };
 }
+/**
+ * Decorator used to describe a string property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function StringProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.STRING
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.STRING
+    }));
+  };
 }
+/**
+ * Decorator used to describe a number property of a custom entity.
+ *
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function NumberProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.NUMBER
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.NUMBER
+    }));
+  };
 }
+/**
+ * Decorator used to describe a boolean property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function BooleanProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.BOOLEAN
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.BOOLEAN
+    }));
+  };
 }
+/**
+ * Decorator used to describe an integer property of a custom entity.
+ *
+ * @decorator
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function IntegerProperty(options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.INTEGER
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.INTEGER
+    }));
+  };
 }
+/**
+ * Decorator used to describe an array property of a custom entity.
+ *
+ * @decorator
+ * @param [dataType] The data type of the property.
+ * @param [options] A list of options to define a property of an entity.
+ */
 
-function ArrayProperty(dataType, options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
-    childType: dataType
-  }));
+
+function ArrayProperty(dataType = _DataTypes.EntityPropertyDataTypes.STRING, options) {
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
+      childType: dataType
+    }));
+  };
 }
+/**
+ * Decorator used to describe a property of a custom entity that references a list of another entities.
+ *
+ * @decorator
+ * @param entityName The name of the entity we want to reference.
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function EntityArrayProperty(entityName, options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
-    reference: entityName
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.ARRAY,
+      reference: entityName
+    }));
+  };
 }
+/**
+ * Decorator used to describe a property of a custom entity that references another entity.
+ *
+ * @decorator
+ * @param entityName The name of the entity we want to reference.
+ * @param [options] A list of options to define a property of an entity.
+ */
+
 
 function EntityProperty(entityName, options) {
-  return Property(_objectSpread(_objectSpread({}, options), {}, {
-    dataType: _DataTypes.EntityPropertyDataTypes.OBJECT,
-    reference: entityName
-  }));
+  return function (object, propertyName) {
+    DocumentProperty(object.constructor.name, propertyName, _objectSpread(_objectSpread({}, options), {}, {
+      dataType: _DataTypes.EntityPropertyDataTypes.OBJECT,
+      reference: entityName
+    }));
+  };
 }

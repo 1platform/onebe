@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 /**
- * A base class used for all the routes exposed by the final application.
+ * A base class used for all the routes exposed by your application.
  */
 class Route {}
 

@@ -20,11 +20,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Class exposing the SMS sending functionality.
+ * Service used to handle SMS Sending from the application.
  */
 class SMSService extends _ServiceBase.default {
   /**
-   * If the service is enabled or not.
+   * Flag used to enable or disable the SMS Service.
    */
 
   /**

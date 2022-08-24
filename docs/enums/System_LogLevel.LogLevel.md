@@ -4,7 +4,7 @@
 
 [System/LogLevel](../modules/System_LogLevel.md).LogLevel
 
-Log Level enumeration
+A list with the supported logging levels.
 
 ## Table of contents
 

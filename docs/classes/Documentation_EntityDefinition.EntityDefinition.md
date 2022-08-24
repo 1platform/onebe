@@ -45,6 +45,8 @@
 
 • `get` **list**(): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[]
 
+Getter used to list all the entities defined in the application.
+
 #### Returns
 
 [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[]
@@ -53,14 +55,16 @@
 
 ### add
 
-▸ **add**(`name`, `description?`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+▸ **add**(`entity`, `description?`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+
+Method used to add a new entity in the entity metadata store.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `description?` | `string` | A short description of the entity. |
 
 #### Returns
 
@@ -72,6 +76,8 @@ ___
 
 ▸ **addRelation**<`T`\>(`entity`, `propertyName`, `typeFunctionOrTarget`, `isArray?`): `void`
 
+Method used to add a relation between entities.
+
 #### Type parameters
 
 | Name | Type |
@@ -80,12 +86,12 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
-| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> |
-| `isArray?` | `boolean` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `propertyName` | `string` | The name of the property on which we add information. |
+| `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the relation. |
+| `isArray?` | `boolean` | Flag to mark the relation as one-to-many or many-to-many. |
 
 #### Returns
 
@@ -97,6 +103,9 @@ ___
 
 ▸ **buildEntityList**(): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[]
 
+Builds the list of entities, based on the relation between them and
+the parents defined for each of them.
+
 #### Returns
 
 [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[]
@@ -105,13 +114,16 @@ ___
 
 ### entity
 
-▸ **entity**(`name`): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
+▸ **entity**(`entity`): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
+
+Method used to get an entity from the entity metadata store. If the entity does
+not exist yet, it will create it.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
 
 #### Returns
 
@@ -123,12 +135,14 @@ ___
 
 ▸ **extends**(`entity`, `extendedEntity`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
+Method used to define the parent entity of the current entity.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `extendedEntity` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `extendedEntity` | `string` | The entity from which we get additional information. |
 
 #### Returns
 
@@ -140,11 +154,13 @@ ___
 
 ▸ `Protected` **getParentEntityProperties**(`parentEntityName`): [`IEntityPropertyMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityPropertyMetadata.md)[]
 
+Method used internally to get properties of the parent entities of an entity.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `parentEntityName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentEntityName` | `string` | The name of the parent entity. |
 
 #### Returns
 
@@ -156,11 +172,13 @@ ___
 
 ▸ **getPrimaryKey**(`entity`): [`IEntityPropertyMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityPropertyMetadata.md)[]
 
+Returns an array of items marked as primary keys.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
 
 #### Returns
 
@@ -172,12 +190,14 @@ ___
 
 ▸ **hasProperty**(`entity`, `propertyName`): `boolean`
 
+Check if an entity has the given property.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we perform the check. |
+| `propertyName` | `string` | The name of the property which we want to check after. |
 
 #### Returns
 
@@ -189,12 +209,14 @@ ___
 
 ▸ **markPrimaryKey**(`entity`, `propertyName`): `void`
 
+Method used to mark a property as a primary key.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `propertyName` | `string` | The name of the property on which we add information. |
 
 #### Returns
 
@@ -206,12 +228,14 @@ ___
 
 ▸ **markRequired**(`entity`, `propertyName`): `void`
 
+Method used to mark a property as required.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `propertyName` | `string` | The name of the property on which we add information. |
 
 #### Returns
 
@@ -223,14 +247,16 @@ ___
 
 ▸ **property**(`entity`, `propertyName`, `propertyOptions`, `afterProperty?`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
+Method used to document properties of the entity.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
-| `propertyOptions` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
-| `afterProperty?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `propertyName` | `string` | The name of the property on which we add information. |
+| `propertyOptions` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | The list of options related to the property. |
+| `afterProperty?` | `string` | The name of the property after which we add the property. |
 
 #### Returns
 
@@ -240,14 +266,16 @@ ___
 
 ### registerRelation
 
-▸ `Protected` **registerRelation**(`entityName`, `relation`): `void`
+▸ `Protected` **registerRelation**(`entity`, `relation`): `void`
+
+Method used internally to add all the relations for an entity.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entityName` | `string` |
-| `relation` | [`IRelationMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)<[`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `relation` | [`IRelationMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)<[`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)\> | Relation metadata for an entity. |
 
 #### Returns
 
@@ -259,6 +287,8 @@ ___
 
 ▸ **registerRelations**(): `void`
 
+Method used to register all the relations between entities.
+
 #### Returns
 
 `void`
@@ -269,13 +299,16 @@ ___
 
 ▸ **relationField**(`entity`, `propertyName`, `relationField`): `void`
 
+Method used to define the relation between the property and the destination
+entity.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `propertyName` | `string` |
-| `relationField` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `propertyName` | `string` | The name of the property on which we add information. |
+| `relationField` | `string` | The field used for the relation. |
 
 #### Returns
 
@@ -287,12 +320,14 @@ ___
 
 ▸ **tableName**(`entity`, `tableName`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
+Method used to attach a table name to an entity.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entity` | `string` |
-| `tableName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `tableName` | `string` | The name of the table attached to the entity. |
 
 #### Returns
 
@@ -302,14 +337,17 @@ ___
 
 ### update
 
-▸ **update**(`name`, `description?`): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
+▸ **update**(`entity`, `description?`): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)
+
+Method used to update the information about an entity. If the entity does not exist
+it will be created.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `string` | The entity on which we add information. |
+| `description?` | `string` | A short description of the entity. |
 
 #### Returns
 

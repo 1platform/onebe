@@ -1,10 +1,10 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Middlewares/SparkMiddleware](../modules/Middlewares_SparkMiddleware.md) / SparkMiddleware
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Middlewares/OneBEMiddleware](../modules/Middlewares_OneBEMiddleware.md) / OneBEMiddleware
 
-# Class: SparkMiddleware
+# Class: OneBEMiddleware
 
-[Middlewares/SparkMiddleware](../modules/Middlewares_SparkMiddleware.md).SparkMiddleware
+[Middlewares/OneBEMiddleware](../modules/Middlewares_OneBEMiddleware.md).OneBEMiddleware
 
-The Spark Middleware.
+Middleware used to add information about the framework.
 
 ## Implements
 
@@ -14,17 +14,17 @@ The Spark Middleware.
 
 ### Constructors
 
-- [constructor](Middlewares_SparkMiddleware.SparkMiddleware.md#constructor)
+- [constructor](Middlewares_OneBEMiddleware.OneBEMiddleware.md#constructor)
 
 ### Methods
 
-- [use](Middlewares_SparkMiddleware.SparkMiddleware.md#use)
+- [use](Middlewares_OneBEMiddleware.OneBEMiddleware.md#use)
 
 ## Constructors
 
 ### constructor
 
-• **new SparkMiddleware**()
+• **new OneBEMiddleware**()
 
 ## Methods
 

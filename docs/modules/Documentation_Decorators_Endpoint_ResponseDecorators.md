@@ -19,13 +19,19 @@
 
 ▸ **Array**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to describe what does an array endpoint response. This decorator
+should be used only for primitive return values: `string`, `number`, `boolean`,
+`null`, `undefined`.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `type` | `string` | `undefined` |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` |
-| `description?` | `string` | `undefined` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `type` | `string` | `undefined` | The data type of the response value. |
+| `statusCode?` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` | The HTTP Status code used for the response. |
+| `description?` | `string` | `undefined` | A short description of the returned response. |
 
 #### Returns
 
@@ -37,13 +43,18 @@ ___
 
 ▸ **ArraySchema**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to describe an entity based array response for an endpoint. If you
+want to reuse a response, we recommend to use this decorator and define an entity.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `type` | `string` | `undefined` |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` |
-| `description?` | `string` | `undefined` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `type` | `string` | `undefined` | The name of the entity used to describe the response. |
+| `statusCode?` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` | The HTTP Status code used for the response. |
+| `description?` | `string` | `undefined` | A short description of the returned response. |
 
 #### Returns
 
@@ -55,7 +66,9 @@ ___
 
 ▸ **Return**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
-Decorator to add a response to a method.
+Decorator used to describe what does an endpoint response. This decorator
+should be used only for primitive return values: `string`, `number`, `boolean`,
+`null`, `undefined`.
 
 **`Decorator`**
 
@@ -63,9 +76,9 @@ Decorator to add a response to a method.
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `type` | `string` | `undefined` | The type of the response |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` | The status code of the response |
-| `description?` | `string` | `undefined` | The description of the response |
+| `type` | `string` | `undefined` | The data type of the response value. |
+| `statusCode?` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` | The HTTP Status code used for the response. |
+| `description?` | `string` | `undefined` | A short description of the returned response. |
 
 #### Returns
 
@@ -77,13 +90,18 @@ ___
 
 ▸ **Schema**(`type`, `statusCode?`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to describe an entity based response for an endpoint. If you
+want to reuse a response, we recommend to use this decorator and define an entity.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `type` | `string` | `undefined` |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` |
-| `description?` | `string` | `undefined` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `type` | `string` | `undefined` | The name of the entity used to describe the response. |
+| `statusCode?` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | `HTTPStatus.OK` | The HTTP Status code used for the response. |
+| `description?` | `string` | `undefined` | A short description of the returned response. |
 
 #### Returns
 
@@ -95,12 +113,20 @@ ___
 
 ▸ **Status**(`statusCode`, `description?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to describe the status code that can be returned by the
+endpoint.
+
+This decorator only describes the status code without a body attached
+to the status.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `statusCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | The HTTP Status error code used for the response. |
+| `description?` | `string` | A short description of the returned error. |
 
 #### Returns
 
@@ -112,6 +138,11 @@ ___
 
 ▸ **Throws**<`Response`\>(`errorCode`, `description?`, `response?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
+Decorator used to describe an error thrown by your endpoint. The
+thrown error should always have an HTTP Status code attached to it.
+
+**`Decorator`**
+
 #### Type parameters
 
 | Name | Type |
@@ -120,11 +151,11 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `errorCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) |
-| `description?` | `string` |
-| `response?` | [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`Response`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `errorCode` | [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md) | The HTTP Status error code used for the response. |
+| `description?` | `string` | A short description of the returned error. |
+| `response?` | [`ResponseValue`](Router_RouteTypes.md#responsevalue)<`Response`\> | A sample message sent to the user with the error. |
 
 #### Returns
 

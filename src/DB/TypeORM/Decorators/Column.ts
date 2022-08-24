@@ -10,7 +10,7 @@ import {
   VersionColumn as TypeORMVersionColumn,
   ViewColumn as TypeORMViewColumn,
 } from "typeorm";
-import { Constructor, PropertyDecorator } from "../../../Documentation/MetadataTypes";
+import { Constructor } from "../../../Documentation/MetadataTypes";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
 import { ViewColumnOptions } from "typeorm/decorator/options/ViewColumnOptions";

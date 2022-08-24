@@ -7,7 +7,7 @@ exports.defineMiddleware = defineMiddleware;
 exports.getPath = getPath;
 
 /**
- * Function used to define a middleware decorator.
+ * Function used to create a middleware decorator.
  *
  * @param middlewares A list of middlewares you want to apply on the route.
  */
@@ -17,6 +17,12 @@ function defineMiddleware(...middlewares) {
     descriptor.value = [...middlewares, ...original];
   };
 }
+/**
+ * Function used to get the full URL based on the given partial URL path elements.
+ *
+ * @param pathElements The list of path elements to be converted to a valid URL path.
+ */
+
 
 function getPath(...pathElements) {
   const newPath = pathElements.filter(path => path.length).join("/").replace(/(https?:\/\/)|(\/)+/g, "$1$2");

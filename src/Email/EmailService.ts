@@ -6,15 +6,15 @@ import TestTransport from "./Transports/TestTransport";
 import EmailTransport from "./EmailTransport";
 
 /**
- * Class exposing the Email sending functionality.
+ * Service used to handle Email communications from the application.
  */
 export default class EmailService extends ServiceBase implements IEmailTransport {
   /**
-   * Is the service enabled?
+   * Flag used to enable or disable the Email Service.
    */
   private readonly _enableService: boolean;
   /**
-   * The used email transport.
+   * The transport used for handling the emailing part.
    */
   private readonly _transport: IEmailTransport;
 
@@ -40,7 +40,7 @@ export default class EmailService extends ServiceBase implements IEmailTransport
   /**
    * Method used to send emails.
    *
-   * @param options The parameters we use for sending an email.
+   * @param options The parameters you have to use when sending an email.
    */
   public send(options: IEmailOptions): Promise<void> {
     if (this._enableService && this._transport) {

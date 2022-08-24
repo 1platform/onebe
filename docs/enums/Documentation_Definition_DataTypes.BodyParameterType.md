@@ -4,13 +4,14 @@
 
 [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md).BodyParameterType
 
-Enum representing a Body Parameter Type
+A list of possible types for a body parameter.
 
 ## Table of contents
 
 ### Enumeration Members
 
 - [BOOLEAN](Documentation_Definition_DataTypes.BodyParameterType.md#boolean)
+- [FILE](Documentation_Definition_DataTypes.BodyParameterType.md#file)
 - [INTEGER](Documentation_Definition_DataTypes.BodyParameterType.md#integer)
 - [NULL](Documentation_Definition_DataTypes.BodyParameterType.md#null)
 - [NUMBER](Documentation_Definition_DataTypes.BodyParameterType.md#number)
@@ -23,6 +24,12 @@ Enum representing a Body Parameter Type
 ### BOOLEAN
 
 • **BOOLEAN** = ``"boolean"``
+
+___
+
+### FILE
+
+• **FILE** = ``"file"``
 
 ___
 

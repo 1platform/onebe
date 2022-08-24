@@ -35,6 +35,13 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Class used to define the Router base of the application.
+ *
+ * Inside this class the magic happens:
+ * - All the endpoints are registered under their specific path.
+ * - All controllers are loaded where and when they should.
+ */
 class RouterBase {
   constructor() {
     _defineProperty(this, "_controllers", []);
@@ -49,7 +56,7 @@ class RouterBase {
     return this._router;
   }
   /**
-   * Register the controllers in the given path.
+   * Register the controllers under the given path.
    *
    * @param controllersPath The path from which we will import controllers.
    */
@@ -61,21 +68,27 @@ class RouterBase {
     await this.registerControllers(controllersPath, controllersStruct);
   }
   /**
-   * Register a controller
+   * Method used to manually register a controller in the application.
    *
-   * @param controller
+   * @param controller The controller instance you want registered.
    */
 
 
-  async add(controller) {
+  add(controller) {
     if (_MetadataStore.default.instance.route.isDocs(controller.constructor.name) && !_Config.default.boolean("docs.expose")) {
       (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The controller: ${controller.constructor.name} won't be loaded.`);
       return;
-    } // controller.init();
-
+    }
 
     this._controllers.push(controller);
   }
+  /**
+   * Method used to parse the given route metadata and register all the endpoints under that
+   * router.
+   *
+   * @param route The route metadata we want to load.
+   */
+
 
   parseRoute(route) {
     const basePath = route.basePath.filter(bp => bp.length).join("/");
@@ -84,6 +97,14 @@ class RouterBase {
       this.loadEndpoint(basePath, endpoint);
     }
   }
+  /**
+   * Method used to register endpoints in the router under a given base path and with the
+   * given endpoint metadata.
+   *
+   * @param basePath The base path under which the application registers the endpoint.
+   * @param endpoint The endpoint metadata you need to be registered.
+   */
+
 
   loadEndpoint(basePath, endpoint) {
     const path = (0, _RouteUtils.getPath)(basePath, endpoint.path);
@@ -188,7 +209,7 @@ class RouterBase {
 
 }
 /**
- * The global default Router that we are going to use in our application.
+ * The global default Router that the application is going to use.
  */
 
 

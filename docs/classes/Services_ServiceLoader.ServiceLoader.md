@@ -4,7 +4,7 @@
 
 [Services/ServiceLoader](../modules/Services_ServiceLoader.md).ServiceLoader
 
-The application service loader singleton.
+A system to load services into the application and reuse them as needed.
 
 ## Table of contents
 
@@ -42,7 +42,7 @@ The protected constructor of the service loader class.
 
 • `Protected` **\_services**: `Record`<`string`, [`ServiceBase`](Services_ServiceBase.ServiceBase.md)\> = `{}`
 
-A map containing all the instantiated services of the application.
+A map containing all the instantiated services in the application.
 
 ___
 

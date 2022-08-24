@@ -21,11 +21,13 @@
 
 ▸ **mapSQLToEntity**(`dataType`): [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
 
+Converter function to get the EntityPropertyDataType out of the SQL datatype.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `dataType` | `ColumnType` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dataType` | `ColumnType` | The SQL datatype we want to convert. |
 
 #### Returns
 

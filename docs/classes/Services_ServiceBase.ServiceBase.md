@@ -4,8 +4,10 @@
 
 [Services/ServiceBase](../modules/Services_ServiceBase.md).ServiceBase
 
-The Service base class. Using this class we can perform
-various actions in the application.
+The base class for your services.
+
+We recommend using a service to perform all the actions in your application. Database handling should
+happen through a service using a repository.
 
 ## Hierarchy
 
@@ -16,6 +18,8 @@ various actions in the application.
   ↳ [`EmailService`](Email_EmailService.EmailService.md)
 
   ↳ [`SMSService`](SMS_SMSService.SMSService.md)
+
+  ↳ [`ServiceWithRepository`](Services_ServiceWithRepository.ServiceWithRepository.md)
 
 ## Table of contents
 

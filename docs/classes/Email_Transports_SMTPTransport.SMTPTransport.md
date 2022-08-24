@@ -4,7 +4,7 @@
 
 [Email/Transports/SMTPTransport](../modules/Email_Transports_SMTPTransport.md).SMTPTransport
 
-SMTP Transport used for sending emails.
+SMTP Transport that can be used for sending emails.
 
 ## Hierarchy
 
@@ -36,7 +36,7 @@ SMTP Transport used for sending emails.
 
 • **new SMTPTransport**()
 
-SMTPTransport constructor.
+Transport constructor.
 
 #### Overrides
 

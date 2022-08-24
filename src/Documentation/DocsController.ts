@@ -1,26 +1,35 @@
 import { Docs, Path } from "../Router/RouteDecorators";
 import Route from "../Router/Route";
 import { GET } from "../Router/VerbsDecorators";
-import ContextAPI from "../Router/ContextAPI";
 import SwaggerUI from "./Swagger/SwaggerUI";
 import Config from "../System/Config";
 import GetRoutes from "./GetRoutes";
-import GetDocs from "./GetDocs";
+import GetDocs, { DocsType } from "./GetDocs";
 import app from "../App";
 import { getDefaultLogger } from "../System/Logger";
+import { Endpoint } from "./Decorators/EndpointDecorators";
+import EntityHelpers from "./Helpers/EntityHelpers";
+import { EntityPropertyDataTypes } from "./Definition/DataTypes";
+import HTTPStatus from "../HTTP/HTTPStatus";
+
+EntityHelpers.entity("ApplicationInformation", "Basic information about the application")
+  .property("name", { description: "The name of the application", dataType: EntityPropertyDataTypes.STRING })
+  .property("description", { description: "The description of the application", dataType: EntityPropertyDataTypes.STRING })
+  .property("version", { description: "The version of the application", dataType: EntityPropertyDataTypes.STRING })
+  .property("url", { description: "The URL of the application", dataType: EntityPropertyDataTypes.STRING });
 
 @Path("/", "Application Documentation", "Expose the generated documentation of the application.")
 @Docs()
 export default class DocsController extends Route {
   public constructor() {
     super();
-    getDefaultLogger().debug(`[REGISTER] GET: ${ Config.get("docs.basePath") }/openapi`);
+    getDefaultLogger().debug(`[REGISTER] GET: ${ Config.get("docs.path") }/openapi`);
     app.HTTP.app.use(
-      `${ Config.get("docs.basePath") }/openapi`,
+      `${ Config.get("docs.path") }/openapi`,
       SwaggerUI.serve,
       SwaggerUI.setup(null, {
         swaggerOptions: {
-          url: `${ Config.get("docs.basePath") }/swagger.yaml`,
+          url: `${ Config.get("docs.path") }/swagger.yaml`,
           persistAuthorization: true,
         },
         customSiteTitle: `${ app.app.appName } API`,
@@ -29,8 +38,11 @@ export default class DocsController extends Route {
     );
   }
 
-  @GET<any, Record<string, unknown>>("/")
-  public getAppInfo(context: ContextAPI): Record<string, unknown> {
+  @GET<void, Record<string, unknown>>("/")
+  @Endpoint({
+    summary: "List basic information about the application",
+  })
+  public getAppInfo(): Record<string, unknown> {
     return {
       name: app.app.appName,
       description: app.app.appDescription,
@@ -39,16 +51,33 @@ export default class DocsController extends Route {
     };
   }
 
-  @GET<any, Record<string, unknown>>("/routes")
-  public getRoutes(context: ContextAPI): Record<string, unknown> {
+  @GET<void, Record<string, unknown>>("/routes")
+  @Endpoint({
+    summary: "List the endpoints exposed by the application.",
+    responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],
+  })
+  public getRoutes(): Record<string, unknown> {
     return GetRoutes();
   }
 
-  @GET<any, Record<string, string>>("/swagger.yaml")
-  public getOpenAPI(context: ContextAPI): Record<string, string> {
+  @GET<void, Record<string, string>>("/swagger.yaml")
+  @Endpoint({
+    summary: "Returns the YAML version of the OpenAPI 3 documentation",
+    responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "text/vnd.yaml" } ],
+  })
+  public getOpenAPIYaml(): Record<string, string> {
     return {
       contentType: "text/vnd.yaml",
       body: GetDocs() as string,
     };
+  }
+
+  @GET<void, Record<string, any>>("/swagger.json")
+  @Endpoint({
+    summary: "Returns the YAML version of the OpenAPI 3 documentation",
+    responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],
+  })
+  public getOpenAPIJSON(): Record<string, any> {
+    return GetDocs(DocsType.SWAGGER_JSON) as Record<string, any>;
   }
 }

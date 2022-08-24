@@ -1,5 +1,6 @@
 /**
- * The supported HTTP Verbs.
+ * A list with the supported HTTP Verbs/Methods that can be
+ * used to expose endpoints from the application.
  *
  * @enum
  */

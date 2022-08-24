@@ -2,11 +2,15 @@ import { Logger as WinstonLogger } from "winston";
 import Transport from "winston-transport";
 import { FileTransportOptions } from "winston/lib/winston/transports";
 import LogLevel from "./LogLevel";
-import * as logform from "logform";
+import { Format } from "logform";
 /**
- * The base logger class.
+ * The base logger class to be used in the application.
+ *
+ * This class is the base of the available loggers in the application. In order
+ * to use this class you need a transport and the level of information you
+ * want to log.
  */
-export declare class Logger {
+export declare abstract class Logger {
     /**
      * The constructor of the logger class.
      *
@@ -15,7 +19,7 @@ export declare class Logger {
      */
     constructor(logLevel: LogLevel, transport: Transport);
     /**
-     * The logger object we will use for logging.
+     * The logger object the application will use for logging.
      */
     protected _log: WinstonLogger;
     /**
@@ -23,21 +27,21 @@ export declare class Logger {
      */
     get log(): WinstonLogger;
     /**
-     * Method to log a info message.
+     * Method to log an information message.
      *
      * @param message The message to be logged.
      * @param meta Various other meta elements passed to the log method.
      */
     info(message: any, ...meta: any[]): WinstonLogger;
     /**
-     * Method to log a error message.
+     * Method to log an error message.
      *
      * @param message The message to be logged.
      * @param meta Various other meta elements passed to the log method.
      */
     error(message: any, ...meta: any[]): WinstonLogger;
     /**
-     * Method to log a warn message.
+     * Method to log a warning message.
      *
      * @param message The message to be logged.
      * @param meta Various other meta elements passed to the log method.
@@ -66,7 +70,7 @@ export declare class Logger {
     silly(message: any, ...meta: any[]): WinstonLogger;
 }
 /**
- * The console logger that can be used in our application.
+ * The console logger that can be used in your application.
  */
 export declare class ConsoleLogger extends Logger {
     /**
@@ -75,10 +79,10 @@ export declare class ConsoleLogger extends Logger {
      * @param logLevel The level of logging we will use in our application.
      * @param format The message formatter.
      */
-    constructor(logLevel: LogLevel, format?: logform.Format);
+    constructor(logLevel: LogLevel, format?: Format);
 }
 /**
- * The file logger that can be used in our application.
+ * The file logger that can be used in your application.
  */
 export declare class FileLogger extends Logger {
     /**
@@ -90,7 +94,9 @@ export declare class FileLogger extends Logger {
     constructor(logLevel: LogLevel, options?: FileTransportOptions);
 }
 /**
- * The NoLogger logger that can be used in our application.
+ * The NoLogger logger that can be used in your application.
+ *
+ * Use this logger if you want to disable the logging possibility.
  */
 export declare class NoLogger extends Logger {
     /**
@@ -99,9 +105,17 @@ export declare class NoLogger extends Logger {
     constructor();
 }
 /**
- *
+ * Logger that can be used to log information in JSON objects. This
+ * logger can be used when logging information into AWS, Elastic Search.
  */
 export declare class JSONLogger extends Logger {
+    /**
+     * The constructor of the logger class.
+     *
+     * @param logLevel The level of logging we will use in our application.
+     * @param isFile If the logger should log the messages in a file.
+     * @param options The options passed to the file logger transport.
+     */
     constructor(logLevel: LogLevel, isFile?: boolean, options?: FileTransportOptions);
 }
 /**

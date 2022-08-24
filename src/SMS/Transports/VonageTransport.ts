@@ -4,15 +4,15 @@ import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**
- * Class representing the Vonage Transport handler
+ * SMS Transport using the Vonage/Nexmo engine.
  */
 export default class VonageTransport implements ISMSTransport {
   /**
-   * The Vonage service
+   * The Vonage transport handler.
    */
   private readonly _vonage: Vonage;
   /**
-   * The default phone config
+   * The default phone configuration.
    */
   private readonly _defaultPhone = Config.string("sms.config.phone");
 

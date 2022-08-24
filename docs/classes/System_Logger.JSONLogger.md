@@ -4,6 +4,9 @@
 
 [System/Logger](../modules/System_Logger.md).JSONLogger
 
+Logger that can be used to log information in JSON objects. This
+logger can be used when logging information into AWS, Elastic Search.
+
 ## Hierarchy
 
 - [`Logger`](System_Logger.Logger.md)
@@ -39,13 +42,15 @@
 
 • **new JSONLogger**(`logLevel`, `isFile?`, `options?`)
 
+The constructor of the logger class.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `logLevel` | [`LogLevel`](../enums/System_LogLevel.LogLevel.md) | `undefined` |
-| `isFile` | `boolean` | `false` |
-| `options?` | `FileTransportOptions` | `undefined` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `logLevel` | [`LogLevel`](../enums/System_LogLevel.LogLevel.md) | `undefined` | The level of logging we will use in our application. |
+| `isFile` | `boolean` | `false` | If the logger should log the messages in a file. |
+| `options?` | `FileTransportOptions` | `undefined` | The options passed to the file logger transport. |
 
 #### Overrides
 
@@ -57,7 +62,7 @@
 
 • `Protected` **\_log**: `Logger`
 
-The logger object we will use for logging.
+The logger object the application will use for logging.
 
 #### Inherited from
 
@@ -108,7 +113,7 @@ ___
 
 ▸ **error**(`message`, ...`meta`): `Logger`
 
-Method to log a error message.
+Method to log an error message.
 
 #### Parameters
 
@@ -131,7 +136,7 @@ ___
 
 ▸ **info**(`message`, ...`meta`): `Logger`
 
-Method to log a info message.
+Method to log an information message.
 
 #### Parameters
 
@@ -200,7 +205,7 @@ ___
 
 ▸ **warn**(`message`, ...`meta`): `Logger`
 
-Method to log a warn message.
+Method to log a warning message.
 
 #### Parameters
 

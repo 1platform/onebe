@@ -1,5 +1,5 @@
 /**
- * Enum representing a Query Parameter Type
+ * A list of possible types for a query parameter.
  *
  * @enum
  */
@@ -12,6 +12,11 @@ export declare enum QueryParameterType {
     OBJECT = "object",
     ARRAY = "array"
 }
+/**
+ * A list of possible types for a the entity properties.
+ *
+ * @enum
+ */
 export declare enum EntityPropertyDataTypes {
     STRING = "string",
     NUMBER = "number",
@@ -21,7 +26,7 @@ export declare enum EntityPropertyDataTypes {
     OBJECT = "object"
 }
 /**
- * Enum representing a Body Parameter Type
+ * A list of possible types for a body parameter.
  *
  * @enum
  */
@@ -32,5 +37,6 @@ export declare enum BodyParameterType {
     BOOLEAN = "boolean",
     INTEGER = "integer",
     NULL = "null",
-    OBJECT = "object"
+    OBJECT = "object",
+    FILE = "file"
 }

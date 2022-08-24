@@ -4,7 +4,7 @@
 
 [System/Logger](../modules/System_Logger.md).ConsoleLogger
 
-The console logger that can be used in our application.
+The console logger that can be used in your application.
 
 ## Hierarchy
 
@@ -60,7 +60,7 @@ The constructor of the logger class.
 
 • `Protected` **\_log**: `Logger`
 
-The logger object we will use for logging.
+The logger object the application will use for logging.
 
 #### Inherited from
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **error**(`message`, ...`meta`): `Logger`
 
-Method to log a error message.
+Method to log an error message.
 
 #### Parameters
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **info**(`message`, ...`meta`): `Logger`
 
-Method to log a info message.
+Method to log an information message.
 
 #### Parameters
 
@@ -203,7 +203,7 @@ ___
 
 ▸ **warn**(`message`, ...`meta`): `Logger`
 
-Method to log a warn message.
+Method to log a warning message.
 
 #### Parameters
 

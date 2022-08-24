@@ -23,7 +23,7 @@ const defaultDocsConfig: IConfig = {
    *
    * @default "/docs"
    */
-  basePath: Env.string("DOCUMENTATION_BASE_PATH", "/docs"),
+  path: Env.string("DOCUMENTATION_BASE_PATH", "/docs"),
 };
 
 export default defaultDocsConfig;

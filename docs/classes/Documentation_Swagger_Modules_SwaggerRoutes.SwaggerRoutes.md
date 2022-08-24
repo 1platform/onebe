@@ -4,6 +4,11 @@
 
 [Documentation/Swagger/Modules/SwaggerRoutes](../modules/Documentation_Swagger_Modules_SwaggerRoutes.md).SwaggerRoutes
 
+Swagger Routes Builder tool.
+
+Using this class the Documentation system will create everything needed
+by the OpenAPI 3 paths specification.
+
 ## Table of contents
 
 ### Constructors
@@ -38,11 +43,14 @@
 
 ▸ `Protected` **getErrors**(`errors`): `Record`<`string`, `any`\>
 
+Method used to generate the OpenAPI 3 responses object for an endpoint based
+on a list with Error Response metadata objects.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `errors` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\>[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `errors` | [`IEndpointThrowResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointThrowResponse.md)<`any`\>[] | The list of errors that can be returned by the endpoint. |
 
 #### Returns
 
@@ -54,11 +62,14 @@ ___
 
 ▸ `Protected` **getParameters**(`parameters`): `Record`<`string`, `unknown`\>[]
 
+Method used to generate the OpenAPI 3 parameters object for an endpoint based
+on an Endpoint Parameter metadata object.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `parameters` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parameters` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md)[] | The list of URL parameters supported by the endpoint. |
 
 #### Returns
 
@@ -70,13 +81,16 @@ ___
 
 ▸ `Protected` **getPath**(`basePath`, `path`, `parameters`): `string`
 
+Method used to generate the full path of the endpoint, from the route
+base path.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `basePath` | `string`[] |
-| `path` | `string` |
-| `parameters` | `string`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `basePath` | `string`[] | The base path from the route. |
+| `path` | `string` | The path of the endpoint. |
+| `parameters` | `string`[] | The list of parameters that appear in the endpoint URL. |
 
 #### Returns
 
@@ -88,11 +102,14 @@ ___
 
 ▸ `Protected` **getQueryParameters**(`queryParameters`): `Record`<`string`, `unknown`\>[]
 
+Method used to generate the OpenAPI 3 parameters object for an endpoint based
+on an Endpoint Query Parameter metadata object.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `queryParameters` | [`IEndpointQuery`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointQuery.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `queryParameters` | [`IEndpointQuery`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointQuery.md)[] | The list of Query parameters supported by the endpoint. |
 
 #### Returns
 
@@ -104,11 +121,14 @@ ___
 
 ▸ `Protected` **getRequestBody**(`bodyDefinition`): `Record`<`string`, `unknown`\>
 
+Method used to generate the OpenAPI 3 request body object for an endpoint based
+on a Predefined Entity exposed by the Entity Metadata.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `bodyDefinition` | [`IEndpointBody`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBody.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bodyDefinition` | [`IEndpointBody`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBody.md) | The body definition metadata information. |
 
 #### Returns
 
@@ -120,11 +140,14 @@ ___
 
 ▸ `Protected` **getRequestBodyDefinition**(`bodyDefinition`): `Record`<`string`, `unknown`\>
 
+Method used to generate the OpenAPI 3 request body object for an endpoint based
+on a list with Body Parameters Metadata objects.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `bodyDefinition` | [`IEndpointBodyParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `bodyDefinition` | [`IEndpointBodyParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointBodyParameter.md)[] | The list with body parameters. |
 
 #### Returns
 
@@ -136,11 +159,14 @@ ___
 
 ▸ `Protected` **getResponseSchemas**(`responses`): `Record`<`string`, `Record`<`string`, `unknown`\>\>
 
+Method used to generate the OpenAPI 3 responses object for an endpoint based
+on an Endpoint Response metadata object.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `responses` | [`IEndpointResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointResponse.md)<`any`\>[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `responses` | [`IEndpointResponse`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointResponse.md)<`any`\>[] | The list of responses that can be returned by the endpoint. |
 
 #### Returns
 
@@ -152,11 +178,14 @@ ___
 
 ▸ `Protected` **getResponses**(`endpoint`): `Record`<`string`, `any`\>
 
+Method used to generate the OpenAPI 3 responses object for an endpoint based
+on its metadata information.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `endpoint` | [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\> | The endpoint metadata. |
 
 #### Returns
 
@@ -168,11 +197,13 @@ ___
 
 ▸ **getRoutes**(`routesMetadata`): `Record`<`string`, `unknown`\>
 
+Method that extracts the routes from the route definition metadata.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `routesMetadata` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `routesMetadata` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[] | The list of documented routes from the metadata store. |
 
 #### Returns
 
@@ -184,12 +215,15 @@ ___
 
 ▸ `Protected` **getStatusDescription**(`status`, `defaultValue?`): `string`
 
+Method used to convert the HTTP status to a string value that can be used
+as a status description.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `status` | `string` |
-| `defaultValue?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `status` | `string` | The status we want to convert. |
+| `defaultValue?` | `string` | A default value to be returned when the status isn't in the supported list. |
 
 #### Returns
 
@@ -201,11 +235,14 @@ ___
 
 ▸ `Protected` **getStatusesSchemas**(`statuses`): `Record`<`string`, `Record`<`string`, `unknown`\>\>
 
+Method used to generate the OpenAPI 3 responses object for an endpoint based
+on a list with statuses and descriptions.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `statuses` | [`string`, `string`][] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `statuses` | [`string`, `string`][] | The list of statuses that can be returned by the endpoint. |
 
 #### Returns
 
@@ -217,11 +254,14 @@ ___
 
 ▸ `Protected` **groupPaths**(`route`): `Record`<`string`, `Record`<`string`, `Record`<`string`, `unknown`\>\>\>
 
+Group the endpoint calls based on the Endpoint URL and the HTTP verb used
+to access the code.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `route` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `route` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md) | The route metadata for which we create the groups. |
 
 #### Returns
 
@@ -233,13 +273,16 @@ ___
 
 ▸ `Protected` **parsePath**(`endpoint`, `controller`, `tags`): `Record`<`string`, `unknown`\>
 
+Method used to parse the endpoint metadata information and generate
+the OpenAPI 3 path specification object.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\> |
-| `controller` | `string` |
-| `tags` | `string`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `endpoint` | [`IEndpointMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointMetadata.md)<`any`, `any`\> | The endpoint metadata. |
+| `controller` | `string` | The route where the endpoint is located. |
+| `tags` | `string`[] | A list of tags that are used to group the endpoint. |
 
 #### Returns
 

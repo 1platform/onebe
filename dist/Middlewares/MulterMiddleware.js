@@ -3,11 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ArrayUpload = ArrayUpload;
+exports.NamedFilesUpload = NamedFilesUpload;
+exports.SingleUpload = SingleUpload;
+exports.VerifyURL = VerifyURL;
 exports.getDestinationFolder = getDestinationFolder;
-exports.namedFiles = namedFiles;
 exports.signURL = void 0;
-exports.singleUpload = singleUpload;
-exports.verifierURL = void 0;
 
 var _multer = _interopRequireDefault(require("multer"));
 
@@ -15,20 +16,24 @@ var _path = _interopRequireDefault(require("path"));
 
 var _signed = _interopRequireDefault(require("signed"));
 
-var _RouteUtils = require("../Router/RouteUtils");
-
 var _Config = _interopRequireDefault(require("../System/Config"));
+
+var _MetadataStore = _interopRequireDefault(require("../Documentation/MetadataStore"));
+
+var _DataTypes = require("../Documentation/Definition/DataTypes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The base of the upload middleware that we can use in our application.
+ * Upload middleware instance that can be used in your application.
  */
 const upload = (0, _multer.default)({
   dest: _Config.default.string("upload.temp")
 });
 /**
- * The base of the URL signature utility.
+ * Instance of the URL signing utility that can be used to sign requests that
+ * return a file - for the situations where the file is available only if the
+ * user is authenticated.
  */
 
 const signature = (0, _signed.default)({
@@ -36,7 +41,7 @@ const signature = (0, _signed.default)({
   ttl: 60
 });
 /**
- * Sign method options.
+ * A list with all the options that you can pass to the sign method.
  */
 
 /**
@@ -48,56 +53,113 @@ function getDestinationFolder(...pathLike) {
   return _path.default.resolve(_Config.default.string("upload.destination"), ...pathLike);
 }
 /**
- * Middleware used to verify if a signed URL is valid.
- *
- * @decorator
- * @param target The target on which we apply the decorator.
- * @param propertyKey The property key on which we apply the decorator.
- * @param descriptor The descriptor of the property we want to decorate.
- */
-
-
-const verifierURL = (0, _RouteUtils.defineMiddleware)(signature.verifier());
-/**
  * Function used to create signed URLs.
  *
- * @param {string} url The URL to be signed.
- * @param {SignMethodOptions} [options] The options used for the URL signing.
+ * @param url The URL to be signed.
+ * @param [options] The options used for the URL signing.
  *
  * @return {string}
  */
 
-exports.verifierURL = verifierURL;
-const signURL = signature.sign.bind(signature);
+
+const signURL = (url, options) => signature.sign(url, {
+  method: options?.method,
+  ttl: options?.timeToLive,
+  exp: options?.expireAt,
+  addr: options?.address
+});
 /**
- * Single file upload middleware.
+ * Decorator to add the Single file upload middleware.
  *
  * @decorator
  * @param fieldName The name of the field in the file uploader.
  */
 
+
 exports.signURL = signURL;
 
-function singleUpload(fieldName) {
+function SingleUpload(fieldName) {
   return (target, propertyKey, descriptor) => {
     const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
+
+    _MetadataStore.default.instance.route.isUpload(target.constructor.name, propertyKey);
+
+    _MetadataStore.default.instance.route.endpointBodyParameters(target.constructor.name, propertyKey, [{
+      name: fieldName,
+      type: _DataTypes.BodyParameterType.FILE
+    }]);
+
     descriptor.value = [upload.single(fieldName), ...original];
   };
 }
 /**
- * Multiple file upload middleware.
+ * Decorator to add the Multiple file upload with different names middleware.
  *
  * @decorator
  * @param names The names of the fields in the file uploader.
  */
 
 
-function namedFiles(...names) {
+function NamedFilesUpload(...names) {
   return (target, propertyKey, descriptor) => {
     const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
+
+    _MetadataStore.default.instance.route.isUpload(target.constructor.name, propertyKey, true);
+
+    names.map(name => {
+      _MetadataStore.default.instance.route.endpointBodyParameters(target.constructor.name, propertyKey, [{
+        name,
+        type: _DataTypes.BodyParameterType.FILE
+      }]);
+    });
     descriptor.value = [upload.fields(names.map(name => ({
       name,
       maxCount: 1
     }))), ...original];
   };
 }
+/**
+ * Decorator to add the Multiple file upload under the same name middleware.
+ *
+ * @decorator
+ * @param fieldName The name of the field in the file uploader.
+ */
+
+
+function ArrayUpload(fieldName) {
+  return (target, propertyKey, descriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
+
+    _MetadataStore.default.instance.route.isUpload(target.constructor.name, propertyKey, true);
+
+    _MetadataStore.default.instance.route.endpointBodyParameters(target.constructor.name, propertyKey, [{
+      name: fieldName,
+      type: _DataTypes.BodyParameterType.FILE,
+      isArray: true
+    }]);
+
+    descriptor.value = [upload.array(fieldName), ...original];
+  };
+}
+/**
+ * Middleware used to verify if a signed URL is valid.
+ *
+ * @decorator
+ */
+
+
+function VerifyURL() {
+  return (target, propertyKey, descriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [descriptor.value];
+
+    _MetadataStore.default.instance.route.isSigned(target.constructor.name, propertyKey);
+
+    _MetadataStore.default.instance.route.endpointQuery(target.constructor.name, propertyKey, {
+      name: "signed",
+      type: _DataTypes.QueryParameterType.STRING,
+      description: "The hash required to verify if the signed URL is valid."
+    });
+
+    descriptor.value = [signature.verifier(), ...original];
+  };
+} // TODO: Add support to check if the uploaded file is: Of Type or With Max Size.

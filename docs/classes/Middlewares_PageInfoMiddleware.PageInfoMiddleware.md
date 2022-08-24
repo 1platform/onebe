@@ -4,7 +4,9 @@
 
 [Middlewares/PageInfoMiddleware](../modules/Middlewares_PageInfoMiddleware.md).PageInfoMiddleware
 
-Page information middleware
+Middleware that adds additional information to the request object. Through this
+middleware you get access to the full App URL string and to the specific path your user
+tried to access.
 
 ## Implements
 

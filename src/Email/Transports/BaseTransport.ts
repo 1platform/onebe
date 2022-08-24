@@ -3,15 +3,27 @@ import { stripHtml } from "string-strip-html";
 import Config from "../../System/Config";
 import { getDefaultLogger } from "../../System/Logger";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
+import HTTPError from "../../Exceptions/HTTPError";
+import HTTPStatus from "../../HTTP/HTTPStatus";
 
 /**
- * Class representing the Base Transport.
+ * Base class that can be used to create a new Email Transport Service.
+ *
+ * You need to extend this class and attach a transporter service
+ * that supports email sending.
  */
-export default class BaseTransport implements IEmailTransport {
+export default abstract class BaseTransport implements IEmailTransport {
   /**
    * The message transporter that we use for sending an email.
    */
   protected _transporter: Transporter;
+
+  /**
+   * Constructor that initialises the transporter service.
+   */
+  protected constructor(transporter?: Transporter) {
+    this._transporter = transporter ?? null;
+  }
 
   /**
    * Method used to send emails.
@@ -19,7 +31,11 @@ export default class BaseTransport implements IEmailTransport {
    * @param options The parameters we use for sending an email.
    */
   public async send(options: IEmailOptions): Promise<any> {
-    const info = await this._transporter.sendMail({
+    if (!this._transporter) {
+      throw new HTTPError("onebe.errors.email.no-transport", HTTPStatus.SERVER_ERROR);
+    }
+
+    const emailOptions = {
       from: options.from || Config.string("email.from"),
       to: options.to && Array.isArray(options.to) ? options.to.join(", ") : options.to,
       cc: options.cc && Array.isArray(options.cc) ? options.cc.join(", ") : options.cc,
@@ -28,8 +44,11 @@ export default class BaseTransport implements IEmailTransport {
       subject: options.subject,
       text: options.text || stripHtml(options.html).result || "",
       html: options.html,
-    });
+    };
 
+    getDefaultLogger().debug(`Email Parameters: ${ JSON.stringify(emailOptions) }`);
+
+    const info = await this._transporter.sendMail(emailOptions);
     getDefaultLogger().info(`Email Message sent: ${ info.messageId }`);
     return info;
   }

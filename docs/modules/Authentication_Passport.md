@@ -4,27 +4,13 @@
 
 ## Table of contents
 
-### Namespaces
-
-- [passport](Authentication_Passport.passport.md)
-
 ### Interfaces
 
 - [IInitStrategyOptions](../interfaces/Authentication_Passport.IInitStrategyOptions.md)
 
-### Variables
-
-- [passport](Authentication_Passport.md#passport)
-
 ### Functions
 
 - [initPassportStrategy](Authentication_Passport.md#initpassportstrategy)
-
-## Variables
-
-### passport
-
-• **passport**: [`PassportStatic`](../interfaces/Authentication_Passport.passport.PassportStatic.md)
 
 ## Functions
 

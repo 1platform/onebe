@@ -11,15 +11,17 @@
 
 ### Functions
 
+- [getCodename](version.md#getcodename)
 - [getVersion](version.md#getversion)
+- [getVersionCodename](version.md#getversioncodename)
 
 ## Variables
 
 ### codename
 
-• `Const` **codename**: ``"No one knows yet..."``
+• `Const` **codename**: ``"Rebuild"``
 
-The version codename of the framework.
+The codename of the current version framework.
 
 ___
 
@@ -31,11 +33,35 @@ The version of the framework.
 
 ## Functions
 
+### getCodename
+
+▸ **getCodename**(): `string`
+
+Function that returns the codename of the framework.
+
+#### Returns
+
+`string`
+
+___
+
 ### getVersion
 
 ▸ **getVersion**(): `string`
 
-Function that returns the full version string (version + buildId)
+Function that returns the full version string (version + buildId).
+
+#### Returns
+
+`string`
+
+___
+
+### getVersionCodename
+
+▸ **getVersionCodename**(): `string`
+
+Function that returns the version and codename of the framework.
 
 #### Returns
 

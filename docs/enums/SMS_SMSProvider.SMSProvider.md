@@ -4,6 +4,8 @@
 
 [SMS/SMSProvider](../modules/SMS_SMSProvider.md).SMSProvider
 
+A list with supported SMS Service providers.
+
 ## Table of contents
 
 ### Enumeration Members

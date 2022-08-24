@@ -7,3 +7,8 @@
 ### Classes
 
 - [SwaggerComponents](../classes/Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md)
+
+### Interfaces
+
+- [ISwaggerComponent](../interfaces/Documentation_Swagger_Modules_SwaggerComponents.ISwaggerComponent.md)
+- [ISwaggerComponentDefinition](../interfaces/Documentation_Swagger_Modules_SwaggerComponents.ISwaggerComponentDefinition.md)

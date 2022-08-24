@@ -1,7 +1,7 @@
 import { Application } from "express";
 import IMiddleware from "./IMiddleware";
 /**
- * The logger middleware.
+ * Middleware used to add logging support to the Express application.
  */
 export default class LoggerMiddleware implements IMiddleware {
     /**

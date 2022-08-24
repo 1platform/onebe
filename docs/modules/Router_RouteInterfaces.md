@@ -8,4 +8,3 @@
 
 - [ICallbackExtracted](../interfaces/Router_RouteInterfaces.ICallbackExtracted.md)
 - [IResponse](../interfaces/Router_RouteInterfaces.IResponse.md)
-- [IRouteHookParameter](../interfaces/Router_RouteInterfaces.IRouteHookParameter.md)

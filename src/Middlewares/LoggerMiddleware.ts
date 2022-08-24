@@ -2,9 +2,10 @@ import { Application } from "express";
 import morgan from "morgan";
 import { getDefaultLogger } from "../System/Logger";
 import IMiddleware from "./IMiddleware";
+import Config from "../System/Config";
 
 /**
- * The logger middleware.
+ * Middleware used to add logging support to the Express application.
  */
 export default class LoggerMiddleware implements IMiddleware {
   /**
@@ -14,7 +15,7 @@ export default class LoggerMiddleware implements IMiddleware {
    */
   public use(app: Application): void {
     app.use(
-      morgan("dev", {
+      morgan(Config.get("http.logFormat", "combined"), {
         stream: { write: (message) => getDefaultLogger().info(message.trim()) },
       })
     );

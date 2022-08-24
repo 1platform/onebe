@@ -12,7 +12,8 @@ var _Config = _interopRequireDefault(require("../System/Config"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * The CORS middleware.
+ * Middleware used to enable the Cross-Origin Resource Sharing functionality for
+ * your application.
  */
 class CORSMiddleware {
   /**

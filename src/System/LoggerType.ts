@@ -1,5 +1,5 @@
 /**
- * Logger type enumeration
+ * A list with supported loggers from the application.
  *
  * @enum
  */
@@ -8,6 +8,7 @@ enum LoggerType {
   FILE = "file",
   JSON = "json",
   JSON_FILE = "json_file",
+  NO_LOGGER = "no_logger",
 }
 
 export default LoggerType;

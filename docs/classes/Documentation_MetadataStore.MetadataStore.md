@@ -4,6 +4,12 @@
 
 [Documentation/MetadataStore](../modules/Documentation_MetadataStore.md).MetadataStore
 
+A store where you can document the entities and routes of your application.
+
+Inside this store the framework keeps information about what should be passed
+by whom and where. When needed, the documentation system will extract all the
+information needed and generate the required documentation.
+
 ## Table of contents
 
 ### Properties
@@ -24,13 +30,15 @@
 
 ▪ `Static` `Protected` **\_instance**: [`MetadataStore`](Documentation_MetadataStore.MetadataStore.md)
 
-The Docs store instance
+The Metadata Store instance
 
 ## Accessors
 
 ### entities
 
 • `get` **entities**(): [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[]
+
+Getter for the list of entities defined in the application.
 
 #### Returns
 
@@ -42,6 +50,8 @@ ___
 
 • `get` **entity**(): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
+Getter for the entity metadata definition utility.
+
 #### Returns
 
 [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
@@ -51,6 +61,8 @@ ___
 ### route
 
 • `get` **route**(): [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+Getter for the route metadata definition utility.
 
 #### Returns
 
@@ -62,6 +74,8 @@ ___
 
 • `get` **routes**(): [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
 
+Getter for the list of routes defined in the application.
+
 #### Returns
 
 [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[]
@@ -72,7 +86,7 @@ ___
 
 • `Static` `get` **instance**(): [`MetadataStore`](Documentation_MetadataStore.MetadataStore.md)
 
-Get method to retrieve the Docs store instance
+Getter for the MetadataStore instance.
 
 #### Returns
 

@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.API = API;
+exports.Controller = Controller;
 exports.Custom = Custom;
 exports.Docs = Docs;
 exports.Group = Group;
@@ -20,16 +21,11 @@ var _index = _interopRequireDefault(require("./index"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Decorator to define the path the controller will handle.
+ * Decorator used to define the path the controller will handle.
  *
- * Attaches to the target the following metadata:
- * - route:path
- * - route:api - if the {@link api} decorator was used.
- * - route:name
- * - route:docs
- * - route:path:callbacks
- *
- * Based on this metadata we know what to generate in the Documentation generator.
+ * This decorator checks if documentation can be exposed and will allow the registration
+ * of the Documentation APIs while keeping track of the various elements that need to
+ * be added to the Documentation for controllers that are added in the application.
  *
  * @decorator
  * @param path The path on which we will register the routes of this controller.
@@ -57,32 +53,38 @@ function Path(path, name, description) {
   };
 }
 /**
- * Decorator to define the controller as an API controller.
+ * Decorator used to define the path the controller will handle. It is an alias for @Path.
  *
- * Attaches to the target the following metadata:
- * - route:path
- * - route:api
- *
- * Based on this metadata we know what to generate in the Documentation generator.
+ * This decorator checks if documentation can be exposed and will allow the registration
+ * of the Documentation APIs while keeping track of the various elements that need to
+ * be added to the Documentation for controllers that are added in the application.
  *
  * @decorator
- * @param BaseClass The Controller we want to decorate.
+ * @param path The path on which we will register the routes of this controller.
+ * @param name The name of the controller. If no name is specified, it will take the name of the controller.
+ * @param description The description of the controller. If no description is passed, no description will be documented.
  */
 
 
-function API(BaseClass) {
-  const routeMetadata = _MetadataStore.default.instance.route;
-  routeMetadata.markAsAPI(BaseClass.name, _Config.default.string("api.path"));
-  return BaseClass;
+function Controller(path, name, description) {
+  return Path(path, name, description);
+}
+/**
+ * Decorator to mark the controller as an API controller.
+ *
+ * @decorator
+ */
+
+
+function API() {
+  return function (BaseClass) {
+    const routeMetadata = _MetadataStore.default.instance.route;
+    routeMetadata.markAsAPI(BaseClass.name, _Config.default.string("api.path"));
+    return BaseClass;
+  };
 }
 /**
  * Decorator to define a custom controller prefix.
- *
- * Attaches to the target the following metadata:
- * - route:path
- * - route:custom:path
- *
- * Based on this metadata we know what to generate in the Documentation generator.
  *
  * @decorator
  * @param path The custom controller path prefix.
@@ -96,15 +98,30 @@ function Custom(path) {
     return BaseClass;
   };
 }
+/**
+ * Decorator to mark a controller as a Documentation one. If needed you can customize
+ * the base path on which the endpoints exposed by the controller are.
+ *
+ * @decorator
+ * @param path The custom documentation path prefix.
+ */
+
 
 function Docs(path) {
   return function (BaseClass) {
     const routeMetadata = _MetadataStore.default.instance.route;
     routeMetadata.markAsDocs(BaseClass.name);
-    routeMetadata.markAsCustom(BaseClass.name, path ?? _Config.default.string("docs.basePath"));
+    routeMetadata.markAsCustom(BaseClass.name, path ?? _Config.default.string("docs.path"));
     return BaseClass;
   };
 }
+/**
+ * Decorator used to add the controller into a group.
+ *
+ * @decorator
+ * @param groupName The name of the group.
+ */
+
 
 function Group(groupName) {
   return function (BaseClass) {

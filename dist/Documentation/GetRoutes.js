@@ -13,6 +13,9 @@ var _RouteUtils = require("../Router/RouteUtils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Function used to extract the routes documentation from the documentation.
+ */
 function GetRoutes() {
   if (!_Config.default.boolean("docs.expose")) {
     return {};

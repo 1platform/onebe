@@ -14,6 +14,8 @@
 
 ▸ **GetRoutes**(): `Record`<`string`, `any`\>
 
+Function used to extract the routes documentation from the documentation.
+
 #### Returns
 
 `Record`<`string`, `any`\>

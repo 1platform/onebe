@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 /**
- * Logger type enumeration
+ * A list with supported loggers from the application.
  *
  * @enum
  */
@@ -17,6 +17,7 @@ var LoggerType;
   LoggerType["FILE"] = "file";
   LoggerType["JSON"] = "json";
   LoggerType["JSON_FILE"] = "json_file";
+  LoggerType["NO_LOGGER"] = "no_logger";
 })(LoggerType || (LoggerType = {}));
 
 var _default = LoggerType;

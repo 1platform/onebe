@@ -4,7 +4,7 @@
 
 [Scheduler/IScheduleDefinition](../modules/Scheduler_IScheduleDefinition.md).IScheduleDefinition
 
-Task scheduler parameter definition.
+Detailed information about a scheduled job.
 
 ## Table of contents
 

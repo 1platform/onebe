@@ -3,15 +3,18 @@ import { Application } from "express";
 import { Server } from "http";
 import IMiddleware from "../Middlewares/IMiddleware";
 /**
- * The HTTP server handler class.
+ * The HTTP service used to create the HTTP server.
+ *
+ * Through this service you can start an HTTP server using Express, secured with
+ * Helmet and having some default Middlewares/Plugins loaded in the application.
  */
 export default class HTTP {
     /**
-     * A list of middlewares that we load in our application.
+     * A list of middlewares that are loaded in your application.
      */
     private _middlewares;
     /**
-     * The Express application instance.
+     * Express instance that is used for the HTTP server.
      */
     private readonly _app;
     /**
@@ -23,19 +26,19 @@ export default class HTTP {
      */
     constructor();
     /**
-     * Express application getter.
+     * Getter for the Express instance.
      */
     get app(): Application;
     /**
-     * HTTP Server instance getter.
+     * Getter for the HTTP server.
      */
     get http(): Server;
     /**
-     * The port on which we listen on for http requests.
+     * Getter for the port used to serve the HTTP server.
      */
     get port(): number;
     /**
-     * The ip on which we listen on for http requests.
+     * Getter for the Host IP used to serve the HTTP server.
      */
     get host(): string;
     /**
@@ -46,13 +49,13 @@ export default class HTTP {
      */
     setLocal(variable: string, value: any): void;
     /**
-     * Start the HTTP server.
+     * Method used to start the HTTP server created by the service.
      */
-    start(): void;
+    start(): Promise<void>;
     /**
-     * Attach a middleware to the express application.
+     * Attach a middleware or a list of middlewares to the express application.
      *
-     * @param middleware The middleware we want to attach.
+     * @param middleware A middleware or a list of middlewares you want to attach.
      */
     use(middleware: IMiddleware | IMiddleware[]): void;
 }

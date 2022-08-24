@@ -1,11 +1,11 @@
 import BaseTransport from "./BaseTransport";
 import IEmailTransport from "./IEmailTransport";
 /**
- * SMTP Transport used for sending emails.
+ * SMTP Transport that can be used for sending emails.
  */
 export default class SMTPTransport extends BaseTransport implements IEmailTransport {
     /**
-     * SMTPTransport constructor.
+     * Transport constructor.
      */
     constructor();
 }

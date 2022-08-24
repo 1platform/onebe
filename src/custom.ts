@@ -1,3 +1,9 @@
+import { IInitStrategyOptions } from "./Authentication/Passport";
+import { Environment } from "./System/Env";
+import App from "./App/App";
+import { RouterBase } from "./Router";
+import { Configuration } from "./System/Config";
+
 declare global {
   /**
    * Extension to the Express namespace.
@@ -41,9 +47,47 @@ declare global {
       authContext?: Record<string, unknown>;
     }
   }
+
+  /* eslint-disable no-var */
+  var env: Environment;
+  var app: App;
+  var onebe: App;
+  var router: RouterBase;
+  var config: Configuration;
+  /* eslint-enable no-var */
 }
 
 /**
- * Some random value, just to be include in the app... no use
+ * Framework initialisation options.
+ *
+ * When starting the application, you need to pass some information
+ * for configuring the startup procedures of the framework.
  */
-export default 1;
+export interface IInitOptions extends IInitStrategyOptions {
+  /**
+   * The folder in which the application runs. Based on this folder,
+   * some configuration for various other files and subsystems is generated
+   * and used. For example, the Configuration loader and Internationalisation
+   * file loader are started and made to look for various files starting from
+   * the current folder.
+   */
+  currentDir?: string;
+  /**
+   * The location of the configuration files. The framework needs only a
+   * relative path to be provided, relative to the `currentDir` parameter
+   * specified above.
+   */
+  configDir?: string;
+  /**
+   * The location of the controllers used in the application. The framework
+   * needs only a relative path to be provided, relative to the `currentDir`
+   * parameter specified above.
+   */
+  controllersDir?: string;
+  /**
+   * Flag to mark if you need a database connection to be initialised
+   * on startup or not. This flag is used when launching the TypeORM
+   * migration system.
+   */
+  noDBConnection?: boolean;
+}

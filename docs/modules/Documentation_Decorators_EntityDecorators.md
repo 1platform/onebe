@@ -24,72 +24,98 @@
 
 ### ArrayProperty
 
-▸ **ArrayProperty**(`dataType`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **ArrayProperty**(`dataType?`, `options?`): `PropertyDecorator`
+
+Decorator used to describe an array property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `dataType` | [`STRING`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md#string) |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `dataType?` | [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md) | `EntityPropertyDataTypes.STRING` | The data type of the property. |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | `undefined` | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### BooleanProperty
 
-▸ **BooleanProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **BooleanProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a boolean property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### DateProperty
 
-▸ **DateProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **DateProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a date property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### DateTimeProperty
 
-▸ **DateTimeProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **DateTimeProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a date-time property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### Entity
 
-▸ **Entity**<`T`\>(`name?`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+▸ **Entity**<`T`\>(`description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+Decorator used to describe a custom entity that is extending the
+BaseEntity class.
+
+Using this decorator we can give a custom entity a name and define
+what other entity it extends. When the Documentation API is exposing
+the metadata, it will look in the hierarchy of the class and list
+all the properties in one place.
+
+**`Decorator`**
 
 #### Type parameters
 
@@ -99,10 +125,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name?` | `string` |
-| `description?` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `description?` | `string` | A short description of the entity. |
 
 #### Returns
 
@@ -112,51 +137,63 @@ ___
 
 ### EntityArrayProperty
 
-▸ **EntityArrayProperty**(`entityName`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **EntityArrayProperty**(`entityName`, `options?`): `PropertyDecorator`
+
+Decorator used to describe a property of a custom entity that references a list of another entities.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entityName` | `string` |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entityName` | `string` | The name of the entity we want to reference. |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### EntityProperty
 
-▸ **EntityProperty**(`entityName`, `options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **EntityProperty**(`entityName`, `options?`): `PropertyDecorator`
+
+Decorator used to describe a property of a custom entity that references another entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entityName` | `string` |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entityName` | `string` | The name of the entity we want to reference. |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### IntegerProperty
 
-▸ **IntegerProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **IntegerProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe an integer property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
@@ -164,12 +201,16 @@ ___
 
 ▸ **IsRequired**(`object`, `propertyName`): `void`
 
+Decorator used to mark the property of a custom entity as required.
+
+**`Decorator`**
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `object` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
-| `propertyName` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `object` | `any` | The entity on which we apply the decorator. |
+| `propertyName` | `string` | The name of the property on which we apply the decorator. |
 
 #### Returns
 
@@ -179,62 +220,76 @@ ___
 
 ### NumberProperty
 
-▸ **NumberProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **NumberProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a number property of a custom entity.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### Property
 
-▸ **Property**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **Property**(`options?`): `PropertyDecorator`
+
+Decorator used to describe the property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### RequiredProperty
 
-▸ **RequiredProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **RequiredProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a required property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`
 
 ___
 
 ### StringProperty
 
-▸ **StringProperty**(`options?`): [`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+▸ **StringProperty**(`options?`): `PropertyDecorator`
+
+Decorator used to describe a string property of a custom entity.
+
+**`Decorator`**
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md) | A list of options to define a property of an entity. |
 
 #### Returns
 
-[`PropertyDecorator`](Documentation_MetadataTypes.md#propertydecorator)
+`PropertyDecorator`

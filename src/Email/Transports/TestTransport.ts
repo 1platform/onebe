@@ -4,14 +4,15 @@ import BaseTransport from "./BaseTransport";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 
 /**
- * Email testing Transport class.
+ * Transport class that can be used for testing email sending.
+ * !!!DO NOT USE IN PRODUCTION!!!
  */
 export default class TestTransport extends BaseTransport implements IEmailTransport {
   /**
-   * TestTransport constructor.
+   * Transport constructor.
    */
   public constructor() {
-    super();
+    super(null);
     nodemailer.createTestAccount().then((account) => {
       this._transporter = nodemailer.createTransport({
         host: "smtp.ethereal.email",

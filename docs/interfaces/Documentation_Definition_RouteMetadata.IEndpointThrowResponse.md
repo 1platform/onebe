@@ -4,6 +4,9 @@
 
 [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md).IEndpointThrowResponse
 
+Interface describing an object that holds metadata information
+about an error thrown by an endpoint.
+
 ## Type parameters
 
 | Name | Type |
@@ -24,14 +27,20 @@
 
 • `Optional` **description**: `string`
 
+A description of what the status represents.
+
 ___
 
 ### response
 
 • `Optional` **response**: [`ResponseValue`](../modules/Router_RouteTypes.md#responsevalue)<`Response`\>
 
+The text of the error message returned to the user.
+
 ___
 
 ### statusCode
 
 • **statusCode**: [`HTTPStatus`](../enums/HTTP_HTTPStatus.HTTPStatus.md)
+
+The HTTP Status code used for the response.

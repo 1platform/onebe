@@ -9,8 +9,10 @@ var _dotenv = require("dotenv");
 
 (0, _dotenv.config)();
 /**
- * The environment handling class. Use the object exported
- * by the module to get various environment variable values.
+ * Class used to interact with the environment
+ *
+ *
+ * The environment handling class. Use the object exported by the module to get various environment variable values.
  */
 
 class Environment {

@@ -1,7 +1,8 @@
 import { Application } from "express";
 import IMiddleware from "./IMiddleware";
 /**
- * The CORS middleware.
+ * Middleware used to enable the Cross-Origin Resource Sharing functionality for
+ * your application.
  */
 export default class CORSMiddleware implements IMiddleware {
     /**

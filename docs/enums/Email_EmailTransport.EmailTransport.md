@@ -4,6 +4,8 @@
 
 [Email/EmailTransport](../modules/Email_EmailTransport.md).EmailTransport
 
+A list with the email transports that can be used in the application.
+
 ## Table of contents
 
 ### Enumeration Members

@@ -1,11 +1,12 @@
 import BaseTransport from "./BaseTransport";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 /**
- * Email testing Transport class.
+ * Transport class that can be used for testing email sending.
+ * !!!DO NOT USE IN PRODUCTION!!!
  */
 export default class TestTransport extends BaseTransport implements IEmailTransport {
     /**
-     * TestTransport constructor.
+     * Transport constructor.
      */
     constructor();
     /**

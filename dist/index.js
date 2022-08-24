@@ -11,8 +11,6 @@ var _App = _interopRequireDefault(require("./App"));
 
 var _Passport = _interopRequireDefault(require("./Authentication/Passport"));
 
-require("./custom");
-
 var _DB = _interopRequireDefault(require("./DB"));
 
 var _HTTP = _interopRequireDefault(require("./HTTP"));
@@ -43,6 +41,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Default values to be used for the framework configuration.
+ */
 const defaultValues = {
   currentDir: process.cwd(),
   configDir: "./config",
@@ -50,7 +51,7 @@ const defaultValues = {
   noDBConnection: false
 };
 /**
- * Framework init function. It initializes some elements of the framework
+ * Framework initialisation function. It initializes some elements of the framework
  * to be later used when starting the application up.
  *
  * @param props The various properties you can pass to the init function.
@@ -64,7 +65,7 @@ async function init(props) {
   if (!_Config.default.boolean("logs.enabled")) {
     (0, _Logger.setDefaultLogger)(new _Logger.NoLogger());
   } else {
-    switch (_Config.default.string("logs.type")) {
+    switch (_Config.default.string("logs.type", _LoggerType.default.CONSOLE)) {
       case _LoggerType.default.CONSOLE:
         (0, _Logger.setDefaultLogger)(new _Logger.ConsoleLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()]));
         break;
@@ -79,6 +80,11 @@ async function init(props) {
 
       case _LoggerType.default.JSON_FILE:
         (0, _Logger.setDefaultLogger)(new _Logger.JSONLogger(_LogLevel.default[_Config.default.string("logs.level", _LogLevel.default.INFO).toUpperCase()], true));
+        break;
+
+      case _LoggerType.default.NO_LOGGER:
+      default:
+        (0, _Logger.setDefaultLogger)(new _Logger.NoLogger());
         break;
     }
   }

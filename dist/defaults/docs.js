@@ -31,7 +31,7 @@ const defaultDocsConfig = {
    *
    * @default "/docs"
    */
-  basePath: _Env.default.string("DOCUMENTATION_BASE_PATH", "/docs")
+  path: _Env.default.string("DOCUMENTATION_BASE_PATH", "/docs")
 };
 var _default = defaultDocsConfig;
 exports.default = _default;

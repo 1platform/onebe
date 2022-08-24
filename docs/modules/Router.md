@@ -18,4 +18,4 @@
 
 • `Const` **Router**: [`RouterBase`](../classes/Router.RouterBase.md)
 
-The global default Router that we are going to use in our application.
+The global default Router that the application is going to use.

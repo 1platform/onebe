@@ -4,6 +4,11 @@
 
 [Router/AuthContextAPI](../modules/Router_AuthContextAPI.md).AuthContextAPI
 
+A class used to expose the Authentication Context information from a request.
+
+This context will handle everything related to the authentication and
+authorisation part of your application.
+
 ## Table of contents
 
 ### Constructors
@@ -28,18 +33,22 @@
 
 • **new AuthContextAPI**(`request`, `baseStore?`)
 
+Authentication Context constructor.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `request` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> |
-| `baseStore?` | `Record`<`string`, `unknown`\> |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `request` | `Request`<`ParamsDictionary`, `any`, `any`, `ParsedQs`, `Record`<`string`, `any`\>\> | The Request for which we serve the Authentication Context. |
+| `baseStore?` | `Record`<`string`, `unknown`\> | The store with Authentication Data. |
 
 ## Accessors
 
 ### isAuthenticated
 
 • `get` **isAuthenticated**(): `boolean`
+
+Getter for the isAuthenticated flag.
 
 #### Returns
 
@@ -51,6 +60,8 @@ ___
 
 • `get` **token**(): `string`
 
+Getter for the Bearer token.
+
 #### Returns
 
 `string`
@@ -60,6 +71,8 @@ ___
 ### user
 
 • `get` **user**(): `User`
+
+Getter for the User object from the request.
 
 #### Returns
 
@@ -71,6 +84,8 @@ ___
 
 ▸ **get**<`T`\>(`key`): `T`
 
+Getter function for elements from the authentication store.
+
 #### Type parameters
 
 | Name | Type |
@@ -79,9 +94,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key for which you need information. |
 
 #### Returns
 
@@ -93,6 +108,8 @@ ___
 
 ▸ **logout**(): `void`
 
+Method used to log the user out from the application.
+
 #### Returns
 
 `void`
@@ -103,6 +120,8 @@ ___
 
 ▸ **set**<`T`\>(`key`, `value`): `void`
 
+Setter function for elements into the authentication store.
+
 #### Type parameters
 
 | Name | Type |
@@ -111,10 +130,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
-| `value` | `T` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The key on which you set information. |
+| `value` | `T` | The value which you want to store. |
 
 #### Returns
 

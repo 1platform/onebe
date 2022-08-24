@@ -4,6 +4,11 @@
 
 [Documentation/Swagger/Modules/SwaggerComponents](../modules/Documentation_Swagger_Modules_SwaggerComponents.md).SwaggerComponents
 
+Swagger Components Builder tool.
+
+Using this class the Documentation system will create everything needed
+by the OpenAPI 3 components specification.
+
 ## Table of contents
 
 ### Constructors
@@ -12,8 +17,8 @@
 
 ### Methods
 
-- [buildComponents](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md#buildcomponents)
 - [getComponent](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md#getcomponent)
+- [getComponents](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md#getcomponents)
 - [getErrorEntity](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md#geterrorentity)
 - [getSecuritySchemes](Documentation_Swagger_Modules_SwaggerComponents.SwaggerComponents.md#getsecurityschemes)
 
@@ -25,15 +30,36 @@
 
 ## Methods
 
-### buildComponents
+### getComponent
 
-▸ **buildComponents**(`entities`): `Record`<`string`, `unknown`\>
+▸ `Protected` **getComponent**(`entity`): [`ISwaggerComponentDefinition`](../interfaces/Documentation_Swagger_Modules_SwaggerComponents.ISwaggerComponentDefinition.md)
+
+Method used to generate the definition of a component. It takes as parameter
+the entity metadata information.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `entities` | [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md) | The entity we want to generate a component from. |
+
+#### Returns
+
+[`ISwaggerComponentDefinition`](../interfaces/Documentation_Swagger_Modules_SwaggerComponents.ISwaggerComponentDefinition.md)
+
+___
+
+### getComponents
+
+▸ **getComponents**(`entities`): `Record`<`string`, `unknown`\>
+
+Method that extracts the components from the entities definition metadata.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entities` | [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md)[] | The list of documented entities from the metadata store. |
 
 #### Returns
 
@@ -41,25 +67,13 @@
 
 ___
 
-### getComponent
-
-▸ **getComponent**(`entity`): `ISwaggerComponentDefinition`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `entity` | [`IEntityMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IEntityMetadata.md) |
-
-#### Returns
-
-`ISwaggerComponentDefinition`
-
-___
-
 ### getErrorEntity
 
-▸ **getErrorEntity**(): `Record`<`string`, `unknown`\>
+▸ `Protected` **getErrorEntity**(): `Record`<`string`, `unknown`\>
+
+Method used to generate the error entity definition. Since all the errors
+returned by the application follow the same pattern we can easily define a
+generic error entity and reuse it everywhere we need to return an error.
 
 #### Returns
 
@@ -69,7 +83,10 @@ ___
 
 ### getSecuritySchemes
 
-▸ **getSecuritySchemes**(): `Record`<`string`, `unknown`\>
+▸ `Protected` **getSecuritySchemes**(): `Record`<`string`, `unknown`\>
+
+Method used to generate the security schemas based on the authentication
+methods supported by the framework.
 
 #### Returns
 

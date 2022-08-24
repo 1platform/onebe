@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _Config = _interopRequireDefault(require("../System/Config"));
 
-var _version = _interopRequireDefault(require("../version"));
+var _version = require("../version");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32,7 +32,7 @@ class App {
 
     _defineProperty(this, "_appInfo", {
       name: "onebe",
-      version: (0, _version.default)(),
+      version: (0, _version.getVersion)(),
       appName: _Config.default.string("app.appName"),
       appVersion: _Config.default.string("app.appVersion"),
       appDescription: _Config.default.string("app.appDescription"),

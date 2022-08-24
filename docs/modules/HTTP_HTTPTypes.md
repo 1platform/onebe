@@ -39,20 +39,20 @@ ___
 
 ### HTTPMiddleware
 
-Ƭ **HTTPMiddleware**: (`req`: `Request`, `res`: `Response`, `next?`: `NextFunction`) => `void`
+Ƭ **HTTPMiddleware**: (`request`: `Request`, `response`: `Response`, `next?`: `NextFunction`) => `void`
 
 #### Type declaration
 
-▸ (`req`, `res`, `next?`): `void`
+▸ (`request`, `response`, `next?`): `void`
 
-Route endpoint Middleware function definition.
+Definition of how a Middleware Function should look like.
 
 ##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `req` | `Request` | The request object. |
-| `res` | `Response` | The response object. |
+| `request` | `Request` | The request object. |
+| `response` | `Response` | The response object. |
 | `next?` | `NextFunction` | The next callback function in list. |
 
 ##### Returns

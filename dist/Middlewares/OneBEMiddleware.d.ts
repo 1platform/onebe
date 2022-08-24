@@ -1,9 +1,9 @@
 import { Application } from "express";
 import IMiddleware from "./IMiddleware";
 /**
- * The Spark Middleware.
+ * Middleware used to add information about the framework.
  */
-export default class SparkMiddleware implements IMiddleware {
+export default class OneBEMiddleware implements IMiddleware {
     /**
      * The middleware initialization method.
      *

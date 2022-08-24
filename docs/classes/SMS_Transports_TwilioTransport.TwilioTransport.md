@@ -4,7 +4,7 @@
 
 [SMS/Transports/TwilioTransport](../modules/SMS_Transports_TwilioTransport.md).TwilioTransport
 
-Class representing the Twilio Transport handler
+SMS Transport using the Twilio engine.
 
 ## Implements
 

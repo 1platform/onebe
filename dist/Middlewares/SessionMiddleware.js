@@ -18,9 +18,19 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Session middleware.
+ * Middleware used to create a session store for the application, together
+ * with adding that session to the Express application.
  */
 class SessionMiddleware {
+  /**
+   * Session store object used by application to store session data.
+   */
+
+  /**
+   * Setter method for the session store.
+   *
+   * @param newStore The new session store to be used in the application.
+   */
   static set store(newStore) {
     SessionMiddleware._store = newStore;
   }

@@ -4,7 +4,7 @@
 
 [SMS/SMSService](../modules/SMS_SMSService.md).SMSService
 
-Class exposing the SMS sending functionality.
+Service used to handle SMS Sending from the application.
 
 ## Hierarchy
 

@@ -4,6 +4,9 @@
 
 [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md).IEntityProperty
 
+Interface describing an object used to describe the extended metadata information
+of a property from an entity.
+
 ## Table of contents
 
 ### Properties
@@ -29,11 +32,16 @@
 
 • `Optional` **childType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
 
+In case this property is an array, we want to know what type is the
+content of the array.
+
 ___
 
 ### dataType
 
-• **dataType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
+• `Optional` **dataType**: [`EntityPropertyDataTypes`](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
+
+The datatype of the property.
 
 ___
 
@@ -41,17 +49,27 @@ ___
 
 • `Optional` **defaultValue**: `string`
 
+The default value of the property.
+
+**`TODO`**
+
 ___
 
 ### description
 
 • `Optional` **description**: `string`
 
+A short description of the property.
+
 ___
 
 ### enumOptions
 
-• `Optional` **enumOptions**: `string`
+• `Optional` **enumOptions**: `string`[]
+
+A list of possible values that can be passed to the property.
+
+**`TODO`**
 
 ___
 
@@ -59,11 +77,16 @@ ___
 
 • `Optional` **fieldName**: `string`
 
+The name of the field attached to the property, in case it is a
+referenced property.
+
 ___
 
 ### isDate
 
 • `Optional` **isDate**: `boolean`
+
+Flag to mark the property as a Date field.
 
 ___
 
@@ -71,11 +94,15 @@ ___
 
 • `Optional` **isDateTime**: `boolean`
 
+Flag to mark the property as a DateTime field.
+
 ___
 
 ### isPrimaryKey
 
 • `Optional` **isPrimaryKey**: `boolean`
+
+Flag to mark the property as a primary key.
 
 ___
 
@@ -83,11 +110,15 @@ ___
 
 • `Optional` **length**: `string` \| `number`
 
+The maximum length of the property value.
+
 ___
 
 ### options
 
 • `Optional` **options**: `any`
+
+Any other options related to the property definition.
 
 ___
 
@@ -95,14 +126,20 @@ ___
 
 • `Optional` **reference**: `string`
 
+The name of the entity used to describe the value of the property.
+
 ___
 
 ### referenceId
 
 • `Optional` **referenceId**: `string`
 
+The ID field of the entity we reference.
+
 ___
 
 ### required
 
 • `Optional` **required**: `boolean`
+
+Flag to mark the property as required.

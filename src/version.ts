@@ -1,17 +1,31 @@
 import buildId from "./build";
 
 /**
- * The version codename of the framework.
+ * The codename of the current version framework.
  */
-export const codename = "No one knows yet...";
+export const codename = "Rebuild";
 /**
  * The version of the framework.
  */
 export const version = "1.0.30";
 
 /**
- * Function that returns the full version string (version + buildId)
+ * Function that returns the full version string (version + buildId).
  */
-export default function getVersion(): string {
+export function getVersion(): string {
   return `${ version }-${ buildId }`;
+}
+
+/**
+ * Function that returns the codename of the framework.
+ */
+export function getCodename(): string {
+  return codename;
+}
+
+/**
+ * Function that returns the version and codename of the framework.
+ */
+export function getVersionCodename(): string {
+  return `${ getVersion() } (${ getCodename() })`;
 }

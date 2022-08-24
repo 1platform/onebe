@@ -23,6 +23,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * Swagger file builder utility.
+ *
+ * Using this class the Documentation system will create everything needed
+ * to generate an OpenAPI 3 documentation file.
+ */
 class SwaggerBuilder {
   constructor() {
     _defineProperty(this, "componentBuilder", new _SwaggerComponents.default());
@@ -34,6 +40,13 @@ class SwaggerBuilder {
     _defineProperty(this, "store", {});
   }
 
+  /**
+   * Method used to build the OpenAPI 3 information store.
+   *
+   * This method will take the information defined by you in the documentation metadata
+   * using the Documentation SDK and create all the various items required by the OpenAPI 3
+   * specification.
+   */
   build() {
     const metadataStore = _MetadataStore.default.instance;
     this.store = {
@@ -48,20 +61,28 @@ class SwaggerBuilder {
         description: "Default environment"
       }],
       paths: this.routesBuilder.getRoutes(metadataStore.routes),
-      components: this.componentBuilder.buildComponents(metadataStore.entity.buildEntityList()),
+      components: this.componentBuilder.getComponents(metadataStore.entity.buildEntityList()),
       tags: this.tagsBuilder.getTags(metadataStore.routes)
     };
     return this;
   }
+  /**
+   * Method used to export the YAML version of the OpenAPI 3 documentation.
+   */
+
 
   getYaml() {
     return _jsYaml.default.dump(this.store, {
       forceQuotes: true
     });
   }
+  /**
+   * Method used to export the JSON version of the OpenAPI 3 documentation.
+   */
+
 
   getJSON() {
-    return this.store;
+    return JSON.parse(JSON.stringify(this.store));
   }
 
 }

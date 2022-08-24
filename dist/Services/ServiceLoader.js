@@ -8,11 +8,11 @@ exports.default = void 0;
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * The application service loader singleton.
+ * A system to load services into the application and reuse them as needed.
  */
 class ServiceLoader {
   /**
-   * A map containing all the instantiated services of the application.
+   * A map containing all the instantiated services in the application.
    */
 
   /**

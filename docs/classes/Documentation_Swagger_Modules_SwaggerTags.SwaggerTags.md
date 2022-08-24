@@ -4,6 +4,11 @@
 
 [Documentation/Swagger/Modules/SwaggerTags](../modules/Documentation_Swagger_Modules_SwaggerTags.md).SwaggerTags
 
+Swagger Tags Builder tool.
+
+Using this class the Documentation system will create everything needed
+by the OpenAPI 3 tags specification.
+
 ## Table of contents
 
 ### Constructors
@@ -26,11 +31,13 @@
 
 ▸ **getTags**(`routesMetadata`): `Record`<`string`, `unknown`\>[]
 
+Method that extracts the tags from the route definition metadata.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `routesMetadata` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `routesMetadata` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)[] | The list of documented routes from the metadata store. |
 
 #### Returns
 

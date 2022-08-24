@@ -4,7 +4,8 @@
 
 [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md).IEmailOptions
 
-The options that we can pass to send an email.
+A list of options of that can be passed when sending an email throught
+the Email handling Service.
 
 ## Table of contents
 
@@ -25,7 +26,9 @@ The options that we can pass to send an email.
 
 • `Optional` **bcc**: `string` \| `string`[]
 
-To who we send a blind carbon copy email.
+To whom you want to send a Blind Carbon Copy of the email. One email or a list of emails
+that will be passed as the BCC field of an email. The emails added in this field won't
+appear in the email address list.
 
 ___
 
@@ -33,7 +36,8 @@ ___
 
 • `Optional` **cc**: `string` \| `string`[]
 
-To who we send a carbon copy email.
+To whom you want to send a Carbon Copy of the email. One email or a list of emails
+that will be passed as the CC field of an email.
 
 ___
 
@@ -41,7 +45,7 @@ ___
 
 • `Optional` **from**: `string`
 
-From who is the email.
+From whom is the email. This will appear as the source of the email.
 
 ___
 
@@ -57,7 +61,8 @@ ___
 
 • `Optional` **replyTo**: `string`
 
-Who will receive the reply of the email.
+If you want to receive a reply from the person that received the email you sent
+through the application, the `replyTo` field will need a valid email address.
 
 ___
 
@@ -81,4 +86,5 @@ ___
 
 • `Optional` **to**: `string` \| `string`[]
 
-To who we send the email.
+To whom you want to send the email. One email or a list of emails that will
+be passed as the TO field of an email.

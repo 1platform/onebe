@@ -9,6 +9,6 @@ export default class ForbiddenException extends HTTPError {
    * Constructor of the ForbiddenException.
    */
   public constructor() {
-    super("errors.default.forbidden", HTTPStatus.FORBIDDEN);
+    super("onebe.errors.forbidden", HTTPStatus.FORBIDDEN);
   }
 }

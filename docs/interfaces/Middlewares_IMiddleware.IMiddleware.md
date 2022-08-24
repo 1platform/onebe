@@ -4,7 +4,10 @@
 
 [Middlewares/IMiddleware](../modules/Middlewares_IMiddleware.md).IMiddleware
 
-The base definition of a middleware class.
+An interface used to describe how a Middleware class should look like. When you
+want to create a middleware or add support for an existing functionality into the
+application, use this interface as the base and look into how the other middlewares
+are loaded.
 
 ## Implemented by
 
@@ -13,10 +16,10 @@ The base definition of a middleware class.
 - [`ErrorHandlerMiddleware`](../classes/Middlewares_ErrorHandlerMiddleware.ErrorHandlerMiddleware.md)
 - [`I18nMiddleware`](../classes/Middlewares_I18NMiddleware.I18nMiddleware.md)
 - [`LoggerMiddleware`](../classes/Middlewares_LoggerMiddleware.LoggerMiddleware.md)
+- [`OneBEMiddleware`](../classes/Middlewares_OneBEMiddleware.OneBEMiddleware.md)
 - [`PageInfoMiddleware`](../classes/Middlewares_PageInfoMiddleware.PageInfoMiddleware.md)
 - [`PassportMiddleware`](../classes/Middlewares_PassportMiddleware.PassportMiddleware.md)
 - [`SessionMiddleware`](../classes/Middlewares_SessionMiddleware.SessionMiddleware.md)
-- [`SparkMiddleware`](../classes/Middlewares_SparkMiddleware.SparkMiddleware.md)
 
 ## Table of contents
 

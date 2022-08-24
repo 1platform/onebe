@@ -10,7 +10,8 @@ var _passport = _interopRequireDefault(require("passport"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Passport middleware.
+ * Middleware used to initialize the passport engine for the authentication
+ * in the application.
  */
 class PassportMiddleware {
   /**

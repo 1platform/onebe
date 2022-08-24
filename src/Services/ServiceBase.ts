@@ -1,8 +1,10 @@
 import { AnySchema } from "joi";
 
 /**
- * The Service base class. Using this class we can perform
- * various actions in the application.
+ * The base class for your services.
+ *
+ * We recommend using a service to perform all the actions in your application. Database handling should
+ * happen through a service using a repository.
  */
 export default abstract class ServiceBase {
   /**

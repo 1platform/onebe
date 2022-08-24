@@ -1,7 +1,9 @@
 import { Application } from "express";
 import IMiddleware from "./IMiddleware";
 /**
- * The i18n middleware.
+ * Middleware used to enable the Internationalisation (i18n) support for the application endpoints.
+ * Since you might want to have the messages translated to the language chosen by the user
+ * when the request was made, the i18n support needs to be added to the request object.
  */
 export default class I18nMiddleware implements IMiddleware {
     /**
