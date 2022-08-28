@@ -45,7 +45,7 @@ class Environment {
 
 
   number(field, defaultValue = 0) {
-    return Number(this.get(field)) || Math.floor(defaultValue);
+    return Number(this.get(field)) || defaultValue;
   }
   /**
    * Returns the boolean value of a given environment variable.
@@ -57,6 +57,14 @@ class Environment {
   boolean(field) {
     const fieldValue = this.get(field) || "";
     return fieldValue.toUpperCase() === "TRUE";
+  }
+  /**
+   * Returns the array value of a given environment variable.
+   */
+
+
+  array(field, separator = ",", defaultValue = "") {
+    return this.get(field, defaultValue).split(separator);
   }
   /**
    * An alias for the Env.get method.

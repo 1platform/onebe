@@ -27,7 +27,7 @@ const defaultLogsConfig = {
    *
    * @default false
    */
-  enabled: _Env.default.flag("LOG_ENABLED"),
+  enabled: _Env.default.flag("LOGS_ENABLED"),
 
   /**
    * The type of logger used in the application. At the moment the framework support

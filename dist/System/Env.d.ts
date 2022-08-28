@@ -33,6 +33,10 @@ export declare class Environment {
      */
     boolean(field: string): boolean;
     /**
+     * Returns the array value of a given environment variable.
+     */
+    array(field: string, separator?: string, defaultValue?: string): string[];
+    /**
      * An alias for the Env.get method.
      *
      * @param field The name of the environmental variable.

@@ -16,6 +16,7 @@ The environment handling class. Use the object exported by the module to get var
 
 ### Methods
 
+- [array](System_Env.Environment.md#array)
 - [boolean](System_Env.Environment.md#boolean)
 - [flag](System_Env.Environment.md#flag)
 - [get](System_Env.Environment.md#get)
@@ -31,6 +32,26 @@ The environment handling class. Use the object exported by the module to get var
 • **new Environment**()
 
 ## Methods
+
+### array
+
+▸ **array**(`field`, `separator?`, `defaultValue?`): `string`[]
+
+Returns the array value of a given environment variable.
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `field` | `string` | `undefined` |
+| `separator` | `string` | `","` |
+| `defaultValue` | `string` | `""` |
+
+#### Returns
+
+`string`[]
+
+___
 
 ### boolean
 

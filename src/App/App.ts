@@ -41,9 +41,9 @@ export default class App {
   private _appInfo: IAppInfo = {
     name: "onebe",
     version: getVersion(),
-    appName: Config.string("app.appName"),
-    appVersion: Config.string("app.appVersion"),
-    appDescription: Config.string("app.appDescription"),
+    appName: Config.string("app.name"),
+    appVersion: Config.string("app.version"),
+    appDescription: Config.string("app.description"),
     appURL: Config.string("http.url"),
   };
 

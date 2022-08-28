@@ -64,7 +64,7 @@ export declare function PrimaryColumn(options?: PrimaryColumnOptions & {
  *                 defining the generated primary key column.
  * @param options A list of options used for defining the generated primary key column.
  */
-export declare function PrimaryGeneratedColumn(strategy: PrimaryGeneratedColumnNumericOptions | string, options: PrimaryGeneratedColumnNumericOptions & {
+export declare function PrimaryGeneratedColumn(strategy: PrimaryGeneratedColumnNumericOptions | "increment" | "uuid" | "rowid" | "identity", options: PrimaryGeneratedColumnNumericOptions & {
     description?: string;
 }): PropertyDecorator;
 /**

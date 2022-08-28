@@ -33,9 +33,9 @@ class App {
     _defineProperty(this, "_appInfo", {
       name: "onebe",
       version: (0, _version.getVersion)(),
-      appName: _Config.default.string("app.appName"),
-      appVersion: _Config.default.string("app.appVersion"),
-      appDescription: _Config.default.string("app.appDescription"),
+      appName: _Config.default.string("app.name"),
+      appVersion: _Config.default.string("app.version"),
+      appDescription: _Config.default.string("app.description"),
       appURL: _Config.default.string("http.url")
     });
   }

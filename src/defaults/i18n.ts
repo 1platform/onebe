@@ -29,7 +29,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default ["en", "ro"]
    */
-  supportedLanguages: Env.string("SUPPORTED_LANGS", "en,ro").split(","),
+  supportedLanguages: Env.array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * A list of supported languages for translation that will be preloaded
@@ -37,7 +37,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default ["en", "ro"]
    */
-  preload: Env.string("SUPPORTED_LANGS", "en,ro").split(","),
+  preload: Env.array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * The name of the cookie used to identify the desired language for

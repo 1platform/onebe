@@ -37,7 +37,7 @@ const defaultLangConfig = {
    *
    * @default ["en", "ro"]
    */
-  supportedLanguages: _Env.default.string("SUPPORTED_LANGS", "en,ro").split(","),
+  supportedLanguages: _Env.default.array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * A list of supported languages for translation that will be preloaded
@@ -45,7 +45,7 @@ const defaultLangConfig = {
    *
    * @default ["en", "ro"]
    */
-  preload: _Env.default.string("SUPPORTED_LANGS", "en,ro").split(","),
+  preload: _Env.default.array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * The name of the cookie used to identify the desired language for

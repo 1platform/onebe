@@ -150,7 +150,7 @@ will be used for documentation.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `strategy` | `string` \| `PrimaryGeneratedColumnNumericOptions` | The strategy used for generating the primary key or the list of options used for                 defining the generated primary key column. |
+| `strategy` | ``"uuid"`` \| ``"rowid"`` \| ``"increment"`` \| `PrimaryGeneratedColumnNumericOptions` \| ``"identity"`` | The strategy used for generating the primary key or the list of options used for                 defining the generated primary key column. |
 | `options` | `PrimaryGeneratedColumnNumericOptions` & { `description?`: `string`  } | A list of options used for defining the generated primary key column. |
 
 #### Returns

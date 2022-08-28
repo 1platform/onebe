@@ -8,7 +8,7 @@ Class used to define the Router base of the application.
 
 Inside this class the magic happens:
 - All the endpoints are registered under their specific path.
-- All controllers are loaded where and when they should.
+- All routes are loaded where and when they should.
 
 ## Table of contents
 
@@ -18,8 +18,8 @@ Inside this class the magic happens:
 
 ### Properties
 
-- [\_controllers](Router.RouterBase.md#_controllers)
 - [\_router](Router.RouterBase.md#_router)
+- [\_routes](Router.RouterBase.md#_routes)
 
 ### Accessors
 
@@ -40,19 +40,19 @@ Inside this class the magic happens:
 
 ## Properties
 
-### \_controllers
-
-• `Protected` **\_controllers**: [`Route`](Router_Route.Route.md)[] = `[]`
-
-The list with controllers we want to register.
-
-___
-
 ### \_router
 
 • `Protected` **\_router**: `Router`
 
 The base router that we are going to use.
+
+___
+
+### \_routes
+
+• `Protected` **\_routes**: [`Route`](Router_Route.Route.md)[] = `[]`
+
+The list with routes we want to register.
 
 ## Accessors
 
@@ -70,15 +70,15 @@ The getter for the base router we will use.
 
 ### add
 
-▸ **add**(`controller`): `void`
+▸ **add**(`route`): `void`
 
-Method used to manually register a controller in the application.
+Method used to manually register a route in the application.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `controller` | [`Route`](Router_Route.Route.md) | The controller instance you want registered. |
+| `route` | [`Route`](Router_Route.Route.md) | The route instance you want registered. |
 
 #### Returns
 
@@ -127,15 +127,15 @@ ___
 
 ### register
 
-▸ **register**(`controllersPath`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+▸ **register**(`routesPath`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
-Register the controllers under the given path.
+Register the routes under the given path.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `controllersPath` | `string` | The path from which we will import controllers. |
+| `routesPath` | `string` | The path from which we will import routes. |
 
 #### Returns
 

@@ -21,21 +21,48 @@ const defaultAppConfig: IConfig = {
    *
    * @default "One Backend by Spark"
    */
-  appName: Env.string("APP_NAME", "One Backend by Spark"),
+  name: Env.string("APP_NAME", "One Backend by Spark"),
 
   /**
    * The version of the application you are developing.
    *
    * @default "1.0.0"
    */
-  appVersion: Env.string("APP_VERSION", getVersion()),
+  version: Env.string("APP_VERSION", getVersion()),
 
   /**
    * A short text that describes the application you are developing.
    *
    * @default ""
    */
-  appDescription: Env.string("APP_DESCRIPTION", ""),
+  description: Env.string("APP_DESCRIPTION", ""),
+
+  /**
+   * A list with folders used by the framework to store various sources
+   * of the application.
+   */
+  folders: {
+    /**
+     * Location of the Controller files.
+     *
+     * @default "./src/controllers"
+     */
+    controllers: "./src/controllers",
+
+    /**
+     * Location of the Task Scheduler files.
+     *
+     * @default "./src/jobs"
+     */
+    jobs: "./src/jobs",
+
+    /**
+     * Location of the Service files.
+     *
+     * @default "./src/services"
+     */
+    services: "./src/services",
+  },
 };
 
 export default defaultAppConfig;

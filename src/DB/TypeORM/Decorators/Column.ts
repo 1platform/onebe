@@ -126,7 +126,7 @@ export function PrimaryColumn(options?: PrimaryColumnOptions & { description?: s
  * @param options A list of options used for defining the generated primary key column.
  */
 export function PrimaryGeneratedColumn(
-  strategy: PrimaryGeneratedColumnNumericOptions | string,
+  strategy: PrimaryGeneratedColumnNumericOptions | "increment" | "uuid" | "rowid" | "identity",
   options: PrimaryGeneratedColumnNumericOptions & { description?: string }
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {

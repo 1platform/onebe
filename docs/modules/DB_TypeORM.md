@@ -7,3 +7,15 @@
 ### Classes
 
 - [TypeORM](../classes/DB_TypeORM.TypeORM.md)
+
+### Type Aliases
+
+- [LoggingOptions](DB_TypeORM.md#loggingoptions)
+
+## Type Aliases
+
+### LoggingOptions
+
+Ƭ **LoggingOptions**: ``"schema"`` \| ``"query"`` \| ``"error"`` \| ``"warn"`` \| ``"info"`` \| ``"log"`` \| ``"migration"``
+
+TypeORM Logging options.

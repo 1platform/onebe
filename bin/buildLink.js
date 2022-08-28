@@ -8,6 +8,9 @@ const newPkg = {
   version: pkg.version,
   packageManager: pkg.packageManager,
   description: pkg.description,
+  bin: {
+    "onebe": "./cli.js",
+  },
   module: "index.js",
   types: "index.d.ts",
   main: "index.js",

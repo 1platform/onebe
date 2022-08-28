@@ -105,12 +105,18 @@ ___
 
 ### init
 
-▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+▸ **init**(`configuration?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
 Database initialisation method.
 
 Through this method, the framework connects your application to a database
 server and stores that connection for later use.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `configuration?` | `string` |
 
 #### Returns
 

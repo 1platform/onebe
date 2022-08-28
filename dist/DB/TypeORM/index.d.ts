@@ -1,4 +1,9 @@
 import { DataSource } from "typeorm";
+export * from "typeorm";
+/**
+ * TypeORM Logging options.
+ */
+export declare type LoggingOptions = "schema" | "query" | "error" | "warn" | "info" | "log" | "migration";
 /**
  * TypeORM connection handler class.
  *
@@ -31,7 +36,7 @@ export default class TypeORM {
      * Through this method, the framework connects your application to a database
      * server and stores that connection for later use.
      */
-    init(): Promise<void>;
+    init(configuration?: string): Promise<void>;
     /**
      * Method used to create a new database connection that can be used
      * by your application.

@@ -36,7 +36,7 @@ export class Environment {
    * @param defaultValue The default value if the variable doesn't exist.
    */
   public number(field: string, defaultValue = 0): number {
-    return Number(this.get(field)) || Math.floor(defaultValue);
+    return Number(this.get(field)) || defaultValue;
   }
 
   /**
@@ -47,6 +47,13 @@ export class Environment {
   public boolean(field: string): boolean {
     const fieldValue = this.get(field) || "";
     return fieldValue.toUpperCase() === "TRUE";
+  }
+
+  /**
+   * Returns the array value of a given environment variable.
+   */
+  public array(field: string, separator = ",", defaultValue = ""): string[] {
+    return this.get(field, defaultValue).split(separator);
   }
 
   /**

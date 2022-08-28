@@ -40,11 +40,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  *
  * Inside this class the magic happens:
  * - All the endpoints are registered under their specific path.
- * - All controllers are loaded where and when they should.
+ * - All routes are loaded where and when they should.
  */
 class RouterBase {
   constructor() {
-    _defineProperty(this, "_controllers", []);
+    _defineProperty(this, "_routes", []);
 
     _defineProperty(this, "_router", (0, _express.Router)());
   }
@@ -56,31 +56,31 @@ class RouterBase {
     return this._router;
   }
   /**
-   * Register the controllers under the given path.
+   * Register the routes under the given path.
    *
-   * @param controllersPath The path from which we will import controllers.
+   * @param routesPath The path from which we will import routes.
    */
 
 
-  async register(controllersPath) {
-    const controllersStruct = this.fetchControllers(controllersPath);
-    controllersStruct.section = "";
-    await this.registerControllers(controllersPath, controllersStruct);
+  async register(routesPath) {
+    const routesStruct = this.fetchRoutes(routesPath);
+    routesStruct.section = "";
+    await this.registerRoutes(routesPath, routesStruct);
   }
   /**
-   * Method used to manually register a controller in the application.
+   * Method used to manually register a route in the application.
    *
-   * @param controller The controller instance you want registered.
+   * @param route The route instance you want registered.
    */
 
 
-  add(controller) {
-    if (_MetadataStore.default.instance.route.isDocs(controller.constructor.name) && !_Config.default.boolean("docs.expose")) {
-      (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The controller: ${controller.constructor.name} won't be loaded.`);
+  add(route) {
+    if (_MetadataStore.default.instance.route.isDocs(route.constructor.name) && !_Config.default.boolean("docs.expose")) {
+      (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The route: ${route.constructor.name} won't be loaded.`);
       return;
     }
 
-    this._controllers.push(controller);
+    this._routes.push(route);
   }
   /**
    * Method used to parse the given route metadata and register all the endpoints under that
@@ -144,20 +144,20 @@ class RouterBase {
     });
   }
   /**
-   * The method used to register the controllers in a path. It will make recursive calls
+   * The method used to register the routes in a path. It will make recursive calls
    * to itself if we have other folders inside the current path.
    *
    * @param basePath The base folder path from where we read.
-   * @param structure The current parent structure from where we read the controller structure.
+   * @param structure The current parent structure from where we read the route structure.
    */
 
 
-  async registerControllers(basePath, structure) {
-    (0, _Logger.getDefaultLogger)().info(`[REGISTER] Controllers in section: ${structure.section || "DEFAULT"}`);
+  async registerRoutes(basePath, structure) {
+    (0, _Logger.getDefaultLogger)().info(`[REGISTER] Routes in section: ${structure.section || "DEFAULT"}`);
     const sectionPath = (0, _path.join)(basePath, structure.section);
 
-    for (const controllerFile of structure.controllers) {
-      const modulePath = (0, _path.resolve)(sectionPath, controllerFile);
+    for (const routeFile of structure.routes) {
+      const modulePath = (0, _path.resolve)(sectionPath, routeFile);
 
       try {
         let ClassModule = await Promise.resolve(`${modulePath}`).then(s => _interopRequireWildcard(require(s)));
@@ -167,42 +167,42 @@ class RouterBase {
           continue;
         }
 
-        const controller = new ClassModule();
+        const route = new ClassModule();
 
-        if (_MetadataStore.default.instance.route.isDocs(controller.constructor.name) && !_Config.default.boolean("docs.expose")) {
-          (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The controller: ${controller.constructor.name} won't be loaded.`);
+        if (_MetadataStore.default.instance.route.isDocs(route.constructor.name) && !_Config.default.boolean("docs.expose")) {
+          (0, _Logger.getDefaultLogger)().debug(`Documentation has been disabled. The route: ${route.constructor.name} won't be loaded.`);
           continue;
         }
 
-        this._controllers.push(controller);
+        this._routes.push(route);
       } catch (err) {
         /* Since we might register folders that have API class defined in them
            and since they are ES6+ Classes, we cannot call them directly. */
-        (0, _Logger.getDefaultLogger)().error(`Unable to register the controller exposed by '${modulePath}'.`);
+        (0, _Logger.getDefaultLogger)().error(`Unable to register the route exposed by '${modulePath}'.`);
         (0, _Logger.getDefaultLogger)().debug(err.message);
         (0, _Logger.getDefaultLogger)().debug(err.stack);
       }
     }
 
     for (const child of structure.children) {
-      await this.registerControllers(sectionPath, child);
+      await this.registerRoutes(sectionPath, child);
     }
   }
   /**
-   * Returns the controller structure from the current folder, together with children folders.
+   * Returns the route structure from the current folder, together with children folders.
    *
    * @param basePath The base path from where we read the structure.
    */
 
 
-  fetchControllers(basePath) {
+  fetchRoutes(basePath) {
     const files = (0, _fs.readdirSync)(basePath);
-    const controllers = files.filter(file => [".ts", ".js", ".tsx", ".jsx"].indexOf((0, _path.extname)(file)) >= 0);
+    const routes = files.filter(file => [".ts", ".js", ".tsx", ".jsx"].indexOf((0, _path.extname)(file)) >= 0);
     const folders = files.filter(file => [".ts", ".js", ".tsx", ".jsx"].indexOf((0, _path.extname)(file)) < 0).map(file => (0, _path.join)(basePath, file)).filter(file => (0, _fs.statSync)(file).isDirectory());
-    const children = folders.map(folder => this.fetchControllers(folder)).filter(child => child.children.length > 0 || child.controllers.length > 0);
+    const children = folders.map(folder => this.fetchRoutes(folder)).filter(child => child.children.length > 0 || child.routes.length > 0);
     return {
       section: (0, _path.basename)(basePath),
-      controllers,
+      routes,
       children
     };
   }

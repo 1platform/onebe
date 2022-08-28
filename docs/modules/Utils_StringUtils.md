@@ -6,14 +6,65 @@
 
 ### Functions
 
+- [abbreviate](Utils_StringUtils.md#abbreviate)
+- [camelCase](Utils_StringUtils.md#camelcase)
 - [comparePassword](Utils_StringUtils.md#comparepassword)
 - [encryptPassword](Utils_StringUtils.md#encryptpassword)
 - [shortid](Utils_StringUtils.md#shortid)
+- [slugify](Utils_StringUtils.md#slugify)
+- [snakeCase](Utils_StringUtils.md#snakecase)
 - [stripHTML](Utils_StringUtils.md#striphtml)
+- [titleCase](Utils_StringUtils.md#titlecase)
 - [uuidV1](Utils_StringUtils.md#uuidv1)
 - [uuidV4](Utils_StringUtils.md#uuidv4)
 
 ## Functions
+
+### abbreviate
+
+▸ **abbreviate**(`str`, `abbrLettersCount?`): `string`
+
+Builds abbreviated string from given string;
+
+**`See`**
+
+https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `str` | `string` | `undefined` | The string to be abbreviated. |
+| `abbrLettersCount` | `number` | `1` | How many letters to be used for the abbreviation. |
+
+#### Returns
+
+`string`
+
+___
+
+### camelCase
+
+▸ **camelCase**(`str`, `firstCapital?`): `string`
+
+Converts string into camelCase.
+
+**`See`**
+
+https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `str` | `string` | `undefined` | The string to be Camel Cased. |
+| `firstCapital` | `boolean` | `false` | Flag to mark the first letter as a capital one. |
+
+#### Returns
+
+`string`
+
+___
 
 ### comparePassword
 
@@ -65,6 +116,47 @@ Generator for a ShortID that can be used for various things.
 
 ___
 
+### slugify
+
+▸ **slugify**(`str`): `string`
+
+Generate a slug based on the given string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` | The string to be converted to a slug. |
+
+#### Returns
+
+`string`
+
+___
+
+### snakeCase
+
+▸ **snakeCase**(`str`, `separator?`): `string`
+
+Converts string into snake_case.
+
+**`See`**
+
+https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `str` | `string` | `undefined` | The string to be Snake Cased. |
+| `separator?` | `string` | `"_"` | A separator to be used when converting to snake_case. |
+
+#### Returns
+
+`string`
+
+___
+
 ### stripHTML
 
 ▸ **stripHTML**(`text`): `string`
@@ -76,6 +168,28 @@ Strips the HTML tags from a given text.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `text` | `string` | The text to be striped. |
+
+#### Returns
+
+`string`
+
+___
+
+### titleCase
+
+▸ **titleCase**(`str`): `string`
+
+Converts string into Title Case.
+
+**`See`**
+
+https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` | The string to be Title Cased |
 
 #### Returns
 

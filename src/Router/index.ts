@@ -13,21 +13,21 @@ import MetadataStore from "../Documentation/MetadataStore";
 import Config from "../System/Config";
 
 /**
- * Interface used to describe the controllers folder structure of your application.
+ * Interface used to describe the routes folder structure of your application.
  */
-interface IControllerStruct {
+interface IRouteStruct {
   /**
    * The name of the section/folder we want to import.
    */
   section: string;
   /**
-   * The controllers available in the current section.
+   * The routes available in the current section.
    */
-  controllers?: Array<string>;
+  routes?: Array<string>;
   /**
    * A list with children structures.
    */
-  children?: Array<IControllerStruct>;
+  children?: Array<IRouteStruct>;
 }
 
 /**
@@ -35,13 +35,13 @@ interface IControllerStruct {
  *
  * Inside this class the magic happens:
  * - All the endpoints are registered under their specific path.
- * - All controllers are loaded where and when they should.
+ * - All routes are loaded where and when they should.
  */
 export class RouterBase {
   /**
-   * The list with controllers we want to register.
+   * The list with routes we want to register.
    */
-  protected _controllers: Array<Route> = [];
+  protected _routes: Array<Route> = [];
 
   /**
    * The base router that we are going to use.
@@ -56,28 +56,28 @@ export class RouterBase {
   }
 
   /**
-   * Register the controllers under the given path.
+   * Register the routes under the given path.
    *
-   * @param controllersPath The path from which we will import controllers.
+   * @param routesPath The path from which we will import routes.
    */
-  public async register(controllersPath: string): Promise<void> {
-    const controllersStruct = this.fetchControllers(controllersPath);
-    controllersStruct.section = "";
-    await this.registerControllers(controllersPath, controllersStruct);
+  public async register(routesPath: string): Promise<void> {
+    const routesStruct = this.fetchRoutes(routesPath);
+    routesStruct.section = "";
+    await this.registerRoutes(routesPath, routesStruct);
   }
 
   /**
-   * Method used to manually register a controller in the application.
+   * Method used to manually register a route in the application.
    *
-   * @param controller The controller instance you want registered.
+   * @param route The route instance you want registered.
    */
-  public add(controller: Route): void {
-    if (MetadataStore.instance.route.isDocs(controller.constructor.name) && !Config.boolean("docs.expose")) {
-      getDefaultLogger().debug(`Documentation has been disabled. The controller: ${ controller.constructor.name } won't be loaded.`);
+  public add(route: Route): void {
+    if (MetadataStore.instance.route.isDocs(route.constructor.name) && !Config.boolean("docs.expose")) {
+      getDefaultLogger().debug(`Documentation has been disabled. The route: ${ route.constructor.name } won't be loaded.`);
       return;
     }
 
-    this._controllers.push(controller);
+    this._routes.push(route);
   }
 
   /**
@@ -143,17 +143,17 @@ export class RouterBase {
   }
 
   /**
-   * The method used to register the controllers in a path. It will make recursive calls
+   * The method used to register the routes in a path. It will make recursive calls
    * to itself if we have other folders inside the current path.
    *
    * @param basePath The base folder path from where we read.
-   * @param structure The current parent structure from where we read the controller structure.
+   * @param structure The current parent structure from where we read the route structure.
    */
-  private async registerControllers(basePath: string, structure: IControllerStruct): Promise<void> {
-    getDefaultLogger().info(`[REGISTER] Controllers in section: ${ structure.section || "DEFAULT" }`);
+  private async registerRoutes(basePath: string, structure: IRouteStruct): Promise<void> {
+    getDefaultLogger().info(`[REGISTER] Routes in section: ${ structure.section || "DEFAULT" }`);
     const sectionPath = join(basePath, structure.section);
-    for (const controllerFile of structure.controllers) {
-      const modulePath = resolve(sectionPath, controllerFile);
+    for (const routeFile of structure.routes) {
+      const modulePath = resolve(sectionPath, routeFile);
       try {
         let ClassModule = await import(modulePath);
         ClassModule = ClassModule.default || ClassModule;
@@ -161,47 +161,45 @@ export class RouterBase {
           continue;
         }
 
-        const controller: Route = new ClassModule();
-        if (MetadataStore.instance.route.isDocs(controller.constructor.name) && !Config.boolean("docs.expose")) {
-          getDefaultLogger().debug(`Documentation has been disabled. The controller: ${ controller.constructor.name } won't be loaded.`);
+        const route: Route = new ClassModule();
+        if (MetadataStore.instance.route.isDocs(route.constructor.name) && !Config.boolean("docs.expose")) {
+          getDefaultLogger().debug(`Documentation has been disabled. The route: ${ route.constructor.name } won't be loaded.`);
           continue;
         }
-        this._controllers.push(controller);
+        this._routes.push(route);
       } catch (err) {
         /* Since we might register folders that have API class defined in them
            and since they are ES6+ Classes, we cannot call them directly. */
-        getDefaultLogger().error(`Unable to register the controller exposed by '${ modulePath }'.`);
+        getDefaultLogger().error(`Unable to register the route exposed by '${ modulePath }'.`);
         getDefaultLogger().debug(err.message);
         getDefaultLogger().debug(err.stack);
       }
     }
 
     for (const child of structure.children) {
-      await this.registerControllers(sectionPath, child);
+      await this.registerRoutes(sectionPath, child);
     }
   }
 
   /**
-   * Returns the controller structure from the current folder, together with children folders.
+   * Returns the route structure from the current folder, together with children folders.
    *
    * @param basePath The base path from where we read the structure.
    */
-  private fetchControllers(basePath: string): IControllerStruct {
+  private fetchRoutes(basePath: string): IRouteStruct {
     const files = readdirSync(basePath);
-    const controllers = files.filter((file) => [ ".ts", ".js", ".tsx", ".jsx" ].indexOf(extname(file)) >= 0);
+    const routes = files.filter((file) => [ ".ts", ".js", ".tsx", ".jsx" ].indexOf(extname(file)) >= 0);
 
     const folders = files
       .filter((file) => [ ".ts", ".js", ".tsx", ".jsx" ].indexOf(extname(file)) < 0)
       .map((file) => join(basePath, file))
       .filter((file) => statSync(file).isDirectory());
 
-    const children = folders
-      .map((folder) => this.fetchControllers(folder))
-      .filter((child) => child.children.length > 0 || child.controllers.length > 0);
+    const children = folders.map((folder) => this.fetchRoutes(folder)).filter((child) => child.children.length > 0 || child.routes.length > 0);
 
     return {
       section: basename(basePath),
-      controllers,
+      routes,
       children,
     };
   }

@@ -120,13 +120,25 @@ const defaultDBConfig = {
   logging: _Env.default.flag("DATABASE_LOGGING"),
 
   /**
-   * A list with the locations where the TypeORM engine will look for entities to load into
-   * the application. This configuration property will be used only when the engine
-   * is set to a different value than `mongoose`.
-   *
-   * @default [".\/src\/models\/**\/*.ts"]
+   * When using the TypeORM engine we use entities/models to work with the database.
    */
-  entities: [_Env.default.string("DATABASE_ENTITIES", "./src/models/**/*.ts")],
+  entities: {
+    /**
+     * A list with the locations where the TypeORM engine will look for entities to load into
+     * the application. This configuration property will be used only when the engine
+     * is set to a different value than `mongoose`.
+     *
+     * @default [".\/src\/models\/**\/*.ts"]
+     */
+    files: [_Env.default.string("DATABASE_ENTITIES", "./src/models/**/*.ts")],
+
+    /**
+     * The folder where the entities files should be generated when using the CLI interface.
+     *
+     * @default "./src/models/"
+     */
+    folder: [_Env.default.string("DATABASE_ENTITIES_FOLDER", "./src/models/")]
+  },
 
   /**
    * When using the TypeORM engine we can use migration files to create the database and
@@ -153,7 +165,7 @@ const defaultDBConfig = {
      *
      * @default "./src/migrations/"
      */
-    dir: _Env.default.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/")
+    folder: _Env.default.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/")
   }
 };
 var _default = defaultDBConfig;

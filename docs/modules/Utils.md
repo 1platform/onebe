@@ -6,16 +6,33 @@
 
 ### References
 
+- [abbreviate](Utils.md#abbreviate)
+- [camelCase](Utils.md#camelcase)
 - [comparePassword](Utils.md#comparepassword)
 - [encryptPassword](Utils.md#encryptpassword)
 - [fixedSizeRandom](Utils.md#fixedsizerandom)
 - [random](Utils.md#random)
 - [shortid](Utils.md#shortid)
+- [slugify](Utils.md#slugify)
+- [snakeCase](Utils.md#snakecase)
 - [stripHTML](Utils.md#striphtml)
+- [titleCase](Utils.md#titlecase)
 - [uuidV1](Utils.md#uuidv1)
 - [uuidV4](Utils.md#uuidv4)
 
 ## References
+
+### abbreviate
+
+Re-exports [abbreviate](Utils_StringUtils.md#abbreviate)
+
+___
+
+### camelCase
+
+Re-exports [camelCase](Utils_StringUtils.md#camelcase)
+
+___
 
 ### comparePassword
 
@@ -47,9 +64,27 @@ Re-exports [shortid](Utils_StringUtils.md#shortid)
 
 ___
 
+### slugify
+
+Re-exports [slugify](Utils_StringUtils.md#slugify)
+
+___
+
+### snakeCase
+
+Re-exports [snakeCase](Utils_StringUtils.md#snakecase)
+
+___
+
 ### stripHTML
 
 Re-exports [stripHTML](Utils_StringUtils.md#striphtml)
+
+___
+
+### titleCase
+
+Re-exports [titleCase](Utils_StringUtils.md#titlecase)
 
 ___
 

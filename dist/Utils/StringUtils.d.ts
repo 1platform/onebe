@@ -38,3 +38,40 @@ formatter, };
  * @param text The text to be striped.
  */
 export declare const stripHTML: (text: string) => string;
+/**
+ * Converts string into camelCase.
+ *
+ * @see https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+ * @param str The string to be Camel Cased.
+ * @param firstCapital Flag to mark the first letter as a capital one.
+ */
+export declare function camelCase(str: string, firstCapital?: boolean): string;
+/**
+ * Converts string into snake_case.
+ *
+ * @see https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+ * @param str The string to be Snake Cased.
+ * @param [separator] A separator to be used when converting to snake_case.
+ */
+export declare function snakeCase(str: string, separator?: string): string;
+/**
+ * Converts string into Title Case.
+ *
+ * @see https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+ * @param str The string to be Title Cased
+ */
+export declare function titleCase(str: string): string;
+/**
+ * Builds abbreviated string from given string;
+ *
+ * @see https://github.com/typeorm/typeorm/blob/master/src/util/StringUtils.ts
+ * @param str The string to be abbreviated.
+ * @param abbrLettersCount How many letters to be used for the abbreviation.
+ */
+export declare function abbreviate(str: string, abbrLettersCount?: number): string;
+/**
+ * Generate a slug based on the given string.
+ *
+ * @param str The string to be converted to a slug.
+ */
+export declare function slugify(str: string): string;
