@@ -18,7 +18,8 @@ export default function i18n(currentDir: string = __dirname): Promise<TFunction>
       fallbackLng: Config.string("i18n.fallbackLang", "en"),
       supportedLngs: Config.string("i18n.supportedLanguages", "en,ro").split(","),
       preload: Config.string("i18n.preload", "en,ro").split(","),
-      debug: Config.boolean("app.debug"),
+      // debug: Config.boolean("app.debug"),
+      debug: false,
       backend: {
         loadPath: path.resolve(currentDir, "./locales/{{lng}}.json"),
         addPath: path.resolve(currentDir, "./locales/{{lng}}.json"),

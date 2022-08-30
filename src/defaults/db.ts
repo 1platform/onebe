@@ -120,15 +120,15 @@ const defaultDBConfig: IConfig = {
      * the application. This configuration property will be used only when the engine
      * is set to a different value than `mongoose`.
      *
-     * @default [".\/src\/models\/**\/*.ts"]
+     * @default [".\/src\/entities\/**\/*.ts"]
      */
-    files: [ Env.string("DATABASE_ENTITIES", "./src/models/**/*.ts") ],
+    files: [ Env.string("DATABASE_ENTITIES", "./src/entities/**/*.ts") ],
     /**
      * The folder where the entities files should be generated when using the CLI interface.
      *
-     * @default "./src/models/"
+     * @default "./src/entities/"
      */
-    folder: [ Env.string("DATABASE_ENTITIES_FOLDER", "./src/models/") ],
+    folder: [ Env.string("DATABASE_ENTITIES_FOLDER", "./src/entities/") ],
   },
 
   /**
@@ -157,6 +157,18 @@ const defaultDBConfig: IConfig = {
      * @default "./src/migrations/"
      */
     folder: Env.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/"),
+  },
+
+  /**
+   * When using the TypeORM engine we can use seed files to populate the database.
+   */
+  seeds: {
+    /**
+     * The folder where the seed files should be generated when using the CLI interface.
+     *
+     * @default "./src/seeds/"
+     */
+    folder: Env.string("DATABASE_SEEDS_FOLDER", "./src/seeds/"),
   },
 };
 

@@ -63,19 +63,19 @@ export interface IInitOptions extends IInitStrategyOptions {
      * file loader are started and made to look for various files starting from
      * the current folder.
      */
-    currentDir?: string;
+    currentFolder?: string;
     /**
      * The location of the configuration files. The framework needs only a
-     * relative path to be provided, relative to the `currentDir` parameter
+     * relative path to be provided, relative to the `currentFolder` parameter
      * specified above.
      */
-    configDir?: string;
+    configFolder?: string;
     /**
      * The location of the controllers used in the application. The framework
-     * needs only a relative path to be provided, relative to the `currentDir`
+     * needs only a relative path to be provided, relative to the `currentFolder`
      * parameter specified above.
      */
-    controllersDir?: string;
+    routesFolder?: string;
     /**
      * Flag to mark if you need a database connection to be initialised
      * on startup or not. This flag is used when launching the TypeORM

@@ -111,7 +111,7 @@ ___
 
 ### get
 
-▸ `Static` **get**<`T`\>(`serviceName`): `T`
+▸ `Static` **get**<`T`\>(`serviceNameOrClass`): `T`
 
 Static method used to get a service from the service loader.
 
@@ -125,7 +125,7 @@ Static method used to get a service from the service loader.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `serviceName` | `string` | The name of the service we want to get. |
+| `serviceNameOrClass` | `string` \| [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`T`\> | The name of the service you want to get. |
 
 #### Returns
 
@@ -135,7 +135,7 @@ ___
 
 ### set
 
-▸ `Static` **set**<`T`\>(`serviceName`, `serviceInstance`): `T`
+▸ `Static` **set**<`T`\>(`serviceNameOrInstance`, `serviceInstance?`): `T`
 
 Static method used to add a service to the service loader.
 
@@ -149,8 +149,8 @@ Static method used to add a service to the service loader.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `serviceName` | `string` | The name of the service we want to add. |
-| `serviceInstance` | `T` | The service instance we want to add. |
+| `serviceNameOrInstance` | `string` \| `T` | The name of the service you want to add or The service instance you want to add. |
+| `serviceInstance?` | `T` | The service instance you want to add. |
 
 #### Returns
 

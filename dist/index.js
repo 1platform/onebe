@@ -45,9 +45,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * Default values to be used for the framework configuration.
  */
 const defaultValues = {
-  currentDir: process.cwd(),
-  configDir: "./config",
-  controllersDir: "./controllers",
+  currentFolder: process.cwd(),
+  configFolder: "./config",
+  routesFolder: "./routes",
   noDBConnection: false
 };
 /**
@@ -60,7 +60,7 @@ const defaultValues = {
 async function init(props) {
   props = _objectSpread(_objectSpread({}, defaultValues), props);
 
-  _Config.default.init(_path.default.resolve(props.currentDir, props.configDir));
+  _Config.default.init(_path.default.resolve(props.currentFolder, props.configFolder));
 
   if (!_Config.default.boolean("logs.enabled")) {
     (0, _Logger.setDefaultLogger)(new _Logger.NoLogger());
@@ -93,7 +93,7 @@ async function init(props) {
 
   _App.default.use(_Scheduler.default);
 
-  await (0, _i18n.default)(props.currentDir);
+  await (0, _i18n.default)(props.currentFolder);
 
   if (!props.noDBConnection) {
     await (0, _DB.default)().then(() => _MetadataStore.default.instance.entity.registerRelations());
@@ -101,7 +101,7 @@ async function init(props) {
 
   return strategyProps => {
     (0, _Passport.default)(_objectSpread(_objectSpread({}, props), strategyProps || {}));
-    return _Router.default.register(_path.default.resolve(props.currentDir, props.controllersDir)).then(() => {
+    return _Router.default.register(_path.default.resolve(props.currentFolder, props.routesFolder)).then(() => {
       _Router.default.add(new _DocsController.default());
 
       _App.default.Scheduler.run();

@@ -60,6 +60,7 @@ function getEntityTemplate(name, flags = {}) {
   @DeleteDateColumn({
     type: "timestamp",
     default: null,
+    nullable: true
   })
   public deletedAt: Date;
 `;
@@ -145,7 +146,8 @@ function getMigrationUpTemplate(entityName, flags = {}) {
     fields.push({
       name: "deletedAt",
       type: "timestamp",
-      default: null
+      default: null,
+      isNullable: true
     });
   }
 

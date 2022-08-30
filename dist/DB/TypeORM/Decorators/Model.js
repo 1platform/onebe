@@ -29,7 +29,7 @@ function Model(nameOrOptions, maybeOptions) {
   const options = (_ObjectUtils.ObjectUtils.isObject(nameOrOptions) ? nameOrOptions : maybeOptions) || {};
   const name = typeof nameOrOptions === "string" ? nameOrOptions : options.name;
   return function (BaseClass) {
-    (0, _typeorm.Entity)(name, options);
+    (0, _typeorm.Entity)(name, options)(BaseClass);
     const entityMetadata = _MetadataStore.default.instance.entity;
     entityMetadata.update(name, options.description ?? "");
     entityMetadata.tableName(BaseClass.name, name);

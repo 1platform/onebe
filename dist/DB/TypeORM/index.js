@@ -208,9 +208,7 @@ class TypeORM {
 
 
   async init(configuration) {
-    const configurationObject = _Config.default.object(`db.${configuration ?? _Config.default.string("db.configuration")}`);
-
-    TypeORM._connection = await this.connect(configurationObject.engine);
+    TypeORM._connection = await this.connect(configuration ?? _Config.default.string("db.configuration"));
     TypeORM._instance = this;
   }
   /**
@@ -240,9 +238,9 @@ class TypeORM {
       synchronize: false,
       bigNumberStrings: dbConfig.bigNumberStrings ?? false,
       timezone: dbConfig.timezone || "Z",
-      entities: _Config.default.array("db.entities.files", ["./src/models/**/*.ts"]),
+      entities: _Config.default.array("db.entities.files", ["./src/entities/**/*.{ts,js}", "./src/models/**/*.{ts,js}"]),
       migrationsTableName: _Config.default.string("db.migrations.table", "_migrations"),
-      migrations: _Config.default.array("db.migrations.files", ["./src/migrations/*.js"]),
+      migrations: _Config.default.array("db.migrations.files", ["./src/migrations/*.{ts,js}"]),
       cli: {
         migrationsDir: _Config.default.string("db.migrations.folder", "./src/migrations")
       }

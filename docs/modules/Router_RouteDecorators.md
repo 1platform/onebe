@@ -27,7 +27,7 @@ Decorator to mark the controller as an API controller.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Returns
 
@@ -51,7 +51,7 @@ be added to the Documentation for controllers that are added in the application.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -79,7 +79,7 @@ Decorator to define a custom controller prefix.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -106,7 +106,7 @@ the base path on which the endpoints exposed by the controller are.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -132,7 +132,7 @@ Decorator used to add the controller into a group.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -162,7 +162,7 @@ be added to the Documentation for controllers that are added in the application.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 

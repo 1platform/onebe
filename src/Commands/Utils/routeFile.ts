@@ -62,20 +62,21 @@ export default class ${ routeName }Route extends Route {
  * @param [options] Options used to enable/disable various functionalities in the generated route.
  */
 export default function createRouteFile(routeName: string, options?: Record<string, boolean | string>): void {
-  const controllerFile = path.resolve(Config.get("app.folders.controllers", "./"), `${ routeName }Route.ts`);
+  if (routeName.toLowerCase().indexOf("route") >= 0) {
+    routeName = routeName.substring(0, routeName.toLowerCase().indexOf("route"));
+  }
+  const routeFile = path.resolve(Config.get("app.folders.routes", "./"), `${ routeName }Route.ts`);
 
-  if (!fs.existsSync(path.dirname(controllerFile))) {
-    fs.mkdirSync(path.dirname(controllerFile), { recursive: true });
+  if (!fs.existsSync(path.dirname(routeFile))) {
+    fs.mkdirSync(path.dirname(routeFile), { recursive: true });
   }
 
-  if (fs.existsSync(controllerFile) && !options.override) {
-    getDefaultLogger().error(
-      `Controller ${ chalk.blue(controllerFile) } already exists. Use the ${ chalk.blue("--override") } flag to replace the file.`
-    );
+  if (fs.existsSync(routeFile) && !options.override) {
+    getDefaultLogger().error(`Route ${ chalk.blue(routeFile) } already exists. Use the ${ chalk.blue("--override") } flag to replace the file.`);
     return;
   }
 
   const template = getRouteTemplate(routeName, options || {});
-  fs.writeFileSync(controllerFile, template, "utf-8");
-  getDefaultLogger().info(`Controller ${ chalk.blue(controllerFile) } has been generated successfully.`);
+  fs.writeFileSync(routeFile, template, "utf-8");
+  getDefaultLogger().info(`Route ${ chalk.blue(routeFile) } has been generated successfully.`);
 }

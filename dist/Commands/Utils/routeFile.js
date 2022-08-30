@@ -84,22 +84,26 @@ export default class ${routeName}Route extends Route {
 
 
 function createRouteFile(routeName, options) {
-  const controllerFile = _path.default.resolve(_Config.default.get("app.folders.controllers", "./"), `${routeName}Route.ts`);
+  if (routeName.toLowerCase().indexOf("route") >= 0) {
+    routeName = routeName.substring(0, routeName.toLowerCase().indexOf("route"));
+  }
 
-  if (!_fs.default.existsSync(_path.default.dirname(controllerFile))) {
-    _fs.default.mkdirSync(_path.default.dirname(controllerFile), {
+  const routeFile = _path.default.resolve(_Config.default.get("app.folders.routes", "./"), `${routeName}Route.ts`);
+
+  if (!_fs.default.existsSync(_path.default.dirname(routeFile))) {
+    _fs.default.mkdirSync(_path.default.dirname(routeFile), {
       recursive: true
     });
   }
 
-  if (_fs.default.existsSync(controllerFile) && !options.override) {
-    (0, _Logger.getDefaultLogger)().error(`Controller ${_chalk.default.blue(controllerFile)} already exists. Use the ${_chalk.default.blue("--override")} flag to replace the file.`);
+  if (_fs.default.existsSync(routeFile) && !options.override) {
+    (0, _Logger.getDefaultLogger)().error(`Route ${_chalk.default.blue(routeFile)} already exists. Use the ${_chalk.default.blue("--override")} flag to replace the file.`);
     return;
   }
 
   const template = getRouteTemplate(routeName, options || {});
 
-  _fs.default.writeFileSync(controllerFile, template, "utf-8");
+  _fs.default.writeFileSync(routeFile, template, "utf-8");
 
-  (0, _Logger.getDefaultLogger)().info(`Controller ${_chalk.default.blue(controllerFile)} has been generated successfully.`);
+  (0, _Logger.getDefaultLogger)().info(`Route ${_chalk.default.blue(routeFile)} has been generated successfully.`);
 }

@@ -52,7 +52,7 @@ will be used for documentation.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -83,7 +83,7 @@ will be used for documentation.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -113,7 +113,7 @@ will be used for documentation.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -144,7 +144,7 @@ will be used for documentation.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 

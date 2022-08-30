@@ -12,6 +12,12 @@
 
 ### Constructor
 
-Ƭ **Constructor**: `Object`
+Ƭ **Constructor**<`T`\>: `Object`
 
 Type used to define a Class with a constructor.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `any` |

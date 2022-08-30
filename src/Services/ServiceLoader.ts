@@ -1,4 +1,5 @@
 import ServiceBase from "./ServiceBase";
+import { Constructor } from "../Documentation/MetadataTypes";
 
 /**
  * A system to load services into the application and reuse them as needed.
@@ -35,20 +36,29 @@ export default class ServiceLoader {
   /**
    * Static method used to get a service from the service loader.
    *
-   * @param serviceName The name of the service we want to get.
+   * @param serviceNameOrClass The name of the service you want to get.
    */
-  public static get<T extends ServiceBase>(serviceName: string): T {
+  public static get<T extends ServiceBase>(serviceNameOrClass: string | Constructor<T>): T {
+    let serviceName = serviceNameOrClass as string;
+    if (typeof serviceNameOrClass !== "string") {
+      serviceName = serviceNameOrClass.name;
+    }
     return ServiceLoader.instance._get(serviceName) as T;
   }
 
   /**
    * Static method used to add a service to the service loader.
    *
-   * @param serviceName The name of the service we want to add.
-   * @param serviceInstance The service instance we want to add.
+   * @param serviceNameOrInstance The name of the service you want to add or The service instance you want to add.
+   * @param serviceInstance The service instance you want to add.
    */
-  public static set<T extends ServiceBase>(serviceName: string, serviceInstance: T): T {
-    return ServiceLoader.instance._set<T>(serviceName, serviceInstance);
+  public static set<T extends ServiceBase>(serviceNameOrInstance: string | T, serviceInstance?: T): T {
+    let serviceName: string = serviceInstance ? (serviceNameOrInstance as string) : serviceNameOrInstance.constructor.name;
+
+    if (typeof serviceName !== "string") {
+      serviceName = (serviceName as T).constructor.name;
+    }
+    return ServiceLoader.instance._set<T>(serviceName, serviceInstance ?? (serviceNameOrInstance as T));
   }
 
   /**

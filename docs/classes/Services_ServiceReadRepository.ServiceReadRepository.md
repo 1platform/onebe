@@ -22,6 +22,8 @@ that need working with a database.
 
   ↳ **`ServiceReadRepository`**
 
+  ↳↳ [`ServiceFullRepository`](Services_ServiceFullRepository.ServiceFullRepository.md)
+
 ## Table of contents
 
 ### Constructors

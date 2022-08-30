@@ -121,7 +121,7 @@ all the properties in one place.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 

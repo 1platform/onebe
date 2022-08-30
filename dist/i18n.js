@@ -28,7 +28,8 @@ function i18n(currentDir = __dirname) {
     fallbackLng: _Config.default.string("i18n.fallbackLang", "en"),
     supportedLngs: _Config.default.string("i18n.supportedLanguages", "en,ro").split(","),
     preload: _Config.default.string("i18n.preload", "en,ro").split(","),
-    debug: _Config.default.boolean("app.debug"),
+    // debug: Config.boolean("app.debug"),
+    debug: false,
     backend: {
       loadPath: _path.default.resolve(currentDir, "./locales/{{lng}}.json"),
       addPath: _path.default.resolve(currentDir, "./locales/{{lng}}.json")

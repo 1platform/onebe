@@ -93,7 +93,7 @@ Add a class instance to the Application object in order to reuse it later.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `ReusableClass` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor) | The class for which we want to add an instance to the application object. |
+| `ReusableClass` | [`ApplicationObject`](../modules/App_App.md#applicationobject) | The class for which we want to add an instance to the application object. |
 
 #### Returns
 

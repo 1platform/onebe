@@ -1,6 +1,5 @@
 import { Arguments, Argv, CommandModule } from "yargs";
 import { camelCase } from "../Utils";
-import createEntityFile from "./Utils/entityFile";
 import createRouteFile from "./Utils/routeFile";
 
 /**

@@ -1,4 +1,4 @@
-import { Entity as TypeORMEntity, EntityOptions } from "typeorm";
+import { Entity, EntityOptions } from "typeorm";
 import { ObjectUtils } from "typeorm/util/ObjectUtils";
 import { Constructor } from "../../../Documentation/MetadataTypes";
 import { ControllerDecoratorFunction } from "../../../Router/RouteTypes";
@@ -24,7 +24,7 @@ export function Model<T extends Constructor>(
   const name = typeof nameOrOptions === "string" ? nameOrOptions : options.name;
 
   return function (BaseClass: T): T {
-    TypeORMEntity(name, options);
+    Entity(name, options)(BaseClass);
 
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.update(name, options.description ?? "");

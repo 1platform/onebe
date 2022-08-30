@@ -32,7 +32,7 @@ the same documentation elements like this decorator.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -67,7 +67,7 @@ elements like this decorator.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -101,7 +101,7 @@ elements like this decorator.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor) |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 

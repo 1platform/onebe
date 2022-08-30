@@ -82,7 +82,7 @@ Method used to add a relation between entities.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor) |
+| `T` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`any`\> |
 
 #### Parameters
 
@@ -275,7 +275,7 @@ Method used internally to add all the relations for an entity.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `entity` | `string` | The entity on which we add information. |
-| `relation` | [`IRelationMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)<[`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)\> | Relation metadata for an entity. |
+| `relation` | [`IRelationMetadata`](../interfaces/Documentation_Definition_EntityMetadata.IRelationMetadata.md)<[`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`any`\>\> | Relation metadata for an entity. |
 
 #### Returns
 

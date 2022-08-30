@@ -43,11 +43,11 @@ const defaultAppConfig: IConfig = {
    */
   folders: {
     /**
-     * Location of the Controller files.
+     * Location of the Routes files.
      *
-     * @default "./src/controllers"
+     * @default "./src/routes"
      */
-    controllers: "./src/controllers",
+    routes: "./src/routes",
 
     /**
      * Location of the Task Scheduler files.

@@ -40,23 +40,35 @@ class ServiceLoader {
   /**
    * Static method used to get a service from the service loader.
    *
-   * @param serviceName The name of the service we want to get.
+   * @param serviceNameOrClass The name of the service you want to get.
    */
 
 
-  static get(serviceName) {
+  static get(serviceNameOrClass) {
+    let serviceName = serviceNameOrClass;
+
+    if (typeof serviceNameOrClass !== "string") {
+      serviceName = serviceNameOrClass.name;
+    }
+
     return ServiceLoader.instance._get(serviceName);
   }
   /**
    * Static method used to add a service to the service loader.
    *
-   * @param serviceName The name of the service we want to add.
-   * @param serviceInstance The service instance we want to add.
+   * @param serviceNameOrInstance The name of the service you want to add or The service instance you want to add.
+   * @param serviceInstance The service instance you want to add.
    */
 
 
-  static set(serviceName, serviceInstance) {
-    return ServiceLoader.instance._set(serviceName, serviceInstance);
+  static set(serviceNameOrInstance, serviceInstance) {
+    let serviceName = serviceInstance ? serviceNameOrInstance : serviceNameOrInstance.constructor.name;
+
+    if (typeof serviceName !== "string") {
+      serviceName = serviceName.constructor.name;
+    }
+
+    return ServiceLoader.instance._set(serviceName, serviceInstance ?? serviceNameOrInstance);
   }
   /**
    * Method used to get the services from the database.

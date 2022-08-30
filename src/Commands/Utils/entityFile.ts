@@ -41,6 +41,7 @@ function getEntityTemplate(name: string, flags: Record<string, boolean> = {}): s
   @DeleteDateColumn({
     type: "timestamp",
     default: null,
+    nullable: true
   })
   public deletedAt: Date;
 `;
@@ -126,6 +127,7 @@ function getMigrationUpTemplate(entityName: string, flags: Record<string, boolea
       name: "deletedAt",
       type: "timestamp",
       default: null,
+      isNullable: true,
     });
   }
 

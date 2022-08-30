@@ -10,7 +10,9 @@ Here we will note all the changes made to the framework.
 - Redesign the Documentation system.
 - Adds automatically documentation for the models defines through TypeORM.
 - Adds a new way to document Entities through the usage of the BaseEntity class and decorators.
-- Adds a new way to document Controllers and Endpoints.
+- Adds a new way to document Routes and Endpoints.
+- CLI Commands to create Migrations, Entities, Services, Jobs and Routes.
+- Add Base Services for working with Database.
 
 🌟 Improvements:
 
@@ -18,8 +20,9 @@ Here we will note all the changes made to the framework.
 - Refactor the Route loading and documentation engine.
 - Refactor the Interface documentation engine and procedure.
 - Enhance the code documentation for the Classes, Methods, Functions, Properties and Variables exposed
-  by the framework
-- 
+  by the framework.
+- Enhance the Service Loader to get the name from the Service.
+- Refactored the interfaces used as parameters in the routes. Now they are classes: ContextAPI and AuthContextAPI
 
 🗑️ Removed:
 

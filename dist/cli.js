@@ -23,9 +23,15 @@ var _MigrationResetCommand = _interopRequireDefault(require("./Commands/Migratio
 
 var _RouteCreateCommand = _interopRequireDefault(require("./Commands/RouteCreateCommand"));
 
+var _ServiceCreateCommand = _interopRequireDefault(require("./Commands/ServiceCreateCommand"));
+
+var _JobCreateCommand = _interopRequireDefault(require("./Commands/JobCreateCommand"));
+
+var _EntityLoadCommand = _interopRequireDefault(require("./Commands/EntityLoadCommand"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _register.default)({
   extensions: [".ts", ".tsx", ".js", ".jsx"]
 });
-_yargs.default.usage("Usage: onebe <command> [options]").scriptName("onebe").version((0, _version.getVersion)()).command(new _MigrationCreateCommand.default()).command(new _MigrationShowCommand.default()).command(new _MigrationRunCommand.default()).command(new _MigrationResetCommand.default()).command(new _MigrationUndoCommand.default()).command(new _EntityCreateCommand.default()).command(new _RouteCreateCommand.default()).recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv;
+_yargs.default.usage("Usage: onebe <command> [options]").scriptName("onebe").version((0, _version.getVersion)()).command(new _MigrationCreateCommand.default()).command(new _MigrationShowCommand.default()).command(new _MigrationRunCommand.default()).command(new _MigrationResetCommand.default()).command(new _MigrationUndoCommand.default()).command(new _EntityCreateCommand.default()).command(new _RouteCreateCommand.default()).command(new _ServiceCreateCommand.default()).command(new _JobCreateCommand.default()).command(new _EntityLoadCommand.default()).recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv;

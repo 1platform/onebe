@@ -175,8 +175,7 @@ export default class TypeORM {
    * server and stores that connection for later use.
    */
   public async init(configuration?: string): Promise<void> {
-    const configurationObject = Config.object(`db.${ configuration ?? Config.string("db.configuration") }`);
-    TypeORM._connection = await this.connect(configurationObject.engine as DatabaseType);
+    TypeORM._connection = await this.connect(configuration ?? Config.string("db.configuration"));
     TypeORM._instance = this;
   }
 
@@ -204,14 +203,13 @@ export default class TypeORM {
       synchronize: false,
       bigNumberStrings: dbConfig.bigNumberStrings ?? false,
       timezone: dbConfig.timezone || "Z",
-      entities: Config.array("db.entities.files", [ "./src/models/**/*.ts" ]),
+      entities: Config.array("db.entities.files", [ "./src/entities/**/*.{ts,js}", "./src/models/**/*.{ts,js}" ]),
       migrationsTableName: Config.string("db.migrations.table", "_migrations"),
-      migrations: Config.array("db.migrations.files", [ "./src/migrations/*.js" ]),
+      migrations: Config.array("db.migrations.files", [ "./src/migrations/*.{ts,js}" ]),
       cli: {
         migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
       },
     } as DataSourceOptions;
-
     const dataSource = new DataSource(config);
 
     return dataSource

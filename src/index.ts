@@ -19,9 +19,9 @@ import DocsController from "./Documentation/DocsController";
  * Default values to be used for the framework configuration.
  */
 const defaultValues: IInitOptions = {
-  currentDir: process.cwd(),
-  configDir: "./config",
-  controllersDir: "./controllers",
+  currentFolder: process.cwd(),
+  configFolder: "./config",
+  routesFolder: "./routes",
   noDBConnection: false,
 };
 
@@ -36,7 +36,7 @@ export default async function init(props: IInitOptions): Promise<(strategyProps?
     ...defaultValues,
     ...props,
   };
-  Config.init(path.resolve(props.currentDir, props.configDir));
+  Config.init(path.resolve(props.currentFolder, props.configFolder));
 
   if (!Config.boolean("logs.enabled")) {
     setDefaultLogger(new NoLogger());
@@ -64,7 +64,7 @@ export default async function init(props: IInitOptions): Promise<(strategyProps?
   app.use(HTTP);
   app.use(Scheduler);
 
-  await i18n(props.currentDir);
+  await i18n(props.currentFolder);
 
   if (!props.noDBConnection) {
     await DB().then(() => MetadataStore.instance.entity.registerRelations());
@@ -76,7 +76,7 @@ export default async function init(props: IInitOptions): Promise<(strategyProps?
       ...(strategyProps || {}),
     });
 
-    return Router.register(path.resolve(props.currentDir, props.controllersDir)).then(() => {
+    return Router.register(path.resolve(props.currentFolder, props.routesFolder)).then(() => {
       Router.add(new DocsController());
       app.Scheduler.run();
       app.HTTP.start();

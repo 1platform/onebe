@@ -10,6 +10,9 @@ import MigrationRunCommand from "./Commands/MigrationRunCommand";
 import MigrationUndoCommand from "./Commands/MigrationUndoCommand";
 import MigrationResetCommand from "./Commands/MigrationResetCommand";
 import RouteCreateCommand from "./Commands/RouteCreateCommand";
+import ServiceCreateCommand from "./Commands/ServiceCreateCommand";
+import JobCreateCommand from "./Commands/JobCreateCommand";
+import EntityLoadCommand from "./Commands/EntityLoadCommand";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
 
@@ -24,6 +27,9 @@ yargs
   .command(new MigrationUndoCommand())
   .command(new EntityCreateCommand())
   .command(new RouteCreateCommand())
+  .command(new ServiceCreateCommand())
+  .command(new JobCreateCommand())
+  .command(new EntityLoadCommand())
 
   .recommendCommands()
   .demandCommand(1)

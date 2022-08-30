@@ -20,11 +20,11 @@ for configuring the startup procedures of the framework.
 ### Properties
 
 - [basicAuth](custom.IInitOptions.md#basicauth)
-- [configDir](custom.IInitOptions.md#configdir)
-- [controllersDir](custom.IInitOptions.md#controllersdir)
-- [currentDir](custom.IInitOptions.md#currentdir)
+- [configFolder](custom.IInitOptions.md#configfolder)
+- [currentFolder](custom.IInitOptions.md#currentfolder)
 - [deserializeUser](custom.IInitOptions.md#deserializeuser)
 - [noDBConnection](custom.IInitOptions.md#nodbconnection)
+- [routesFolder](custom.IInitOptions.md#routesfolder)
 - [serializeUser](custom.IInitOptions.md#serializeuser)
 
 ## Properties
@@ -57,29 +57,19 @@ The function used for basic authentication.
 
 ___
 
-### configDir
+### configFolder
 
-• `Optional` **configDir**: `string`
+• `Optional` **configFolder**: `string`
 
 The location of the configuration files. The framework needs only a
-relative path to be provided, relative to the `currentDir` parameter
+relative path to be provided, relative to the `currentFolder` parameter
 specified above.
 
 ___
 
-### controllersDir
+### currentFolder
 
-• `Optional` **controllersDir**: `string`
-
-The location of the controllers used in the application. The framework
-needs only a relative path to be provided, relative to the `currentDir`
-parameter specified above.
-
-___
-
-### currentDir
-
-• `Optional` **currentDir**: `string`
+• `Optional` **currentFolder**: `string`
 
 The folder in which the application runs. Based on this folder,
 some configuration for various other files and subsystems is generated
@@ -123,6 +113,16 @@ ___
 Flag to mark if you need a database connection to be initialised
 on startup or not. This flag is used when launching the TypeORM
 migration system.
+
+___
+
+### routesFolder
+
+• `Optional` **routesFolder**: `string`
+
+The location of the controllers used in the application. The framework
+needs only a relative path to be provided, relative to the `currentFolder`
+parameter specified above.
 
 ___
 
