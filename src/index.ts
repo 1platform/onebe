@@ -4,7 +4,7 @@ import initPassportStrategy, { IInitStrategyOptions } from "./Authentication/Pas
 
 import { IInitOptions } from "./custom";
 import DB from "./DB";
-import HTTP from "./HTTP";
+import { HTTP } from "./HTTP";
 import i18n from "./i18n";
 import Router from "./Router";
 import Scheduler from "./Scheduler";

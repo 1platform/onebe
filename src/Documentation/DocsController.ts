@@ -1,6 +1,4 @@
-import { Docs, Path } from "../Router/RouteDecorators";
-import Route from "../Router/Route";
-import { GET } from "../Router/VerbsDecorators";
+import { Docs, GET, Path, Route } from "../Router";
 import SwaggerUI from "./Swagger/SwaggerUI";
 import Config from "../System/Config";
 import GetRoutes from "./GetRoutes";

@@ -10,7 +10,7 @@ exports.Schema = Schema;
 exports.Status = Status;
 exports.Throws = Throws;
 
-var _HTTPStatus = _interopRequireDefault(require("../../../HTTP/HTTPStatus"));
+var _HTTP = require("../../../HTTP");
 
 var _MetadataStore = _interopRequireDefault(require("../../MetadataStore"));
 
@@ -26,7 +26,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param [statusCode] The HTTP Status code used for the response.
  * @param [description] A short description of the returned response.
  */
-function Return(type, statusCode = _HTTPStatus.default.OK, description) {
+function Return(type, statusCode = _HTTP.HTTPStatus.OK, description) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointResponse(target.constructor.name, propertyKey, {
       statusCode,
@@ -48,7 +48,7 @@ function Return(type, statusCode = _HTTPStatus.default.OK, description) {
  */
 
 
-function Schema(type, statusCode = _HTTPStatus.default.OK, description) {
+function Schema(type, statusCode = _HTTP.HTTPStatus.OK, description) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointResponse(target.constructor.name, propertyKey, {
       statusCode,
@@ -71,7 +71,7 @@ function Schema(type, statusCode = _HTTPStatus.default.OK, description) {
  */
 
 
-function Array(type, statusCode = _HTTPStatus.default.OK, description) {
+function Array(type, statusCode = _HTTP.HTTPStatus.OK, description) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointResponse(target.constructor.name, propertyKey, {
       statusCode,
@@ -93,7 +93,7 @@ function Array(type, statusCode = _HTTPStatus.default.OK, description) {
  */
 
 
-function ArraySchema(type, statusCode = _HTTPStatus.default.OK, description) {
+function ArraySchema(type, statusCode = _HTTP.HTTPStatus.OK, description) {
   return (target, propertyKey) => {
     _MetadataStore.default.instance.route.endpointResponse(target.constructor.name, propertyKey, {
       statusCode,

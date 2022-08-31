@@ -1,5 +1,5 @@
-import HTTPStatus from "../../../HTTP/HTTPStatus";
-import { ResponseValue, RouteDecorator } from "../../../Router/RouteTypes";
+import { HTTPStatus } from "../../../HTTP";
+import { ResponseValue, RouteDecorator } from "../../../Router";
 /**
  * Decorator used to describe what does an endpoint response. This decorator
  * should be used only for primitive return values: `string`, `number`, `boolean`,

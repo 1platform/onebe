@@ -1,4 +1,4 @@
-import Route from "../Router/Route";
+import { Route } from "../Router";
 export default class DocsController extends Route {
     constructor();
     getAppInfo(): Record<string, unknown>;

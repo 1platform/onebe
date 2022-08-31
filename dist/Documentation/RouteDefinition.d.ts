@@ -1,7 +1,7 @@
 import { IEndpointBody, IEndpointBodyParameter, IEndpointDocumentation, IEndpointMetadata, IEndpointOptions, IEndpointParameter, IEndpointQuery, IEndpointResponse, IEndpointThrowResponse, IRouteMetadata } from "./Definition/RouteMetadata";
-import { CallbackExtractorParameter } from "../Router/RouteTypes";
-import { ICallbackExtracted } from "../Router/RouteInterfaces";
-import HTTPStatus from "../HTTP/HTTPStatus";
+import type { ICallbackExtracted } from "../Router";
+import { CallbackExtractorParameter } from "../Router";
+import { HTTPStatus } from "../HTTP";
 /**
  * Route Definition Metadata store.
  *
@@ -186,6 +186,21 @@ export default class RouteDefinition {
      */
     endpointDocumentation(controller: string, methodName: string, options: IEndpointDocumentation): void;
     /**
+     * Method used to mark an endpoint as one that accepts files for upload.
+     *
+     * @param controller The controller we want to update.
+     * @param methodName The name of the method on which we want to add information.
+     * @param [isMultiFile] The endpoint supports single or multiple file upload.
+     */
+    isUpload(controller: string, methodName: string, isMultiFile?: boolean): void;
+    /**
+     * Method used to mark an endpoint as protected by a Signed URL.
+     *
+     * @param controller The controller we want to update.
+     * @param methodName The name of the method on which we want to add information.
+     */
+    isSigned(controller: string, methodName: string): void;
+    /**
      * Method used to get metadata information about an endpoint. Using this method the
      * documentation system will check if the endpoint exists in the route. If it doesn't exist,
      * the endpoint is created with the given default values.
@@ -201,19 +216,4 @@ export default class RouteDefinition {
      * @param fn The middlewares lists.
      */
     protected callbackExtractor<Request = any, Response = any>(fn: CallbackExtractorParameter<Request, Response>): ICallbackExtracted<Request, Response>;
-    /**
-     * Method used to mark an endpoint as one that accepts files for upload.
-     *
-     * @param controller The controller we want to update.
-     * @param methodName The name of the method on which we want to add information.
-     * @param [isMultiFile] The endpoint supports single or multiple file upload.
-     */
-    isUpload(controller: string, methodName: string, isMultiFile?: boolean): void;
-    /**
-     * Method used to mark an endpoint as protected by a Signed URL.
-     *
-     * @param controller The controller we want to update.
-     * @param methodName The name of the method on which we want to add information.
-     */
-    isSigned(controller: string, methodName: string): void;
 }

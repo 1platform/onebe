@@ -1,8 +1,8 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Router](../modules/Router.md) / RouterBase
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Router/Router](../modules/Router_Router.md) / Router
 
-# Class: RouterBase
+# Class: Router
 
-[Router](../modules/Router.md).RouterBase
+[Router/Router](../modules/Router_Router.md).Router
 
 Class used to define the Router base of the application.
 
@@ -14,29 +14,29 @@ Inside this class the magic happens:
 
 ### Constructors
 
-- [constructor](Router.RouterBase.md#constructor)
+- [constructor](Router_Router.Router.md#constructor)
 
 ### Properties
 
-- [\_router](Router.RouterBase.md#_router)
-- [\_routes](Router.RouterBase.md#_routes)
+- [\_router](Router_Router.Router.md#_router)
+- [\_routes](Router_Router.Router.md#_routes)
 
 ### Accessors
 
-- [router](Router.RouterBase.md#router)
+- [router](Router_Router.Router.md#router)
 
 ### Methods
 
-- [add](Router.RouterBase.md#add)
-- [loadEndpoint](Router.RouterBase.md#loadendpoint)
-- [parseRoute](Router.RouterBase.md#parseroute)
-- [register](Router.RouterBase.md#register)
+- [add](Router_Router.Router.md#add)
+- [loadEndpoint](Router_Router.Router.md#loadendpoint)
+- [parseRoute](Router_Router.Router.md#parseroute)
+- [register](Router_Router.Router.md#register)
 
 ## Constructors
 
 ### constructor
 
-• **new RouterBase**()
+• **new Router**()
 
 ## Properties
 

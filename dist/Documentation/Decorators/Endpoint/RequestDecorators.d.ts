@@ -1,4 +1,4 @@
-import { RouteDecorator } from "../../../Router/RouteTypes";
+import { RouteDecorator } from "../../../Router";
 import { IEndpointBodyParameter } from "../../Definition/RouteMetadata";
 import { QueryParameterType } from "../../Definition/DataTypes";
 /**

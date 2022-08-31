@@ -1,4 +1,4 @@
-import Route from "../Router/Route";
+import { Route } from "../Router";
 /**
  * Decorator used to enable Bearer Authentication for an endpoint.
  *
@@ -46,4 +46,4 @@ export declare const Basic: (target: Route, propertyKey: string, descriptor: Pro
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export declare const extractUser: import("../Router/RouteTypes").RouteDecorator<Route>;
+export declare const extractUser: import("../Router").RouteDecorator<Route>;

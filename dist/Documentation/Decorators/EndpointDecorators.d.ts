@@ -1,4 +1,4 @@
-import { RouteDecorator } from "../../Router/RouteTypes";
+import { RouteDecorator } from "../../Router";
 import { IEndpointDocumentation } from "../Definition/RouteMetadata";
 /**
  * All the request documentation decorators.

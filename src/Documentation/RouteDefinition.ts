@@ -10,11 +10,9 @@ import {
   IEndpointThrowResponse,
   IRouteMetadata,
 } from "./Definition/RouteMetadata";
-import { AppMethod, CallbackExtractorParameter } from "../Router/RouteTypes";
-import { ICallbackExtracted } from "../Router/RouteInterfaces";
-import { HTTPMiddleware } from "../HTTP/HTTPTypes";
-import HTTPStatus from "../HTTP/HTTPStatus";
-import HTTPVerb from "../HTTP/HTTPVerb";
+import type { ICallbackExtracted } from "../Router";
+import { AppMethod, CallbackExtractorParameter } from "../Router";
+import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "../HTTP";
 
 /**
  * Route Definition Metadata store.
@@ -420,6 +418,27 @@ export default class RouteDefinition {
   }
 
   /**
+   * Method used to mark an endpoint as one that accepts files for upload.
+   *
+   * @param controller The controller we want to update.
+   * @param methodName The name of the method on which we want to add information.
+   * @param [isMultiFile] The endpoint supports single or multiple file upload.
+   */
+  public isUpload(controller: string, methodName: string, isMultiFile = false) {
+    this.route(controller).endpoints[methodName].upload = isMultiFile ? "single" : "multiple";
+  }
+
+  /**
+   * Method used to mark an endpoint as protected by a Signed URL.
+   *
+   * @param controller The controller we want to update.
+   * @param methodName The name of the method on which we want to add information.
+   */
+  public isSigned(controller: string, methodName: string) {
+    this.route(controller).endpoints[methodName].signed = true;
+  }
+
+  /**
    * Method used to get metadata information about an endpoint. Using this method the
    * documentation system will check if the endpoint exists in the route. If it doesn't exist,
    * the endpoint is created with the given default values.
@@ -470,26 +489,5 @@ export default class RouteDefinition {
     }
 
     return { callback, middlewares };
-  }
-
-  /**
-   * Method used to mark an endpoint as one that accepts files for upload.
-   *
-   * @param controller The controller we want to update.
-   * @param methodName The name of the method on which we want to add information.
-   * @param [isMultiFile] The endpoint supports single or multiple file upload.
-   */
-  public isUpload(controller: string, methodName: string, isMultiFile = false) {
-    this.route(controller).endpoints[methodName].upload = isMultiFile ? "single" : "multiple";
-  }
-
-  /**
-   * Method used to mark an endpoint as protected by a Signed URL.
-   *
-   * @param controller The controller we want to update.
-   * @param methodName The name of the method on which we want to add information.
-   */
-  public isSigned(controller: string, methodName: string) {
-    this.route(controller).endpoints[methodName].signed = true;
   }
 }

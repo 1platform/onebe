@@ -5,9 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _HTTPVerb = _interopRequireDefault(require("../HTTP/HTTPVerb"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _HTTP = require("../HTTP");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -428,6 +426,29 @@ class RouteDefinition {
     }
   }
   /**
+   * Method used to mark an endpoint as one that accepts files for upload.
+   *
+   * @param controller The controller we want to update.
+   * @param methodName The name of the method on which we want to add information.
+   * @param [isMultiFile] The endpoint supports single or multiple file upload.
+   */
+
+
+  isUpload(controller, methodName, isMultiFile = false) {
+    this.route(controller).endpoints[methodName].upload = isMultiFile ? "single" : "multiple";
+  }
+  /**
+   * Method used to mark an endpoint as protected by a Signed URL.
+   *
+   * @param controller The controller we want to update.
+   * @param methodName The name of the method on which we want to add information.
+   */
+
+
+  isSigned(controller, methodName) {
+    this.route(controller).endpoints[methodName].signed = true;
+  }
+  /**
    * Method used to get metadata information about an endpoint. Using this method the
    * documentation system will check if the endpoint exists in the route. If it doesn't exist,
    * the endpoint is created with the given default values.
@@ -442,7 +463,7 @@ class RouteDefinition {
     if (!this.route(controller).endpoints[methodName]) {
       this.route(controller).endpoints[methodName] = {
         path: options?.path || "",
-        verb: options?.verb || _HTTPVerb.default.GET,
+        verb: options?.verb || _HTTP.HTTPVerb.GET,
         description: options?.description || "",
         summary: options?.summary || "",
         methodName: methodName,
@@ -483,29 +504,6 @@ class RouteDefinition {
       callback,
       middlewares
     };
-  }
-  /**
-   * Method used to mark an endpoint as one that accepts files for upload.
-   *
-   * @param controller The controller we want to update.
-   * @param methodName The name of the method on which we want to add information.
-   * @param [isMultiFile] The endpoint supports single or multiple file upload.
-   */
-
-
-  isUpload(controller, methodName, isMultiFile = false) {
-    this.route(controller).endpoints[methodName].upload = isMultiFile ? "single" : "multiple";
-  }
-  /**
-   * Method used to mark an endpoint as protected by a Signed URL.
-   *
-   * @param controller The controller we want to update.
-   * @param methodName The name of the method on which we want to add information.
-   */
-
-
-  isSigned(controller, methodName) {
-    this.route(controller).endpoints[methodName].signed = true;
   }
 
 }

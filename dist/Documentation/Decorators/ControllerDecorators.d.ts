@@ -1,4 +1,4 @@
-import { ControllerDecoratorFunction } from "../../Router/RouteTypes";
+import { ControllerDecoratorFunction } from "../../Router";
 import { Constructor } from "../MetadataTypes";
 /**
  * Decorator used to document a controller.

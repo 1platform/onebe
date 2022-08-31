@@ -9,7 +9,7 @@ var _passport = _interopRequireDefault(require("passport"));
 
 var _App = _interopRequireDefault(require("../App"));
 
-var _RouteUtils = require("../Router/RouteUtils");
+var _Router = require("../Router");
 
 var _JWT = require("./JWT");
 
@@ -95,7 +95,7 @@ const Basic = (target, propertyKey, descriptor) => {
 
 
 exports.Basic = Basic;
-const extractUser = (0, _RouteUtils.defineMiddleware)((req, res, next) => {
+const extractUser = (0, _Router.defineMiddleware)((req, res, next) => {
   const token = (0, _JWT.extractToken)(req);
 
   try {

@@ -9,7 +9,7 @@ var _Config = _interopRequireDefault(require("../System/Config"));
 
 var _MetadataStore = _interopRequireDefault(require("./MetadataStore"));
 
-var _RouteUtils = require("../Router/RouteUtils");
+var _Router = require("../Router");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27,9 +27,9 @@ function GetRoutes() {
     group: route.group,
     description: route.description,
     isAPI: route.isAPI,
-    basePath: (0, _RouteUtils.getPath)(...(route.basePath || [])),
+    basePath: (0, _Router.getPath)(...(route.basePath || [])),
     endpoints: Object.values(route.endpoints).map(endpoint => ({
-      path: (0, _RouteUtils.getPath)(...(route.basePath || []), endpoint.path),
+      path: (0, _Router.getPath)(...(route.basePath || []), endpoint.path),
       verb: endpoint.verb.toUpperCase(),
       summary: endpoint.summary || endpoint.description || "",
       authenticated: endpoint.isAuthenticated ? endpoint.authenticationMethod : "-"

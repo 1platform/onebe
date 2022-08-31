@@ -13,7 +13,7 @@ var _Passport = _interopRequireDefault(require("./Authentication/Passport"));
 
 var _DB = _interopRequireDefault(require("./DB"));
 
-var _HTTP = _interopRequireDefault(require("./HTTP"));
+var _HTTP = require("./HTTP");
 
 var _i18n = _interopRequireDefault(require("./i18n"));
 
@@ -89,7 +89,7 @@ async function init(props) {
     }
   }
 
-  _App.default.use(_HTTP.default);
+  _App.default.use(_HTTP.HTTP);
 
   _App.default.use(_Scheduler.default);
 

@@ -5,11 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _RouteDecorators = require("../Router/RouteDecorators");
-
-var _Route = _interopRequireDefault(require("../Router/Route"));
-
-var _VerbsDecorators = require("../Router/VerbsDecorators");
+var _Router = require("../Router");
 
 var _SwaggerUI = _interopRequireDefault(require("./Swagger/SwaggerUI"));
 
@@ -55,30 +51,30 @@ _EntityHelpers.default.entity("ApplicationInformation", "Basic information about
   dataType: _DataTypes.EntityPropertyDataTypes.STRING
 });
 
-let DocsController = (_dec = (0, _RouteDecorators.Path)("/", "Application Documentation", "Expose the generated documentation of the application."), _dec2 = (0, _RouteDecorators.Docs)(), _dec3 = (0, _VerbsDecorators.GET)("/"), _dec4 = (0, _EndpointDecorators.Endpoint)({
+let DocsController = (_dec = (0, _Router.Path)("/", "Application Documentation", "Expose the generated documentation of the application."), _dec2 = (0, _Router.Docs)(), _dec3 = (0, _Router.GET)("/"), _dec4 = (0, _EndpointDecorators.Endpoint)({
   summary: "List basic information about the application"
-}), _dec5 = (0, _VerbsDecorators.GET)("/routes"), _dec6 = (0, _EndpointDecorators.Endpoint)({
+}), _dec5 = (0, _Router.GET)("/routes"), _dec6 = (0, _EndpointDecorators.Endpoint)({
   summary: "List the endpoints exposed by the application.",
   responses: [{
     statusCode: _HTTPStatus.default.OK,
     schema: _DataTypes.EntityPropertyDataTypes.STRING,
     contentType: "application/json"
   }]
-}), _dec7 = (0, _VerbsDecorators.GET)("/swagger.yaml"), _dec8 = (0, _EndpointDecorators.Endpoint)({
+}), _dec7 = (0, _Router.GET)("/swagger.yaml"), _dec8 = (0, _EndpointDecorators.Endpoint)({
   summary: "Returns the YAML version of the OpenAPI 3 documentation",
   responses: [{
     statusCode: _HTTPStatus.default.OK,
     schema: _DataTypes.EntityPropertyDataTypes.STRING,
     contentType: "text/vnd.yaml"
   }]
-}), _dec9 = (0, _VerbsDecorators.GET)("/swagger.json"), _dec10 = (0, _EndpointDecorators.Endpoint)({
+}), _dec9 = (0, _Router.GET)("/swagger.json"), _dec10 = (0, _EndpointDecorators.Endpoint)({
   summary: "Returns the YAML version of the OpenAPI 3 documentation",
   responses: [{
     statusCode: _HTTPStatus.default.OK,
     schema: _DataTypes.EntityPropertyDataTypes.STRING,
     contentType: "application/json"
   }]
-}), _dec(_class = _dec2(_class = (_class2 = class DocsController extends _Route.default {
+}), _dec(_class = _dec2(_class = (_class2 = class DocsController extends _Router.Route {
   constructor() {
     super();
     (0, _Logger.getDefaultLogger)().debug(`[REGISTER] GET: ${_Config.default.get("docs.path")}/openapi`);

@@ -1,8 +1,8 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [HTTP](../modules/HTTP.md) / HTTP
+[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [HTTP/HTTP](../modules/HTTP_HTTP.md) / HTTP
 
 # Class: HTTP
 
-[HTTP](../modules/HTTP.md).HTTP
+[HTTP/HTTP](../modules/HTTP_HTTP.md).HTTP
 
 The HTTP service used to create the HTTP server.
 
@@ -13,20 +13,20 @@ Helmet and having some default Middlewares/Plugins loaded in the application.
 
 ### Constructors
 
-- [constructor](HTTP.HTTP.md#constructor)
+- [constructor](HTTP_HTTP.HTTP.md#constructor)
 
 ### Accessors
 
-- [app](HTTP.HTTP.md#app)
-- [host](HTTP.HTTP.md#host)
-- [http](HTTP.HTTP.md#http)
-- [port](HTTP.HTTP.md#port)
+- [app](HTTP_HTTP.HTTP.md#app)
+- [host](HTTP_HTTP.HTTP.md#host)
+- [http](HTTP_HTTP.HTTP.md#http)
+- [port](HTTP_HTTP.HTTP.md#port)
 
 ### Methods
 
-- [setLocal](HTTP.HTTP.md#setlocal)
-- [start](HTTP.HTTP.md#start)
-- [use](HTTP.HTTP.md#use)
+- [setLocal](HTTP_HTTP.HTTP.md#setlocal)
+- [start](HTTP_HTTP.HTTP.md#start)
+- [use](HTTP_HTTP.HTTP.md#use)
 
 ## Constructors
 
