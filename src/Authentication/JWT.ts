@@ -2,8 +2,8 @@ import { Request } from "express";
 import jwt from "jsonwebtoken";
 import { ExtractJwt } from "passport-jwt";
 import { parse } from "passport-jwt/lib/auth_header";
-import Config from "../System/Config";
-import IPayload from "./IPayload";
+import { Config } from "../System";
+import type IPayload from "./IPayload";
 
 /**
  * Creates a signed JWT Token that can be sent to the user and used

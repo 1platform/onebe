@@ -1,5 +1,5 @@
 import { CallbackError, Model, Schema } from "mongoose";
-import { getDefaultLogger } from "../../System/Logger";
+import { getDefaultLogger } from "../../System";
 import Observable from "./Observable";
 
 /**

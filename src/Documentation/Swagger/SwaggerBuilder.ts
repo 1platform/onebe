@@ -1,7 +1,7 @@
 import jsYaml from "js-yaml";
 import SwaggerComponents from "./Modules/SwaggerComponents";
 import app from "../../App";
-import Config from "../../System/Config";
+import { Config } from "../../System";
 import MetadataStore from "../MetadataStore";
 import SwaggerTags from "./Modules/SwaggerTags";
 import SwaggerRoutes from "./Modules/SwaggerRoutes";

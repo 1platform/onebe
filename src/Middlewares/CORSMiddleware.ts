@@ -1,6 +1,6 @@
 import cors from "cors";
 import { Application } from "express";
-import Config from "../System/Config";
+import { Config } from "../System";
 import IMiddleware from "./IMiddleware";
 
 /**

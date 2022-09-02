@@ -1,14 +1,13 @@
 import { Docs, GET, Path, Route } from "../Router";
 import SwaggerUI from "./Swagger/SwaggerUI";
-import Config from "../System/Config";
 import GetRoutes from "./GetRoutes";
 import GetDocs, { DocsType } from "./GetDocs";
 import app from "../App";
-import { getDefaultLogger } from "../System/Logger";
+import { getDefaultLogger, Config } from "../System";
 import { Endpoint } from "./Decorators/EndpointDecorators";
 import EntityHelpers from "./Helpers/EntityHelpers";
 import { EntityPropertyDataTypes } from "./Definition/DataTypes";
-import HTTPStatus from "../HTTP/HTTPStatus";
+import { HTTPStatus } from "../HTTP";
 
 EntityHelpers.entity("ApplicationInformation", "Basic information about the application")
   .property("name", { description: "The name of the application", dataType: EntityPropertyDataTypes.STRING })

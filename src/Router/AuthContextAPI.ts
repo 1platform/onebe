@@ -1,6 +1,6 @@
 import { Request } from "express";
-import { extractToken } from "../Authentication/JWT";
-import { getDefaultLogger } from "../System/Logger";
+import { extractToken } from "../Authentication";
+import { getDefaultLogger } from "../System";
 
 /**
  * A class used to expose the Authentication Context information from a request.

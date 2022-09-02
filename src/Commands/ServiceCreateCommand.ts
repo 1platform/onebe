@@ -1,7 +1,7 @@
 import { Arguments, Argv, CommandModule } from "yargs";
 import { camelCase } from "../Utils";
 import createServiceFile from "./Utils/serviceFile";
-import { getDefaultLogger } from "../System/Logger";
+import { getDefaultLogger } from "../System";
 
 /**
  * CLI Command to create a new service.

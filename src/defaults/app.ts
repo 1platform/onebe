@@ -1,5 +1,5 @@
-import Env from "../System/Env";
-import IConfig from "../System/IConfig";
+import type { IConfig } from "../System";
+import { Env } from "../System";
 import { getVersion } from "../version";
 
 /**
@@ -43,11 +43,11 @@ const defaultAppConfig: IConfig = {
    */
   folders: {
     /**
-     * Location of the Routes files.
+     * Location of the Controller files.
      *
-     * @default "./src/routes"
+     * @default "./src/controllers"
      */
-    routes: "./src/routes",
+    controllers: "./src/controllers",
 
     /**
      * Location of the Task Scheduler files.

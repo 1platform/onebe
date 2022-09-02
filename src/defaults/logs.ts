@@ -1,7 +1,5 @@
-import Env from "../System/Env";
-import IConfig from "../System/IConfig";
-import LogLevel from "../System/LogLevel";
-import LoggerType from "../System/LoggerType";
+import type { IConfig } from "../System";
+import { Env, LogLevel, LoggerType } from "../System";
 
 /**
  * The logging configuration object.

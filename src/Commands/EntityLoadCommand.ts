@@ -1,9 +1,8 @@
 import { Arguments, Argv, CommandModule } from "yargs";
 import path from "path";
-import Config from "../System/Config";
 import DatabaseSeeder from "../DB/TypeORM/DatabaseSeeder";
 import fs from "fs";
-import { getDefaultLogger } from "../System/Logger";
+import { getDefaultLogger, Config } from "../System";
 import chalk from "chalk";
 import { camelCase } from "../Utils";
 import { DataSource } from "typeorm";

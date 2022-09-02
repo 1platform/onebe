@@ -1,10 +1,9 @@
 import { Transporter } from "nodemailer";
 import { stripHtml } from "string-strip-html";
-import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
+import { getDefaultLogger, Config } from "../../System";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
-import HTTPError from "../../Exceptions/HTTPError";
-import HTTPStatus from "../../HTTP/HTTPStatus";
+import { HTTPError } from "../../Exceptions";
+import { HTTPStatus } from "../../HTTP";
 
 /**
  * Base class that can be used to create a new Email Transport Service.

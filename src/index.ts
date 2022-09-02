@@ -8,10 +8,7 @@ import { HTTP } from "./HTTP";
 import i18n from "./i18n";
 import Router from "./Router";
 import Scheduler from "./Scheduler";
-import Config from "./System/Config";
-import { ConsoleLogger, FileLogger, JSONLogger, NoLogger, setDefaultLogger } from "./System/Logger";
-import LoggerType from "./System/LoggerType";
-import LogLevel from "./System/LogLevel";
+import { Config, ConsoleLogger, FileLogger, JSONLogger, LoggerType, LogLevel, NoLogger, setDefaultLogger } from "./System";
 import MetadataStore from "./Documentation/MetadataStore";
 import DocsController from "./Documentation/DocsController";
 

@@ -1,4 +1,4 @@
-import Config from "../System/Config";
+import { Config } from "../System";
 import MetadataStore from "./MetadataStore";
 import { getPath } from "../Router";
 

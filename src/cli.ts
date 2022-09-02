@@ -13,10 +13,11 @@ import RouteCreateCommand from "./Commands/RouteCreateCommand";
 import ServiceCreateCommand from "./Commands/ServiceCreateCommand";
 import JobCreateCommand from "./Commands/JobCreateCommand";
 import EntityLoadCommand from "./Commands/EntityLoadCommand";
+import SecretGenCommand from "./Commands/SecretGenCommand";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
 
-yargs
+const yargsBase = yargs
   .usage("Usage: onebe <command> [options]")
   .scriptName("onebe")
   .version(getVersion())
@@ -30,10 +31,6 @@ yargs
   .command(new ServiceCreateCommand())
   .command(new JobCreateCommand())
   .command(new EntityLoadCommand())
+  .command(new SecretGenCommand());
 
-  .recommendCommands()
-  .demandCommand(1)
-  .strict()
-  .alias("v", "version")
-  .help("h")
-  .alias("h", "help").argv;
+yargsBase.recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv;

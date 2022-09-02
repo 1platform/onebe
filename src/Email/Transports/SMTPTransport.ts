@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import Config from "../../System/Config";
+import { Config } from "../../System";
 import BaseTransport from "./BaseTransport";
 import IEmailTransport from "./IEmailTransport";
 

@@ -1,7 +1,5 @@
-import { DatabaseType, DataSource, Logger, QueryRunner } from "typeorm";
-import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
-import { DataSourceOptions } from "typeorm/data-source/DataSourceOptions";
+import { DatabaseType, DataSource, DataSourceOptions, Logger, QueryRunner } from "typeorm";
+import { Config, getDefaultLogger } from "../../System";
 
 export * from "typeorm";
 

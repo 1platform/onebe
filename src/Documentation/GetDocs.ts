@@ -1,5 +1,5 @@
 import SwaggerBuilder from "./Swagger/SwaggerBuilder";
-import Config from "../System/Config";
+import { Config } from "../System";
 
 /**
  * A list of supported documentation generators.

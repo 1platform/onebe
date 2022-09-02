@@ -1,5 +1,5 @@
-import Env from "../System/Env";
-import IConfig from "../System/IConfig";
+import type { IConfig } from "../System";
+import { Env } from "../System";
 
 /**
  * The database configuration object.

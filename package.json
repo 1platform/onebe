@@ -23,9 +23,6 @@
     "publish:major": "npm version --no-git-tag-version major",
     "postversion": "./bin/publish.sh"
   },
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spark-development/onebe.git"

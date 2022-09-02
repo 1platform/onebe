@@ -1,8 +1,7 @@
 import path from "path";
-import Config from "../../System/Config";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger } from "../../System/Logger";
+import { getDefaultLogger, Config } from "../../System";
 
 /**
  * Gets contents of the service file.
@@ -50,7 +49,7 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
 // -- Code to be executed before the Class Definition${ preClassData.join("\n") }
 
 /**
- * Model ${ serviceName }
+ * Service ${ serviceName }
  *
  * Generated: ${ new Date().toISOString() }
  */

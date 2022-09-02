@@ -1,8 +1,7 @@
 import path from "path";
-import Config from "../../System/Config";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger } from "../../System/Logger";
+import { Config, getDefaultLogger } from "../../System";
 
 /**
  * Gets contents of the job file.

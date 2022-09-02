@@ -1,6 +1,6 @@
 import { DeepPartial, ObjectLiteral } from "typeorm";
-import HTTPError from "../Exceptions/HTTPError";
-import HTTPStatus from "../HTTP/HTTPStatus";
+import { HTTPError } from "../Exceptions";
+import { HTTPStatus } from "../HTTP";
 import ServiceReadRepository from "./ServiceReadRepository";
 
 /**

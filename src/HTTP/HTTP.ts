@@ -3,10 +3,9 @@ import { Server } from "http";
 import helmet from "helmet";
 import IMiddleware from "../Middlewares/IMiddleware";
 import Middlewares from "../Middlewares";
-import Config from "../System/Config";
 import Router from "../Router";
 import ErrorHandlerMiddleware from "../Middlewares/ErrorHandlerMiddleware";
-import { getDefaultLogger } from "../System/Logger";
+import { getDefaultLogger, Config } from "../System";
 
 /**
  * The HTTP service used to create the HTTP server.

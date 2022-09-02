@@ -1,8 +1,7 @@
 import path from "path";
-import Config from "../../System/Config";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger } from "../../System/Logger";
+import { getDefaultLogger, Config } from "../../System";
 import { camelCase, snakeCase } from "../../Utils";
 
 /**
@@ -44,6 +43,11 @@ import AuthContextAPI from "onebe/Router/AuthContextAPI";
 import HTTPStatus from "onebe/HTTP/HTTPStatus";
 import { ResponseDocs } from "onebe/Documentation/Decorators/EndpointDecorators";
 
+/**
+ * Route ${ routeName }
+ *
+ * Generated: ${ new Date().toISOString() }
+ */
 ${ routeDecorators.join("\n") }
 export default class ${ routeName }Route extends Route {
   @GET<any, HTTPStatus>("/")

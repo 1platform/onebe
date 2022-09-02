@@ -1,7 +1,7 @@
-import Config from "../System/Config";
+import { DataSource } from "typeorm";
+import { Config } from "../System";
 import Mongo from "./Mongo";
 import TypeORM from "./TypeORM";
-import { DataSource } from "typeorm";
 
 /**
  * Function used to get the default connection object when using

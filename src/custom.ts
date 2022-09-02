@@ -1,8 +1,7 @@
-import { IInitStrategyOptions } from "./Authentication/Passport";
-import { Environment } from "./System/Env";
+import type { IInitStrategyOptions } from "./Authentication";
+import { Environment, Configuration } from "./System";
 import App from "./App/App";
 import Router from "./Router/Router";
-import { Configuration } from "./System/Config";
 
 declare global {
   /**
