@@ -1,4 +1,4 @@
-import { ControllerDecoratorFunction } from "../../Router";
+import { ControllerDecoratorFunction } from "../../Router/RouteTypes";
 import MetadataStore from "../MetadataStore";
 import { Constructor } from "../MetadataTypes";
 

@@ -2,7 +2,7 @@ import { Request } from "express";
 import jwt from "jsonwebtoken";
 import { ExtractJwt } from "passport-jwt";
 import { parse } from "passport-jwt/lib/auth_header";
-import { Config } from "../System";
+import Config from "../System/Config";
 import type IPayload from "./IPayload";
 
 /**

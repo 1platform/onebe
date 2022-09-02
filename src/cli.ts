@@ -2,8 +2,8 @@
 import "reflect-metadata";
 import yargs from "yargs";
 import register from "@babel/register";
-import MigrationCreateCommand from "./Commands/MigrationCreateCommand";
 import { getVersion } from "./version";
+import MigrationCreateCommand from "./Commands/MigrationCreateCommand";
 import EntityCreateCommand from "./Commands/EntityCreateCommand";
 import MigrationShowCommand from "./Commands/MigrationShowCommand";
 import MigrationRunCommand from "./Commands/MigrationRunCommand";

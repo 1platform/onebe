@@ -1,5 +1,5 @@
 import ServiceBase from "../Services/ServiceBase";
-import { Config } from "../System";
+import Config from "../System/Config";
 import ISMSTransport from "./Transports/ISMSTransport";
 import TwilioTransport from "./Transports/TwilioTransport";
 import VonageTransport from "./Transports/VonageTransport";

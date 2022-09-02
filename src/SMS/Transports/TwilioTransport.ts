@@ -1,5 +1,6 @@
 import twilio from "twilio";
-import { Config, getDefaultLogger } from "../../System";
+import Config from "../../System/Config";
+import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**

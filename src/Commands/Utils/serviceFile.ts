@@ -1,7 +1,8 @@
 import path from "path";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger, Config } from "../../System";
+import { getDefaultLogger } from "../../System/Logger";
+import Config from "../../System/Config";
 
 /**
  * Gets contents of the service file.

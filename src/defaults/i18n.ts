@@ -1,5 +1,5 @@
-import type { IConfig } from "../System";
-import { Env } from "../System";
+import Env from "../System/Env";
+import IConfig from "../System/IConfig";
 
 /**
  * The Internationalisation (i18n) configuration object.

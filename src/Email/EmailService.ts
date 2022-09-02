@@ -1,5 +1,5 @@
 import ServiceBase from "../Services/ServiceBase";
-import { Config } from "../System";
+import Config from "../System/Config";
 import IEmailTransport, { IEmailOptions } from "./Transports/IEmailTransport";
 import SMTPTransport from "./Transports/SMTPTransport";
 import TestTransport from "./Transports/TestTransport";

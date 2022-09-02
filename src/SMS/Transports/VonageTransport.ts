@@ -1,5 +1,6 @@
 import Vonage from "@vonage/server-sdk";
-import { getDefaultLogger, Config } from "../../System";
+import Config from "../../System/Config";
+import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
 
 /**

@@ -1,6 +1,6 @@
-import type { IConfig } from "../System";
-import { Env } from "../System";
-import { EmailTransport } from "../Email";
+import Env from "../System/Env";
+import IConfig from "../System/IConfig";
+import EmailTransport from "../Email/EmailTransport";
 
 /**
  * The Email configuration object.

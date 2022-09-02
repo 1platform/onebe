@@ -1,4 +1,4 @@
-import type { IConfig } from "../System";
+import IConfig from "../System/IConfig";
 import api from "./api";
 import app from "./app";
 import auth from "./auth";

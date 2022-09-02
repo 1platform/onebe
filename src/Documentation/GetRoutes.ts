@@ -1,6 +1,6 @@
-import { Config } from "../System";
+import Config from "../System/Config";
 import MetadataStore from "./MetadataStore";
-import { getPath } from "../Router";
+import { getPath } from "../Router/RouteUtils";
 
 /**
  * Function used to extract the routes documentation from the documentation.

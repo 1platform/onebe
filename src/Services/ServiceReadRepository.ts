@@ -1,7 +1,7 @@
 import { FindManyOptions, FindOneOptions, FindOptionsWhere, ObjectLiteral } from "typeorm";
 import ServiceWithRepository from "./ServiceWithRepository";
-import { HTTPError } from "../Exceptions";
-import { HTTPStatus } from "../HTTP";
+import HTTPError from "../Exceptions/HTTPError";
+import HTTPStatus from "../HTTP/HTTPStatus";
 import { PaginatedEntity, PaginatedOptions } from "./PaginationDefinition";
 
 /**

@@ -2,7 +2,7 @@ import i18next, { TFunction } from "i18next";
 import Backend from "i18next-fs-backend";
 import { LanguageDetector } from "i18next-http-middleware";
 import path from "path";
-import { Config } from "./System";
+import Config from "./System/Config";
 
 /**
  * Internationalisation init function.

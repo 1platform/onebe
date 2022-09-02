@@ -1,5 +1,5 @@
 import { schedule } from "node-cron";
-import { getDefaultLogger } from "../System";
+import { getDefaultLogger } from "../System/Logger";
 import IScheduleDefinition, { TRunner, TRunnerAsync } from "./IScheduleDefinition";
 
 /**

@@ -4,11 +4,14 @@ import initPassportStrategy, { IInitStrategyOptions } from "./Authentication/Pas
 
 import { IInitOptions } from "./custom";
 import DB from "./DB";
-import { HTTP } from "./HTTP";
+import HTTP from "./HTTP/HTTP";
 import i18n from "./i18n";
 import Router from "./Router";
 import Scheduler from "./Scheduler";
-import { Config, ConsoleLogger, FileLogger, JSONLogger, LoggerType, LogLevel, NoLogger, setDefaultLogger } from "./System";
+import Config from "./System/Config";
+import { ConsoleLogger, FileLogger, JSONLogger, NoLogger, setDefaultLogger } from "./System/Logger";
+import LoggerType from "./System/LoggerType";
+import LogLevel from "./System/LogLevel";
 import MetadataStore from "./Documentation/MetadataStore";
 import DocsController from "./Documentation/DocsController";
 

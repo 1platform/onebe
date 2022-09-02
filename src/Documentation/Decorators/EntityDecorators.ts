@@ -1,5 +1,5 @@
 import { Constructor } from "../MetadataTypes";
-import { ControllerDecoratorFunction } from "../../Router";
+import { ControllerDecoratorFunction } from "../../Router/RouteTypes";
 import MetadataStore from "../MetadataStore";
 import { IEntityProperty } from "../Definition/EntityMetadata";
 import { EntityPropertyDataTypes } from "../Definition/DataTypes";

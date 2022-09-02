@@ -1,6 +1,7 @@
 import TypeORM, { LoggingOptions } from "../../DB/TypeORM";
 import { DataSource } from "typeorm";
-import { getDefaultLogger, Config } from "../../System";
+import { getDefaultLogger } from "../../System/Logger";
+import Config from "../../System/Config";
 
 /**
  * Database connection initialization utility to be used in the

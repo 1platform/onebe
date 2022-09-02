@@ -5,7 +5,8 @@ import IMiddleware from "../Middlewares/IMiddleware";
 import Middlewares from "../Middlewares";
 import Router from "../Router";
 import ErrorHandlerMiddleware from "../Middlewares/ErrorHandlerMiddleware";
-import { getDefaultLogger, Config } from "../System";
+import { getDefaultLogger } from "../System/Logger";
+import Config from "../System/Config";
 
 /**
  * The HTTP service used to create the HTTP server.

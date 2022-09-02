@@ -1,8 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import passport from "passport";
 import app from "../App";
-import { defineMiddleware, Route } from "../Router";
-import IPayload from "./IPayload";
+import Route from "../Router/Route";
+import { defineMiddleware } from "../Router/RouteUtils";
+import type IPayload from "./IPayload";
 import { decode, extractToken, verify } from "./JWT";
 import MetadataStore from "../Documentation/MetadataStore";
 import AuthenticationMethod from "./AuthenticationMethod";

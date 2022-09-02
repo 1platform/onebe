@@ -1,6 +1,6 @@
 import { Application } from "express";
 import session, { MemoryStore } from "express-session";
-import { Config } from "../System";
+import Config from "../System/Config";
 import IMiddleware from "./IMiddleware";
 
 /**

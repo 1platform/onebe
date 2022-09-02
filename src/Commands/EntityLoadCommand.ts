@@ -1,11 +1,12 @@
-import { Arguments, Argv, CommandModule } from "yargs";
-import path from "path";
-import DatabaseSeeder from "../DB/TypeORM/DatabaseSeeder";
 import fs from "fs";
-import { getDefaultLogger, Config } from "../System";
-import chalk from "chalk";
-import { camelCase } from "../Utils";
+import path from "path";
+import { Arguments, Argv, CommandModule } from "yargs";
 import { DataSource } from "typeorm";
+import chalk from "chalk";
+import DatabaseSeeder from "../DB/TypeORM/DatabaseSeeder";
+import { getDefaultLogger } from "../System/Logger";
+import Config from "../System/Config";
+import { camelCase } from "../Utils";
 import initConnection from "./Utils/initConnection";
 
 /**

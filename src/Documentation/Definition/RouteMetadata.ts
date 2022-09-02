@@ -1,5 +1,7 @@
-import { HTTPMiddleware, HTTPVerb, HTTPStatus } from "../../HTTP";
-import { AppMethod, ResponseValue } from "../../Router";
+import HTTPVerb from "../../HTTP/HTTPVerb";
+import { HTTPMiddleware } from "../../HTTP/HTTPTypes";
+import { AppMethod, ResponseValue } from "../../Router/RouteTypes";
+import HTTPStatus from "../../HTTP/HTTPStatus";
 import { BodyParameterType, QueryParameterType } from "./DataTypes";
 
 /**

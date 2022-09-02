@@ -1,5 +1,5 @@
-import type { IConfig } from "../System";
-import { Env } from "../System";
+import Env from "../System/Env";
+import type IConfig from "../System/IConfig";
 
 /**
  * Authentication system configuration object.

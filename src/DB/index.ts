@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { Config } from "../System";
+import Config from "../System/Config";
 import Mongo from "./Mongo";
 import TypeORM from "./TypeORM";
 

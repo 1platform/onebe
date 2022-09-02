@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { getDefaultLogger } from "../../System";
+import { getDefaultLogger } from "../../System/Logger";
 import BaseTransport from "./BaseTransport";
 import IEmailTransport, { IEmailOptions } from "./IEmailTransport";
 

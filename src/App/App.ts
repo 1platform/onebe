@@ -1,4 +1,4 @@
-import { Config } from "../System";
+import Config from "../System/Config";
 import { getVersion } from "../version";
 import IAppInfo from "./IAppInfo";
 import { Constructor } from "../Documentation/MetadataTypes";

@@ -1,7 +1,8 @@
 import path from "path";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger, Config } from "../../System";
+import Config from "../../System/Config";
+import { getDefaultLogger } from "../../System/Logger";
 import { camelCase, snakeCase } from "../../Utils";
 
 /**
