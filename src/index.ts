@@ -6,7 +6,7 @@ import { IInitOptions } from "./custom";
 import DB from "./DB";
 import HTTP from "./HTTP/HTTP";
 import i18n from "./i18n";
-import Router from "./Router";
+import { Router } from "./Router";
 import Scheduler from "./Scheduler";
 import Config from "./System/Config";
 import { ConsoleLogger, FileLogger, JSONLogger, NoLogger, setDefaultLogger } from "./System/Logger";

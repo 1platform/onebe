@@ -1,7 +1,7 @@
-import { IInitStrategyOptions } from "./Authentication/Passport";
+import { IInitStrategyOptions } from "./Authentication";
 import { Environment } from "./System/Env";
 import App from "./App/App";
-import Router from "./Router/Router";
+import { RouterBase } from "./Router";
 import { Configuration } from "./System/Config";
 
 declare global {
@@ -52,7 +52,7 @@ declare global {
   var env: Environment;
   var app: App;
   var onebe: App;
-  var router: Router;
+  var router: RouterBase;
   var config: Configuration;
   /* eslint-enable no-var */
 }

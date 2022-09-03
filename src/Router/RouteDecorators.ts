@@ -3,7 +3,7 @@ import { getDefaultLogger } from "../System/Logger";
 import { ControllerDecorator, ControllerDecoratorFunction } from "./RouteTypes";
 import { Constructor } from "../Documentation/MetadataTypes";
 import MetadataStore from "../Documentation/MetadataStore";
-import Router from "./index";
+import { Router } from "./index";
 
 /**
  * Decorator used to define the path the controller will handle.
