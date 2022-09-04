@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / Middlewares/I18NMiddleware
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Middlewares/I18NMiddleware
 
 # Module: Middlewares/I18NMiddleware
 

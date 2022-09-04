@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / Commands/SecretGenCommand
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Commands/SecretGenCommand
 
 # Module: Commands/SecretGenCommand
 

@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Documentation/DocsController](../modules/Documentation_DocsController.md) / DocsController
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Documentation/DocsController](../modules/Documentation_DocsController.md) / DocsController
 
 # Class: DocsController
 

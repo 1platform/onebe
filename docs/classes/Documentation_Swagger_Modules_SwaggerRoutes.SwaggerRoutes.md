@@ -1,4 +1,4 @@
-[Spark OneBE - v1.0.30](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerRoutes](../modules/Documentation_Swagger_Modules_SwaggerRoutes.md) / SwaggerRoutes
+[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerRoutes](../modules/Documentation_Swagger_Modules_SwaggerRoutes.md) / SwaggerRoutes
 
 # Class: SwaggerRoutes
 
