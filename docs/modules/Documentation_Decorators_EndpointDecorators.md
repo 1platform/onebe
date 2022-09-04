@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EndpointDecorators
+[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EndpointDecorators
 
 # Module: Documentation/Decorators/EndpointDecorators
 

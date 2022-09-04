@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Commands/MigrationCreateCommand](../modules/Commands_MigrationCreateCommand.md) / MigrationCreateCommand
+[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [Commands/MigrationCreateCommand](../modules/Commands_MigrationCreateCommand.md) / MigrationCreateCommand
 
 # Class: MigrationCreateCommand
 

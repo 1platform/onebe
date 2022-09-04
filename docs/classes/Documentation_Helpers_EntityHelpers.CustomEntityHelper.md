@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
+[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
 
 # Class: CustomEntityHelper
 

@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerTags
+[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerTags
 
 # Module: Documentation/Swagger/Modules/SwaggerTags
 

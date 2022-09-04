@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.0](../README.md) / [Exports](../modules.md) / [Commands/MigrationResetCommand](../modules/Commands_MigrationResetCommand.md) / MigrationResetCommand
+[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [Commands/MigrationResetCommand](../modules/Commands_MigrationResetCommand.md) / MigrationResetCommand
 
 # Class: MigrationResetCommand
 
