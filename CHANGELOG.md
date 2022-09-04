@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.0.1
+
+🌟 Improvements:
+
+- Fixed the link to the repository.
+- Fixed the link to the homepage.
+
+🔧 Bugfix:
+
+- Fix an issue with babel not installed.
+
 ## Version 2.0.0
 
 🚀 New:

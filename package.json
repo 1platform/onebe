@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spark-development/onebe.git"
+    "url": "git+https://github.com/1platform/onebe.git"
   },
   "keywords": [
     "onebe",
@@ -42,13 +42,25 @@
   "bugs": {
     "url": "https://github.com/1platform/onebe/issues"
   },
-  "homepage": "https://github.com/1platform/onebe#readme",
+  "homepage": "https://onebe.dev",
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
   "dependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/node": "^7.18.10",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.10",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/register": "^7.18.9",
     "@vonage/server-sdk": "^2.11.2",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-file-loader": "^2.0.0",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "chalk": "^4.1.2",
@@ -98,15 +110,6 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.18.10",
-    "@babel/node": "^7.18.10",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-decorators": "^7.18.10",
-    "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
-    "@babel/preset-env": "^7.18.10",
-    "@babel/preset-typescript": "^7.18.6",
-    "@babel/register": "^7.18.9",
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
@@ -134,9 +137,6 @@
     "@types/yargs": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-file-loader": "^2.0.0",
-    "babel-plugin-transform-require-ignore": "^0.1.1",
     "debug": "^4.3.4",
     "eslint": "^8.21.0",
     "eslint-plugin-import": "^2.26.0",
