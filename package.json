@@ -5,18 +5,18 @@
   "description": "One backend framework, for all our internal needs",
   "scripts": {
     "docs:gen": "typedoc --tsconfig ./tsconfig.json --options ./typedoc.json",
-    "lint": "eslint --max-warnings 0 \"./src/**/*.ts\"",
-    "lint:fix": "eslint --max-warnings 0 --fix \"./src/**/*.ts\"",
-    "fix": "yarn prettier && yarn lint:fix",
-    "prettier": "prettier --write ./src",
-    "compile": "babel --extensions \".ts,.tsx\" --config-file \"./.babelrc.json\" src -d dist/ --copy-files",
-    "compile:cleanup": "rm -rf ./dist",
-    "compile:check": "tsc",
-    "i18n": "sync-i18n --files 'src/locales/*.json' --primary en --languages en,ro --space 2",
-    "i18n:check": "yarn i18n --check",
+    "code:lint": "eslint --max-warnings 0 \"./src/**/*.ts\"",
+    "code:lint:fix": "eslint --max-warnings 0 --fix \"./src/**/*.ts\"",
+    "code:fix": "yarn code:prettier && yarn code:lint:fix",
+    "code:prettier": "prettier --write ./src",
+    "app:compile": "babel --extensions \".ts,.tsx\" --config-file \"./.babelrc.json\" src -d dist/ --copy-files",
+    "app:compile:cleanup": "rm -rf ./dist",
+    "app:compile:check": "tsc",
+    "app:build": "yarn code:fix && ./bin/build.sh && git add --force docs && git add . && git status",
+    "app:build:link": "yarn code:fix && ./bin/build.sh && node ./bin/buildLink.js",
+    "lang:i18n": "sync-i18n --files 'src/locales/*.json' --primary en --languages en,ro --space 2",
+    "lang:i18n:check": "yarn lang:i18n --check",
     "prepare": "husky install",
-    "build": "yarn fix && ./bin/build.sh && git add --force docs && git add . && git status",
-    "build:link": "yarn fix && ./bin/build.sh && node ./bin/buildLink.js",
     "publish": "yarn publish:patch",
     "publish:patch": "npm version --no-git-tag-version patch",
     "publish:minor": "npm version --no-git-tag-version minor",
@@ -43,12 +43,6 @@
     "url": "https://github.com/1platform/onebe/issues"
   },
   "homepage": "https://github.com/1platform/onebe#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint:fix && yarn prettier && git add .",
-      "pre-push": "yarn lint && yarn test"
-    }
-  },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
@@ -71,6 +65,7 @@
     "i18next": "^21.9.1",
     "i18next-fs-backend": "^1.1.5",
     "i18next-http-middleware": "^3.2.1",
+    "inquirer": "^8.2.4",
     "joi": "^17.6.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
@@ -120,6 +115,7 @@
     "@types/express-session": "^1.17.5",
     "@types/flat": "^5.0.2",
     "@types/i18next-fs-backend": "^1.1.2",
+    "@types/inquirer": "^9.0.1",
     "@types/joi": "^17.2.3",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash": "^4.14.184",

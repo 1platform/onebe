@@ -1,4 +1,4 @@
-import TypeORM, { LoggingOptions } from "../../DB/TypeORM";
+import TypeORM, { CustomLogger, LoggingOptions } from "../../DB/TypeORM";
 import { DataSource } from "typeorm";
 import { getDefaultLogger } from "../../System/Logger";
 import Config from "../../System/Config";
@@ -31,6 +31,7 @@ export default async function initConnection(configuration?: string, logging?: b
     migrationsRun: false,
     dropSchema: false,
     logging: logging ?? false,
+    logger: new CustomLogger(logging ?? false),
   });
   return TypeORM.connection;
 }

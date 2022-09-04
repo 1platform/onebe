@@ -6,6 +6,7 @@
 
 ### Classes
 
+- [CustomLogger](../classes/DB_TypeORM.CustomLogger.md)
 - [TypeORM](../classes/DB_TypeORM.TypeORM.md)
 
 ### Type Aliases

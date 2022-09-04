@@ -1,0 +1,16 @@
+{
+  "onebe": {
+    "errors": {
+      "page-not-found": "Desired page was not found!",
+      "forbidden": "You don't have permission to access this page!",
+      "unauthorized": "You aren't authorized to perform this action!",
+      "something-wrong": "Something wrong happened!",
+      "entity": {
+        "not-found": "The entity {{name}} with id: {{key}} was not found!"
+      },
+      "email": {
+        "no-transport": "No Email Transport service has been configured!"
+      }
+    }
+  }
+}

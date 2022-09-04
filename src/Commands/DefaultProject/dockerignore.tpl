@@ -1,11 +1,10 @@
 upload
 node_modules
-.idea
 .vscode
+.idea
 .env
-tests
 .dockerignore
 .gitignore
-.gitlab-ci.yml
+Dockerfile
 Dockerfile.dev
 Dockerfile.staging

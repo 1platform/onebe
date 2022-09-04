@@ -5,13 +5,15 @@ cd "$(dirname "$0")/.."
 BUILD_ID=$(git rev-parse --short HEAD)
 
 yarn
-yarn lint
-yarn compile:check
-yarn compile:cleanup
+yarn code:lint
+yarn app:compile:check
+yarn app:compile:cleanup
 
-yarn compile
-yarn compile:check
+yarn app:compile
+yarn app:compile:check
 yarn docs:gen
+
+cp -R ./src/defaults ./dist/Commands/DefaultProject/config
 
 cat > ./dist/build.js << EOF
 "use strict";

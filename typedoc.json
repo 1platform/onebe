@@ -17,6 +17,7 @@
     "**/test/*.ts",
     "./src/DB/TypeORM/Decorators/Others.ts",
     "./src/**/*.d.ts",
+    "./src/**/yarn*.cjs",
     "./node_modules/**/*.d.ts",
     "./node_modules/@types/node/events.d.ts"
   ]

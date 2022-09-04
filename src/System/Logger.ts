@@ -6,6 +6,9 @@ import Config from "./Config";
 import LogLevel from "./LogLevel";
 import { Format } from "logform";
 
+export { default as LoggerType } from "./LoggerType";
+export { default as LogLevel } from "./LogLevel";
+
 /**
  * The base logger class to be used in the application.
  *

@@ -216,7 +216,7 @@ Method used to create a new entity.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `data` | `Entity` | The data to be stored. |
+| `data` | `DeepPartial`<`Entity`\> | The data to be stored. |
 
 #### Returns
 
@@ -376,7 +376,7 @@ Method used to update an existing entity.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `itemId` | `KeyType` | The ID of the element to be updated. |
-| `data` | `Entity` | The data to be stored. |
+| `data` | `DeepPartial`<`Entity`\> | The data to be stored. |
 
 #### Returns
 

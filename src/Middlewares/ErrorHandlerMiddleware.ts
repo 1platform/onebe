@@ -50,7 +50,7 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
     app.use((error: any, req: Request, res: Response, next: NextFunction): void => {
       const status = error.status || HTTPStatus.SERVER_ERROR;
       const message = req.t
-        ? req.t(error.message || "onebe.errors.something-wong", {
+        ? req.t(error.message || "onebe.errors.something-wrong", {
           ...(error.parameters || {}),
         })
         : error.message;

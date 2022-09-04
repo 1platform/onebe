@@ -15,9 +15,9 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    *
    * @param data The data to be stored.
    */
-  public async create(data: Entity): Promise<Entity> {
-    const validatedData: Entity = this.validator
-      ? this.validate<Entity>({
+  public async create(data: DeepPartial<Entity>): Promise<Entity> {
+    const validatedData: DeepPartial<Entity> = this.validator
+      ? this.validate<DeepPartial<Entity>>({
         ...data,
         id: undefined,
       })
@@ -33,11 +33,11 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    * @param itemId The ID of the element to be updated.
    * @param data The data to be stored.
    */
-  public async update(itemId: KeyType, data: Entity): Promise<Entity> {
+  public async update(itemId: KeyType, data: DeepPartial<Entity>): Promise<Entity> {
     const entity: Entity = await this.get(itemId);
 
-    const validatedData: Entity = this.validator
-      ? this.validate<Entity>({
+    const validatedData: DeepPartial<Entity> = this.validator
+      ? this.validate<DeepPartial<Entity>>({
         ...entity,
         ...data,
         id: undefined,

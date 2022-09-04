@@ -12,7 +12,7 @@ export type LoggingOptions = "schema" | "query" | "error" | "warn" | "info" | "l
 /**
  * Custom Logger that can be used for logging database events.
  */
-class CustomLogger implements Logger {
+export class CustomLogger implements Logger {
   /**
    * The selected logging level passed to the logger by the database configuration.
    */
@@ -35,7 +35,7 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public log(level: "log" | "info" | "warn", message: any, queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf(level) < 0)) {
       return;
     }
     if (level === "warn") {
@@ -53,10 +53,10 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public logMigration(message: string, queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf("migration") < 0)) {
       return;
     }
-    getDefaultLogger().debug(message);
+    getDefaultLogger().info(message);
   }
 
   /**
@@ -67,7 +67,7 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public logQuery(query: string, parameters?: any[], queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf("query") < 0)) {
       return;
     }
     getDefaultLogger().debug(`Query: ${ query }\n\tParameters: ${ this.stringifyParams(parameters || []) }`);
@@ -82,10 +82,10 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public logQueryError(error: string | Error, query: string, parameters?: any[], queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf("query") < 0)) {
       return;
     }
-    getDefaultLogger().debug(`Query: ${ query }\n\tParameters: ${ this.stringifyParams(parameters || []) }`);
+    getDefaultLogger().error(`Query: ${ query }\n\tParameters: ${ this.stringifyParams(parameters || []) }`);
     getDefaultLogger().error(error);
   }
 
@@ -98,7 +98,7 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public logQuerySlow(time: number, query: string, parameters?: any[], queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf("query") < 0)) {
       return;
     }
     getDefaultLogger().warn(`Query slow: ${ query }\n\tParameters: ${ this.stringifyParams(parameters || []) }`);
@@ -112,10 +112,10 @@ class CustomLogger implements Logger {
    * @param [queryRunner] The query runner used to perform the database event.
    */
   public logSchemaBuild(message: string, queryRunner?: QueryRunner): any {
-    if (!this._loggingOptions) {
+    if (!this._loggingOptions || (Array.isArray(this._loggingOptions) && this._loggingOptions.indexOf("schema") < 0)) {
       return;
     }
-    getDefaultLogger().debug(message);
+    getDefaultLogger().info(message);
   }
 
   /**

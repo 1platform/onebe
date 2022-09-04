@@ -32,7 +32,7 @@ export default class MigrationShowCommand implements CommandModule {
   public async handler(args: Arguments<{ configuration?: string }>) {
     let connection: DataSource;
     try {
-      connection = await initConnection(args.configuration, false);
+      connection = await initConnection(args.configuration, [ "schema" ]);
       if (!connection) {
         getDefaultLogger().error("You need to have a valid Database configuration, or one that isn't using Mongoose as the engine!");
         return;

@@ -9,12 +9,12 @@ if [[ -e $MODE || ($MODE != "patch" && $MODE != "minor" && $MODE != "major") ]];
   MODE="patch"
 fi
 
-yarn compile:cleanup
+yarn app:compile:cleanup
 
 sed -i "s/export const version.*/export const version = \"$npm_package_version\";/g" src/version.ts
 sed -i "s/- Version: .*/- Version: v$npm_package_version/g" README.md
 
-yarn build
+yarn app:build
 git commit -am "Version bump to v$npm_package_version"
 git tag $npm_package_version
 

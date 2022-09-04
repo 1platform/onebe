@@ -14,7 +14,7 @@ import { camelCase, snakeCase } from "../../Utils";
 function getRouteTemplate(routeName: string, options: Record<string, string | boolean> = {}): string {
   const { api, docs, custom, path } = options;
 
-  const routeImports = [ "Path" ];
+  const routeImports = [ "Path", "GET", "ContextAPI", "AuthContextAPI", "Route" ];
   const routeDecorators = [];
 
   if (api) {
@@ -35,14 +35,11 @@ function getRouteTemplate(routeName: string, options: Record<string, string | bo
     routePath = `/${ routePath }`;
   }
   routeDecorators.unshift(`@Path("${ routePath }", "${ routeName } Route", "")`);
+  routeImports.sort((a, b) => a.localeCompare(b));
 
-  return `import Route from "onebe/Router/Route";
-import { ${ routeImports.join(", ") } } from "onebe/Router/RouteDecorators";
-import { GET } from "onebe/Router/VerbsDecorators";
-import ContextAPI from "onebe/Router/ContextAPI";
-import AuthContextAPI from "onebe/Router/AuthContextAPI";
-import HTTPStatus from "onebe/HTTP/HTTPStatus";
-import { ResponseDocs } from "onebe/Documentation/Decorators/EndpointDecorators";
+  return `import { ${ routeImports.join(", ") } } from "onebe/Router";
+import { HTTPStatus } from "onebe/HTTP";
+import { ResponseDocs } from "onebe/Documentation";
 
 /**
  * Route ${ routeName }

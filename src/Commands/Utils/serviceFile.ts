@@ -11,8 +11,9 @@ import Config from "../../System/Config";
  * @param [options] Options used to enable/disable various functionalities in the generated service.
  */
 function getServiceTemplate(serviceName: string, options: Record<string, string | boolean> = {}): string {
-  const baseImport = [ 'import ServiceBase from "onebe/Services/ServiceBase";' ];
+  const baseImport = [];
   let serviceBaseName = "ServiceBase";
+  let serviceBaseNameImport = "ServiceBase";
   const preClassData = [];
   const constructorData = [];
   let superParameters = "";
@@ -21,19 +22,20 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
     switch (options.type) {
       case "full":
         serviceBaseName = `ServiceFullRepository<${ options.repository }>`;
-        baseImport[0] = 'import ServiceFullRepository from "onebe/Services/ServiceFullRepository";';
+        serviceBaseNameImport = `ServiceFullRepository`;
         break;
       case "read-only":
         serviceBaseName = `ServiceReadRepository<${ options.repository }>`;
-        baseImport[0] = 'import ServiceReadRepository from "onebe/Services/ServiceReadRepository";';
+        serviceBaseNameImport = `ServiceReadRepository`;
         break;
       case "basic":
       default:
         serviceBaseName = `ServiceWithRepository<${ options.repository }>`;
-        baseImport[0] = 'import ServiceWithRepository from "onebe/Services/ServiceWithRepository";';
+        serviceBaseNameImport = `ServiceWithRepository`;
         break;
     }
 
+    baseImport.push(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);
     const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
     baseImport.push(`import ${ options.repository } from "${ importPath }";`);
     superParameters = `${ options.repository }`;

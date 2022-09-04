@@ -4,6 +4,11 @@
 
 ## Table of contents
 
+### References
+
+- [LogLevel](System_Logger.md#loglevel)
+- [LoggerType](System_Logger.md#loggertype)
+
 ### Classes
 
 - [ConsoleLogger](../classes/System_Logger.ConsoleLogger.md)
@@ -16,6 +21,18 @@
 
 - [getDefaultLogger](System_Logger.md#getdefaultlogger)
 - [setDefaultLogger](System_Logger.md#setdefaultlogger)
+
+## References
+
+### LogLevel
+
+Re-exports [LogLevel](../enums/System_LogLevel.LogLevel.md)
+
+___
+
+### LoggerType
+
+Re-exports [LoggerType](../enums/System_LoggerType.LoggerType.md)
 
 ## Functions
 
