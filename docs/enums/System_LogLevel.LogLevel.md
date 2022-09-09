@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [System/LogLevel](../modules/System_LogLevel.md) / LogLevel
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [System/LogLevel](../modules/System_LogLevel.md) / LogLevel
 
 # Enumeration: LogLevel
 

@@ -15,9 +15,9 @@ import MetadataStore from "../Documentation/MetadataStore";
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
-export function get<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
+export function get<Response = any>(path: string, passRequest = false): RouteDecorator {
   return function (target: Route, propertyKey: string, descriptor: PropertyDescriptor) {
-    MetadataStore.instance.route.endpoint<Request, Response>(target.constructor.name, {
+    MetadataStore.instance.route.endpoint<void, Response>(target.constructor.name, {
       path,
       verb: HTTPVerb.GET,
       methodName: propertyKey,
@@ -135,8 +135,8 @@ export function del<Request = any, Response = any>(path: string, passRequest = f
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
-export function GET<Request = any, Response = any>(path: string, passRequest = false): RouteDecorator {
-  return get<Request, Response>(path, passRequest);
+export function GET<Response = any>(path: string, passRequest = false): RouteDecorator {
+  return get<Response>(path, passRequest);
 }
 
 /**

@@ -1,13 +1,13 @@
 {
   "cleanOutputDir": true,
-  "categorizeByGroup": false,
+  "categorizeByGroup": true,
   "entryPointStrategy": "expand",
   "entryPoints": [
     "./src"
   ],
   "hideGenerator": true,
   "includeVersion": true,
-  "name": "Spark OneBE",
+  "name": "OneBE Framework",
   "out": "./docs",
   "readme": "./README.md",
   "externalPattern": ["node_modules"],

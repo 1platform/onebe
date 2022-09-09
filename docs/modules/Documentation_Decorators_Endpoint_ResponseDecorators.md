@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / Documentation/Decorators/Endpoint/ResponseDecorators
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Documentation/Decorators/Endpoint/ResponseDecorators
 
 # Module: Documentation/Decorators/Endpoint/ResponseDecorators
 

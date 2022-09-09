@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [Commands/MigrationRunCommand](../modules/Commands_MigrationRunCommand.md) / MigrationRunCommand
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [Commands/MigrationRunCommand](../modules/Commands_MigrationRunCommand.md) / MigrationRunCommand
 
 # Class: MigrationRunCommand
 

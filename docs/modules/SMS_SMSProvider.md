@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / SMS/SMSProvider
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / SMS/SMSProvider
 
 # Module: SMS/SMSProvider
 

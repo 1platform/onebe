@@ -1,5 +1,5 @@
 import Env from "../System/Env";
-import IConfig from "../System/IConfig";
+import type IConfig from "../System/IConfig";
 
 /**
  * Documentation system configuration object.

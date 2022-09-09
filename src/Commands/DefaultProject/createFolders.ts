@@ -122,21 +122,22 @@ export default function services(): void {
 function createRoutesFile(basePath: string): void {
   fs.writeFileSync(
     path.join(basePath, "Default.ts"),
-    `import { AuthContextAPI, ContextAPI, GET, Path, Route } from "onebe/Router";
+    `import { AuthContextAPI, ContextAPI, GET, POST, Path, Route } from "onebe/Router";
 import { HTTPStatus } from "onebe/HTTP";
 import { ResponseDocs } from "onebe/Documentation";
 import { getDefaultLogger } from "onebe/System/Logger";
 
 @Path("/", "Root", "Main Entrypoint of the application")
 export default class Default extends Route {
-  @GET<any, HTTPStatus>("/", true)
+  @GET<HTTPStatus>("/")
   @ResponseDocs.Status(HTTPStatus.OK)
-  public async getSample(
-    context: ContextAPI,
-    authContext: AuthContextAPI
-  ): Promise<HTTPStatus> {
-    getDefaultLogger().debug(context.pageURL);
-    getDefaultLogger().debug([ context.body, context.parameters ]);
+  public async getSample(context: ContextAPI, authContext: AuthContextAPI): Promise<HTTPStatus> {
+    return HTTPStatus.OK;
+  }
+
+  @POST<any,HTTPStatus>("/")
+  @ResponseDocs.Status(HTTPStatus.OK)
+  public async postSample(context: ContextAPI, authContext: AuthContextAPI): Promise<HTTPStatus> {
     return HTTPStatus.OK;
   }
 }`,

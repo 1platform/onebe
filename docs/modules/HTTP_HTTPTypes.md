@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
 
 # Module: HTTP/HTTPTypes
 

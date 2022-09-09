@@ -32,7 +32,7 @@ export default class DocsController extends Route {
     );
   }
 
-  @GET<void, Record<string, unknown>>("/")
+  @GET<Record<string, unknown>>("/")
   @Endpoint({
     summary: "List basic information about the application",
   })
@@ -45,7 +45,7 @@ export default class DocsController extends Route {
     };
   }
 
-  @GET<void, Record<string, unknown>>("/routes")
+  @GET<Record<string, unknown>>("/routes")
   @Endpoint({
     summary: "List the endpoints exposed by the application.",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],
@@ -54,7 +54,7 @@ export default class DocsController extends Route {
     return GetRoutes();
   }
 
-  @GET<void, Record<string, string>>("/swagger.yaml")
+  @GET<Record<string, string>>("/swagger.yaml")
   @Endpoint({
     summary: "Returns the YAML version of the OpenAPI 3 documentation",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "text/vnd.yaml" } ],
@@ -66,7 +66,7 @@ export default class DocsController extends Route {
     };
   }
 
-  @GET<void, Record<string, any>>("/swagger.json")
+  @GET<Record<string, any>>("/swagger.json")
   @Endpoint({
     summary: "Returns the YAML version of the OpenAPI 3 documentation",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],

@@ -1,8 +1,8 @@
-Spark OneBE - v2.0.1 / [Exports](modules.md)
+OneBE Framework - v2.0.1 / [Exports](modules.md)
 
 # OneBE Framework
 
-- Codename: No one knows yet...
+- Codename: Rebuild
 - Version: v2.0.1
 
 This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
@@ -15,16 +15,13 @@ To create a new project use the following command:
 npx onebe project:create <projectName>
 ```
 
-If you find bugs while using our framework, please file an issue in
-[Github](https://github.com/spark-development/onebe/issues).
+If you find bugs while using our framework, please file an issue in [Github](https://github.com/1platform/onebe/issues).
 
 Also, if you manage to solve some issues, please create a Pull Request with the changes.
 
 While this package is the framework base, we created an additional project with
-a [base project](https://github.com/spark-development/onebe-project) that you can use as the starter for your
-application: https://github.com/spark-development/onebe-project
-
-In the future we want to expose a command that will allow you to create a new project more easily from our base project.
+a [base project](https://github.com/1platform/onebe-project) that you can use as the starter for your
+application: https://github.com/1platform/onebe-project
 
 ## Features of the framework:
 

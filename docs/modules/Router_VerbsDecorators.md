@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Router/VerbsDecorators
 
 # Module: Router/VerbsDecorators
 
@@ -54,7 +54,7 @@ ___
 
 ### GET
 
-▸ **GET**<`Request`, `Response`\>(`path`, `passRequest?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **GET**<`Response`\>(`path`, `passRequest?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 Decorator used to define a GET endpoint. This is an alias for the `get` decorator.
 
@@ -69,7 +69,6 @@ response, pass `void` to both.
 
 | Name | Type |
 | :------ | :------ |
-| `Request` | `any` |
 | `Response` | `any` |
 
 #### Parameters
@@ -219,7 +218,7 @@ ___
 
 ### get
 
-▸ **get**<`Request`, `Response`\>(`path`, `passRequest?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **get**<`Response`\>(`path`, `passRequest?`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 Decorator used to define a GET endpoint.
 
@@ -234,7 +233,6 @@ response, pass `void` to both.
 
 | Name | Type |
 | :------ | :------ |
-| `Request` | `any` |
 | `Response` | `any` |
 
 #### Parameters

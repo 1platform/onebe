@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
 
 # Module: DB/TypeORM/DatabaseSeeder
 

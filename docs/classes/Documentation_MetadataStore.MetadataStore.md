@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [Documentation/MetadataStore](../modules/Documentation_MetadataStore.md) / MetadataStore
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [Documentation/MetadataStore](../modules/Documentation_MetadataStore.md) / MetadataStore
 
 # Class: MetadataStore
 

@@ -11,7 +11,14 @@ export default abstract class ObserverServiceBase extends ServiceBase {
    * The default instance of the Observable plugin that can be used
    * to attach observers to a given model.
    */
-  protected _observer: Observable = observer;
+  protected readonly _observer: Observable = observer;
+
+  /**
+   * Getter for the observer instance.
+   */
+  public get observer(): Observable {
+    return this._observer;
+  }
 
   /**
    * The method used to register observers for the models handled by

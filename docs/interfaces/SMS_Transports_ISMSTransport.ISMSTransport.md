@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [SMS/Transports/ISMSTransport](../modules/SMS_Transports_ISMSTransport.md) / ISMSTransport
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [SMS/Transports/ISMSTransport](../modules/SMS_Transports_ISMSTransport.md) / ISMSTransport
 
 # Interface: ISMSTransport
 

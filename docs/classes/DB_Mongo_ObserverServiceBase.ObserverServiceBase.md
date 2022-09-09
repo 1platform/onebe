@@ -1,4 +1,4 @@
-[Spark OneBE - v2.0.1](../README.md) / [Exports](../modules.md) / [DB/Mongo/ObserverServiceBase](../modules/DB_Mongo_ObserverServiceBase.md) / ObserverServiceBase
+[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [DB/Mongo/ObserverServiceBase](../modules/DB_Mongo_ObserverServiceBase.md) / ObserverServiceBase
 
 # Class: ObserverServiceBase
 
@@ -25,6 +25,7 @@ and require observers in order to perform various tasks.
 
 ### Accessors
 
+- [observer](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#observer)
 - [validator](DB_Mongo_ObserverServiceBase.ObserverServiceBase.md#validator)
 
 ### Methods
@@ -47,12 +48,24 @@ and require observers in order to perform various tasks.
 
 ### \_observer
 
-• `Protected` **\_observer**: [`Observable`](DB_Mongo_Observable.Observable.md) = `observer`
+• `Protected` `Readonly` **\_observer**: [`Observable`](DB_Mongo_Observable.Observable.md) = `observer`
 
 The default instance of the Observable plugin that can be used
 to attach observers to a given model.
 
 ## Accessors
+
+### observer
+
+• `get` **observer**(): [`Observable`](DB_Mongo_Observable.Observable.md)
+
+Getter for the observer instance.
+
+#### Returns
+
+[`Observable`](DB_Mongo_Observable.Observable.md)
+
+___
 
 ### validator
 

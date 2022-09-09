@@ -2,6 +2,14 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.0.2
+
+🌟 Improvements:
+
+- Removed the Request Generic type from the GET Verb decorator.
+- Updated documentation.
+- Updated code generator for the initial project.
+
 ## Version 2.0.1
 
 🌟 Improvements:
