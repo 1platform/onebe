@@ -74,7 +74,7 @@ onebe({
       deserializeUser: (
         payload: IPayload,
         done: (err: any, user?: IUser) => void
-      ) => ({ id: payload.id }),
+      ) => done({ id: payload.id }),
     });
   })
   .catch((err) => {

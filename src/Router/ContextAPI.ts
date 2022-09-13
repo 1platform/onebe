@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import { ParsedQs } from "qs";
+import { UploadedFile } from "../Middlewares/MulterMiddleware";
+import { StringMap, TOptions } from "i18next";
 
 /**
  * Endpoint request Context information class.
@@ -81,9 +83,9 @@ export default class ContextAPI<BodyRequest = any> {
   /**
    * Getter for the list of files uploaded through the Endpoint.
    */
-  public get files(): Express.Multer.File[] {
+  public get files(): Array<UploadedFile> {
     if (this._request.files) {
-      return Object.values(this._request.files);
+      return Array.isArray(this._request.files as UploadedFile[]) ? (this._request.files as UploadedFile[]) : Object.values(this._request.files);
     }
     return this._request.file ? [ this._request.file ] : [];
   }
@@ -212,7 +214,7 @@ export default class ContextAPI<BodyRequest = any> {
    *
    * @param [fileName] The name of the file. When using the single file upload middleware, you can skip the parameter.
    */
-  public getFiles(fileName?: string): Express.Multer.File | Express.Multer.File[] {
+  public getFiles(fileName?: string): UploadedFile | UploadedFile[] {
     if (fileName && this._request.files && this._request.files[fileName]) {
       return this._request.files[fileName];
     }
@@ -234,5 +236,25 @@ export default class ContextAPI<BodyRequest = any> {
    */
   public getBodyProperty<T = any>(property: string): T {
     return this._request.body[property] as T;
+  }
+
+  /**
+   * Method used to translate a message with parameter.
+   *
+   * @param key The message to be returned to the user.
+   * @param [options] A map with parameters that is going to be applied to the message.
+   */
+  public t(key: string, options?: TOptions<StringMap>): string {
+    return this._request.t ? this._request.t(key, options) : key;
+  }
+
+  /**
+   * Method used to translate a message with parameter.
+   *
+   * @param key The message to be returned to the user.
+   * @param [options] A map with parameters that is going to be applied to the message.
+   */
+  public translate(key: string, options?: TOptions<StringMap>): string {
+    return this.t(key, options);
   }
 }

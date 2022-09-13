@@ -4,11 +4,34 @@
 
 ## Table of contents
 
+### Type Aliases
+
+- [SignMethodOptions](Authentication_AuthDecorators.md#signmethodoptions)
+
 ### Functions
 
 - [Basic](Authentication_AuthDecorators.md#basic)
 - [Bearer](Authentication_AuthDecorators.md#bearer)
+- [VerifyURL](Authentication_AuthDecorators.md#verifyurl)
 - [extractUser](Authentication_AuthDecorators.md#extractuser)
+- [signURL](Authentication_AuthDecorators.md#signurl)
+
+## Type Aliases
+
+### SignMethodOptions
+
+Ƭ **SignMethodOptions**: `Object`
+
+A list with all the options that you can pass to the sign method.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `address?` | `string` | If specified, the URL will be valid only when this Address parameter is specified. |
+| `expireAt?` | `number` | If you don't specify the Time To Live (TTL) parameter, you can specify a timestamp at which the URL will not be valid. |
+| `method?` | `string` \| `string`[] | The method or a list of methods allowed to access the endpoint secured by the signed URL. |
+| `timeToLive?` | `number` | How many seconds should the URL be valid. |
 
 ## Functions
 
@@ -73,6 +96,20 @@ the token Bearer followed by a JSON Web Token (JWT).
 
 ___
 
+### VerifyURL
+
+▸ **VerifyURL**(): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Middleware used to verify if a signed URL is valid.
+
+**`Decorator`**
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
+
 ### extractUser
 
 ▸ **extractUser**(`target`, `propertyKey`, `descriptor`): `void`
@@ -90,3 +127,22 @@ Type used to define a Route Decorator function.
 #### Returns
 
 `void`
+
+___
+
+### signURL
+
+▸ **signURL**(`url`, `options?`): `string`
+
+Function used to create signed URLs.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `url` | `string` | The URL to be signed. |
+| `options?` | [`SignMethodOptions`](Authentication_AuthDecorators.md#signmethodoptions) | The options used for the URL signing. |
+
+#### Returns
+
+`string`

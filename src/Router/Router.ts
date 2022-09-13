@@ -11,6 +11,7 @@ import ContextAPI from "./ContextAPI";
 import HTTPVerb from "../HTTP/HTTPVerb";
 import AuthContextAPI from "./AuthContextAPI";
 import HTTPStatus from "../HTTP/HTTPStatus";
+import { ResponseValue } from "./RouteTypes";
 
 /**
  * Interface used to describe the routes folder structure of your application.
@@ -106,10 +107,11 @@ export default class Router {
 
     this.router[endpoint.verb](path, ...endpoint.middlewares, async function (req: Request, res: Response, next: NextFunction) {
       try {
-        const original = await endpoint.callback(
-          new ContextAPI<any>(req, res, endpoint.passRequest, endpoint.verb === HTTPVerb.GET),
-          new AuthContextAPI(req, req.authContext || {})
-        );
+        const original: ResponseValue<any> =
+          (await endpoint.callback(
+            new ContextAPI<any>(req, res, endpoint.passRequest, endpoint.verb === HTTPVerb.GET),
+            new AuthContextAPI(req, req.authContext || {})
+          )) || HTTPStatus.NO_CONTENT;
 
         let status = HTTPStatus.OK;
         if (typeof original === "object" && "statusCode" in original) {

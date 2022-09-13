@@ -12,12 +12,15 @@
 - [IInitStrategyOptions](Authentication.md#iinitstrategyoptions)
 - [IPayload](Authentication.md#ipayload)
 - [IUser](Authentication.md#iuser)
+- [SignMethodOptions](Authentication.md#signmethodoptions)
+- [VerifyURL](Authentication.md#verifyurl)
 - [decode](Authentication.md#decode)
 - [extractToken](Authentication.md#extracttoken)
 - [extractUser](Authentication.md#extractuser)
 - [initPassportStrategy](Authentication.md#initpassportstrategy)
 - [shortLiveToken](Authentication.md#shortlivetoken)
 - [sign](Authentication.md#sign)
+- [signURL](Authentication.md#signurl)
 - [verify](Authentication.md#verify)
 
 ## References
@@ -58,6 +61,18 @@ Re-exports [IUser](../interfaces/Authentication_IUser.IUser.md)
 
 ___
 
+### SignMethodOptions
+
+Re-exports [SignMethodOptions](Authentication_AuthDecorators.md#signmethodoptions)
+
+___
+
+### VerifyURL
+
+Re-exports [VerifyURL](Authentication_AuthDecorators.md#verifyurl)
+
+___
+
 ### decode
 
 Re-exports [decode](Authentication_JWT.md#decode)
@@ -91,6 +106,12 @@ ___
 ### sign
 
 Re-exports [sign](Authentication_JWT.md#sign)
+
+___
+
+### signURL
+
+Re-exports [signURL](Authentication_AuthDecorators.md#signurl)
 
 ___
 

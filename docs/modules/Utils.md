@@ -11,6 +11,7 @@
 - [comparePassword](Utils.md#comparepassword)
 - [encryptPassword](Utils.md#encryptpassword)
 - [fixedSizeRandom](Utils.md#fixedsizerandom)
+- [getURL](Utils.md#geturl)
 - [random](Utils.md#random)
 - [shortid](Utils.md#shortid)
 - [slugify](Utils.md#slugify)
@@ -49,6 +50,12 @@ ___
 ### fixedSizeRandom
 
 Re-exports [fixedSizeRandom](Utils_NumberUtils.md#fixedsizerandom)
+
+___
+
+### getURL
+
+Re-exports [getURL](Utils_StringUtils.md#geturl)
 
 ___
 

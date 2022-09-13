@@ -10,7 +10,7 @@ A base class used for all the routes exposed by your application.
 
 - **`Route`**
 
-  ↳ [`DocsController`](Documentation_DocsController.DocsController.md)
+  ↳ [`DocumentationRoute`](Documentation_DocumentationRoute.DocumentationRoute.md)
 
 ## Table of contents
 

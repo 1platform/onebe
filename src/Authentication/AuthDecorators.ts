@@ -2,11 +2,24 @@ import { NextFunction, Request, Response } from "express";
 import passport from "passport";
 import app from "../App";
 import Route from "../Router/Route";
-import { defineMiddleware } from "../Router/RouteUtils";
+import { defineMiddleware, RouteDecorator } from "../Router";
 import type IPayload from "./IPayload";
 import { decode, extractToken, verify } from "./JWT";
 import MetadataStore from "../Documentation/MetadataStore";
 import AuthenticationMethod from "./AuthenticationMethod";
+import { QueryParameterType } from "../Documentation";
+import signed from "signed";
+import Config from "../System/Config";
+
+/**
+ * Instance of the URL signing utility that can be used to sign requests that
+ * return a file - for the situations where the file is available only if the
+ * user is authenticated.
+ */
+const signature = signed({
+  secret: Config.string("auth.secret"),
+  ttl: 60,
+});
 
 /**
  * Decorator used to enable Bearer Authentication for an endpoint.
@@ -56,6 +69,64 @@ export const Basic = (target: Route, propertyKey: string, descriptor: PropertyDe
 };
 
 /**
+ * Middleware used to verify if a signed URL is valid.
+ *
+ * @decorator
+ */
+export function VerifyURL(): RouteDecorator {
+  return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
+    MetadataStore.instance.route.isSigned(target.constructor.name, propertyKey);
+    MetadataStore.instance.route.endpointQuery(target.constructor.name, propertyKey, {
+      name: "signed",
+      type: QueryParameterType.STRING,
+      description: "The hash required to verify if the signed URL is valid.",
+    });
+    descriptor.value = [ signature.verifier(), ...original ];
+  };
+}
+
+/**
+ * A list with all the options that you can pass to the sign method.
+ */
+export type SignMethodOptions = {
+  /**
+   * The method or a list of methods allowed to access the endpoint
+   * secured by the signed URL.
+   */
+  method?: string | string[];
+  /**
+   * How many seconds should the URL be valid.
+   */
+  timeToLive?: number;
+  /**
+   * If you don't specify the Time To Live (TTL) parameter, you can specify a timestamp
+   * at which the URL will not be valid.
+   */
+  expireAt?: number;
+  /**
+   * If specified, the URL will be valid only when this Address parameter is specified.
+   */
+  address?: string;
+};
+
+/**
+ * Function used to create signed URLs.
+ *
+ * @param url The URL to be signed.
+ * @param [options] The options used for the URL signing.
+ *
+ * @return {string}
+ */
+export const signURL = (url: string, options?: SignMethodOptions): string =>
+  signature.sign(url, {
+    method: options?.method,
+    ttl: options?.timeToLive,
+    exp: options?.expireAt,
+    addr: options?.address,
+  });
+
+/**
  * Middleware used to extract the user from the request when using Bearer Authentication
  * on a mixed route (Public and Protected).
  *
@@ -67,7 +138,7 @@ export const Basic = (target: Route, propertyKey: string, descriptor: PropertyDe
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
  */
-export const extractUser = defineMiddleware((req: Request, res: Response, next: NextFunction): void => {
+export const ExtractUser = defineMiddleware((req: Request, res: Response, next: NextFunction): void => {
   const token = extractToken(req);
   try {
     if (!verify(token)) {

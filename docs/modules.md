@@ -58,7 +58,7 @@
 - [Documentation/Definition/DataTypes](modules/Documentation_Definition_DataTypes.md)
 - [Documentation/Definition/EntityMetadata](modules/Documentation_Definition_EntityMetadata.md)
 - [Documentation/Definition/RouteMetadata](modules/Documentation_Definition_RouteMetadata.md)
-- [Documentation/DocsController](modules/Documentation_DocsController.md)
+- [Documentation/DocumentationRoute](modules/Documentation_DocumentationRoute.md)
 - [Documentation/EntityDefinition](modules/Documentation_EntityDefinition.md)
 - [Documentation/GetDocs](modules/Documentation_GetDocs.md)
 - [Documentation/GetRoutes](modules/Documentation_GetRoutes.md)

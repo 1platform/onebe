@@ -4,6 +4,7 @@ import formatter from "string-format";
 import * as uuid from "uuid";
 import { stripHtml } from "string-strip-html";
 import { camelCase as _camelCase } from "lodash";
+import Config from "../System/Config";
 
 /**
  * Generator for a ShortID that can be used for various things.

@@ -25,15 +25,6 @@ const defaultUploadConfig: IConfig = {
    * @default "./storage"
    */
   storage: Env.string("UPLOAD_DESTINATION", "./storage"),
-
-  /**
-   * Since security is very important for us (and you), the upload middleware will need a
-   * secret word to easily sign the upload and download links that can be later used by the users
-   * of your application to work with files.
-   *
-   * @default "test"
-   */
-  secret: Env.string("UPLOAD_SECRET", "test"),
 };
 
 export default defaultUploadConfig;

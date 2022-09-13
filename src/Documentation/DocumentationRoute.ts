@@ -1,4 +1,5 @@
 import { Docs, GET, Path, Route } from "../Router";
+import type { IResponse } from "../Router";
 import SwaggerUI from "./Swagger/SwaggerUI";
 import Config from "../System/Config";
 import { DocsType, Endpoint, EntityHelpers, EntityPropertyDataTypes, GetDocs, GetRoutes } from "./index";
@@ -14,7 +15,7 @@ EntityHelpers.entity("ApplicationInformation", "Basic information about the appl
 
 @Path("/", "Application Documentation", "Expose the generated documentation of the application.")
 @Docs()
-export default class DocsController extends Route {
+export default class DocumentationRoute extends Route {
   public constructor() {
     super();
     getDefaultLogger().debug(`[REGISTER] GET: ${ Config.get("docs.path") }/openapi`);
@@ -59,7 +60,7 @@ export default class DocsController extends Route {
     summary: "Returns the YAML version of the OpenAPI 3 documentation",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "text/vnd.yaml" } ],
   })
-  public getOpenAPIYaml(): Record<string, string> {
+  public getOpenAPIYaml(): IResponse<string> {
     return {
       contentType: "text/vnd.yaml",
       body: GetDocs() as string,

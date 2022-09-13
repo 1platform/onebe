@@ -12,7 +12,7 @@ import Scheduler from "./Scheduler";
 import Config from "./System/Config";
 import { ConsoleLogger, FileLogger, JSONLogger, LoggerType, LogLevel, NoLogger, setDefaultLogger } from "./System/Logger";
 import MetadataStore from "./Documentation/MetadataStore";
-import DocsController from "./Documentation/DocsController";
+import DocumentationRoute from "./Documentation/DocumentationRoute";
 
 /**
  * Default values to be used for the framework configuration.
@@ -76,7 +76,7 @@ export default async function init(props: IInitOptions): Promise<(strategyProps?
     });
 
     return Router.register(path.resolve(props.currentFolder, props.routesFolder)).then(() => {
-      Router.add(new DocsController());
+      Router.add(new DocumentationRoute());
       app.Scheduler.run();
       app.HTTP.start();
     });

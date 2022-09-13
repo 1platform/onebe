@@ -73,6 +73,15 @@ const defaultAuthConfig: IConfig = {
      */
     secret: Env.string("SESSION_SECRET", "thisIsAS3cret"),
   },
+
+  /**
+   * Since security is very important for us (and you), we want to allow you to generate
+   * URLs that can be used for a period of time by your users, usually to upload and/or
+   * download files from the application easily.
+   *
+   * @default "test"
+   */
+  secret: Env.string("SIGN_SECRET", "test"),
 };
 
 export default defaultAuthConfig;

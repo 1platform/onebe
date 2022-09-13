@@ -9,6 +9,8 @@ Here we will note all the changes made to the framework.
 - Removed the Request Generic type from the GET Verb decorator.
 - Updated documentation.
 - Updated code generator for the initial project.
+- Moved the signURL and VerifyURL decorator into the AuthDecorators module.
+- Add the UploadedFile type to describe Express.Multer.File type.
 
 ## Version 2.0.1
 
