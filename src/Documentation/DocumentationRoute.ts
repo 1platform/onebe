@@ -1,5 +1,5 @@
-import { Docs, GET, Path, Route } from "../Router";
 import type { IResponse } from "../Router";
+import { Docs, GET, Path, Route } from "../Router";
 import SwaggerUI from "./Swagger/SwaggerUI";
 import Config from "../System/Config";
 import { DocsType, Endpoint, EntityHelpers, EntityPropertyDataTypes, GetDocs, GetRoutes } from "./index";
@@ -33,9 +33,16 @@ export default class DocumentationRoute extends Route {
     );
   }
 
-  @GET<Record<string, unknown>>("/")
+  @GET<Record<string, string>>("/")
   @Endpoint({
     summary: "List basic information about the application",
+    responses: [
+      {
+        statusCode: HTTPStatus.OK,
+        schema: "ApplicationInformation",
+        isSchema: true,
+      },
+    ],
   })
   public getAppInfo(): Record<string, unknown> {
     return {
