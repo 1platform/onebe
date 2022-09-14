@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
 
 # Module: Authentication/AuthDecorators
 
@@ -12,8 +12,8 @@
 
 - [Basic](Authentication_AuthDecorators.md#basic)
 - [Bearer](Authentication_AuthDecorators.md#bearer)
+- [ExtractUser](Authentication_AuthDecorators.md#extractuser)
 - [VerifyURL](Authentication_AuthDecorators.md#verifyurl)
-- [extractUser](Authentication_AuthDecorators.md#extractuser)
 - [signURL](Authentication_AuthDecorators.md#signurl)
 
 ## Type Aliases
@@ -96,23 +96,9 @@ the token Bearer followed by a JSON Web Token (JWT).
 
 ___
 
-### VerifyURL
+### ExtractUser
 
-▸ **VerifyURL**(): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
-
-Middleware used to verify if a signed URL is valid.
-
-**`Decorator`**
-
-#### Returns
-
-[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
-
-___
-
-### extractUser
-
-▸ **extractUser**(`target`, `propertyKey`, `descriptor`): `void`
+▸ **ExtractUser**(`target`, `propertyKey`, `descriptor`): `void`
 
 Type used to define a Route Decorator function.
 
@@ -127,6 +113,20 @@ Type used to define a Route Decorator function.
 #### Returns
 
 `void`
+
+___
+
+### VerifyURL
+
+▸ **VerifyURL**(): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Middleware used to verify if a signed URL is valid.
+
+**`Decorator`**
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 ___
 

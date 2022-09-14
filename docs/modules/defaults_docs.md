@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / defaults/docs
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / defaults/docs
 
 # Module: defaults/docs
 

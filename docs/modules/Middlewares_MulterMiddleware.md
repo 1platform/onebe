@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
 
 # Module: Middlewares/MulterMiddleware
 
@@ -6,7 +6,7 @@
 
 ### Type Aliases
 
-- [MulterFile](Middlewares_MulterMiddleware.md#multerfile)
+- [UploadedFile](Middlewares_MulterMiddleware.md#uploadedfile)
 
 ### Functions
 
@@ -17,9 +17,11 @@
 
 ## Type Aliases
 
-### MulterFile
+### UploadedFile
 
-Ƭ **MulterFile**: `Express.Multer.File`
+Ƭ **UploadedFile**: `Express.Multer.File`
+
+Type used to describe how an uploaded file should look like.
 
 ## Functions
 

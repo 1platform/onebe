@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Authentication
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / Authentication
 
 # Module: Authentication
 
@@ -9,6 +9,7 @@
 - [AuthenticationMethod](Authentication.md#authenticationmethod)
 - [Basic](Authentication.md#basic)
 - [Bearer](Authentication.md#bearer)
+- [ExtractUser](Authentication.md#extractuser)
 - [IInitStrategyOptions](Authentication.md#iinitstrategyoptions)
 - [IPayload](Authentication.md#ipayload)
 - [IUser](Authentication.md#iuser)
@@ -16,7 +17,6 @@
 - [VerifyURL](Authentication.md#verifyurl)
 - [decode](Authentication.md#decode)
 - [extractToken](Authentication.md#extracttoken)
-- [extractUser](Authentication.md#extractuser)
 - [initPassportStrategy](Authentication.md#initpassportstrategy)
 - [shortLiveToken](Authentication.md#shortlivetoken)
 - [sign](Authentication.md#sign)
@@ -40,6 +40,12 @@ ___
 ### Bearer
 
 Re-exports [Bearer](Authentication_AuthDecorators.md#bearer)
+
+___
+
+### ExtractUser
+
+Re-exports [ExtractUser](Authentication_AuthDecorators.md#extractuser)
 
 ___
 
@@ -82,12 +88,6 @@ ___
 ### extractToken
 
 Re-exports [extractToken](Authentication_JWT.md#extracttoken)
-
-___
-
-### extractUser
-
-Re-exports [extractUser](Authentication_AuthDecorators.md#extractuser)
 
 ___
 

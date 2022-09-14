@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Utils/StringUtils
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / Utils/StringUtils
 
 # Module: Utils/StringUtils
 
@@ -10,7 +10,6 @@
 - [camelCase](Utils_StringUtils.md#camelcase)
 - [comparePassword](Utils_StringUtils.md#comparepassword)
 - [encryptPassword](Utils_StringUtils.md#encryptpassword)
-- [getURL](Utils_StringUtils.md#geturl)
 - [shortid](Utils_StringUtils.md#shortid)
 - [slugify](Utils_StringUtils.md#slugify)
 - [snakeCase](Utils_StringUtils.md#snakecase)
@@ -98,24 +97,6 @@ Method used to encrypt a password using the hash function from bcryptjs.
 | :------ | :------ | :------ | :------ |
 | `password` | `string` | `undefined` | The password to be encrypted. |
 | `saltSize` | `number` | `10` | The size of the salt. |
-
-#### Returns
-
-`string`
-
-___
-
-### getURL
-
-▸ **getURL**(`path`): `string`
-
-Method used to generate the Full URL for a given path.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `path` | `string` | The URL path to be correctly generated. |
 
 #### Returns
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
 
 # Class: ContextAPI<BodyRequest\>
 
@@ -49,6 +49,8 @@ and specific data types.
 - [getQueryNumber](Router_ContextAPI.ContextAPI.md#getquerynumber)
 - [getQueryString](Router_ContextAPI.ContextAPI.md#getquerystring)
 - [setHeader](Router_ContextAPI.ContextAPI.md#setheader)
+- [t](Router_ContextAPI.ContextAPI.md#t)
+- [translate](Router_ContextAPI.ContextAPI.md#translate)
 
 ## Constructors
 
@@ -421,3 +423,41 @@ Method used to set a header value for the response.
 #### Returns
 
 `void`
+
+___
+
+### t
+
+▸ **t**(`key`, `options?`): `string`
+
+Method used to translate a message with parameter.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The message to be returned to the user. |
+| `options?` | `TOptions`<`StringMap`\> | A map with parameters that is going to be applied to the message. |
+
+#### Returns
+
+`string`
+
+___
+
+### translate
+
+▸ **translate**(`key`, `options?`): `string`
+
+Method used to translate a message with parameter.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | The message to be returned to the user. |
+| `options?` | `TOptions`<`StringMap`\> | A map with parameters that is going to be applied to the message. |
+
+#### Returns
+
+`string`

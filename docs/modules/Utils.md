@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.1](../README.md) / [Exports](../modules.md) / Utils
+[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / Utils
 
 # Module: Utils
 
@@ -11,7 +11,6 @@
 - [comparePassword](Utils.md#comparepassword)
 - [encryptPassword](Utils.md#encryptpassword)
 - [fixedSizeRandom](Utils.md#fixedsizerandom)
-- [getURL](Utils.md#geturl)
 - [random](Utils.md#random)
 - [shortid](Utils.md#shortid)
 - [slugify](Utils.md#slugify)
@@ -50,12 +49,6 @@ ___
 ### fixedSizeRandom
 
 Re-exports [fixedSizeRandom](Utils_NumberUtils.md#fixedsizerandom)
-
-___
-
-### getURL
-
-Re-exports [getURL](Utils_StringUtils.md#geturl)
 
 ___
 
