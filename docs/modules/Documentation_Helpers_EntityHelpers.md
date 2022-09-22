@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / Documentation/Helpers/EntityHelpers
+[OneBE Framework - v2.1.2](../README.md) / [Exports](../modules.md) / Documentation/Helpers/EntityHelpers
 
 # Module: Documentation/Helpers/EntityHelpers
 

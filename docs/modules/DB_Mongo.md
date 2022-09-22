@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / DB/Mongo
+[OneBE Framework - v2.1.2](../README.md) / [Exports](../modules.md) / DB/Mongo
 
 # Module: DB/Mongo
 

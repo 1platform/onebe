@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [Router/AuthContextAPI](../modules/Router_AuthContextAPI.md) / AuthContextAPI
+[OneBE Framework - v2.1.2](../README.md) / [Exports](../modules.md) / [Router/AuthContextAPI](../modules/Router_AuthContextAPI.md) / AuthContextAPI
 
 # Class: AuthContextAPI
 
