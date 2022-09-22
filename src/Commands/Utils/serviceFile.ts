@@ -85,9 +85,9 @@ function addToIndex(serviceName: string): void {
     servicesIndexLines.splice(lastIndexOfImport, 0, `import ${ serviceName }Service from "${ importPath }";`);
   }
 
-  importServiceIndex = servicesIndexLines.findIndex((line) => line.indexOf("onebe/Services/ServiceLoader") >= 0);
+  importServiceIndex = servicesIndexLines.findIndex((line) => line.indexOf("ServiceLoader") >= 0);
   if (importServiceIndex < 0) {
-    servicesIndexLines.splice(servicesIndexLines.length, 0, `import ServiceLoader from "onebe/Services/ServiceLoader";`);
+    servicesIndexLines.splice(servicesIndexLines.length, 0, `import { ServiceLoader } from "onebe/Services";`);
   }
 
   importServiceIndex = servicesIndexLines.findIndex((line) => line.indexOf(`new ${ serviceName }Service()`) >= 0);

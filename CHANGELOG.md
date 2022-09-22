@@ -8,10 +8,16 @@ Here we will note all the changes made to the framework.
 
 - Expose the function to translate messages.
 - Allow the user to clone the i18n engine with a different language.
+- Add Custom and OpenID authentication methods as supported methods for documentation.
 
 🌟 Improvements:
 
 - Ability to add extra middlewares before endpoint execution (general code). 
+
+🔧 Bugfix:
+
+- Fix an issue in the template used to generate routes.
+- Fix an issue in the template used to generate services.
 
 ## Version 2.0.2
 

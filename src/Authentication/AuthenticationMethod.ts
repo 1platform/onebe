@@ -12,6 +12,14 @@ enum AuthenticationMethod {
    * Bearer authentication method.
    */
   BEARER = "BearerAuth",
+  /**
+   * OpenID authentication method.
+   */
+  OPENID = "OpenIDAuth",
+  /**
+   * Custom authentication method.
+   */
+  CUSTOM = "CustomAuth",
 }
 
 export default AuthenticationMethod;

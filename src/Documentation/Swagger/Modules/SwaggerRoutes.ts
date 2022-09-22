@@ -9,8 +9,8 @@ import {
   IRouteMetadata,
 } from "../../Definition/RouteMetadata";
 import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "../../Definition/DataTypes";
-import HTTPStatus from "../../../HTTP/HTTPStatus";
-import { getPath } from "../../../Router/RouteUtils";
+import { HTTPStatus } from "../../../HTTP";
+import { getPath } from "../../../Router";
 import MetadataStore from "../../MetadataStore";
 
 /**

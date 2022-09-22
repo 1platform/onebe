@@ -48,7 +48,7 @@ import { ResponseDocs } from "onebe/Documentation";
  */
 ${ routeDecorators.join("\n") }
 export default class ${ routeName }Route extends Route {
-  @GET<any, HTTPStatus>("/")
+  @GET<HTTPStatus>("/")
   @ResponseDocs.Status(HTTPStatus.OK)
   public get${ routeName }(context: ContextAPI, authContext: AuthContextAPI): HTTPStatus {
     return HTTPStatus.OK;
