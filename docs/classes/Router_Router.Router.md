@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / [Router/Router](../modules/Router_Router.md) / Router
+[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [Router/Router](../modules/Router_Router.md) / Router
 
 # Class: Router
 
@@ -18,6 +18,7 @@ Inside this class the magic happens:
 
 ### Properties
 
+- [\_extraMiddlewares](Router_Router.Router.md#_extramiddlewares)
 - [\_router](Router_Router.Router.md#_router)
 - [\_routes](Router_Router.Router.md#_routes)
 
@@ -30,6 +31,7 @@ Inside this class the magic happens:
 - [add](Router_Router.Router.md#add)
 - [loadEndpoint](Router_Router.Router.md#loadendpoint)
 - [parseRoute](Router_Router.Router.md#parseroute)
+- [preRunMiddleware](Router_Router.Router.md#prerunmiddleware)
 - [register](Router_Router.Router.md#register)
 
 ## Constructors
@@ -39,6 +41,12 @@ Inside this class the magic happens:
 • **new Router**()
 
 ## Properties
+
+### \_extraMiddlewares
+
+• `Protected` **\_extraMiddlewares**: [`HTTPMiddleware`](../modules/HTTP_HTTPTypes.md#httpmiddleware)[] = `[]`
+
+___
 
 ### \_router
 
@@ -118,6 +126,24 @@ router.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `route` | [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md) | The route metadata we want to load. |
+
+#### Returns
+
+`void`
+
+___
+
+### preRunMiddleware
+
+▸ **preRunMiddleware**(...`middlewares`): `void`
+
+Add extra middlewares to be run before the actual code of each endpoint.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...middlewares` | [`HTTPMiddleware`](../modules/HTTP_HTTPTypes.md#httpmiddleware)[] | A list with middlewares to be ran. |
 
 #### Returns
 

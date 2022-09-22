@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / [Scheduler](../modules/Scheduler.md) / Scheduler
+[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [Scheduler](../modules/Scheduler.md) / Scheduler
 
 # Class: Scheduler
 

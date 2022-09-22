@@ -1,4 +1,4 @@
-[OneBE Framework - v2.0.2](../README.md) / [Exports](../modules.md) / [Authentication/AuthenticationMethod](../modules/Authentication_AuthenticationMethod.md) / AuthenticationMethod
+[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [Authentication/AuthenticationMethod](../modules/Authentication_AuthenticationMethod.md) / AuthenticationMethod
 
 # Enumeration: AuthenticationMethod
 
@@ -12,6 +12,8 @@ A list with the supported authentication methods that can be used in your applic
 
 - [BASIC](Authentication_AuthenticationMethod.AuthenticationMethod.md#basic)
 - [BEARER](Authentication_AuthenticationMethod.AuthenticationMethod.md#bearer)
+- [CUSTOM](Authentication_AuthenticationMethod.AuthenticationMethod.md#custom)
+- [OPENID](Authentication_AuthenticationMethod.AuthenticationMethod.md#openid)
 
 ## Enumeration Members
 
@@ -28,3 +30,19 @@ ___
 • **BEARER** = ``"BearerAuth"``
 
 Bearer authentication method.
+
+___
+
+### CUSTOM
+
+• **CUSTOM** = ``"CustomAuth"``
+
+Custom authentication method.
+
+___
+
+### OPENID
+
+• **OPENID** = ``"OpenIDAuth"``
+
+OpenID authentication method.
