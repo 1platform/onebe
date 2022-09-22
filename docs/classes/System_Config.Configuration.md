@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
 
 # Class: Configuration
 
@@ -63,9 +63,15 @@ ___
 
 ### array
 
-▸ **array**(`key`, `defaultValue?`): `unknown`[]
+▸ **array**<`T`\>(`key`, `defaultValue?`): `T`[]
 
 Returns the array value of the given configuration key.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | `string` |
 
 #### Parameters
 
@@ -76,7 +82,7 @@ Returns the array value of the given configuration key.
 
 #### Returns
 
-`unknown`[]
+`T`[]
 
 ___
 
@@ -187,9 +193,15 @@ ___
 
 ### object
 
-▸ **object**(`key`, `defaultValue?`): `Record`<`string`, `unknown`\>
+▸ **object**<`Value`\>(`key`, `defaultValue?`): `Record`<`string`, `Value`\>
 
 Returns the object value of the given configuration key.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `Value` | `any` |
 
 #### Parameters
 
@@ -200,7 +212,7 @@ Returns the object value of the given configuration key.
 
 #### Returns
 
-`Record`<`string`, `unknown`\>
+`Record`<`string`, `Value`\>
 
 ___
 

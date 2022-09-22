@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / Logger
 
 # Class: Logger
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / defaults/i18n
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / defaults/i18n
 
 # Module: defaults/i18n
 

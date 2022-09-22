@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [SMS/Transports/VonageTransport](../modules/SMS_Transports_VonageTransport.md) / VonageTransport
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [SMS/Transports/VonageTransport](../modules/SMS_Transports_VonageTransport.md) / VonageTransport
 
 # Class: VonageTransport
 

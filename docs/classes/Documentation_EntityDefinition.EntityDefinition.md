@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [Documentation/EntityDefinition](../modules/Documentation_EntityDefinition.md) / EntityDefinition
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [Documentation/EntityDefinition](../modules/Documentation_EntityDefinition.md) / EntityDefinition
 
 # Class: EntityDefinition
 

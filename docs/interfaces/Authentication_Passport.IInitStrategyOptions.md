@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.0](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / IInitStrategyOptions
+[OneBE Framework - v2.1.1](../README.md) / [Exports](../modules.md) / [Authentication/Passport](../modules/Authentication_Passport.md) / IInitStrategyOptions
 
 # Interface: IInitStrategyOptions
 
