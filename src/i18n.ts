@@ -1,4 +1,4 @@
-import i18next, { TFunction, i18n } from "i18next";
+import i18next, { TFunction, i18n as I18n } from "i18next";
 import Backend from "i18next-fs-backend";
 import { LanguageDetector } from "i18next-http-middleware";
 import path from "path";
@@ -17,7 +17,7 @@ export const translate = i18next.t.bind(i18next);
  *
  * @param lang The language used for the new clone.
  */
-export const clone = (lang: string): i18n => i18next.cloneInstance({ lng: lang });
+export const clone = (lang: string): I18n => i18next.cloneInstance({ lng: lang });
 
 /**
  * Internationalisation init function.
