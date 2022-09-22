@@ -86,7 +86,7 @@ export class Configuration {
    * @param key The configuration key.
    * @param defaultValue The default value if the configuration key doesn't exists.
    */
-  public object(key: string, defaultValue = null): Record<string, unknown> {
+  public object<Value = any>(key: string, defaultValue = null): Record<string, Value> {
     const keySplit = key.split(".");
 
     const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config);
@@ -100,10 +100,10 @@ export class Configuration {
    * @param key The configuration key.
    * @param defaultValue The default value if the configuration key doesn't exists.
    */
-  public array(key: string, defaultValue = null): Array<unknown> {
+  public array<T = string>(key: string, defaultValue = null): Array<T> {
     const keySplit = key.split(".");
 
-    const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config);
+    const value = keySplit.reduce((accum, value) => (!accum ? defaultValue : accum[value]), this._config) as T[];
 
     return value ?? defaultValue;
   }

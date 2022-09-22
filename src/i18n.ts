@@ -1,8 +1,12 @@
-import i18next, { TFunction, i18n as I18n } from "i18next";
+import i18next from "i18next";
+import type { i18n as I18n, TFunction } from "i18next";
 import Backend from "i18next-fs-backend";
 import { LanguageDetector } from "i18next-http-middleware";
+import type { I18NextRequest } from "i18next-http-middleware";
 import path from "path";
 import Config from "./System/Config";
+
+export type { I18n, TFunction, I18NextRequest };
 
 /**
  * Translation function to be used in the application.
@@ -31,10 +35,9 @@ export default function i18n(currentDir: string = __dirname): Promise<TFunction>
     .init({
       lng: Config.string("i18n.defaultLang", "en"),
       fallbackLng: Config.string("i18n.fallbackLang", "en"),
-      supportedLngs: Config.string("i18n.supportedLanguages", "en,ro").split(","),
-      preload: Config.string("i18n.preload", "en,ro").split(","),
-      // debug: Config.boolean("app.debug"),
-      debug: false,
+      supportedLngs: Config.array("i18n.supportedLanguages", [ "en", "ro" ]),
+      preload: Config.array("i18n.preload", [ "en", "ro" ]),
+      debug: Config.boolean("i18n.debug"),
       backend: {
         loadPath: path.resolve(currentDir, "./locales/{{lng}}.json"),
         addPath: path.resolve(currentDir, "./locales/{{lng}}.json"),

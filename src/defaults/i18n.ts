@@ -9,6 +9,13 @@ import type IConfig from "../System/IConfig";
  */
 const defaultLangConfig: IConfig = {
   /**
+   * Debug the i18n configuration.
+   *
+   * @default false
+   */
+  debug: Env.boolean("DEBUG_I18N"),
+
+  /**
    * The default language used for the translation of the application.
    *
    * @default "en"

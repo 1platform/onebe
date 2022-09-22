@@ -2,6 +2,18 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.1
+
+🌟 Improvements:
+
+- Export the I18n, TFunction and I18NextRequest interfaces from i18next.
+- Add the ability to enable debug mode for the i18next.
+- Ability to specify the datatype for Config.array and Config.object.
+
+🔧 Bugfix:
+
+- Fix an issue with the configuration loading for the i18next configuration.
+
 ## Version 2.1.0
 
 🚀 New:
