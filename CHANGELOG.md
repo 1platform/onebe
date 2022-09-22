@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.0
+
+🚀 New:
+
+- Expose the function to translate messages.
+- Allow the user to clone the i18n engine with a different language.
+
+🌟 Improvements:
+
+- Ability to add extra middlewares before endpoint execution (general code). 
+
 ## Version 2.0.2
 
 🌟 Improvements:

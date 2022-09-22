@@ -12,6 +12,7 @@ import HTTPVerb from "../HTTP/HTTPVerb";
 import AuthContextAPI from "./AuthContextAPI";
 import HTTPStatus from "../HTTP/HTTPStatus";
 import { ResponseValue } from "./RouteTypes";
+import { HTTPMiddleware } from "../HTTP";
 
 /**
  * Interface used to describe the routes folder structure of your application.
@@ -43,6 +44,8 @@ export default class Router {
    * The list with routes we want to register.
    */
   protected _routes: Array<Route> = [];
+
+  protected _extraMiddlewares: Array<HTTPMiddleware> = [];
 
   /**
    * The base router that we are going to use.
@@ -95,6 +98,15 @@ export default class Router {
   }
 
   /**
+   * Add extra middlewares to be run before the actual code of each endpoint.
+   *
+   * @param middlewares A list with middlewares to be ran.
+   */
+  public preRunMiddleware(...middlewares: Array<HTTPMiddleware>): void {
+    this._extraMiddlewares.push(...middlewares);
+  }
+
+  /**
    * Method used to register endpoints in the router under a given base path and with the
    * given endpoint metadata.
    *
@@ -105,43 +117,48 @@ export default class Router {
     const path = getPath(basePath, endpoint.path);
     getDefaultLogger().debug(`[REGISTER] ${ endpoint.verb.toUpperCase() }: ${ path }`);
 
-    this.router[endpoint.verb](path, ...endpoint.middlewares, async function (req: Request, res: Response, next: NextFunction) {
-      try {
-        const original: ResponseValue<any> =
-          (await endpoint.callback(
-            new ContextAPI<any>(req, res, endpoint.passRequest, endpoint.verb === HTTPVerb.GET),
-            new AuthContextAPI(req, req.authContext || {})
-          )) || HTTPStatus.NO_CONTENT;
+    this.router[endpoint.verb](
+      path,
+      ...endpoint.middlewares,
+      ...(this._extraMiddlewares || []),
+      async function (req: Request, res: Response, next: NextFunction) {
+        try {
+          const original: ResponseValue<any> =
+            (await endpoint.callback(
+              new ContextAPI<any>(req, res, endpoint.passRequest, endpoint.verb === HTTPVerb.GET),
+              new AuthContextAPI(req, req.authContext || {})
+            )) || HTTPStatus.NO_CONTENT;
 
-        let status = HTTPStatus.OK;
-        if (typeof original === "object" && "statusCode" in original) {
-          status = (original?.statusCode || HTTPStatus.OK) as HTTPStatus;
-        } else if (Number.isInteger(original) && Object.values(HTTPStatus).indexOf(original as HTTPStatus) >= 0) {
-          status = original as HTTPStatus;
+          let status = HTTPStatus.OK;
+          if (typeof original === "object" && "statusCode" in original) {
+            status = (original?.statusCode || HTTPStatus.OK) as HTTPStatus;
+          } else if (Number.isInteger(original) && Object.values(HTTPStatus).indexOf(original as HTTPStatus) >= 0) {
+            status = original as HTTPStatus;
+          }
+
+          if (status === HTTPStatus.NO_CONTENT || status === HTTPStatus.ACCEPTED) {
+            res.sendStatus(status);
+            return;
+          }
+
+          if (typeof original === "object" && "file" in original) {
+            res.contentType((original?.contentType || "text/plain") as string);
+            res.sendFile(original?.body as string);
+            return;
+          }
+
+          if (typeof original === "object" && "contentType" in original) {
+            res.contentType((original?.contentType || "text/plain") as string);
+            res.send(original?.body as string);
+            return;
+          }
+
+          res.status(status).json(original);
+        } catch (e) {
+          next(e);
         }
-
-        if (status === HTTPStatus.NO_CONTENT || status === HTTPStatus.ACCEPTED) {
-          res.sendStatus(status);
-          return;
-        }
-
-        if (typeof original === "object" && "file" in original) {
-          res.contentType((original?.contentType || "text/plain") as string);
-          res.sendFile(original?.body as string);
-          return;
-        }
-
-        if (typeof original === "object" && "contentType" in original) {
-          res.contentType((original?.contentType || "text/plain") as string);
-          res.send(original?.body as string);
-          return;
-        }
-
-        res.status(status).json(original);
-      } catch (e) {
-        next(e);
       }
-    });
+    );
   }
 
   /**
