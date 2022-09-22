@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.2
+
+🌟 Improvements:
+
+- Export i18next.
+- Make the clone function return a promise.
+
 ## Version 2.1.1
 
 🌟 Improvements:
