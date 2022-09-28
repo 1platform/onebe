@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.2](../README.md) / [Exports](../modules.md) / [Documentation/BaseEntity](../modules/Documentation_BaseEntity.md) / BaseEntity
+[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / [Documentation/BaseEntity](../modules/Documentation_BaseEntity.md) / BaseEntity
 
 # Class: BaseEntity
 

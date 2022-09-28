@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.2](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
+[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / [HTTP/HTTPStatus](../modules/HTTP_HTTPStatus.md) / HTTPStatus
 
 # Enumeration: HTTPStatus
 
@@ -25,10 +25,13 @@ when you or the server want to show that something failed.
 - [BAD\_REQUEST](HTTP_HTTPStatus.HTTPStatus.md#bad_request)
 - [CREATED](HTTP_HTTPStatus.HTTPStatus.md#created)
 - [FORBIDDEN](HTTP_HTTPStatus.HTTPStatus.md#forbidden)
+- [FOUND](HTTP_HTTPStatus.HTTPStatus.md#found)
 - [GONE](HTTP_HTTPStatus.HTTPStatus.md#gone)
+- [MOVED\_PERMANENTLY](HTTP_HTTPStatus.HTTPStatus.md#moved_permanently)
 - [NOT\_FOUND](HTTP_HTTPStatus.HTTPStatus.md#not_found)
 - [NO\_CONTENT](HTTP_HTTPStatus.HTTPStatus.md#no_content)
 - [OK](HTTP_HTTPStatus.HTTPStatus.md#ok)
+- [REDIRECT](HTTP_HTTPStatus.HTTPStatus.md#redirect)
 - [SERVER\_ERROR](HTTP_HTTPStatus.HTTPStatus.md#server_error)
 - [UNAUTHORIZED](HTTP_HTTPStatus.HTTPStatus.md#unauthorized)
 
@@ -58,9 +61,21 @@ ___
 
 ___
 
+### FOUND
+
+• **FOUND** = ``302``
+
+___
+
 ### GONE
 
 • **GONE** = ``410``
+
+___
+
+### MOVED\_PERMANENTLY
+
+• **MOVED\_PERMANENTLY** = ``301``
 
 ___
 
@@ -79,6 +94,12 @@ ___
 ### OK
 
 • **OK** = ``200``
+
+___
+
+### REDIRECT
+
+• **REDIRECT** = ``302``
 
 ___
 
