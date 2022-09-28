@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.3
+
+🌟 Improvements:
+
+- Add support to redirect the user to another page.
+- Allow the developer to create a service in a specific folder.
+
+🔧 Bugfix:
+
+- Fix an issue with the service generation.
+
 ## Version 2.1.2
 
 🌟 Improvements:

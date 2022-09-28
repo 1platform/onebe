@@ -130,10 +130,19 @@ export default class Router {
             )) || HTTPStatus.NO_CONTENT;
 
           let status = HTTPStatus.OK;
+          let to = "";
           if (typeof original === "object" && "statusCode" in original) {
             status = (original?.statusCode || HTTPStatus.OK) as HTTPStatus;
+            to = original.body;
           } else if (Number.isInteger(original) && Object.values(HTTPStatus).indexOf(original as HTTPStatus) >= 0) {
             status = original as HTTPStatus;
+          }
+
+          if (status === HTTPStatus.REDIRECT) {
+            if (to) {
+              res.redirect(to);
+            }
+            return;
           }
 
           if (status === HTTPStatus.NO_CONTENT || status === HTTPStatus.ACCEPTED) {

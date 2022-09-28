@@ -54,7 +54,16 @@ export default class ServiceCreateCommand implements CommandModule {
       getDefaultLogger().error("You need to specify the entity for which the repository is needed!");
       return;
     }
-    createServiceFile(camelCase(args.serviceName, true), {
+    let serviceName = args.serviceName.split("/");
+    let folder = "";
+
+    if (serviceName.length > 1) {
+      folder = serviceName.slice(0, serviceName.length - 1);
+    }
+    serviceName = serviceName.pop();
+
+    createServiceFile(camelCase(serviceName, true), {
+      folder,
       validator: args.validator || false,
       repository: args.repository ? camelCase(args.repository, true) : "",
       type: args.type || "basic",

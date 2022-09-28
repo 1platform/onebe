@@ -35,11 +35,12 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
         break;
     }
 
-    baseImport.push(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);
     const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
     baseImport.push(`import ${ options.repository } from "${ importPath }";`);
     superParameters = `${ options.repository }`;
   }
+
+  baseImport.unshift(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);
 
   if (options.validator) {
     baseImport.unshift('import Joi from "joi";');
@@ -70,12 +71,20 @@ export default class ${ serviceName }Service extends ${ serviceBaseName } {
  * Add service to the Service Loader.
  *
  * @param serviceName The name of the service to be added.
+ * @param folder The folder where you want to put the
  */
-function addToIndex(serviceName: string): void {
+function addToIndex(serviceName: string, folder?: string): void {
   const servicesLoaderFile = path.resolve(Config.get("app.folders.services", "./"), `index.ts`);
   const servicesIndexLines = fs.readFileSync(servicesLoaderFile, "utf-8").split("\n").reverse();
 
-  const importPath = `${ Config.get("app.folders.services").replace(/.\/src/gi, "@") }/${ serviceName }Service`;
+  if (!folder) {
+    folder = "";
+  } else if (folder.split("").pop() !== "/") {
+    folder = `${ folder }/`;
+  }
+
+  folder = folder.replace(/\\/gi, "/");
+  const importPath = `${ Config.get("app.folders.services").replace(/.\/src/gi, "@") }/${ folder }${ serviceName }Service`;
   let importServiceIndex = servicesIndexLines.findIndex((line) => line.indexOf(importPath) >= 0);
   if (importServiceIndex < 0) {
     let lastIndexOfImport = servicesIndexLines.findIndex((line) => line.indexOf("import") >= 0);
@@ -112,7 +121,7 @@ export default function createServiceFile(serviceName: string, options?: Record<
   if (serviceName.toLowerCase().indexOf("service") >= 0) {
     serviceName = serviceName.substring(0, serviceName.toLowerCase().indexOf("service"));
   }
-  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), `${ serviceName }Service.ts`);
+  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), (options?.folder as string) ?? "", `${ serviceName }Service.ts`);
 
   if (!fs.existsSync(path.dirname(serviceFile))) {
     fs.mkdirSync(path.dirname(serviceFile), { recursive: true });
@@ -126,6 +135,6 @@ export default function createServiceFile(serviceName: string, options?: Record<
   const template = getServiceTemplate(serviceName, options || {});
   fs.writeFileSync(serviceFile, template, "utf-8");
 
-  addToIndex(serviceName);
+  addToIndex(serviceName, (options?.folder as string) ?? "");
   getDefaultLogger().info(`Service ${ chalk.blue(serviceFile) } has been generated successfully.`);
 }
