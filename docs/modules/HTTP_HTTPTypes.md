@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / HTTP/HTTPTypes
 
 # Module: HTTP/HTTPTypes
 

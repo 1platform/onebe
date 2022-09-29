@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / Documentation/MetadataTypes
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / Documentation/MetadataTypes
 
 # Module: Documentation/MetadataTypes
 
@@ -12,12 +12,26 @@
 
 ### Constructor
 
-Ƭ **Constructor**<`T`\>: `Object`
-
-Type used to define a Class with a constructor.
+Ƭ **Constructor**<`T`\>: (...`args`: `any`[]) => `T`
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | `any` |
+
+#### Type declaration
+
+• **new Constructor**(...`args`): `T`
+
+Type used to define a Class with a constructor.
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | `any`[] |
+
+##### Returns
+
+`T`

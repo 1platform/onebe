@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / [Documentation/EntityDefinition](../modules/Documentation_EntityDefinition.md) / EntityDefinition
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / [Documentation/EntityDefinition](../modules/Documentation_EntityDefinition.md) / EntityDefinition
 
 # Class: EntityDefinition
 
@@ -18,6 +18,7 @@
 
 - [add](Documentation_EntityDefinition.EntityDefinition.md#add)
 - [addRelation](Documentation_EntityDefinition.EntityDefinition.md#addrelation)
+- [buildChainExtension](Documentation_EntityDefinition.EntityDefinition.md#buildchainextension)
 - [buildEntityList](Documentation_EntityDefinition.EntityDefinition.md#buildentitylist)
 - [entity](Documentation_EntityDefinition.EntityDefinition.md#entity)
 - [extends](Documentation_EntityDefinition.EntityDefinition.md#extends)
@@ -96,6 +97,25 @@ Method used to add a relation between entities.
 #### Returns
 
 `void`
+
+___
+
+### buildChainExtension
+
+▸ **buildChainExtension**(`entity`, `baseClass`): [`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
+
+Method used to define the parent entity of the current entity.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `entity` | `any` | The entity on which we add information. |
+| `baseClass` | [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`any`\> \| `ObjectLiteral` | The actual entity class. |
+
+#### Returns
+
+[`EntityDefinition`](Documentation_EntityDefinition.EntityDefinition.md)
 
 ___
 

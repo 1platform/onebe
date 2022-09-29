@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / [custom](../modules/custom.md) / IInitOptions
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / [custom](../modules/custom.md) / IInitOptions
 
 # Interface: IInitOptions
 

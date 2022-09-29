@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / [HTTP/HTTP](../modules/HTTP_HTTP.md) / HTTP
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / [HTTP/HTTP](../modules/HTTP_HTTP.md) / HTTP
 
 # Class: HTTP
 
@@ -64,13 +64,13 @@ ___
 
 ### http
 
-• `get` **http**(): `Server`
+• `get` **http**(): `Server`<typeof `IncomingMessage`, typeof `ServerResponse`\>
 
 Getter for the HTTP server.
 
 #### Returns
 
-`Server`
+`Server`<typeof `IncomingMessage`, typeof `ServerResponse`\>
 
 ___
 

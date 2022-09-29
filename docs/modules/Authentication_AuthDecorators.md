@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
 
 # Module: Authentication/AuthDecorators
 
@@ -100,15 +100,21 @@ ___
 
 ▸ **ExtractUser**(`target`, `propertyKey`, `descriptor`): `void`
 
-Type used to define a Route Decorator function.
+Middleware used to extract the user from the request when using Bearer Authentication
+on a mixed route (Public and Protected).
+
+Use this middleware when you have to provide an endpoint that based on the values
+available in the header, return additional information.
+
+**`Decorator`**
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `target` | [`Route`](../classes/Router_Route.Route.md) | The target on which we apply the decorator. |
-| `propertyKey` | `string` | The property on which we apply the decorator. |
-| `descriptor` | `PropertyDescriptor` | The property descriptor of the property we want to apply the decorator on. |
+| `propertyKey` | `string` | The property key on which we apply the decorator. |
+| `descriptor` | `PropertyDescriptor` | The descriptor of the property we want to decorate. |
 
 #### Returns
 

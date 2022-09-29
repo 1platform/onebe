@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.3](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
+[OneBE Framework - v2.1.4](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
 
 # Module: DB/TypeORM/DatabaseSeeder
 
@@ -31,7 +31,7 @@ Function used to seed the Database for a given entity.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `entity` | `EntityTarget`<`Entity`\> | `undefined` | The entity to be seeded. |
-| `data` | `QueryDeepPartialEntity`<`Entity`\> \| `QueryDeepPartialEntity`<`Entity`\>[] | `undefined` | The data to be seeded. |
+| `data` | `_QueryDeepPartialEntity`<`ObjectLiteral` extends `Entity` ? `unknown` : `Entity`\> \| `_QueryDeepPartialEntity`<`ObjectLiteral` extends `Entity` ? `unknown` : `Entity`\>[] | `undefined` | The data to be seeded. |
 | `clearData` | `boolean` | `false` | Flag used to enable/disable database clearing. |
 
 #### Returns
