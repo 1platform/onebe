@@ -58,10 +58,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    * @param itemId The ID of the element to be updated.
    */
   public async delete(itemId: KeyType): Promise<Entity> {
-    const entity = await this.repository.findOne(itemId);
-    if (!entity) {
-      throw new HTTPError("onebe.errors.entity.not-found", HTTPStatus.NOT_FOUND, { key: itemId, name: this.repository.metadata.name });
-    }
+    const entity = await this.getByKey(itemId);
     await this.repository.remove(entity);
     return entity;
   }
