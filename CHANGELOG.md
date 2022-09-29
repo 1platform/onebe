@@ -12,6 +12,7 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the fixed size number generation.
 - Fix an issue with the extension ladder.
+- Fix an issue with the ServiceFullRepository.
 
 ## Version 2.1.3
 

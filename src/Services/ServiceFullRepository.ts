@@ -34,7 +34,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    * @param data The data to be stored.
    */
   public async update(itemId: KeyType, data: DeepPartial<Entity>): Promise<Entity> {
-    const entity: Entity = await this.get(itemId);
+    const entity: Entity = await this.getByKey(itemId);
 
     const validatedData: DeepPartial<Entity> = this.validator
       ? this.validate<DeepPartial<Entity>>({
