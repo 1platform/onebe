@@ -25,5 +25,7 @@ export function random(start = 0, end = 100000): number {
  */
 export function fixedSizeRandom(size: number): string {
   const maxSize = Math.pow(10, size);
-  return Math.floor((Math.random() * maxSize) % maxSize).toString();
+  return Math.floor((Math.random() * maxSize) % maxSize)
+    .toString()
+    .padStart(size, "0");
 }

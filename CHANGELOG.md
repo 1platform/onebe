@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.4
+
+🔧 Bugfix:
+
+- Fix an issue with the fixed size number generation.
+
 ## Version 2.1.3
 
 🌟 Improvements:
