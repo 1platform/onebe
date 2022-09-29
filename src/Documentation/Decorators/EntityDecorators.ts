@@ -20,7 +20,7 @@ export function Entity<T extends Constructor>(description?: string): ControllerD
   return function (BaseClass: T): T {
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.update(BaseClass.name, description ?? "");
-    entityMetadata.extends(BaseClass.name, Object.getPrototypeOf(BaseClass).name);
+    entityMetadata.buildChainExtension(BaseClass.name, BaseClass);
 
     return BaseClass;
   };

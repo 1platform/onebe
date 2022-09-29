@@ -29,7 +29,7 @@ export function Model<T extends Constructor>(
     const entityMetadata = MetadataStore.instance.entity;
     entityMetadata.update(name, options.description ?? "");
     entityMetadata.tableName(BaseClass.name, name);
-    entityMetadata.extends(name, Object.getPrototypeOf(BaseClass).name);
+    entityMetadata.buildChainExtension(name, BaseClass);
 
     return BaseClass;
   };

@@ -1,5 +1,5 @@
 import { IEntityMetadata, IEntityProperty, IEntityPropertyMetadata, IRelationMetadata } from "./Definition/EntityMetadata";
-import { ObjectType } from "typeorm";
+import { ObjectLiteral, ObjectType } from "typeorm";
 import { Constructor } from "./MetadataTypes";
 import { EntityPropertyDataTypes } from "./Definition/DataTypes";
 
@@ -110,6 +110,30 @@ export default class EntityDefinition {
     if (extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
       this._entities[entity].extends = extendedEntity;
     }
+    return this;
+  }
+
+  /**
+   * Method used to define the parent entity of the current entity.
+   *
+   * @param entity The entity on which we add information.
+   * @param baseClass The actual entity class.
+   */
+  public buildChainExtension(entity, baseClass: Constructor | ObjectLiteral): EntityDefinition {
+    let name = entity;
+    let prototypeObject = Object.getPrototypeOf(baseClass);
+
+    do {
+      this.extends(name, prototypeObject.name);
+      name = prototypeObject.name;
+      prototypeObject = Object.getPrototypeOf(prototypeObject);
+    } while (
+      prototypeObject &&
+      prototypeObject.name &&
+      prototypeObject.name.toLowerCase() !== "object" &&
+      prototypeObject.name.toLowerCase() !== "baseentity"
+    );
+
     return this;
   }
 
