@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.5](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
+[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
 
 # Class: ContextAPI<BodyRequest\>
 
@@ -28,6 +28,7 @@ and specific data types.
 - [body](Router_ContextAPI.ContextAPI.md#body)
 - [files](Router_ContextAPI.ContextAPI.md#files)
 - [headers](Router_ContextAPI.ContextAPI.md#headers)
+- [language](Router_ContextAPI.ContextAPI.md#language)
 - [pageURL](Router_ContextAPI.ContextAPI.md#pageurl)
 - [parameters](Router_ContextAPI.ContextAPI.md#parameters)
 - [queryParameters](Router_ContextAPI.ContextAPI.md#queryparameters)
@@ -122,6 +123,18 @@ Getter for the list of Headers exposed by the endpoint.
 #### Returns
 
 `Record`<`string`, `string`\>
+
+___
+
+### language
+
+• `get` **language**(): `string`
+
+Getter for the language used in the request.
+
+#### Returns
+
+`string`
 
 ___
 

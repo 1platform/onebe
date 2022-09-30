@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.5](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
+[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Authentication/AuthDecorators
 
 # Module: Authentication/AuthDecorators
 

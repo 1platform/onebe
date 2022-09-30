@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.5](../README.md) / [Exports](../modules.md) / [Services/ServiceWithRepository](../modules/Services_ServiceWithRepository.md) / ServiceWithRepository
+[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [Services/ServiceWithRepository](../modules/Services_ServiceWithRepository.md) / ServiceWithRepository
 
 # Class: ServiceWithRepository<Entity\>
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.5](../README.md) / [Exports](../modules.md) / [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md) / IMFAConfiguration
+[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md) / IMFAConfiguration
 
 # Interface: IMFAConfiguration
 
