@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.6
+
+🌟 Improvements:
+
+- Export the language used in the request.
+
 ## Version 2.1.5
 
 🔧 Bugfix:

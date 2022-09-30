@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { ParsedQs } from "qs";
 import { UploadedFile } from "../Middlewares/MulterMiddleware";
 import { StringMap, TOptions } from "i18next";
+import Config from "../System/Config";
 
 /**
  * Endpoint request Context information class.
@@ -116,6 +117,13 @@ export default class ContextAPI<BodyRequest = any> {
    */
   public get sessionID(): string {
     return this._request.sessionID;
+  }
+
+  /**
+   * Getter for the language used in the request.
+   */
+  public get language(): string {
+    return this._request.t ? this._request.language : Config.string("i18n.defaultLang", "en");
   }
 
   /**
