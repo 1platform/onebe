@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Commands/Utils/serviceFile
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Commands/Utils/serviceFile
 
 # Module: Commands/Utils/serviceFile
 
@@ -21,7 +21,7 @@ Function used to create a new service.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `serviceName` | `string` | The name of the service. |
-| `options?` | `Record`<`string`, `string` \| `boolean`\> | Options used to enable/disable various functionalities in the generated service. |
+| `options?` | `Record`<`string`, `string` \| `boolean` \| `string`[]\> | Options used to enable/disable various functionalities in the generated service. |
 
 #### Returns
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EntityDecorators
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EntityDecorators
 
 # Module: Documentation/Decorators/EntityDecorators
 
@@ -13,6 +13,7 @@
 - [Entity](Documentation_Decorators_EntityDecorators.md#entity)
 - [EntityArrayProperty](Documentation_Decorators_EntityDecorators.md#entityarrayproperty)
 - [EntityProperty](Documentation_Decorators_EntityDecorators.md#entityproperty)
+- [Extends](Documentation_Decorators_EntityDecorators.md#extends)
 - [IntegerProperty](Documentation_Decorators_EntityDecorators.md#integerproperty)
 - [IsRequired](Documentation_Decorators_EntityDecorators.md#isrequired)
 - [NumberProperty](Documentation_Decorators_EntityDecorators.md#numberproperty)
@@ -174,6 +175,37 @@ Decorator used to describe a property of a custom entity that references another
 #### Returns
 
 `PropertyDecorator`
+
+___
+
+### Extends
+
+▸ **Extends**<`T`\>(...`entities`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+Decorator used to add what entity it extends to the entity.
+
+Using this decorator we can give additional information to a custom entity
+about what other entity it extends. When the Documentation API is exposing
+the metadata, it will look in the hierarchy of the class and list
+all the properties in one place.
+
+**`Decorator`**
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...entities` | `string`[] | The name of the entities extended |
+
+#### Returns
+
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 ___
 

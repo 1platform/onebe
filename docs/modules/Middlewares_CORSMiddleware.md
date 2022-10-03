@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Middlewares/CORSMiddleware
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Middlewares/CORSMiddleware
 
 # Module: Middlewares/CORSMiddleware
 

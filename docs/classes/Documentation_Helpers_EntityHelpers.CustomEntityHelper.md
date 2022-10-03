@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
 
 # Class: CustomEntityHelper
 
@@ -165,7 +165,7 @@ ___
 
 ### extends
 
-▸ **extends**(`baseClass`): [`CustomEntityHelper`](Documentation_Helpers_EntityHelpers.CustomEntityHelper.md)
+▸ **extends**(...`baseClasses`): [`CustomEntityHelper`](Documentation_Helpers_EntityHelpers.CustomEntityHelper.md)
 
 Helper method used to define the class that the custom entity you are documenting
 is extending.
@@ -174,7 +174,7 @@ is extending.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `baseClass` | `string` | The name of the class you want to extend. |
+| `...baseClasses` | `string`[] | The name of the classes you want to extend. |
 
 #### Returns
 

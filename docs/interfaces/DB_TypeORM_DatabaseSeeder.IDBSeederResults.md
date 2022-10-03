@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [DB/TypeORM/DatabaseSeeder](../modules/DB_TypeORM_DatabaseSeeder.md) / IDBSeederResults
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / [DB/TypeORM/DatabaseSeeder](../modules/DB_TypeORM_DatabaseSeeder.md) / IDBSeederResults
 
 # Interface: IDBSeederResults
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IEntityMetadata
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IEntityMetadata
 
 # Interface: IEntityMetadata
 
@@ -29,9 +29,9 @@ ___
 
 ### extends
 
-• `Optional` **extends**: `string`
+• `Optional` **extends**: `string`[]
 
-The name of the entity our entity extends from.
+The list of the entities our entity extends from.
 
 ___
 

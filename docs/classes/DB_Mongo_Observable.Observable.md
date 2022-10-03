@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / Observable
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / Observable
 
 # Class: Observable
 

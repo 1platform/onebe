@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Column
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Column
 
 # Module: DB/TypeORM/Decorators/Column
 

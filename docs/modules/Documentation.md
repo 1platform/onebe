@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Documentation
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Documentation
 
 # Module: Documentation
 
@@ -24,6 +24,7 @@
 - [EntityHelpers](Documentation.md#entityhelpers)
 - [EntityProperty](Documentation.md#entityproperty)
 - [EntityPropertyDataTypes](Documentation.md#entitypropertydatatypes)
+- [Extends](Documentation.md#extends)
 - [GetDocs](Documentation.md#getdocs)
 - [GetRoutes](Documentation.md#getroutes)
 - [IntegerProperty](Documentation.md#integerproperty)
@@ -144,6 +145,12 @@ ___
 ### EntityPropertyDataTypes
 
 Re-exports [EntityPropertyDataTypes](../enums/Documentation_Definition_DataTypes.EntityPropertyDataTypes.md)
+
+___
+
+### Extends
+
+Re-exports [Extends](Documentation_Decorators_EntityDecorators.md#extends)
 
 ___
 

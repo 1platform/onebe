@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / Documentation/Helpers/EntityHelpers
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Documentation/Helpers/EntityHelpers
 
 # Module: Documentation/Helpers/EntityHelpers
 
@@ -31,7 +31,7 @@ Helper functions to document custom entities using interfaces.
 | `entity` | (`name`: `string`, `description?`: `string`) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
 | `entityArrayProperty` | (`entityName`: `string`, `propertyName`: `string`, `referenceEntityName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
 | `entityProperty` | (`entityName`: `string`, `propertyName`: `string`, `referenceEntityName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
-| `extends` | (`entityName`: `string`, `baseEntity`: `string`) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
+| `extends` | (`entityName`: `string`, ...`baseEntities`: `string`[]) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
 | `integerProperty` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
 | `numberProperty` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |
 | `property` | (`entityName`: `string`, `propertyName`: `string`, `propertyOptions`: [`IEntityProperty`](../interfaces/Documentation_Definition_EntityMetadata.IEntityProperty.md)) => [`CustomEntityHelper`](../classes/Documentation_Helpers_EntityHelpers.CustomEntityHelper.md) |

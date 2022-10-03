@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.6](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
+[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
 
 # Class: ServiceFullRepository<Entity, KeyType\>
 
