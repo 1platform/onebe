@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.7](../README.md) / [Exports](../modules.md) / Documentation/Definition/EntityMetadata
+[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / Documentation/Definition/EntityMetadata
 
 # Module: Documentation/Definition/EntityMetadata
 
