@@ -33,11 +33,13 @@ export default class EntityDefinition {
   public buildEntityList(): Array<IEntityMetadata> {
     return Object.keys(this._entities).map((entityName) => {
       const entity = { ...this._entities[entityName] };
-      entity.properties = [ ...(entity.properties || []) ];
-      if (entity.extends) {
+
+      const originalProperties = [ ...entity.properties ];
+      entity.properties = [];
+      if (entity.extends && entity.extends.length > 0) {
         entity.properties = entity.extends.reduce((accum, extender) => [ ...accum, ...this.getParentEntityProperties(extender) ], []);
-        entity.properties.push(...entity.properties);
       }
+      entity.properties.push(...originalProperties);
 
       delete entity.extends;
       return entity;
@@ -108,7 +110,7 @@ export default class EntityDefinition {
    * @param extendedEntity The entity from which we get additional information.
    */
   public extends(entity: string, extendedEntity: string): EntityDefinition {
-    if (extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
+    if (!!extendedEntity && extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
       if (!this._entities[entity].extends) {
         this._entities[entity].extends = [];
       }
@@ -374,7 +376,7 @@ export default class EntityDefinition {
   protected getParentEntityProperties(parentEntityName: string): Array<IEntityPropertyMetadata> {
     const parentEntity = this._entities[parentEntityName];
     const properties = [ ...(parentEntity.properties || []) ];
-    if (parentEntity.extends) {
+    if (parentEntity.extends && parentEntity.extends.length > 0) {
       const parentProperties = parentEntity.extends.reduce((accum, extender) => [ ...accum, ...this.getParentEntityProperties(extender) ], []);
       properties.unshift(...parentProperties);
     }

@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.9
+
+🔧 Bugfix:
+
+- Fix an issue with the extension generation in documentation.
+
 ## Version 2.1.8
 
 🔧 Bugfix:
