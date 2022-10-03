@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.8
+
+🔧 Bugfix:
+
+- Fix an issue with the folder structure generator for the service creation.
+
 ## Version 2.1.7
 
 🌟 Improvements:

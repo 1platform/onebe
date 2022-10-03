@@ -135,6 +135,6 @@ export default function createServiceFile(serviceName: string, options?: Record<
   const template = getServiceTemplate(serviceName, options || {});
   fs.writeFileSync(serviceFile, template, "utf-8");
 
-  addToIndex(serviceName, (options?.folder as string) ?? "");
+  addToIndex(serviceName, ((options?.folder as string[]) ?? []).join("/"));
   getDefaultLogger().info(`Service ${ chalk.blue(serviceFile) } has been generated successfully.`);
 }
