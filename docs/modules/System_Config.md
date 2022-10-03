@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / System/Config
+[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / System/Config
 
 # Module: System/Config
 

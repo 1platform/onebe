@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IEntityMetadata
+[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IEntityMetadata
 
 # Interface: IEntityMetadata
 

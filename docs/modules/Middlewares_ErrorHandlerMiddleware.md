@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / Middlewares/ErrorHandlerMiddleware
+[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / Middlewares/ErrorHandlerMiddleware
 
 # Module: Middlewares/ErrorHandlerMiddleware
 

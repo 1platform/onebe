@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / [Authentication/IUser](../modules/Authentication_IUser.md) / IUser
+[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / [Authentication/IUser](../modules/Authentication_IUser.md) / IUser
 
 # Interface: IUser
 

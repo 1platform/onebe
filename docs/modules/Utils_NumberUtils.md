@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.8](../README.md) / [Exports](../modules.md) / Utils/NumberUtils
+[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / Utils/NumberUtils
 
 # Module: Utils/NumberUtils
 
