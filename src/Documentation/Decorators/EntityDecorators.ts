@@ -27,6 +27,26 @@ export function Entity<T extends Constructor>(description?: string): ControllerD
 }
 
 /**
+ * Decorator used to add what entity it extends to the entity.
+ *
+ * Using this decorator we can give additional information to a custom entity
+ * about what other entity it extends. When the Documentation API is exposing
+ * the metadata, it will look in the hierarchy of the class and list
+ * all the properties in one place.
+ *
+ * @decorator
+ * @param entities The name of the entities extended
+ */
+export function Extends<T extends Constructor>(...entities: string[]): ControllerDecoratorFunction<T> {
+  return function (BaseClass: T): T {
+    const entityMetadata = MetadataStore.instance.entity;
+    entities.forEach((entity) => entityMetadata.extends(BaseClass.name, entity));
+
+    return BaseClass;
+  };
+}
+
+/**
  * Function used to document a property from an entity.
  *
  * @param entity The entity to be documented.

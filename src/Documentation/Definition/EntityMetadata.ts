@@ -60,9 +60,9 @@ export interface IEntityMetadata {
    */
   tableName?: string;
   /**
-   * The name of the entity our entity extends from.
+   * The list of the entities our entity extends from.
    */
-  extends?: string;
+  extends?: string[];
   /**
    * The description of the entity.
    */

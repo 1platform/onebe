@@ -28,11 +28,11 @@ export class CustomEntityHelper {
    * Helper method used to define the class that the custom entity you are documenting
    * is extending.
    *
-   * @param baseClass The name of the class you want to extend.
+   * @param baseClasses The name of the classes you want to extend.
    */
-  public extends(baseClass: string): CustomEntityHelper {
+  public extends(...baseClasses: string[]): CustomEntityHelper {
     const entityMetadata = MetadataStore.instance.entity;
-    entityMetadata.extends(this._entityName, baseClass);
+    baseClasses.forEach((baseClass) => entityMetadata.extends(this._entityName, baseClass));
 
     return this;
   }
@@ -199,11 +199,11 @@ const EntityHelpers = {
    * is extending.
    *
    * @param entityName The name of the entity you are documenting.
-   * @param baseEntity The name of the class you want to extend.
+   * @param baseEntities The name of the classes you want to extend.
    */
-  extends: (entityName: string, baseEntity: string): CustomEntityHelper => {
+  extends: (entityName: string, ...baseEntities: string[]): CustomEntityHelper => {
     const entityMetadata = MetadataStore.instance.entity;
-    entityMetadata.extends(entityName, baseEntity);
+    baseEntities.forEach((baseEntity) => entityMetadata.extends(entityName, baseEntity));
 
     return new CustomEntityHelper(entityName);
   },

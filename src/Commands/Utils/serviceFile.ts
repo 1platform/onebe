@@ -10,7 +10,7 @@ import Config from "../../System/Config";
  * @param serviceName The name of the service.
  * @param [options] Options used to enable/disable various functionalities in the generated service.
  */
-function getServiceTemplate(serviceName: string, options: Record<string, string | boolean> = {}): string {
+function getServiceTemplate(serviceName: string, options: Record<string, string | boolean | string[]> = {}): string {
   const baseImport = [];
   let serviceBaseName = "ServiceBase";
   let serviceBaseNameImport = "ServiceBase";
@@ -117,11 +117,11 @@ function addToIndex(serviceName: string, folder?: string): void {
  * @param serviceName The name of the service.
  * @param [options] Options used to enable/disable various functionalities in the generated service.
  */
-export default function createServiceFile(serviceName: string, options?: Record<string, boolean | string>): void {
+export default function createServiceFile(serviceName: string, options?: Record<string, boolean | string | string[]>): void {
   if (serviceName.toLowerCase().indexOf("service") >= 0) {
     serviceName = serviceName.substring(0, serviceName.toLowerCase().indexOf("service"));
   }
-  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), (options?.folder as string) ?? "", `${ serviceName }Service.ts`);
+  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), ...((options?.folder as string[]) ?? []), `${ serviceName }Service.ts`);
 
   if (!fs.existsSync(path.dirname(serviceFile))) {
     fs.mkdirSync(path.dirname(serviceFile), { recursive: true });

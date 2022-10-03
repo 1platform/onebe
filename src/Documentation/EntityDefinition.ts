@@ -35,7 +35,8 @@ export default class EntityDefinition {
       const entity = { ...this._entities[entityName] };
       entity.properties = [ ...(entity.properties || []) ];
       if (entity.extends) {
-        entity.properties = [ ...this.getParentEntityProperties(entity.extends), ...entity.properties ];
+        entity.properties = entity.extends.reduce((accum, extender) => [ ...accum, ...this.getParentEntityProperties(extender) ], []);
+        entity.properties.push(...entity.properties);
       }
 
       delete entity.extends;
@@ -54,7 +55,7 @@ export default class EntityDefinition {
       name: entity,
       description: description ?? "",
       properties: [],
-      extends: "",
+      extends: [],
     };
 
     return this;
@@ -108,7 +109,10 @@ export default class EntityDefinition {
    */
   public extends(entity: string, extendedEntity: string): EntityDefinition {
     if (extendedEntity.toLowerCase() !== "object" && extendedEntity.toLowerCase() !== "baseentity") {
-      this._entities[entity].extends = extendedEntity;
+      if (!this._entities[entity].extends) {
+        this._entities[entity].extends = [];
+      }
+      this._entities[entity].extends.push(extendedEntity);
     }
     return this;
   }
@@ -371,7 +375,8 @@ export default class EntityDefinition {
     const parentEntity = this._entities[parentEntityName];
     const properties = [ ...(parentEntity.properties || []) ];
     if (parentEntity.extends) {
-      properties.unshift(...this.getParentEntityProperties(parentEntity.extends));
+      const parentProperties = parentEntity.extends.reduce((accum, extender) => [ ...accum, ...this.getParentEntityProperties(extender) ], []);
+      properties.unshift(...parentProperties);
     }
     return properties;
   }
