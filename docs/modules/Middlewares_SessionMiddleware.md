@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.9](../README.md) / [Exports](../modules.md) / Middlewares/SessionMiddleware
+[OneBE Framework - v2.1.10](../README.md) / [Exports](../modules.md) / Middlewares/SessionMiddleware
 
 # Module: Middlewares/SessionMiddleware
 
