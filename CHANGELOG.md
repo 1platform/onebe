@@ -2,6 +2,16 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.1.10
+
+🌟 Improvements:
+
+- Cleanup the code.
+
+🔧 Bugfix:
+
+- Fix an issue when calling the logout method.
+
 ## Version 2.1.9
 
 🔧 Bugfix:
@@ -88,7 +98,7 @@ Here we will note all the changes made to the framework.
 
 🌟 Improvements:
 
-- Ability to add extra middlewares before endpoint execution (general code). 
+- Ability to add extra middlewares before endpoint execution (general code).
 
 🔧 Bugfix:
 
