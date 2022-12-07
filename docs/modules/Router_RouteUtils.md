@@ -13,7 +13,7 @@
 
 ### defineMiddleware
 
-▸ **defineMiddleware**(...`middlewares`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **defineMiddleware**(`...middlewares`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 Function used to create a middleware decorator.
 
@@ -31,7 +31,7 @@ ___
 
 ### getPath
 
-▸ **getPath**(...`pathElements`): `string`
+▸ **getPath**(`...pathElements`): `string`
 
 Function used to get the full URL based on the given partial URL path elements.
 

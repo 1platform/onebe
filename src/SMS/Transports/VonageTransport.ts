@@ -1,7 +1,8 @@
-import Vonage from "@vonage/server-sdk";
+import { Vonage } from "@vonage/server-sdk";
+import { Auth } from "@vonage/auth";
 import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
 import ISMSTransport from "./ISMSTransport";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * SMS Transport using the Vonage/Nexmo engine.
@@ -20,10 +21,12 @@ export default class VonageTransport implements ISMSTransport {
    * VonageTransport constructor
    */
   public constructor() {
-    this._vonage = new Vonage({
-      apiKey: Config.string("sms.config.account"),
-      apiSecret: Config.string("sms.config.password"),
-    });
+    this._vonage = new Vonage(
+      new Auth({
+        apiKey: Config.string("sms.config.account"),
+        apiSecret: Config.string("sms.config.password"),
+      })
+    );
   }
 
   /**
@@ -33,19 +36,21 @@ export default class VonageTransport implements ISMSTransport {
    * @param text The text of the message
    * @param from The sender of the message
    */
-  public send(to: string, text: string, from?: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-      this._vonage.message.sendSms(from || this._defaultPhone, to, text, {}, (err, responseData) => {
-        if (err) {
-          getDefaultLogger().error(err);
-          return;
-        }
-        if (responseData.messages[0]["status"] === "0") {
-          getDefaultLogger().info("Message sent successfully!");
-        } else {
-          getDefaultLogger().error(`Message failed with error: ${ responseData.messages[0]["error-text"] }`);
-        }
+  public async send(to: string, text: string, from?: string): Promise<void> {
+    try {
+      const response = await this._vonage.sms.send({
+        to,
+        from: from || this._defaultPhone,
+        text,
       });
-    });
+
+      if (response.messages[0]["status"] === "0") {
+        getDefaultLogger().info("Message sent successfully!");
+        return;
+      }
+      getDefaultLogger().error(`Message failed with error: ${ response.messages[0]["error-text"] }`);
+    } catch (err) {
+      getDefaultLogger().error(err);
+    }
   }
 }

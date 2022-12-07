@@ -1,9 +1,9 @@
-import { camelCase } from "../../Utils";
 import path from "path";
 import fs from "fs";
 import chalk from "chalk";
-import { getDefaultLogger } from "../../System/Logger";
-import Config from "../../System/Config";
+import { camelCase } from "@/Utils";
+import { getDefaultLogger } from "@/System/Logger";
+import Config from "@/System/Config";
 
 /**
  * Gets contents of the migration file.

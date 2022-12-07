@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { extractToken } from "../Authentication/JWT";
+import { extractToken } from "../Authentication";
 import { getDefaultLogger } from "../System/Logger";
 
 /**

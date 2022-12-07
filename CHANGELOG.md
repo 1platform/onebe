@@ -2,6 +2,20 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.0
+
+🚀 New:
+
+- Add support to make bulk inserts into the database using seeds command.
+
+🌟 Improvements:
+
+- Bump versions.
+- Upgrade yarn to 3.3.0.
+- Update the code documentation.
+- Update the way imports are done.
+- Update the Vonage SMS sending system.
+
 ## Version 2.1.10
 
 🌟 Improvements:

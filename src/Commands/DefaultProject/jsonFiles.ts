@@ -40,7 +40,7 @@ export function packageJsonFile(projectName: string, options: Partial<DefinePack
   const command = options.useYarn ? "yarn" : "npm run";
   return {
     name: projectName,
-    packageManager: options.useYarn && options.useYarnNew ? "yarn@3.2.3" : undefined,
+    packageManager: options.useYarn && options.useYarnNew ? "yarn@3.3.0" : undefined,
     private: true,
     description: options.description || "The base project from which other projects should be created.",
     version: options.version || "1.0.0",

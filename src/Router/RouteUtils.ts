@@ -1,4 +1,4 @@
-import { HTTPMiddleware } from "../HTTP/HTTPTypes";
+import { HTTPMiddleware } from "../HTTP";
 import Route from "./Route";
 import { RouteDecorator } from "./RouteTypes";
 

@@ -54,6 +54,7 @@ function createConfigFiles(basePath: string): void {
 
     let fileContents = fs.readFileSync(path.join(defaultFolder, file), "utf-8");
     fileContents = fileContents.replace(/from "\.\.\//gi, 'from "onebe/');
+    fileContents = fileContents.replace(/from "@\//gi, 'from "onebe/');
     fs.writeFileSync(path.join(basePath, file), fileContents, "utf-8");
     console.log(chalk.green(`    - src/config/${ file }`));
   }

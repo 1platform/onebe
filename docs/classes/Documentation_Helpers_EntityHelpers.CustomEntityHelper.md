@@ -165,7 +165,7 @@ ___
 
 ### extends
 
-▸ **extends**(...`baseClasses`): [`CustomEntityHelper`](Documentation_Helpers_EntityHelpers.CustomEntityHelper.md)
+▸ **extends**(`...baseClasses`): [`CustomEntityHelper`](Documentation_Helpers_EntityHelpers.CustomEntityHelper.md)
 
 Helper method used to define the class that the custom entity you are documenting
 is extending.

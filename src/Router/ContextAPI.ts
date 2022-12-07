@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ParsedQs } from "qs";
 import { UploadedFile } from "../Middlewares/MulterMiddleware";
-import { StringMap, TOptions } from "i18next";
+import type { TOptions } from "i18next";
 import Config from "../System/Config";
 
 /**
@@ -252,7 +252,7 @@ export default class ContextAPI<BodyRequest = any> {
    * @param key The message to be returned to the user.
    * @param [options] A map with parameters that is going to be applied to the message.
    */
-  public t(key: string, options?: TOptions<StringMap>): string {
+  public t(key: string, options?: TOptions): string {
     return this._request.t ? this._request.t(key, options) : key;
   }
 
@@ -262,7 +262,7 @@ export default class ContextAPI<BodyRequest = any> {
    * @param key The message to be returned to the user.
    * @param [options] A map with parameters that is going to be applied to the message.
    */
-  public translate(key: string, options?: TOptions<StringMap>): string {
+  public translate(key: string, options?: TOptions): string {
     return this.t(key, options);
   }
 }

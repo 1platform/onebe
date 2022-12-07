@@ -3,10 +3,10 @@ import path from "path";
 import chalk from "chalk";
 import fs from "fs";
 import { exec, spawn } from "child_process";
-import { snakeCase } from "../../Utils";
-import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "../DefaultProject/jsonFiles";
-import createFolders from "../DefaultProject/createFolders";
-import Env from "../../System/Env";
+import { snakeCase } from "@/Utils";
+import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "@/Commands/DefaultProject/jsonFiles";
+import createFolders from "@/Commands/DefaultProject/createFolders";
+import Env from "@/System/Env";
 
 /**
  * A list with additional options used for generating the project.
@@ -215,7 +215,7 @@ export default async function createProject(projectName?: string): Promise<void>
   } else if (answers.useYarnNew) {
     console.log(`\nSince you are using the latest release of ${ chalk.blue("yarn") }, we need to add it to the application.`);
     fs.mkdirSync(path.join(folder, ".yarn/releases"), { recursive: true });
-    fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarn-3.2.3.cjs"), path.join(folder, ".yarn/releases/yarn-3.2.3.cjs"));
+    fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarn-3.3.0.cjs"), path.join(folder, ".yarn/releases/yarn-3.3.0.cjs"));
     fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarnrc.yml.tpl"), path.join(folder, ".yarnrc.yml"));
   }
 

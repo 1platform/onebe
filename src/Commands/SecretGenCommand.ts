@@ -3,6 +3,11 @@ import fs from "fs";
 import path from "path";
 import { uuidV4 } from "../Utils";
 
+/**
+ * Function used to generate a new JWT secret.
+ *
+ * @param line The current line to be parsed.
+ */
 function parseLineJWT(line: string): string {
   if (line.indexOf("JWT_SECRET") < 0) {
     return line;
@@ -10,6 +15,12 @@ function parseLineJWT(line: string): string {
 
   return `JWT_SECRET="${ uuidV4() }"`;
 }
+
+/**
+ * Function used to generate a new SESSION secret.
+ *
+ * @param line The current line to be parsed.
+ */
 function parseLineSession(line: string): string {
   if (line.indexOf("SESSION_SECRET") < 0) {
     return line;
@@ -17,6 +28,12 @@ function parseLineSession(line: string): string {
 
   return `SESSION_SECRET="${ uuidV4() }"`;
 }
+
+/**
+ * Function used to generate a new UPLOAD secret.
+ *
+ * @param line The current line to be parsed.
+ */
 function parseLineUpload(line: string): string {
   if (line.indexOf("UPLOAD_SECRET") < 0) {
     return line;

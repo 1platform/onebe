@@ -15,6 +15,7 @@ import JobCreateCommand from "./Commands/JobCreateCommand";
 import EntityLoadCommand from "./Commands/EntityLoadCommand";
 import SecretGenCommand from "./Commands/SecretGenCommand";
 import ProjectCreateCommand from "./Commands/ProjectCreateCommand";
+import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
 
@@ -33,6 +34,7 @@ const yargsBase = yargs
   .command(new JobCreateCommand())
   .command(new EntityLoadCommand())
   .command(new SecretGenCommand())
-  .command(new ProjectCreateCommand());
+  .command(new ProjectCreateCommand())
+  .command(new DatabaseSeedCommand());
 
 yargsBase.recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv;

@@ -86,7 +86,7 @@ Logger.log
 
 ### debug
 
-▸ **debug**(`message`, ...`meta`): `Logger`
+▸ **debug**(`message`, `...meta`): `Logger`
 
 Method to log a debug message.
 
@@ -109,7 +109,7 @@ ___
 
 ### error
 
-▸ **error**(`message`, ...`meta`): `Logger`
+▸ **error**(`message`, `...meta`): `Logger`
 
 Method to log an error message.
 
@@ -132,7 +132,7 @@ ___
 
 ### info
 
-▸ **info**(`message`, ...`meta`): `Logger`
+▸ **info**(`message`, `...meta`): `Logger`
 
 Method to log an information message.
 
@@ -155,7 +155,7 @@ ___
 
 ### silly
 
-▸ **silly**(`message`, ...`meta`): `Logger`
+▸ **silly**(`message`, `...meta`): `Logger`
 
 Method to log a silly message.
 
@@ -178,7 +178,7 @@ ___
 
 ### verbose
 
-▸ **verbose**(`message`, ...`meta`): `Logger`
+▸ **verbose**(`message`, `...meta`): `Logger`
 
 Method to log a verbose message.
 
@@ -201,7 +201,7 @@ ___
 
 ### warn
 
-▸ **warn**(`message`, ...`meta`): `Logger`
+▸ **warn**(`message`, `...meta`): `Logger`
 
 Method to log a warning message.
 

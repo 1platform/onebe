@@ -22,7 +22,7 @@
 
 #### Type declaration
 
-• **new Constructor**(...`args`): `T`
+• **new Constructor**(`...args`): `T`
 
 Type used to define a Class with a constructor.
 

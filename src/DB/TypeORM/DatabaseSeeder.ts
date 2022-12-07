@@ -1,7 +1,7 @@
 import { EntityTarget } from "typeorm";
-import { defaultConnection } from "../index";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
-import { Constructor } from "../../Documentation/MetadataTypes";
+import { defaultConnection } from "@/DB";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * Interface used to describe the response returned by the Database Seeder.

@@ -135,7 +135,7 @@ ___
 
 ### preRunMiddleware
 
-▸ **preRunMiddleware**(...`middlewares`): `void`
+▸ **preRunMiddleware**(`...middlewares`): `void`
 
 Add extra middlewares to be run before the actual code of each endpoint.
 

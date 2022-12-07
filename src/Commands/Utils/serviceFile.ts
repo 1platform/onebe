@@ -37,7 +37,7 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
 
     const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
     baseImport.push(`import ${ options.repository } from "${ importPath }";`);
-    superParameters = `${ options.repository }`;
+    superParameters = options.repository as string;
   }
 
   baseImport.unshift(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);

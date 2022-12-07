@@ -1,5 +1,5 @@
 import HTTPStatus from "../HTTP/HTTPStatus";
-import { HTTPMiddleware } from "../HTTP/HTTPTypes";
+import { HTTPMiddleware } from "../HTTP";
 import Route from "./Route";
 import { IResponse } from "./RouteInterfaces";
 import { Constructor } from "../Documentation/MetadataTypes";

@@ -47,7 +47,7 @@ ___
 
 ### NamedFilesUpload
 
-▸ **NamedFilesUpload**(...`names`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+▸ **NamedFilesUpload**(`...names`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
 
 Decorator to add the Multiple file upload with different names middleware.
 
@@ -87,7 +87,7 @@ ___
 
 ### getDestinationFolder
 
-▸ **getDestinationFolder**(...`pathLike`): `string`
+▸ **getDestinationFolder**(`...pathLike`): `string`
 
 Function used to get the destination folder/file from the upload destination folder.
 

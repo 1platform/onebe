@@ -180,7 +180,7 @@ ___
 
 ### Extends
 
-▸ **Extends**<`T`\>(...`entities`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+▸ **Extends**<`T`\>(`...entities`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
 
 Decorator used to add what entity it extends to the entity.
 

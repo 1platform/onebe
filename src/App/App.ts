@@ -1,7 +1,7 @@
-import Config from "../System/Config";
-import { getVersion } from "../version";
-import IAppInfo from "./IAppInfo";
-import { Constructor } from "../Documentation/MetadataTypes";
+import Config from "@/System/Config";
+import { getVersion } from "@/version";
+import IAppInfo from "@/App/IAppInfo";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * Custom type used to define an Object element that can be added to the

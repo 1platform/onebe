@@ -1,4 +1,4 @@
-import HTTPVerb from "../HTTP/HTTPVerb";
+import { HTTPVerb } from "../HTTP";
 import Route from "./Route";
 import { RouteDecorator } from "./RouteTypes";
 import MetadataStore from "../Documentation/MetadataStore";

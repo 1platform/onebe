@@ -30,7 +30,7 @@ ___
 
 #### Type declaration
 
-▸ (...`args`): `any`
+▸ (`...args`): `any`
 
 Custom type used to define Functions that can be added to the Application
 object and reused throughout the application.
