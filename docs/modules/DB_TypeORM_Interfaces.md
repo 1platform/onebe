@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.10](../README.md) / [Exports](../modules.md) / DB/TypeORM/Interfaces
+[OneBE Framework - v2.2.0](../README.md) / [Exports](../modules.md) / DB/TypeORM/Interfaces
 
 # Module: DB/TypeORM/Interfaces
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.1.10](../README.md) / [Exports](../modules.md) / SMS/SMSService
+[OneBE Framework - v2.2.0](../README.md) / [Exports](../modules.md) / SMS/SMSService
 
 # Module: SMS/SMSService
 
