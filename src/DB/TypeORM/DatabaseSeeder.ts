@@ -2,20 +2,7 @@ import { EntityTarget } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 import { defaultConnection } from "@/DB";
 import { Constructor } from "@/Documentation/MetadataTypes";
-
-/**
- * Interface used to describe the response returned by the Database Seeder.
- */
-export interface IDBSeederResults {
-  /**
-   * How many records were deleted.
-   */
-  deleted: number;
-  /**
-   * How many records were created.
-   */
-  created: number;
-}
+import { IDBSeederResults } from "@/DB/TypeORM/Interfaces";
 
 /**
  * Function used to seed the Database for a given entity.

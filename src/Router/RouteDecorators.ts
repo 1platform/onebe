@@ -1,9 +1,9 @@
-import Config from "../System/Config";
-import { getDefaultLogger } from "../System/Logger";
-import { ControllerDecorator, ControllerDecoratorFunction } from "./RouteTypes";
-import { Constructor } from "../Documentation/MetadataTypes";
-import MetadataStore from "../Documentation/MetadataStore";
-import { Router } from "./index";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
+import { ControllerDecorator, ControllerDecoratorFunction } from "@/Router/RouteTypes";
+import { Constructor } from "@/Documentation/MetadataTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { Router } from "@/Router/index";
 
 /**
  * Decorator used to define the path the controller will handle.

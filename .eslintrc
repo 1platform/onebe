@@ -12,7 +12,8 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "@limegrass/import-alias"
   ],
   "rules": {
     "indent": "off",
@@ -82,6 +83,7 @@
       {
         "arraysInArrays": false
       }
-    ]
+    ],
+    "@limegrass/import-alias/import-alias": "error"
   }
 }

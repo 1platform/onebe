@@ -1,9 +1,9 @@
 import path from "path";
 import fs from "fs";
 import chalk from "chalk";
-import createMigrationFile from "./migrationFile";
-import { getDefaultLogger } from "../../System/Logger";
-import Config from "../../System/Config";
+import createMigrationFile from "@/Commands/Utils/migrationFile";
+import { getDefaultLogger } from "@/System/Logger";
+import Config from "@/System/Config";
 
 /**
  * Gets contents of the entity file.

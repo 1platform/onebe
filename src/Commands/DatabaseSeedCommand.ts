@@ -2,7 +2,7 @@ import { Arguments, Argv, CommandModule } from "yargs";
 import { DataSource } from "typeorm";
 import { getDefaultLogger } from "@/System/Logger";
 import initConnection from "@/Commands/Utils/initConnection";
-import buildSeedFlow from "@/Commands/Utils/buildSeedFlow";
+import FullDBSeed from "@/DB/TypeORM/FullDBSeed";
 
 /**
  * CLI Command to load data into the database.
@@ -52,7 +52,7 @@ export default class DatabaseSeedCommand implements CommandModule {
         return;
       }
 
-      await buildSeedFlow(args.truncate || false);
+      await FullDBSeed(args.truncate || false);
       await connection.destroy();
     } catch (err) {
       getDefaultLogger().error(`Unable to seed the database. Error: ${ err.message }`);

@@ -1,6 +1,6 @@
-import { HTTPMiddleware } from "../HTTP";
-import Route from "./Route";
-import { RouteDecorator } from "./RouteTypes";
+import { HTTPMiddleware } from "@/HTTP";
+import Route from "@/Router/Route";
+import { RouteDecorator } from "@/Router/RouteTypes";
 
 /**
  * Function used to create a middleware decorator.

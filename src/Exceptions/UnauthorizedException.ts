@@ -1,5 +1,5 @@
-import HTTPStatus from "../HTTP/HTTPStatus";
-import HTTPError from "./HTTPError";
+import HTTPStatus from "@/HTTP/HTTPStatus";
+import HTTPError from "@/Exceptions/HTTPError";
 
 /**
  * Exception thrown when a user isn't authorized to perform the action.

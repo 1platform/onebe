@@ -1,8 +1,8 @@
-import HTTPVerb from "../../HTTP/HTTPVerb";
-import { HTTPMiddleware } from "../../HTTP/HTTPTypes";
-import { AppMethod, ResponseValue } from "../../Router/RouteTypes";
-import HTTPStatus from "../../HTTP/HTTPStatus";
-import { BodyParameterType, QueryParameterType } from "./DataTypes";
+import HTTPVerb from "@/HTTP/HTTPVerb";
+import { HTTPMiddleware } from "@/HTTP/HTTPTypes";
+import { AppMethod, ResponseValue } from "@/Router/RouteTypes";
+import HTTPStatus from "@/HTTP/HTTPStatus";
+import { BodyParameterType, QueryParameterType } from "@/Documentation/Definition/DataTypes";
 
 /**
  * Interface describing an object that is passed as options when

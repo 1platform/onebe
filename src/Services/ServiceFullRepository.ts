@@ -1,5 +1,5 @@
 import { DeepPartial, ObjectLiteral } from "typeorm";
-import ServiceReadRepository from "./ServiceReadRepository";
+import ServiceReadRepository from "@/Services/ServiceReadRepository";
 
 /**
  * The base class for your services that are using a database table.

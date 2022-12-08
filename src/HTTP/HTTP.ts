@@ -1,12 +1,12 @@
 import express, { Application } from "express";
 import { Server } from "http";
 import helmet from "helmet";
-import IMiddleware from "../Middlewares/IMiddleware";
-import Middlewares from "../Middlewares";
-import { Router } from "../Router";
-import ErrorHandlerMiddleware from "../Middlewares/ErrorHandlerMiddleware";
-import { getDefaultLogger } from "../System/Logger";
-import Config from "../System/Config";
+import IMiddleware from "@/Middlewares/IMiddleware";
+import Middlewares from "@/Middlewares";
+import { Router } from "@/Router";
+import ErrorHandlerMiddleware from "@/Middlewares/ErrorHandlerMiddleware";
+import { getDefaultLogger } from "@/System/Logger";
+import Config from "@/System/Config";
 
 /**
  * The HTTP service used to create the HTTP server.

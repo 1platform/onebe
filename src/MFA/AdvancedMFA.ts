@@ -1,6 +1,6 @@
 import QRCode from "qrcode";
 import speakeasy from "speakeasy";
-import app from "../App";
+import app from "@/App";
 
 /**
  * Multi-Factor Authentication configuration object that is used when configuring

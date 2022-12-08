@@ -1,6 +1,6 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import { camelCase } from "../Utils";
-import createJobFile from "./Utils/jobFile";
+import { camelCase } from "@/Utils";
+import createJobFile from "@/Commands/Utils/jobFile";
 
 /**
  * CLI Command to create a new job.

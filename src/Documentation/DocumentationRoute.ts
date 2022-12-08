@@ -1,11 +1,11 @@
-import type { IResponse } from "../Router";
-import { Docs, GET, Path, Route } from "../Router";
-import SwaggerUI from "./Swagger/SwaggerUI";
-import Config from "../System/Config";
-import { DocsType, Endpoint, EntityHelpers, EntityPropertyDataTypes, GetDocs, GetRoutes } from "./index";
-import app from "../App";
-import { getDefaultLogger } from "../System/Logger";
-import { HTTPStatus } from "../HTTP";
+import type { IResponse } from "@/Router";
+import { Docs, GET, Path, Route } from "@/Router";
+import SwaggerUI from "@/Documentation/Swagger/SwaggerUI";
+import Config from "@/System/Config";
+import { DocsType, Endpoint, EntityHelpers, EntityPropertyDataTypes, GetDocs, GetRoutes } from "@/Documentation/index";
+import app from "@/App";
+import { getDefaultLogger } from "@/System/Logger";
+import { HTTPStatus } from "@/HTTP";
 
 EntityHelpers.entity("ApplicationInformation", "Basic information about the application")
   .property("name", { description: "The name of the application", dataType: EntityPropertyDataTypes.STRING })

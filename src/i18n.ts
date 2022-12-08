@@ -4,7 +4,7 @@ import Backend from "i18next-fs-backend";
 import type { I18NextRequest } from "i18next-http-middleware";
 import { LanguageDetector } from "i18next-http-middleware";
 import path from "path";
-import Config from "./System/Config";
+import Config from "@/System/Config";
 
 export type { I18n, TFunction, I18NextRequest };
 export { i18next };

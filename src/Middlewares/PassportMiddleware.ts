@@ -1,6 +1,6 @@
 import { Application } from "express";
 import passport from "passport";
-import IMiddleware from "./IMiddleware";
+import IMiddleware from "@/Middlewares/IMiddleware";
 
 /**
  * Middleware used to initialize the passport engine for the authentication

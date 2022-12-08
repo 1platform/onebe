@@ -1,6 +1,6 @@
-import Env from "../System/Env";
-import type IConfig from "../System/IConfig";
-import { getVersion } from "../version";
+import Env from "@/System/Env";
+import type IConfig from "@/System/IConfig";
+import { getVersion } from "@/version";
 
 /**
  * The Application configuration object.

@@ -1,6 +1,6 @@
-import MetadataStore from "../MetadataStore";
-import { IEntityProperty } from "../Definition/EntityMetadata";
-import { EntityPropertyDataTypes } from "../Definition/DataTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { IEntityProperty } from "@/Documentation/Definition/EntityMetadata";
+import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
 
 /**
  * Helper class used to document a custom entity. Use this class only when you want

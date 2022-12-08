@@ -7,11 +7,11 @@ import {
   IEndpointResponse,
   IEndpointThrowResponse,
   IRouteMetadata,
-} from "../../Definition/RouteMetadata";
-import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "../../Definition/DataTypes";
-import { HTTPStatus } from "../../../HTTP";
-import { getPath } from "../../../Router";
-import MetadataStore from "../../MetadataStore";
+} from "@/Documentation/Definition/RouteMetadata";
+import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "@/Documentation/Definition/DataTypes";
+import { HTTPStatus } from "@/HTTP";
+import { getPath } from "@/Router";
+import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * Swagger Routes Builder tool.

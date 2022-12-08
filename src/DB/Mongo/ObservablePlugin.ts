@@ -1,6 +1,6 @@
 import { CallbackError, Model, Schema } from "mongoose";
-import { getDefaultLogger } from "../../System/Logger";
-import Observable from "./Observable";
+import { getDefaultLogger } from "@/System/Logger";
+import Observable from "@/DB/Mongo/Observable";
 
 /**
  * The observer instance we use to observe database changes.

@@ -1,9 +1,9 @@
 import path from "path";
 import fs from "fs";
 import chalk from "chalk";
-import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
-import { camelCase, snakeCase } from "../../Utils";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
+import { camelCase, snakeCase } from "@/Utils";
 
 /**
  * Gets contents of the route file.

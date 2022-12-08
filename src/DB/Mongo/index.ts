@@ -1,7 +1,7 @@
 import { MongoError } from "mongodb";
 import mongoose from "mongoose";
-import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * Mongo connection handler class.

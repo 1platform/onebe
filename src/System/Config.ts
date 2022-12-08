@@ -1,7 +1,7 @@
 import consign from "consign";
 import { merge } from "lodash";
-import defaultConfig from "../defaults";
-import IConfig from "./IConfig";
+import defaultConfig from "@/defaults";
+import IConfig from "@/System/IConfig";
 
 /**
  * Configuration store, used to fetch (and store) configuration parameters that

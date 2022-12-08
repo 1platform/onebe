@@ -1,7 +1,7 @@
-import { IEntityMetadata } from "./Definition/EntityMetadata";
-import EntityDefinition from "./EntityDefinition";
-import { IRouteMetadata } from "./Definition/RouteMetadata";
-import RouteDefinition from "./RouteDefinition";
+import { IEntityMetadata } from "@/Documentation/Definition/EntityMetadata";
+import EntityDefinition from "@/Documentation/EntityDefinition";
+import { IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
+import RouteDefinition from "@/Documentation/RouteDefinition";
 
 /**
  * A store where you can document the entities and routes of your application.

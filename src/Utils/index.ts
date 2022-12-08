@@ -1,3 +1,3 @@
-export * from "./NumberUtils";
-export * from "./OtherUtils";
-export * from "./StringUtils";
+export * from "@/Utils/NumberUtils";
+export * from "@/Utils/OtherUtils";
+export * from "@/Utils/StringUtils";

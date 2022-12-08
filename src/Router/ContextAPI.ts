@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { ParsedQs } from "qs";
-import { UploadedFile } from "../Middlewares/MulterMiddleware";
+import { UploadedFile } from "@/Middlewares/MulterMiddleware";
 import type { TOptions } from "i18next";
-import Config from "../System/Config";
+import Config from "@/System/Config";
 
 /**
  * Endpoint request Context information class.

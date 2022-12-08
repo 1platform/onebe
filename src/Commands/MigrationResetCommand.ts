@@ -1,7 +1,7 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import initConnection from "./Utils/initConnection";
 import { DataSource, MigrationExecutor } from "typeorm";
-import { getDefaultLogger } from "../System/Logger";
+import initConnection from "@/Commands/Utils/initConnection";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * CLI Command used to reset the database to the original state.

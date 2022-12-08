@@ -1,9 +1,9 @@
-import ServiceBase from "../Services/ServiceBase";
-import Config from "../System/Config";
-import ISMSTransport from "./Transports/ISMSTransport";
-import TwilioTransport from "./Transports/TwilioTransport";
-import VonageTransport from "./Transports/VonageTransport";
-import SMSProvider from "./SMSProvider";
+import ServiceBase from "@/Services/ServiceBase";
+import Config from "@/System/Config";
+import ISMSTransport from "@/SMS/Transports/ISMSTransport";
+import TwilioTransport from "@/SMS/Transports/TwilioTransport";
+import VonageTransport from "@/SMS/Transports/VonageTransport";
+import SMSProvider from "@/SMS/SMSProvider";
 
 /**
  * Service used to handle SMS Sending from the application.

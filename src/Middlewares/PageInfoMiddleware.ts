@@ -1,5 +1,5 @@
 import { Application, NextFunction, Request, Response } from "express";
-import IMiddleware from "./IMiddleware";
+import IMiddleware from "@/Middlewares/IMiddleware";
 
 /**
  * Middleware that adds additional information to the request object. Through this

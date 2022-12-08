@@ -7,6 +7,8 @@ Here we will note all the changes made to the framework.
 🚀 New:
 
 - Add support to make bulk inserts into the database using seeds command.
+- Export the option to get a Twilio Client.
+- Export the option to get a Vonage Client.
 
 🌟 Improvements:
 

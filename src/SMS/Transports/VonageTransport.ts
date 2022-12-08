@@ -1,8 +1,8 @@
 import { Vonage } from "@vonage/server-sdk";
-import { Auth } from "@vonage/auth";
-import Config from "../../System/Config";
-import ISMSTransport from "./ISMSTransport";
+import Config from "@/System/Config";
+import ISMSTransport from "@/SMS/Transports/ISMSTransport";
 import { getDefaultLogger } from "@/System/Logger";
+import { getVonageClient } from "@/SMS/getMessagingClient";
 
 /**
  * SMS Transport using the Vonage/Nexmo engine.
@@ -21,12 +21,10 @@ export default class VonageTransport implements ISMSTransport {
    * VonageTransport constructor
    */
   public constructor() {
-    this._vonage = new Vonage(
-      new Auth({
-        apiKey: Config.string("sms.config.account"),
-        apiSecret: Config.string("sms.config.password"),
-      })
-    );
+    this._vonage = getVonageClient({
+      account: Config.string("sms.config.account"),
+      password: Config.string("sms.config.password"),
+    });
   }
 
   /**

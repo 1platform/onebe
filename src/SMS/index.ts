@@ -1,3 +1,3 @@
-export * from "./Transports";
-export { default as SMSService } from "./SMSService";
-export { default as SMSProvider } from "./SMSProvider";
+export * from "@/SMS/Transports";
+export { default as SMSService } from "@/SMS/SMSService";
+export { default as SMSProvider } from "@/SMS/SMSProvider";

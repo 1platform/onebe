@@ -1,8 +1,8 @@
 import { Application } from "express";
 import morgan from "morgan";
-import { getDefaultLogger } from "../System/Logger";
-import IMiddleware from "./IMiddleware";
-import Config from "../System/Config";
+import { getDefaultLogger } from "@/System/Logger";
+import IMiddleware from "@/Middlewares/IMiddleware";
+import Config from "@/System/Config";
 
 /**
  * Middleware used to add logging support to the Express application.

@@ -1,11 +1,11 @@
-import BodyParserMiddleware from "./BodyParserMiddleware";
-import CORSMiddleware from "./CORSMiddleware";
-import I18nMiddleware from "./I18NMiddleware";
-import LoggerMiddleware from "./LoggerMiddleware";
-import PageInfoMiddleware from "./PageInfoMiddleware";
-import PassportMiddleware from "./PassportMiddleware";
-import SessionMiddleware from "./SessionMiddleware";
-import OneBEMiddleware from "./OneBEMiddleware";
+import BodyParserMiddleware from "@/Middlewares/BodyParserMiddleware";
+import CORSMiddleware from "@/Middlewares/CORSMiddleware";
+import I18nMiddleware from "@/Middlewares/I18NMiddleware";
+import LoggerMiddleware from "@/Middlewares/LoggerMiddleware";
+import PageInfoMiddleware from "@/Middlewares/PageInfoMiddleware";
+import PassportMiddleware from "@/Middlewares/PassportMiddleware";
+import SessionMiddleware from "@/Middlewares/SessionMiddleware";
+import OneBEMiddleware from "@/Middlewares/OneBEMiddleware";
 
 /**
  * A list containing middlewares to be loaded in the application automatically.

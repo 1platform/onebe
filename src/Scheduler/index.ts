@@ -1,6 +1,6 @@
 import { schedule } from "node-cron";
-import { getDefaultLogger } from "../System/Logger";
-import IScheduleDefinition, { TRunner, TRunnerAsync } from "./IScheduleDefinition";
+import { getDefaultLogger } from "@/System/Logger";
+import IScheduleDefinition, { TRunner, TRunnerAsync } from "@/Scheduler/IScheduleDefinition";
 
 /**
  * Task scheduler that runs the various background jobs registered in the application.

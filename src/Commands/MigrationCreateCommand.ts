@@ -1,5 +1,5 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import createMigrationFile from "./Utils/migrationFile";
+import createMigrationFile from "@/Commands/Utils/migrationFile";
 
 /**
  * CLI Command used to create a new migration.

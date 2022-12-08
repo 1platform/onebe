@@ -85,6 +85,7 @@ export function packageJsonFile(projectName: string, options: Partial<DefinePack
       "@babel/preset-env": "^7.16.11",
       "@babel/preset-typescript": "^7.16.7",
       "@babel/register": "^7.17.7",
+      "@limegrass/eslint-plugin-import-alias": "^1.0.6",
       "@types/joi": "^17.2.3",
       "@types/lodash": "^4.14.181",
       "@types/luxon": "^3.0.0",
@@ -99,10 +100,10 @@ export function packageJsonFile(projectName: string, options: Partial<DefinePack
       "eslint": "^8.13.0",
       "eslint-plugin-import": "^2.26.0",
       "husky": "^8.0.0",
-      "i18next-json-sync": "^2.3.1",
-      "nodemon": "^2.0.19",
-      "prettier": "^2.7.1",
-      "typescript": "^4.7.4",
+      "i18next-json-sync": "^2.3",
+      "nodemon": "^2.0",
+      "prettier": "^2.8",
+      "typescript": "^4.9",
     },
   };
 }

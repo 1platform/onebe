@@ -1,15 +1,15 @@
-import type IConfig from "../System/IConfig";
-import api from "./api";
-import app from "./app";
-import auth from "./auth";
-import db from "./db";
-import docs from "./docs";
-import email from "./email";
-import http from "./http";
-import i18n from "./i18n";
-import logs from "./logs";
-import sms from "./sms";
-import upload from "./upload";
+import type IConfig from "@/System/IConfig";
+import api from "@/defaults/api";
+import app from "@/defaults/app";
+import auth from "@/defaults/auth";
+import db from "@/defaults/db";
+import docs from "@/defaults/docs";
+import email from "@/defaults/email";
+import http from "@/defaults/http";
+import i18n from "@/defaults/i18n";
+import logs from "@/defaults/logs";
+import sms from "@/defaults/sms";
+import upload from "@/defaults/upload";
 
 /**
  * The configuration object, with some default values, that can be used

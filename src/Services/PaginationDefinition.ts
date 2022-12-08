@@ -1,8 +1,8 @@
 import { FindManyOptions } from "typeorm";
-import BaseEntity from "../Documentation/BaseEntity";
-import { ArrayProperty, BooleanProperty, Entity, IsRequired, NumberProperty, StringProperty } from "../Documentation/Decorators/EntityDecorators";
-import { EntityPropertyDataTypes } from "../Documentation/Definition/DataTypes";
-import MetadataStore from "../Documentation/MetadataStore";
+import BaseEntity from "@/Documentation/BaseEntity";
+import { ArrayProperty, BooleanProperty, Entity, IsRequired, NumberProperty, StringProperty } from "@/Documentation/Decorators/EntityDecorators";
+import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * The base response for a Paginated Entity.

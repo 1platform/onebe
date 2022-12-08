@@ -3,11 +3,11 @@ import path from "path";
 import { Arguments, Argv, CommandModule } from "yargs";
 import { DataSource } from "typeorm";
 import chalk from "chalk";
-import DatabaseSeeder from "../DB/TypeORM/DatabaseSeeder";
-import { getDefaultLogger } from "../System/Logger";
-import Config from "../System/Config";
-import { camelCase } from "../Utils";
-import initConnection from "./Utils/initConnection";
+import DatabaseSeeder from "@/DB/TypeORM/DatabaseSeeder";
+import { getDefaultLogger } from "@/System/Logger";
+import Config from "@/System/Config";
+import { camelCase } from "@/Utils";
+import initConnection from "@/Commands/Utils/initConnection";
 
 /**
  * CLI Command to load data into a specific entity.

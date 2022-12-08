@@ -1,4 +1,4 @@
-import { IRouteMetadata } from "../../Definition/RouteMetadata";
+import { IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
 
 /**
  * Swagger Tags Builder tool.

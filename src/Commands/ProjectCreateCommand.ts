@@ -1,5 +1,5 @@
 import { Arguments, Argv, CommandModule, exit } from "yargs";
-import createProject from "./Utils/createProject";
+import createProject from "@/Commands/Utils/createProject";
 
 /**
  * CLI Command to create a new project.

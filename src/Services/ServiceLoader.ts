@@ -1,5 +1,5 @@
-import ServiceBase from "./ServiceBase";
-import { Constructor } from "../Documentation/MetadataTypes";
+import ServiceBase from "@/Services/ServiceBase";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * A system to load services into the application and reuse them as needed.

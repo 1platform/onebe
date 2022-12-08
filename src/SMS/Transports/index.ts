@@ -1,3 +1,3 @@
-export { default as TwilioTransport } from "./TwilioTransport";
-export type { default as ISMSTransport } from "./ISMSTransport";
-export { default as VonageTransport } from "./VonageTransport";
+export { default as TwilioTransport } from "@/SMS/Transports/TwilioTransport";
+export type { default as ISMSTransport } from "@/SMS/Transports/ISMSTransport";
+export { default as VonageTransport } from "@/SMS/Transports/VonageTransport";

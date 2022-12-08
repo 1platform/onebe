@@ -1,6 +1,6 @@
-import ServiceBase from "../../Services/ServiceBase";
-import Observable from "./Observable";
-import { observer } from "./ObservablePlugin";
+import ServiceBase from "@/Services/ServiceBase";
+import Observable from "@/DB/Mongo/Observable";
+import { observer } from "@/DB/Mongo/ObservablePlugin";
 
 /**
  * A base abstract class used to define Services that use Mongoose models

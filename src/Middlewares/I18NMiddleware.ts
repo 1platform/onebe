@@ -1,7 +1,7 @@
 import { Application } from "express";
 import i18next from "i18next";
 import { handle } from "i18next-http-middleware";
-import IMiddleware from "./IMiddleware";
+import IMiddleware from "@/Middlewares/IMiddleware";
 
 /**
  * Middleware used to enable the Internationalisation (i18n) support for the application endpoints.

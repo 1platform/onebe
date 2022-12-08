@@ -10,13 +10,13 @@ import {
   VersionColumn as TypeORMVersionColumn,
   ViewColumn as TypeORMViewColumn,
 } from "typeorm";
-import { Constructor } from "../../../Documentation/MetadataTypes";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
 import { ViewColumnOptions } from "typeorm/decorator/options/ViewColumnOptions";
 import { ColumnEmbeddedOptions } from "typeorm/decorator/options/ColumnEmbeddedOptions";
-import { mapSQLToEntity } from "../../../Documentation/Definition/EntityMetadata";
-import MetadataStore from "../../../Documentation/MetadataStore";
+import { Constructor } from "@/Documentation/MetadataTypes";
+import { mapSQLToEntity } from "@/Documentation/Definition/EntityMetadata";
+import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * Function used to document a property of a model class.

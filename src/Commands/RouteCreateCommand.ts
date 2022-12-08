@@ -1,6 +1,6 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import { camelCase } from "../Utils";
-import createRouteFile from "./Utils/routeFile";
+import { camelCase } from "@/Utils";
+import createRouteFile from "@/Commands/Utils/routeFile";
 
 /**
  * CLI Command to create a new route.

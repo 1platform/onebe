@@ -1,7 +1,7 @@
-import { IEntityMetadata, IEntityProperty, IEntityPropertyMetadata, IRelationMetadata } from "./Definition/EntityMetadata";
+import { IEntityMetadata, IEntityProperty, IEntityPropertyMetadata, IRelationMetadata } from "@/Documentation/Definition/EntityMetadata";
 import { ObjectLiteral, ObjectType } from "typeorm";
-import { Constructor } from "./MetadataTypes";
-import { EntityPropertyDataTypes } from "./Definition/DataTypes";
+import { Constructor } from "@/Documentation/MetadataTypes";
+import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
 
 export default class EntityDefinition {
   /**

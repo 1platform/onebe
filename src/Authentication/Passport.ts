@@ -1,10 +1,9 @@
 import passport from "passport";
 import { BasicStrategy } from "passport-http";
 import { Strategy } from "passport-jwt";
-import Config from "../System/Config";
-import type IPayload from "./IPayload";
-import type IUser from "./IUser";
-import { extractToken } from "./JWT";
+import Config from "@/System/Config";
+import type { IPayload, IUser } from "@/Authentication";
+import { extractToken } from "@/Authentication";
 
 /**
  * Definition of the Passport strategy initialization options.

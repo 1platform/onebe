@@ -1,5 +1,5 @@
-import { fixedSizeRandom } from "../Utils/NumberUtils";
-import { shortid } from "../Utils/StringUtils";
+import { fixedSizeRandom } from "@/Utils/NumberUtils";
+import { shortid } from "@/Utils/StringUtils";
 
 /**
  * Function used to generate a random numeric code that can be used as a way

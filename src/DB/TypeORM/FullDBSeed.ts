@@ -6,15 +6,13 @@ import Config from "@/System/Config";
 import { HTTPError } from "@/Exceptions";
 import { getDefaultLogger } from "@/System/Logger";
 import { defaultConnection } from "@/DB";
+import { ISeedInfo } from "@/DB/TypeORM/Interfaces";
 
-interface ISeedInfo<T = any> {
-  entity: string;
-  data: Array<T>;
-  dependsOn?: Array<string>;
-  isQuery?: boolean;
-  fields?: Array<string>;
-}
-
+/**
+ * Function used to read the Seeding data from a JSON file.
+ *
+ * @param file The file to be imported.
+ */
 function readDataJson(file: string): ISeedInfo {
   try {
     return JSON.parse(readFileSync(file, "utf-8"));
@@ -23,6 +21,11 @@ function readDataJson(file: string): ISeedInfo {
   }
 }
 
+/**
+ * Function used to read the Seeding data from a Source file (.ts/.js).
+ *
+ * @param file The file to be imported.
+ */
 async function readSourceFile(file: string): Promise<ISeedInfo> {
   try {
     let fileModule = await import(file);
@@ -37,6 +40,11 @@ async function readSourceFile(file: string): Promise<ISeedInfo> {
   }
 }
 
+/**
+ * Function used to fetch all seeds from the seeding folder.
+ *
+ * @param basePath The base path to the seeds' folder.
+ */
 async function fetchSeedFiles(basePath: string): Promise<Record<string, ISeedInfo>> {
   const files = readdirSync(basePath)
     .filter((file) => [ ".ts", ".js", ".json" ].indexOf(extname(file)) >= 0)
@@ -61,6 +69,14 @@ async function fetchSeedFiles(basePath: string): Promise<Record<string, ISeedInf
   return resolvedData;
 }
 
+/**
+ * Function used to build a tier of Entities that should be used for Data Import (and Database cleaning).
+ *
+ * @param entity The entity for which we want to determine the tier level.
+ * @param entityDependencies The list of dependencies for that entity.
+ * @param allDependencies A map will entities and their dependencies.
+ * @param levels A map containing the entities and their tier level.
+ */
 function buildDepsLevel(
   entity: string,
   entityDependencies: Array<string>,
@@ -85,11 +101,16 @@ function buildDepsLevel(
   return levels[entity];
 }
 
+/**
+ * Function used to build a tier based array with entities.
+ *
+ * @param seeds The map with entities that need to be classified.
+ */
 function createDependencyTree(seeds: Record<string, ISeedInfo>): Array<Array<string>> {
   const dependencies: Record<string, string[]> = {};
-
   let maxDependencies = 0;
 
+  // Building the dependencies list.
   for (const seedKey of Object.keys(seeds)) {
     const seed: ISeedInfo = seeds[seedKey];
     if (!dependencies[seedKey]) {
@@ -135,23 +156,42 @@ function createDependencyTree(seeds: Record<string, ISeedInfo>): Array<Array<str
   );
 }
 
+/**
+ * Function used to clean the database.
+ *
+ * @param entityManager The entity manager used to seed the database.
+ * @param dependencies The tier list with entities to be deleted.
+ */
 async function truncateEntities(entityManager: EntityManager, dependencies: Array<Array<string>>): Promise<void> {
   const revertedArray = [ ...dependencies ].reverse();
 
   for (const entityList of revertedArray) {
     for (const entity of entityList) {
       getDefaultLogger().debug(`Cleaning entity: ${ chalk.blue(entity) }`);
-      getDefaultLogger().debug(`DELETE FROM \`${ entity }\`;`);
-      await entityManager.query(`DELETE FROM \`${ entity }\`;`);
+      getDefaultLogger().debug(`TRUNCATE FROM \`${ entity }\`;`);
+      await entityManager.query(`TRUNCATE FROM \`${ entity }\`;`);
       getDefaultLogger().debug(`Successfully cleaned entity: ${ chalk.blue(entity) }`);
     }
   }
 }
 
+/**
+ * Function used to create an entity using a model.
+ *
+ * @param entityManager The entity manager used to perform the database import.
+ * @param entityName The name of the entity for which we want to import data.
+ * @param data The data that we want to import.
+ */
 async function createEntityWithModel(entityManager: EntityManager, entityName: string, data: Array<any>) {
   await entityManager.save(entityName, entityManager.create(entityName, data));
 }
 
+/**
+ * Function used to create an entity using an SQL INSERT statement.
+ *
+ * @param entityManager The entity manager used to perform the database import.
+ * @param seed The seed information.
+ */
 async function createEntityWithInsert(entityManager: EntityManager, seed: ISeedInfo) {
   const mappedFields = seed.fields.map((field) => `\`${ field }\``);
   const mappedData = seed.data
@@ -173,6 +213,13 @@ async function createEntityWithInsert(entityManager: EntityManager, seed: ISeedI
   await entityManager.query(`INSERT INTO \`${ seed.entity }\` (${ mappedFields.join(",") }) VALUES ${ mappedData.join(",") };`);
 }
 
+/**
+ * Function used to create the entities in the database.
+ *
+ * @param entityManager The entity manager used to perform the database import.
+ * @param seeds The map containing the entities and the information required to perform the data import.
+ * @param dependencies The tier list of the entities.
+ */
 async function createEntities(entityManager: EntityManager, seeds: Record<string, ISeedInfo>, dependencies: Array<Array<string>>): Promise<void> {
   for (const entityList of dependencies) {
     for (const entity of entityList) {
@@ -184,7 +231,12 @@ async function createEntities(entityManager: EntityManager, seeds: Record<string
   }
 }
 
-export default async function buildSeedFlow(truncate = false): Promise<void> {
+/**
+ * Function used to perform a full Database Seeding.
+ *
+ * @param truncate Flag to let the function know if the user wants to clear the database before import or not.
+ */
+export default async function FullDBSeed(truncate = false): Promise<void> {
   const seeds = await fetchSeedFiles(resolve(Config.get("db.seeds.folder")));
   const dependencyTree = createDependencyTree(seeds);
 

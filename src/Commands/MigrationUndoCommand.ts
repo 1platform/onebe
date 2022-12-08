@@ -1,7 +1,7 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import initConnection from "./Utils/initConnection";
 import { DataSource } from "typeorm";
-import { getDefaultLogger } from "../System/Logger";
+import initConnection from "@/Commands/Utils/initConnection";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * CLI command to undo the last applied migration.

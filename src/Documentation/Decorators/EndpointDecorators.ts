@@ -1,17 +1,17 @@
-import { RouteDecorator } from "../../Router";
-import Route from "../../Router/Route";
-import MetadataStore from "../MetadataStore";
-import { IEndpointDocumentation } from "../Definition/RouteMetadata";
+import { RouteDecorator } from "@/Router";
+import Route from "@/Router/Route";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { IEndpointDocumentation } from "@/Documentation/Definition/RouteMetadata";
 
 /**
  * All the request documentation decorators.
  */
-export * as RequestDocs from "./Endpoint/RequestDecorators";
+export * as RequestDocs from "@/Documentation/Decorators/Endpoint/RequestDecorators";
 
 /**
  * All the response documentation decorators.
  */
-export * as ResponseDocs from "./Endpoint/ResponseDecorators";
+export * as ResponseDocs from "@/Documentation/Decorators/Endpoint/ResponseDecorators";
 
 /**
  * Decorator used to add a description to an endpoint.

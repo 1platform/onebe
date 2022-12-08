@@ -1,10 +1,10 @@
 import multer from "multer";
 import path from "path";
-import Route from "../Router/Route";
-import { RouteDecorator } from "../Router";
-import Config from "../System/Config";
-import MetadataStore from "../Documentation/MetadataStore";
-import { BodyParameterType } from "../Documentation";
+import Route from "@/Router/Route";
+import { RouteDecorator } from "@/Router";
+import Config from "@/System/Config";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { BodyParameterType } from "@/Documentation";
 
 /**
  * Upload middleware instance that can be used in your application.

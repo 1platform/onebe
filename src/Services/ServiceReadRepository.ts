@@ -1,8 +1,8 @@
 import { FindManyOptions, FindOneOptions, FindOptionsWhere, ObjectLiteral } from "typeorm";
-import ServiceWithRepository from "./ServiceWithRepository";
-import HTTPError from "../Exceptions/HTTPError";
-import HTTPStatus from "../HTTP/HTTPStatus";
-import { PaginatedEntity, PaginatedOptions } from "./PaginationDefinition";
+import ServiceWithRepository from "@/Services/ServiceWithRepository";
+import HTTPError from "@/Exceptions/HTTPError";
+import HTTPStatus from "@/HTTP/HTTPStatus";
+import { PaginatedEntity, PaginatedOptions } from "@/Services/PaginationDefinition";
 
 /**
  * The base class for your services that are using a database table.

@@ -2,12 +2,12 @@ import path from "path";
 import winston, { Logger as WinstonLogger } from "winston";
 import Transport from "winston-transport";
 import { FileTransportOptions } from "winston/lib/winston/transports";
-import Config from "./Config";
-import LogLevel from "./LogLevel";
+import Config from "@/System/Config";
+import LogLevel from "@/System/LogLevel";
 import { Format } from "logform";
 
-export { default as LoggerType } from "./LoggerType";
-export { default as LogLevel } from "./LogLevel";
+export { default as LoggerType } from "@/System/LoggerType";
+export { default as LogLevel } from "@/System/LogLevel";
 
 /**
  * The base logger class to be used in the application.

@@ -1,10 +1,10 @@
 import jsYaml from "js-yaml";
-import SwaggerComponents from "./Modules/SwaggerComponents";
-import app from "../../App";
-import Config from "../../System/Config";
-import MetadataStore from "../MetadataStore";
-import SwaggerTags from "./Modules/SwaggerTags";
-import SwaggerRoutes from "./Modules/SwaggerRoutes";
+import SwaggerComponents from "@/Documentation/Swagger/Modules/SwaggerComponents";
+import app from "@/App";
+import Config from "@/System/Config";
+import MetadataStore from "@/Documentation/MetadataStore";
+import SwaggerTags from "@/Documentation/Swagger/Modules/SwaggerTags";
+import SwaggerRoutes from "@/Documentation/Swagger/Modules/SwaggerRoutes";
 
 /**
  * Swagger file builder utility.

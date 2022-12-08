@@ -1,4 +1,4 @@
-import buildId from "./build";
+import buildId from "@/build";
 
 /**
  * The codename of the current version framework.

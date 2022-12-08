@@ -1,7 +1,7 @@
-import { HTTPVerb } from "../HTTP";
-import Route from "./Route";
-import { RouteDecorator } from "./RouteTypes";
-import MetadataStore from "../Documentation/MetadataStore";
+import { HTTPVerb } from "@/HTTP";
+import Route from "@/Router/Route";
+import { RouteDecorator } from "@/Router/RouteTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * Decorator used to define a GET endpoint.

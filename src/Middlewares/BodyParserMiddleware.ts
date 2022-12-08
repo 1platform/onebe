@@ -1,6 +1,6 @@
 import bodyParser from "body-parser";
 import { Application } from "express";
-import IMiddleware from "./IMiddleware";
+import IMiddleware from "@/Middlewares/IMiddleware";
 
 /**
  * Middleware used to parse the body of the request and return the right data

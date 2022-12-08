@@ -1,7 +1,8 @@
 import twilio from "twilio";
-import Config from "../../System/Config";
-import { getDefaultLogger } from "../../System/Logger";
-import ISMSTransport from "./ISMSTransport";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
+import ISMSTransport from "@/SMS/Transports/ISMSTransport";
+import { getTwilioClient } from "@/SMS/getMessagingClient";
 
 /**
  * SMS Transport using the Twilio engine.
@@ -20,7 +21,10 @@ export default class TwilioTransport implements ISMSTransport {
    * TwilioTransport constructor
    */
   public constructor() {
-    this._twilio = twilio(Config.string("sms.config.account"), Config.string("sms.config.password"));
+    this._twilio = getTwilioClient({
+      account: Config.string("sms.config.account"),
+      password: Config.string("sms.config.password"),
+    });
   }
 
   /**

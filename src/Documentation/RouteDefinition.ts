@@ -9,12 +9,12 @@ import {
   IEndpointResponse,
   IEndpointThrowResponse,
   IRouteMetadata,
-} from "./Definition/RouteMetadata";
-import { AppMethod, CallbackExtractorParameter } from "../Router/RouteTypes";
-import { ICallbackExtracted } from "../Router/RouteInterfaces";
-import { HTTPMiddleware } from "../HTTP/HTTPTypes";
-import HTTPStatus from "../HTTP/HTTPStatus";
-import HTTPVerb from "../HTTP/HTTPVerb";
+} from "@/Documentation/Definition/RouteMetadata";
+import { AppMethod, CallbackExtractorParameter } from "@/Router/RouteTypes";
+import { ICallbackExtracted } from "@/Router/RouteInterfaces";
+import { HTTPMiddleware } from "@/HTTP/HTTPTypes";
+import HTTPStatus from "@/HTTP/HTTPStatus";
+import HTTPVerb from "@/HTTP/HTTPVerb";
 
 /**
  * Route Definition Metadata store.

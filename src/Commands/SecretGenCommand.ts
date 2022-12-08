@@ -1,7 +1,7 @@
 import { Arguments, Argv, CommandModule } from "yargs";
 import fs from "fs";
 import path from "path";
-import { uuidV4 } from "../Utils";
+import { uuidV4 } from "@/Utils";
 
 /**
  * Function used to generate a new JWT secret.

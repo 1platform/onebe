@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Interfaces
-
-- [IDBSeederResults](../interfaces/DB_TypeORM_DatabaseSeeder.IDBSeederResults.md)
-
 ### Functions
 
 - [DatabaseSeeder](DB_TypeORM_DatabaseSeeder.md#databaseseeder)
@@ -16,7 +12,7 @@
 
 ### DatabaseSeeder
 
-▸ **DatabaseSeeder**<`Entity`\>(`entity`, `data`, `clearData?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IDBSeederResults`](../interfaces/DB_TypeORM_DatabaseSeeder.IDBSeederResults.md)\>
+▸ **DatabaseSeeder**<`Entity`\>(`entity`, `data`, `clearData?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IDBSeederResults`](../interfaces/DB_TypeORM_Interfaces.IDBSeederResults.md)\>
 
 Function used to seed the Database for a given entity.
 
@@ -36,4 +32,4 @@ Function used to seed the Database for a given entity.
 
 #### Returns
 
-[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IDBSeederResults`](../interfaces/DB_TypeORM_DatabaseSeeder.IDBSeederResults.md)\>
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IDBSeederResults`](../interfaces/DB_TypeORM_Interfaces.IDBSeederResults.md)\>
