@@ -13,7 +13,7 @@ export enum MessagingType {
 /**
  * Supported data types for the messaging object.
  */
-type MessagingTypeObject = Twilio | Vonage;
+export type MessagingTypeObject = Twilio | Vonage;
 
 /**
  * Method used to return the client instance for the different messaging engines supported by the framework.

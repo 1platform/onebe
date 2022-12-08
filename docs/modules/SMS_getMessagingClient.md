@@ -8,11 +8,23 @@
 
 - [MessagingType](../enums/SMS_getMessagingClient.MessagingType.md)
 
+### Type Aliases
+
+- [MessagingTypeObject](SMS_getMessagingClient.md#messagingtypeobject)
+
 ### Functions
 
 - [getMessagingClient](SMS_getMessagingClient.md#getmessagingclient)
 - [getTwilioClient](SMS_getMessagingClient.md#gettwilioclient)
 - [getVonageClient](SMS_getMessagingClient.md#getvonageclient)
+
+## Type Aliases
+
+### MessagingTypeObject
+
+Ƭ **MessagingTypeObject**: `Twilio` \| `Vonage`
+
+Supported data types for the messaging object.
 
 ## Functions
 
@@ -26,7 +38,7 @@ Method used to return the client instance for the different messaging engines su
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `MessagingTypeObject` |
+| `T` | extends [`MessagingTypeObject`](SMS_getMessagingClient.md#messagingtypeobject) |
 
 #### Parameters
 
