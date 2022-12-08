@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.1
+
+🔧 Bugfix:
+
+- Fix issues with the exported types.
+
 ## Version 2.2.0
 
 🚀 New:
