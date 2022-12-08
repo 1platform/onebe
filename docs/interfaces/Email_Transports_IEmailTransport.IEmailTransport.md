@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.0](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailTransport
+[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailTransport
 
 # Interface: IEmailTransport
 

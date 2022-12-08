@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.0](../README.md) / [Exports](../modules.md) / [Commands/SecretGenCommand](../modules/Commands_SecretGenCommand.md) / SecretGenCommand
+[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / [Commands/SecretGenCommand](../modules/Commands_SecretGenCommand.md) / SecretGenCommand
 
 # Class: SecretGenCommand
 
