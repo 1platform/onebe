@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.2
+
+🔧 Bugfix:
+
+- Fix issues with the truncate table command.
+
 ## Version 2.2.1
 
 🔧 Bugfix:

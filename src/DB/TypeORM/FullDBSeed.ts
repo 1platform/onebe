@@ -168,8 +168,8 @@ async function truncateEntities(entityManager: EntityManager, dependencies: Arra
   for (const entityList of revertedArray) {
     for (const entity of entityList) {
       getDefaultLogger().debug(`Cleaning entity: ${ chalk.blue(entity) }`);
-      getDefaultLogger().debug(`TRUNCATE FROM \`${ entity }\`;`);
-      await entityManager.query(`TRUNCATE FROM \`${ entity }\`;`);
+      getDefaultLogger().debug(`TRUNCATE TABLE \`${ entity }\`;`);
+      await entityManager.query(`TRUNCATE TABLE \`${ entity }\`;`);
       getDefaultLogger().debug(`Successfully cleaned entity: ${ chalk.blue(entity) }`);
     }
   }
