@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointResponse
+[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointResponse
 
 # Interface: IEndpointResponse<Response\>
 

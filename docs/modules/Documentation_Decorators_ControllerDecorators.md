@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / Documentation/Decorators/ControllerDecorators
+[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / Documentation/Decorators/ControllerDecorators
 
 # Module: Documentation/Decorators/ControllerDecorators
 

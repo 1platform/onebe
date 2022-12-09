@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / Commands/Utils/serviceFile
+[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / Commands/Utils/serviceFile
 
 # Module: Commands/Utils/serviceFile
 

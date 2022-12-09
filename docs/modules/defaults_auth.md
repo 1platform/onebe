@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.1](../README.md) / [Exports](../modules.md) / defaults/auth
+[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / defaults/auth
 
 # Module: defaults/auth
 
