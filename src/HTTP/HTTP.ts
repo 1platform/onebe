@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import { Server } from "http";
+import { Server } from "node:http";
 import helmet from "helmet";
 import IMiddleware from "@/Middlewares/IMiddleware";
 import Middlewares from "@/Middlewares";

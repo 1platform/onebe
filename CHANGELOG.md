@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.3
+
+🔧 Bugfix:
+
+- Fix issues with the truncate table command - reverted to DELETE FROM <table> statement.
+- Fix issues with HTTP Server.
+
 ## Version 2.2.2
 
 🔧 Bugfix:
