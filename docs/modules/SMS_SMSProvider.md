@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / SMS/SMSProvider
+[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / SMS/SMSProvider
 
 # Module: SMS/SMSProvider
 

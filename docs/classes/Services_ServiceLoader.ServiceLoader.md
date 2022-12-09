@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / [Services/ServiceLoader](../modules/Services_ServiceLoader.md) / ServiceLoader
+[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / [Services/ServiceLoader](../modules/Services_ServiceLoader.md) / ServiceLoader
 
 # Class: ServiceLoader
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / defaults/sms
+[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / defaults/sms
 
 # Module: defaults/sms
 

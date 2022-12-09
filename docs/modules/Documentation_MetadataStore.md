@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / Documentation/MetadataStore
+[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / Documentation/MetadataStore
 
 # Module: Documentation/MetadataStore
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.2](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / NoLogger
+[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / NoLogger
 
 # Class: NoLogger
 
