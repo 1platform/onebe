@@ -11,6 +11,7 @@
 
 ### Functions
 
+- [AdditionalInformation](Documentation_Decorators_EndpointDecorators.md#additionalinformation)
 - [Endpoint](Documentation_Decorators_EndpointDecorators.md#endpoint)
 - [EndpointDescription](Documentation_Decorators_EndpointDecorators.md#endpointdescription)
 - [EndpointSummary](Documentation_Decorators_EndpointDecorators.md#endpointsummary)
@@ -28,6 +29,26 @@ ___
 Renames and re-exports [Documentation/Decorators/Endpoint/ResponseDecorators](Documentation_Decorators_Endpoint_ResponseDecorators.md)
 
 ## Functions
+
+### AdditionalInformation
+
+▸ **AdditionalInformation**(`info`): [`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+Add additional information to the endpoint.
+
+**`Decorator`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `info` | `string` | The additional information you want to add to the endpoint. |
+
+#### Returns
+
+[`RouteDecorator`](Router_RouteTypes.md#routedecorator)
+
+___
 
 ### Endpoint
 

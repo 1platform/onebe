@@ -93,8 +93,20 @@ export default class SwaggerRoutes {
       tags,
     };
 
+    if (endpoint.additionalInfo && endpoint.additionalInfo.length > 0) {
+      definition.description = `${ definition.description }
+
+Additional Information:
+${ endpoint.additionalInfo.join("\n") }`;
+    }
+
     if (endpoint.isAuthenticated) {
       definition.security = [ { [endpoint.authenticationMethod]: [] } ];
+
+      definition.description = `${ definition.description }
+
+Requires User Authentication: Yes
+Authentication type: ${ endpoint.authenticationMethod }`;
     }
 
     if (Object.keys(endpoint.parameters).length) {

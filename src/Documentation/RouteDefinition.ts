@@ -441,6 +441,20 @@ export default class RouteDefinition {
   }
 
   /**
+   * Method used to add additional information to the description.
+   *
+   * @param controller The controller we want to update.
+   * @param methodName The name of the method on which we want to add information.
+   * @param information Additional information to be added to the description.
+   */
+  public additionalInformation(controller: string, methodName: string, information: string) {
+    if (!this.route(controller).endpoints[methodName].additionalInfo) {
+      this.route(controller).endpoints[methodName].additionalInfo = [];
+    }
+    this.route(controller).endpoints[methodName].additionalInfo.push(information);
+  }
+
+  /**
    * Method used to get metadata information about an endpoint. Using this method the
    * documentation system will check if the endpoint exists in the route. If it doesn't exist,
    * the endpoint is created with the given default values.

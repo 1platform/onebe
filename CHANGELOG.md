@@ -2,6 +2,18 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.4
+
+🚀 New:
+
+- Additional information shown on the swagger page.
+- Add decorators that allow the definition of this information.
+
+🔧 Bugfix:
+
+- Fix issues with query item fetching.
+- Fix an issue with auth context logout function.
+
 ## Version 2.2.3
 
 🔧 Bugfix:

@@ -23,6 +23,7 @@ endpoints that are exposed by the route etc.
 ### Methods
 
 - [add](Documentation_RouteDefinition.RouteDefinition.md#add)
+- [additionalInformation](Documentation_RouteDefinition.RouteDefinition.md#additionalinformation)
 - [callbackExtractor](Documentation_RouteDefinition.RouteDefinition.md#callbackextractor)
 - [endpoint](Documentation_RouteDefinition.RouteDefinition.md#endpoint)
 - [endpointAuth](Documentation_RouteDefinition.RouteDefinition.md#endpointauth)
@@ -86,6 +87,26 @@ Method used to add a new Route into the Route Metadata store.
 #### Returns
 
 [`RouteDefinition`](Documentation_RouteDefinition.RouteDefinition.md)
+
+___
+
+### additionalInformation
+
+▸ **additionalInformation**(`controller`, `methodName`, `information`): `void`
+
+Method used to add additional information to the description.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `methodName` | `string` | The name of the method on which we want to add information. |
+| `information` | `string` | Additional information to be added to the description. |
+
+#### Returns
+
+`void`
 
 ___
 

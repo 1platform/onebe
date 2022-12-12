@@ -55,7 +55,7 @@ export default class AuthContextAPI {
    */
   public logout(): void {
     if (this._request.logout) {
-      const userId = this._request.user?.id;
+      const userId = this._request?.user?.id || 0;
       this._request.logout(() => {
         getDefaultLogger().debug(`User [${ userId }] has logged out.`);
       });

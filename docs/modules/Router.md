@@ -31,6 +31,7 @@
 - [RouteDecorator](Router.md#routedecorator)
 - [RouterBase](Router.md#routerbase)
 - [defineMiddleware](Router.md#definemiddleware)
+- [defineMiddlewareWithInformation](Router.md#definemiddlewarewithinformation)
 - [del](Router.md#del)
 - [get](Router.md#get-1)
 - [getPath](Router.md#getpath)
@@ -191,6 +192,12 @@ ___
 ### defineMiddleware
 
 Re-exports [defineMiddleware](Router_RouteUtils.md#definemiddleware)
+
+___
+
+### defineMiddlewareWithInformation
+
+Re-exports [defineMiddlewareWithInformation](Router_RouteUtils.md#definemiddlewarewithinformation)
 
 ___
 

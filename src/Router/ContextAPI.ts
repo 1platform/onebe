@@ -151,7 +151,7 @@ export default class ContextAPI<BodyRequest = any> {
    * @param defaultValue The default value of the parameter.
    */
   public getQuery(name: string, defaultValue = ""): ParsedQs {
-    return (this._request.query[name] || defaultValue) as ParsedQs;
+    return (this._request?.query[name] || defaultValue) as ParsedQs;
   }
 
   /**
@@ -161,7 +161,7 @@ export default class ContextAPI<BodyRequest = any> {
    * @param defaultValue The default value of the parameter.
    */
   public getQueryString(name: string, defaultValue = ""): string {
-    return this._request.query[name].toString() || defaultValue;
+    return this._request?.query[name]?.toString() || defaultValue;
   }
 
   /**

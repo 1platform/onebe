@@ -6,6 +6,7 @@
 
 ### References
 
+- [AdditionalInformation](Documentation.md#additionalinformation)
 - [ArrayProperty](Documentation.md#arrayproperty)
 - [BaseEntity](Documentation.md#baseentity)
 - [BodyParameterType](Documentation.md#bodyparametertype)
@@ -39,6 +40,12 @@
 - [StringProperty](Documentation.md#stringproperty)
 
 ## References
+
+### AdditionalInformation
+
+Re-exports [AdditionalInformation](Documentation_Decorators_EndpointDecorators.md#additionalinformation)
+
+___
 
 ### ArrayProperty
 

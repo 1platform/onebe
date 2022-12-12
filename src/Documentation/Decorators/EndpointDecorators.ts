@@ -48,3 +48,15 @@ export function Endpoint(options: IEndpointDocumentation): RouteDecorator {
     MetadataStore.instance.route.endpointDocumentation(target.constructor.name, propertyKey, options);
   };
 }
+
+/**
+ * Add additional information to the endpoint.
+ *
+ * @decorator
+ * @param info The additional information you want to add to the endpoint.
+ */
+export function AdditionalInformation(info: string): RouteDecorator {
+  return (target: Route, propertyKey: string): void => {
+    MetadataStore.instance.route.additionalInformation(target.constructor.name, propertyKey, info);
+  };
+}

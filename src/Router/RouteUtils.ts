@@ -1,6 +1,7 @@
 import { HTTPMiddleware } from "@/HTTP";
 import Route from "@/Router/Route";
 import { RouteDecorator } from "@/Router/RouteTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * Function used to create a middleware decorator.
@@ -9,6 +10,21 @@ import { RouteDecorator } from "@/Router/RouteTypes";
  */
 export function defineMiddleware(...middlewares: Array<HTTPMiddleware>): RouteDecorator {
   return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
+    const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
+    descriptor.value = [ ...middlewares, ...original ];
+  };
+}
+
+/**
+ * Function used to create a middleware decorator with additional documentation.
+ *
+ * @param information The additional information to be sent to the documentation engine.
+ * @param middlewares A list of middlewares you want to apply on the route.
+ */
+export function defineMiddlewareWithInformation(information: string, ...middlewares: Array<HTTPMiddleware>): RouteDecorator {
+  return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
+    MetadataStore.instance.route.additionalInformation(target.constructor.name, propertyKey, information);
+
     const original = Array.isArray(descriptor.value) ? descriptor.value : [ descriptor.value ];
     descriptor.value = [ ...middlewares, ...original ];
   };

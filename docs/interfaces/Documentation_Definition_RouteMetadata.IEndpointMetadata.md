@@ -18,6 +18,7 @@ about an endpoint from a route (controller).
 
 ### Properties
 
+- [additionalInfo](Documentation_Definition_RouteMetadata.IEndpointMetadata.md#additionalinfo)
 - [authenticationMethod](Documentation_Definition_RouteMetadata.IEndpointMetadata.md#authenticationmethod)
 - [body](Documentation_Definition_RouteMetadata.IEndpointMetadata.md#body)
 - [bodyParameters](Documentation_Definition_RouteMetadata.IEndpointMetadata.md#bodyparameters)
@@ -39,6 +40,14 @@ about an endpoint from a route (controller).
 - [verb](Documentation_Definition_RouteMetadata.IEndpointMetadata.md#verb)
 
 ## Properties
+
+### additionalInfo
+
+• `Optional` **additionalInfo**: `string`[]
+
+Additional information that should be added to the description of the endpoint.
+
+___
 
 ### authenticationMethod
 

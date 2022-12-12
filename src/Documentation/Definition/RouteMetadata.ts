@@ -116,6 +116,10 @@ export interface IEndpointMetadata<Request = any, Response = any> {
    */
   description?: string;
   /**
+   * Additional information that should be added to the description of the endpoint.
+   */
+  additionalInfo?: string[];
+  /**
    * A short description of what the endpoint does.
    */
   summary?: string;
