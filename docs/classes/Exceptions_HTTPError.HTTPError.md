@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / [Exceptions/HTTPError](../modules/Exceptions_HTTPError.md) / HTTPError
+[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [Exceptions/HTTPError](../modules/Exceptions_HTTPError.md) / HTTPError
 
 # Class: HTTPError
 

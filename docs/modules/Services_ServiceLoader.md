@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / Services/ServiceLoader
+[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / Services/ServiceLoader
 
 # Module: Services/ServiceLoader
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.3](../README.md) / [Exports](../modules.md) / [Documentation/RouteDefinition](../modules/Documentation_RouteDefinition.md) / RouteDefinition
+[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [Documentation/RouteDefinition](../modules/Documentation_RouteDefinition.md) / RouteDefinition
 
 # Class: RouteDefinition
 
