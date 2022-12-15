@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.2.5
+
+🔧 Bugfix:
+
+- Fix an issue with how swagger information is shown on screen.
+
 ## Version 2.2.4
 
 🚀 New:
