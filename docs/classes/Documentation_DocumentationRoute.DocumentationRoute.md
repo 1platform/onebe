@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [Documentation/DocumentationRoute](../modules/Documentation_DocumentationRoute.md) / DocumentationRoute
+[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / [Documentation/DocumentationRoute](../modules/Documentation_DocumentationRoute.md) / DocumentationRoute
 
 # Class: DocumentationRoute
 

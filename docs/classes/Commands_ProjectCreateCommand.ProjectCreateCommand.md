@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [Commands/ProjectCreateCommand](../modules/Commands_ProjectCreateCommand.md) / ProjectCreateCommand
+[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / [Commands/ProjectCreateCommand](../modules/Commands_ProjectCreateCommand.md) / ProjectCreateCommand
 
 # Class: ProjectCreateCommand
 

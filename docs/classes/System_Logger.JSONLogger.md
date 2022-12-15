@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / JSONLogger
+[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / JSONLogger
 
 # Class: JSONLogger
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.4](../README.md) / [Exports](../modules.md) / [Email/EmailService](../modules/Email_EmailService.md) / EmailService
+[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / [Email/EmailService](../modules/Email_EmailService.md) / EmailService
 
 # Class: EmailService
 
