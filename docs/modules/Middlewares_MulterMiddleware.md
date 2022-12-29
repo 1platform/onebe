@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
+[OneBE Framework - v2.3.0](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
 
 # Module: Middlewares/MulterMiddleware
 

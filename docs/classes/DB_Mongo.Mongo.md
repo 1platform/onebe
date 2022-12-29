@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / [DB/Mongo](../modules/DB_Mongo.md) / Mongo
+[OneBE Framework - v2.3.0](../README.md) / [Exports](../modules.md) / [DB/Mongo](../modules/DB_Mongo.md) / Mongo
 
 # Class: Mongo
 

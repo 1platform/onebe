@@ -1,4 +1,4 @@
-[OneBE Framework - v2.2.5](../README.md) / [Exports](../modules.md) / SMS/Transports/TwilioTransport
+[OneBE Framework - v2.3.0](../README.md) / [Exports](../modules.md) / SMS/Transports/TwilioTransport
 
 # Module: SMS/Transports/TwilioTransport
 
