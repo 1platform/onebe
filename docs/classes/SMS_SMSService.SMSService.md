@@ -28,7 +28,9 @@ Service used to handle SMS Sending from the application.
 
 ### Methods
 
+- [clone](SMS_SMSService.SMSService.md#clone)
 - [customValidate](SMS_SMSService.SMSService.md#customvalidate)
+- [init](SMS_SMSService.SMSService.md#init)
 - [send](SMS_SMSService.SMSService.md#send)
 - [validate](SMS_SMSService.SMSService.md#validate)
 
@@ -80,6 +82,34 @@ ServiceBase.validator
 
 ## Methods
 
+### clone
+
+▸ **clone**<`T`\>(`properties?`): `T`
+
+Creates a clone of the current service.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | [`ServiceBase`](Services_ServiceBase.ServiceBase.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[ServiceBase](Services_ServiceBase.ServiceBase.md).[clone](Services_ServiceBase.ServiceBase.md#clone)
+
+___
+
 ### customValidate
 
 ▸ `Protected` **customValidate**<`T`\>(`data`, `validator`): `T`
@@ -107,6 +137,22 @@ the data after applying the validator on it.
 #### Inherited from
 
 [ServiceBase](Services_ServiceBase.ServiceBase.md).[customValidate](Services_ServiceBase.ServiceBase.md#customvalidate)
+
+___
+
+### init
+
+▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Method used to perform some initialisations in the class.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+#### Inherited from
+
+[ServiceBase](Services_ServiceBase.ServiceBase.md).[init](Services_ServiceBase.ServiceBase.md#init)
 
 ___
 

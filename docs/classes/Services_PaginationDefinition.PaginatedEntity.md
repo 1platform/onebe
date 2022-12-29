@@ -37,6 +37,7 @@ The base response for a Paginated Entity.
 
 ### Methods
 
+- [clone](Services_PaginationDefinition.PaginatedEntity.md#clone)
 - [init](Services_PaginationDefinition.PaginatedEntity.md#init)
 - [toJSON](Services_PaginationDefinition.PaginatedEntity.md#tojson)
 - [toObject](Services_PaginationDefinition.PaginatedEntity.md#toobject)
@@ -45,7 +46,7 @@ The base response for a Paginated Entity.
 
 ### constructor
 
-• **new PaginatedEntity**<`TEntity`\>(`options?`)
+• **new PaginatedEntity**<`TEntity`\>()
 
 Constructor used to create a new Entity and fill it with data.
 
@@ -54,12 +55,6 @@ Constructor used to create a new Entity and fill it with data.
 | Name |
 | :------ |
 | `TEntity` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options?` | `Record`<`string`, `unknown`\> | A map of properties with values that can be filled in the current entity. |
 
 #### Inherited from
 
@@ -131,9 +126,37 @@ How many records contains the page.
 
 ## Methods
 
+### clone
+
+▸ **clone**<`T`\>(`properties?`): `T`
+
+Creates a clone of the current entity.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | [`BaseEntity`](Documentation_BaseEntity.BaseEntity.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[BaseEntity](Documentation_BaseEntity.BaseEntity.md).[clone](Documentation_BaseEntity.BaseEntity.md#clone)
+
+___
+
 ### init
 
-▸ **init**(`options?`): `void`
+▸ **init**(`options?`): [`PaginatedEntity`](Services_PaginationDefinition.PaginatedEntity.md)<`TEntity`\>
 
 Method used to init the entity with data.
 
@@ -141,11 +164,11 @@ Method used to init the entity with data.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options?` | `Record`<`string`, `unknown`\> | A map of properties with values that can be filled in the current entity. |
+| `options?` | `Record`<`string` \| `number` \| `symbol`, `any`\> | A map of properties with values that can be filled in the current entity. |
 
 #### Returns
 
-`void`
+[`PaginatedEntity`](Services_PaginationDefinition.PaginatedEntity.md)<`TEntity`\>
 
 #### Inherited from
 
@@ -165,7 +188,7 @@ Use this method when you want to extract the data from the entity.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `Record`<`string`, `unknown`\> |
+| `T` | `Record`<`string` \| `number` \| `symbol`, `any`\> |
 
 #### Returns
 
@@ -190,7 +213,7 @@ This is an alias for the `toJSON` method.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | `Record`<`string`, `unknown`\> |
+| `T` | `Record`<`string` \| `number` \| `symbol`, `any`\> |
 
 #### Returns
 

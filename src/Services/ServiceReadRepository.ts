@@ -2,7 +2,8 @@ import { FindManyOptions, FindOneOptions, FindOptionsWhere, ObjectLiteral } from
 import ServiceWithRepository from "@/Services/ServiceWithRepository";
 import HTTPError from "@/Exceptions/HTTPError";
 import HTTPStatus from "@/HTTP/HTTPStatus";
-import { PaginatedEntity, PaginatedOptions } from "@/Services/PaginationDefinition";
+import { IPaginatedOptions, PaginatedEntity, PaginatedOptions } from "@/Services/PaginationDefinition";
+import { createEntity } from "@/Documentation/BaseEntity";
 
 /**
  * The base class for your services that are using a database table.
@@ -32,7 +33,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    *
    * @param paginatedOptions A list with parameters needed for pagination.
    */
-  public async getAllPaginated(paginatedOptions: PaginatedOptions<Entity>): Promise<PaginatedEntity<Entity>> {
+  public async getAllPaginated(paginatedOptions: IPaginatedOptions<Entity>): Promise<PaginatedEntity<Entity>> {
     const { page, size, options } = this._getPaginatedOptions(paginatedOptions);
     const count = await this.repository.count(options);
     const data = await this.getAll({
@@ -41,7 +42,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
       ...options,
     });
 
-    return new PaginatedEntity<Entity>({
+    return createEntity<PaginatedEntity<Entity>>(PaginatedEntity, {
       page,
       size: size > 0 ? size : count,
       count,
@@ -61,7 +62,10 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
   public async get(where: FindOptionsWhere<Entity>, options?: FindOneOptions<Entity>): Promise<Entity> {
     const entity = await this.repository.findOne({
       ...(options || {}),
-      where,
+      where: {
+        ...(options?.where || {}),
+        ...where,
+      },
     });
     if (!entity) {
       throw new HTTPError("onebe.errors.entity.not-found", HTTPStatus.NOT_FOUND, { name: this.repository.metadata.name });
@@ -79,6 +83,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
     const entity = await this.repository.findOne({
       ...(options || {}),
       where: {
+        ...(options?.where || {}),
         [this.primaryKey]: entityKey,
       } as FindOptionsWhere<Entity>,
     });
@@ -94,8 +99,8 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    *
    * @param paginatedOptions The pagination options.
    */
-  protected _getPaginatedOptions(paginatedOptions: PaginatedOptions<Entity>): PaginatedOptions<Entity> {
-    const parsedOptions: PaginatedOptions<Entity> = new PaginatedOptions<Entity>({
+  protected _getPaginatedOptions(paginatedOptions: IPaginatedOptions<Entity>): PaginatedOptions<Entity> {
+    const parsedOptions: PaginatedOptions<Entity> = createEntity<PaginatedOptions<Entity>>(PaginatedOptions, {
       page: 1,
       size: 10,
       options: {},

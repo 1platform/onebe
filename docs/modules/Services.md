@@ -6,6 +6,7 @@
 
 ### References
 
+- [IPaginatedOptions](Services.md#ipaginatedoptions)
 - [PaginatedEntity](Services.md#paginatedentity)
 - [PaginatedOptions](Services.md#paginatedoptions)
 - [ServiceBase](Services.md#servicebase)
@@ -16,6 +17,12 @@
 - [generatePaginatedEntityDocs](Services.md#generatepaginatedentitydocs)
 
 ## References
+
+### IPaginatedOptions
+
+Re-exports [IPaginatedOptions](../interfaces/Services_PaginationDefinition.IPaginatedOptions.md)
+
+___
 
 ### PaginatedEntity
 

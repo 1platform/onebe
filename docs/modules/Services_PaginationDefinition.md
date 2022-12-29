@@ -9,6 +9,10 @@
 - [PaginatedEntity](../classes/Services_PaginationDefinition.PaginatedEntity.md)
 - [PaginatedOptions](../classes/Services_PaginationDefinition.PaginatedOptions.md)
 
+### Interfaces
+
+- [IPaginatedOptions](../interfaces/Services_PaginationDefinition.IPaginatedOptions.md)
+
 ### Functions
 
 - [generatePaginatedEntityDocs](Services_PaginationDefinition.md#generatepaginatedentitydocs)

@@ -14,6 +14,7 @@ A system to load services into the application and reuse them as needed.
 
 ### Properties
 
+- [\_clonedServices](Services_ServiceLoader.ServiceLoader.md#_clonedservices)
 - [\_services](Services_ServiceLoader.ServiceLoader.md#_services)
 - [\_instance](Services_ServiceLoader.ServiceLoader.md#_instance)
 
@@ -23,8 +24,10 @@ A system to load services into the application and reuse them as needed.
 
 ### Methods
 
+- [\_clone](Services_ServiceLoader.ServiceLoader.md#_clone)
 - [\_get](Services_ServiceLoader.ServiceLoader.md#_get)
 - [\_set](Services_ServiceLoader.ServiceLoader.md#_set)
+- [clone](Services_ServiceLoader.ServiceLoader.md#clone)
 - [get](Services_ServiceLoader.ServiceLoader.md#get)
 - [set](Services_ServiceLoader.ServiceLoader.md#set)
 
@@ -37,6 +40,14 @@ A system to load services into the application and reuse them as needed.
 The protected constructor of the service loader class.
 
 ## Properties
+
+### \_clonedServices
+
+• `Protected` **\_clonedServices**: `Record`<`string`, [`ServiceBase`](Services_ServiceBase.ServiceBase.md)\> = `{}`
+
+A map containing all the cloned instances in the application.
+
+___
 
 ### \_services
 
@@ -66,11 +77,42 @@ Service loader instance getter.
 
 ## Methods
 
-### \_get
+### \_clone
 
-▸ `Protected` **_get**(`serviceName`): [`ServiceBase`](Services_ServiceBase.ServiceBase.md)
+▸ `Protected` **_clone**<`T`\>(`serviceName`, `properties?`): `T`
 
 Method used to get the services from the database.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`ServiceBase`](Services_ServiceBase.ServiceBase.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `serviceName` | `string` | The name of the service. |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+`T`
+
+___
+
+### \_get
+
+▸ `Protected` **_get**<`T`\>(`serviceName`): `T`
+
+Method used to get the services from the database.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`ServiceBase`](Services_ServiceBase.ServiceBase.md)<`T`\> |
 
 #### Parameters
 
@@ -80,7 +122,7 @@ Method used to get the services from the database.
 
 #### Returns
 
-[`ServiceBase`](Services_ServiceBase.ServiceBase.md)
+`T`
 
 ___
 
@@ -109,9 +151,34 @@ Method used to add a service to the service loader.
 
 ___
 
+### clone
+
+▸ `Static` **clone**<`T`\>(`serviceNameOrClass`, `properties`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`T`\>
+
+Static method used to get a clone with parameters of a service from the service loader.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`ServiceBase`](Services_ServiceBase.ServiceBase.md)<`T`\> |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `serviceNameOrClass` | `string` \| [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`T`\> | The name of the service you want to get. |
+| `properties` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`T`\>
+
+___
+
 ### get
 
-▸ `Static` **get**<`T`\>(`serviceNameOrClass`): `T`
+▸ `Static` **get**<`T`\>(`serviceNameOrClass`, `properties?`): `T`
 
 Static method used to get a service from the service loader.
 
@@ -126,6 +193,7 @@ Static method used to get a service from the service loader.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `serviceNameOrClass` | `string` \| [`Constructor`](../modules/Documentation_MetadataTypes.md#constructor)<`T`\> | The name of the service you want to get. |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
 
 #### Returns
 

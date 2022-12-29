@@ -40,6 +40,28 @@ export default abstract class ServiceBase {
   }
 
   /**
+   * Creates a clone of the current service.
+   *
+   * @param [properties] A list of properties that you want to pass to the new instance.
+   */
+  public clone<T = ServiceBase>(properties?: Record<string, any>): T {
+    const copy = new (this.constructor as { new (): T })();
+    Object.assign(copy, this);
+
+    if (properties && Object.keys(properties).length > 0) {
+      Object.assign(copy, properties);
+    }
+    return copy;
+  }
+
+  /**
+   * Method used to perform some initialisations in the class.
+   */
+  public async init(): Promise<void> {
+    // NOP
+  }
+
+  /**
    * Validates the given data against a given validator and returns
    * the data after applying the validator on it.
    *

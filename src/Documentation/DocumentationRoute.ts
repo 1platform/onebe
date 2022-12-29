@@ -35,7 +35,7 @@ export default class DocumentationRoute extends Route {
 
   @GET<Record<string, string>>("/")
   @Endpoint({
-    summary: "List basic information about the application",
+    description: "List basic information about the application",
     responses: [
       {
         statusCode: HTTPStatus.OK,
@@ -55,7 +55,7 @@ export default class DocumentationRoute extends Route {
 
   @GET<Record<string, unknown>>("/routes")
   @Endpoint({
-    summary: "List the endpoints exposed by the application.",
+    description: "List the endpoints exposed by the application.",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],
   })
   public getRoutes(): Record<string, unknown> {
@@ -64,7 +64,7 @@ export default class DocumentationRoute extends Route {
 
   @GET<Record<string, string>>("/swagger.yaml")
   @Endpoint({
-    summary: "Returns the YAML version of the OpenAPI 3 documentation",
+    description: "Returns the YAML version of the OpenAPI 3 documentation",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "text/vnd.yaml" } ],
   })
   public getOpenAPIYaml(): IResponse<string> {
@@ -76,7 +76,7 @@ export default class DocumentationRoute extends Route {
 
   @GET<Record<string, any>>("/swagger.json")
   @Endpoint({
-    summary: "Returns the YAML version of the OpenAPI 3 documentation",
+    description: "Returns the JSON version of the OpenAPI 3 documentation",
     responses: [ { statusCode: HTTPStatus.OK, schema: EntityPropertyDataTypes.STRING, contentType: "application/json" } ],
   })
   public getOpenAPIJSON(): Record<string, any> {

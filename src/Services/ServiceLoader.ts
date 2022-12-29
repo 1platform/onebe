@@ -1,5 +1,6 @@
 import ServiceBase from "@/Services/ServiceBase";
 import { Constructor } from "@/Documentation/MetadataTypes";
+import { HTTPError } from "@/Exceptions";
 
 /**
  * A system to load services into the application and reuse them as needed.
@@ -9,6 +10,11 @@ export default class ServiceLoader {
    * A map containing all the instantiated services in the application.
    */
   protected _services: Record<string, ServiceBase> = {};
+
+  /**
+   * A map containing all the cloned instances in the application.
+   */
+  protected _clonedServices: Record<string, ServiceBase> = {};
 
   /**
    * The protected constructor of the service loader class.
@@ -37,13 +43,38 @@ export default class ServiceLoader {
    * Static method used to get a service from the service loader.
    *
    * @param serviceNameOrClass The name of the service you want to get.
+   * @param [properties] A list of properties that you want to pass to the new instance.
    */
-  public static get<T extends ServiceBase>(serviceNameOrClass: string | Constructor<T>): T {
+  public static get<T extends ServiceBase>(serviceNameOrClass: string | Constructor<T>, properties?: Record<string, any>): T {
     let serviceName = serviceNameOrClass as string;
     if (typeof serviceNameOrClass !== "string") {
       serviceName = serviceNameOrClass.name;
     }
-    return ServiceLoader.instance._get(serviceName) as T;
+
+    return properties && Object.keys(properties).length > 0
+      ? ServiceLoader.instance._clone<T>(serviceName, properties)
+      : ServiceLoader.instance._get<T>(serviceName);
+  }
+
+  /**
+   * Static method used to get a clone with parameters of a service from the service loader.
+   *
+   * @param serviceNameOrClass The name of the service you want to get.
+   * @param properties A list of properties that you want to pass to the new instance.
+   */
+  public static async clone<T extends ServiceBase>(serviceNameOrClass: string | Constructor<T>, properties: Record<string, any>): Promise<T> {
+    let serviceName = serviceNameOrClass as string;
+    if (typeof serviceNameOrClass !== "string") {
+      serviceName = serviceNameOrClass.name;
+    }
+
+    if (!properties || Object.keys(properties).length === 0) {
+      throw new HTTPError("Please specify a list of parameters");
+    }
+
+    const instance = ServiceLoader.instance._clone<T>(serviceName, properties);
+    await instance.init();
+    return instance;
   }
 
   /**
@@ -66,8 +97,29 @@ export default class ServiceLoader {
    *
    * @param serviceName The name of the service.
    */
-  protected _get(serviceName: string): ServiceBase {
-    return this._services[serviceName] || null;
+  protected _get<T extends ServiceBase>(serviceName: string): T | null {
+    return (this._services[serviceName] as T) || null;
+  }
+
+  /**
+   * Method used to get the services from the database.
+   *
+   * @param serviceName The name of the service.
+   * @param [properties] A list of properties that you want to pass to the new instance.
+   */
+  protected _clone<T extends ServiceBase>(serviceName: string, properties?: Record<string, any>): T {
+    const originalInstance: T = this._get<T>(serviceName);
+    if (!originalInstance) {
+      return null;
+    }
+
+    const instanceName = `${ serviceName }_${ JSON.stringify(properties || {}) }`;
+    if (this._clonedServices[instanceName]) {
+      return this._clonedServices[instanceName] as T;
+    }
+
+    this._clonedServices[instanceName] = originalInstance.clone(properties);
+    return this._clonedServices[instanceName] as T;
   }
 
   /**

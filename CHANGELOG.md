@@ -2,6 +2,19 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.3.0
+
+🚀 New:
+
+- Add a method to easily clone a service and pass some new property values to it.
+- Add a method to get the cloned service from the service loader, together with a cached version of the service.
+- Add support for Unit Testing
+
+🔧 Bugfix:
+
+- Fix some documentation for the Documentation Route.
+- Fix an issue with the BaseEntity functionality. Add a method to create the entity.
+
 ## Version 2.2.5
 
 🔧 Bugfix:

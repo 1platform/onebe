@@ -64,10 +64,7 @@ export class PaginatedEntity<TEntity> extends BaseEntity {
     previousPage?: string | null;
 }
 
-/**
- * The base object to be used when requesting a paginated entity.
- */
-export class PaginatedOptions<TEntity> extends BaseEntity {
+export interface IPaginatedOptions<Entity> {
   /**
    * The page we need to fetch.
    */
@@ -79,7 +76,25 @@ export class PaginatedOptions<TEntity> extends BaseEntity {
   /**
    * A list of options to be used in the data filtering and displaying.
    */
-  options?: FindManyOptions<TEntity>;
+  options?: FindManyOptions<Entity>;
+}
+
+/**
+ * The base object to be used when requesting a paginated entity.
+ */
+export class PaginatedOptions<Entity> extends BaseEntity implements IPaginatedOptions<Entity> {
+  /**
+   * The page we need to fetch.
+   */
+  page?: number;
+  /**
+   * How many records should be returned.
+   */
+  size?: number;
+  /**
+   * A list of options to be used in the data filtering and displaying.
+   */
+  options?: FindManyOptions<Entity>;
 }
 
 /**

@@ -53,6 +53,7 @@
 - [DB/TypeORM/Interfaces](modules/DB_TypeORM_Interfaces.md)
 - [Documentation](modules/Documentation.md)
 - [Documentation/BaseEntity](modules/Documentation_BaseEntity.md)
+- [Documentation/BaseEntity.test](modules/Documentation_BaseEntity_test.md)
 - [Documentation/Decorators/ControllerDecorators](modules/Documentation_Decorators_ControllerDecorators.md)
 - [Documentation/Decorators/Endpoint/RequestDecorators](modules/Documentation_Decorators_Endpoint_RequestDecorators.md)
 - [Documentation/Decorators/Endpoint/ResponseDecorators](modules/Documentation_Decorators_Endpoint_ResponseDecorators.md)

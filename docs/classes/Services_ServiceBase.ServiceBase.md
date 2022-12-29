@@ -33,7 +33,9 @@ happen through a service using a repository.
 
 ### Methods
 
+- [clone](Services_ServiceBase.ServiceBase.md#clone)
 - [customValidate](Services_ServiceBase.ServiceBase.md#customvalidate)
+- [init](Services_ServiceBase.ServiceBase.md#init)
 - [validate](Services_ServiceBase.ServiceBase.md#validate)
 
 ## Constructors
@@ -70,6 +72,30 @@ Sets the validator value.
 
 ## Methods
 
+### clone
+
+▸ **clone**<`T`\>(`properties?`): `T`
+
+Creates a clone of the current service.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | [`ServiceBase`](Services_ServiceBase.ServiceBase.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+`T`
+
+___
+
 ### customValidate
 
 ▸ `Protected` **customValidate**<`T`\>(`data`, `validator`): `T`
@@ -93,6 +119,18 @@ the data after applying the validator on it.
 #### Returns
 
 `T`
+
+___
+
+### init
+
+▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Method used to perform some initialisations in the class.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
 ___
 

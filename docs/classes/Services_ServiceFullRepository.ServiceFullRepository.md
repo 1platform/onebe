@@ -43,6 +43,7 @@ that need working with a database.
 ### Methods
 
 - [\_getPaginatedOptions](Services_ServiceFullRepository.ServiceFullRepository.md#_getpaginatedoptions)
+- [clone](Services_ServiceFullRepository.ServiceFullRepository.md#clone)
 - [create](Services_ServiceFullRepository.ServiceFullRepository.md#create)
 - [customValidate](Services_ServiceFullRepository.ServiceFullRepository.md#customvalidate)
 - [delete](Services_ServiceFullRepository.ServiceFullRepository.md#delete)
@@ -50,6 +51,7 @@ that need working with a database.
 - [getAll](Services_ServiceFullRepository.ServiceFullRepository.md#getall)
 - [getAllPaginated](Services_ServiceFullRepository.ServiceFullRepository.md#getallpaginated)
 - [getByKey](Services_ServiceFullRepository.ServiceFullRepository.md#getbykey)
+- [init](Services_ServiceFullRepository.ServiceFullRepository.md#init)
 - [update](Services_ServiceFullRepository.ServiceFullRepository.md#update)
 - [validate](Services_ServiceFullRepository.ServiceFullRepository.md#validate)
 
@@ -194,7 +196,7 @@ sent by the user.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `paginatedOptions` | [`PaginatedOptions`](Services_PaginationDefinition.PaginatedOptions.md)<`Entity`\> | The pagination options. |
+| `paginatedOptions` | [`IPaginatedOptions`](../interfaces/Services_PaginationDefinition.IPaginatedOptions.md)<`Entity`\> | The pagination options. |
 
 #### Returns
 
@@ -203,6 +205,34 @@ sent by the user.
 #### Inherited from
 
 [ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[_getPaginatedOptions](Services_ServiceReadRepository.ServiceReadRepository.md#_getpaginatedoptions)
+
+___
+
+### clone
+
+▸ **clone**<`T`\>(`properties?`): `T`
+
+Creates a clone of the current service.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | [`ServiceBase`](Services_ServiceBase.ServiceBase.md) |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `properties?` | `Record`<`string`, `any`\> | A list of properties that you want to pass to the new instance. |
+
+#### Returns
+
+`T`
+
+#### Inherited from
+
+[ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[clone](Services_ServiceReadRepository.ServiceReadRepository.md#clone)
 
 ___
 
@@ -330,7 +360,7 @@ filters sent as parameters.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `paginatedOptions` | [`PaginatedOptions`](Services_PaginationDefinition.PaginatedOptions.md)<`Entity`\> | A list with parameters needed for pagination. |
+| `paginatedOptions` | [`IPaginatedOptions`](../interfaces/Services_PaginationDefinition.IPaginatedOptions.md)<`Entity`\> | A list with parameters needed for pagination. |
 
 #### Returns
 
@@ -362,6 +392,22 @@ Method used to get a single element, based on the primary key of the entity.
 #### Inherited from
 
 [ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[getByKey](Services_ServiceReadRepository.ServiceReadRepository.md#getbykey)
+
+___
+
+### init
+
+▸ **init**(): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Method used to perform some initialisations in the class.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+#### Inherited from
+
+[ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[init](Services_ServiceReadRepository.ServiceReadRepository.md#init)
 
 ___
 
