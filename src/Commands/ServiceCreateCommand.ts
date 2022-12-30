@@ -41,7 +41,6 @@ export default class ServiceCreateCommand implements CommandModule {
       .option("class", {
         alias: "c",
         describe: "The class to be used as base for creating services.",
-        choices: Object.keys(Config.object("cli.services", {})),
         type: "string",
       })
       .option("override", {

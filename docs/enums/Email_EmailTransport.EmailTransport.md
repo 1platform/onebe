@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.1](../README.md) / [Exports](../modules.md) / [Email/EmailTransport](../modules/Email_EmailTransport.md) / EmailTransport
+[OneBE Framework - v2.4.2](../README.md) / [Exports](../modules.md) / [Email/EmailTransport](../modules/Email_EmailTransport.md) / EmailTransport
 
 # Enumeration: EmailTransport
 

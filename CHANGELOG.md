@@ -6,6 +6,12 @@ Here we will note all the changes made to the framework.
 
 🔧 Bugfix:
 
+- Fix some issues with the service:create command options (--class).
+
+## Version 2.4.1
+
+🔧 Bugfix:
+
 - Fix some issues with the service:create command options (--validator considered --version).
 
 ## Version 2.4.0

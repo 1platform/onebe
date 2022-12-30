@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.1](../README.md) / [Exports](../modules.md) / Commands/RouteCreateCommand
+[OneBE Framework - v2.4.2](../README.md) / [Exports](../modules.md) / Commands/RouteCreateCommand
 
 # Module: Commands/RouteCreateCommand
 
