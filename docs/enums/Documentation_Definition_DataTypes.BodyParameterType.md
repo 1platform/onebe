@@ -1,4 +1,4 @@
-[OneBE Framework - v2.3.0](../README.md) / [Exports](../modules.md) / [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md) / BodyParameterType
+[OneBE Framework - v2.4.0](../README.md) / [Exports](../modules.md) / [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md) / BodyParameterType
 
 # Enumeration: BodyParameterType
 
