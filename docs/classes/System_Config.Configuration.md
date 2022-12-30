@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.2](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
+[OneBE Framework - v2.4.3](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
 
 # Class: Configuration
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.2](../README.md) / [Exports](../modules.md) / Router/RouteDecorators
+[OneBE Framework - v2.4.3](../README.md) / [Exports](../modules.md) / Router/RouteDecorators
 
 # Module: Router/RouteDecorators
 
