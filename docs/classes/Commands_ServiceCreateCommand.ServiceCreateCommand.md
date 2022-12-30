@@ -56,7 +56,7 @@ CommandModule.describe
 
 ### builder
 
-▸ **builder**(`args`): `Argv`<{ `serviceName`: `unknown`  } & { `validator`: `boolean`  } & { `repository`: `string`  } & { `type`: `string`  } & { `override`: `boolean`  }\>
+▸ **builder**(`args`): `Argv`<{ `serviceName`: `unknown`  } & { `validator`: `boolean`  } & { `repository`: `string`  } & { `type`: `string`  } & { `class`: `string`  } & { `override`: `boolean`  }\>
 
 Method used to define the options and parameters that the CLI command
 can receive.
@@ -69,7 +69,7 @@ can receive.
 
 #### Returns
 
-`Argv`<{ `serviceName`: `unknown`  } & { `validator`: `boolean`  } & { `repository`: `string`  } & { `type`: `string`  } & { `override`: `boolean`  }\>
+`Argv`<{ `serviceName`: `unknown`  } & { `validator`: `boolean`  } & { `repository`: `string`  } & { `type`: `string`  } & { `class`: `string`  } & { `override`: `boolean`  }\>
 
 #### Implementation of
 

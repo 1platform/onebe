@@ -151,6 +151,7 @@
 - [defaults/api](modules/defaults_api.md)
 - [defaults/app](modules/defaults_app.md)
 - [defaults/auth](modules/defaults_auth.md)
+- [defaults/cli](modules/defaults_cli.md)
 - [defaults/db](modules/defaults_db.md)
 - [defaults/docs](modules/defaults_docs.md)
 - [defaults/email](modules/defaults_email.md)
