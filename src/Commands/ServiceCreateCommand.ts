@@ -2,6 +2,7 @@ import { Arguments, Argv, CommandModule } from "yargs";
 import { camelCase } from "@/Utils";
 import createServiceFile from "@/Commands/Utils/serviceFile";
 import { getDefaultLogger } from "@/System/Logger";
+import Config from "@/System/Config";
 
 /**
  * CLI Command to create a new service.
@@ -22,6 +23,7 @@ export default class ServiceCreateCommand implements CommandModule {
         describe: "The name of the service to be created",
       })
       .option("validator", {
+        alias: "v",
         describe: "Flag to add data validation support for the service.",
         type: "boolean",
       })
@@ -31,9 +33,16 @@ export default class ServiceCreateCommand implements CommandModule {
         type: "string",
       })
       .option("type", {
+        alias: "t",
         describe: "The type of repository service to be used. Valid only with --repository option.",
         choices: [ "basic", "read-only", "full" ],
         default: "basic",
+        type: "string",
+      })
+      .option("class", {
+        alias: "c",
+        describe: "The class to be used as base for creating services.",
+        choices: Object.keys(Config.object("cli.services", {})),
         type: "string",
       })
       .option("override", {
@@ -66,6 +75,7 @@ export default class ServiceCreateCommand implements CommandModule {
       folder,
       validator: args.validator || false,
       repository: args.repository ? camelCase(args.repository, true) : "",
+      class: args.class || "",
       type: args.type || "basic",
       override: args.override || false,
     });

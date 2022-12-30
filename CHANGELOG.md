@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.0
+
+🚀 New:
+
+- Add support to define additional services that can be used as base to generate services files.
+
 ## Version 2.3.0
 
 🚀 New:

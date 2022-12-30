@@ -3,6 +3,7 @@ import fs from "fs";
 import chalk from "chalk";
 import { getDefaultLogger } from "@/System/Logger";
 import Config from "@/System/Config";
+import { HTTPError } from "@/Exceptions";
 
 /**
  * Gets contents of the service file.
@@ -18,7 +19,10 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
   const constructorData = [];
   let superParameters = "";
 
-  if (options.repository) {
+  if (options.class) {
+    serviceBaseName = options.repository ? `${ options.class }<${ options.repository }>` : (options.class as string);
+    serviceBaseNameImport = options.class as string;
+  } else if (options.repository) {
     switch (options.type) {
       case "full":
         serviceBaseName = `ServiceFullRepository<${ options.repository }>`;
@@ -40,7 +44,15 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
     superParameters = options.repository as string;
   }
 
-  baseImport.unshift(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);
+  if (options.class) {
+    const classPath = Config.object("cli.services", {})[options.class as string];
+    if (!classPath) {
+      throw new HTTPError("Unable to find the desired service!");
+    }
+    baseImport.unshift(`import ${ serviceBaseNameImport } from "${ classPath }";`);
+  } else {
+    baseImport.unshift(`import { ${ serviceBaseNameImport } } from "onebe/Services";`);
+  }
 
   if (options.validator) {
     baseImport.unshift('import Joi from "joi";');
