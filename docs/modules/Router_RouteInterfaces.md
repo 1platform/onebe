@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.3](../README.md) / [Exports](../modules.md) / Router/RouteInterfaces
+[OneBE Framework - v2.4.4](../README.md) / [Exports](../modules.md) / Router/RouteInterfaces
 
 # Module: Router/RouteInterfaces
 

@@ -21,7 +21,7 @@ import ProjectCreateCommand from "@/Commands/ProjectCreateCommand";
 import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
-Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", "./config")));
+Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", `.${ Env.string("NDOE_ENV", "dev") === "dev" ? "/src" : "" }/config`)));
 
 const yargsBase = yargs
   .usage("Usage: onebe <command> [options]")

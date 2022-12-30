@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.3](../README.md) / [Exports](../modules.md) / Documentation/Definition/DataTypes
+[OneBE Framework - v2.4.4](../README.md) / [Exports](../modules.md) / Documentation/Definition/DataTypes
 
 # Module: Documentation/Definition/DataTypes
 

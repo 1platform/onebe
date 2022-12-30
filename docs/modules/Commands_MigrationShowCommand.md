@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.3](../README.md) / [Exports](../modules.md) / Commands/MigrationShowCommand
+[OneBE Framework - v2.4.4](../README.md) / [Exports](../modules.md) / Commands/MigrationShowCommand
 
 # Module: Commands/MigrationShowCommand
 

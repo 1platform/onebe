@@ -22,6 +22,13 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
   if (options.class) {
     serviceBaseName = options.repository ? `${ options.class }<${ options.repository }>` : (options.class as string);
     serviceBaseNameImport = options.class as string;
+
+    if (options.repository) {
+      const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
+      baseImport.push(`import ${ options.repository } from "${ importPath }";`);
+
+      superParameters = options.repository as string;
+    }
   } else if (options.repository) {
     switch (options.type) {
       case "full":
