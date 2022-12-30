@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 import "reflect-metadata";
 import yargs from "yargs";
+import path from "path";
 import register from "@babel/register";
 import { getVersion } from "@/version";
+import Config from "@/System/Config";
+import Env from "@/System/Env";
 import MigrationCreateCommand from "@/Commands/MigrationCreateCommand";
 import EntityCreateCommand from "@/Commands/EntityCreateCommand";
 import MigrationShowCommand from "@/Commands/MigrationShowCommand";
@@ -18,6 +21,7 @@ import ProjectCreateCommand from "@/Commands/ProjectCreateCommand";
 import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
+Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", "./config")));
 
 const yargsBase = yargs
   .usage("Usage: onebe <command> [options]")

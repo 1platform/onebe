@@ -2,7 +2,14 @@
 
 Here we will note all the changes made to the framework.
 
-## Version 2.4.1
+## Version 2.4.3
+
+🔧 Bugfix:
+
+- Config isn't loaded into the CLI Commands.
+- Correct the Changelog versions.
+
+## Version 2.4.2
 
 🔧 Bugfix:
 
