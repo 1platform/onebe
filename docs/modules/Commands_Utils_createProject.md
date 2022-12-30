@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.0](../README.md) / [Exports](../modules.md) / Commands/Utils/createProject
+[OneBE Framework - v2.4.1](../README.md) / [Exports](../modules.md) / Commands/Utils/createProject
 
 # Module: Commands/Utils/createProject
 

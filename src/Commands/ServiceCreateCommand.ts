@@ -23,7 +23,6 @@ export default class ServiceCreateCommand implements CommandModule {
         describe: "The name of the service to be created",
       })
       .option("validator", {
-        alias: "v",
         describe: "Flag to add data validation support for the service.",
         type: "boolean",
       })
