@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.6
+
+🔧 Bugfix:
+
+- Fix an issue with soft delete.
+
 ## Version 2.4.5
 
 🌟 Improvements:

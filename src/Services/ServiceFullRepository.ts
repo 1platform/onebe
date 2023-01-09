@@ -58,7 +58,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   public async delete(itemId: KeyType): Promise<Entity> {
     const entity = await this.getByKey(itemId);
     if ("deletedAt" in entity && entity.deletedAt === null) {
-      await this.repository.softDelete(entity);
+      await this.repository.softDelete(entity[this.primaryKey]);
     } else {
       await this.repository.remove(entity);
     }
@@ -83,7 +83,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    */
   public async restore(itemId: KeyType): Promise<Entity> {
     const entity = await this.getByKey(itemId, { withDeleted: true });
-    await this.repository.restore(entity);
+    await this.repository.restore(entity[this.primaryKey]);
     return await this.getByKey(itemId);
   }
 }
