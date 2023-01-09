@@ -53,11 +53,37 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   /**
    * Method used to delete an entity.
    *
-   * @param itemId The ID of the element to be updated.
+   * @param itemId The ID of the element to be deleted.
    */
   public async delete(itemId: KeyType): Promise<Entity> {
     const entity = await this.getByKey(itemId);
+    if ("deletedAt" in entity && entity.deletedAt === null) {
+      await this.repository.softDelete(entity);
+    } else {
+      await this.repository.remove(entity);
+    }
+    return entity;
+  }
+
+  /**
+   * Method used to force delete an entity.
+   *
+   * @param itemId The ID of the element to be deleted.
+   */
+  public async forceDelete(itemId: KeyType): Promise<Entity> {
+    const entity = await this.getByKey(itemId, { withDeleted: true });
     await this.repository.remove(entity);
     return entity;
+  }
+
+  /**
+   * Method used to restore a deleted entity.
+   *
+   * @param itemId The ID of the element to be restored.
+   */
+  public async restore(itemId: KeyType): Promise<Entity> {
+    const entity = await this.getByKey(itemId, { withDeleted: true });
+    await this.repository.restore(entity);
+    return await this.getByKey(itemId);
   }
 }

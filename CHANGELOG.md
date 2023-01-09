@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.5
+
+🌟 Improvements:
+
+- Add methods to support soft deletion in repository.
+- Add method to restore a soft deleted element.
+
+🔧 Bugfix:
+
+- Fix an issue with the folder definition of a service.
+
 ## Version 2.4.4
 
 🔧 Bugfix:

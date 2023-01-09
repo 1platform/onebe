@@ -140,7 +140,13 @@ export default function createServiceFile(serviceName: string, options?: Record<
   if (serviceName.toLowerCase().indexOf("service") >= 0) {
     serviceName = serviceName.substring(0, serviceName.toLowerCase().indexOf("service"));
   }
-  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), ...((options?.folder as string[]) ?? []), `${ serviceName }Service.ts`);
+
+  let folder: string[] = [];
+  if (options.folder) {
+    folder = Array.isArray(options.folder) ? (options.folder as string[]) : [ options.folder as string ];
+  }
+
+  const serviceFile = path.resolve(Config.get("app.folders.services", "./"), ...folder, `${ serviceName }Service.ts`);
 
   if (!fs.existsSync(path.dirname(serviceFile))) {
     fs.mkdirSync(path.dirname(serviceFile), { recursive: true });
@@ -154,6 +160,6 @@ export default function createServiceFile(serviceName: string, options?: Record<
   const template = getServiceTemplate(serviceName, options || {});
   fs.writeFileSync(serviceFile, template, "utf-8");
 
-  addToIndex(serviceName, ((options?.folder as string[]) ?? []).join("/"));
+  addToIndex(serviceName, folder.join("/"));
   getDefaultLogger().info(`Service ${ chalk.blue(serviceFile) } has been generated successfully.`);
 }
