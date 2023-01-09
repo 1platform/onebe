@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.5](../README.md) / [Exports](../modules.md) / [Services/PaginationDefinition](../modules/Services_PaginationDefinition.md) / IPaginatedOptions
+[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / [Services/PaginationDefinition](../modules/Services_PaginationDefinition.md) / IPaginatedOptions
 
 # Interface: IPaginatedOptions<Entity\>
 

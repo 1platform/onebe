@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.5](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
+[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / [Documentation/Helpers/EntityHelpers](../modules/Documentation_Helpers_EntityHelpers.md) / CustomEntityHelper
 
 # Class: CustomEntityHelper
 

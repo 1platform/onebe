@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.5](../README.md) / [Exports](../modules.md) / Authentication/IPayload
+[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / Authentication/IPayload
 
 # Module: Authentication/IPayload
 
