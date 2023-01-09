@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.4](../README.md) / [Exports](../modules.md) / Authentication/JWT
+[OneBE Framework - v2.4.5](../README.md) / [Exports](../modules.md) / Authentication/JWT
 
 # Module: Authentication/JWT
 

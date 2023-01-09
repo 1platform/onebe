@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.4](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
+[OneBE Framework - v2.4.5](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
 
 # Class: ServiceFullRepository<Entity, KeyType\>
 
@@ -47,11 +47,13 @@ that need working with a database.
 - [create](Services_ServiceFullRepository.ServiceFullRepository.md#create)
 - [customValidate](Services_ServiceFullRepository.ServiceFullRepository.md#customvalidate)
 - [delete](Services_ServiceFullRepository.ServiceFullRepository.md#delete)
+- [forceDelete](Services_ServiceFullRepository.ServiceFullRepository.md#forcedelete)
 - [get](Services_ServiceFullRepository.ServiceFullRepository.md#get)
 - [getAll](Services_ServiceFullRepository.ServiceFullRepository.md#getall)
 - [getAllPaginated](Services_ServiceFullRepository.ServiceFullRepository.md#getallpaginated)
 - [getByKey](Services_ServiceFullRepository.ServiceFullRepository.md#getbykey)
 - [init](Services_ServiceFullRepository.ServiceFullRepository.md#init)
+- [restore](Services_ServiceFullRepository.ServiceFullRepository.md#restore)
 - [update](Services_ServiceFullRepository.ServiceFullRepository.md#update)
 - [validate](Services_ServiceFullRepository.ServiceFullRepository.md#validate)
 
@@ -294,7 +296,25 @@ Method used to delete an entity.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `itemId` | `KeyType` | The ID of the element to be updated. |
+| `itemId` | `KeyType` | The ID of the element to be deleted. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`\>
+
+___
+
+### forceDelete
+
+▸ **forceDelete**(`itemId`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`\>
+
+Method used to force delete an entity.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `itemId` | `KeyType` | The ID of the element to be deleted. |
 
 #### Returns
 
@@ -408,6 +428,24 @@ Method used to perform some initialisations in the class.
 #### Inherited from
 
 [ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[init](Services_ServiceReadRepository.ServiceReadRepository.md#init)
+
+___
+
+### restore
+
+▸ **restore**(`itemId`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`\>
+
+Method used to restore a deleted entity.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `itemId` | `KeyType` | The ID of the element to be restored. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`\>
 
 ___
 
