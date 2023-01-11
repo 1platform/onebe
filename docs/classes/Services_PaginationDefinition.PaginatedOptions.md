@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / [Services/PaginationDefinition](../modules/Services_PaginationDefinition.md) / PaginatedOptions
+[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / [Services/PaginationDefinition](../modules/Services_PaginationDefinition.md) / PaginatedOptions
 
 # Class: PaginatedOptions<Entity\>
 

@@ -45,8 +45,8 @@ export default class MigrationResetCommand implements CommandModule {
 
       const migrationExecutor = new MigrationExecutor(connection, connection.createQueryRunner());
       const executedMigrations = await migrationExecutor.getExecutedMigrations();
-      for (let iCounter = executedMigrations.length; iCounter > 0; iCounter--) {
-        getDefaultLogger().info(`Reverted migration: ${ executedMigrations[iCounter - 1].name }`);
+      for (const migration of executedMigrations) {
+        getDefaultLogger().info(`Reverted migration: ${ migration.name }`);
         await migrationExecutor.undoLastMigration();
       }
       await connection.destroy();

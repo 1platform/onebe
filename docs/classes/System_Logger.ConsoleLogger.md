@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / ConsoleLogger
+[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / [System/Logger](../modules/System_Logger.md) / ConsoleLogger
 
 # Class: ConsoleLogger
 

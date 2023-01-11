@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18nMiddleware
+[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / [Middlewares/I18NMiddleware](../modules/Middlewares_I18NMiddleware.md) / I18nMiddleware
 
 # Class: I18nMiddleware
 

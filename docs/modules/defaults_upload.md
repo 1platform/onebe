@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.6](../README.md) / [Exports](../modules.md) / defaults/upload
+[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / defaults/upload
 
 # Module: defaults/upload
 
