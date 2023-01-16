@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.10](../README.md) / [Exports](../modules.md) / Services/ServiceReadRepository
+[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / Services/ServiceReadRepository
 
 # Module: Services/ServiceReadRepository
 
