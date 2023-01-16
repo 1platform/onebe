@@ -66,12 +66,11 @@ export default class SwaggerRoutes {
     const groups = {};
 
     for (const endpoint of Object.values(route.endpoints)) {
+      endpoint.parameters = { ...(route.parameters || {}), ...(endpoint.parameters || {}) };
       const path = this.getPath(route.basePath, endpoint.path, Object.keys(endpoint.parameters));
       if (!groups[path]) {
         groups[path] = {};
       }
-      endpoint.parameters = { ...(route.parameters || {}), ...(endpoint.parameters || {}) };
-
       groups[path][endpoint.verb] = this.parsePath(endpoint, route.controller, [ route.name, ...(route.group || []) ]);
     }
 
@@ -208,7 +207,7 @@ export default class SwaggerRoutes {
    *
    * @param statuses The list of statuses that can be returned by the endpoint.
    */
-  protected getStatusesSchemas(statuses: Array<[string, string]>): Record<string, Record<string, unknown>> {
+  protected getStatusesSchemas(statuses: Array<[ string, string ]>): Record<string, Record<string, unknown>> {
     if (statuses.length === 0) {
       return {};
     }

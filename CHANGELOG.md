@@ -2,7 +2,14 @@
 
 Here we will note all the changes made to the framework.
 
-## Version 2.4.10
+## Version 2.4.12
+
+🔧 Bugfix:
+
+- Changelog version
+- Correct parameter naming in the URL
+
+## Version 2.4.11
 
 🔧 Bugfix:
 
