@@ -51,6 +51,7 @@ export default class HTTP {
     this._app.use(
       helmet({
         contentSecurityPolicy: false,
+        crossOriginEmbedderPolicy: false,
       })
     );
   }

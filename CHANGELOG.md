@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.13
+
+🔧 Bugfix:
+
+- Helmet blocks images loading from external URL.
+
 ## Version 2.4.12
 
 🔧 Bugfix:
