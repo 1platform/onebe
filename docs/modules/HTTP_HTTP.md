@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / HTTP/HTTP
+[OneBE Framework - v2.4.8](../README.md) / [Exports](../modules.md) / HTTP/HTTP
 
 # Module: HTTP/HTTP
 

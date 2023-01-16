@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / [System/Env](../modules/System_Env.md) / Environment
+[OneBE Framework - v2.4.8](../README.md) / [Exports](../modules.md) / [System/Env](../modules/System_Env.md) / Environment
 
 # Class: Environment
 
@@ -175,7 +175,7 @@ Returns a valid URL value of a given environment variable.
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `field` | `string` | `undefined` | The name of the flag. |
+| `field` | `string` | `undefined` | The name of the field. |
 | `defaultValue` | `string` | `""` | The default value if the variable doesn't exist. |
 
 #### Returns

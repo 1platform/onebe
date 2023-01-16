@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / DB/TypeORM/FullDBSeed
+[OneBE Framework - v2.4.8](../README.md) / [Exports](../modules.md) / DB/TypeORM/FullDBSeed
 
 # Module: DB/TypeORM/FullDBSeed
 

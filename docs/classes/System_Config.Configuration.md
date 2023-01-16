@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.7](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
+[OneBE Framework - v2.4.8](../README.md) / [Exports](../modules.md) / [System/Config](../modules/System_Config.md) / Configuration
 
 # Class: Configuration
 
@@ -30,6 +30,7 @@ application.
 - [number](System_Config.Configuration.md#number)
 - [object](System_Config.Configuration.md#object)
 - [string](System_Config.Configuration.md#string)
+- [url](System_Config.Configuration.md#url)
 
 ## Constructors
 
@@ -78,7 +79,7 @@ Returns the array value of the given configuration key.
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
 | `key` | `string` | `undefined` | The configuration key. |
-| `defaultValue` | `any` | `null` | The default value if the configuration key doesn't exists. |
+| `defaultValue` | `any` | `null` | The default value if the configuration key doesn't exist. |
 
 #### Returns
 
@@ -228,6 +229,25 @@ Returns the string value of the given configuration key.
 | :------ | :------ | :------ | :------ |
 | `key` | `string` | `undefined` | The configuration key. |
 | `defaultValue` | `string` | `""` | The default value if the configuration key doesn't exists. |
+
+#### Returns
+
+`string`
+
+___
+
+### url
+
+▸ **url**(`field`, `defaultValue?`): `string`
+
+Returns a valid URL value of the given configuration key.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `field` | `string` | `undefined` | The name of the field. |
+| `defaultValue` | `string` | `""` | The default value if the variable doesn't exist. |
 
 #### Returns
 
