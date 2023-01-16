@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md) / EntityPropertyDataTypes
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Documentation/Definition/DataTypes](../modules/Documentation_Definition_DataTypes.md) / EntityPropertyDataTypes
 
 # Enumeration: EntityPropertyDataTypes
 

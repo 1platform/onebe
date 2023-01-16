@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / [Services/ServiceReadRepository](../modules/Services_ServiceReadRepository.md) / ServiceReadRepository
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Services/ServiceReadRepository](../modules/Services_ServiceReadRepository.md) / ServiceReadRepository
 
 # Class: ServiceReadRepository<Entity, KeyType\>
 

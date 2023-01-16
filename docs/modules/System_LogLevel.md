@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / System/LogLevel
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / System/LogLevel
 
 # Module: System/LogLevel
 

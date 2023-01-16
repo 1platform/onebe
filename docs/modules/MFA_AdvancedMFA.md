@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / MFA/AdvancedMFA
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / MFA/AdvancedMFA
 
 # Module: MFA/AdvancedMFA
 

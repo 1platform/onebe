@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerRoutes](../modules/Documentation_Swagger_Modules_SwaggerRoutes.md) / SwaggerRoutes
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerRoutes](../modules/Documentation_Swagger_Modules_SwaggerRoutes.md) / SwaggerRoutes
 
 # Class: SwaggerRoutes
 

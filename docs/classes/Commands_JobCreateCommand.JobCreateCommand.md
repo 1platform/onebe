@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / [Commands/JobCreateCommand](../modules/Commands_JobCreateCommand.md) / JobCreateCommand
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Commands/JobCreateCommand](../modules/Commands_JobCreateCommand.md) / JobCreateCommand
 
 # Class: JobCreateCommand
 

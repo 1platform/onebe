@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.11](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
+[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
 
 # Class: ContextAPI<BodyRequest\>
 

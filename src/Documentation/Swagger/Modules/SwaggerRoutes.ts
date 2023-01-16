@@ -207,7 +207,7 @@ export default class SwaggerRoutes {
    *
    * @param statuses The list of statuses that can be returned by the endpoint.
    */
-  protected getStatusesSchemas(statuses: Array<[ string, string ]>): Record<string, Record<string, unknown>> {
+  protected getStatusesSchemas(statuses: Array<[string, string]>): Record<string, Record<string, unknown>> {
     if (statuses.length === 0) {
       return {};
     }
