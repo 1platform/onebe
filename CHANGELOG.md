@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.10
+
+🌟 Improvements:
+
+- Add support for Binary file returning for OpenAPI definition.
+
 ## Version 2.4.9
 
 🔧 Bugfix:

@@ -230,6 +230,10 @@ export interface IEndpointResponse<Response = any> {
    * Flag used to mark the endpoint response as an array response.
    */
   isArray?: boolean;
+  /**
+   * Flag used to mark the endpoint response as a binary response.
+   */
+  isBinary?: boolean;
 }
 
 /**

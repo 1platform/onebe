@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.9](../README.md) / [Exports](../modules.md) / defaults/cli
+[OneBE Framework - v2.4.10](../README.md) / [Exports](../modules.md) / defaults/cli
 
 # Module: defaults/cli
 

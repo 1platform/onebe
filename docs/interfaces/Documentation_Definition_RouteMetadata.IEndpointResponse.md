@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.9](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointResponse
+[OneBE Framework - v2.4.10](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointResponse
 
 # Interface: IEndpointResponse<Response\>
 
@@ -20,6 +20,7 @@ about an error thrown by an endpoint.
 - [contentType](Documentation_Definition_RouteMetadata.IEndpointResponse.md#contenttype)
 - [description](Documentation_Definition_RouteMetadata.IEndpointResponse.md#description)
 - [isArray](Documentation_Definition_RouteMetadata.IEndpointResponse.md#isarray)
+- [isBinary](Documentation_Definition_RouteMetadata.IEndpointResponse.md#isbinary)
 - [isSchema](Documentation_Definition_RouteMetadata.IEndpointResponse.md#isschema)
 - [schema](Documentation_Definition_RouteMetadata.IEndpointResponse.md#schema)
 - [statusCode](Documentation_Definition_RouteMetadata.IEndpointResponse.md#statuscode)
@@ -47,6 +48,14 @@ ___
 • `Optional` **isArray**: `boolean`
 
 Flag used to mark the endpoint response as an array response.
+
+___
+
+### isBinary
+
+• `Optional` **isBinary**: `boolean`
+
+Flag used to mark the endpoint response as a binary response.
 
 ___
 

@@ -153,6 +153,7 @@ export default class SwaggerRoutes {
             [response.contentType || "application/json"]: {
               schema: {
                 type: response.isArray ? "array" : !response.isSchema ? response.schema : undefined,
+                format: response.isBinary ? "binary" : undefined,
                 items: !response.isArray
                   ? undefined
                   : {
