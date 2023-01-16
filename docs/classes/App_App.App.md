@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.8](../README.md) / [Exports](../modules.md) / [App/App](../modules/App_App.md) / App
+[OneBE Framework - v2.4.9](../README.md) / [Exports](../modules.md) / [App/App](../modules/App_App.md) / App
 
 # Class: App
 

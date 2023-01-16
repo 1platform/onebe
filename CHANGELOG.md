@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.9
+
+🔧 Bugfix:
+
+- Fix the destination variable used for file storage.
+
 ## Version 2.4.8
 
 🌟 Improvements:

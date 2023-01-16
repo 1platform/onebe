@@ -24,7 +24,7 @@ export type UploadedFile = Express.Multer.File;
  * @param pathLike The list of path like elements.
  */
 export function getDestinationFolder(...pathLike: string[]) {
-  return path.resolve(Config.string("upload.destination"), ...pathLike);
+  return path.resolve(Config.string("upload.storage"), ...pathLike);
 }
 
 /**
