@@ -2,6 +2,17 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.8
+
+🌟 Improvements:
+
+- Add method to get a valid URL from the configuration files (Config.url).
+
+🔧 Bugfix:
+
+- Add missing http.frontend configuration variable.
+- Fix documentation in Env class.
+
 ## Version 2.4.7
 
 🔧 Bugfix:

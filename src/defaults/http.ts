@@ -37,6 +37,13 @@ const defaultHTTPConfig: IConfig = {
   url: Env.url("HTTP_URL", `http://${ Env.string("HTTP_LISTEN", "127.0.0.1") }:${ Env.int("HTTP_PORT", 7200) }`),
 
   /**
+   * The URL that can be used to access the frontend application.
+   *
+   * @default "http://HTTP_LISTEN:HTTP_PORT"
+   */
+  frontend: Env.url("HTTP_FRONTEND", `http://${ Env.string("HTTP_LISTEN", "127.0.0.1") }:${ Env.int("HTTP_PORT", 7200) }`),
+
+  /**
    * The format used to display the log information for HTTP requests.
    *
    * The supported formats are: "combined", "compact", "dev", "short", "tiny"

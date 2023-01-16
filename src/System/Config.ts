@@ -98,7 +98,7 @@ export class Configuration {
    * Returns the array value of the given configuration key.
    *
    * @param key The configuration key.
-   * @param defaultValue The default value if the configuration key doesn't exists.
+   * @param defaultValue The default value if the configuration key doesn't exist.
    */
   public array<T = string>(key: string, defaultValue = null): Array<T> {
     const keySplit = key.split(".");
@@ -142,6 +142,16 @@ export class Configuration {
    */
   public boolean(key: string): boolean {
     return this.get(key, "false").toUpperCase() === "TRUE";
+  }
+
+  /**
+   * Returns a valid URL value of the given configuration key.
+   *
+   * @param field The name of the field.
+   * @param defaultValue The default value if the variable doesn't exist.
+   */
+  public url(field: string, defaultValue = ""): string {
+    return (this.get(field) || defaultValue).replace(/(https?:\/\/)|(\/)+/g, "$1$2");
   }
 }
 

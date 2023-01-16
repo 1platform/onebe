@@ -78,7 +78,7 @@ export class Environment {
   /**
    * Returns a valid URL value of a given environment variable.
    *
-   * @param field The name of the flag.
+   * @param field The name of the field.
    * @param defaultValue The default value if the variable doesn't exist.
    */
   public url(field: string, defaultValue = ""): string {
