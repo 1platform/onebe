@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / [Commands/MigrationRunCommand](../modules/Commands_MigrationRunCommand.md) / MigrationRunCommand
+[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / [Commands/MigrationRunCommand](../modules/Commands_MigrationRunCommand.md) / MigrationRunCommand
 
 # Class: MigrationRunCommand
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / Documentation/Definition/RouteMetadata
+[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / Documentation/Definition/RouteMetadata
 
 # Module: Documentation/Definition/RouteMetadata
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / Authentication/IUser
+[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / Authentication/IUser
 
 # Module: Authentication/IUser
 

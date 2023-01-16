@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / Middlewares/I18NMiddleware
+[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / Middlewares/I18NMiddleware
 
 # Module: Middlewares/I18NMiddleware
 

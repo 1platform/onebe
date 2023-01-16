@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.12](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerTags
+[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerTags
 
 # Module: Documentation/Swagger/Modules/SwaggerTags
 
