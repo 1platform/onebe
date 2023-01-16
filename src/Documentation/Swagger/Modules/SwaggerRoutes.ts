@@ -70,6 +70,7 @@ export default class SwaggerRoutes {
       if (!groups[path]) {
         groups[path] = {};
       }
+      endpoint.parameters = { ...(route.parameters || {}), ...(endpoint.parameters || {}) };
 
       groups[path][endpoint.verb] = this.parsePath(endpoint, route.controller, [ route.name, ...(route.group || []) ]);
     }

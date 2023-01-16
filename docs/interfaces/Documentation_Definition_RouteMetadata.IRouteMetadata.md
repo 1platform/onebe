@@ -20,6 +20,7 @@ about a route (controller).
 - [isAPI](Documentation_Definition_RouteMetadata.IRouteMetadata.md#isapi)
 - [isDocs](Documentation_Definition_RouteMetadata.IRouteMetadata.md#isdocs)
 - [name](Documentation_Definition_RouteMetadata.IRouteMetadata.md#name)
+- [parameters](Documentation_Definition_RouteMetadata.IRouteMetadata.md#parameters)
 
 ## Properties
 
@@ -103,3 +104,11 @@ ___
 
 The name of the Route/Controller. The name should describe what does
 the route do. For example: UserController -> "User Management Controller"
+
+___
+
+### parameters
+
+• `Optional` **parameters**: `Record`<`string`, [`IEndpointParameter`](Documentation_Definition_RouteMetadata.IEndpointParameter.md)\>
+
+A list of URL Parameters that can be passed to the endpoint.

@@ -46,6 +46,7 @@ endpoints that are exposed by the route etc.
 - [markAsCustom](Documentation_RouteDefinition.RouteDefinition.md#markascustom)
 - [markAsDocs](Documentation_RouteDefinition.RouteDefinition.md#markasdocs)
 - [route](Documentation_RouteDefinition.RouteDefinition.md#route)
+- [routeParameter](Documentation_RouteDefinition.RouteDefinition.md#routeparameter)
 - [setDescription](Documentation_RouteDefinition.RouteDefinition.md#setdescription)
 - [setName](Documentation_RouteDefinition.RouteDefinition.md#setname)
 - [update](Documentation_RouteDefinition.RouteDefinition.md#update)
@@ -573,6 +574,25 @@ the metadata store.
 #### Returns
 
 [`IRouteMetadata`](../interfaces/Documentation_Definition_RouteMetadata.IRouteMetadata.md)
+
+___
+
+### routeParameter
+
+▸ **routeParameter**(`controller`, `options`): `void`
+
+Method used to set information about a URL parameter of a route.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `controller` | `string` | The controller we want to update. |
+| `options` | [`IEndpointParameter`](../interfaces/Documentation_Definition_RouteMetadata.IEndpointParameter.md) | Information about the parameter received by the endpoint. |
+
+#### Returns
+
+`void`
 
 ___
 

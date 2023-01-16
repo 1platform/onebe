@@ -9,6 +9,7 @@
 - [Controller](Documentation_Decorators_ControllerDecorators.md#controller)
 - [Description](Documentation_Decorators_ControllerDecorators.md#description)
 - [Name](Documentation_Decorators_ControllerDecorators.md#name)
+- [RouteParameter](Documentation_Decorators_ControllerDecorators.md#routeparameter)
 
 ## Functions
 
@@ -108,6 +109,39 @@ elements like this decorator.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `name` | `string` | The name of the controller. |
+
+#### Returns
+
+[`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+___
+
+### RouteParameter
+
+▸ **RouteParameter**<`T`\>(`parameter`, `isNumeric?`, `description?`): [`ControllerDecoratorFunction`](Router_RouteTypes.md#controllerdecoratorfunction)<`T`\>
+
+Decorator used to describe a parameter (:parameter) used in the endpoint URL for a route.
+
+When you have parameters in the endpoint URL, documenting the type of
+the parameter (if it is a number or a string) and adding a short description
+to it will help the developers that will use the exposed REST API endpoint
+in their interaction with your application.
+
+**`Decorator`**
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Constructor`](Documentation_MetadataTypes.md#constructor)<`any`\> |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `parameter` | `string` | `undefined` | The name of the parameter we want to document. |
+| `isNumeric?` | `boolean` | `false` | Should the value be a numeric one or not. |
+| `description?` | `string` | `undefined` | A short description of the parameter. |
 
 #### Returns
 

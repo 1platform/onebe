@@ -4,6 +4,12 @@ Here we will note all the changes made to the framework.
 
 ## Version 2.4.10
 
+🔧 Bugfix:
+
+- Add support for parameters in the route definition.
+
+## Version 2.4.10
+
 🌟 Improvements:
 
 - Add support for Binary file returning for OpenAPI definition.

@@ -37,6 +37,7 @@
 - [RequestDocs](Documentation.md#requestdocs)
 - [RequiredProperty](Documentation.md#requiredproperty)
 - [ResponseDocs](Documentation.md#responsedocs)
+- [RouteParameter](Documentation.md#routeparameter)
 - [StringProperty](Documentation.md#stringproperty)
 
 ## References
@@ -224,6 +225,12 @@ ___
 ### ResponseDocs
 
 Renames and re-exports [Documentation/Decorators/Endpoint/ResponseDecorators](Documentation_Decorators_Endpoint_ResponseDecorators.md)
+
+___
+
+### RouteParameter
+
+Re-exports [RouteParameter](Documentation_Decorators_ControllerDecorators.md#routeparameter)
 
 ___
 

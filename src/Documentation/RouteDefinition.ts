@@ -50,6 +50,7 @@ export default class RouteDefinition {
       description: description || "",
       basePath: [ basePath || "" ],
       endpoints: {},
+      parameters: {},
     };
 
     return this;
@@ -286,6 +287,17 @@ export default class RouteDefinition {
 
     endpoint.responses[options.statusCode] = options;
     return endpoint;
+  }
+
+  /**
+   * Method used to set information about a URL parameter of a route.
+   *
+   * @param controller The controller we want to update.
+   * @param options Information about the parameter received by the endpoint.
+   */
+  public routeParameter(controller: string, options: IEndpointParameter) {
+    const route = this.route(controller);
+    route.parameters[options.name] = options;
   }
 
   /**

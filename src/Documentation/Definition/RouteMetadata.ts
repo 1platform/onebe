@@ -88,6 +88,11 @@ export interface IRouteMetadata {
    * the name of the method that performs the desired action.
    */
   endpoints: Record<string, IEndpointMetadata>;
+
+  /**
+   * A list of URL Parameters that can be passed to the endpoint.
+   */
+  parameters?: Record<string, IEndpointParameter>;
 }
 
 /**
