@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / defaults/db
+[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / defaults/db
 
 # Module: defaults/db
 

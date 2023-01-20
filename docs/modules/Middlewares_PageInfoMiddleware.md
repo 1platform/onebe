@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.13](../README.md) / [Exports](../modules.md) / Middlewares/PageInfoMiddleware
+[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / Middlewares/PageInfoMiddleware
 
 # Module: Middlewares/PageInfoMiddleware
 

@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.4.14
+
+🌟 Improvements:
+
+- Add support for definition of basic types in the body defintion.
+
 ## Version 2.4.13
 
 🔧 Bugfix:

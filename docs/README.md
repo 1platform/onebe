@@ -1,9 +1,9 @@
-OneBE Framework - v2.4.13 / [Exports](modules.md)
+OneBE Framework - v2.4.14 / [Exports](modules.md)
 
 # OneBE Framework
 
 - Codename: Rebuild
-- Version: v2.4.13
+- Version: v2.4.14
 
 This is a framework that we use internally at Spark Dev for most of our internal applications. To help others build
 applications fast using Typescript we published this framework free to use. The license under which we publish the code

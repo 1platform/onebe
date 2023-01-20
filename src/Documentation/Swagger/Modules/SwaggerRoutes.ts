@@ -393,18 +393,26 @@ export default class SwaggerRoutes {
    */
   protected getRequestBody(bodyDefinition: IEndpointBody): Record<string, unknown> {
     let schema: Record<string, unknown> = {};
+    const isBasicType = [ "number", "string", "boolean" ].indexOf(bodyDefinition.entity) >= 0;
+
+    let itemsDefintion = {};
+    if (isBasicType) {
+      itemsDefintion = {
+        type: bodyDefinition.entity,
+      };
+    } else {
+      itemsDefintion = {
+        $ref: `#/components/schemas/${ bodyDefinition.entity }`,
+      };
+    }
 
     if (bodyDefinition.isArray) {
       schema = {
         type: EntityPropertyDataTypes.ARRAY,
-        items: {
-          $ref: `#/components/schemas/${ bodyDefinition.entity }`,
-        },
+        items: itemsDefintion,
       };
     } else {
-      schema = {
-        $ref: `#/components/schemas/${ bodyDefinition.entity }`,
-      };
+      schema = itemsDefintion;
     }
 
     return {
