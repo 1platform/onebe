@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / [Documentation/MetadataStore](../modules/Documentation_MetadataStore.md) / MetadataStore
+[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / [Documentation/MetadataStore](../modules/Documentation_MetadataStore.md) / MetadataStore
 
 # Class: MetadataStore
 

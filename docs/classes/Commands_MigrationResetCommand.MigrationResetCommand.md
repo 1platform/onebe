@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / [Commands/MigrationResetCommand](../modules/Commands_MigrationResetCommand.md) / MigrationResetCommand
+[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / [Commands/MigrationResetCommand](../modules/Commands_MigrationResetCommand.md) / MigrationResetCommand
 
 # Class: MigrationResetCommand
 

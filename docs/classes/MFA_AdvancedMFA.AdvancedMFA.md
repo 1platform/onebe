@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md) / AdvancedMFA
+[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / [MFA/AdvancedMFA](../modules/MFA_AdvancedMFA.md) / AdvancedMFA
 
 # Class: AdvancedMFA
 

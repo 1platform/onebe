@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / [Middlewares/SessionMiddleware](../modules/Middlewares_SessionMiddleware.md) / SessionMiddleware
+[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / [Middlewares/SessionMiddleware](../modules/Middlewares_SessionMiddleware.md) / SessionMiddleware
 
 # Class: SessionMiddleware
 

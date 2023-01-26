@@ -1,4 +1,4 @@
-[OneBE Framework - v2.4.14](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Model
+[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Model
 
 # Module: DB/TypeORM/Decorators/Model
 
