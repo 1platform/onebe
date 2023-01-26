@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.5.1
+
+🔧 Bugfix:
+
+- Fix an error in the relation delete query.
+
 ## Version 2.5.0
 
 🚀 New:

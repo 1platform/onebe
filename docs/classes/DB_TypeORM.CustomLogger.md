@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / CustomLogger
+[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / CustomLogger
 
 # Class: CustomLogger
 

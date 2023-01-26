@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / Commands/DatabaseSeedCommand
+[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / Commands/DatabaseSeedCommand
 
 # Module: Commands/DatabaseSeedCommand
 

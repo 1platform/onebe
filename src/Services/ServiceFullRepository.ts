@@ -239,7 +239,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
       .createQueryBuilder()
       .delete()
       .from(relation.relationName)
-      .where(`${ relation.parentField } = :parentField AND ${ relation.childField } IN :childField`, {
+      .where(`${ relation.parentField } = :parentField AND ${ relation.childField } IN (:...childField)`, {
         parentField: relation.parentValue,
         childField: data,
       })

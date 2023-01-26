@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.0](../README.md) / [Exports](../modules.md) / Documentation/Swagger/SwaggerUI
+[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / Documentation/Swagger/SwaggerUI
 
 # Module: Documentation/Swagger/SwaggerUI
 
