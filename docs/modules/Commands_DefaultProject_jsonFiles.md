@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / Commands/DefaultProject/jsonFiles
+[OneBE Framework - v2.5.2](../README.md) / [Exports](../modules.md) / Commands/DefaultProject/jsonFiles
 
 # Module: Commands/DefaultProject/jsonFiles
 

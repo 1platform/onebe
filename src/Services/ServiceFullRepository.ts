@@ -115,7 +115,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     child: string | EntityTarget<any>,
     data: Array<ChildRelationType>
   ): Promise<void> {
-    await this.insertRelationAction(item, child, data, true, true);
+    await this.insertRelationAction(item, child, data, true, false);
   }
 
   /**
@@ -145,7 +145,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     child: string | EntityTarget<any>,
     data: Array<ChildRelationType>
   ): Promise<void> {
-    await this.removeRelationAction(item, child, data, true, true);
+    await this.removeRelationAction(item, child, data, true, false);
   }
 
   /**

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / SMS/Transports/VonageTransport
+[OneBE Framework - v2.5.2](../README.md) / [Exports](../modules.md) / SMS/Transports/VonageTransport
 
 # Module: SMS/Transports/VonageTransport
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / version
+[OneBE Framework - v2.5.2](../README.md) / [Exports](../modules.md) / version
 
 # Module: version
 
@@ -27,7 +27,7 @@ ___
 
 ### version
 
-• `Const` **version**: ``"2.5.1"``
+• `Const` **version**: ``"2.5.2"``
 
 The version of the framework.
 

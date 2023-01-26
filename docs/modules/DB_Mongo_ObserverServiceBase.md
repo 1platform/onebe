@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.1](../README.md) / [Exports](../modules.md) / DB/Mongo/ObserverServiceBase
+[OneBE Framework - v2.5.2](../README.md) / [Exports](../modules.md) / DB/Mongo/ObserverServiceBase
 
 # Module: DB/Mongo/ObserverServiceBase
 
