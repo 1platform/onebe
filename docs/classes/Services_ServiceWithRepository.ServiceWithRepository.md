@@ -37,7 +37,9 @@ that need working with a database.
 ### Accessors
 
 - [dataSource](Services_ServiceWithRepository.ServiceWithRepository.md#datasource)
+- [entityName](Services_ServiceWithRepository.ServiceWithRepository.md#entityname)
 - [repository](Services_ServiceWithRepository.ServiceWithRepository.md#repository)
+- [tableName](Services_ServiceWithRepository.ServiceWithRepository.md#tablename)
 - [validator](Services_ServiceWithRepository.ServiceWithRepository.md#validator)
 
 ### Methods
@@ -102,6 +104,18 @@ Getter for the datasource attached to the service.
 
 ___
 
+### entityName
+
+• `get` **entityName**(): `string`
+
+Getter for the entity name used by this service.
+
+#### Returns
+
+`string`
+
+___
+
 ### repository
 
 • `get` **repository**(): `Repository`<`Entity`\>
@@ -111,6 +125,18 @@ Getter for the repository attached to the service.
 #### Returns
 
 `Repository`<`Entity`\>
+
+___
+
+### tableName
+
+• `get` **tableName**(): `string`
+
+Getter for the table name used by this service.
+
+#### Returns
+
+`string`
 
 ___
 

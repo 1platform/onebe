@@ -1,4 +1,5 @@
 import twilio from "twilio";
+import Twilio from "twilio/dist/lib/rest/Twilio";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 import ISMSTransport from "@/SMS/Transports/ISMSTransport";
@@ -11,7 +12,7 @@ export default class TwilioTransport implements ISMSTransport {
   /**
    * Twilio service handler.
    */
-  private readonly _twilio: twilio.Twilio;
+  private readonly _twilio: Twilio;
   /**
    * The default phone configuration.
    */

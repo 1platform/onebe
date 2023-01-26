@@ -43,4 +43,18 @@ export default abstract class ServiceWithRepository<Entity extends ObjectLiteral
   public get dataSource(): DataSource {
     return this._dataSource;
   }
+
+  /**
+   * Getter for the table name used by this service.
+   */
+  public get tableName(): string {
+    return this._repository.metadata.tableName;
+  }
+
+  /**
+   * Getter for the entity name used by this service.
+   */
+  public get entityName(): string {
+    return this._repository.metadata.name;
+  }
 }

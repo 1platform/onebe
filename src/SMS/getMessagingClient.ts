@@ -1,4 +1,5 @@
-import twilio, { Twilio } from "twilio";
+import twilio from "twilio";
+import Twilio from "twilio/dist/lib/rest/Twilio";
 import { Vonage } from "@vonage/server-sdk";
 import { Auth } from "@vonage/auth";
 

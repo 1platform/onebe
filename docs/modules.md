@@ -129,6 +129,7 @@
 - [Scheduler/IScheduleDefinition](modules/Scheduler_IScheduleDefinition.md)
 - [Services](modules/Services.md)
 - [Services/PaginationDefinition](modules/Services_PaginationDefinition.md)
+- [Services/RelationDefintion](modules/Services_RelationDefintion.md)
 - [Services/ServiceBase](modules/Services_ServiceBase.md)
 - [Services/ServiceFullRepository](modules/Services_ServiceFullRepository.md)
 - [Services/ServiceLoader](modules/Services_ServiceLoader.md)

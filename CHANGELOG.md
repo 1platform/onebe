@@ -2,11 +2,22 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.5.0
+
+🚀 New:
+
+- Add support to work with relations from the services, without the need of an entity - can be used to avoid a TypeORM error when
+  generating the query for insertion into the Many-to-Many table.
+
+🌟 Improvements:
+
+- Dependencies version bump
+
 ## Version 2.4.14
 
 🌟 Improvements:
 
-- Add support for definition of basic types in the body defintion.
+- Add support for definition of basic types in the body definition.
 
 ## Version 2.4.13
 

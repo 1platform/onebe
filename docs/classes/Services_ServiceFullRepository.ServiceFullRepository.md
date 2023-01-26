@@ -37,7 +37,9 @@ that need working with a database.
 ### Accessors
 
 - [dataSource](Services_ServiceFullRepository.ServiceFullRepository.md#datasource)
+- [entityName](Services_ServiceFullRepository.ServiceFullRepository.md#entityname)
 - [repository](Services_ServiceFullRepository.ServiceFullRepository.md#repository)
+- [tableName](Services_ServiceFullRepository.ServiceFullRepository.md#tablename)
 - [validator](Services_ServiceFullRepository.ServiceFullRepository.md#validator)
 
 ### Methods
@@ -47,12 +49,19 @@ that need working with a database.
 - [create](Services_ServiceFullRepository.ServiceFullRepository.md#create)
 - [customValidate](Services_ServiceFullRepository.ServiceFullRepository.md#customvalidate)
 - [delete](Services_ServiceFullRepository.ServiceFullRepository.md#delete)
+- [fetchRelationDefinition](Services_ServiceFullRepository.ServiceFullRepository.md#fetchrelationdefinition)
 - [forceDelete](Services_ServiceFullRepository.ServiceFullRepository.md#forcedelete)
 - [get](Services_ServiceFullRepository.ServiceFullRepository.md#get)
 - [getAll](Services_ServiceFullRepository.ServiceFullRepository.md#getall)
 - [getAllPaginated](Services_ServiceFullRepository.ServiceFullRepository.md#getallpaginated)
 - [getByKey](Services_ServiceFullRepository.ServiceFullRepository.md#getbykey)
 - [init](Services_ServiceFullRepository.ServiceFullRepository.md#init)
+- [insertRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationaction)
+- [insertRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationdirect)
+- [insertRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationindirect)
+- [removeRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationaction)
+- [removeRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationdirect)
+- [removeRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationindirect)
 - [restore](Services_ServiceFullRepository.ServiceFullRepository.md#restore)
 - [update](Services_ServiceFullRepository.ServiceFullRepository.md#update)
 - [validate](Services_ServiceFullRepository.ServiceFullRepository.md#validate)
@@ -137,6 +146,22 @@ ServiceReadRepository.dataSource
 
 ___
 
+### entityName
+
+• `get` **entityName**(): `string`
+
+Getter for the entity name used by this service.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+ServiceReadRepository.entityName
+
+___
+
 ### repository
 
 • `get` **repository**(): `Repository`<`Entity`\>
@@ -150,6 +175,22 @@ Getter for the repository attached to the service.
 #### Inherited from
 
 ServiceReadRepository.repository
+
+___
+
+### tableName
+
+• `get` **tableName**(): `string`
+
+Getter for the table name used by this service.
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+ServiceReadRepository.tableName
 
 ___
 
@@ -304,6 +345,35 @@ Method used to delete an entity.
 
 ___
 
+### fetchRelationDefinition
+
+▸ `Protected` **fetchRelationDefinition**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`KeyType`, `ChildRelationType`\>\>
+
+Based on the given definition parameters, generates a relation definition that can be used for data
+insertion and deletion.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
+| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`KeyType`, `ChildRelationType`\>\>
+
+___
+
 ### forceDelete
 
 ▸ **forceDelete**(`itemId`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`\>
@@ -428,6 +498,166 @@ Method used to perform some initialisations in the class.
 #### Inherited from
 
 [ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[init](Services_ServiceReadRepository.ServiceReadRepository.md#init)
+
+___
+
+### insertRelationAction
+
+▸ `Protected` **insertRelationAction**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
+| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### insertRelationDirect
+
+▸ **insertRelationDirect**<`ChildRelationType`\>(`item`, `child`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### insertRelationIndirect
+
+▸ **insertRelationIndirect**<`ChildRelationType`\>(`item`, `child`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the inverted relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeRelationAction
+
+▸ `Protected` **removeRelationAction**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes records from the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
+| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeRelationDirect
+
+▸ **removeRelationDirect**<`ChildRelationType`\>(`item`, `child`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes data from the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeRelationIndirect
+
+▸ **removeRelationIndirect**<`ChildRelationType`\>(`item`, `child`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes data from the inverted relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
 
 ___
 
