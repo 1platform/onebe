@@ -9,6 +9,7 @@ import {
   UpdateDateColumn as TypeORMUpdateDateColumn,
   VersionColumn as TypeORMVersionColumn,
   ViewColumn as TypeORMViewColumn,
+  VirtualColumn as TypeORMVirtualColumn,
 } from "typeorm";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
@@ -17,6 +18,7 @@ import { ColumnEmbeddedOptions } from "typeorm/decorator/options/ColumnEmbeddedO
 import { Constructor } from "@/Documentation/MetadataTypes";
 import { mapSQLToEntity } from "@/Documentation/Definition/EntityMetadata";
 import MetadataStore from "@/Documentation/MetadataStore";
+import { VirtualColumnOptions } from "typeorm/decorator/options/VirtualColumnOptions";
 
 /**
  * Function used to document a property of a model class.
@@ -148,6 +150,22 @@ export function PrimaryGeneratedColumn(
 export function VersionColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMVersionColumn(options)(object, propertyName);
+    DocumentEntityProperty(object, propertyName, options);
+  };
+}
+
+/**
+ * Decorator used to define a virtual column of a model.
+ *
+ * As a bonus, this decorator will add metadata information to the column that
+ * will be used for documentation.
+ *
+ * @decorator
+ * @param [options] A list of options used for defining the virtual column.
+ */
+export function VirtualColumn(options?: VirtualColumnOptions & { description?: string }): PropertyDecorator {
+  return function (object: Constructor, propertyName: string) {
+    TypeORMVirtualColumn(options)(object, propertyName);
     DocumentEntityProperty(object, propertyName, options);
   };
 }

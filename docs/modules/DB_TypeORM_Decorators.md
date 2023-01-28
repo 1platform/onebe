@@ -21,6 +21,7 @@
 - [UpdateDateColumn](DB_TypeORM_Decorators.md#updatedatecolumn)
 - [VersionColumn](DB_TypeORM_Decorators.md#versioncolumn)
 - [ViewColumn](DB_TypeORM_Decorators.md#viewcolumn)
+- [VirtualColumn](DB_TypeORM_Decorators.md#virtualcolumn)
 
 ## References
 
@@ -111,3 +112,9 @@ ___
 ### ViewColumn
 
 Re-exports [ViewColumn](DB_TypeORM_Decorators_Column.md#viewcolumn)
+
+___
+
+### VirtualColumn
+
+Re-exports [VirtualColumn](DB_TypeORM_Decorators_Column.md#virtualcolumn)

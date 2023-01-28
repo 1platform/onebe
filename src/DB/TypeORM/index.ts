@@ -1,6 +1,7 @@
 import { DatabaseType, DataSource, DataSourceOptions, Logger, QueryRunner } from "typeorm";
 import { getDefaultLogger } from "@/System/Logger";
 import Config from "@/System/Config";
+import { SqliteConnectionOptions } from "typeorm/driver/sqlite/SqliteConnectionOptions";
 
 export * from "typeorm";
 
@@ -189,14 +190,32 @@ export default class TypeORM {
    */
   public connect(configurationName: string): Promise<DataSource> {
     const dbConfig = Config.object(`db.${ configurationName }`);
-    const config: DataSourceOptions = {
-      name: configurationName,
-      type: dbConfig.engine as DatabaseType,
-      host: dbConfig.hostname,
-      port: dbConfig.port,
-      username: dbConfig.username,
-      password: dbConfig.password,
-      database: dbConfig.database,
+    let config: DataSourceOptions;
+
+    if (dbConfig.engine !== "sqlite") {
+      config = {
+        type: dbConfig.engine as DatabaseType,
+        host: dbConfig.hostname,
+        port: dbConfig.port,
+        username: dbConfig.username,
+        password: dbConfig.password,
+        database: dbConfig.database,
+        cli: {
+          migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
+        },
+      } as DataSourceOptions;
+    } else {
+      config = {
+        type: dbConfig.engine,
+        database: dbConfig.database,
+        cli: {
+          migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
+        },
+      } as SqliteConnectionOptions;
+    }
+
+    config = {
+      ...config,
       logging: dbConfig.logging ?? false,
       logger: new CustomLogger((dbConfig.logging ?? false) as boolean | LoggingOptions[]),
       synchronize: false,
@@ -205,9 +224,6 @@ export default class TypeORM {
       entities: Config.array("db.entities.files", [ "./src/entities/**/*.{ts,js}", "./src/models/**/*.{ts,js}" ]),
       migrationsTableName: Config.string("db.migrations.table", "_migrations"),
       migrations: Config.array("db.migrations.files", [ "./src/migrations/*.{ts,js}" ]),
-      cli: {
-        migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
-      },
     } as DataSourceOptions;
     const dataSource = new DataSource(config);
 

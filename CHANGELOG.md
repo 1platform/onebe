@@ -2,6 +2,16 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.0
+
+🚀 New:
+
+- Add support for sqlite.
+
+🌟 Improvements:
+
+- Add virtual column to the decorators.
+
 ## Version 2.5.2
 
 🔧 Bugfix:

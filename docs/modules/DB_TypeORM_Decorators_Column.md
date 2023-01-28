@@ -15,6 +15,7 @@
 - [UpdateDateColumn](DB_TypeORM_Decorators_Column.md#updatedatecolumn)
 - [VersionColumn](DB_TypeORM_Decorators_Column.md#versioncolumn)
 - [ViewColumn](DB_TypeORM_Decorators_Column.md#viewcolumn)
+- [VirtualColumn](DB_TypeORM_Decorators_Column.md#virtualcolumn)
 
 ## Functions
 
@@ -221,6 +222,29 @@ will be used for documentation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `options?` | `ViewColumnOptions` & { `description?`: `string`  } | A list of options used for defining the view column. |
+
+#### Returns
+
+`PropertyDecorator`
+
+___
+
+### VirtualColumn
+
+▸ **VirtualColumn**(`options?`): `PropertyDecorator`
+
+Decorator used to define a virtual column of a model.
+
+As a bonus, this decorator will add metadata information to the column that
+will be used for documentation.
+
+**`Decorator`**
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `VirtualColumnOptions` & { `description?`: `string`  } | A list of options used for defining the virtual column. |
 
 #### Returns
 

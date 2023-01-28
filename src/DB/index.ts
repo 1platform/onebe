@@ -38,6 +38,7 @@ export default function (): Promise<void> {
     case "mysql":
     case "mariadb":
     case "postgres":
+    case "sqlite":
       return new TypeORM().init();
   }
 }
