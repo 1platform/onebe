@@ -1,4 +1,4 @@
-[OneBE Framework - v2.5.2](../README.md) / [Exports](../modules.md) / Services/PaginationDefinition
+[OneBE Framework - v2.6.0](../README.md) / [Exports](../modules.md) / Services/PaginationDefinition
 
 # Module: Services/PaginationDefinition
 
