@@ -10,6 +10,12 @@
       },
       "email": {
         "no-transport": "No Email Transport service has been configured!"
+      },
+      "database": {
+        "create": "Unable to create the record. Please check the logs!",
+        "update": "Unable to update the record. Please check the logs!",
+        "delete": "Unable to delete the record. Please check the logs!",
+        "restore": "Unable to restore the record. Please check the logs!"
       }
     }
   }

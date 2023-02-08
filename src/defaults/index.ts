@@ -10,6 +10,7 @@ import i18n from "@/defaults/i18n";
 import logs from "@/defaults/logs";
 import sms from "@/defaults/sms";
 import upload from "@/defaults/upload";
+import cli from "@/defaults/cli";
 
 /**
  * The configuration object, with some default values, that can be used
@@ -20,6 +21,7 @@ const defaultConfig: IConfig = {
   app,
   auth,
   db,
+  cli,
   docs,
   email,
   http,

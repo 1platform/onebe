@@ -28,6 +28,16 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
   }
 
   /**
+   * Method used to get all the data from the repository, including deleted items,
+   * based on the filters sent as parameters.
+   *
+   * @param [options] A list with options to be used when getting the data.
+   */
+  public getAllWithDeleted(options?: FindManyOptions<Entity>): Promise<Array<Entity>> {
+    return this.repository.find({ ...(options || {}), withDeleted: true });
+  }
+
+  /**
    * Method used to get the paginated data from the repository, based on the
    * filters sent as parameters.
    *
@@ -40,6 +50,32 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
       skip: size > 0 ? size * (page - 1) : 0,
       take: size > 0 ? size : count,
       ...options,
+    });
+
+    return createEntity<PaginatedEntity<Entity>>(PaginatedEntity, {
+      page,
+      size: size > 0 ? size : count,
+      count,
+      data,
+      hasNext: size > 0 ? page * size <= count : false,
+      hasPrevious: size > 0 ? page > 1 : false,
+    });
+  }
+
+  /**
+   * Method used to get the paginated data from the repository, with the deleted records,
+   * based on the filters sent as parameters.
+   *
+   * @param paginatedOptions A list with parameters needed for pagination.
+   */
+  public async getAllPaginatedWithDeleted(paginatedOptions: IPaginatedOptions<Entity>): Promise<PaginatedEntity<Entity>> {
+    const { page, size, options } = this._getPaginatedOptions(paginatedOptions);
+    const count = await this.repository.count(options);
+    const data = await this.getAll({
+      skip: size > 0 ? size * (page - 1) : 0,
+      take: size > 0 ? size : count,
+      ...options,
+      withDeleted: true,
     });
 
     return createEntity<PaginatedEntity<Entity>>(PaginatedEntity, {

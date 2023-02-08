@@ -2,6 +2,14 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.1
+
+🌟 Improvements:
+
+- Add error handling for database methods. Now the messages sent by the database aren't exposed directly to
+the user.
+- Add method to fetch deleted items.
+
 ## Version 2.6.0
 
 🚀 New:

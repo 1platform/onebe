@@ -1,6 +1,8 @@
 import { DeepPartial, EntityTarget, ObjectLiteral } from "typeorm";
 import ServiceReadRepository from "@/Services/ServiceReadRepository";
 import { BuildRelationDefinition, InvertFields, InvertTable, IRelationDefinition } from "@/Services/RelationDefintion";
+import { HTTPError } from "@/Exceptions";
+import { HTTPStatus } from "@/HTTP";
 
 /**
  * The base class for your services that are using a database table.
@@ -22,8 +24,12 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
       })
       : { ...data, id: undefined };
 
-    const result = this.repository.create(validatedData as DeepPartial<Entity>);
-    return this.repository.save(result as DeepPartial<Entity>);
+    try {
+      const result = this.repository.create(validatedData as DeepPartial<Entity>);
+      return await this.repository.save(result as DeepPartial<Entity>);
+    } catch (err) {
+      throw new HTTPError("onebe.errors.database.create", HTTPStatus.BAD_REQUEST, { err, data });
+    }
   }
 
   /**
@@ -48,7 +54,11 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
       entity[key] = validatedData[key];
     });
 
-    return this.repository.save(entity as DeepPartial<Entity>);
+    try {
+      return await this.repository.save(entity as DeepPartial<Entity>);
+    } catch (err) {
+      throw new HTTPError("onebe.errors.database.update", HTTPStatus.BAD_REQUEST, { err, data, itemId });
+    }
   }
 
   /**
@@ -58,12 +68,16 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    */
   public async delete(itemId: KeyType): Promise<Entity> {
     const entity = await this.getByKey(itemId);
-    if ("deletedAt" in entity && entity.deletedAt === null) {
-      await this.repository.softDelete(entity[this.primaryKey]);
-    } else {
-      await this.repository.remove(entity);
+    try {
+      if ("deletedAt" in entity && entity.deletedAt === null) {
+        await this.repository.softDelete(entity[this.primaryKey]);
+      } else {
+        await this.repository.remove(entity);
+      }
+      return entity;
+    } catch (err) {
+      throw new HTTPError("onebe.errors.database.delete", HTTPStatus.BAD_REQUEST, { err, itemId });
     }
-    return entity;
   }
 
   /**
@@ -72,9 +86,13 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    * @param itemId The ID of the element to be deleted.
    */
   public async forceDelete(itemId: KeyType): Promise<Entity> {
-    const entity = await this.getByKey(itemId, { withDeleted: true });
-    await this.repository.remove(entity);
-    return entity;
+    try {
+      const entity = await this.getByKey(itemId, { withDeleted: true });
+      await this.repository.remove(entity);
+      return entity;
+    } catch (err) {
+      throw new HTTPError("onebe.errors.database.delete", HTTPStatus.BAD_REQUEST, { err, itemId });
+    }
   }
 
   /**
@@ -83,9 +101,13 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
    * @param itemId The ID of the element to be restored.
    */
   public async restore(itemId: KeyType): Promise<Entity> {
-    const entity = await this.getByKey(itemId, { withDeleted: true });
-    await this.repository.restore(entity[this.primaryKey]);
-    return await this.getByKey(itemId);
+    try {
+      const entity = await this.getByKey(itemId, { withDeleted: true });
+      await this.repository.restore(entity[this.primaryKey]);
+      return await this.getByKey(itemId);
+    } catch (err) {
+      throw new HTTPError("onebe.errors.database.restore", HTTPStatus.BAD_REQUEST, { err, itemId });
+    }
   }
 
   /**
