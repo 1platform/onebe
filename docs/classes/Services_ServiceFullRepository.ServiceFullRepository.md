@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.0](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
+[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
 
 # Class: ServiceFullRepository<Entity, KeyType\>
 
@@ -54,6 +54,8 @@ that need working with a database.
 - [get](Services_ServiceFullRepository.ServiceFullRepository.md#get)
 - [getAll](Services_ServiceFullRepository.ServiceFullRepository.md#getall)
 - [getAllPaginated](Services_ServiceFullRepository.ServiceFullRepository.md#getallpaginated)
+- [getAllPaginatedWithDeleted](Services_ServiceFullRepository.ServiceFullRepository.md#getallpaginatedwithdeleted)
+- [getAllWithDeleted](Services_ServiceFullRepository.ServiceFullRepository.md#getallwithdeleted)
 - [getByKey](Services_ServiceFullRepository.ServiceFullRepository.md#getbykey)
 - [init](Services_ServiceFullRepository.ServiceFullRepository.md#init)
 - [insertRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationaction)
@@ -459,6 +461,52 @@ filters sent as parameters.
 #### Inherited from
 
 [ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[getAllPaginated](Services_ServiceReadRepository.ServiceReadRepository.md#getallpaginated)
+
+___
+
+### getAllPaginatedWithDeleted
+
+▸ **getAllPaginatedWithDeleted**(`paginatedOptions`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`PaginatedEntity`](Services_PaginationDefinition.PaginatedEntity.md)<`Entity`\>\>
+
+Method used to get the paginated data from the repository, with the deleted records,
+based on the filters sent as parameters.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `paginatedOptions` | [`IPaginatedOptions`](../interfaces/Services_PaginationDefinition.IPaginatedOptions.md)<`Entity`\> | A list with parameters needed for pagination. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`PaginatedEntity`](Services_PaginationDefinition.PaginatedEntity.md)<`Entity`\>\>
+
+#### Inherited from
+
+[ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[getAllPaginatedWithDeleted](Services_ServiceReadRepository.ServiceReadRepository.md#getallpaginatedwithdeleted)
+
+___
+
+### getAllWithDeleted
+
+▸ **getAllWithDeleted**(`options?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`[]\>
+
+Method used to get all the data from the repository, including deleted items,
+based on the filters sent as parameters.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `FindManyOptions`<`Entity`\> | A list with options to be used when getting the data. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`Entity`[]\>
+
+#### Inherited from
+
+[ServiceReadRepository](Services_ServiceReadRepository.ServiceReadRepository.md).[getAllWithDeleted](Services_ServiceReadRepository.ServiceReadRepository.md#getallwithdeleted)
 
 ___
 
