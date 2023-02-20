@@ -60,6 +60,12 @@ export default async function init(props: IInitOptions): Promise<(strategyProps?
     }
   }
 
+  app.app = {
+    appName: Config.string("app.name"),
+    appVersion: Config.string("app.version"),
+    appDescription: Config.string("app.description"),
+    appURL: Config.string("http.url"),
+  };
   app.use(HTTP);
   app.use(Scheduler);
 
