@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.3
+
+🌟 Improvements:
+
+- Add function to generate a path to the temp folder.
+- Add function to generate a random string with a given length.
+
 ## Version 2.6.2
 
 🔧 Bugfix:

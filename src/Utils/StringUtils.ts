@@ -4,6 +4,7 @@ import formatter from "string-format";
 import * as uuid from "uuid";
 import { stripHtml } from "string-strip-html";
 import { camelCase as _camelCase } from "lodash";
+import { random } from "@/Utils/NumberUtils";
 
 /**
  * Generator for a ShortID that can be used for various things.
@@ -118,4 +119,20 @@ export function abbreviate(str: string, abbrLettersCount = 1): string {
 export function slugify(str: string): string {
   const words = str.replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, "$1 $2").split(" ");
   return words.map((word) => word.toLowerCase()).join("-");
+}
+
+const randomStringAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_-";
+
+/**
+ * Function used to generate a random string with a given length.
+ *
+ * @param [length] The length of the final string.
+ */
+export function randomString(length = 10): string {
+  const randomString = [];
+  for (let iPosition = 0; iPosition < length; iPosition++) {
+    randomString.push(randomStringAlphabet[random(0, randomStringAlphabet.length)]);
+  }
+
+  return randomString.join("");
 }

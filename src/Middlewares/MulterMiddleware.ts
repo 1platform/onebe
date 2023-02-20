@@ -5,6 +5,7 @@ import { RouteDecorator } from "@/Router";
 import Config from "@/System/Config";
 import MetadataStore from "@/Documentation/MetadataStore";
 import { BodyParameterType } from "@/Documentation";
+import { randomString } from "@/Utils";
 
 /**
  * Upload middleware instance that can be used in your application.
@@ -23,8 +24,27 @@ export type UploadedFile = Express.Multer.File;
  *
  * @param pathLike The list of path like elements.
  */
-export function getDestinationFolder(...pathLike: string[]) {
+export function getDestinationFolder(...pathLike: string[]): string {
   return path.resolve(Config.string("upload.storage"), ...pathLike);
+}
+
+/**
+ * Function used to get the temporary folder/file.
+ *
+ * @param pathLike The list of path like elements.
+ */
+export function getTempFolder(...pathLike: string[]): string {
+  return path.resolve(Config.string("upload.temp"), ...pathLike);
+}
+
+/**
+ * Function used to get a temporary file/folder.
+ *
+ * @param [extension] The extension of the file/folder.
+ */
+export function getTempFile(extension?: string): string {
+  const tempFile = getTempFolder(randomString(16));
+  return extension ? `${ tempFile }.${ extension }` : tempFile;
 }
 
 /**
