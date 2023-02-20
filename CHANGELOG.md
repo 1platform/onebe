@@ -9,6 +9,10 @@ Here we will note all the changes made to the framework.
 - Add function to generate a path to the temp folder.
 - Add function to generate a random string with a given length.
 
+🔧 Bugfix:
+
+- Fix an error with the random number generator.
+
 ## Version 2.6.2
 
 🔧 Bugfix:

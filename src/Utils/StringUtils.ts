@@ -43,7 +43,7 @@ export {
    *
    * @see {@link https://www.npmjs.com/package/string-format}
    */
-  formatter,
+    formatter,
 };
 
 /**
@@ -131,7 +131,7 @@ const randomStringAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx
 export function randomString(length = 10): string {
   const randomString = [];
   for (let iPosition = 0; iPosition < length; iPosition++) {
-    randomString.push(randomStringAlphabet[random(0, randomStringAlphabet.length)]);
+    randomString.push(randomStringAlphabet.charAt(random(0, randomStringAlphabet.length)));
   }
 
   return randomString.join("");

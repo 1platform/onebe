@@ -13,8 +13,8 @@ export function random(start = 0, end = 100000): number {
   }
 
   let randomNumber = Math.random();
-  const maxNumber = Math.floor(Math.log10(end));
-  randomNumber = (randomNumber * Math.pow(10, maxNumber)) % (end + 1);
+  const maxNumber = Math.round(Math.log10(end));
+  randomNumber = Math.round(randomNumber * Math.pow(10, maxNumber)) % end;
   return randomNumber < start ? start : randomNumber;
 }
 
@@ -25,7 +25,7 @@ export function random(start = 0, end = 100000): number {
  */
 export function fixedSizeRandom(size: number): string {
   const maxSize = Math.pow(10, size);
-  return Math.floor((Math.random() * maxSize) % maxSize)
+  return Math.round((Math.random() * maxSize) % maxSize)
     .toString()
     .padStart(size, "0");
 }
