@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Middlewares/MulterMiddleware
 
 # Module: Middlewares/MulterMiddleware
 
@@ -14,6 +14,8 @@
 - [NamedFilesUpload](Middlewares_MulterMiddleware.md#namedfilesupload)
 - [SingleUpload](Middlewares_MulterMiddleware.md#singleupload)
 - [getDestinationFolder](Middlewares_MulterMiddleware.md#getdestinationfolder)
+- [getTempFile](Middlewares_MulterMiddleware.md#gettempfile)
+- [getTempFolder](Middlewares_MulterMiddleware.md#gettempfolder)
 
 ## Type Aliases
 
@@ -90,6 +92,42 @@ ___
 ▸ **getDestinationFolder**(`...pathLike`): `string`
 
 Function used to get the destination folder/file from the upload destination folder.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...pathLike` | `string`[] | The list of path like elements. |
+
+#### Returns
+
+`string`
+
+___
+
+### getTempFile
+
+▸ **getTempFile**(`extension?`): `string`
+
+Function used to get a temporary file/folder.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `extension?` | `string` | The extension of the file/folder. |
+
+#### Returns
+
+`string`
+
+___
+
+### getTempFolder
+
+▸ **getTempFolder**(`...pathLike`): `string`
+
+Function used to get the temporary folder/file.
 
 #### Parameters
 

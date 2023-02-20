@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / Utils/StringUtils
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Utils/StringUtils
 
 # Module: Utils/StringUtils
 
@@ -10,6 +10,7 @@
 - [camelCase](Utils_StringUtils.md#camelcase)
 - [comparePassword](Utils_StringUtils.md#comparepassword)
 - [encryptPassword](Utils_StringUtils.md#encryptpassword)
+- [randomString](Utils_StringUtils.md#randomstring)
 - [shortid](Utils_StringUtils.md#shortid)
 - [slugify](Utils_StringUtils.md#slugify)
 - [snakeCase](Utils_StringUtils.md#snakecase)
@@ -97,6 +98,24 @@ Method used to encrypt a password using the hash function from bcryptjs.
 | :------ | :------ | :------ | :------ |
 | `password` | `string` | `undefined` | The password to be encrypted. |
 | `saltSize` | `number` | `10` | The size of the salt. |
+
+#### Returns
+
+`string`
+
+___
+
+### randomString
+
+▸ **randomString**(`length?`): `string`
+
+Function used to generate a random string with a given length.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `length?` | `number` | `10` | The length of the final string. |
 
 #### Returns
 

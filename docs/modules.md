@@ -1,6 +1,6 @@
-[OneBE Framework - v2.6.2](README.md) / Exports
+[OneBE Framework - v2.6.3](README.md) / Exports
 
-# OneBE Framework - v2.6.2
+# OneBE Framework - v2.6.3
 
 ## Table of contents
 
@@ -145,6 +145,7 @@
 - [Utils/NumberUtils](modules/Utils_NumberUtils.md)
 - [Utils/OtherUtils](modules/Utils_OtherUtils.md)
 - [Utils/StringUtils](modules/Utils_StringUtils.md)
+- [Utils/StringUtils.test](modules/Utils_StringUtils_test.md)
 - [build](modules/build.md)
 - [cli](modules/cli.md)
 - [custom](modules/custom.md)

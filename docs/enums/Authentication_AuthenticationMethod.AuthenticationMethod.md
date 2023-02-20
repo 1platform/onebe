@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / [Authentication/AuthenticationMethod](../modules/Authentication_AuthenticationMethod.md) / AuthenticationMethod
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / [Authentication/AuthenticationMethod](../modules/Authentication_AuthenticationMethod.md) / AuthenticationMethod
 
 # Enumeration: AuthenticationMethod
 

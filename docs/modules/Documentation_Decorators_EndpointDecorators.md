@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EndpointDecorators
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EndpointDecorators
 
 # Module: Documentation/Decorators/EndpointDecorators
 

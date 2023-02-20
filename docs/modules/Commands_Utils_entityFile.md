@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / Commands/Utils/entityFile
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Commands/Utils/entityFile
 
 # Module: Commands/Utils/entityFile
 

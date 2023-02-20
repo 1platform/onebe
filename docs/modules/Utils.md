@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / Utils
+[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Utils
 
 # Module: Utils
 
@@ -12,6 +12,7 @@
 - [encryptPassword](Utils.md#encryptpassword)
 - [fixedSizeRandom](Utils.md#fixedsizerandom)
 - [random](Utils.md#random)
+- [randomString](Utils.md#randomstring)
 - [shortid](Utils.md#shortid)
 - [slugify](Utils.md#slugify)
 - [snakeCase](Utils.md#snakecase)
@@ -55,6 +56,12 @@ ___
 ### random
 
 Re-exports [random](Utils_NumberUtils.md#random)
+
+___
+
+### randomString
+
+Re-exports [randomString](Utils_StringUtils.md#randomstring)
 
 ___
 

@@ -43,7 +43,7 @@ export {
    *
    * @see {@link https://www.npmjs.com/package/string-format}
    */
-    formatter,
+  formatter,
 };
 
 /**
