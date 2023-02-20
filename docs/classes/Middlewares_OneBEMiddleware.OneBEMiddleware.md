@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / [Middlewares/OneBEMiddleware](../modules/Middlewares_OneBEMiddleware.md) / OneBEMiddleware
+[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / [Middlewares/OneBEMiddleware](../modules/Middlewares_OneBEMiddleware.md) / OneBEMiddleware
 
 # Class: OneBEMiddleware
 

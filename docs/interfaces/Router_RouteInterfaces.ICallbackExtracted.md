@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / ICallbackExtracted
+[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / ICallbackExtracted
 
 # Interface: ICallbackExtracted<Request, Response\>
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / [Commands/DefaultProject/jsonFiles](../modules/Commands_DefaultProject_jsonFiles.md) / DefinePackageJsonOptions
+[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / [Commands/DefaultProject/jsonFiles](../modules/Commands_DefaultProject_jsonFiles.md) / DefinePackageJsonOptions
 
 # Interface: DefinePackageJsonOptions
 

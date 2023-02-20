@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / [Commands/EntityLoadCommand](../modules/Commands_EntityLoadCommand.md) / EntityLoadCommand
+[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / [Commands/EntityLoadCommand](../modules/Commands_EntityLoadCommand.md) / EntityLoadCommand
 
 # Class: EntityLoadCommand
 

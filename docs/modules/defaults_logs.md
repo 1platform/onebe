@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.1](../README.md) / [Exports](../modules.md) / defaults/logs
+[OneBE Framework - v2.6.2](../README.md) / [Exports](../modules.md) / defaults/logs
 
 # Module: defaults/logs
 
