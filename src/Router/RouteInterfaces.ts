@@ -21,6 +21,11 @@ export interface IResponse<TResponse> {
    * The content type of the response.
    */
   contentType?: string;
+
+  /**
+   * The name of the file to be downloaded.
+   */
+  fileName?: string;
 }
 
 /**

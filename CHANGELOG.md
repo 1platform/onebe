@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.4
+
+🌟 Improvements:
+
+- Add a list of basic mime types that can be used for Content-Type.
+- Add support to give the file a name when it is downloaded.
+
 ## Version 2.6.3
 
 🌟 Improvements:
@@ -24,7 +31,7 @@ Here we will note all the changes made to the framework.
 🌟 Improvements:
 
 - Add error handling for database methods. Now the messages sent by the database aren't exposed directly to
-the user.
+  the user.
 - Add method to fetch deleted items.
 
 ## Version 2.6.0

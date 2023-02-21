@@ -7,6 +7,7 @@ import { getDefaultLogger } from "@/System/Logger";
 import Config from "@/System/Config";
 import { IEndpointMetadata, IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
 import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "@/HTTP";
+import MimeType from "@/Router/MimeType";
 
 /**
  * Interface used to describe the routes folder structure of your application.
@@ -144,14 +145,18 @@ export default class Router {
             return;
           }
 
-          if (typeof original === "object" && "file" in original) {
-            res.contentType((original?.contentType || "text/plain") as string);
-            res.sendFile(original?.body as string);
+          if (typeof original === "object" && "file" in original && original.file) {
+            res.contentType((original?.contentType || MimeType.PLAIN_TEXT) as string);
+
+            if ("fileName" in original && original.fileName) {
+              res.setHeader("Content-Disposition", `attachment; filename=${ original.fileName }`);
+            }
+            res.download(original?.body as string);
             return;
           }
 
           if (typeof original === "object" && "contentType" in original) {
-            res.contentType((original?.contentType || "text/plain") as string);
+            res.contentType((original?.contentType || MimeType.PLAIN_TEXT) as string);
             res.send(original?.body as string);
             return;
           }
