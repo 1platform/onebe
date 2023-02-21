@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.4](../README.md) / [Exports](../modules.md) / Documentation/Decorators/Endpoint/ResponseDecorators
+[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / Documentation/Decorators/Endpoint/ResponseDecorators
 
 # Module: Documentation/Decorators/Endpoint/ResponseDecorators
 

@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.5
+
+🔧 Bugfix:
+
+- Fix the file naming when downloading files.
+
 ## Version 2.6.4
 
 🌟 Improvements:

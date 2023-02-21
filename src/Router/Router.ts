@@ -149,7 +149,8 @@ export default class Router {
             res.contentType((original?.contentType || MimeType.PLAIN_TEXT) as string);
 
             if ("fileName" in original && original.fileName) {
-              res.setHeader("Content-Disposition", `attachment; filename=${ original.fileName }`);
+              res.download(original?.body as string, original.fileName as string);
+              return;
             }
             res.download(original?.body as string);
             return;
