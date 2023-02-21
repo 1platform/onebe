@@ -1,6 +1,6 @@
-[OneBE Framework - v2.6.3](README.md) / Exports
+[OneBE Framework - v2.6.4](README.md) / Exports
 
-# OneBE Framework - v2.6.3
+# OneBE Framework - v2.6.4
 
 ## Table of contents
 
@@ -110,6 +110,7 @@
 - [Router](modules/Router.md)
 - [Router/AuthContextAPI](modules/Router_AuthContextAPI.md)
 - [Router/ContextAPI](modules/Router_ContextAPI.md)
+- [Router/MimeType](modules/Router_MimeType.md)
 - [Router/Route](modules/Router_Route.md)
 - [Router/RouteDecorators](modules/Router_RouteDecorators.md)
 - [Router/RouteInterfaces](modules/Router_RouteInterfaces.md)

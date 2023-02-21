@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
+[OneBE Framework - v2.6.4](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
 
 # Interface: IResponse<TResponse\>
 
@@ -19,6 +19,7 @@ The response object that can be returned from an endpoint method.
 - [body](Router_RouteInterfaces.IResponse.md#body)
 - [contentType](Router_RouteInterfaces.IResponse.md#contenttype)
 - [file](Router_RouteInterfaces.IResponse.md#file)
+- [fileName](Router_RouteInterfaces.IResponse.md#filename)
 - [statusCode](Router_RouteInterfaces.IResponse.md#statuscode)
 
 ## Properties
@@ -44,6 +45,14 @@ ___
 • `Optional` **file**: `boolean`
 
 The file a user can download.
+
+___
+
+### fileName
+
+• `Optional` **fileName**: `string`
+
+The name of the file to be downloaded.
 
 ___
 

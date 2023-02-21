@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.3](../README.md) / [Exports](../modules.md) / Authentication/Passport
+[OneBE Framework - v2.6.4](../README.md) / [Exports](../modules.md) / Authentication/Passport
 
 # Module: Authentication/Passport
 
