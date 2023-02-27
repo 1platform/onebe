@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
 
 # Interface: IEmailOptions
 
@@ -16,6 +16,7 @@ the Email handling Service.
 - [from](Email_Transports_IEmailTransport.IEmailOptions.md#from)
 - [html](Email_Transports_IEmailTransport.IEmailOptions.md#html)
 - [replyTo](Email_Transports_IEmailTransport.IEmailOptions.md#replyto)
+- [sender](Email_Transports_IEmailTransport.IEmailOptions.md#sender)
 - [subject](Email_Transports_IEmailTransport.IEmailOptions.md#subject)
 - [text](Email_Transports_IEmailTransport.IEmailOptions.md#text)
 - [to](Email_Transports_IEmailTransport.IEmailOptions.md#to)
@@ -63,6 +64,14 @@ ___
 
 If you want to receive a reply from the person that received the email you sent
 through the application, the `replyTo` field will need a valid email address.
+
+___
+
+### sender
+
+• `Optional` **sender**: `string`
+
+From whom is the email. This will appear as the source of the email.
 
 ___
 

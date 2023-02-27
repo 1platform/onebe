@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointBodyParameter
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointBodyParameter
 
 # Interface: IEndpointBodyParameter
 

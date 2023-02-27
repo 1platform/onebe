@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / DB/Mongo/ObservablePlugin
 
 # Module: DB/Mongo/ObservablePlugin
 

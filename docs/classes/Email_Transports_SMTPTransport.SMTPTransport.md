@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [Email/Transports/SMTPTransport](../modules/Email_Transports_SMTPTransport.md) / SMTPTransport
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Email/Transports/SMTPTransport](../modules/Email_Transports_SMTPTransport.md) / SMTPTransport
 
 # Class: SMTPTransport
 

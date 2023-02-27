@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/SwaggerBuilder](../modules/Documentation_Swagger_SwaggerBuilder.md) / SwaggerBuilder
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/SwaggerBuilder](../modules/Documentation_Swagger_SwaggerBuilder.md) / SwaggerBuilder
 
 # Class: SwaggerBuilder
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [Documentation/GetDocs](../modules/Documentation_GetDocs.md) / DocsType
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Documentation/GetDocs](../modules/Documentation_GetDocs.md) / DocsType
 
 # Enumeration: DocsType
 

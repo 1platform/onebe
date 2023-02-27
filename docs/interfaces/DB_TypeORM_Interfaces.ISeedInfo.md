@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.5](../README.md) / [Exports](../modules.md) / [DB/TypeORM/Interfaces](../modules/DB_TypeORM_Interfaces.md) / ISeedInfo
+[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [DB/TypeORM/Interfaces](../modules/DB_TypeORM_Interfaces.md) / ISeedInfo
 
 # Interface: ISeedInfo<T\>
 
