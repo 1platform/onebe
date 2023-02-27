@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.6
+
+🔧 Bugfix:
+
+- Fix the way computations are done for hasNext in paged responses.
+
 ## Version 2.6.5
 
 🔧 Bugfix:

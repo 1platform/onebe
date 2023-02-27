@@ -57,7 +57,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
       size: size > 0 ? size : count,
       count,
       data,
-      hasNext: size > 0 ? page * size <= count : false,
+      hasNext: size > 0 ? page * size < count : false,
       hasPrevious: size > 0 ? page > 1 : false,
     });
   }
@@ -83,7 +83,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
       size: size > 0 ? size : count,
       count,
       data,
-      hasNext: size > 0 ? page * size <= count : false,
+      hasNext: size > 0 ? page * size < count : false,
       hasPrevious: size > 0 ? page > 1 : false,
     });
   }
