@@ -215,7 +215,7 @@ export default async function createProject(projectName?: string): Promise<void>
   } else if (answers.useYarnNew) {
     console.log(`\nSince you are using the latest release of ${ chalk.blue("yarn") }, we need to add it to the application.`);
     fs.mkdirSync(path.join(folder, ".yarn/releases"), { recursive: true });
-    fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarn-3.3.0.cjs"), path.join(folder, ".yarn/releases/yarn-3.3.0.cjs"));
+    fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarn-3.4.1.cjs"), path.join(folder, ".yarn/releases/yarn-3.4.1.cjs"));
     fs.copyFileSync(path.resolve(__dirname, "../DefaultProject/yarnrc.yml.tpl"), path.join(folder, ".yarnrc.yml"));
   }
 

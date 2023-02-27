@@ -4,6 +4,10 @@ Here we will note all the changes made to the framework.
 
 ## Version 2.6.6
 
+🌟 Improvements:
+
+- Dependencies version bump
+
 🔧 Bugfix:
 
 - Fix the way computations are done for hasNext in paged responses.
