@@ -1,5 +1,5 @@
 import twilio from "twilio";
-import Twilio from "twilio/dist/lib/rest/Twilio";
+import type { Twilio } from "twilio";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 import ISMSTransport from "@/SMS/Transports/ISMSTransport";

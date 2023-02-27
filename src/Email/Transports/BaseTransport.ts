@@ -37,6 +37,7 @@ export default abstract class BaseTransport implements IEmailTransport {
 
     const emailOptions = {
       from: options.from || Config.string("email.from"),
+      sender: options.sender || options.from || Config.string("email.from"),
       to: options.to && Array.isArray(options.to) ? options.to.join(", ") : options.to,
       cc: options.cc && Array.isArray(options.cc) ? options.cc.join(", ") : options.cc,
       bcc: options.bcc && Array.isArray(options.bcc) ? options.bcc.join(", ") : options.bcc,

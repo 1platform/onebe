@@ -7,6 +7,7 @@ Here we will note all the changes made to the framework.
 🌟 Improvements:
 
 - Dependencies version bump
+- Add the sender header/flag for emails.
 
 🔧 Bugfix:
 

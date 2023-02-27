@@ -13,6 +13,10 @@ export interface IEmailOptions {
    */
   from?: string;
   /**
+   * From whom is the email. This will appear as the source of the email.
+   */
+  sender?: string;
+  /**
    * To whom you want to send a Carbon Copy of the email. One email or a list of emails
    * that will be passed as the CC field of an email.
    */
