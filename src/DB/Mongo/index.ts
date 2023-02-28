@@ -39,16 +39,15 @@ export default class Mongo {
    * @param reject The function used to send an error message to the caller function.
    */
   private _init(resolve: (value?: any | PromiseLike<any>) => void, reject: (reason?: any) => void): void {
-    mongoose.connect(
-      Config.string("db.mongo.url", "mongodb://localhost:27017/onebe"),
-      {
+    mongoose
+      .connect(Config.string("db.mongo.url", "mongodb://localhost:27017/onebe"), {
         autoIndex: true,
         keepAlive: true,
         connectTimeoutMS: 10000,
         socketTimeoutMS: 45000,
         family: 4,
-      },
-      (err: MongoError) => {
+      })
+      .catch((err: MongoError) => {
         this._try += 1;
         if (err) {
           getDefaultLogger().error(`Mongoose connection error: ${ err }`);
@@ -64,7 +63,6 @@ export default class Mongo {
 
         getDefaultLogger().info("Mongoose database connected.");
         resolve();
-      }
-    );
+      });
   }
 }

@@ -59,7 +59,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
     "@babel/register": "^7.21.0",
-    "@vonage/server-sdk": "3.0.16",
+    "@vonage/server-sdk": "3.0.18",
     "babel-plugin-file-loader": "^2.0.0",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "bcryptjs": "^2.4.3",
