@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
+[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / DB/TypeORM/DatabaseSeeder
 
 # Module: DB/TypeORM/DatabaseSeeder
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / Documentation/GetDocs
+[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / Documentation/GetDocs
 
 # Module: Documentation/GetDocs
 

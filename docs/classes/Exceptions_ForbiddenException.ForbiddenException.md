@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / [Exceptions/ForbiddenException](../modules/Exceptions_ForbiddenException.md) / ForbiddenException
+[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / [Exceptions/ForbiddenException](../modules/Exceptions_ForbiddenException.md) / ForbiddenException
 
 # Class: ForbiddenException
 
