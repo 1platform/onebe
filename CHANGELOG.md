@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.7
+
+🔧 Bugfix:
+
+- Fix some issues with the where checks on the get with clause.
+
 ## Version 2.6.6
 
 🌟 Improvements:

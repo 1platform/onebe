@@ -96,12 +96,24 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    * @param [options] Extra options to be used for finding the data.
    */
   public async get(where: FindOptionsWhere<Entity>, options?: FindOneOptions<Entity>): Promise<Entity> {
+    let whereObject: FindOptionsWhere<Entity> | FindOptionsWhere<Entity>[] = {};
+    const optionsWhere = options?.where || {};
+    if (!Array.isArray(where)) {
+      if (!Array.isArray(optionsWhere)) {
+        whereObject = {
+          ...optionsWhere,
+          ...where,
+        };
+      } else {
+        whereObject = [ ...(optionsWhere as FindOptionsWhere<Entity>[]), where ];
+      }
+    } else {
+      whereObject = [ ...where, ...(!Array.isArray(optionsWhere) ? [ optionsWhere ] : optionsWhere) ];
+    }
+
     const entity = await this.repository.findOne({
       ...(options || {}),
-      where: {
-        ...(options?.where || {}),
-        ...where,
-      },
+      where: whereObject,
     });
     if (!entity) {
       throw new HTTPError("onebe.errors.entity.not-found", HTTPStatus.NOT_FOUND, { name: this.repository.metadata.name });
