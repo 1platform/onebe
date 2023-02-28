@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.8
+
+🌟 Improvements:
+
+- Dependencies version bump
+
 ## Version 2.6.7
 
 🔧 Bugfix:
