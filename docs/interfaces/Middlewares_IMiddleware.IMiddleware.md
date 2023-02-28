@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Middlewares/IMiddleware](../modules/Middlewares_IMiddleware.md) / IMiddleware
+[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / [Middlewares/IMiddleware](../modules/Middlewares_IMiddleware.md) / IMiddleware
 
 # Interface: IMiddleware
 

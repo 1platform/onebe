@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [Router/Route](../modules/Router_Route.md) / Route
+[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / [Router/Route](../modules/Router_Route.md) / Route
 
 # Class: Route
 

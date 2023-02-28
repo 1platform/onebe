@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / defaults/email
+[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / defaults/email
 
 # Module: defaults/email
 

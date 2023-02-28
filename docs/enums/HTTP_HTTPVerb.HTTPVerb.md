@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.6](../README.md) / [Exports](../modules.md) / [HTTP/HTTPVerb](../modules/HTTP_HTTPVerb.md) / HTTPVerb
+[OneBE Framework - v2.6.7](../README.md) / [Exports](../modules.md) / [HTTP/HTTPVerb](../modules/HTTP_HTTPVerb.md) / HTTPVerb
 
 # Enumeration: HTTPVerb
 
