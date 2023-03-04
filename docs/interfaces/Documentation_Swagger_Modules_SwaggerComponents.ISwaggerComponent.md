@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerComponents](../modules/Documentation_Swagger_Modules_SwaggerComponents.md) / ISwaggerComponent
+[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerComponents](../modules/Documentation_Swagger_Modules_SwaggerComponents.md) / ISwaggerComponent
 
 # Interface: ISwaggerComponent
 

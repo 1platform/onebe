@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / Email/EmailTransport
+[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / Email/EmailTransport
 
 # Module: Email/EmailTransport
 

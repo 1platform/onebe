@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / [SMS/getMessagingClient](../modules/SMS_getMessagingClient.md) / MessagingType
+[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / [SMS/getMessagingClient](../modules/SMS_getMessagingClient.md) / MessagingType
 
 # Enumeration: MessagingType
 

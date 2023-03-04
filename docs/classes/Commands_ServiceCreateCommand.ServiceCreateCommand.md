@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.8](../README.md) / [Exports](../modules.md) / [Commands/ServiceCreateCommand](../modules/Commands_ServiceCreateCommand.md) / ServiceCreateCommand
+[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / [Commands/ServiceCreateCommand](../modules/Commands_ServiceCreateCommand.md) / ServiceCreateCommand
 
 # Class: ServiceCreateCommand
 
