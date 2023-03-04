@@ -4,6 +4,12 @@ Here we will note all the changes made to the framework.
 
 ## Version 2.6.8
 
+🔧 Bugfix:
+
+- Add the inverse side for OneToOne relation.
+
+## Version 2.6.8
+
 🌟 Improvements:
 
 - Dependencies version bump

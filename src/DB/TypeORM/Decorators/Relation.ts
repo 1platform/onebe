@@ -108,14 +108,16 @@ export function OneToMany<T = Constructor>(
  *
  * @decorator
  * @param typeFunctionOrTarget The target of the one-to-one relation.
+ * @param [inverseSide] The inverse side target of the one-to-many relation.
  * @param [options] A list of options used for defining the relation.
  */
 export function OneToOne<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
+  inverseSide?: string | ((object: T) => any),
   options?: RelationOptions
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
-    TypeORMOneToOne(typeFunctionOrTarget, options)(object, propertyName);
+    TypeORMOneToOne(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
     DocumentEntityRelation<T>(object, propertyName, typeFunctionOrTarget, false);
   };
 }
