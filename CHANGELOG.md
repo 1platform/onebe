@@ -4,6 +4,10 @@ Here we will note all the changes made to the framework.
 
 ## Version 2.6.10
 
+🌟 Improvements:
+
+- Dependencies version bump
+
 🔧 Bugfix:
 
 - Fix documentation of the OneToOne and ManyToMany relation.

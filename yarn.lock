@@ -2183,7 +2183,7 @@ __metadata:
     "@types/lodash": ^4.14.191
     "@types/morgan": ^1.9.4
     "@types/multer": ^1.4.7
-    "@types/node": ^18.14.2
+    "@types/node": ^18.14.6
     "@types/node-cron": ^3.0.7
     "@types/nodemailer": ^6.4.7
     "@types/passport": ^1.0.12
@@ -2196,7 +2196,7 @@ __metadata:
     "@types/yargs": ^17.0.22
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.54.0
-    "@vonage/server-sdk": 3.0.18
+    "@vonage/server-sdk": ^3.1.1
     babel-plugin-file-loader: ^2.0.0
     babel-plugin-module-resolver: ^5.0.0
     babel-plugin-transform-require-ignore: ^0.1.1
@@ -2230,7 +2230,7 @@ __metadata:
     morgan: ^1.10.0
     mssql: ^9.1.1
     multer: ^1.4.5-lts.1
-    mysql2: ^3.1.2
+    mysql2: ^3.2.0
     node-cron: ^3.0.2
     nodemailer: ^6.9.1
     passport: ^0.6.0
@@ -2521,10 +2521,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.14.2":
+"@types/node@npm:*":
   version: 18.14.2
   resolution: "@types/node@npm:18.14.2"
   checksum: 53c07e721f6ae33de71306f6a0b75dae6066a4f55bd5484c93bd59ff25f0c5f004ceafeef509a4d0cb9e24a247efc34d50489bcc1b05a53ecc68e2fc088e65cb
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.14.6":
+  version: 18.14.6
+  resolution: "@types/node@npm:18.14.6"
+  checksum: 2f88f482cabadc6dbddd627a1674239e68c3c9beab56eb4ae2309fb96fd17fc3a509d99b0309bafe13b58529574f49ecf3a583f2ebe2896dd32fe4be436dc96e
   languageName: node
   linkType: hard
 
@@ -2810,168 +2817,180 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vonage/accounts@npm:^1.0.13":
-  version: 1.0.16
-  resolution: "@vonage/accounts@npm:1.0.16"
+"@vonage/accounts@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/accounts@npm:1.1.1"
   dependencies:
-    "@vonage/server-client": ^1.0.17
-  checksum: 63d6dbb4a15d253c5562319e1e6ea3ba5d2a4b35b54cfb304c066be08c51314a3a39e85068697248313088a0cfd3de001a6bbd50c532d86b0ed16bbea502462f
+    "@vonage/server-client": ^1.1.0
+  checksum: ba84810629657b0892e8429300708d8db5d81dcd109f3d76ffbf3caab85f6a3c64b4d36257e82b32474ef9608facf53043f473922ad9d71409976e6614a09ef8
   languageName: node
   linkType: hard
 
-"@vonage/applications@npm:^1.0.12":
-  version: 1.0.15
-  resolution: "@vonage/applications@npm:1.0.15"
+"@vonage/applications@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/applications@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: 4e6b7a99b93cde95b41d7fd47e8b660c222da2e3aa406510aaf94af657752e5a383403a69450648f6fe943a42ae661c8878e4a13f7e65b2ca70b0175adc434e4
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: 739cd611ca80529f1d31745bc08c5caa7361b767ac588cf767630ef91a80d7d1c692647ad69897bc6704df6695906924bcb277a53d513550d76d3c5010cc9465
   languageName: node
   linkType: hard
 
-"@vonage/auth@npm:^1.0.12, @vonage/auth@npm:^1.0.9":
-  version: 1.0.12
-  resolution: "@vonage/auth@npm:1.0.12"
+"@vonage/audit@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/audit@npm:1.1.1"
   dependencies:
-    "@vonage/jwt": ^1.0.12
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: 55cda9a58b582a2b05b2f75749b704dd2f34eabcfda5850bcde0f578df1b0cc3635452da049bc5cd6b5f19f039c9e0974d68f9ee989466de7ab1c358bdb5702c
+  languageName: node
+  linkType: hard
+
+"@vonage/auth@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/auth@npm:1.1.1"
+  dependencies:
+    "@vonage/jwt": ^1.1.0
     debug: ^4.3.4
-  checksum: b07e85caff8130fa29fdfdc74f7b5e0136a5502dc7d5466b4d4020da1f5bf12ea10a3b74c3edf49c0eec0c9d12b84d8a0a5de5300e1d7c7ba14825d3b1c1e415
+  checksum: 1600210ba4bd9a33bb6cae5bbee1a4080e9d5c9d7157e023293804c663f540c40639aa2c2f9f53211f0a49f40aeece6fc9b7b4269a9d249e3847b3e596aa15fe
   languageName: node
   linkType: hard
 
-"@vonage/jwt@npm:^1.0.12":
-  version: 1.0.12
-  resolution: "@vonage/jwt@npm:1.0.12"
+"@vonage/jwt@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/jwt@npm:1.1.1"
   dependencies:
     debug: ^4.3.4
     jsonwebtoken: ^9.0.0
     uuid: ^9.0.0
-  checksum: 08b2acd7e8c3d4bf677d6a719c254fc7c5dfb38dd077f054c903829f122facd9c8e5ea7e96ad333d68bef040cae3fcfe334df761cbfb937138bd673109010d72
+  checksum: e37aef8c2dd48c8100af439bea1cfff0c6e1b985666cc9bffc2fa51d1c75809e7864c60723fd73ba88cb66b282743471c2a12cbfb686ec224f510ec46f6d2a30
   languageName: node
   linkType: hard
 
-"@vonage/messages@npm:^1.0.13":
-  version: 1.0.15
-  resolution: "@vonage/messages@npm:1.0.15"
+"@vonage/messages@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/messages@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: 1c7e75b208fbcd2248b184e8372b6f8da37f292d07de6aa50d6e46300477b71bc72ba907f7a991ddd639b4e795ebc951bcfc33ccd529b409dc9227268453ad26
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: ff60d27407069a9cb29e24a3014468d53a7f7174c1340a46c846c16ce36224a15654b2acc5f73fd68c70aed18efb6cef1fb1c6bdedfaace49176323c2ad9fa99
   languageName: node
   linkType: hard
 
-"@vonage/number-insights@npm:^1.0.12":
-  version: 1.0.14
-  resolution: "@vonage/number-insights@npm:1.0.14"
+"@vonage/number-insights@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/number-insights@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: 6e76adb08c0ca1c93c2a3884a77a3ff818c7a82f640fce41ca07e149abcccf94d14497eb34cfff1641c51879314a30b915fbf1107c18d0c6512fbe1b0f4064bd
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: f82317bc095bb5e81a015f1cee8df102c417c220cdfac067795372c82f62cf950c0eb2a79769526f1624b6b9332b6cb06da172bcf7a1f4edf85d436a801c7382
   languageName: node
   linkType: hard
 
-"@vonage/numbers@npm:^1.0.15":
-  version: 1.0.17
-  resolution: "@vonage/numbers@npm:1.0.17"
+"@vonage/numbers@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/numbers@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
     lodash.omit: ^4.5.0
-  checksum: 050c3bc62e8a32f159c7c58cbb845164ebaab62da9860a937c130f1d2306e992fcee96a3e1f9e1aba1fd3dc38ed4dfe4218d6bdd5870ea03c16088326bee0397
+  checksum: 87f5e9cf3a6bf98bfa0156c02ba449651e080a5f28e73d46b80f31ca01b3a4ab215a18501c4d0bfe1adc0cc3e3e8e10bae04020a7b14327be79f2524b8cadf09
   languageName: node
   linkType: hard
 
-"@vonage/pricing@npm:^1.0.12":
-  version: 1.0.14
-  resolution: "@vonage/pricing@npm:1.0.14"
+"@vonage/pricing@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/pricing@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: 827908472987192b39eb2a6ea379e65828da9097698baf8f5933318a559e2d7f17063edb1404e1874a7764828be046f249a7b4c5de7993e91c6da8563a0e350c
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: d77e2fb76e0a006a5f5b311738e4184a574b589fabfff943c04c7bf90da8cdc367da0cfacd1c054f51ef3266998b824f041e08e2844ff8b7c004758cf9286649
   languageName: node
   linkType: hard
 
-"@vonage/server-client@npm:^1.0.17":
-  version: 1.0.17
-  resolution: "@vonage/server-client@npm:1.0.17"
+"@vonage/server-client@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/server-client@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/vetch": ^1.0.12
+    "@vonage/auth": ^1.1.0
+    "@vonage/vetch": ^1.1.0
     debug: ^4.3.4
     lodash.camelcase: ^4.3.0
     lodash.isobject: 3.0.2
     lodash.partial: ^4.2.1
     lodash.snakecase: ^4.1.1
-  checksum: 6563acc716cd157600a097c2be6e4cc37937673e6b460e2c6347a1b48d9d16c3ccd8466a4e2991c39abc6cf67ac501f8fa025f1f312471c0b52a5d671d22da83
+  checksum: d66fbe54408ee42624daba9bef4d9ef0f987e87db71be5ce2c4801040866e1c0ab2c5e2cfb637314b570140fe274f3c5787739d542f2220e61092ae78b026c9f
   languageName: node
   linkType: hard
 
-"@vonage/server-sdk@npm:3.0.18":
-  version: 3.0.18
-  resolution: "@vonage/server-sdk@npm:3.0.18"
+"@vonage/server-sdk@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@vonage/server-sdk@npm:3.1.1"
   dependencies:
-    "@vonage/accounts": ^1.0.13
-    "@vonage/applications": ^1.0.12
-    "@vonage/auth": ^1.0.9
-    "@vonage/messages": ^1.0.13
-    "@vonage/number-insights": ^1.0.12
-    "@vonage/numbers": ^1.0.15
-    "@vonage/pricing": ^1.0.12
-    "@vonage/sms": ^1.0.13
-    "@vonage/verify": ^1.0.16
-    "@vonage/vetch": ^1.0.10
-    "@vonage/voice": ^1.0.13
-  checksum: 5ec2a362f4d2a9aebaafbd684f1afb01a33634b544837d3c6e381ffe3cc905f9ac1dade15c090a9d6f5506b3843d0fa4c566864caf7a7ec49a7e27d098469632
+    "@vonage/accounts": ^1.1.0
+    "@vonage/applications": ^1.1.0
+    "@vonage/audit": ^1.1.0
+    "@vonage/auth": ^1.1.0
+    "@vonage/messages": ^1.1.0
+    "@vonage/number-insights": ^1.1.0
+    "@vonage/numbers": ^1.1.0
+    "@vonage/pricing": ^1.1.0
+    "@vonage/sms": ^1.1.0
+    "@vonage/verify": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+    "@vonage/voice": ^1.1.0
+  checksum: 96625a9b4a0c5d42f640f19e3d98e24353c88d6c69053a0b6da1ed0e8af40170de15d8c519bc711cfe2a84c51a4567b7e28dce7b20d49407e558f8c171500ee3
   languageName: node
   linkType: hard
 
-"@vonage/sms@npm:^1.0.13":
-  version: 1.0.15
-  resolution: "@vonage/sms@npm:1.0.15"
+"@vonage/sms@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/sms@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: 4d0bbe3342acd0f9756f70d269148a7494dd0bf4e23f1d1b785e5b2403969641004f0221f733bf700cd0be4183b1af07def2da63e0b288b1e159e0d15764c4ee
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: 95a6716dc4ea55862b2f6ee12c8922c5f53745001ff3734032147ccb733429e86ac39d5448e72499250978d45be1a466afaaeed5b36613f5ddddf086366b175a
   languageName: node
   linkType: hard
 
-"@vonage/verify@npm:^1.0.16":
-  version: 1.0.18
-  resolution: "@vonage/verify@npm:1.0.18"
+"@vonage/verify@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/verify@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
     lodash.omit: ^4.5.0
-  checksum: 671accd5b02a5d1acc5f00d11558e7fddac395220c8ef423018c1633db0bcaccda0cda1a9af0fcddcbd4da3a20243dae2f43edc2d76b3d137ecf092524b8ad66
+  checksum: 5d137217d902350bf6f7140176066caa78790ecf0a160be14e8823f25cabe6ca15357a3b77ce3a734c967f492522988cf292f3ca7a703d9f24a0e39ba5d422f9
   languageName: node
   linkType: hard
 
-"@vonage/vetch@npm:^1.0.10, @vonage/vetch@npm:^1.0.12":
-  version: 1.0.12
-  resolution: "@vonage/vetch@npm:1.0.12"
+"@vonage/vetch@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/vetch@npm:1.1.1"
   dependencies:
     debug: ^4.3.4
     lodash.merge: ^4.6.2
     node-fetch: ^2.6
-  checksum: 6e5b6e601cb065407eec2546a30da6154d5d568f8501f6c407ef43bc0e8053faf80a6bd5dbb025cb8e2c6f92e8ff68b51f9b9720622b793359d517e33be8df82
+  checksum: d835a071f0379bc9bd171593a59a65fee10777677fb4bb06e273b7d7fe63e55aa23e161303d0a7af866e598751d782083b1b8bf1ef9e1e66c8c5268bdc14353d
   languageName: node
   linkType: hard
 
-"@vonage/voice@npm:^1.0.13":
-  version: 1.0.15
-  resolution: "@vonage/voice@npm:1.0.15"
+"@vonage/voice@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "@vonage/voice@npm:1.1.1"
   dependencies:
-    "@vonage/auth": ^1.0.12
-    "@vonage/server-client": ^1.0.17
-    "@vonage/vetch": ^1.0.12
-  checksum: ecf44928086d16cba7e82c50b8615c78afde9af2986dcc620214384d8c1fd61294a0d4caa118518f44b666ce53652d71e26958d4bf09dc8ba4532abbdca15f40
+    "@vonage/auth": ^1.1.0
+    "@vonage/server-client": ^1.1.0
+    "@vonage/vetch": ^1.1.0
+  checksum: 887eb620b3ff9719de2acee5dd16ce4cb06e30daf748a3183190f1688dd2d7baeed9964954486805f3ef2f595196df522bfec4d38790bd0a0fed05a90a6332f9
   languageName: node
   linkType: hard
 
@@ -7652,9 +7671,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mysql2@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "mysql2@npm:3.1.2"
+"mysql2@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "mysql2@npm:3.2.0"
   dependencies:
     denque: ^2.1.0
     generate-function: ^2.3.1
@@ -7664,7 +7683,7 @@ __metadata:
     named-placeholders: ^1.1.3
     seq-queue: ^0.0.5
     sqlstring: ^2.3.2
-  checksum: 6268d0ba3e5056fe574685a0692460b506d9a9c83e9c162b3bca6f279fa8da841d1d2b7dc4a363873b8cec47234ea66a054a2b067d6af4416900889384df4162
+  checksum: 7885d3b4f575e7321754de14bb4fadb80d4705d5b00f8b645d760ae7a0f3170ac6d4fe6e7b9307e698fe84c3ee047d7c2652f01b95c9393f56eace993f2952ab
   languageName: node
   linkType: hard
 
