@@ -69,11 +69,15 @@ export function ManyToOne<T = Constructor>(
  */
 export function ManyToMany<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
-  inverseSide?: string | ((object: T) => any),
+  inverseSide?: string | ((object: T) => any) | RelationOptions,
   options?: RelationOptions
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
-    TypeORMManyToMany(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
+    if (!options) {
+      TypeORMManyToMany(typeFunctionOrTarget, inverseSide as RelationOptions)(object, propertyName);
+    } else {
+      TypeORMManyToMany(typeFunctionOrTarget, inverseSide as string | ((object: T) => any), options)(object, propertyName);
+    }
     DocumentEntityRelation<T>(object, propertyName, typeFunctionOrTarget, true);
   };
 }
@@ -113,11 +117,15 @@ export function OneToMany<T = Constructor>(
  */
 export function OneToOne<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
-  inverseSide?: string | ((object: T) => any),
+  inverseSide?: string | ((object: T) => any) | RelationOptions,
   options?: RelationOptions
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
-    TypeORMOneToOne(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
+    if (!options) {
+      TypeORMOneToOne(typeFunctionOrTarget, inverseSide as RelationOptions)(object, propertyName);
+    } else {
+      TypeORMOneToOne(typeFunctionOrTarget, inverseSide as string | ((object: T) => any), options)(object, propertyName);
+    }
     DocumentEntityRelation<T>(object, propertyName, typeFunctionOrTarget, false);
   };
 }

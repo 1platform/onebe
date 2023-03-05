@@ -2,7 +2,14 @@
 
 Here we will note all the changes made to the framework.
 
-## Version 2.6.8
+## Version 2.6.10
+
+🔧 Bugfix:
+
+- Fix documentation of the OneToOne and ManyToMany relation.
+- Fix Changelog versioning.
+
+## Version 2.6.9
 
 🔧 Bugfix:
 
