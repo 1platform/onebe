@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / [System/IConfig](../modules/System_IConfig.md) / IConfig
+[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / [System/IConfig](../modules/System_IConfig.md) / IConfig
 
 # Interface: IConfig
 

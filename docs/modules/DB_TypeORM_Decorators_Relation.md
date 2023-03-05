@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.9](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Relation
+[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / DB/TypeORM/Decorators/Relation
 
 # Module: DB/TypeORM/Decorators/Relation
 
@@ -59,7 +59,7 @@ will be used for documentation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the many-to-many relation. |
-| `inverseSide?` | `string` \| (`object`: `T`) => `any` | The inverse side target of the many-to-many relation. |
+| `inverseSide?` | `string` \| `RelationOptions` \| (`object`: `T`) => `any` | The inverse side target of the many-to-many relation. |
 | `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
@@ -151,7 +151,7 @@ will be used for documentation.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `typeFunctionOrTarget` | `string` \| (`type?`: `any`) => `ObjectType`<`T`\> | The target of the one-to-one relation. |
-| `inverseSide?` | `string` \| (`object`: `T`) => `any` | The inverse side target of the one-to-many relation. |
+| `inverseSide?` | `string` \| `RelationOptions` \| (`object`: `T`) => `any` | The inverse side target of the one-to-many relation. |
 | `options?` | `RelationOptions` | A list of options used for defining the relation. |
 
 #### Returns
