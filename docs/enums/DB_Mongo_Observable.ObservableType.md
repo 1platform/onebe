@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
+[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / [DB/Mongo/Observable](../modules/DB_Mongo_Observable.md) / ObservableType
 
 # Enumeration: ObservableType
 

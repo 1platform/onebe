@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / Middlewares/BodyParserMiddleware
+[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / Middlewares/BodyParserMiddleware
 
 # Module: Middlewares/BodyParserMiddleware
 

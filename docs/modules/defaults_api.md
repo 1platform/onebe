@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / defaults/api
+[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / defaults/api
 
 # Module: defaults/api
 

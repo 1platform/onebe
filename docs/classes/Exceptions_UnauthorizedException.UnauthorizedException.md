@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / [Exceptions/UnauthorizedException](../modules/Exceptions_UnauthorizedException.md) / UnauthorizedException
+[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / [Exceptions/UnauthorizedException](../modules/Exceptions_UnauthorizedException.md) / UnauthorizedException
 
 # Class: UnauthorizedException
 

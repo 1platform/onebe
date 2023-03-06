@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.10](../README.md) / [Exports](../modules.md) / Commands/Utils/initConnection
+[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / Commands/Utils/initConnection
 
 # Module: Commands/Utils/initConnection
 
