@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.11
+
+🔧 Bugfix:
+
+- Migrate from save to update and insert methods.
+
 ## Version 2.6.10
 
 🌟 Improvements:

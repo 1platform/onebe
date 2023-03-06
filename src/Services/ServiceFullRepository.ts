@@ -1,4 +1,4 @@
-import { DeepPartial, EntityTarget, ObjectLiteral } from "typeorm";
+import { DeepPartial, EntityTarget, FindOptionsWhere, ObjectLiteral } from "typeorm";
 import ServiceReadRepository from "@/Services/ServiceReadRepository";
 import { BuildRelationDefinition, InvertFields, InvertTable, IRelationDefinition } from "@/Services/RelationDefintion";
 import { HTTPError } from "@/Exceptions";
@@ -26,7 +26,8 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
 
     try {
       const result = this.repository.create(validatedData as DeepPartial<Entity>);
-      return await this.repository.save(result as DeepPartial<Entity>);
+      const insertResult = await this.repository.insert([ result as DeepPartial<Entity> ]);
+      return insertResult.generatedMaps[0] as Entity;
     } catch (err) {
       throw new HTTPError("onebe.errors.database.create", HTTPStatus.BAD_REQUEST, { err, data });
     }
@@ -55,7 +56,8 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     });
 
     try {
-      return await this.repository.save(entity as DeepPartial<Entity>);
+      const result = await this.repository.update({ [this.primaryKey]: itemId } as FindOptionsWhere<Entity>, entity as DeepPartial<Entity>);
+      return result.generatedMaps[0] as Entity;
     } catch (err) {
       throw new HTTPError("onebe.errors.database.update", HTTPStatus.BAD_REQUEST, { err, data, itemId });
     }
