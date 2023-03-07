@@ -27,7 +27,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     try {
       const result = this.repository.create(validatedData as DeepPartial<Entity>);
       const insertResult = await this.repository.insert([ result as DeepPartial<Entity> ]);
-      return insertResult.generatedMaps[0] as Entity;
+      return this.getByKey(insertResult.generatedMaps[0][this.primaryKey]);
     } catch (err) {
       throw new HTTPError("onebe.errors.database.create", HTTPStatus.BAD_REQUEST, { err, data });
     }
@@ -57,7 +57,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
 
     try {
       const result = await this.repository.update({ [this.primaryKey]: itemId } as FindOptionsWhere<Entity>, entity as DeepPartial<Entity>);
-      return result.generatedMaps[0] as Entity;
+      return this.getByKey(itemId);
     } catch (err) {
       throw new HTTPError("onebe.errors.database.update", HTTPStatus.BAD_REQUEST, { err, data, itemId });
     }

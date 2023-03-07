@@ -2,6 +2,13 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.12
+
+🔧 Bugfix:
+
+- Return the full entity after insert/update.
+- Possible issue with logs level setter.
+
 ## Version 2.6.11
 
 🔧 Bugfix:

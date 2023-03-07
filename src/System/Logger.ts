@@ -208,7 +208,7 @@ export class JSONLogger extends Logger {
     }
 
     this._log = winston.createLogger({
-      level: logLevel.toString() || LogLevel.INFO,
+      level: logLevel?.toString() || LogLevel.INFO,
       format: winston.format.json(),
       transports: [ transport ],
     });
