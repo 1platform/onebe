@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.13
+
+🔧 Bugfix:
+
+- Fix issue with logger assignation.
+
 ## Version 2.6.12
 
 🔧 Bugfix:

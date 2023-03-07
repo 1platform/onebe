@@ -25,7 +25,7 @@ export abstract class Logger {
    */
   public constructor(logLevel: LogLevel, transport: Transport) {
     this._log = winston.createLogger({
-      level: logLevel.toString() || LogLevel.INFO,
+      level: logLevel ? logLevel?.toString() || LogLevel.INFO : LogLevel.INFO,
       format: winston.format.simple(),
       transports: [ transport ],
     });
@@ -208,7 +208,7 @@ export class JSONLogger extends Logger {
     }
 
     this._log = winston.createLogger({
-      level: logLevel?.toString() || LogLevel.INFO,
+      level: logLevel ? logLevel.toString() || LogLevel.INFO : LogLevel.INFO,
       format: winston.format.json(),
       transports: [ transport ],
     });
