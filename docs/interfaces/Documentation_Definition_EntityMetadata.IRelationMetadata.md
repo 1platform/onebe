@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IRelationMetadata
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / [Documentation/Definition/EntityMetadata](../modules/Documentation_Definition_EntityMetadata.md) / IRelationMetadata
 
 # Interface: IRelationMetadata<T\>
 

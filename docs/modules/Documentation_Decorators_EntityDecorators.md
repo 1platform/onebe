@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EntityDecorators
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / Documentation/Decorators/EntityDecorators
 
 # Module: Documentation/Decorators/EntityDecorators
 

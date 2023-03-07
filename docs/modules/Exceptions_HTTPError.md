@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Exceptions/HTTPError
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / Exceptions/HTTPError
 
 # Module: Exceptions/HTTPError
 

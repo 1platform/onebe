@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Router/RouteTypes
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / Router/RouteTypes
 
 # Module: Router/RouteTypes
 

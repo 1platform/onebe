@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Commands/EntityCreateCommand
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / Commands/EntityCreateCommand
 
 # Module: Commands/EntityCreateCommand
 

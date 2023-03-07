@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Middlewares/LoggerMiddleware
+[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / Middlewares/LoggerMiddleware
 
 # Module: Middlewares/LoggerMiddleware
 
