@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.11](../README.md) / [Exports](../modules.md) / Documentation
+[OneBE Framework - v2.6.12](../README.md) / [Exports](../modules.md) / Documentation
 
 # Module: Documentation
 
