@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / Documentation/BaseEntity
+[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / Documentation/BaseEntity
 
 # Module: Documentation/BaseEntity
 

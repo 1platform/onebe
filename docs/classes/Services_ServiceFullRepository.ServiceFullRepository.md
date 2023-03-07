@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
+[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
 
 # Class: ServiceFullRepository<Entity, KeyType\>
 
@@ -405,7 +405,7 @@ as parameters.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `where` | `FindOptionsWhere`<`Entity`\> | The where clause to be used to fetch the data. |
+| `where` | `FindOptionsWhere`<`Entity`\> \| `FindOptionsWhere`<`Entity`\>[] | The where clause to be used to fetch the data. |
 | `options?` | `FindOneOptions`<`Entity`\> | Extra options to be used for finding the data. |
 
 #### Returns

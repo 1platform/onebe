@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / System/Logger
+[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / System/Logger
 
 # Module: System/Logger
 

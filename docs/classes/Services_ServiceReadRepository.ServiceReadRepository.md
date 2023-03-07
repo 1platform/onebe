@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / [Services/ServiceReadRepository](../modules/Services_ServiceReadRepository.md) / ServiceReadRepository
+[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / [Services/ServiceReadRepository](../modules/Services_ServiceReadRepository.md) / ServiceReadRepository
 
 # Class: ServiceReadRepository<Entity, KeyType\>
 
@@ -304,7 +304,7 @@ as parameters.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `where` | `FindOptionsWhere`<`Entity`\> | The where clause to be used to fetch the data. |
+| `where` | `FindOptionsWhere`<`Entity`\> \| `FindOptionsWhere`<`Entity`\>[] | The where clause to be used to fetch the data. |
 | `options?` | `FindOneOptions`<`Entity`\> | Extra options to be used for finding the data. |
 
 #### Returns

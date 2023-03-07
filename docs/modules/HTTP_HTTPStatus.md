@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / HTTP/HTTPStatus
+[OneBE Framework - v2.6.15](../README.md) / [Exports](../modules.md) / HTTP/HTTPStatus
 
 # Module: HTTP/HTTPStatus
 
