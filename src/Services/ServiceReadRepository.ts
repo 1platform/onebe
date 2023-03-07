@@ -44,8 +44,14 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    * @param paginatedOptions A list with parameters needed for pagination.
    */
   public async getAllPaginated(paginatedOptions: IPaginatedOptions<Entity>): Promise<PaginatedEntity<Entity>> {
-    const { page, size, options } = this._getPaginatedOptions(paginatedOptions);
+    const { size, options } = this._getPaginatedOptions(paginatedOptions);
+    let { page } = this._getPaginatedOptions(paginatedOptions);
     const count = await this.repository.count(options);
+    const countSize = size * (page - 1);
+    if (countSize > count) {
+      page = Math.ceil(count / size);
+    }
+
     const data = await this.getAll({
       skip: size > 0 ? size * (page - 1) : 0,
       take: size > 0 ? size : count,
@@ -69,8 +75,13 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    * @param paginatedOptions A list with parameters needed for pagination.
    */
   public async getAllPaginatedWithDeleted(paginatedOptions: IPaginatedOptions<Entity>): Promise<PaginatedEntity<Entity>> {
-    const { page, size, options } = this._getPaginatedOptions(paginatedOptions);
+    const { size, options } = this._getPaginatedOptions(paginatedOptions);
+    let { page } = this._getPaginatedOptions(paginatedOptions);
     const count = await this.repository.count(options);
+    const countSize = size * (page - 1);
+    if (countSize > count) {
+      page = Math.ceil(count / size);
+    }
     const data = await this.getAll({
       skip: size > 0 ? size * (page - 1) : 0,
       take: size > 0 ? size : count,

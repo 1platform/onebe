@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.16
+
+🔧 Bugfix:
+
+- In getAllPaginated return the right page when requesting a page that doesn't exists.
+
 ## Version 2.6.15
 
 🔧 Bugfix:
