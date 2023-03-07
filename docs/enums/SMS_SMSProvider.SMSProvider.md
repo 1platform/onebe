@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.13](../README.md) / [Exports](../modules.md) / [SMS/SMSProvider](../modules/SMS_SMSProvider.md) / SMSProvider
+[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / [SMS/SMSProvider](../modules/SMS_SMSProvider.md) / SMSProvider
 
 # Enumeration: SMSProvider
 

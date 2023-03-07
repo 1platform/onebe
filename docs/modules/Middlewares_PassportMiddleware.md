@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.13](../README.md) / [Exports](../modules.md) / Middlewares/PassportMiddleware
+[OneBE Framework - v2.6.14](../README.md) / [Exports](../modules.md) / Middlewares/PassportMiddleware
 
 # Module: Middlewares/PassportMiddleware
 
