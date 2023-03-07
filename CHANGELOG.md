@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.14
+
+🔧 Bugfix:
+
+- Revert TypeORM 0.3.11
+
 ## Version 2.6.13
 
 🔧 Bugfix:
