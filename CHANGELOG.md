@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.15
+
+🔧 Bugfix:
+
+- Fix types for get functions.
+
 ## Version 2.6.14
 
 🔧 Bugfix:

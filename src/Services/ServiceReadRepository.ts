@@ -95,7 +95,7 @@ export default abstract class ServiceReadRepository<Entity extends ObjectLiteral
    * @param where The where clause to be used to fetch the data.
    * @param [options] Extra options to be used for finding the data.
    */
-  public async get(where: FindOptionsWhere<Entity>, options?: FindOneOptions<Entity>): Promise<Entity> {
+  public async get(where: FindOptionsWhere<Entity> | FindOptionsWhere<Entity>[], options?: FindOneOptions<Entity>): Promise<Entity> {
     let whereObject: FindOptionsWhere<Entity> | FindOptionsWhere<Entity>[] = {};
     const optionsWhere = options?.where || {};
     if (!Array.isArray(where)) {
