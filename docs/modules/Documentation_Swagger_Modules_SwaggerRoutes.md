@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.12](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerRoutes
+[OneBE Framework - v2.6.13](../README.md) / [Exports](../modules.md) / Documentation/Swagger/Modules/SwaggerRoutes
 
 # Module: Documentation/Swagger/Modules/SwaggerRoutes
 

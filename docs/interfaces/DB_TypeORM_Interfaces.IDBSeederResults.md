@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.12](../README.md) / [Exports](../modules.md) / [DB/TypeORM/Interfaces](../modules/DB_TypeORM_Interfaces.md) / IDBSeederResults
+[OneBE Framework - v2.6.13](../README.md) / [Exports](../modules.md) / [DB/TypeORM/Interfaces](../modules/DB_TypeORM_Interfaces.md) / IDBSeederResults
 
 # Interface: IDBSeederResults
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.12](../README.md) / [Exports](../modules.md) / Commands/Utils/migrationFile
+[OneBE Framework - v2.6.13](../README.md) / [Exports](../modules.md) / Commands/Utils/migrationFile
 
 # Module: Commands/Utils/migrationFile
 
