@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.17
+
+🔧 Bugfix:
+
+- In getAllPaginated when passing -1 as size will return all records.
+
 ## Version 2.6.16
 
 🔧 Bugfix:
