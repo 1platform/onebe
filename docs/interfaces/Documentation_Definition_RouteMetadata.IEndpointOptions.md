@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointOptions
+[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / [Documentation/Definition/RouteMetadata](../modules/Documentation_Definition_RouteMetadata.md) / IEndpointOptions
 
 # Interface: IEndpointOptions
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / DB/TypeORM
+[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / DB/TypeORM
 
 # Module: DB/TypeORM
 

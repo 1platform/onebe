@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.16](../README.md) / [Exports](../modules.md) / [Commands/MigrationUndoCommand](../modules/Commands_MigrationUndoCommand.md) / MigrationUndoCommand
+[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / [Commands/MigrationUndoCommand](../modules/Commands_MigrationUndoCommand.md) / MigrationUndoCommand
 
 # Class: MigrationUndoCommand
 
