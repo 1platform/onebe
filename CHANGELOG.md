@@ -2,6 +2,16 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.18
+
+🌟 Improvements:
+
+- Add option to get the raw body.
+
+🔧 Bugfix:
+
+- Additional information text fixes.
+
 ## Version 2.6.17
 
 🔧 Bugfix:

@@ -99,6 +99,13 @@ export default class ContextAPI<BodyRequest = any> {
   }
 
   /**
+   * Getter for the Body of the request as a Buffer.
+   */
+  public get rawBody(): Buffer {
+    return this._request.rawBody;
+  }
+
+  /**
    * Getter for the Application URL from the request.
    */
   public get appURL(): string {

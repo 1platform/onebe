@@ -45,6 +45,11 @@ declare global {
        * Extra authentication context elements.
        */
       authContext?: Record<string, unknown>;
+
+      /**
+       * The raw body of the request.
+       */
+      rawBody: Buffer;
     }
   }
 

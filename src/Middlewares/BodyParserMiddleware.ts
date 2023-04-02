@@ -1,6 +1,7 @@
 import bodyParser from "body-parser";
 import { Application } from "express";
 import IMiddleware from "@/Middlewares/IMiddleware";
+import * as http from "node:http";
 
 /**
  * Middleware used to parse the body of the request and return the right data
@@ -13,7 +14,13 @@ export default class BodyParserMiddleware implements IMiddleware {
    * @param app The express application on which we apply the middleware.
    */
   public use(app: Application): void {
-    app.use(bodyParser.json());
+    app.use(
+      bodyParser.json({
+        verify(req: any, res: any, buf: Buffer) {
+          req.rawBody = buf;
+        },
+      })
+    );
     app.use(
       bodyParser.urlencoded({
         extended: true,

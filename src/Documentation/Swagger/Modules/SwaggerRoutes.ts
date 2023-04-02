@@ -98,7 +98,7 @@ export default class SwaggerRoutes {
 
 **Additional Information:**
 
-- ${ endpoint.additionalInfo.join("\n -") }`;
+- ${ endpoint.additionalInfo.join("\n- ") }`;
     }
 
     if (endpoint.isAuthenticated) {
