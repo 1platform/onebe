@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / [Exceptions/PageNotFoundException](../modules/Exceptions_PageNotFoundException.md) / PageNotFoundException
+[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / [Exceptions/PageNotFoundException](../modules/Exceptions_PageNotFoundException.md) / PageNotFoundException
 
 # Class: PageNotFoundException
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
+[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / [Router/ContextAPI](../modules/Router_ContextAPI.md) / ContextAPI
 
 # Class: ContextAPI<BodyRequest\>
 
@@ -32,6 +32,7 @@ and specific data types.
 - [pageURL](Router_ContextAPI.ContextAPI.md#pageurl)
 - [parameters](Router_ContextAPI.ContextAPI.md#parameters)
 - [queryParameters](Router_ContextAPI.ContextAPI.md#queryparameters)
+- [rawBody](Router_ContextAPI.ContextAPI.md#rawbody)
 - [request](Router_ContextAPI.ContextAPI.md#request)
 - [response](Router_ContextAPI.ContextAPI.md#response)
 - [sessionID](Router_ContextAPI.ContextAPI.md#sessionid)
@@ -171,6 +172,18 @@ Getter for the list of Query Parameters exposed by the endpoint.
 #### Returns
 
 `ParsedQs`
+
+___
+
+### rawBody
+
+• `get` **rawBody**(): `Buffer`
+
+Getter for the Body of the request as a Buffer.
+
+#### Returns
+
+`Buffer`
 
 ___
 

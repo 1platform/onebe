@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / Commands/Utils/routeFile
+[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / Commands/Utils/routeFile
 
 # Module: Commands/Utils/routeFile
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.17](../README.md) / [Exports](../modules.md) / [Authentication/IPayload](../modules/Authentication_IPayload.md) / IPayload
+[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / [Authentication/IPayload](../modules/Authentication_IPayload.md) / IPayload
 
 # Interface: IPayload
 
