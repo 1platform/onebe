@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.6.19
+
+🌟 Improvements:
+
+- Add option to send attachments in an email.
+
 ## Version 2.6.18
 
 🌟 Improvements:

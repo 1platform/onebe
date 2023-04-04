@@ -44,6 +44,10 @@ export interface IEmailOptions {
    * The content of the email, in HTML format.
    */
   html?: string;
+  /**
+   * A list with all attachments that will be sent in the email.
+   */
+  attachments?: string[];
 }
 
 /**

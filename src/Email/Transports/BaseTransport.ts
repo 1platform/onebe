@@ -45,6 +45,7 @@ export default abstract class BaseTransport implements IEmailTransport {
       subject: options.subject,
       text: options.text || stripHtml(options.html).result || "",
       html: options.html,
+      attachments: (options.attachments || []).map((attachmentFile) => ({ path: attachmentFile })),
     };
 
     getDefaultLogger().debug(`Email Parameters: ${ JSON.stringify(emailOptions) }`);
