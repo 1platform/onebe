@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
+[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Router/RouteInterfaces](../modules/Router_RouteInterfaces.md) / IResponse
 
 # Interface: IResponse<TResponse\>
 

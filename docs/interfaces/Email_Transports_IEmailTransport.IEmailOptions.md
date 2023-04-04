@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
+[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Email/Transports/IEmailTransport](../modules/Email_Transports_IEmailTransport.md) / IEmailOptions
 
 # Interface: IEmailOptions
 
@@ -11,6 +11,7 @@ the Email handling Service.
 
 ### Properties
 
+- [attachments](Email_Transports_IEmailTransport.IEmailOptions.md#attachments)
 - [bcc](Email_Transports_IEmailTransport.IEmailOptions.md#bcc)
 - [cc](Email_Transports_IEmailTransport.IEmailOptions.md#cc)
 - [from](Email_Transports_IEmailTransport.IEmailOptions.md#from)
@@ -22,6 +23,14 @@ the Email handling Service.
 - [to](Email_Transports_IEmailTransport.IEmailOptions.md#to)
 
 ## Properties
+
+### attachments
+
+• `Optional` **attachments**: `string`[]
+
+A list with all attachments that will be sent in the email.
+
+___
 
 ### bcc
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.18](../README.md) / [Exports](../modules.md) / Commands/DefaultProject/createFolders
+[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / Commands/DefaultProject/createFolders
 
 # Module: Commands/DefaultProject/createFolders
 
