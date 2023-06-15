@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / SMS/Transports/ISMSTransport
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / SMS/Transports/ISMSTransport
 
 # Module: SMS/Transports/ISMSTransport
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Scheduler/IScheduleDefinition](../modules/Scheduler_IScheduleDefinition.md) / IScheduleDefinition
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Scheduler/IScheduleDefinition](../modules/Scheduler_IScheduleDefinition.md) / IScheduleDefinition
 
 # Interface: IScheduleDefinition
 

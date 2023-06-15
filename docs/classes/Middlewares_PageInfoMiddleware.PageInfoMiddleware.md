@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Middlewares/PageInfoMiddleware](../modules/Middlewares_PageInfoMiddleware.md) / PageInfoMiddleware
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Middlewares/PageInfoMiddleware](../modules/Middlewares_PageInfoMiddleware.md) / PageInfoMiddleware
 
 # Class: PageInfoMiddleware
 

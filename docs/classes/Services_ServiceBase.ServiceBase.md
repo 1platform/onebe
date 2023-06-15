@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Services/ServiceBase](../modules/Services_ServiceBase.md) / ServiceBase
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Services/ServiceBase](../modules/Services_ServiceBase.md) / ServiceBase
 
 # Class: ServiceBase
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / Utils/StringUtils
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / Utils/StringUtils
 
 # Module: Utils/StringUtils
 

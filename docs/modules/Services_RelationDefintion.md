@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / Services/RelationDefintion
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / Services/RelationDefintion
 
 # Module: Services/RelationDefintion
 
@@ -13,6 +13,7 @@
 - [BuildRelationDefinition](Services_RelationDefintion.md#buildrelationdefinition)
 - [InvertFields](Services_RelationDefintion.md#invertfields)
 - [InvertTable](Services_RelationDefintion.md#inverttable)
+- [SetCustomRelationDefinition](Services_RelationDefintion.md#setcustomrelationdefinition)
 
 ## Functions
 
@@ -86,6 +87,32 @@ Inverts the relation name based on the given tables.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `relation` | [`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`ParentKey`, `ChildKey`\> | The existing relation definition. |
+
+#### Returns
+
+[`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`ParentKey`, `ChildKey`\>
+
+___
+
+### SetCustomRelationDefinition
+
+▸ **SetCustomRelationDefinition**<`ParentKey`, `ChildKey`\>(`relationName`, `relation`): [`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`ParentKey`, `ChildKey`\>
+
+Builds the relation definition object based on the given data with a custom relation name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ParentKey` | `number` |
+| `ChildKey` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `relationName` | `string` | The name of the relation table. |
 | `relation` | [`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`ParentKey`, `ChildKey`\> | The existing relation definition. |
 
 #### Returns

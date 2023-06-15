@@ -1,6 +1,6 @@
-[OneBE Framework - v2.6.19](README.md) / Exports
+[OneBE Framework - v2.6.20](README.md) / Exports
 
-# OneBE Framework - v2.6.19
+# OneBE Framework - v2.6.20
 
 ## Table of contents
 

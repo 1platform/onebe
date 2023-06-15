@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Services/ServiceFullRepository](../modules/Services_ServiceFullRepository.md) / ServiceFullRepository
 
 # Class: ServiceFullRepository<Entity, KeyType\>
 
@@ -58,9 +58,15 @@ that need working with a database.
 - [getAllWithDeleted](Services_ServiceFullRepository.ServiceFullRepository.md#getallwithdeleted)
 - [getByKey](Services_ServiceFullRepository.ServiceFullRepository.md#getbykey)
 - [init](Services_ServiceFullRepository.ServiceFullRepository.md#init)
+- [insertCustomRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#insertcustomrelationaction)
+- [insertCustomRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertcustomrelationdirect)
+- [insertCustomRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertcustomrelationindirect)
 - [insertRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationaction)
 - [insertRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationdirect)
 - [insertRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#insertrelationindirect)
+- [removeCustomRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#removecustomrelationaction)
+- [removeCustomRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#removecustomrelationdirect)
+- [removeCustomRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#removecustomrelationindirect)
 - [removeRelationAction](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationaction)
 - [removeRelationDirect](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationdirect)
 - [removeRelationIndirect](Services_ServiceFullRepository.ServiceFullRepository.md#removerelationindirect)
@@ -349,7 +355,7 @@ ___
 
 ### fetchRelationDefinition
 
-▸ `Protected` **fetchRelationDefinition**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`KeyType`, `ChildRelationType`\>\>
+▸ `Protected` **fetchRelationDefinition**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`, `customRelationName?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<[`IRelationDefinition`](../interfaces/Services_RelationDefintion.IRelationDefinition.md)<`KeyType`, `ChildRelationType`\>\>
 
 Based on the given definition parameters, generates a relation definition that can be used for data
 insertion and deletion.
@@ -367,8 +373,9 @@ insertion and deletion.
 | `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
 | `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
 | `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
-| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
-| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+| `isInvertedTable?` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields?` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+| `customRelationName?` | `string` | `undefined` | The custom relation name. |
 
 #### Returns
 
@@ -549,6 +556,89 @@ Method used to perform some initialisations in the class.
 
 ___
 
+### insertCustomRelationAction
+
+▸ `Protected` **insertCustomRelationAction**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | `undefined` | The name of the relation. |
+| `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
+| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### insertCustomRelationDirect
+
+▸ **insertCustomRelationDirect**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the relation table, using a custom relation name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | The name of the custom relation between the 2 tables. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### insertCustomRelationIndirect
+
+▸ **insertCustomRelationIndirect**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, performs a database insert into the inverted relation table, using a custom relation name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | The name of the custom relation between the 2 tables. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
 ### insertRelationAction
 
 ▸ `Protected` **insertRelationAction**<`ChildRelationType`\>(`item`, `child`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
@@ -621,6 +711,89 @@ Based on the given definition parameters, performs a database insert into the in
 | :------ | :------ | :------ |
 | `item` | `Entity` \| `KeyType` | The item used by the parent table. |
 | `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeCustomRelationAction
+
+▸ `Protected` **removeCustomRelationAction**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`, `isInvertedTable?`, `isInvertedFields?`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes records from the relation table.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | `undefined` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | `undefined` | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | `undefined` | The name of the relation. |
+| `data` | `ChildRelationType`[] | `undefined` | The child data to be used for database changes. |
+| `isInvertedTable` | `boolean` | `false` | Flag to let the engine know about the table naming changes. |
+| `isInvertedFields` | `boolean` | `false` | Flag to let the engine know about the fields naming changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeCustomRelationDirect
+
+▸ **removeCustomRelationDirect**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes data from the relation table, using a custom relation name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | The name of the custom relation between the 2 tables. |
+| `data` | `ChildRelationType`[] | The child data to be used for database changes. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+___
+
+### removeCustomRelationIndirect
+
+▸ **removeCustomRelationIndirect**<`ChildRelationType`\>(`item`, `child`, `customRelationName`, `data`): [`Promise`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise )<`void`\>
+
+Based on the given definition parameters, deletes data from the inverted relation table, using a custom relation name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ChildRelationType` | `number` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `Entity` \| `KeyType` | The item used by the parent table. |
+| `child` | `EntityTarget`<`any`\> | The child entity we want to use for handling data. |
+| `customRelationName` | `string` | The name of the custom relation between the 2 tables. |
 | `data` | `ChildRelationType`[] | The child data to be used for database changes. |
 
 #### Returns

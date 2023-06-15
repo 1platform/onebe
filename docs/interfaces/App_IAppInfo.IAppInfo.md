@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [App/IAppInfo](../modules/App_IAppInfo.md) / IAppInfo
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [App/IAppInfo](../modules/App_IAppInfo.md) / IAppInfo
 
 # Interface: IAppInfo
 

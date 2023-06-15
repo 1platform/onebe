@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerComponents](../modules/Documentation_Swagger_Modules_SwaggerComponents.md) / SwaggerComponents
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Documentation/Swagger/Modules/SwaggerComponents](../modules/Documentation_Swagger_Modules_SwaggerComponents.md) / SwaggerComponents
 
 # Class: SwaggerComponents
 

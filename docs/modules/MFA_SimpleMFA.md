@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / MFA/SimpleMFA
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / MFA/SimpleMFA
 
 # Module: MFA/SimpleMFA
 

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.19](../README.md) / [Exports](../modules.md) / Email/Transports/IEmailTransport
+[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / Email/Transports/IEmailTransport
 
 # Module: Email/Transports/IEmailTransport
 
