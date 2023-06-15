@@ -91,7 +91,7 @@ export default class EntityLoadCommand implements CommandModule {
       const entityContent = await import(entityFile);
       const data = JSON.parse(fs.readFileSync(inputFile, "utf-8"));
       const Entity = entityContent.default;
-      const result = await DatabaseSeeder<typeof Entity>(Entity, data, args.clear ?? false);
+      const result = await DatabaseSeeder<typeof Entity>(Entity, data.data, args.clear ?? false);
       await connection.destroy();
 
       getDefaultLogger().info(

@@ -1,6 +1,6 @@
 import { DeepPartial, EntityTarget, FindOptionsWhere, ObjectLiteral } from "typeorm";
 import ServiceReadRepository from "@/Services/ServiceReadRepository";
-import { BuildRelationDefinition, InvertFields, InvertTable, IRelationDefinition } from "@/Services/RelationDefintion";
+import { BuildRelationDefinition, InvertFields, InvertTable, IRelationDefinition, SetCustomRelationDefinition } from "@/Services/RelationDefintion";
 import { HTTPError } from "@/Exceptions";
 import { HTTPStatus } from "@/HTTP";
 
@@ -49,6 +49,8 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
         id: undefined,
       })
       : { ...data, id: undefined };
+
+    // TODO: Bugfix the issues with relation saving.
     Object.keys(validatedData).forEach((key: string) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -173,21 +175,91 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   }
 
   /**
+   * Based on the given definition parameters, performs a database insert into the relation table, using a custom relation name.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the custom relation between the 2 tables.
+   * @param data The child data to be used for database changes.
+   */
+  public async insertCustomRelationDirect<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>
+  ): Promise<void> {
+    await this.insertCustomRelationAction(item, child, customRelationName, data, false, false);
+  }
+
+  /**
+   * Based on the given definition parameters, performs a database insert into the inverted relation table, using a custom relation name.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the custom relation between the 2 tables.
+   * @param data The child data to be used for database changes.
+   */
+  public async insertCustomRelationIndirect<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>
+  ): Promise<void> {
+    await this.insertCustomRelationAction(item, child, customRelationName, data, true, false);
+  }
+
+  /**
+   * Based on the given definition parameters, deletes data from the relation table, using a custom relation name.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the custom relation between the 2 tables.
+   * @param data The child data to be used for database changes.
+   */
+  public async removeCustomRelationDirect<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>
+  ): Promise<void> {
+    await this.removeCustomRelationAction(item, child, customRelationName, data, false, false);
+  }
+
+  /**
+   * Based on the given definition parameters, deletes data from the inverted relation table, using a custom relation name.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the custom relation between the 2 tables.
+   * @param data The child data to be used for database changes.
+   */
+  public async removeCustomRelationIndirect<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>
+  ): Promise<void> {
+    await this.removeCustomRelationAction(item, child, customRelationName, data, true, false);
+  }
+
+  /**
    * Based on the given definition parameters, generates a relation definition that can be used for data
    * insertion and deletion.
    *
    * @param item The item used by the parent table.
    * @param child The child entity we want to use for handling data.
    * @param data The child data to be used for database changes.
-   * @param isInvertedTable Flag to let the engine know about the table naming changes.
-   * @param isInvertedFields Flag to let the engine know about the fields naming changes.
+   * @param [isInvertedTable] Flag to let the engine know about the table naming changes.
+   * @param [isInvertedFields] Flag to let the engine know about the fields naming changes.
+   * @param [customRelationName] The custom relation name.
    */
   protected async fetchRelationDefinition<ChildRelationType = number>(
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
     data: Array<ChildRelationType>,
     isInvertedTable = false,
-    isInvertedFields = false
+    isInvertedFields = false,
+    customRelationName?: string
   ): Promise<IRelationDefinition<KeyType, ChildRelationType>> {
     if (typeof child !== "string") {
       child = this._dataSource.getRepository(child).metadata.tableName;
@@ -205,6 +277,10 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
 
     if (isInvertedFields) {
       relation = InvertFields(relation);
+    }
+
+    if (customRelationName) {
+      relation = SetCustomRelationDefinition(customRelationName, relation);
     }
 
     return relation;
@@ -258,6 +334,70 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     isInvertedFields = false
   ): Promise<void> {
     const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields);
+
+    await this._dataSource
+      .createQueryBuilder()
+      .delete()
+      .from(relation.relationName)
+      .where(`${ relation.parentField } = :parentField AND ${ relation.childField } IN (:...childField)`, {
+        parentField: relation.parentValue,
+        childField: data,
+      })
+      .execute();
+  }
+
+  /**
+   * Based on the given definition parameters, performs a database insert into the relation table.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the relation.
+   * @param data The child data to be used for database changes.
+   * @param isInvertedTable Flag to let the engine know about the table naming changes.
+   * @param isInvertedFields Flag to let the engine know about the fields naming changes.
+   */
+  protected async insertCustomRelationAction<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>,
+    isInvertedTable = false,
+    isInvertedFields = false
+  ): Promise<void> {
+    const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields, customRelationName);
+
+    await this._dataSource
+      .createQueryBuilder()
+      .insert()
+      .into(relation.relationName, [ relation.parentField, relation.childField ])
+      .values(
+        data.map((childValue) => ({
+          [relation.parentField]: relation.parentValue,
+          [relation.childField]: childValue,
+        }))
+      )
+      .execute();
+  }
+
+  /**
+   * Based on the given definition parameters, deletes records from the relation table.
+   *
+   * @param item The item used by the parent table.
+   * @param child The child entity we want to use for handling data.
+   * @param customRelationName The name of the relation.
+   * @param data The child data to be used for database changes.
+   * @param isInvertedTable Flag to let the engine know about the table naming changes.
+   * @param isInvertedFields Flag to let the engine know about the fields naming changes.
+   */
+  protected async removeCustomRelationAction<ChildRelationType = number>(
+    item: KeyType | Entity,
+    child: string | EntityTarget<any>,
+    customRelationName: string,
+    data: Array<ChildRelationType>,
+    isInvertedTable = false,
+    isInvertedFields = false
+  ): Promise<void> {
+    const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields, customRelationName);
 
     await this._dataSource
       .createQueryBuilder()

@@ -60,6 +60,22 @@ export function BuildRelationDefinition<ParentKey = number, ChildKey = number>(
 }
 
 /**
+ * Builds the relation definition object based on the given data with a custom relation name.
+ *
+ * @param relationName The name of the relation table.
+ * @param relation The existing relation definition.
+ */
+export function SetCustomRelationDefinition<ParentKey = number, ChildKey = number>(
+  relationName: string,
+  relation: IRelationDefinition<ParentKey, ChildKey>
+): IRelationDefinition<ParentKey, ChildKey> {
+  return {
+    ...relation,
+    relationName,
+  };
+}
+
+/**
  * Inverts the fields used to handle the data changes in the database.
  *
  * @param relation The existing relation definition.
