@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [Router/MimeType](../modules/Router_MimeType.md) / MimeType
+[OneBE Framework - v2.6.21](../README.md) / [Exports](../modules.md) / [Router/MimeType](../modules/Router_MimeType.md) / MimeType
 
 # Enumeration: MimeType
 

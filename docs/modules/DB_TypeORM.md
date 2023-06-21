@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / DB/TypeORM
+[OneBE Framework - v2.6.21](../README.md) / [Exports](../modules.md) / DB/TypeORM
 
 # Module: DB/TypeORM
 
@@ -8,15 +8,3 @@
 
 - [CustomLogger](../classes/DB_TypeORM.CustomLogger.md)
 - [TypeORM](../classes/DB_TypeORM.TypeORM.md)
-
-### Type Aliases
-
-- [LoggingOptions](DB_TypeORM.md#loggingoptions)
-
-## Type Aliases
-
-### LoggingOptions
-
-Ƭ **LoggingOptions**: ``"schema"`` \| ``"query"`` \| ``"error"`` \| ``"warn"`` \| ``"info"`` \| ``"log"`` \| ``"migration"``
-
-TypeORM Logging options.

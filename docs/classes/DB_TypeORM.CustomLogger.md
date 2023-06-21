@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / CustomLogger
+[OneBE Framework - v2.6.21](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / CustomLogger
 
 # Class: CustomLogger
 
@@ -38,7 +38,7 @@ CustomLogger constructor.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `loggingOptions?` | `boolean` \| [`LoggingOptions`](../modules/DB_TypeORM.md#loggingoptions)[] | The logging options. |
+| `loggingOptions?` | `LoggerOptions` | The logging options. |
 
 ## Methods
 

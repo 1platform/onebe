@@ -1,10 +1,10 @@
-[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / TypeORM
+[OneBE Framework - v2.6.21](../README.md) / [Exports](../modules.md) / [DB/TypeORM](../modules/DB_TypeORM.md) / TypeORM
 
 # Class: TypeORM
 
 [DB/TypeORM](../modules/DB_TypeORM.md).TypeORM
 
-TypeORM connection handler class.
+TypeORM's connection handler class.
 
 Using this class you can connect and use any of the following database
 engines in your application: MongoDB, MySQL, MariaDB, Postgres. By using

@@ -1,4 +1,4 @@
-[OneBE Framework - v2.6.20](../README.md) / [Exports](../modules.md) / Commands/Utils/initConnection
+[OneBE Framework - v2.6.21](../README.md) / [Exports](../modules.md) / Commands/Utils/initConnection
 
 # Module: Commands/Utils/initConnection
 
@@ -22,7 +22,7 @@ CLI commands.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `configuration?` | `string` | The name of the configuration object to be used. |
-| `logging?` | `boolean` \| [`LoggingOptions`](DB_TypeORM.md#loggingoptions)[] | Database logging configuration. |
+| `logging?` | `LoggerOptions` | Database logging configuration. |
 
 #### Returns
 
