@@ -32,7 +32,7 @@ export default class MigrationRunCommand implements CommandModule {
   public async handler(args: Arguments<{ configuration?: string }>) {
     let connection: DataSource;
     try {
-      connection = await initConnection(args.configuration, false);
+      connection = await initConnection(args.configuration, [ "migration" ]);
       if (!connection) {
         getDefaultLogger().error("You need to have a valid Database configuration, or one that isn't using Mongoose as the engine!");
         return;
@@ -54,7 +54,9 @@ export default class MigrationRunCommand implements CommandModule {
       }
       await connection.destroy();
     } catch (err) {
+      console.error(err);
       getDefaultLogger().error(err.message);
+      getDefaultLogger().debug(err.stack);
 
       if (connection && connection.destroy) {
         await connection.destroy();

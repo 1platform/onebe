@@ -2,13 +2,9 @@ import { DatabaseType, DataSource, DataSourceOptions, Logger, QueryRunner } from
 import { getDefaultLogger } from "@/System/Logger";
 import Config from "@/System/Config";
 import { SqliteConnectionOptions } from "typeorm/driver/sqlite/SqliteConnectionOptions";
+import { LoggerOptions } from "typeorm/logger/LoggerOptions";
 
 export * from "typeorm";
-
-/**
- * TypeORM Logging options.
- */
-export type LoggingOptions = "schema" | "query" | "error" | "warn" | "info" | "log" | "migration";
 
 /**
  * Custom Logger that can be used for logging database events.
@@ -17,14 +13,14 @@ export class CustomLogger implements Logger {
   /**
    * The selected logging level passed to the logger by the database configuration.
    */
-  private readonly _loggingOptions: boolean | LoggingOptions[] = false;
+  private readonly _loggingOptions: boolean | LoggerOptions = false;
 
   /**
    * CustomLogger constructor.
    *
    * @param [loggingOptions] The logging options.
    */
-  public constructor(loggingOptions?: boolean | LoggingOptions[]) {
+  public constructor(loggingOptions?: boolean | LoggerOptions) {
     this._loggingOptions = loggingOptions ?? false;
   }
 
@@ -135,7 +131,7 @@ export class CustomLogger implements Logger {
 }
 
 /**
- * TypeORM connection handler class.
+ * TypeORM's connection handler class.
  *
  * Using this class you can connect and use any of the following database
  * engines in your application: MongoDB, MySQL, MariaDB, Postgres. By using
@@ -217,7 +213,7 @@ export default class TypeORM {
     config = {
       ...config,
       logging: dbConfig.logging ?? false,
-      logger: new CustomLogger((dbConfig.logging ?? false) as boolean | LoggingOptions[]),
+      logger: new CustomLogger((dbConfig.logging ?? false) as boolean | LoggerOptions),
       synchronize: false,
       bigNumberStrings: dbConfig.bigNumberStrings ?? false,
       timezone: dbConfig.timezone || "Z",
@@ -235,6 +231,7 @@ export default class TypeORM {
       })
       .catch((error) => {
         getDefaultLogger().error(`Connection error: ${ error }`);
+        getDefaultLogger().debug(error.stack);
         return error;
       });
   }
