@@ -43,9 +43,15 @@ export function observerPlugin<DocType = Document, SchemaDefinitionType = undefi
       observer.emit(emitAction);
       next();
     });
-    schema.pre("remove", (next: HookNextFunction) => {
-      const emitAction = `${ modelName }:remove:pre`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:remove:pre]`);
+    schema.pre("deleteMany", (next: HookNextFunction) => {
+      const emitAction = `${ modelName }:deleteMany:pre`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:deleteMany:pre]`);
+      observer.emit(emitAction);
+      next();
+    });
+    schema.pre("deleteOne", (next: HookNextFunction) => {
+      const emitAction = `${ modelName }:deleteOne:pre`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:deleteOne:pre]`);
       observer.emit(emitAction);
       next();
     });
@@ -55,9 +61,15 @@ export function observerPlugin<DocType = Document, SchemaDefinitionType = undefi
       observer.emit(emitAction, doc);
       next();
     });
-    schema.post("remove", (doc: Document, next: HookNextFunction) => {
-      const emitAction = `${ modelName }:remove:post`.toLowerCase();
-      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:remove:post]`);
+    schema.post("deleteMany", (doc: Document, next: HookNextFunction) => {
+      const emitAction = `${ modelName }:deleteMany:post`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:deleteMany:post]`);
+      observer.emit(emitAction, doc);
+      next();
+    });
+    schema.post("deleteOne", (doc: Document, next: HookNextFunction) => {
+      const emitAction = `${ modelName }:deleteOne:post`.toLowerCase();
+      getDefaultLogger().debug(`Model: [${ modelName }] emits: [${ modelName }:deleteOne:post]`);
       observer.emit(emitAction, doc);
       next();
     });
