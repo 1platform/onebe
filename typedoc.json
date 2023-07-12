@@ -17,12 +17,12 @@
   "disableSources": true,
   "exclude": [
     "**/tests/*.ts",
-    "./src/*.test.ts",
-    "./src/jest.config.ts",
-    "./src/*.spec.ts",
-    "./src/DB/TypeORM/Decorators/Others.ts",
-    "./src/**/*.d.ts",
-    "./src/**/yarn*.cjs",
+    "./*.test.ts",
+    "./jest.config.ts",
+    "./*.spec.ts",
+    "./DB/TypeORM/Decorators/Others.ts",
+    "./**/*.d.ts",
+    "./**/yarn*.cjs",
     "./node_modules/**/*.d.ts",
     "./node_modules/@types/node/events.d.ts"
   ]
