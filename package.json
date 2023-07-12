@@ -5,6 +5,13 @@
   "description": "One backend framework, for all our internal needs",
   "scripts": {
     "docs:gen": "typedoc --tsconfig ./tsconfig.json --options ./typedoc.json",
+    "test": "TZ=UTC jest --runInBand --no-cache --detectOpenHandles",
+    "test:watch": "TZ=UTC jest --runInBand --watchAll",
+    "test:multithread": "yarn test --maxConcurrency=3",
+    "test:multithread:watch": "TZ=UTC jest --watchAll --maxConcurrency=3",
+    "test:ci": "TZ=UTC jest --no-cache --detectOpenHandles",
+    "test:ci:multithread": "jest --clearCache && RETRY_TIMES=2 TZ=UTC yarn test:multithread",
+    "test:coverage": "yarn test --coverage",
     "code:lint": "eslint --max-warnings 0 \"./src/**/*.ts\"",
     "code:lint:fix": "eslint --max-warnings 0 --fix \"./src/**/*.ts\"",
     "code:fix": "yarn code:prettier && yarn code:lint:fix",
@@ -21,8 +28,7 @@
     "publish:patch": "npm version --no-git-tag-version patch",
     "publish:minor": "npm version --no-git-tag-version minor",
     "publish:major": "npm version --no-git-tag-version major",
-    "postversion": "./bin/publish.sh",
-    "test": "jest"
+    "postversion": "./bin/publish.sh"
   },
   "repository": {
     "type": "git",
@@ -134,19 +140,30 @@
     "@types/shortid": "^0.0.29",
     "@types/speakeasy": "^2.0.7",
     "@types/string-format": "^2.0.0",
+    "@types/supertest": "^2.0.12",
     "@types/uuid": "^9.0.2",
     "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-file-loader": "^2.0.0",
     "babel-plugin-module-resolver": "^5.0.0",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "debug": "^4.3.4",
     "eslint": "^8.43.0",
+    "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
     "i18next-json-sync": "^3.1.2",
     "jest": "^29.5.0",
+    "jest-matcher-specific-error": "1.0.0",
+    "jest-runner-groups": "2.2.0",
     "prettier": "^2.8.8",
     "serve": "^14.2.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
     "tsc-alias": "^1.8.6",
     "typedoc": "^0.24.8",
     "typedoc-plugin-extras": "^2.3.3",
@@ -154,5 +171,15 @@
     "typedoc-plugin-mdn-links": "^3.0.3",
     "typedoc-plugin-rename-defaults": "^0.6.5",
     "typescript": "<5"
+  },
+  "ts-standard": {
+    "project": "tsconfig.json",
+    "globals": [
+      "expect",
+      "jest",
+      "test",
+      "describe",
+      "beforeEach"
+    ]
   }
 }

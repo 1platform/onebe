@@ -10,11 +10,15 @@
   "name": "OneBE Framework",
   "out": "./docs",
   "readme": "./README.md",
-  "externalPattern": ["node_modules"],
+  "externalPattern": [
+    "node_modules"
+  ],
   "excludePrivate": true,
   "disableSources": true,
   "exclude": [
-    "**/test/*.ts",
+    "**/tests/*.ts",
+    "./src/*.test.ts",
+    "./src/*.spec.ts",
     "./src/DB/TypeORM/Decorators/Others.ts",
     "./src/**/*.d.ts",
     "./src/**/yarn*.cjs",

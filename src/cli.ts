@@ -19,9 +19,12 @@ import EntityLoadCommand from "@/Commands/EntityLoadCommand";
 import SecretGenCommand from "@/Commands/SecretGenCommand";
 import ProjectCreateCommand from "@/Commands/ProjectCreateCommand";
 import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
+import i18n from "@/i18n";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
-Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", `.${ Env.string("NDOE_ENV", "dev") === "dev" ? "/src" : "" }/config`)));
+Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", `.${ Env.string("NODE_ENV", "dev") === "dev" ? "/src" : "" }/config`)));
+
+const sourcesFolder = path.resolve(process.cwd(), `.${ Env.string("NODE_ENV", "dev") === "dev" ? "/src" : "" }`);
 
 const yargsBase = yargs
   .usage("Usage: onebe <command> [options]")
@@ -41,4 +44,4 @@ const yargsBase = yargs
   .command(new ProjectCreateCommand())
   .command(new DatabaseSeedCommand());
 
-yargsBase.recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv;
+i18n(sourcesFolder).then(() => yargsBase.recommendCommands().demandCommand(1).strict().alias("v", "version").help("h").alias("h", "help").argv);

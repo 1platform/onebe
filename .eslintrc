@@ -1,23 +1,37 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "plugins": [
+    "jest",
     "@typescript-eslint",
     "@limegrass/import-alias"
   ],
+  "ignorePatterns": [
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ],
   "rules": {
     "indent": "off",
-    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/camelcase": "off",
@@ -26,10 +40,15 @@
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "template-curly-spacing": ["error", "always"],
+    "template-curly-spacing": [
+      "error",
+      "always"
+    ],
     "@typescript-eslint/no-namespace": [
       "error",
-      { "allowDeclarations": true }
+      {
+        "allowDeclarations": true
+      }
     ],
     "comma-dangle": 0,
     "max-len": [
@@ -85,5 +104,47 @@
       }
     ],
     "@limegrass/import-alias/import-alias": "error"
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              [
+                "^cakefactory",
+                "^@?\\w"
+              ],
+              [
+                "^\\u0000"
+              ],
+              [
+                "^\\.\\.(?!/?$)",
+                "^\\.\\./?$"
+              ],
+              [
+                "^\\./(?=.*/)(?!/?$)",
+                "^\\.(?!/?$)",
+                "^\\./?$"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

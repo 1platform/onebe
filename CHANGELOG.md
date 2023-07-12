@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.7.2
+
+🌟 Improvements:
+
+- Various small improvements to the general system works
+
 ## Version 2.6.19
 
 🌟 Improvements:

@@ -12,6 +12,8 @@ fi
 yarn app:compile:cleanup
 
 sed -i "s/export const version.*/export const version = \"$npm_package_version\";/g" src/version.ts
+sed -i "s/.*expect(getVersion()).toBe(\".*/    expect(getVersion()).toBe(\"$npm_package_version-DEV\");/g" src/version.test.ts
+sed -i "s/.*expect(getVersionCodename()).toBe(\".*/    expect(getVersionCodename()).toBe(\"$npm_package_version-DEV (Rebuild)\");/g" src/version.test.ts
 sed -i "s/- Version: .*/- Version: v$npm_package_version/g" README.md
 
 yarn app:build
