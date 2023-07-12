@@ -130,7 +130,7 @@ export function PrimaryColumn(options?: PrimaryColumnOptions & { description?: s
  */
 export function PrimaryGeneratedColumn(
   strategy: PrimaryGeneratedColumnNumericOptions | "increment" | "uuid" | "rowid" | "identity",
-  options: PrimaryGeneratedColumnNumericOptions & { description?: string }
+  options: PrimaryGeneratedColumnNumericOptions & { description?: string },
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMPrimaryGeneratedColumn(strategy as unknown as any, options)(object, propertyName);

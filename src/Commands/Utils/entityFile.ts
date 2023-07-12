@@ -119,7 +119,7 @@ function getMigrationUpTemplate(entityName: string, flags: Record<string, boolea
         type: "timestamp",
         default: "NOW()",
         onUpdate: "NOW()",
-      }
+      },
     );
   }
 

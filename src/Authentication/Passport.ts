@@ -42,7 +42,7 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
       ? props.deserializeUser
       : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
         done(null, { id: payload.userId, ...payload });
-      }
+      },
   );
   passport.use(
     "bearer",
@@ -58,8 +58,8 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
         ? props.deserializeUser
         : (payload: IPayload, done: (err: any, user?: IUser) => void) => {
           done(null, { id: payload.userId, ...payload });
-        }
-    )
+        },
+    ),
   );
   passport.use(
     "basic",
@@ -68,8 +68,8 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
         ? props.basicAuth
         : (username: string, password: string, done: (err: any, user?: IUser) => void) => {
           done(null, { id: username });
-        }
-    )
+        },
+    ),
   );
 }
 

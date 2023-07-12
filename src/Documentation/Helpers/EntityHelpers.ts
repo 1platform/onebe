@@ -316,7 +316,7 @@ const EntityHelpers = {
     entityName: string,
     propertyName: string,
     dataType: EntityPropertyDataTypes,
-    propertyOptions: IEntityProperty
+    propertyOptions: IEntityProperty,
   ): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,
@@ -336,7 +336,7 @@ const EntityHelpers = {
     entityName: string,
     propertyName: string,
     referenceEntityName: string,
-    propertyOptions: IEntityProperty
+    propertyOptions: IEntityProperty,
   ): CustomEntityHelper => {
     return EntityHelpers.property(entityName, propertyName, {
       ...propertyOptions,

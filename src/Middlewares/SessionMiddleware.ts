@@ -35,7 +35,7 @@ export default class SessionMiddleware implements IMiddleware {
         resave: false,
         saveUninitialized: false,
         store: SessionMiddleware._store,
-      })
+      }),
     );
   }
 }

@@ -15,7 +15,7 @@ import { Constructor } from "@/Documentation/MetadataTypes";
 export default async function DatabaseSeeder<Entity extends Constructor>(
   entity: EntityTarget<Entity>,
   data: Array<QueryDeepPartialEntity<Entity>> | QueryDeepPartialEntity<Entity>,
-  clearData = false
+  clearData = false,
 ): Promise<IDBSeederResults> {
   if (!Array.isArray(data)) {
     data = [ data ];
@@ -41,7 +41,7 @@ export default async function DatabaseSeeder<Entity extends Constructor>(
         }
 
         return entityItem;
-      })
+      }),
     );
     response.created = result.identifiers.length;
   });

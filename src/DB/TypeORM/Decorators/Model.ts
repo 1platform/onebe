@@ -19,7 +19,7 @@ import { ControllerDecoratorFunction } from "@/Router";
  */
 export function Model<T extends Constructor>(
   nameOrOptions?: string | (EntityOptions & { description?: string }),
-  maybeOptions?: EntityOptions & { description?: string }
+  maybeOptions?: EntityOptions & { description?: string },
 ): ControllerDecoratorFunction<T> {
   const options = (ObjectUtils.isObject(nameOrOptions) ? (nameOrOptions as EntityOptions & { description?: string }) : maybeOptions) || {};
   const name = typeof nameOrOptions === "string" ? nameOrOptions : options.name;

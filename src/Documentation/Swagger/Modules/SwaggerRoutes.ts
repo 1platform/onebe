@@ -35,7 +35,7 @@ export default class SwaggerRoutes {
         ...accum,
         ...this.groupPaths(route),
       }),
-      {}
+      {},
     );
   }
 
@@ -165,7 +165,7 @@ export default class SwaggerRoutes {
           },
         },
       }),
-      {}
+      {},
     );
   }
 
@@ -219,7 +219,7 @@ export default class SwaggerRoutes {
           description: this.getStatusDescription(statusInfo[0], statusInfo[1]),
         },
       }),
-      {}
+      {},
     );
   }
 
@@ -251,7 +251,7 @@ export default class SwaggerRoutes {
           },
         },
       }),
-      {}
+      {},
     );
   }
 

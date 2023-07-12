@@ -18,7 +18,7 @@ export default class LoggerMiddleware implements IMiddleware {
     app.use(
       morgan(Config.get("http.logFormat", "combined"), {
         stream: { write: (message) => getDefaultLogger().info(message.trim()) },
-      })
+      }),
     );
   }
 }

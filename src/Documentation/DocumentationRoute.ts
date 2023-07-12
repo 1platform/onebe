@@ -29,7 +29,7 @@ export default class DocumentationRoute extends Route {
         },
         customSiteTitle: `${ app.app.appName } API`,
         isExplorer: true,
-      })
+      }),
     );
   }
 

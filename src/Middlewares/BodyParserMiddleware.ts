@@ -19,12 +19,12 @@ export default class BodyParserMiddleware implements IMiddleware {
         verify(req: any, res: any, buf: Buffer) {
           req.rawBody = buf;
         },
-      })
+      }),
     );
     app.use(
       bodyParser.urlencoded({
         extended: true,
-      })
+      }),
     );
     app.use(bodyParser.text());
   }

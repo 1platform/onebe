@@ -32,7 +32,7 @@ export const clone = (lang: string): Promise<TFunction> =>
       }
 
       resolve(t);
-    })
+    }),
   );
 
 /**

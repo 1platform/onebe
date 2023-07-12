@@ -125,7 +125,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   public async insertRelationDirect<ChildRelationType = number>(
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.insertRelationAction(item, child, data, false, false);
   }
@@ -140,7 +140,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   public async insertRelationIndirect<ChildRelationType = number>(
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.insertRelationAction(item, child, data, true, false);
   }
@@ -155,7 +155,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   public async removeRelationDirect<ChildRelationType = number>(
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.removeRelationAction(item, child, data, false, false);
   }
@@ -170,7 +170,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
   public async removeRelationIndirect<ChildRelationType = number>(
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.removeRelationAction(item, child, data, true, false);
   }
@@ -187,7 +187,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
     customRelationName: string,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.insertCustomRelationAction(item, child, customRelationName, data, false, false);
   }
@@ -204,7 +204,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
     customRelationName: string,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.insertCustomRelationAction(item, child, customRelationName, data, true, false);
   }
@@ -221,7 +221,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
     customRelationName: string,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.removeCustomRelationAction(item, child, customRelationName, data, false, false);
   }
@@ -238,7 +238,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     item: KeyType | Entity,
     child: string | EntityTarget<any>,
     customRelationName: string,
-    data: Array<ChildRelationType>
+    data: Array<ChildRelationType>,
   ): Promise<void> {
     await this.removeCustomRelationAction(item, child, customRelationName, data, true, false);
   }
@@ -260,7 +260,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     data: Array<ChildRelationType>,
     isInvertedTable = false,
     isInvertedFields = false,
-    customRelationName?: string
+    customRelationName?: string,
   ): Promise<IRelationDefinition<KeyType, ChildRelationType>> {
     if (typeof child !== "string") {
       child = this._dataSource.getRepository(child).metadata.tableName;
@@ -301,7 +301,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     child: string | EntityTarget<any>,
     data: Array<ChildRelationType>,
     isInvertedTable = false,
-    isInvertedFields = false
+    isInvertedFields = false,
   ): Promise<void> {
     const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields);
 
@@ -313,7 +313,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
         data.map((childValue) => ({
           [relation.parentField]: relation.parentValue,
           [relation.childField]: childValue,
-        }))
+        })),
       )
       .execute();
   }
@@ -332,7 +332,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     child: string | EntityTarget<any>,
     data: Array<ChildRelationType>,
     isInvertedTable = false,
-    isInvertedFields = false
+    isInvertedFields = false,
   ): Promise<void> {
     const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields);
 
@@ -363,7 +363,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     customRelationName: string,
     data: Array<ChildRelationType>,
     isInvertedTable = false,
-    isInvertedFields = false
+    isInvertedFields = false,
   ): Promise<void> {
     const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields, customRelationName);
 
@@ -375,7 +375,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
         data.map((childValue) => ({
           [relation.parentField]: relation.parentValue,
           [relation.childField]: childValue,
-        }))
+        })),
       )
       .execute();
   }
@@ -396,7 +396,7 @@ export default abstract class ServiceFullRepository<Entity extends ObjectLiteral
     customRelationName: string,
     data: Array<ChildRelationType>,
     isInvertedTable = false,
-    isInvertedFields = false
+    isInvertedFields = false,
   ): Promise<void> {
     const relation = await this.fetchRelationDefinition(item, child, data, isInvertedTable, isInvertedFields, customRelationName);
 

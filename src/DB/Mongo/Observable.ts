@@ -46,7 +46,7 @@ export default class Observable extends EventEmitter {
     modelName: string,
     type: ObservableType,
     isPost: boolean,
-    observerCallback: ObserverCallback<T>
+    observerCallback: ObserverCallback<T>,
   ): void {
     this.on(`${ modelName }:${ type }:${ isPost ? "post" : "pre" }`.toLowerCase(), observerCallback);
   }

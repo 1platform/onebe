@@ -75,7 +75,7 @@ export default class App {
         ...appInfo,
         name: this._appInfo.name,
         version: this._appInfo.version,
-      }
+      },
     );
   }
 

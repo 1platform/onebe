@@ -46,7 +46,7 @@ export function BuildRelationDefinition<ParentKey = number, ChildKey = number>(
   parentTable: string,
   childTable: string,
   parentValue: ParentKey,
-  data: Array<ChildKey>
+  data: Array<ChildKey>,
 ): IRelationDefinition<ParentKey, ChildKey> {
   return {
     relationName: `${ parentTable }${ childTable }`,
@@ -67,7 +67,7 @@ export function BuildRelationDefinition<ParentKey = number, ChildKey = number>(
  */
 export function SetCustomRelationDefinition<ParentKey = number, ChildKey = number>(
   relationName: string,
-  relation: IRelationDefinition<ParentKey, ChildKey>
+  relation: IRelationDefinition<ParentKey, ChildKey>,
 ): IRelationDefinition<ParentKey, ChildKey> {
   return {
     ...relation,
@@ -81,7 +81,7 @@ export function SetCustomRelationDefinition<ParentKey = number, ChildKey = numbe
  * @param relation The existing relation definition.
  */
 export function InvertFields<ParentKey = number, ChildKey = number>(
-  relation: IRelationDefinition<ParentKey, ChildKey>
+  relation: IRelationDefinition<ParentKey, ChildKey>,
 ): IRelationDefinition<ParentKey, ChildKey> {
   return {
     ...relation,
@@ -96,7 +96,7 @@ export function InvertFields<ParentKey = number, ChildKey = number>(
  * @param relation The existing relation definition.
  */
 export function InvertTable<ParentKey = number, ChildKey = number>(
-  relation: IRelationDefinition<ParentKey, ChildKey>
+  relation: IRelationDefinition<ParentKey, ChildKey>,
 ): IRelationDefinition<ParentKey, ChildKey> {
   return {
     ...relation,

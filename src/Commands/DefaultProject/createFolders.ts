@@ -71,7 +71,7 @@ function createJobsFile(basePath: string): void {
     `export default function jobs(): void {
   // Define the jobs to be loaded here.
 }`,
-    "utf-8"
+    "utf-8",
   );
   console.log(chalk.green(`    - src/jobs/index.ts`));
 }
@@ -87,7 +87,7 @@ function createObserversFile(basePath: string): void {
     `export default function observers(): void {
   // Define the observers to be loaded here.
 }`,
-    "utf-8"
+    "utf-8",
   );
   console.log(chalk.green(`    - src/observers/index.ts`));
 }
@@ -110,7 +110,7 @@ export default function services(): void {
 
   // Define the services to be loaded here.
 }`,
-    "utf-8"
+    "utf-8",
   );
   console.log(chalk.green(`    - src/services/index.ts`));
 }
@@ -142,7 +142,7 @@ export default class Default extends Route {
     return HTTPStatus.OK;
   }
 }`,
-    "utf-8"
+    "utf-8",
   );
   console.log(chalk.green(`    - src/routes/Default.ts`));
 }

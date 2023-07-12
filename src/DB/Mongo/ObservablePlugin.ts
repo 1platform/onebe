@@ -18,7 +18,7 @@ export { observer };
  */
 export type PluginFunction<DocType = Document, SchemaDefinitionType = undefined> = (
   schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>,
-  opts?: any
+  opts?: any,
 ) => void;
 
 /**
@@ -35,7 +35,7 @@ export type HookNextFunction = (err?: CallbackError) => void;
  * @param modelName The name of the model we want to observe.
  */
 export function observerPlugin<DocType = Document, SchemaDefinitionType = undefined>(
-  modelName: string
+  modelName: string,
 ): PluginFunction<DocType, SchemaDefinitionType> {
   return (schema: Schema<DocType, Model<DocType>, SchemaDefinitionType>, opts?: any) => {
     schema.pre("save", (next: HookNextFunction) => {

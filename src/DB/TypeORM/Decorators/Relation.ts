@@ -32,7 +32,7 @@ function DocumentEntityRelation<T = Constructor>(
   object: Constructor,
   propertyName: string,
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
-  isArray?: boolean
+  isArray?: boolean,
 ) {
   MetadataStore.instance.entity.addRelation<T>(object.constructor.name, propertyName, typeFunctionOrTarget, isArray ?? false);
 }
@@ -49,7 +49,7 @@ function DocumentEntityRelation<T = Constructor>(
  */
 export function ManyToOne<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
-  options?: RelationOptions
+  options?: RelationOptions,
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMManyToOne(typeFunctionOrTarget, options)(object, propertyName);
@@ -71,7 +71,7 @@ export function ManyToOne<T = Constructor>(
 export function ManyToMany<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
   inverseSide?: string | ((object: T) => any) | RelationOptions,
-  options?: RelationOptions
+  options?: RelationOptions,
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     if (!options) {
@@ -97,7 +97,7 @@ export function ManyToMany<T = Constructor>(
 export function OneToMany<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
   inverseSide?: string | ((object: T) => any),
-  options?: RelationOptions
+  options?: RelationOptions,
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     TypeORMOneToMany(typeFunctionOrTarget, inverseSide, options)(object, propertyName);
@@ -119,7 +119,7 @@ export function OneToMany<T = Constructor>(
 export function OneToOne<T = Constructor>(
   typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
   inverseSide?: string | ((object: T) => any) | RelationOptions,
-  options?: RelationOptions
+  options?: RelationOptions,
 ): PropertyDecorator {
   return function (object: Constructor, propertyName: string) {
     if (!options) {

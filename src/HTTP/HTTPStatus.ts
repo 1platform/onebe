@@ -54,12 +54,6 @@ enum HTTPStatus {
    * This status code should be used when the endpoint your user wants to access has moved temporary to a new location.
    */
   REDIRECT = 302,
-  /**
-   * FOUND HTTP Status Code
-   *
-   * This status code should be used when the endpoint your user wants to access has moved temporary to a new location.
-   */
-  FOUND = 302,
 
   /**
    * BAD REQUEST HTTP Status Code

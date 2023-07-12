@@ -120,7 +120,7 @@ export class ConsoleLogger extends Logger {
       logLevel,
       new transports.Console({
         format,
-      })
+      }),
     );
   }
 }
@@ -142,7 +142,7 @@ export class FileLogger extends Logger {
         filename: Config.string("logs.filename", "app.log"),
         dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
-      })
+      }),
     );
   }
 }

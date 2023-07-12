@@ -145,67 +145,70 @@ export default class SwaggerComponents {
       },
     };
 
-    componentDefinition.definition.properties = entity.properties.reduce((accum, property) => {
-      if (property.dataType === EntityPropertyDataTypes.OBJECT) {
+    componentDefinition.definition.properties = entity.properties.reduce(
+      (accum, property) => {
+        if (property.dataType === EntityPropertyDataTypes.OBJECT) {
+          return {
+            ...accum,
+            [property.name]: {
+              type: EntityPropertyDataTypes.OBJECT,
+              $ref: `#/components/schemas/${ property.options.reference }`,
+            },
+          };
+        }
+        if (property.dataType === EntityPropertyDataTypes.ARRAY) {
+          return {
+            ...accum,
+            [property.name]: {
+              type: EntityPropertyDataTypes.ARRAY,
+              items: property.options.reference
+                ? {
+                  $ref: `#/components/schemas/${ property.options.reference }`,
+                }
+                : {
+                  type: property.options.childType || EntityPropertyDataTypes.STRING,
+                },
+            },
+          };
+        }
+
+        const definition: Record<string, unknown> = {
+          description: property.description,
+          type: property.dataType,
+        };
+
+        if (property.options.enum) {
+          definition.enum = property.options.enum;
+        }
+
+        if (property.options.default) {
+          definition.default = property.options.default;
+        }
+
+        if (property.options.isDate) {
+          definition.format = "date";
+        }
+        if (property.options.isDateTime) {
+          definition.format = "date-time";
+        }
+        if (property.options.isPassword) {
+          definition.format = "password";
+        }
+
+        if (property.dataType === EntityPropertyDataTypes.NUMBER) {
+          definition.format = "double";
+        }
+        if (property.dataType === EntityPropertyDataTypes.INTEGER) {
+          definition.format = "int64";
+        }
+
         return {
           ...accum,
-          [property.name]: {
-            type: EntityPropertyDataTypes.OBJECT,
-            $ref: `#/components/schemas/${ property.options.reference }`,
-          },
+          [property.name]: definition,
         };
-      }
-      if (property.dataType === EntityPropertyDataTypes.ARRAY) {
-        return {
-          ...accum,
-          [property.name]: {
-            type: EntityPropertyDataTypes.ARRAY,
-            items: property.options.reference
-              ? {
-                $ref: `#/components/schemas/${ property.options.reference }`,
-              }
-              : {
-                type: property.options.childType || EntityPropertyDataTypes.STRING,
-              },
-          },
-        };
-      }
-
-      const definition: Record<string, unknown> = {
-        description: property.description,
-        type: property.dataType,
-      };
-
-      if (property.options.enum) {
-        definition.enum = property.options.enum;
-      }
-
-      if (property.options.default) {
-        definition.default = property.options.default;
-      }
-
-      if (property.options.isDate) {
-        definition.format = "date";
-      }
-      if (property.options.isDateTime) {
-        definition.format = "date-time";
-      }
-      if (property.options.isPassword) {
-        definition.format = "password";
-      }
-
-      if (property.dataType === EntityPropertyDataTypes.NUMBER) {
-        definition.format = "double";
-      }
-      if (property.dataType === EntityPropertyDataTypes.INTEGER) {
-        definition.format = "int64";
-      }
-
-      return {
-        ...accum,
-        [property.name]: definition,
-      };
-    }, {} as Record<string, unknown>);
+      },
+      {} as Record<string, unknown>,
+    );
     componentDefinition.definition.required = entity.properties
       .filter((property) => property.options.required && AUDIT.indexOf(property.name) < 0)
       .map((property) => property.name);

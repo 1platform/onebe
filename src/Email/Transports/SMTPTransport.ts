@@ -21,7 +21,7 @@ export default class SMTPTransport extends BaseTransport implements IEmailTransp
           user: Config.string("email.config.address"),
           pass: Config.string("email.config.password"),
         },
-      })
+      }),
     );
   }
 }

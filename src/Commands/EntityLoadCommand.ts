@@ -96,7 +96,7 @@ export default class EntityLoadCommand implements CommandModule {
       await connection.destroy();
 
       getDefaultLogger().info(
-        `Entity ${ chalk.blue(entityName) } has been populated successfully. Created: ${ result.created }. Deleted: ${ result.deleted }.`
+        `Entity ${ chalk.blue(entityName) } has been populated successfully. Created: ${ result.created }. Deleted: ${ result.deleted }.`,
       );
     } catch (err) {
       getDefaultLogger().error(`Entity ${ chalk.blue(entityName) } failed population. Error: ${ err.message }`);

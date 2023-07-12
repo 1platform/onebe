@@ -270,7 +270,7 @@ export default class EntityDefinition {
     entity: string,
     propertyName: string,
     typeFunctionOrTarget: string | ((type?: any) => ObjectType<T>),
-    isArray?: boolean
+    isArray?: boolean,
   ): void {
     if (!this._relations[entity]) {
       this._relations[entity] = [];
@@ -364,7 +364,7 @@ export default class EntityDefinition {
         {
           dataType: dataType as EntityPropertyDataTypes,
         },
-        relation.propertyName
+        relation.propertyName,
       );
     }
   }

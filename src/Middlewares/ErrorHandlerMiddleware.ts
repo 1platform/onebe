@@ -62,7 +62,7 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
             ...accum,
             [detail.path.join(".")]: `${ detail.message }${ detail.context && ` (Value: ${ detail.context.value })` }`,
           }),
-          {}
+          {},
         );
       } else {
         details = "";

@@ -53,7 +53,7 @@ export default class HTTP {
       helmet({
         contentSecurityPolicy: false,
         crossOriginEmbedderPolicy: false,
-      })
+      }),
     );
   }
 

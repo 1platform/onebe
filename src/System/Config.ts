@@ -52,7 +52,7 @@ export class Configuration {
         ...accum,
         [key]: configFromFile[key]["default"] ? configFromFile[key]["default"] : configFromFile[key],
       }),
-      {}
+      {},
     );
 
     this.load(configFromFile);

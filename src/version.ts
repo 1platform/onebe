@@ -7,7 +7,7 @@ export const codename = "Rebuild";
 /**
  * The version of the framework.
  */
-export const version = "2.7.1";
+export const version = "2.7.3";
 
 /**
  * Function that returns the full version string (version + buildId).

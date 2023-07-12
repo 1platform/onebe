@@ -122,7 +122,7 @@ export default class Router {
           const original: ResponseValue<any> =
             (await endpoint.callback(
               new ContextAPI<any>(req, res, endpoint.passRequest, endpoint.verb === HTTPVerb.GET),
-              new AuthContextAPI(req, req.authContext || {})
+              new AuthContextAPI(req, req.authContext || {}),
             )) || HTTPStatus.NO_CONTENT;
 
           let status = HTTPStatus.OK;
@@ -167,7 +167,7 @@ export default class Router {
         } catch (e) {
           next(e);
         }
-      }
+      },
     );
   }
 

@@ -82,7 +82,7 @@ function buildDepsLevel(
   entity: string,
   entityDependencies: Array<string>,
   allDependencies: Record<string, Array<string>>,
-  levels: Record<string, number>
+  levels: Record<string, number>,
 ): number {
   if (levels[entity]) {
     return levels[entity];
@@ -152,8 +152,8 @@ function createDependencyTree(seeds: Record<string, ISeedInfo>): Array<Array<str
         ...accum,
         [dependencyLevels[entity]]: [ ...(accum[dependencyLevels[entity]] || []), entity ],
       }),
-      {}
-    )
+      {},
+    ),
   );
 }
 
@@ -206,7 +206,7 @@ async function createEntityWithInsert(entityManager: EntityManager, seed: ISeedI
         }
 
         return item;
-      })
+      }),
     )
     .map((items) => `(${ items.join(",") })`);
   getDefaultLogger().debug(`INSERT INTO \`${ seed.entity }\` (${ mappedFields.join(",") }) VALUES ${ mappedData.join(",") };`);

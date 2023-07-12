@@ -31,7 +31,7 @@ export default function getMessagingClient<T extends MessagingTypeObject>(type: 
     new Auth({
       apiKey: configuration.account,
       apiSecret: configuration.password,
-    })
+    }),
   ) as T;
 }
 

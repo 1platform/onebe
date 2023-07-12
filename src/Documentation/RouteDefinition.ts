@@ -345,7 +345,7 @@ export default class RouteDefinition {
           ...accum,
           [parameter.name]: parameter,
         }),
-        {}
+        {},
       ),
     };
 
@@ -505,7 +505,7 @@ export default class RouteDefinition {
    * @param fn The middlewares lists.
    */
   protected callbackExtractor<Request = any, Response = any>(
-    fn: CallbackExtractorParameter<Request, Response>
+    fn: CallbackExtractorParameter<Request, Response>,
   ): ICallbackExtracted<Request, Response> {
     let callback: AppMethod<Request, Response>;
     let middlewares: Array<HTTPMiddleware> = [];
