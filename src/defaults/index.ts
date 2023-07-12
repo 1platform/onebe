@@ -1,7 +1,7 @@
-import type IConfig from "@/System/IConfig";
 import api from "@/defaults/api";
 import app from "@/defaults/app";
 import auth from "@/defaults/auth";
+import cli from "@/defaults/cli";
 import db from "@/defaults/db";
 import docs from "@/defaults/docs";
 import email from "@/defaults/email";
@@ -10,7 +10,7 @@ import i18n from "@/defaults/i18n";
 import logs from "@/defaults/logs";
 import sms from "@/defaults/sms";
 import upload from "@/defaults/upload";
-import cli from "@/defaults/cli";
+import type IConfig from "@/System/IConfig";
 
 /**
  * The configuration object, with some default values, that can be used

@@ -1,5 +1,6 @@
 import consign from "consign";
 import { merge } from "lodash";
+
 import defaultConfig from "@/defaults";
 import IConfig from "@/System/IConfig";
 

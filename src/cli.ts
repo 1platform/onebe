@@ -1,25 +1,31 @@
 #!/usr/bin/env node
-import "reflect-metadata";
-import yargs from "yargs";
-import path from "path";
+/* eslint-disable simple-import-sort/imports */
+/* eslint-disable simple-import-sort/exports */
 import register from "@babel/register";
-import { getVersion } from "@/version";
+import path from "node:path";
+import yargs from "yargs";
+
+import "reflect-metadata";
+
 import Config from "@/System/Config";
 import Env from "@/System/Env";
-import MigrationCreateCommand from "@/Commands/MigrationCreateCommand";
-import EntityCreateCommand from "@/Commands/EntityCreateCommand";
-import MigrationShowCommand from "@/Commands/MigrationShowCommand";
-import MigrationRunCommand from "@/Commands/MigrationRunCommand";
-import MigrationUndoCommand from "@/Commands/MigrationUndoCommand";
-import MigrationResetCommand from "@/Commands/MigrationResetCommand";
-import RouteCreateCommand from "@/Commands/RouteCreateCommand";
-import ServiceCreateCommand from "@/Commands/ServiceCreateCommand";
-import JobCreateCommand from "@/Commands/JobCreateCommand";
-import EntityLoadCommand from "@/Commands/EntityLoadCommand";
-import SecretGenCommand from "@/Commands/SecretGenCommand";
-import ProjectCreateCommand from "@/Commands/ProjectCreateCommand";
+
 import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
+import EntityCreateCommand from "@/Commands/EntityCreateCommand";
+import EntityLoadCommand from "@/Commands/EntityLoadCommand";
+import JobCreateCommand from "@/Commands/JobCreateCommand";
+import MigrationCreateCommand from "@/Commands/MigrationCreateCommand";
+import MigrationResetCommand from "@/Commands/MigrationResetCommand";
+import MigrationRunCommand from "@/Commands/MigrationRunCommand";
+import MigrationShowCommand from "@/Commands/MigrationShowCommand";
+import MigrationUndoCommand from "@/Commands/MigrationUndoCommand";
+import ProjectCreateCommand from "@/Commands/ProjectCreateCommand";
+import RouteCreateCommand from "@/Commands/RouteCreateCommand";
+import SecretGenCommand from "@/Commands/SecretGenCommand";
+import ServiceCreateCommand from "@/Commands/ServiceCreateCommand";
 import i18n from "@/i18n";
+
+import { getVersion } from "@/version";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
 Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", `.${ Env.string("NODE_ENV", "dev") === "dev" ? "/src" : "" }/config`)));

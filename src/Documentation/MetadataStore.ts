@@ -1,6 +1,6 @@
 import { IEntityMetadata } from "@/Documentation/Definition/EntityMetadata";
-import EntityDefinition from "@/Documentation/EntityDefinition";
 import { IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
+import EntityDefinition from "@/Documentation/EntityDefinition";
 import RouteDefinition from "@/Documentation/RouteDefinition";
 
 /**

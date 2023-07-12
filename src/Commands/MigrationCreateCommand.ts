@@ -1,4 +1,5 @@
 import { Arguments, Argv, CommandModule } from "yargs";
+
 import createMigrationFile from "@/Commands/Utils/migrationFile";
 
 /**

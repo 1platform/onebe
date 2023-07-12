@@ -1,7 +1,7 @@
-import { RouteDecorator, Route } from "@/Router";
-import MetadataStore from "@/Documentation/MetadataStore";
-import { IEndpointBodyParameter } from "@/Documentation/Definition/RouteMetadata";
 import { QueryParameterType } from "@/Documentation/Definition/DataTypes";
+import { IEndpointBodyParameter } from "@/Documentation/Definition/RouteMetadata";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { Route, RouteDecorator } from "@/Router";
 
 /**
  * Decorator used to describe a parameter (:parameter) used in the endpoint URL.

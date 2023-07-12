@@ -1,9 +1,10 @@
 import { compareSync, hashSync } from "bcryptjs";
+import { camelCase as _camelCase } from "lodash";
 import shortId from "shortid";
 import formatter from "string-format";
-import * as uuid from "uuid";
 import { stripHtml } from "string-strip-html";
-import { camelCase as _camelCase } from "lodash";
+import * as uuid from "uuid";
+
 import { random } from "@/Utils/NumberUtils";
 
 /**

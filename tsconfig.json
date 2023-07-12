@@ -14,7 +14,7 @@
     "outDir": "./dist",
     "paths": {
       "@/*": [
-        "*"
+        "./*"
       ]
     },
     "resolveJsonModule": true,
@@ -33,8 +33,13 @@
   "exclude": [
     "node_modules",
     "*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "src/tests"
-  ]
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.md",
+    "tests"
+  ],
+  "tsc-alias": {
+    "verbose": true,
+    "resolveFullPaths": true
+  }
 }

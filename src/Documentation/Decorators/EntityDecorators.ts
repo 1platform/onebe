@@ -1,8 +1,8 @@
+import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
+import { IEntityProperty } from "@/Documentation/Definition/EntityMetadata";
+import MetadataStore from "@/Documentation/MetadataStore";
 import { Constructor } from "@/Documentation/MetadataTypes";
 import { ControllerDecoratorFunction } from "@/Router";
-import MetadataStore from "@/Documentation/MetadataStore";
-import { IEntityProperty } from "@/Documentation/Definition/EntityMetadata";
-import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
 
 /**
  * Decorator used to describe a custom entity that is extending the

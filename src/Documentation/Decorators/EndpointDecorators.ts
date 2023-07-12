@@ -1,7 +1,7 @@
+import { IEndpointDocumentation } from "@/Documentation/Definition/RouteMetadata";
+import MetadataStore from "@/Documentation/MetadataStore";
 import { RouteDecorator } from "@/Router";
 import Route from "@/Router/Route";
-import MetadataStore from "@/Documentation/MetadataStore";
-import { IEndpointDocumentation } from "@/Documentation/Definition/RouteMetadata";
 
 /**
  * All the request documentation decorators.

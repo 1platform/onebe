@@ -1,6 +1,7 @@
 import { Arguments, Argv, CommandModule } from "yargs";
-import { camelCase } from "@/Utils";
+
 import createEntityFile from "@/Commands/Utils/entityFile";
+import { camelCase } from "@/Utils";
 
 /**
  * CLI Command to create a new entity.

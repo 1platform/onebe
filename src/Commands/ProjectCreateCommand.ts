@@ -1,4 +1,5 @@
 import { Arguments, Argv, CommandModule, exit } from "yargs";
+
 import createProject from "@/Commands/Utils/createProject";
 
 /**

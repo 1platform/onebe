@@ -1,13 +1,14 @@
-import { basename, extname, join, resolve } from "path";
-import { readdirSync, statSync } from "fs";
 import { NextFunction, Request, Response, Router as ExpressRouter } from "express";
-import { AuthContextAPI, ContextAPI, getPath, ResponseValue, Route } from "@/Router";
-import MetadataStore from "@/Documentation/MetadataStore";
-import { getDefaultLogger } from "@/System/Logger";
-import Config from "@/System/Config";
+import { readdirSync, statSync } from "node:fs";
+import { basename, extname, join, resolve } from "node:path";
+
 import { IEndpointMetadata, IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
+import MetadataStore from "@/Documentation/MetadataStore";
 import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "@/HTTP";
+import { AuthContextAPI, ContextAPI, getPath, ResponseValue, Route } from "@/Router";
 import MimeType from "@/Router/MimeType";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * Interface used to describe the routes folder structure of your application.

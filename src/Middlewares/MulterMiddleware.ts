@@ -1,10 +1,11 @@
 import multer from "multer";
-import path from "path";
-import Route from "@/Router/Route";
-import { RouteDecorator } from "@/Router";
-import Config from "@/System/Config";
-import MetadataStore from "@/Documentation/MetadataStore";
+import path from "node:path";
+
 import { BodyParameterType } from "@/Documentation";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { RouteDecorator } from "@/Router";
+import Route from "@/Router/Route";
+import Config from "@/System/Config";
 import { randomString } from "@/Utils";
 
 /**

@@ -1,10 +1,11 @@
-import { join, resolve } from "node:path";
-import { existsSync } from "node:fs";
 import type { i18n as I18n, TFunction } from "i18next";
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 import Backend from "i18next-fs-backend";
 import type { I18NextRequest } from "i18next-http-middleware";
 import { LanguageDetector } from "i18next-http-middleware";
+import { existsSync } from "node:fs";
+import { join, resolve } from "node:path";
+
 import Config from "@/System/Config";
 
 export type { I18n, TFunction, I18NextRequest };
@@ -16,7 +17,7 @@ export { i18next };
  * @param key The key used for translation
  * @param [options] A list of options to be used for translation.
  */
-export const translate = i18next.t.bind(i18next);
+export const translate = t.bind(i18next);
 
 /**
  * Function used to clone the translation object.

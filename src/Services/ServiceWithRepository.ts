@@ -1,6 +1,7 @@
-import ServiceBase from "@/Services/ServiceBase";
 import { DataSource, EntityTarget, ObjectLiteral, Repository } from "typeorm";
+
 import { defaultConnection } from "@/DB";
+import ServiceBase from "@/Services/ServiceBase";
 
 /**
  * The base class for your services that are using a database table.

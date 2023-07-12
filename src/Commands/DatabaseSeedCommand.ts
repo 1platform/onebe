@@ -1,8 +1,9 @@
-import { Arguments, Argv, CommandModule } from "yargs";
 import { DataSource } from "typeorm";
-import { getDefaultLogger } from "@/System/Logger";
+import { Arguments, Argv, CommandModule } from "yargs";
+
 import initConnection from "@/Commands/Utils/initConnection";
 import FullDBSeed from "@/DB/TypeORM/FullDBSeed";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * CLI Command to load data into the database.

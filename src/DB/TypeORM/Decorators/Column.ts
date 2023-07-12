@@ -12,13 +12,14 @@ import {
   VirtualColumn as TypeORMVirtualColumn,
 } from "typeorm";
 import { PrimaryColumnOptions } from "typeorm/decorator/columns/PrimaryColumn";
+import { ColumnEmbeddedOptions } from "typeorm/decorator/options/ColumnEmbeddedOptions";
 import { PrimaryGeneratedColumnNumericOptions } from "typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions";
 import { ViewColumnOptions } from "typeorm/decorator/options/ViewColumnOptions";
-import { ColumnEmbeddedOptions } from "typeorm/decorator/options/ColumnEmbeddedOptions";
-import { Constructor } from "@/Documentation/MetadataTypes";
+import { VirtualColumnOptions } from "typeorm/decorator/options/VirtualColumnOptions";
+
 import { mapSQLToEntity } from "@/Documentation/Definition/EntityMetadata";
 import MetadataStore from "@/Documentation/MetadataStore";
-import { VirtualColumnOptions } from "typeorm/decorator/options/VirtualColumnOptions";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * Function used to document a property of a model class.

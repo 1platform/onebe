@@ -1,6 +1,6 @@
-import ServiceBase from "@/Services/ServiceBase";
 import { Constructor } from "@/Documentation/MetadataTypes";
 import { HTTPError } from "@/Exceptions";
+import ServiceBase from "@/Services/ServiceBase";
 
 /**
  * A system to load services into the application and reuse them as needed.

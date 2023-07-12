@@ -1,9 +1,9 @@
-import twilio from "twilio";
 import type { Twilio } from "twilio";
+
+import { getTwilioClient } from "@/SMS/getMessagingClient";
+import ISMSTransport from "@/SMS/Transports/ISMSTransport";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
-import ISMSTransport from "@/SMS/Transports/ISMSTransport";
-import { getTwilioClient } from "@/SMS/getMessagingClient";
 
 /**
  * SMS Transport using the Twilio engine.

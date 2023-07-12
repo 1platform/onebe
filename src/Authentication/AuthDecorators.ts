@@ -1,12 +1,13 @@
 import { NextFunction, Request, Response } from "express";
 import passport from "passport";
 import signed from "signed";
+
 import app from "@/App";
-import { defineMiddleware, Route, RouteDecorator } from "@/Router";
 import type { IPayload } from "@/Authentication";
 import { AuthenticationMethod, decode, extractToken, verify } from "@/Authentication";
-import MetadataStore from "@/Documentation/MetadataStore";
 import { QueryParameterType } from "@/Documentation";
+import MetadataStore from "@/Documentation/MetadataStore";
+import { defineMiddleware, Route, RouteDecorator } from "@/Router";
 import Config from "@/System/Config";
 
 /**

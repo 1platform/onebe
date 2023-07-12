@@ -1,6 +1,6 @@
-import { ControllerDecoratorFunction, Route, RouteDecorator } from "@/Router";
 import MetadataStore from "@/Documentation/MetadataStore";
 import { Constructor } from "@/Documentation/MetadataTypes";
+import { ControllerDecoratorFunction, Route, RouteDecorator } from "@/Router";
 
 /**
  * Decorator used to document a controller.

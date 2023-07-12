@@ -1,5 +1,6 @@
-import { Arguments, Argv, CommandModule } from "yargs";
 import { DataSource, MigrationExecutor } from "typeorm";
+import { Arguments, Argv, CommandModule } from "yargs";
+
 import initConnection from "@/Commands/Utils/initConnection";
 import { getDefaultLogger } from "@/System/Logger";
 

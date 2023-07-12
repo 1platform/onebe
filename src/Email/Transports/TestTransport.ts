@@ -1,7 +1,8 @@
 import nodemailer from "nodemailer";
-import { getDefaultLogger } from "@/System/Logger";
+
 import BaseTransport from "@/Email/Transports/BaseTransport";
 import IEmailTransport, { IEmailOptions } from "@/Email/Transports/IEmailTransport";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * Transport class that can be used for testing email sending.

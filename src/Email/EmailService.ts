@@ -1,9 +1,9 @@
-import ServiceBase from "@/Services/ServiceBase";
-import Config from "@/System/Config";
+import EmailTransport from "@/Email/EmailTransport";
 import IEmailTransport, { IEmailOptions } from "@/Email/Transports/IEmailTransport";
 import SMTPTransport from "@/Email/Transports/SMTPTransport";
 import TestTransport from "@/Email/Transports/TestTransport";
-import EmailTransport from "@/Email/EmailTransport";
+import ServiceBase from "@/Services/ServiceBase";
+import Config from "@/System/Config";
 
 /**
  * Service used to handle Email communications from the application.

@@ -1,7 +1,8 @@
 import nodemailer from "nodemailer";
-import Config from "@/System/Config";
+
 import BaseTransport from "@/Email/Transports/BaseTransport";
 import IEmailTransport from "@/Email/Transports/IEmailTransport";
+import Config from "@/System/Config";
 
 /**
  * SMTP Transport that can be used for sending emails.

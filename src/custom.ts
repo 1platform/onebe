@@ -1,8 +1,8 @@
-import { IInitStrategyOptions } from "@/Authentication";
-import { Environment } from "@/System/Env";
 import App from "@/App/App";
+import { IInitStrategyOptions } from "@/Authentication";
 import { RouterBase } from "@/Router";
 import { Configuration } from "@/System/Config";
+import { Environment } from "@/System/Env";
 
 declare global {
   /**

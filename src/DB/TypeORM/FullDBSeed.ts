@@ -1,12 +1,13 @@
-import { readdirSync, readFileSync, statSync } from "fs";
-import { extname, join, resolve } from "path";
 import chalk from "chalk";
+import { readdirSync, readFileSync, statSync } from "node:fs";
+import { extname, join, resolve } from "node:path";
 import { EntityManager } from "typeorm";
-import Config from "@/System/Config";
-import { HTTPError } from "@/Exceptions";
-import { getDefaultLogger } from "@/System/Logger";
+
 import { defaultConnection } from "@/DB";
 import { ISeedInfo } from "@/DB/TypeORM/Interfaces";
+import { HTTPError } from "@/Exceptions";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * Function used to read the Seeding data from a JSON file.

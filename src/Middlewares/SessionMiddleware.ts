@@ -1,7 +1,8 @@
 import { Application } from "express";
 import session, { MemoryStore } from "express-session";
-import Config from "@/System/Config";
+
 import IMiddleware from "@/Middlewares/IMiddleware";
+import Config from "@/System/Config";
 
 /**
  * Middleware used to create a session store for the application, together

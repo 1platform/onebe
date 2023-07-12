@@ -8,8 +8,9 @@ import {
   OneToOne as TypeORMOneToOne,
   RelationOptions,
 } from "typeorm";
-import { Constructor } from "@/Documentation/MetadataTypes";
+
 import MetadataStore from "@/Documentation/MetadataStore";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 export { JoinTable } from "typeorm";
 

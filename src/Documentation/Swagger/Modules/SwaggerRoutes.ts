@@ -1,3 +1,4 @@
+import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "@/Documentation/Definition/DataTypes";
 import {
   IEndpointBody,
   IEndpointBodyParameter,
@@ -8,10 +9,9 @@ import {
   IEndpointThrowResponse,
   IRouteMetadata,
 } from "@/Documentation/Definition/RouteMetadata";
-import { BodyParameterType, EntityPropertyDataTypes, QueryParameterType } from "@/Documentation/Definition/DataTypes";
+import MetadataStore from "@/Documentation/MetadataStore";
 import { HTTPStatus } from "@/HTTP";
 import { getPath } from "@/Router";
-import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * Swagger Routes Builder tool.

@@ -1,8 +1,9 @@
 import { Entity, EntityOptions } from "typeorm";
 import { ObjectUtils } from "typeorm/util/ObjectUtils";
+
+import MetadataStore from "@/Documentation/MetadataStore";
 import { Constructor } from "@/Documentation/MetadataTypes";
 import { ControllerDecoratorFunction } from "@/Router";
-import MetadataStore from "@/Documentation/MetadataStore";
 
 /**
  * This decorator is used to mark classes that will be an entity (table or document

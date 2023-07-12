@@ -1,8 +1,9 @@
 import { Vonage } from "@vonage/server-sdk";
-import Config from "@/System/Config";
-import ISMSTransport from "@/SMS/Transports/ISMSTransport";
-import { getDefaultLogger } from "@/System/Logger";
+
 import { getVonageClient } from "@/SMS/getMessagingClient";
+import ISMSTransport from "@/SMS/Transports/ISMSTransport";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * SMS Transport using the Vonage/Nexmo engine.

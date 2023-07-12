@@ -1,5 +1,6 @@
-import QRCode from "qrcode";
+import * as QRCode from "qrcode";
 import speakeasy from "speakeasy";
+
 import app from "@/App";
 
 /**

@@ -1,6 +1,6 @@
+import EmailTransport from "@/Email/EmailTransport";
 import Env from "@/System/Env";
 import IConfig from "@/System/IConfig";
-import EmailTransport from "@/Email/EmailTransport";
 
 /**
  * The Email configuration object.

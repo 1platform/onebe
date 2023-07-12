@@ -1,10 +1,11 @@
-import path from "path";
-import winston, { Logger as WinstonLogger } from "winston";
-import Transport from "winston-transport";
+import { Format } from "logform";
+import path from "node:path";
+import { createLogger, format, Logger as WinstonLogger, transports } from "winston";
 import { FileTransportOptions } from "winston/lib/winston/transports";
+import Transport from "winston-transport";
+
 import Config from "@/System/Config";
 import LogLevel from "@/System/LogLevel";
-import { Format } from "logform";
 
 export { default as LoggerType } from "@/System/LoggerType";
 export { default as LogLevel } from "@/System/LogLevel";
@@ -24,9 +25,9 @@ export abstract class Logger {
    * @param transport The transport used for the winston logger.
    */
   public constructor(logLevel: LogLevel, transport: Transport) {
-    this._log = winston.createLogger({
+    this._log = createLogger({
       level: logLevel ? logLevel?.toString() || LogLevel.INFO : LogLevel.INFO,
-      format: winston.format.simple(),
+      format: format.simple(),
       transports: [ transport ],
     });
   }
@@ -117,7 +118,7 @@ export class ConsoleLogger extends Logger {
   public constructor(logLevel: LogLevel, format?: Format) {
     super(
       logLevel,
-      new winston.transports.Console({
+      new transports.Console({
         format,
       })
     );
@@ -137,7 +138,7 @@ export class FileLogger extends Logger {
   public constructor(logLevel: LogLevel, options?: FileTransportOptions) {
     super(
       logLevel,
-      new winston.transports.File({
+      new transports.File({
         filename: Config.string("logs.filename", "app.log"),
         dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
@@ -196,20 +197,20 @@ export class JSONLogger extends Logger {
 
     let transport;
     if (options) {
-      transport = new winston.transports.File({
+      transport = new transports.File({
         filename: Config.string("logs.filename", "app.log"),
         dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
       });
     } else {
-      transport = new winston.transports.Console({
-        format: winston.format.json(),
+      transport = new transports.Console({
+        format: format.json(),
       });
     }
 
-    this._log = winston.createLogger({
+    this._log = createLogger({
       level: logLevel ? logLevel.toString() || LogLevel.INFO : LogLevel.INFO,
-      format: winston.format.json(),
+      format: format.json(),
       transports: [ transport ],
     });
   }

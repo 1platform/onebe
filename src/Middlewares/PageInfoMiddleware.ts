@@ -1,4 +1,5 @@
 import { Application, NextFunction, Request, Response } from "express";
+
 import IMiddleware from "@/Middlewares/IMiddleware";
 
 /**

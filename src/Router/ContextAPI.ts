@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-import { ParsedQs } from "qs";
-import { UploadedFile } from "@/Middlewares/MulterMiddleware";
 import type { TOptions } from "i18next";
+import { ParsedQs } from "qs";
+
+import { UploadedFile } from "@/Middlewares/MulterMiddleware";
 import Config from "@/System/Config";
 
 /**

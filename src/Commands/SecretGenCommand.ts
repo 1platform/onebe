@@ -1,6 +1,7 @@
+import fs from "node:fs";
+import path from "node:path";
 import { Arguments, Argv, CommandModule } from "yargs";
-import fs from "fs";
-import path from "path";
+
 import { uuidV4 } from "@/Utils";
 
 /**

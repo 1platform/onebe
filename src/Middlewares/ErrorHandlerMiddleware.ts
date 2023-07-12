@@ -1,10 +1,10 @@
 import { Application, NextFunction, Request, Response } from "express";
-import { IncomingMessage, ServerResponse } from "http";
+import { IncomingMessage, ServerResponse } from "node:http";
 
 import PageNotFoundException from "@/Exceptions/PageNotFoundException";
 import HTTPStatus from "@/HTTP/HTTPStatus";
-import { getDefaultLogger } from "@/System/Logger";
 import IMiddleware from "@/Middlewares/IMiddleware";
+import { getDefaultLogger } from "@/System/Logger";
 
 /**
  * Type declaration for a function that can be used as an error handler.

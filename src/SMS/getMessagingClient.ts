@@ -1,7 +1,7 @@
+import { Auth } from "@vonage/auth";
+import { Vonage } from "@vonage/server-sdk";
 import type { Twilio } from "twilio";
 import twilio from "twilio";
-import { Vonage } from "@vonage/server-sdk";
-import { Auth } from "@vonage/auth";
 
 /**
  * A list with the supported messaging types.

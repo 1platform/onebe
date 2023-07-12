@@ -1,18 +1,18 @@
-import path from "path";
+import path from "node:path";
+
 import app from "@/App";
 import type { IInitStrategyOptions } from "@/Authentication";
 import { initPassportStrategy } from "@/Authentication";
-
 import type { IInitOptions } from "@/custom";
 import DB from "@/DB";
+import DocumentationRoute from "@/Documentation/DocumentationRoute";
+import MetadataStore from "@/Documentation/MetadataStore";
 import { HTTP } from "@/HTTP";
 import i18n from "@/i18n";
 import { Router } from "@/Router";
 import Scheduler from "@/Scheduler";
 import Config from "@/System/Config";
 import { ConsoleLogger, FileLogger, JSONLogger, LoggerType, LogLevel, NoLogger, setDefaultLogger } from "@/System/Logger";
-import MetadataStore from "@/Documentation/MetadataStore";
-import DocumentationRoute from "@/Documentation/DocumentationRoute";
 
 /**
  * Default values to be used for the framework configuration.

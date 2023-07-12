@@ -1,8 +1,9 @@
 import { EntityTarget } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
+
 import { defaultConnection } from "@/DB";
-import { Constructor } from "@/Documentation/MetadataTypes";
 import { IDBSeederResults } from "@/DB/TypeORM/Interfaces";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * Function used to seed the Database for a given entity.

@@ -1,6 +1,7 @@
-import path from "path";
-import fs from "fs";
 import chalk from "chalk";
+import fs from "node:fs";
+import path from "node:path";
+
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 import { camelCase, snakeCase } from "@/Utils";

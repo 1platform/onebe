@@ -1,12 +1,13 @@
-import inquirer from "inquirer";
-import path from "path";
 import chalk from "chalk";
-import fs from "fs";
 import { exec, spawn } from "child_process";
-import { snakeCase } from "@/Utils";
-import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "@/Commands/DefaultProject/jsonFiles";
+import inquirer from "inquirer";
+import fs from "node:fs";
+import path from "node:path";
+
 import createFolders from "@/Commands/DefaultProject/createFolders";
+import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "@/Commands/DefaultProject/jsonFiles";
 import Env from "@/System/Env";
+import { snakeCase } from "@/Utils";
 
 /**
  * A list with additional options used for generating the project.

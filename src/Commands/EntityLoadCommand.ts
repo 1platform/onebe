@@ -1,13 +1,14 @@
-import fs from "fs";
-import path from "path";
-import { Arguments, Argv, CommandModule } from "yargs";
-import { DataSource } from "typeorm";
 import chalk from "chalk";
-import DatabaseSeeder from "@/DB/TypeORM/DatabaseSeeder";
-import { getDefaultLogger } from "@/System/Logger";
-import Config from "@/System/Config";
-import { camelCase } from "@/Utils";
+import fs from "node:fs";
+import path from "node:path";
+import { DataSource } from "typeorm";
+import { Arguments, Argv, CommandModule } from "yargs";
+
 import initConnection from "@/Commands/Utils/initConnection";
+import DatabaseSeeder from "@/DB/TypeORM/DatabaseSeeder";
+import Config from "@/System/Config";
+import { getDefaultLogger } from "@/System/Logger";
+import { camelCase } from "@/Utils";
 
 /**
  * CLI Command to load data into a specific entity.

@@ -1,6 +1,7 @@
 import { Application, NextFunction, Request, Response } from "express";
-import { getVersion } from "@/version";
+
 import IMiddleware from "@/Middlewares/IMiddleware";
+import { getVersion } from "@/version";
 
 /**
  * Middleware used to add information about the framework.

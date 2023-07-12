@@ -1,5 +1,5 @@
-import { IEntityMetadata } from "@/Documentation/Definition/EntityMetadata";
 import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
+import { IEntityMetadata } from "@/Documentation/Definition/EntityMetadata";
 
 /**
  * Interface used to link a component name with its definition.

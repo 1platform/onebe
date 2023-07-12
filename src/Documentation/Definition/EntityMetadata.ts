@@ -1,6 +1,7 @@
 import { ColumnType, ObjectType } from "typeorm";
-import { Constructor } from "@/Documentation/MetadataTypes";
+
 import { EntityPropertyDataTypes } from "@/Documentation/Definition/DataTypes";
+import { Constructor } from "@/Documentation/MetadataTypes";
 
 /**
  * Interface describing an object used to hold the metadata information

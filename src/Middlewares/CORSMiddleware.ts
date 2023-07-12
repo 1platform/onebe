@@ -1,7 +1,8 @@
 import cors from "cors";
 import { Application } from "express";
-import Config from "@/System/Config";
+
 import IMiddleware from "@/Middlewares/IMiddleware";
+import Config from "@/System/Config";
 
 /**
  * Middleware used to enable the Cross-Origin Resource Sharing functionality for
