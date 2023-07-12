@@ -18,9 +18,7 @@
         "legacy": true
       }
     ],
-    [
-      "@babel/plugin-proposal-class-properties"
-    ],
+    "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
     [
       "module-resolver",
@@ -30,5 +28,11 @@
         }
       }
     ]
+  ],
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.test.js",
+    "**/*.spec.ts",
+    "**/*.spec.js"
   ]
 }
