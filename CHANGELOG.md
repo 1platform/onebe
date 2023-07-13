@@ -2,6 +2,12 @@
 
 Here we will note all the changes made to the framework.
 
+## Version 2.7.6
+
+🌟 Improvements:
+
+- Expose the Bearer and Basic passport strategies used internally to the end user.
+
 ## Version 2.7.2
 
 🌟 Improvements:

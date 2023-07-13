@@ -1,6 +1,6 @@
 import passport from "passport";
 import { BasicStrategy } from "passport-http";
-import { Strategy } from "passport-jwt";
+import { Strategy as BearerStrategy } from "passport-jwt";
 
 import type { IPayload, IUser } from "@/Authentication";
 import { extractToken } from "@/Authentication";
@@ -46,7 +46,7 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
   );
   passport.use(
     "bearer",
-    new Strategy(
+    new BearerStrategy(
       {
         secretOrKey: Config.string("auth.jwt.secret"),
         issuer: Config.string("auth.jwt.issuer", "onebe.sprk.dev"),
@@ -81,4 +81,4 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
  *
  * @link https://www.passportjs.org/
  */
-export { passport };
+export { passport, BearerStrategy, BasicStrategy };
