@@ -1,5 +1,7 @@
 import { AnySchema } from "joi";
 
+import { getDefaultLogger, Logger } from "@/System/Logger";
+
 /**
  * The base class for your services.
  *
@@ -27,6 +29,22 @@ export default abstract class ServiceBase {
    */
   protected set validator(newValidator: AnySchema) {
     this._validator = newValidator;
+  }
+
+  /**
+   * Method used to get the default logger set in the application.
+   */
+  protected get logger(): Logger {
+    return getDefaultLogger();
+  }
+
+  /**
+   * Method used to get the default logger set in the application.
+   *
+   * @alias logger
+   */
+  protected get log(): Logger {
+    return this.logger;
   }
 
   /**
