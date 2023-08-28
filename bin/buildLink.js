@@ -9,11 +9,12 @@ const newPkg = {
   packageManager: pkg.packageManager,
   description: pkg.description,
   bin: {
-    "onebe": "./cli.js",
+    onebe: "./cli.js",
   },
   module: "index.js",
   types: "index.d.ts",
   main: "index.js",
+  type: "module",
   repository: pkg.repository,
   keywords: pkg.keywords,
   author: pkg.author,
@@ -21,6 +22,6 @@ const newPkg = {
   bugs: pkg.bugs,
   homepage: pkg.homepage,
   dependencies: pkg.dependencies,
-}
+};
 
 fs.writeFileSync(`./dist/package.json`, JSON.stringify(newPkg, null, 2), "utf-8");

@@ -1,6 +1,6 @@
 import MetadataStore from "@/Documentation/MetadataStore";
-import { HTTPStatus } from "@/HTTP";
 import { ResponseValue, Route, RouteDecorator } from "@/Router";
+import { HTTPStatus } from "@/Server";
 
 /**
  * Decorator used to describe what does an endpoint response. This decorator

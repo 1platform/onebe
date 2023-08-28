@@ -1,7 +1,7 @@
 import MetadataStore from "@/Documentation/MetadataStore";
-import { HTTPMiddleware } from "@/HTTP";
 import Route from "@/Router/Route";
 import { RouteDecorator } from "@/Router/RouteTypes";
+import { HTTPMiddleware } from "@/Server";
 
 /**
  * Function used to create a middleware decorator.

@@ -1,4 +1,4 @@
-import HTTPStatus from "@/HTTP/HTTPStatus";
+import HTTPStatus from "@/Server/HTTPStatus";
 
 /**
  * A Generic Error with HTTP Status Code that can be thrown from your application.

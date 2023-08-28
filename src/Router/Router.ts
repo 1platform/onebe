@@ -4,9 +4,9 @@ import { basename, extname, join, resolve } from "node:path";
 
 import { IEndpointMetadata, IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
 import MetadataStore from "@/Documentation/MetadataStore";
-import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "@/HTTP";
 import { AuthContextAPI, ContextAPI, getPath, ResponseValue, Route } from "@/Router";
 import MimeType from "@/Router/MimeType";
+import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "@/Server";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 

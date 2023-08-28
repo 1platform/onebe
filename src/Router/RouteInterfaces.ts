@@ -1,5 +1,5 @@
-import { HTTPMiddleware } from "@/HTTP";
 import { AppMethod } from "@/Router/RouteTypes";
+import { HTTPMiddleware } from "@/Server";
 
 /**
  * The response object that can be returned from an endpoint method.

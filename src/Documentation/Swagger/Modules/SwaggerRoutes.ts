@@ -10,8 +10,8 @@ import {
   IRouteMetadata,
 } from "@/Documentation/Definition/RouteMetadata";
 import MetadataStore from "@/Documentation/MetadataStore";
-import { HTTPStatus } from "@/HTTP";
 import { getPath } from "@/Router";
+import { HTTPStatus } from "@/Server";
 
 /**
  * Swagger Routes Builder tool.

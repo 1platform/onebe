@@ -2,8 +2,8 @@ import { Application, NextFunction, Request, Response } from "express";
 import { IncomingMessage, ServerResponse } from "node:http";
 
 import PageNotFoundException from "@/Exceptions/PageNotFoundException";
-import HTTPStatus from "@/HTTP/HTTPStatus";
 import IMiddleware from "@/Middlewares/IMiddleware";
+import HTTPStatus from "@/Server/HTTPStatus";
 import { getDefaultLogger } from "@/System/Logger";
 
 /**

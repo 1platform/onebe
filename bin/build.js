@@ -8,11 +8,12 @@ const newPkg = {
   version: pkg.version,
   packageManager: pkg.packageManager,
   bin: {
-    "onebe": "./cli.js",
+    onebe: "./cli.js",
   },
   description: pkg.description,
   module: "index.js",
   types: "index.d.ts",
+  type: "module",
   main: "index.js",
   repository: pkg.repository,
   keywords: pkg.keywords,
@@ -20,7 +21,7 @@ const newPkg = {
   license: pkg.license,
   bugs: pkg.bugs,
   homepage: pkg.homepage,
-  dependencies: pkg.dependencies
-}
+  dependencies: pkg.dependencies,
+};
 
 fs.writeFileSync(`/tmp/publish/package.json`, JSON.stringify(newPkg, null, 2), "utf-8");

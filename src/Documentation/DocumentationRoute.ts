@@ -1,9 +1,9 @@
 import app from "@/App";
 import { DocsType, Endpoint, EntityHelpers, EntityPropertyDataTypes, GetDocs, GetRoutes } from "@/Documentation/index";
 import SwaggerUI from "@/Documentation/Swagger/SwaggerUI";
-import { HTTPStatus } from "@/HTTP";
 import type { IResponse } from "@/Router";
 import { Docs, GET, Path, Route } from "@/Router";
+import { HTTPStatus } from "@/Server";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 

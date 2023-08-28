@@ -3,7 +3,7 @@ import { stripHtml } from "string-strip-html";
 
 import type { IEmailOptions, IEmailTransport } from "@/Email/Transports/index";
 import { HTTPError } from "@/Exceptions";
-import { HTTPStatus } from "@/HTTP";
+import { HTTPStatus } from "@/Server";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
 

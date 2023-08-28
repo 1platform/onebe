@@ -1,10 +1,10 @@
 import { Constructor } from "@/Documentation/MetadataTypes";
-import { HTTPMiddleware } from "@/HTTP";
-import HTTPStatus from "@/HTTP/HTTPStatus";
 import AuthContextAPI from "@/Router/AuthContextAPI";
 import ContextAPI from "@/Router/ContextAPI";
 import Route from "@/Router/Route";
 import { IResponse } from "@/Router/RouteInterfaces";
+import { HTTPMiddleware } from "@/Server";
+import HTTPStatus from "@/Server/HTTPStatus";
 
 /**
  * Type used to define a Route Decorator function.

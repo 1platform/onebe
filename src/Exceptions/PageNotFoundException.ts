@@ -1,5 +1,5 @@
 import HTTPError from "@/Exceptions/HTTPError";
-import HTTPStatus from "@/HTTP/HTTPStatus";
+import HTTPStatus from "@/Server/HTTPStatus";
 
 /**
  * Exception thrown when an endpoint is not found or there is no data for

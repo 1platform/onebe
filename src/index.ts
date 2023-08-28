@@ -7,10 +7,10 @@ import type { IInitOptions } from "@/custom";
 import DB from "@/DB";
 import DocumentationRoute from "@/Documentation/DocumentationRoute";
 import MetadataStore from "@/Documentation/MetadataStore";
-import { HTTP } from "@/HTTP";
 import i18n from "@/i18n";
 import { Router } from "@/Router";
 import Scheduler from "@/Scheduler";
+import { HTTP } from "@/Server";
 import Config from "@/System/Config";
 import { ConsoleLogger, FileLogger, JSONLogger, LoggerType, LogLevel, NoLogger, setDefaultLogger } from "@/System/Logger";
 

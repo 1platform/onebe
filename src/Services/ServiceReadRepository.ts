@@ -2,7 +2,7 @@ import { FindManyOptions, FindOneOptions, FindOptionsWhere, ObjectLiteral } from
 
 import { createEntity } from "@/Documentation/BaseEntity";
 import HTTPError from "@/Exceptions/HTTPError";
-import HTTPStatus from "@/HTTP/HTTPStatus";
+import HTTPStatus from "@/Server/HTTPStatus";
 import { IPaginatedOptions, PaginatedEntity, PaginatedOptions } from "@/Services/PaginationDefinition";
 import ServiceWithRepository from "@/Services/ServiceWithRepository";
 

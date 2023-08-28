@@ -1,7 +1,7 @@
 import { DeepPartial, EntityTarget, FindOptionsWhere, ObjectLiteral } from "typeorm";
 
 import { HTTPError } from "@/Exceptions";
-import { HTTPStatus } from "@/HTTP";
+import { HTTPStatus } from "@/Server";
 import { BuildRelationDefinition, InvertFields, InvertTable, IRelationDefinition, SetCustomRelationDefinition } from "@/Services/RelationDefintion";
 import ServiceReadRepository from "@/Services/ServiceReadRepository";
 
