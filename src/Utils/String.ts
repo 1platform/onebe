@@ -4,7 +4,7 @@ import { customAlphabet, nanoid } from "nanoid";
 import { stripHtml } from "string-strip-html";
 import * as uuid from "uuid";
 
-import InvalidParameterException from "@/Exceptions/InvalidParameterException";
+import InvalidParameterException from "@/Exceptions/Utils/InvalidParameterException";
 
 /**
  * Generator for a ShortID that can be used for various things.
@@ -123,7 +123,6 @@ const randomAlphabetNanoId = customAlphabet(randomStringAlphabet, 16);
  * Function used to generate a random string with a given length.
  *
  * @param [length] The length of the final string.
- *
  */
 export function randomString(length = 10): string {
   if (length <= 0) {

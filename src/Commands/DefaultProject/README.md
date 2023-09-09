@@ -12,8 +12,8 @@ The project has the following structure:
 
 - `.husky` - Git Hooks that can be used at different stages of the git process.
 - `src` - The sources of your application
-- `tmp` - Storage folder for temporary files.
-- `upload` - Storage folder for uploaded files.
+- `tmp` - Storage getModuleFolder for temporary files.
+- `upload` - Storage getModuleFolder for uploaded files.
 - `.env.sample` - A sample environment file. Before starting your project make a copy of this file and edit
   it accordingly to your needs.
 - `.babelrc.json`, `.eslintrc`, `nodemon.json`, `tsconfig.json` - Configuration files for various

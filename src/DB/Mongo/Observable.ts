@@ -3,8 +3,6 @@ import { Document } from "mongoose";
 
 /**
  * A list with what can be observed in a Mongoose model.
- *
- * @enum
  */
 export enum ObservableType {
   /**
@@ -66,7 +64,7 @@ export default class Observable extends EventEmitter {
    *
    * @param modelName The name of the model for which we want to register the observer.
    * @param observerCallback The observer to be executed.
-   * */
+   */
   public registerRemovePost<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
     this.registerObservable<T>(modelName, ObservableType.REMOVE, true, observerCallback);
   }
@@ -76,7 +74,7 @@ export default class Observable extends EventEmitter {
    *
    * @param modelName The name of the model for which we want to register the observer.
    * @param observerCallback The observer to be executed.
-   * */
+   */
   public registerSavePre<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
     this.registerObservable<T>(modelName, ObservableType.SAVE, false, observerCallback);
   }
@@ -86,7 +84,7 @@ export default class Observable extends EventEmitter {
    *
    * @param modelName The name of the model for which we want to register the observer.
    * @param observerCallback The observer to be executed.
-   * */
+   */
   public registerRemovePre<T extends Document>(modelName: string, observerCallback: ObserverCallback<T>): void {
     this.registerObservable<T>(modelName, ObservableType.REMOVE, false, observerCallback);
   }

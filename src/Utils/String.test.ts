@@ -13,7 +13,7 @@ import {
   uuidV1,
   uuidV4,
 } from "@/Utils/String";
-import InvalidParameterException from "../Exceptions/InvalidParameterException";
+import InvalidParameterException from "../Exceptions/Utils/InvalidParameterException";
 
 describe("Utils.String", () => {
   describe("randomString", () => {
@@ -88,7 +88,7 @@ describe("Utils.String", () => {
   describe("encryptPassword", () => {
     const password = "123456";
     test("Encrypt a valid password", () => {
-      const randomStringGenerated = encryptPassword(password, 10);
+      const randomStringGenerated = encryptPassword(password);
       expect(randomStringGenerated).not.toBeUndefined();
       expect(randomStringGenerated).toHaveLength(60);
       expect(randomStringGenerated).not.toBe(password);

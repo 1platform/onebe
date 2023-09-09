@@ -2,9 +2,7 @@ import chalk from "chalk";
 import fs from "node:fs";
 import path from "node:path";
 
-import getCurrentFolder from "@/Utils/getCurrentFolder";
-
-const __dirname = getCurrentFolder(import.meta.url);
+const __dirname = fileSystem(import.meta.url);
 
 const foldersList = [
   "src/config",
@@ -45,7 +43,7 @@ export default function createFolders(basePath: string): void {
 }
 
 /**
- * Function used to create the files of the Config folder.
+ * Function used to create the files of the Config getModuleFolder.
  *
  * @param basePath Base path of the project.
  */
@@ -65,7 +63,7 @@ function createConfigFiles(basePath: string): void {
 }
 
 /**
- * Function used to create the files of the Jobs folder.
+ * Function used to create the files of the Jobs getModuleFolder.
  *
  * @param basePath Base path of the project.
  */
@@ -81,7 +79,7 @@ function createJobsFile(basePath: string): void {
 }
 
 /**
- * Function used to create the files of the Observers folder.
+ * Function used to create the files of the Observers getModuleFolder.
  *
  * @param basePath Base path of the project.
  */
@@ -97,7 +95,7 @@ function createObserversFile(basePath: string): void {
 }
 
 /**
- * Function used to create the files of the Services folder.
+ * Function used to create the files of the Services getModuleFolder.
  *
  * @param basePath Base path of the project.
  */
@@ -120,7 +118,7 @@ export default function services(): void {
 }
 
 /**
- * Function used to create the files of the Routes folder.
+ * Function used to create the files of the Routes getModuleFolder.
  *
  * @param basePath Base path of the project.
  */

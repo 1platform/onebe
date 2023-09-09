@@ -170,6 +170,8 @@ export default class TypeORM {
    *
    * Through this method, the framework connects your application to a database
    * server and stores that connection for later use.
+   *
+   * @param configuration The name of the configuration used for the database connection.
    */
   public async init(configuration?: string): Promise<void> {
     TypeORM._connection = await this.connect(configuration ?? Config.string("db.configuration"));
@@ -198,7 +200,7 @@ export default class TypeORM {
         password: dbConfig.password,
         database: dbConfig.database,
         cli: {
-          migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
+          migrationsDir: Config.string("db.migrations.getModuleFolder", "./src/migrations"),
         },
       } as DataSourceOptions;
     } else {
@@ -206,7 +208,7 @@ export default class TypeORM {
         type: dbConfig.engine,
         database: dbConfig.database,
         cli: {
-          migrationsDir: Config.string("db.migrations.folder", "./src/migrations"),
+          migrationsDir: Config.string("db.migrations.getModuleFolder", "./src/migrations"),
         },
       } as SqliteConnectionOptions;
     }

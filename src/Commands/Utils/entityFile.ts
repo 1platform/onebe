@@ -157,7 +157,7 @@ function getMigrationDownTemplate(entityName: string): string {
  * @param [flags] Flag used to enable/disable various functionalities in the generated entity.
  */
 export default function createEntityFile(entityName: string, flags?: Record<string, boolean>): void {
-  const entityFile = path.resolve(Config.get("db.entities.folder", "./"), `${ entityName }.ts`);
+  const entityFile = path.resolve(Config.get("db.entities.getModuleFolder", "./"), `${ entityName }.ts`);
 
   if (!fs.existsSync(path.dirname(entityFile))) {
     fs.mkdirSync(path.dirname(entityFile), { recursive: true });

@@ -16,7 +16,6 @@ export * as ResponseDocs from "@/Documentation/Decorators/Endpoint/ResponseDecor
 /**
  * Decorator used to add a description to an endpoint.
  *
- * @decorator
  * @param [description] A short description of the controller.
  */
 export function EndpointDescription(description?: string): RouteDecorator {
@@ -28,7 +27,6 @@ export function EndpointDescription(description?: string): RouteDecorator {
 /**
  * Decorator used to add a summary to an endpoint.
  *
- * @decorator
  * @param [summary] A short description of the controller.
  */
 export function EndpointSummary(summary?: string): RouteDecorator {
@@ -40,7 +38,6 @@ export function EndpointSummary(summary?: string): RouteDecorator {
 /**
  * Decorator used to fully document an endpoint.
  *
- * @decorator
  * @param options A list of options that describe the endpoint.
  */
 export function Endpoint(options: IEndpointDocumentation): RouteDecorator {
@@ -52,7 +49,6 @@ export function Endpoint(options: IEndpointDocumentation): RouteDecorator {
 /**
  * Add additional information to the endpoint.
  *
- * @decorator
  * @param info The additional information you want to add to the endpoint.
  */
 export function AdditionalInformation(info: string): RouteDecorator {

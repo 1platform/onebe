@@ -124,7 +124,7 @@ const defaultDBConfig: IConfig = {
      */
     files: [ getEnv().string("DATABASE_ENTITIES", "./src/entities/**/*.ts") ],
     /**
-     * The folder where the entities files should be generated when using the CLI interface.
+     * The getModuleFolder where the entities files should be generated when using the CLI interface.
      *
      * @default "./src/entities/"
      */
@@ -152,7 +152,7 @@ const defaultDBConfig: IConfig = {
     files: [ getEnv().string("DATABASE_MIGRATIONS", "./src/migrations/**/*.ts") ],
 
     /**
-     * The folder where the migrations files should be generated when using the CLI interface.
+     * The getModuleFolder where the migrations files should be generated when using the CLI interface.
      *
      * @default "./src/migrations/"
      */
@@ -164,7 +164,7 @@ const defaultDBConfig: IConfig = {
    */
   seeds: {
     /**
-     * The folder where the seed files should be generated when using the CLI interface.
+     * The getModuleFolder where the seed files should be generated when using the CLI interface.
      *
      * @default "./src/seeds/"
      */

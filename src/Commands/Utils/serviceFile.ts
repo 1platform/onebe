@@ -25,7 +25,7 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
     serviceBaseNameImport = options.class as string;
 
     if (options.repository) {
-      const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
+      const importPath = `${ Config.get("db.entities.getModuleFolder").replace(/.\/src/gi, "@") }/${ options.repository }`;
       baseImport.push(`import ${ options.repository } from "${ importPath }";`);
 
       superParameters = options.repository as string;
@@ -47,7 +47,7 @@ function getServiceTemplate(serviceName: string, options: Record<string, string 
         break;
     }
 
-    const importPath = `${ Config.get("db.entities.folder").replace(/.\/src/gi, "@") }/${ options.repository }`;
+    const importPath = `${ Config.get("db.entities.getModuleFolder").replace(/.\/src/gi, "@") }/${ options.repository }`;
     baseImport.push(`import ${ options.repository } from "${ importPath }";`);
     superParameters = options.repository as string;
   }
@@ -91,7 +91,7 @@ export default class ${ serviceName }Service extends ${ serviceBaseName } {
  * Add service to the Service Loader.
  *
  * @param serviceName The name of the service to be added.
- * @param folder The folder where you want to put the
+ * @param folder The getModuleFolder where you want to put the
  */
 function addToIndex(serviceName: string, folder?: string): void {
   const servicesLoaderFile = path.resolve(Config.get("app.folders.services", "./"), `index.ts`);

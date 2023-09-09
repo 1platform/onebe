@@ -70,7 +70,7 @@ export default class EntityLoadCommand implements CommandModule {
 
     let connection: DataSource;
     try {
-      const importPath = path.resolve(Config.get("db.entities.folder"), args.path || "", entityName);
+      const importPath = path.resolve(Config.get("db.entities.getModuleFolder"), args.path || "", entityName);
       const supportedFiles = [ `${ importPath }.ts`, `${ importPath }.js` ];
       const entityFile = supportedFiles.find((fileName) => fs.existsSync(fileName));
       if (!entityFile) {

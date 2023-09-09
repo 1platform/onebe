@@ -1,10 +1,19 @@
 {
+  "sourceType": "module",
   "presets": [
-    "@babel/preset-typescript",
+    [
+      "@babel/preset-typescript",
+      {
+        "sourceType": "module"
+      }
+    ],
     [
       "@babel/preset-env",
       {
-        "targets": { "node": "current" },
+        "sourceType": "module",
+        "targets": {
+          "node": "current"
+        },
         "loose": true,
         "modules": true
       }
@@ -17,7 +26,6 @@
         "legacy": true
       }
     ],
-    "@babel/plugin-transform-modules-commonjs",
     "babel-plugin-add-module-exports",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
@@ -35,5 +43,5 @@
     "**/*.test.js",
     "**/*.spec.ts",
     "**/*.spec.js"
-  ],
+  ]
 }

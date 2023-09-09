@@ -9,18 +9,18 @@ import type IConfig from "@/System/IConfig";
  */
 const defaultUploadConfig: IConfig = {
   /**
-   * The temporary folder location. In this folder the framework will store the uploaded
-   * files here before moving them to your destination folder. We recommend to move the
-   * temporary folder outside the application folder.
+   * The temporary getModuleFolder location. In this getModuleFolder the framework will store the uploaded
+   * files here before moving them to your destination getModuleFolder. We recommend to move the
+   * temporary getModuleFolder outside the application getModuleFolder.
    *
    * @default "./tmp"
    */
   temp: getEnv().string("UPLOAD_TEMP", "./tmp"),
 
   /**
-   * The destination path for the uploaded files. In this folder the framework will store
+   * The destination path for the uploaded files. In this getModuleFolder the framework will store
    * the uploaded files after they are processed. We recommend to move the destination
-   * folder outside the application folder.
+   * getModuleFolder outside the application getModuleFolder.
    *
    * @default "./storage"
    */

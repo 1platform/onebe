@@ -1,7 +1,5 @@
 /**
  * A list with the supported HTTP Verbs that can be used in the application.
- *
- * @enum
  */
 enum HTTPVerb {
   /**

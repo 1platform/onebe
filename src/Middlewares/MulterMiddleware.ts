@@ -21,7 +21,7 @@ const upload = multer({
 export type UploadedFile = Express.Multer.File;
 
 /**
- * Function used to get the destination folder/file from the upload destination folder.
+ * Function used to get the destination getModuleFolder/file from the upload destination getModuleFolder.
  *
  * @param pathLike The list of path like elements.
  */
@@ -30,7 +30,7 @@ export function getDestinationFolder(...pathLike: string[]): string {
 }
 
 /**
- * Function used to get the temporary folder/file.
+ * Function used to get the temporary getModuleFolder/file.
  *
  * @param pathLike The list of path like elements.
  */
@@ -39,9 +39,9 @@ export function getTempFolder(...pathLike: string[]): string {
 }
 
 /**
- * Function used to get a temporary file/folder.
+ * Function used to get a temporary file/getModuleFolder.
  *
- * @param [extension] The extension of the file/folder.
+ * @param [extension] The extension of the file/getModuleFolder.
  */
 export function getTempFile(extension?: string): string {
   const tempFile = getTempFolder(randomString(16));
@@ -51,7 +51,6 @@ export function getTempFile(extension?: string): string {
 /**
  * Decorator to add the Single file upload middleware.
  *
- * @decorator
  * @param fieldName The name of the field in the file uploader.
  */
 export function SingleUpload(fieldName: string): RouteDecorator {
@@ -66,7 +65,6 @@ export function SingleUpload(fieldName: string): RouteDecorator {
 /**
  * Decorator to add the Multiple file upload with different names middleware.
  *
- * @decorator
  * @param names The names of the fields in the file uploader.
  */
 export function NamedFilesUpload(...names: string[]): RouteDecorator {
@@ -83,7 +81,6 @@ export function NamedFilesUpload(...names: string[]): RouteDecorator {
 /**
  * Decorator to add the Multiple file upload under the same name middleware.
  *
- * @decorator
  * @param fieldName The name of the field in the file uploader.
  */
 export function ArrayUpload(fieldName: string): RouteDecorator {

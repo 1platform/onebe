@@ -19,11 +19,14 @@ class MockLoggerTransport extends Transport {
   protected _lines: Array<IMockLoggerLine> = [];
 
   public get lines(): Array<IMockLoggerLine> {
-    return [ ...this._lines ];
+    return [...this._lines];
   }
 
   /**
    * Log the message.
+   *
+   * @param info
+   * @param next
    */
   public log(info: any, next: () => void): void {
     this._lines.push({

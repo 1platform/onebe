@@ -1,7 +1,5 @@
 /**
  * A list with the supported logging levels.
- *
- * @enum
  */
 enum LogLevel {
   /**

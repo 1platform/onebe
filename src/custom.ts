@@ -70,11 +70,11 @@ declare global {
  */
 export interface IInitOptions extends IInitStrategyOptions {
   /**
-   * The folder in which the application runs. Based on this folder,
+   * The getModuleFolder in which the application runs. Based on this getModuleFolder,
    * some configuration for various other files and subsystems is generated
    * and used. For example, the Configuration loader and Internationalisation
    * file loader are started and made to look for various files starting from
-   * the current folder.
+   * the current getModuleFolder.
    */
   currentFolder?: string;
   /**

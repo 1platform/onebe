@@ -2,10 +2,10 @@ import { beforeAll, jest } from "@jest/globals";
 import { resolve } from "node:path";
 
 import { getEnv } from "@/System/Environment";
-import getCurrentFolder from "@/Utils/getCurrentFolder";
+import { getModuleFolder } from "@/Utils/FileSystem";
 
 beforeAll(() => {
-  process.chdir(resolve(getCurrentFolder(import.meta.url), "mocks"));
+  process.chdir(resolve(getModuleFolder(import.meta.url), "mocks"));
   getEnv().reload();
 });
 

@@ -13,7 +13,6 @@ import { ControllerDecoratorFunction } from "@/Router";
  * the metadata, it will look in the hierarchy of the class and list
  * all the properties in one place.
  *
- * @decorator
  * @param [description] A short description of the entity.
  */
 export function Entity<T extends Constructor>(description?: string): ControllerDecoratorFunction<T> {
@@ -34,7 +33,6 @@ export function Entity<T extends Constructor>(description?: string): ControllerD
  * the metadata, it will look in the hierarchy of the class and list
  * all the properties in one place.
  *
- * @decorator
  * @param entities The name of the entities extended
  */
 export function Extends<T extends Constructor>(...entities: string[]): ControllerDecoratorFunction<T> {
@@ -64,7 +62,6 @@ function DocumentProperty(entity: string, propertyName: string, options?: IEntit
 /**
  * Decorator used to describe the property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function Property(options?: IEntityProperty): PropertyDecorator {
@@ -76,7 +73,6 @@ export function Property(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to mark the property of a custom entity as required.
  *
- * @decorator
  * @param object The entity on which we apply the decorator.
  * @param propertyName The name of the property on which we apply the decorator.
  */
@@ -87,7 +83,6 @@ export function IsRequired(object: any, propertyName: string): void {
 /**
  * Decorator used to describe a required property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function RequiredProperty(options?: IEntityProperty): PropertyDecorator {
@@ -99,7 +94,6 @@ export function RequiredProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe a date property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function DateProperty(options?: IEntityProperty): PropertyDecorator {
@@ -115,7 +109,6 @@ export function DateProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe a date-time property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function DateTimeProperty(options?: IEntityProperty): PropertyDecorator {
@@ -131,7 +124,6 @@ export function DateTimeProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe a string property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function StringProperty(options?: IEntityProperty): PropertyDecorator {
@@ -154,7 +146,6 @@ export function NumberProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe a boolean property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function BooleanProperty(options?: IEntityProperty): PropertyDecorator {
@@ -166,7 +157,6 @@ export function BooleanProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe an integer property of a custom entity.
  *
- * @decorator
  * @param [options] A list of options to define a property of an entity.
  */
 export function IntegerProperty(options?: IEntityProperty): PropertyDecorator {
@@ -178,7 +168,6 @@ export function IntegerProperty(options?: IEntityProperty): PropertyDecorator {
 /**
  * Decorator used to describe an array property of a custom entity.
  *
- * @decorator
  * @param [dataType] The data type of the property.
  * @param [options] A list of options to define a property of an entity.
  */
@@ -195,7 +184,6 @@ export function ArrayProperty(dataType: EntityPropertyDataTypes = EntityProperty
 /**
  * Decorator used to describe a property of a custom entity that references a list of another entities.
  *
- * @decorator
  * @param entityName The name of the entity we want to reference.
  * @param [options] A list of options to define a property of an entity.
  */
@@ -212,7 +200,6 @@ export function EntityArrayProperty(entityName: string, options?: IEntityPropert
 /**
  * Decorator used to describe a property of a custom entity that references another entity.
  *
- * @decorator
  * @param entityName The name of the entity we want to reference.
  * @param [options] A list of options to define a property of an entity.
  */

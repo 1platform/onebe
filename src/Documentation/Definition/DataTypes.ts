@@ -1,7 +1,5 @@
 /**
  * A list of possible types for a query parameter.
- *
- * @enum
  */
 export enum QueryParameterType {
   STRING = "string",
@@ -15,8 +13,6 @@ export enum QueryParameterType {
 
 /**
  * A list of possible types for a the entity properties.
- *
- * @enum
  */
 export enum EntityPropertyDataTypes {
   STRING = "string",
@@ -29,8 +25,6 @@ export enum EntityPropertyDataTypes {
 
 /**
  * A list of possible types for a body parameter.
- *
- * @enum
  */
 export enum BodyParameterType {
   STRING = "string",

@@ -8,9 +8,9 @@ import createFolders from "@/Commands/DefaultProject/createFolders";
 import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "@/Commands/DefaultProject/jsonFiles";
 import { getEnv } from "@/System/Environment";
 import { snakeCase } from "@/Utils";
-import getCurrentFolder from "@/Utils/getCurrentFolder";
+import { getModuleFolder } from "@/Utils/FileSystem";
 
-const __dirname = getCurrentFolder(import.meta.url);
+const __dirname = getModuleFolder(import.meta.url);
 
 /**
  * A list with additional options used for generating the project.
@@ -49,7 +49,7 @@ interface IAnswersList {
 /**
  * Function used to install the dependencies.
  *
- * @param projectFolder The folder containing the project.
+ * @param projectFolder The getModuleFolder containing the project.
  * @param useYarn Flag to use let the engine know what to use: npm or yarn.
  */
 function installDependencies(projectFolder: string, useYarn: boolean): Promise<void> {
@@ -84,7 +84,7 @@ function installDependencies(projectFolder: string, useYarn: boolean): Promise<v
 /**
  * Function used to initialise the GIT project.
  *
- * @param projectFolder The folder containing the project.
+ * @param projectFolder The getModuleFolder containing the project.
  */
 function initGit(projectFolder: string): Promise<void> {
   return new Promise((resolve, reject) => {

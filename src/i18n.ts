@@ -7,9 +7,9 @@ import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 import Config from "@/System/Config";
-import getCurrentFolder from "@/Utils/getCurrentFolder";
+import { getModuleFolder } from "@/Utils/FileSystem";
 
-const __dirname = getCurrentFolder(import.meta.url);
+const __dirname = getModuleFolder(import.meta.url);
 
 export type { I18n, TFunction, I18NextRequest };
 export { i18next };
@@ -41,7 +41,7 @@ export const clone = (lang: string): Promise<TFunction> =>
 /**
  * Internationalisation init function.
  *
- * @param currentDir The current folder of the application.
+ * @param currentDir The current getModuleFolder of the application.
  */
 export default function i18n(currentDir: string = __dirname): Promise<TFunction> {
   if (!existsSync(join(currentDir, "locales"))) {

@@ -21,6 +21,8 @@ export default abstract class BaseTransport implements IEmailTransport {
 
   /**
    * Constructor that initialises the transporter service.
+   *
+   * @param transporter The Email Transporter to be used.
    */
   protected constructor(transporter?: Transporter) {
     this._transporter = transporter ?? null;

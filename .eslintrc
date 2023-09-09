@@ -6,7 +6,8 @@
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:jest/recommended",
-    "plugin:jest/style"
+    "plugin:jest/style",
+    "plugin:jsdoc/recommended-typescript"
   ],
   "env": {
     "es6": true,
@@ -15,14 +16,17 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "plugins": [
     "jest",
     "import",
     "@typescript-eslint",
     "simple-import-sort",
-    "@limegrass/import-alias"
+    "@limegrass/import-alias",
+    "jsdoc"
   ],
   "ignorePatterns": [
     "**/*.test.ts",
@@ -106,7 +110,15 @@
         "arraysInArrays": false
       }
     ],
-    "@limegrass/import-alias/import-alias": "error"
+    "@limegrass/import-alias/import-alias": "error",
+    "jsdoc/require-returns": 0,
+    "jsdoc/tag-lines": [
+      "error",
+      "any",
+      {
+        "startLines": 1
+      }
+    ]
   },
   "settings": {
     "import/resolver": {

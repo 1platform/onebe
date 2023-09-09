@@ -28,6 +28,8 @@ export default class ErrorHandlerMiddleware implements IMiddleware {
 
   /**
    * Add an error handler function to be run before the final Error Handler Middleware.
+   *
+   * @param handler The error handler function.
    */
   public static addBeforeHandler(handler: ErrorHandlerFunction): void {
     ErrorHandlerMiddleware._beforeHandler.push(handler);

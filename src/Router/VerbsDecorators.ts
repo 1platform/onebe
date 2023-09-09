@@ -11,7 +11,6 @@ import { HTTPVerb } from "@/Server";
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -35,7 +34,6 @@ export function get<Response = any>(path: string, passRequest = false): RouteDec
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -59,7 +57,6 @@ export function post<Request = any, Response = any>(path: string, passRequest = 
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -83,7 +80,6 @@ export function put<Request = any, Response = any>(path: string, passRequest = f
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -107,7 +103,6 @@ export function patch<Request = any, Response = any>(path: string, passRequest =
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -131,7 +126,6 @@ export function del<Request = any, Response = any>(path: string, passRequest = f
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -147,7 +141,6 @@ export function GET<Response = any>(path: string, passRequest = false): RouteDec
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -163,7 +156,6 @@ export function POST<Request = any, Response = any>(path: string, passRequest = 
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -179,7 +171,6 @@ export function PUT<Request = any, Response = any>(path: string, passRequest = f
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */
@@ -195,7 +186,6 @@ export function PATCH<Request = any, Response = any>(path: string, passRequest =
  * validate the response, pass the Response type parameter to the decorator. If you do not need the body or the
  * response, pass `void` to both.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param [passRequest] Should we pass the request and response objects to the route method.
  */

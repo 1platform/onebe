@@ -1,7 +1,5 @@
 /**
  * A list with supported loggers from the application.
- *
- * @enum
  */
 enum LoggerType {
   /**

@@ -11,7 +11,6 @@ import { Route, RouteDecorator } from "@/Router";
  * to it will help the developers that will use the exposed REST API endpoint
  * in their interaction with your application.
  *
- * @decorator
  * @param parameter The name of the parameter we want to document.
  * @param [isNumeric] Should the value be a numeric one or not.
  * @param [description] A short description of the parameter.
@@ -33,7 +32,6 @@ export function Parameter(parameter: string, isNumeric = false, description?: st
  * the parameter and adding a short description to it will help the developers
  * that will use the exposed REST API endpoint in their interaction with your application.
  *
- * @decorator
  * @param parameter The name of the query parameter we want to document.
  * @param [type] The data type of the query parameter.
  * @param [description] A short description of the query parameter.
@@ -55,7 +53,6 @@ export function Query(parameter: string, type: QueryParameterType = QueryParamet
  * a predefined entity, created from models or by using the Entity decorators on
  * the custom Entities you created in the application.
  *
- * @decorator
  * @param entity The name of the entity we want to use as the body of request.
  * @param [isArray] Is the body an array or not.
  * @param [description] A short description of the body of a request.
@@ -78,7 +75,6 @@ export function Request(entity: string, isArray?: boolean, description?: string)
  * another endpoint, you could use this decorator to describe the items
  * of the body.
  *
- * @decorator
  * @param parameters A list of body parameters that you expect from a user.
  */
 export function Body(parameters: IEndpointBodyParameter[] | IEndpointBodyParameter): RouteDecorator {

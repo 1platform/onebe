@@ -3,8 +3,6 @@ import Config from "@/System/Config";
 
 /**
  * A list of supported documentation generators.
- *
- * @enum
  */
 export enum DocsType {
   SWAGGER_YAML = "swagger:yaml",

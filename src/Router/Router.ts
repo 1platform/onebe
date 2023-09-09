@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router as ExpressRouter } from "express";
-import { readdirSync, statSync } from "node:fs";
+import { statSync } from "node:fs";
 import { basename, extname, join, resolve } from "node:path";
 
 import { IEndpointMetadata, IRouteMetadata } from "@/Documentation/Definition/RouteMetadata";
@@ -9,13 +9,14 @@ import MimeType from "@/Router/MimeType";
 import { HTTPMiddleware, HTTPStatus, HTTPVerb } from "@/Server";
 import Config from "@/System/Config";
 import { getDefaultLogger } from "@/System/Logger";
+import { getFolderContents } from "@/Utils/FileSystem";
 
 /**
- * Interface used to describe the routes folder structure of your application.
+ * Interface used to describe the routes getModuleFolder structure of your application.
  */
 interface IRouteStruct {
   /**
-   * The name of the section/folder we want to import.
+   * The name of the section/getModuleFolder we want to import.
    */
   section: string;
   /**
@@ -61,7 +62,7 @@ export default class Router {
    * @param routesPath The path from which we will import routes.
    */
   public async register(routesPath: string): Promise<void> {
-    const routesStruct = this.fetchRoutes(routesPath);
+    const routesStruct = await this.fetchRoutes(routesPath);
     routesStruct.section = "";
     await this.registerRoutes(routesPath, routesStruct);
   }
@@ -175,7 +176,7 @@ export default class Router {
    * The method used to register the routes in a path. It will make recursive calls
    * to itself if we have other folders inside the current path.
    *
-   * @param basePath The base folder path from where we read.
+   * @param basePath The base getModuleFolder path from where we read.
    * @param structure The current parent structure from where we read the route structure.
    */
   private async registerRoutes(basePath: string, structure: IRouteStruct): Promise<void> {
@@ -211,12 +212,12 @@ export default class Router {
   }
 
   /**
-   * Returns the route structure from the current folder, together with children folders.
+   * Returns the route structure from the current getModuleFolder, together with children folders.
    *
    * @param basePath The base path from where we read the structure.
    */
-  private fetchRoutes(basePath: string): IRouteStruct {
-    const files = readdirSync(basePath);
+  private async fetchRoutes(basePath: string): Promise<IRouteStruct> {
+    const files = await getFolderContents(basePath);
     const routes = files.filter((file) => [ ".ts", ".js", ".tsx", ".jsx" ].indexOf(extname(file)) >= 0);
 
     const folders = files
@@ -224,7 +225,11 @@ export default class Router {
       .map((file) => join(basePath, file))
       .filter((file) => statSync(file).isDirectory());
 
-    const children = folders.map((folder) => this.fetchRoutes(folder)).filter((child) => child.children.length > 0 || child.routes.length > 0);
+    let children: IRouteStruct[] = [];
+    for (const folder of folders) {
+      children.push(await this.fetchRoutes(folder));
+    }
+    children = children.filter((child) => child.children.length > 0 || child.routes.length > 0);
 
     return {
       section: basename(basePath),

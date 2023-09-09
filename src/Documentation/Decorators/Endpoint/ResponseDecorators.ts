@@ -7,7 +7,6 @@ import { HTTPStatus } from "@/Server";
  * should be used only for primitive return values: `string`, `number`, `boolean`,
  * `null`, `undefined`.
  *
- * @decorator
  * @param type The data type of the response value.
  * @param [statusCode] The HTTP Status code used for the response.
  * @param [description] A short description of the returned response.
@@ -28,7 +27,6 @@ export function Return(type: string, statusCode = HTTPStatus.OK, description?: s
  * Decorator used to describe an entity based response for an endpoint. If you
  * want to reuse a response, we recommend to use this decorator and define an entity.
  *
- * @decorator
  * @param type The name of the entity used to describe the response.
  * @param [statusCode] The HTTP Status code used for the response.
  * @param [description] A short description of the returned response.
@@ -50,7 +48,6 @@ export function Schema(type: string, statusCode = HTTPStatus.OK, description?: s
  * should be used only for primitive return values: `string`, `number`, `boolean`,
  * `null`, `undefined`.
  *
- * @decorator
  * @param type The data type of the response value.
  * @param [statusCode] The HTTP Status code used for the response.
  * @param [description] A short description of the returned response.
@@ -71,7 +68,6 @@ export function Array(type: string, statusCode = HTTPStatus.OK, description?: st
  * Decorator used to describe an entity based array response for an endpoint. If you
  * want to reuse a response, we recommend to use this decorator and define an entity.
  *
- * @decorator
  * @param type The name of the entity used to describe the response.
  * @param [statusCode] The HTTP Status code used for the response.
  * @param [description] A short description of the returned response.
@@ -92,7 +88,6 @@ export function ArraySchema(type: string, statusCode = HTTPStatus.OK, descriptio
  * Decorator used to describe an error thrown by your endpoint. The
  * thrown error should always have an HTTP Status code attached to it.
  *
- * @decorator
  * @param errorCode The HTTP Status error code used for the response.
  * @param [description] A short description of the returned error.
  * @param [response] A sample message sent to the user with the error.
@@ -114,7 +109,6 @@ export function Throws<Response = any>(errorCode: HTTPStatus, description?: stri
  * This decorator only describes the status code without a body attached
  * to the status.
  *
- * @decorator
  * @param statusCode The HTTP Status error code used for the response.
  * @param [description] A short description of the returned error.
  */

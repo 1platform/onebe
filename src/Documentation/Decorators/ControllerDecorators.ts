@@ -9,7 +9,6 @@ import { ControllerDecoratorFunction, Route, RouteDecorator } from "@/Router";
  * in the documentation. Otherwise, by using the @Path decorator you can add
  * the same documentation elements like this decorator.
  *
- * @decorator
  * @param name The name of the controller.
  * @param [description] A short description of the controller.
  */
@@ -29,7 +28,6 @@ export function Controller<T extends Constructor>(name: string, description?: st
  * Otherwise, by using the @Path decorator you can add the same documentation
  * elements like this decorator.
  *
- * @decorator
  * @param name The name of the controller.
  */
 export function Name<T extends Constructor>(name: string): ControllerDecoratorFunction<T> {
@@ -47,7 +45,6 @@ export function Name<T extends Constructor>(name: string): ControllerDecoratorFu
  * Otherwise, by using the @Path decorator you can add the same documentation
  * elements like this decorator.
  *
- * @decorator
  * @param [description] A short description of the controller.
  */
 export function Description<T extends Constructor>(description?: string): ControllerDecoratorFunction<T> {
@@ -66,7 +63,6 @@ export function Description<T extends Constructor>(description?: string): Contro
  * to it will help the developers that will use the exposed REST API endpoint
  * in their interaction with your application.
  *
- * @decorator
  * @param parameter The name of the parameter we want to document.
  * @param [isNumeric] Should the value be a numeric one or not.
  * @param [description] A short description of the parameter.

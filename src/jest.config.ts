@@ -16,6 +16,7 @@ const config: Config = {
         tsconfig: "<rootDir>/../tsconfig.json",
         isolatedModules: true,
         useESM: true,
+        sourceType: "module",
       },
     ],
   },
@@ -28,7 +29,7 @@ const config: Config = {
   roots: [ "./" ],
   coverageReporters: [ "text", "lcov" ],
   coverageDirectory: "<rootDir>/../coverage",
-  collectCoverageFrom: [ "<rootDir>/**/*.{ts, js}", "!<rootDir>/defaults/**", "!<rootDir>/Commands/DefaultProject/**" ],
+  collectCoverageFrom: [ "<rootDir>/**/*.{ts, js}", "!<rootDir>/defaults/**", "!<rootDir>/Commands/DefaultProject/**", "!<rootDir>/Tests/**" ],
   snapshotFormat: {
     escapeString: false,
     highlight: true,

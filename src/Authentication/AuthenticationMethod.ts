@@ -1,7 +1,5 @@
 /**
  * A list with the supported authentication methods that can be used in your application.
- *
- * @enum
  */
 enum AuthenticationMethod {
   /**

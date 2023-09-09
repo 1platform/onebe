@@ -140,7 +140,7 @@ export class FileLogger extends Logger {
       logLevel,
       new transports.File({
         filename: Config.string("logs.filename", "app.log"),
-        dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
+        dirname: Config.string("logs.getModuleFolder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
       }),
     );
@@ -199,7 +199,7 @@ export class JSONLogger extends Logger {
     if (options) {
       transport = new transports.File({
         filename: Config.string("logs.filename", "app.log"),
-        dirname: Config.string("logs.folder", path.join(process.cwd(), "storage", "logs")),
+        dirname: Config.string("logs.getModuleFolder", path.join(process.cwd(), "storage", "logs")),
         ...(options || {}),
       });
     } else {

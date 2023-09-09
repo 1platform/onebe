@@ -42,9 +42,9 @@ async function readSourceFile(file: string): Promise<ISeedInfo> {
 }
 
 /**
- * Function used to fetch all seeds from the seeding folder.
+ * Function used to fetch all seeds from the seeding getModuleFolder.
  *
- * @param basePath The base path to the seeds' folder.
+ * @param basePath The base path to the seeds' getModuleFolder.
  */
 async function fetchSeedFiles(basePath: string): Promise<Record<string, ISeedInfo>> {
   const files = readdirSync(basePath)
@@ -238,7 +238,7 @@ async function createEntities(entityManager: EntityManager, seeds: Record<string
  * @param truncate Flag to let the function know if the user wants to clear the database before import or not.
  */
 export default async function FullDBSeed(truncate = false): Promise<void> {
-  const seeds = await fetchSeedFiles(resolve(Config.get("db.seeds.folder")));
+  const seeds = await fetchSeedFiles(resolve(Config.get("db.seeds.getModuleFolder")));
   const dependencyTree = createDependencyTree(seeds);
 
   await defaultConnection().transaction(async (entityManager: EntityManager) => {

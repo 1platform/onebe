@@ -56,7 +56,6 @@ function DocumentEntityProperty(object: Constructor, propertyName: string, colum
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the modification date column.
  */
 export function UpdateDateColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
@@ -74,7 +73,6 @@ export function UpdateDateColumn(options?: ColumnOptions & { description?: strin
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the deletion date column.
  */
 export function DeleteDateColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
@@ -90,7 +88,6 @@ export function DeleteDateColumn(options?: ColumnOptions & { description?: strin
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the creation date column.
  */
 export function CreateDateColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
@@ -106,7 +103,6 @@ export function CreateDateColumn(options?: ColumnOptions & { description?: strin
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the primary key column.
  */
 export function PrimaryColumn(options?: PrimaryColumnOptions & { description?: string }): PropertyDecorator {
@@ -123,7 +119,6 @@ export function PrimaryColumn(options?: PrimaryColumnOptions & { description?: s
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param strategy The strategy used for generating the primary key or the list of options used for
  *                 defining the generated primary key column.
  * @param options A list of options used for defining the generated primary key column.
@@ -145,7 +140,6 @@ export function PrimaryGeneratedColumn(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the version column.
  */
 export function VersionColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
@@ -161,7 +155,6 @@ export function VersionColumn(options?: ColumnOptions & { description?: string }
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the virtual column.
  */
 export function VirtualColumn(options?: VirtualColumnOptions & { description?: string }): PropertyDecorator {
@@ -177,7 +170,6 @@ export function VirtualColumn(options?: VirtualColumnOptions & { description?: s
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the view column.
  */
 export function ViewColumn(options?: ViewColumnOptions & { description?: string }): PropertyDecorator {
@@ -193,7 +185,6 @@ export function ViewColumn(options?: ViewColumnOptions & { description?: string 
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the ObjectId column.
  */
 export function ObjectIdColumn(options?: ColumnOptions & { description?: string }): PropertyDecorator {
@@ -209,7 +200,6 @@ export function ObjectIdColumn(options?: ColumnOptions & { description?: string 
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the column.
  */
 export function Column(options?: ColumnOptions & ColumnEmbeddedOptions & { description?: string }): PropertyDecorator {

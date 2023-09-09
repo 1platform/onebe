@@ -25,7 +25,7 @@
 # KDE directory preferences
 .directory
 
-# Linux trash folder which might appear on any partition or disk
+# Linux trash getModuleFolder which might appear on any partition or disk
 .Trash-*
 
 # .nfs files are created when an open file is removed but is still being accessed

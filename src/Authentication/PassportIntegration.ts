@@ -79,6 +79,6 @@ export default function initPassportStrategy(props: IInitStrategyOptions): void 
  * this, go to: https://www.passportjs.org/. If you need additional authentication
  * methods, please create a new issue in GitHub.
  *
- * @link https://www.passportjs.org/
+ * @see https://www.passportjs.org/
  */
 export { passport, BearerStrategy, BasicStrategy };

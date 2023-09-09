@@ -13,7 +13,6 @@ import { ControllerDecoratorFunction } from "@/Router";
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [nameOrOptions] The name of the entity or options used to define the entity.
  * @param [maybeOptions] Options used for the entity definition.
  */

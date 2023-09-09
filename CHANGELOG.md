@@ -8,7 +8,7 @@ Here we will note all the changes made to the framework.
 
 🚀 New:
 
--  
+-
 
 🌟 Improvements:
 
@@ -17,7 +17,7 @@ Here we will note all the changes made to the framework.
 
 🔧 Bugfix:
 
-- 
+-
 
 ## Version 2.x
 
@@ -149,7 +149,7 @@ Here we will note all the changes made to the framework.
 
 🌟 Improvements:
 
-- Add function to generate a path to the temp folder.
+- Add function to generate a path to the temp getModuleFolder.
 - Add function to generate a random string with a given length.
 
 🔧 Bugfix:
@@ -196,7 +196,8 @@ Here we will note all the changes made to the framework.
 
 🚀 New:
 
-- Add support to work with relations from the services, without the need of an entity - can be used to avoid a TypeORM error when
+- Add support to work with relations from the services, without the need of an entity - can be used to avoid a TypeORM
+  error when
   generating the query for insertion into the Many-to-Many table.
 
 🌟 Improvements:
@@ -272,7 +273,7 @@ Here we will note all the changes made to the framework.
 
 🔧 Bugfix:
 
-- Fix an issue with the folder definition of a service.
+- Fix an issue with the getModuleFolder definition of a service.
 
 ### Version 2.4.4
 
@@ -392,7 +393,7 @@ Here we will note all the changes made to the framework.
 
 🔧 Bugfix:
 
-- Fix an issue with the folder structure generator for the service creation.
+- Fix an issue with the getModuleFolder structure generator for the service creation.
 
 ### Version 2.1.7
 
@@ -402,7 +403,7 @@ Here we will note all the changes made to the framework.
 
 🔧 Bugfix:
 
-- Fix an issue with the folder structure generator for the service creation.
+- Fix an issue with the getModuleFolder structure generator for the service creation.
 
 ### Version 2.1.6
 
@@ -433,7 +434,7 @@ Here we will note all the changes made to the framework.
 🌟 Improvements:
 
 - Add support to redirect the user to another page.
-- Allow the developer to create a service in a specific folder.
+- Allow the developer to create a service in a specific getModuleFolder.
 
 🔧 Bugfix:
 
@@ -616,7 +617,7 @@ Here we will note all the changes made to the framework.
 🔧 Bugfix:
 
 - Fix yarnrc file to publish on npmjs registry.
-- Fix nodeignore to ignore .yarn folder.
+- Fix nodeignore to ignore .yarn getModuleFolder.
 
 ### Version 1.0.19
 
@@ -624,7 +625,7 @@ Here we will note all the changes made to the framework.
 
 - Fix some emoji in changelog.
 - Fix yarnrc file to publish on npmjs registry.
-- Fix nodeignore to ignore .yarn folder.
+- Fix nodeignore to ignore .yarn getModuleFolder.
 
 ### Version 1.0.18
 
@@ -775,26 +776,26 @@ Initial application release.
 - Relational Database ready using TypeORM
 - Authentication using Bearer Token and Basic Auth available
 - Email Sending system:
-  - NodeMailer
-  - SMTP Transport
-  - Test Transport (ethereal email address)
+    - NodeMailer
+    - SMTP Transport
+    - Test Transport (ethereal email address)
 - SMS Sending system: (requires Phone Number and account key and secret)
-  - Twilio Transport
-  - Vonage Transport
+    - Twilio Transport
+    - Vonage Transport
 - i18n support using i18next
 - auto-documentation of exposed endpoints in OpenAPI3 format
-  - ability to show/hide the documentation
-  - Swagger UI connected to the OpenAPI file
-  - Postman JSON file exposable from the application
+    - ability to show/hide the documentation
+    - Swagger UI connected to the OpenAPI file
+    - Postman JSON file exposable from the application
 - CORS enable
 - File upload middlewares
 - Logging system with various transports:
-  - Console
-  - File
+    - Console
+    - File
 - Scheduler system to schedule jobs in CRONTAB format
 - Multi Factor Authentication system
-  - Simple Code base
-  - Using the Google Authenticator (or Compatible application)
+    - Simple Code base
+    - Using the Google Authenticator (or Compatible application)
 - QRCode generator
 - UUID V1 and V4 generator
 - Shortid generator

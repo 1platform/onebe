@@ -43,7 +43,6 @@ function DocumentEntityRelation<T = Constructor>(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param typeFunctionOrTarget The target of the many-to-one relation.
  * @param [options] A list of options used for defining the relation.
  */
@@ -63,7 +62,6 @@ export function ManyToOne<T = Constructor>(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param typeFunctionOrTarget The target of the many-to-many relation.
  * @param [inverseSide] The inverse side target of the many-to-many relation.
  * @param [options] A list of options used for defining the relation.
@@ -89,7 +87,6 @@ export function ManyToMany<T = Constructor>(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param typeFunctionOrTarget The target of the one-to-many relation.
  * @param [inverseSide] The inverse side target of the one-to-many relation.
  * @param [options] A list of options used for defining the relation.
@@ -111,7 +108,6 @@ export function OneToMany<T = Constructor>(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param typeFunctionOrTarget The target of the one-to-one relation.
  * @param [inverseSide] The inverse side target of the one-to-many relation.
  * @param [options] A list of options used for defining the relation.
@@ -137,7 +133,6 @@ export function OneToOne<T = Constructor>(
  * As a bonus, this decorator will add metadata information to the column that
  * will be used for documentation.
  *
- * @decorator
  * @param [options] A list of options used for defining the join column.
  */
 export function JoinColumn(options?: JoinColumnOptions & { description?: string }): PropertyDecorator {

@@ -11,8 +11,6 @@
  *
  * Statuses starting with 5 (500, 501, 503 etc.) are usually sent
  * when you or the server want to show that something failed.
- *
- *  @enum
  */
 enum HTTPStatus {
   /**

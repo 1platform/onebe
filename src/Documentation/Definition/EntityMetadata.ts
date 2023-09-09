@@ -153,13 +153,13 @@ export interface IEntityProperty {
   /**
    * The default value of the property.
    *
-   * @TODO
+   * TODO: Take into consideration
    */
   defaultValue?: string;
   /**
    * A list of possible values that can be passed to the property.
    *
-   * @TODO
+   * TODO: Take into consideration
    */
   enumOptions?: string[];
 }

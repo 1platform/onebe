@@ -53,7 +53,7 @@ export class ${ migrationName } implements MigrationInterface {
  */
 export default function createMigrationFile(migrationName: string, options?: Record<string, string | string[]>): void {
   const timestamp = Date.now();
-  const migrationFile = path.resolve(Config.get("db.migrations.folder", "./"), `${ timestamp }-${ migrationName }.ts`);
+  const migrationFile = path.resolve(Config.get("db.migrations.getModuleFolder", "./"), `${ timestamp }-${ migrationName }.ts`);
   const template = getMigrationTemplate(migrationName, timestamp, options || {});
 
   if (!fs.existsSync(path.dirname(migrationFile))) {

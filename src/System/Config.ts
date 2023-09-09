@@ -32,9 +32,9 @@ export class Configuration {
 
   /**
    * Initializes the configuration object with values from the
-   * configuration folder.
+   * configuration getModuleFolder.
    *
-   * @param configFolder The folder containing the configuration files.
+   * @param configFolder The getModuleFolder containing the configuration files.
    */
   public async init(configFolder = "./config"): Promise<void> {
     const configFromFile: Record<string, any> = {};

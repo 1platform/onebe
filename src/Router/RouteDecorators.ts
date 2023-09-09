@@ -12,7 +12,6 @@ import { getDefaultLogger } from "@/System/Logger";
  * of the Documentation APIs while keeping track of the various elements that need to
  * be added to the Documentation for controllers that are added in the application.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param name The name of the controller. If no name is specified, it will take the name of the controller.
  * @param description The description of the controller. If no description is passed, no description will be documented.
@@ -47,7 +46,6 @@ export function Path<T extends Constructor>(path: string, name?: string, descrip
  * of the Documentation APIs while keeping track of the various elements that need to
  * be added to the Documentation for controllers that are added in the application.
  *
- * @decorator
  * @param path The path on which we will register the routes of this controller.
  * @param name The name of the controller. If no name is specified, it will take the name of the controller.
  * @param description The description of the controller. If no description is passed, no description will be documented.
@@ -58,8 +56,6 @@ export function Controller<T extends Constructor>(path: string, name?: string, d
 
 /**
  * Decorator to mark the controller as an API controller.
- *
- * @decorator
  */
 export function API<T extends Constructor>(): ControllerDecoratorFunction<T> {
   return function (BaseClass: T): ControllerDecorator<T> {
@@ -73,7 +69,6 @@ export function API<T extends Constructor>(): ControllerDecoratorFunction<T> {
 /**
  * Decorator to define a custom controller prefix.
  *
- * @decorator
  * @param path The custom controller path prefix.
  */
 export function Custom<T extends Constructor>(path: string): ControllerDecoratorFunction<T> {
@@ -88,7 +83,6 @@ export function Custom<T extends Constructor>(path: string): ControllerDecorator
  * Decorator to mark a controller as a Documentation one. If needed you can customize
  * the base path on which the endpoints exposed by the controller are.
  *
- * @decorator
  * @param path The custom documentation path prefix.
  */
 export function Docs<T extends Constructor>(path?: string): ControllerDecoratorFunction<T> {
@@ -103,7 +97,6 @@ export function Docs<T extends Constructor>(path?: string): ControllerDecoratorF
 /**
  * Decorator used to add the controller into a group.
  *
- * @decorator
  * @param groupName The name of the group.
  */
 export function Group<T extends Constructor>(groupName: string): ControllerDecoratorFunction<T> {

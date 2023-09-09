@@ -4,7 +4,7 @@ import passport from "passport";
 import app from "@/App";
 import type { IPayload } from "@/Authentication";
 import { AuthenticationMethod, decode, extractToken, verify } from "@/Authentication";
-import signed from "@/Authentication/signed";
+import { signed } from "@/Authentication/signed";
 import { QueryParameterType } from "@/Documentation";
 import MetadataStore from "@/Documentation/MetadataStore";
 import { defineMiddleware, Route, RouteDecorator } from "@/Router";
@@ -31,7 +31,6 @@ const signature = signed({
  * the `Authorization` header be present in the request and have a valid value:
  * the token Bearer followed by a JSON Web Token (JWT).
  *
- * @decorator
  * @param target The target on which we apply the decorator.
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
@@ -55,7 +54,6 @@ export const Bearer = (target: Route, propertyKey: string, descriptor: PropertyD
  * must be passed inside the `Authorization` header after the token `Basic` and
  * in a base64 encoded version.
  *
- * @decorator
  * @param target The target on which we apply the decorator.
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.
@@ -69,8 +67,6 @@ export const Basic = (target: Route, propertyKey: string, descriptor: PropertyDe
 
 /**
  * Middleware used to verify if a signed URL is valid.
- *
- * @decorator
  */
 export function VerifyURL(): RouteDecorator {
   return (target: Route, propertyKey: string, descriptor: PropertyDescriptor) => {
@@ -114,8 +110,6 @@ export type SignMethodOptions = {
  *
  * @param url The URL to be signed.
  * @param [options] The options used for the URL signing.
- *
- * @return {string}
  */
 export const signURL = (url: string, options?: SignMethodOptions): string =>
   signature.sign(url, {
@@ -132,7 +126,6 @@ export const signURL = (url: string, options?: SignMethodOptions): string =>
  * Use this middleware when you have to provide an endpoint that based on the values
  * available in the header, return additional information.
  *
- * @decorator
  * @param target The target on which we apply the decorator.
  * @param propertyKey The property key on which we apply the decorator.
  * @param descriptor The descriptor of the property we want to decorate.

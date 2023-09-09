@@ -34,18 +34,21 @@ interface SignatureData {
 
 export class SignatureError extends Error {
   public readonly status;
+
   constructor(message: string, httpStatus: number) {
     super(message);
     Object.setPrototypeOf(this, SignatureError.prototype);
     this.status = httpStatus;
   }
 }
+
 export class BlackholedSignatureError extends SignatureError {
   constructor() {
     super("Request blackholed", 403);
     Object.setPrototypeOf(this, BlackholedSignatureError.prototype);
   }
 }
+
 export class ExpiredSignatureError extends SignatureError {
   constructor() {
     super("Request expired", 410);
@@ -95,31 +98,6 @@ export class Signature {
     url += `-${ this.hash(url, this.secrets[0]) }`;
 
     return url;
-  }
-
-  private checkStringSignature(str: string, sign: string): void {
-    if (!this.secrets.some((secret) => this.hash(str, secret) === sign)) {
-      throw new BlackholedSignatureError();
-    }
-  }
-
-  private extractSignature(str: string): [url: string, sign: string] {
-    const pos = str.lastIndexOf("-");
-    if (pos === -1) {
-      throw new BlackholedSignatureError();
-    }
-    return [ str.substr(0, pos), str.substr(pos + 1) ];
-  }
-
-  private extractSignatureData(url: string): [url: string, signatureData: SignatureData] {
-    let pos = url.lastIndexOf("&signed=");
-    if (pos === -1) {
-      pos = url.lastIndexOf("?signed=");
-    }
-    if (pos === -1) {
-      throw new BlackholedSignatureError();
-    }
-    return [ url.substr(0, pos), querystring.parse(url.substr(pos + 8), "-", "_") as any ];
   }
 
   public verify(
@@ -173,8 +151,39 @@ export class Signature {
       next();
     };
   }
+
+  private checkStringSignature(str: string, sign: string): void {
+    if (!this.secrets.some((secret) => this.hash(str, secret) === sign)) {
+      throw new BlackholedSignatureError();
+    }
+  }
+
+  private extractSignature(str: string): [url: string, sign: string] {
+    const pos = str.lastIndexOf("-");
+    if (pos === -1) {
+      throw new BlackholedSignatureError();
+    }
+    return [ str.substr(0, pos), str.substr(pos + 1) ];
+  }
+
+  private extractSignatureData(url: string): [url: string, signatureData: SignatureData] {
+    let pos = url.lastIndexOf("&signed=");
+    if (pos === -1) {
+      pos = url.lastIndexOf("?signed=");
+    }
+    if (pos === -1) {
+      throw new BlackholedSignatureError();
+    }
+    return [ url.substr(0, pos), querystring.parse(url.substr(pos + 8), "-", "_") as any ];
+  }
 }
 
-export default function (options: SignatureOptions) {
+/**
+ * Function used to create a new URL Signature class instance, based on the
+ * given parameters.
+ *
+ * @param options A list with options to be passed to the Signature class.
+ */
+export function signed(options: SignatureOptions) {
   return new Signature(options);
 }
