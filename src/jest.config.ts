@@ -5,6 +5,7 @@ const config: Config = {
   verbose: true,
   runner: "groups",
   setupFiles: [],
+  preset: "ts-jest/presets/default-esm", // or other ESM presets
   setupFilesAfterEnv: [ "jest-matcher-specific-error", "<rootDir>/tests/setup.ts" ],
   transform: {
     "^.+\\.jsx?$": "babel-jest",
@@ -12,20 +13,21 @@ const config: Config = {
       "ts-jest",
       {
         babel: true,
-        tsconfig: "tsconfig.json",
+        tsconfig: "<rootDir>/../tsconfig.json",
         isolatedModules: true,
+        useESM: true,
       },
     ],
   },
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
+    "^@/(.*)$": "<rootDir>/$1",
   },
   testEnvironment: "node",
   clearMocks: true,
   moduleFileExtensions: [ "js", "jsx", "ts", "tsx" ],
   roots: [ "./" ],
   coverageReporters: [ "text", "lcov" ],
-  coverageDirectory: "./coverage",
+  coverageDirectory: "<rootDir>/../coverage",
   collectCoverageFrom: [ "<rootDir>/**/*.{ts, js}", "!<rootDir>/defaults/**", "!<rootDir>/Commands/DefaultProject/**" ],
   snapshotFormat: {
     escapeString: false,

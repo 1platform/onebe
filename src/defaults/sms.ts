@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -13,7 +13,7 @@ const defaultSMSConfig: IConfig = {
    *
    * @default false
    */
-  enabled: Env.flag("SMS_ENABLED"),
+  enabled: getEnv().flag("SMS_ENABLED"),
 
   /**
    * In order to be able to send SMS messages we need to specify a provider.
@@ -22,7 +22,7 @@ const defaultSMSConfig: IConfig = {
    * @see SMSProvider
    * @default ""
    */
-  provider: Env.string("SMS_PROVIDER", ""),
+  provider: getEnv().string("SMS_PROVIDER", ""),
 
   /**
    * While using the SMS Service, we need to provide some additional configuration
@@ -35,7 +35,7 @@ const defaultSMSConfig: IConfig = {
      *
      * @default ""
      */
-    phone: Env.string("SMS_PHONE_NUMBER"),
+    phone: getEnv().string("SMS_PHONE_NUMBER"),
 
     /**
      * The account used to connect to the SMS provider. This account will be provided to
@@ -44,7 +44,7 @@ const defaultSMSConfig: IConfig = {
      *
      * @default ""
      */
-    account: Env.string("SMS_ACCOUNT"),
+    account: getEnv().string("SMS_ACCOUNT"),
 
     /**
      * The password used to connect to the SMS provider. This password will be provided to
@@ -53,7 +53,7 @@ const defaultSMSConfig: IConfig = {
      *
      * @default ""
      */
-    password: Env.string("SMS_PASSWORD"),
+    password: getEnv().string("SMS_PASSWORD"),
   },
 };
 

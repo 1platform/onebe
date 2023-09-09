@@ -14,7 +14,7 @@ export default class HTTPError extends Error {
   /**
    * The additional parameters sent to the exception.
    */
-  public parameters: any = null;
+  public parameters: Record<string, any> = {};
 
   /**
    * Constructor of the Generic HTTP Error.
@@ -23,9 +23,9 @@ export default class HTTPError extends Error {
    * @param status The status code of the exception.
    * @param parameters Some extra parameters sent to the error.
    */
-  public constructor(message: string, status = HTTPStatus.SERVER_ERROR, parameters?: any) {
+  public constructor(message: string, status = HTTPStatus.SERVER_ERROR, parameters?: Record<string, any>) {
     super(message);
     this.status = status;
-    this.parameters = parameters;
+    this.parameters = parameters || {};
   }
 }

@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import * as nodemailer from "nodemailer";
 
 import BaseTransport from "@/Email/Transports/BaseTransport";
 import IEmailTransport from "@/Email/Transports/IEmailTransport";

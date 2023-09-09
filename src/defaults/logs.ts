@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 import LoggerType from "@/System/LoggerType";
 import LogLevel from "@/System/LogLevel";
@@ -17,7 +17,7 @@ const defaultLogsConfig: IConfig = {
    *
    * @default false
    */
-  enabled: Env.flag("LOGS_ENABLED"),
+  enabled: getEnv().flag("LOGS_ENABLED"),
 
   /**
    * The type of logger used in the application. At the moment the framework support
@@ -27,7 +27,7 @@ const defaultLogsConfig: IConfig = {
    * @see LoggerType
    * @default LoggerType.CONSOLE
    */
-  type: Env.string("LOGGER_TYPE", LoggerType.CONSOLE),
+  type: getEnv().string("LOGGER_TYPE", LoggerType.CONSOLE),
 
   /**
    * The level of detail you want to see in the logs of your application.
@@ -39,7 +39,7 @@ const defaultLogsConfig: IConfig = {
    * @see LogLevel
    * @default LogLevel.INFO
    */
-  level: Env.string("LOG_LEVEL", LogLevel.INFO),
+  level: getEnv().string("LOG_LEVEL", LogLevel.INFO),
 
   /**
    * The file used to store the log messages. Fill a value to this
@@ -47,7 +47,7 @@ const defaultLogsConfig: IConfig = {
    *
    * @default "app.log"
    */
-  file: Env.string("LOG_FILE", "app.log"),
+  file: getEnv().string("LOG_FILE", "app.log"),
 
   /**
    * The location where you want to store the log files when using the
@@ -55,7 +55,7 @@ const defaultLogsConfig: IConfig = {
    *
    * @default "./storage/logs"
    */
-  folder: Env.string("LOG_FOLDER", "./storage/logs"),
+  folder: getEnv().string("LOG_FOLDER", "./storage/logs"),
 };
 
 export default defaultLogsConfig;

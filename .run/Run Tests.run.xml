@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Tests" type="JavaScriptTestRunnerJest">
+    <config-file value="$PROJECT_DIR$/src/jest.config.ts" />
+    <node-interpreter value="project" />
+    <node-options value="--experimental-vm-modules" />
+    <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+    <working-dir value="$PROJECT_DIR$" />
+    <jest-options value="--runInBand --no-cache --detectOpenHandles --maxConcurrency=3" />
+    <envs>
+      <env name="TZ" value="UTC" />
+    </envs>
+    <scope-kind value="ALL" />
+    <method v="2" />
+  </configuration>
+</component>

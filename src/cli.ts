@@ -8,7 +8,7 @@ import yargs from "yargs";
 import "reflect-metadata";
 
 import Config from "@/System/Config";
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 
 import DatabaseSeedCommand from "@/Commands/DatabaseSeedCommand";
 import EntityCreateCommand from "@/Commands/EntityCreateCommand";
@@ -28,9 +28,11 @@ import i18n from "@/i18n";
 import { getVersion } from "@/version";
 
 register({ extensions: [ ".ts", ".tsx", ".js", ".jsx" ] });
-Config.init(path.resolve(process.cwd(), Env.string("ONEBE_CONFIG_FOLDER", `.${ Env.string("NODE_ENV", "dev") === "dev" ? "/src" : "" }/config`)));
+Config.init(
+  path.resolve(process.cwd(), getEnv().string("ONEBE_CONFIG_FOLDER", `.${ getEnv().string("NODE_ENV", "dev") === "dev" ? "/src" : "" }/config`)),
+);
 
-const sourcesFolder = path.resolve(process.cwd(), `.${ Env.string("NODE_ENV", "dev") === "dev" ? "/src" : "" }`);
+const sourcesFolder = path.resolve(process.cwd(), `.${ getEnv().string("NODE_ENV", "dev") === "dev" ? "/src" : "" }`);
 
 const yargsBase = yargs
   .usage("Usage: onebe <command> [options]")

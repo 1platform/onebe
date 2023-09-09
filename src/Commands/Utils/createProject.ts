@@ -6,8 +6,11 @@ import path from "node:path";
 
 import createFolders from "@/Commands/DefaultProject/createFolders";
 import { babelrcFile, eslintrcFile, nodemonFile, packageJsonFile, tsconfigFile } from "@/Commands/DefaultProject/jsonFiles";
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import { snakeCase } from "@/Utils";
+import getCurrentFolder from "@/Utils/getCurrentFolder";
+
+const __dirname = getCurrentFolder(import.meta.url);
 
 /**
  * A list with additional options used for generating the project.
@@ -55,10 +58,10 @@ function installDependencies(projectFolder: string, useYarn: boolean): Promise<v
     process.chdir(projectFolder);
     const installResult = spawn(useYarn ? "yarn" : "npm", [ "install" ]);
     installResult.stdout.on("data", (data) => {
-      Env.boolean("APP_DEBUG") && console.debug(`OK: ${ data }`);
+      getEnv().boolean("APP_DEBUG") && console.debug(`OK: ${ data }`);
     });
     installResult.stderr.on("data", (data) => {
-      Env.boolean("APP_DEBUG") && console.debug(`ERR: ${ data }`);
+      getEnv().boolean("APP_DEBUG") && console.debug(`ERR: ${ data }`);
     });
     installResult.on("error", (error) => {
       process.chdir(originalDir);
@@ -88,8 +91,8 @@ function initGit(projectFolder: string): Promise<void> {
     const originalDir = process.cwd();
     process.chdir(projectFolder);
     exec("git init && git add . && git commit -am 'Initial commit'", (initError, initStdout, initStderr) => {
-      Env.boolean("APP_DEBUG") && initStdout && console.debug(`OK: ${ initStdout }`);
-      Env.boolean("APP_DEBUG") && initStderr && console.debug(`ERR: ${ initStderr }`);
+      getEnv().boolean("APP_DEBUG") && initStdout && console.debug(`OK: ${ initStdout }`);
+      getEnv().boolean("APP_DEBUG") && initStderr && console.debug(`ERR: ${ initStderr }`);
       if (initError) {
         process.chdir(originalDir);
         console.error("Unable to initialize the git project.");

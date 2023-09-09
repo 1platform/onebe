@@ -5,11 +5,18 @@
  * @param end The max number to be generated.
  */
 export function random(start = 0, end = 100000): number {
-  if (Number.isNaN(start)) {
+  if (start === null || start === undefined || Number.isNaN(start)) {
     start = 0;
   }
-  if (Number.isNaN(end)) {
+  if (end === null || end === undefined || Number.isNaN(end)) {
     end = 100000;
+  }
+  start = Math.abs(start);
+  end = Math.abs(end);
+  if (start > end) {
+    const aux = start;
+    start = end;
+    end = aux;
   }
 
   let randomNumber = Math.random();
@@ -24,6 +31,10 @@ export function random(start = 0, end = 100000): number {
  * @param size The number of digits of the number.
  */
 export function fixedSizeRandom(size: number): string {
+  if (!size || size < 1 || Number.isNaN(size)) {
+    return "";
+  }
+  size = Math.floor(size);
   const maxSize = Math.pow(10, size);
   return Math.round((Math.random() * maxSize) % maxSize)
     .toString()

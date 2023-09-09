@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -15,7 +15,7 @@ const defaultDBConfig: IConfig = {
    *
    * @default "mongoose"
    */
-  configuration: Env.string("DATABASE_CONFIGURATION", "mongoose"),
+  configuration: getEnv().string("DATABASE_CONFIGURATION", "mongoose"),
 
   /**
    * One of the database connection types supported by the framework is `mongoose`. When
@@ -35,7 +35,7 @@ const defaultDBConfig: IConfig = {
      *
      * @default "mongodb://localhost:27017/onebe"
      */
-    url: Env.string("DATABASE_MONGODB_URI", "mongodb://localhost:27017/onebe"),
+    url: getEnv().string("DATABASE_MONGODB_URI", "mongodb://localhost:27017/onebe"),
   },
 
   /**
@@ -55,35 +55,35 @@ const defaultDBConfig: IConfig = {
      *
      * @default "localhost"
      */
-    hostname: Env.string("DATABASE_MYSQL_HOSTNAME", "localhost"),
+    hostname: getEnv().string("DATABASE_MYSQL_HOSTNAME", "localhost"),
 
     /**
      * The port on which the database server is exposed.
      *
      * @default 3306
      */
-    port: Env.int("DATABASE_MYSQL_PORT", 3306),
+    port: getEnv().int("DATABASE_MYSQL_PORT", 3306),
 
     /**
      * The user used to connect to the database server.
      *
      * @default "root"
      */
-    username: Env.string("DATABASE_MYSQL_USERNAME", "root"),
+    username: getEnv().string("DATABASE_MYSQL_USERNAME", "root"),
 
     /**
      * The password used to connect to the database server.
      *
      * @default ""
      */
-    password: Env.string("DATABASE_MYSQL_PASSWORD", ""),
+    password: getEnv().string("DATABASE_MYSQL_PASSWORD", ""),
 
     /**
      * The name of the database you want to use for your application.
      *
      * @default "onebe"
      */
-    database: Env.string("DATABASE_MYSQL_DATABASE", "onebe"),
+    database: getEnv().string("DATABASE_MYSQL_DATABASE", "onebe"),
 
     /**
      * When using the `mysql` engine, the bigint numbers are treated as integers by default.
@@ -91,7 +91,7 @@ const defaultDBConfig: IConfig = {
      *
      * @default false
      */
-    bigNumberStrings: Env.flag("DATABASE_MYSQL_BIG_NUMBERS") ?? false,
+    bigNumberStrings: getEnv().flag("DATABASE_MYSQL_BIG_NUMBERS") ?? false,
 
     /**
      * When working with timestamps and date columns, you might want to store the data in
@@ -100,7 +100,7 @@ const defaultDBConfig: IConfig = {
      *
      * @default "Z"
      */
-    timezone: Env.string("DATABASE_MYSQL_TIMEZONE", "Z"),
+    timezone: getEnv().string("DATABASE_MYSQL_TIMEZONE", "Z"),
   },
 
   /**
@@ -109,7 +109,7 @@ const defaultDBConfig: IConfig = {
    *
    * @default false
    */
-  logging: Env.flag("DATABASE_LOGGING"),
+  logging: getEnv().flag("DATABASE_LOGGING"),
 
   /**
    * When using the TypeORM engine we use entities/models to work with the database.
@@ -122,13 +122,13 @@ const defaultDBConfig: IConfig = {
      *
      * @default [".\/src\/entities\/**\/*.ts"]
      */
-    files: [ Env.string("DATABASE_ENTITIES", "./src/entities/**/*.ts") ],
+    files: [ getEnv().string("DATABASE_ENTITIES", "./src/entities/**/*.ts") ],
     /**
      * The folder where the entities files should be generated when using the CLI interface.
      *
      * @default "./src/entities/"
      */
-    folder: [ Env.string("DATABASE_ENTITIES_FOLDER", "./src/entities/") ],
+    folder: [ getEnv().string("DATABASE_ENTITIES_FOLDER", "./src/entities/") ],
   },
 
   /**
@@ -141,7 +141,7 @@ const defaultDBConfig: IConfig = {
      *
      * @default "_migrations"
      */
-    table: Env.string("DATABASE_MIGRATIONS_TABLE", "_migrations"),
+    table: getEnv().string("DATABASE_MIGRATIONS_TABLE", "_migrations"),
 
     /**
      * A list with the locations where the TypeORM engine will look for migration files to
@@ -149,14 +149,14 @@ const defaultDBConfig: IConfig = {
      *
      * @default [".\/src\/migrations\/**\/*.ts"]
      */
-    files: [ Env.string("DATABASE_MIGRATIONS", "./src/migrations/**/*.ts") ],
+    files: [ getEnv().string("DATABASE_MIGRATIONS", "./src/migrations/**/*.ts") ],
 
     /**
      * The folder where the migrations files should be generated when using the CLI interface.
      *
      * @default "./src/migrations/"
      */
-    folder: Env.string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/"),
+    folder: getEnv().string("DATABASE_MIGRATIONS_FOLDER", "./src/migrations/"),
   },
 
   /**
@@ -168,7 +168,7 @@ const defaultDBConfig: IConfig = {
      *
      * @default "./src/seeds/"
      */
-    folder: Env.string("DATABASE_SEEDS_FOLDER", "./src/seeds/"),
+    folder: getEnv().string("DATABASE_SEEDS_FOLDER", "./src/seeds/"),
   },
 };
 

@@ -2,6 +2,10 @@ import chalk from "chalk";
 import fs from "node:fs";
 import path from "node:path";
 
+import getCurrentFolder from "@/Utils/getCurrentFolder";
+
+const __dirname = getCurrentFolder(import.meta.url);
+
 const foldersList = [
   "src/config",
   "src/entities",

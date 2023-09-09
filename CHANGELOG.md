@@ -2,25 +2,44 @@
 
 Here we will note all the changes made to the framework.
 
-## Version 2.7.6
+## Version 3.x
+
+### Version 3.0.0
+
+🚀 New:
+
+-  
+
+🌟 Improvements:
+
+- Upgrade all dependencies to the latest versions
+- Upgrade to TypeScript 5.0
+
+🔧 Bugfix:
+
+- 
+
+## Version 2.x
+
+### Version 2.7.6
 
 🌟 Improvements:
 
 - Expose the Bearer and Basic passport strategies used internally to the end user.
 
-## Version 2.7.2
+### Version 2.7.2
 
 🌟 Improvements:
 
 - Various small improvements to the general system works
 
-## Version 2.6.19
+### Version 2.6.19
 
 🌟 Improvements:
 
 - Add option to send attachments in an email.
 
-## Version 2.6.18
+### Version 2.6.18
 
 🌟 Improvements:
 
@@ -30,50 +49,50 @@ Here we will note all the changes made to the framework.
 
 - Additional information text fixes.
 
-## Version 2.6.17
+### Version 2.6.17
 
 🔧 Bugfix:
 
 - In getAllPaginated when passing -1 as size will return all records.
 
-## Version 2.6.16
+### Version 2.6.16
 
 🔧 Bugfix:
 
 - In getAllPaginated return the right page when requesting a page that doesn't exists.
 
-## Version 2.6.15
+### Version 2.6.15
 
 🔧 Bugfix:
 
 - Fix types for get functions.
 
-## Version 2.6.14
+### Version 2.6.14
 
 🔧 Bugfix:
 
 - Revert TypeORM 0.3.11
 
-## Version 2.6.13
+### Version 2.6.13
 
 🔧 Bugfix:
 
 - Fix issue with logger assignation.
 
-## Version 2.6.12
+### Version 2.6.12
 
 🔧 Bugfix:
 
 - Return the full entity after insert/update.
 - Possible issue with logs level setter.
 
-## Version 2.6.11
+### Version 2.6.11
 
 🔧 Bugfix:
 
 - Migrate from save to update and insert methods.
 
-## Version 2.6.10
+### Version 2.6.10
 
 🌟 Improvements:
 
@@ -84,25 +103,25 @@ Here we will note all the changes made to the framework.
 - Fix documentation of the OneToOne and ManyToMany relation.
 - Fix Changelog versioning.
 
-## Version 2.6.9
+### Version 2.6.9
 
 🔧 Bugfix:
 
 - Add the inverse side for OneToOne relation.
 
-## Version 2.6.8
+### Version 2.6.8
 
 🌟 Improvements:
 
 - Dependencies version bump
 
-## Version 2.6.7
+### Version 2.6.7
 
 🔧 Bugfix:
 
 - Fix some issues with the where checks on the get with clause.
 
-## Version 2.6.6
+### Version 2.6.6
 
 🌟 Improvements:
 
@@ -113,20 +132,20 @@ Here we will note all the changes made to the framework.
 
 - Fix the way computations are done for hasNext in paged responses.
 
-## Version 2.6.5
+### Version 2.6.5
 
 🔧 Bugfix:
 
 - Fix the file naming when downloading files.
 
-## Version 2.6.4
+### Version 2.6.4
 
 🌟 Improvements:
 
 - Add a list of basic mime types that can be used for Content-Type.
 - Add support to give the file a name when it is downloaded.
 
-## Version 2.6.3
+### Version 2.6.3
 
 🌟 Improvements:
 
@@ -137,13 +156,13 @@ Here we will note all the changes made to the framework.
 
 - Fix an error with the random number generator.
 
-## Version 2.6.2
+### Version 2.6.2
 
 🔧 Bugfix:
 
 - Fix an error with the loaded configuration.
 
-## Version 2.6.1
+### Version 2.6.1
 
 🌟 Improvements:
 
@@ -151,7 +170,7 @@ Here we will note all the changes made to the framework.
   the user.
 - Add method to fetch deleted items.
 
-## Version 2.6.0
+### Version 2.6.0
 
 🚀 New:
 
@@ -161,19 +180,19 @@ Here we will note all the changes made to the framework.
 
 - Add virtual column to the decorators.
 
-## Version 2.5.2
+### Version 2.5.2
 
 🔧 Bugfix:
 
 - Fix an error in the inverted relation.
 
-## Version 2.5.1
+### Version 2.5.1
 
 🔧 Bugfix:
 
 - Fix an error in the relation delete query.
 
-## Version 2.5.0
+### Version 2.5.0
 
 🚀 New:
 
@@ -184,44 +203,44 @@ Here we will note all the changes made to the framework.
 
 - Dependencies version bump
 
-## Version 2.4.14
+### Version 2.4.14
 
 🌟 Improvements:
 
 - Add support for definition of basic types in the body definition.
 
-## Version 2.4.13
+### Version 2.4.13
 
 🔧 Bugfix:
 
 - Helmet blocks images loading from external URL.
 
-## Version 2.4.12
+### Version 2.4.12
 
 🔧 Bugfix:
 
 - Changelog version
 - Correct parameter naming in the URL
 
-## Version 2.4.11
+### Version 2.4.11
 
 🔧 Bugfix:
 
 - Add support for parameters in the route definition.
 
-## Version 2.4.10
+### Version 2.4.10
 
 🌟 Improvements:
 
 - Add support for Binary file returning for OpenAPI definition.
 
-## Version 2.4.9
+### Version 2.4.9
 
 🔧 Bugfix:
 
 - Fix the destination variable used for file storage.
 
-## Version 2.4.8
+### Version 2.4.8
 
 🌟 Improvements:
 
@@ -232,19 +251,19 @@ Here we will note all the changes made to the framework.
 - Add missing http.frontend configuration variable.
 - Fix documentation in Env class.
 
-## Version 2.4.7
+### Version 2.4.7
 
 🔧 Bugfix:
 
 - Fix the way Migration messages are shown on screen.
 
-## Version 2.4.6
+### Version 2.4.6
 
 🔧 Bugfix:
 
 - Fix an issue with soft delete.
 
-## Version 2.4.5
+### Version 2.4.5
 
 🌟 Improvements:
 
@@ -255,39 +274,39 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the folder definition of a service.
 
-## Version 2.4.4
+### Version 2.4.4
 
 🔧 Bugfix:
 
 - Config isn't loaded correctly into the CLI Commands.
 - Files with custom service and repository isn't generated correctly.
 
-## Version 2.4.3
+### Version 2.4.3
 
 🔧 Bugfix:
 
 - Config isn't loaded into the CLI Commands.
 - Correct the Changelog versions.
 
-## Version 2.4.2
+### Version 2.4.2
 
 🔧 Bugfix:
 
 - Fix some issues with the service:create command options (--class).
 
-## Version 2.4.1
+### Version 2.4.1
 
 🔧 Bugfix:
 
 - Fix some issues with the service:create command options (--validator considered --version).
 
-## Version 2.4.0
+### Version 2.4.0
 
 🚀 New:
 
 - Add support to define additional services that can be used as base to generate services files.
 
-## Version 2.3.0
+### Version 2.3.0
 
 🚀 New:
 
@@ -300,13 +319,13 @@ Here we will note all the changes made to the framework.
 - Fix some documentation for the Documentation Route.
 - Fix an issue with the BaseEntity functionality. Add a method to create the entity.
 
-## Version 2.2.5
+### Version 2.2.5
 
 🔧 Bugfix:
 
 - Fix an issue with how swagger information is shown on screen.
 
-## Version 2.2.4
+### Version 2.2.4
 
 🚀 New:
 
@@ -318,26 +337,26 @@ Here we will note all the changes made to the framework.
 - Fix issues with query item fetching.
 - Fix an issue with auth context logout function.
 
-## Version 2.2.3
+### Version 2.2.3
 
 🔧 Bugfix:
 
 - Fix issues with the truncate table command - reverted to DELETE FROM <table> statement.
 - Fix issues with HTTP Server.
 
-## Version 2.2.2
+### Version 2.2.2
 
 🔧 Bugfix:
 
 - Fix issues with the truncate table command.
 
-## Version 2.2.1
+### Version 2.2.1
 
 🔧 Bugfix:
 
 - Fix issues with the exported types.
 
-## Version 2.2.0
+### Version 2.2.0
 
 🚀 New:
 
@@ -353,7 +372,7 @@ Here we will note all the changes made to the framework.
 - Update the way imports are done.
 - Update the Vonage SMS sending system.
 
-## Version 2.1.10
+### Version 2.1.10
 
 🌟 Improvements:
 
@@ -363,19 +382,19 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue when calling the logout method.
 
-## Version 2.1.9
+### Version 2.1.9
 
 🔧 Bugfix:
 
 - Fix an issue with the extension generation in documentation.
 
-## Version 2.1.8
+### Version 2.1.8
 
 🔧 Bugfix:
 
 - Fix an issue with the folder structure generator for the service creation.
 
-## Version 2.1.7
+### Version 2.1.7
 
 🌟 Improvements:
 
@@ -385,19 +404,19 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the folder structure generator for the service creation.
 
-## Version 2.1.6
+### Version 2.1.6
 
 🌟 Improvements:
 
 - Export the language used in the request.
 
-## Version 2.1.5
+### Version 2.1.5
 
 🔧 Bugfix:
 
 - Fix an issue with the ServiceFullRepository.
 
-## Version 2.1.4
+### Version 2.1.4
 
 🌟 Improvements:
 
@@ -409,7 +428,7 @@ Here we will note all the changes made to the framework.
 - Fix an issue with the extension ladder.
 - Fix an issue with the ServiceFullRepository.
 
-## Version 2.1.3
+### Version 2.1.3
 
 🌟 Improvements:
 
@@ -420,14 +439,14 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the service generation.
 
-## Version 2.1.2
+### Version 2.1.2
 
 🌟 Improvements:
 
 - Export i18next.
 - Make the clone function return a promise.
 
-## Version 2.1.1
+### Version 2.1.1
 
 🌟 Improvements:
 
@@ -439,7 +458,7 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the configuration loading for the i18next configuration.
 
-## Version 2.1.0
+### Version 2.1.0
 
 🚀 New:
 
@@ -456,7 +475,7 @@ Here we will note all the changes made to the framework.
 - Fix an issue in the template used to generate routes.
 - Fix an issue in the template used to generate services.
 
-## Version 2.0.2
+### Version 2.0.2
 
 🌟 Improvements:
 
@@ -466,7 +485,7 @@ Here we will note all the changes made to the framework.
 - Moved the signURL and VerifyURL decorator into the AuthDecorators module.
 - Add the UploadedFile type to describe Express.Multer.File type.
 
-## Version 2.0.1
+### Version 2.0.1
 
 🌟 Improvements:
 
@@ -477,7 +496,7 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with babel not installed.
 
-## Version 2.0.0
+### Version 2.0.0
 
 🚀 New:
 
@@ -504,19 +523,21 @@ Here we will note all the changes made to the framework.
 - The old way of documenting entities and interfaces.
 - The old way of documenting controllers and endpoints.
 
-## Version 1.0.30
+## Version 1.x
+
+### Version 1.0.30
 
 🔧 Bugfix:
 
 - Revert the string-strip-html version to 8.3.0.
 
-## Version 1.0.29
+### Version 1.0.29
 
 🌟 Improvements:
 
 - Bump versions.
 
-## Version 1.0.28
+### Version 1.0.28
 
 🌟 Improvements:
 
@@ -527,25 +548,25 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with Number with a fixed size.
 
-## Version 1.0.27
+### Version 1.0.27
 
 🌟 Improvements:
 
 - Bump versions.
 
-## Version 1.0.26
+### Version 1.0.26
 
 🔧 Bugfix:
 
 - Fix the logger settings when logging disabled.
 
-## Version 1.0.25
+### Version 1.0.25
 
 🔧 Bugfix:
 
 - Fix the default logger extraction.
 
-## Version 1.0.24
+### Version 1.0.24
 
 🚀 New:
 
@@ -556,7 +577,7 @@ Here we will note all the changes made to the framework.
 - Add the custom format console logger.
 - Allow the user to change the logger.
 
-## Version 1.0.23
+### Version 1.0.23
 
 🚀 New:
 
@@ -566,13 +587,13 @@ Here we will note all the changes made to the framework.
 
 - Upgrade dependencies.
 
-## Version 1.0.22
+### Version 1.0.22
 
 🔧 Bugfix:
 
 - Invert the checks for the boolean query parameter
 
-## Version 1.0.21
+### Version 1.0.21
 
 🚀 New:
 
@@ -586,7 +607,7 @@ Here we will note all the changes made to the framework.
 
 - Fix an issue with the query parameters for boolean items.
 
-## Version 1.0.20
+### Version 1.0.20
 
 🌟 Improvements:
 
@@ -597,7 +618,7 @@ Here we will note all the changes made to the framework.
 - Fix yarnrc file to publish on npmjs registry.
 - Fix nodeignore to ignore .yarn folder.
 
-## Version 1.0.19
+### Version 1.0.19
 
 🔧 Bugfix:
 
@@ -605,38 +626,38 @@ Here we will note all the changes made to the framework.
 - Fix yarnrc file to publish on npmjs registry.
 - Fix nodeignore to ignore .yarn folder.
 
-## Version 1.0.18
+### Version 1.0.18
 
 🌟 Improvements:
 
 - Change how the array response is handled.
 - Add the token if available in the auth context.
 
-## Version 1.0.17
+### Version 1.0.17
 
 🌟 Improvements:
 
 - Add documentation decorators to document response arrays.
 
-## Version 1.0.16
+### Version 1.0.16
 
 🌟 Improvements:
 
 - TypeORM support for timezone.
 
-## Version 1.0.15
+### Version 1.0.15
 
 🔧 Fixes:
 
 - TypeORM bigint string as integer fixes.
 
-## Version 1.0.14
+### Version 1.0.14
 
 🔧 Fixes:
 
 - Add the session middleware to the middlewares list.
 
-## Version 1.0.13
+### Version 1.0.13
 
 🌟 Improvements:
 
@@ -646,13 +667,13 @@ Here we will note all the changes made to the framework.
 
 - Add missing session required for passport.
 
-## Version 1.0.12
+### Version 1.0.12
 
 🌟 Improvements:
 
 - TypeORM connections now have a name.
 
-## Version 1.0.11
+### Version 1.0.11
 
 🌟 Improvements:
 
@@ -661,7 +682,7 @@ Here we will note all the changes made to the framework.
 - Add the TypeORM instance object to be able to connect to multiple databases.
 - Add documentation to TypeORM handler class.
 
-## Version 1.0.10
+### Version 1.0.10
 
 🌟 Improvements:
 
@@ -670,7 +691,7 @@ Here we will note all the changes made to the framework.
 - Allow to set the validtor using a setter.
 - Add express types for export from HTTP Types.
 
-## Version 1.0.9
+### Version 1.0.9
 
 🔧 Fixes:
 
@@ -680,13 +701,13 @@ Here we will note all the changes made to the framework.
 
 - Add changelog information.
 
-## Version 1.0.8
+### Version 1.0.8
 
 🔧 Fixes:
 
 - Issue with Query Parameters definition in Swagger
 
-## Version 1.0.7
+### Version 1.0.7
 
 🔧 Fixes:
 
@@ -696,32 +717,32 @@ Here we will note all the changes made to the framework.
 
 - Add Query Parameters fetching helper functions.
 
-## Version 1.0.6
+### Version 1.0.6
 
 🌟 Improvements:
 
 - Add `logout` method to the `IAuthContext` interface and the `authContext` options.
 - Change the naming of the `req` and `res` properties to `request` and `response`.
 
-## Version 1.0.5
+### Version 1.0.5
 
 🌟 Improvements:
 
 - Allow the `IUser` interface to contain multiple keys.
 
-## Version 1.0.4
+### Version 1.0.4
 
 🔧 Fixes:
 
 - Configuration loading.
 
-## Version 1.0.3
+### Version 1.0.3
 
 🔧 Fixes:
 
 - Error message translation fixes.
 
-## Version 1.0.2
+### Version 1.0.2
 
 🔧 Fixes:
 
@@ -731,7 +752,7 @@ Here we will note all the changes made to the framework.
 
 - Move the middleware declaration up in the stack.
 
-## Version 1.0.1
+### Version 1.0.1
 
 🚀 New:
 
@@ -746,7 +767,7 @@ Here we will note all the changes made to the framework.
 
 - Disable the TypeORM syncing
 
-## Version 1.0.0
+### Version 1.0.0
 
 Initial application release.
 

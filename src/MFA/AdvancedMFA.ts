@@ -1,5 +1,5 @@
 import * as QRCode from "qrcode";
-import speakeasy from "speakeasy";
+import * as speakeasy from "speakeasy";
 
 import app from "@/App";
 
@@ -9,7 +9,7 @@ import app from "@/App";
  */
 export interface IMFAConfiguration {
   /**
-   * The OneTimp Password (OTP) Authentication URL
+   * The OneTime Password (OTP) Authentication URL
    */
   otpAuthUrl: string;
   /**

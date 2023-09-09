@@ -1,16 +1,17 @@
-import { compareSync, hashSync } from "bcryptjs";
-import { camelCase as _camelCase } from "lodash";
-import shortId from "shortid";
-import formatter from "string-format";
+import * as bcrypt from "bcrypt";
+import _camelCase from "lodash/camelCase";
+import { customAlphabet, nanoid } from "nanoid";
 import { stripHtml } from "string-strip-html";
 import * as uuid from "uuid";
 
-import { random } from "@/Utils/NumberUtils";
+import InvalidParameterException from "@/Exceptions/InvalidParameterException";
 
 /**
  * Generator for a ShortID that can be used for various things.
+ *
+ * @param [length] The length of the returned ShortID
  */
-export const shortid = (): string => shortId.generate();
+export const shortid = (length = 10): string => nanoid(length);
 
 /**
  * Generator for a UUID V1 code.
@@ -28,7 +29,7 @@ export const uuidV4 = (): string => uuid.v4();
  * @param password The password to be encrypted.
  * @param saltSize The size of the salt.
  */
-export const encryptPassword = (password: string, saltSize = 10): string => hashSync(password, saltSize);
+export const encryptPassword = (password: string, saltSize = 10): string => bcrypt.hashSync(password, saltSize);
 
 /**
  * Method used to compare an encrypted password with the one entered by the user.
@@ -36,16 +37,7 @@ export const encryptPassword = (password: string, saltSize = 10): string => hash
  * @param password The password to be compared.
  * @param encryptedPassword The encrypted password,
  */
-export const comparePassword = (password: string, encryptedPassword: string): boolean => compareSync(password, encryptedPassword);
-
-export {
-  /**
-   * String formatter utility.
-   *
-   * @see {@link https://www.npmjs.com/package/string-format}
-   */
-  formatter,
-};
+export const comparePassword = (password: string, encryptedPassword: string): boolean => bcrypt.compareSync(password, encryptedPassword);
 
 /**
  * Strips the HTML tags from a given text.
@@ -79,10 +71,11 @@ export function camelCase(str: string, firstCapital = false): string {
 export function snakeCase(str: string, separator = "_"): string {
   return (
     str
-      // ABc -> a_bc
-      .replace(/([A-Z])([A-Z])([a-z])/g, `$1${ separator }$2$3`)
+      .replace(/ /gi, separator)
       // aC -> a_c
       .replace(/([a-z0-9])([A-Z])/g, `$1${ separator }$2`)
+      // ABc -> a_bc
+      .replace(/([A-Z])([A-Z])([a-z])/g, `$1${ separator }$2$3`)
       .toLowerCase()
   );
 }
@@ -94,7 +87,7 @@ export function snakeCase(str: string, separator = "_"): string {
  * @param str The string to be Title Cased
  */
 export function titleCase(str: string): string {
-  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase());
+  return str.replace(/\w\S*/g, (txt) => `${ txt.charAt(0).toUpperCase() }${ txt.substring(1).toLowerCase() }`);
 }
 
 /**
@@ -106,10 +99,7 @@ export function titleCase(str: string): string {
  */
 export function abbreviate(str: string, abbrLettersCount = 1): string {
   const words = str.replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, "$1 $2").split(" ");
-  return words.reduce((res, word) => {
-    res += word.substring(0, abbrLettersCount);
-    return res;
-  }, "");
+  return words.reduce((res, word) => `${ res }${ word.substring(0, abbrLettersCount) }`, "");
 }
 
 /**
@@ -118,22 +108,27 @@ export function abbreviate(str: string, abbrLettersCount = 1): string {
  * @param str The string to be converted to a slug.
  */
 export function slugify(str: string): string {
-  const words = str.replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, "$1 $2").split(" ");
+  const words = str
+    .replace(/([a-z\xE0-\xFF])([A-Z\xC0\xDF])/g, "$1 $2")
+    .replace(/[^A-Za-z0-9 -]/gi, "")
+    .trim()
+    .split(" ");
   return words.map((word) => word.toLowerCase()).join("-");
 }
 
 const randomStringAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_-";
+const randomAlphabetNanoId = customAlphabet(randomStringAlphabet, 16);
 
 /**
  * Function used to generate a random string with a given length.
  *
  * @param [length] The length of the final string.
+ *
  */
 export function randomString(length = 10): string {
-  const randomString = [];
-  for (let iPosition = 0; iPosition < length; iPosition++) {
-    randomString.push(randomStringAlphabet.charAt(random(0, randomStringAlphabet.length)));
+  if (length <= 0) {
+    throw new InvalidParameterException("length", length);
   }
 
-  return randomString.join("");
+  return randomAlphabetNanoId(length);
 }

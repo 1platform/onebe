@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -19,7 +19,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "thisisasecret"
      */
-    secret: Env.string("JWT_SECRET", "thisisasecret"),
+    secret: getEnv().string("JWT_SECRET", "thisisasecret"),
 
     /**
      * The issuer is used by the sign and verify functions to create/validate a JWT Token.
@@ -28,7 +28,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "onebe.sprk.dev"
      */
-    issuer: Env.string("JWT_ISSUER", "onebe.sprk.dev"),
+    issuer: getEnv().string("JWT_ISSUER", "onebe.sprk.dev"),
 
     /**
      * The audience is used by the sign and verify functions to create/validate a JWT Token.
@@ -38,7 +38,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "onebe.sprk.dev"
      */
-    audience: Env.string("JWT_AUDIENCE", "onebe.sprk.dev"),
+    audience: getEnv().string("JWT_AUDIENCE", "onebe.sprk.dev"),
 
     /**
      * Defines how long a JWT token can be valid. Each JWT token signed by the application,
@@ -46,7 +46,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "1d"
      */
-    expireTime: Env.string("JWT_EXPIRE_TIME", "1d"),
+    expireTime: getEnv().string("JWT_EXPIRE_TIME", "1d"),
 
     /**
      * When the user of the application wants to be remembered for a longer period of time
@@ -55,7 +55,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "1y"
      */
-    rememberMeTime: Env.string("JWT_REMEMBER_ME_TIME", "1y"),
+    rememberMeTime: getEnv().string("JWT_REMEMBER_ME_TIME", "1y"),
   },
 
   /**
@@ -71,7 +71,7 @@ const defaultAuthConfig: IConfig = {
      *
      * @default "thisIsAS3cret"
      */
-    secret: Env.string("SESSION_SECRET", "thisIsAS3cret"),
+    secret: getEnv().string("SESSION_SECRET", "thisIsAS3cret"),
   },
 
   /**
@@ -81,7 +81,7 @@ const defaultAuthConfig: IConfig = {
    *
    * @default "test"
    */
-  secret: Env.string("SIGN_SECRET", "test"),
+  secret: getEnv().string("SIGN_SECRET", "test"),
 };
 
 export default defaultAuthConfig;

@@ -1,5 +1,6 @@
-import consign from "consign";
-import { merge } from "lodash";
+import merge from "lodash/merge";
+import { readdirSync } from "node:fs";
+import { basename, extname, resolve } from "node:path";
 
 import defaultConfig from "@/defaults";
 import IConfig from "@/System/IConfig";
@@ -35,25 +36,16 @@ export class Configuration {
    *
    * @param configFolder The folder containing the configuration files.
    */
-  public init(configFolder = "./config"): void {
-    let configFromFile = {};
+  public async init(configFolder = "./config"): Promise<void> {
+    const configFromFile: Record<string, any> = {};
 
-    consign({
-      cwd: configFolder,
-      verbose: false,
-      extensions: [ ".js", ".json", ".node", ".ts" ],
-      loggingType: "info",
-    })
-      .include(".")
-      .into(configFromFile);
-
-    configFromFile = Object.keys(configFromFile).reduce(
-      (accum, key) => ({
-        ...accum,
-        [key]: configFromFile[key]["default"] ? configFromFile[key]["default"] : configFromFile[key],
-      }),
-      {},
-    );
+    const resolvedConfigFolder = resolve(configFolder);
+    const files = readdirSync(resolvedConfigFolder).filter((file) => [ ".js", ".json", ".ts" ].includes(extname(file)));
+    for (const file of files) {
+      const baseConfigName = basename(file);
+      const fileContent = await import(file);
+      configFromFile[baseConfigName] = fileContent.default ?? fileContent;
+    }
 
     this.load(configFromFile);
   }

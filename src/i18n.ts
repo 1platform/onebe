@@ -7,6 +7,9 @@ import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 
 import Config from "@/System/Config";
+import getCurrentFolder from "@/Utils/getCurrentFolder";
+
+const __dirname = getCurrentFolder(import.meta.url);
 
 export type { I18n, TFunction, I18NextRequest };
 export { i18next };

@@ -4,10 +4,9 @@
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "node": "current"
-        },
-        "modules": "auto"
+        "targets": { "node": "current" },
+        "loose": true,
+        "modules": true
       }
     ]
   ],
@@ -18,6 +17,8 @@
         "legacy": true
       }
     ],
+    "@babel/plugin-transform-modules-commonjs",
+    "babel-plugin-add-module-exports",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
     [
@@ -34,5 +35,5 @@
     "**/*.test.js",
     "**/*.spec.ts",
     "**/*.spec.js"
-  ]
+  ],
 }

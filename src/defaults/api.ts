@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -13,7 +13,7 @@ const defaultAPIConfig: IConfig = {
    *
    * @default /api
    */
-  path: Env.string("API_PATH", "/api"),
+  path: getEnv().string("API_PATH", "/api"),
 };
 
 export default defaultAPIConfig;

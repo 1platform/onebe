@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -13,14 +13,14 @@ const defaultLangConfig: IConfig = {
    *
    * @default false
    */
-  debug: Env.boolean("DEBUG_I18N"),
+  debug: getEnv().boolean("DEBUG_I18N"),
 
   /**
    * The default language used for the translation of the application.
    *
    * @default "en"
    */
-  defaultLang: Env.string("DEFAULT_LANG", "en"),
+  defaultLang: getEnv().string("DEFAULT_LANG", "en"),
 
   /**
    * The fallback language for the case when a translation item does not
@@ -28,7 +28,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default "en"
    */
-  fallbackLang: Env.string("DEFAULT_LANG", "en"),
+  fallbackLang: getEnv().string("DEFAULT_LANG", "en"),
 
   /**
    * A list of supported languages for translation that can be used in the
@@ -36,7 +36,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default ["en", "ro"]
    */
-  supportedLanguages: Env.array("SUPPORTED_LANGS", ",", "en,ro"),
+  supportedLanguages: getEnv().array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * A list of supported languages for translation that will be preloaded
@@ -44,7 +44,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default ["en", "ro"]
    */
-  preload: Env.array("SUPPORTED_LANGS", ",", "en,ro"),
+  preload: getEnv().array("SUPPORTED_LANGS", ",", "en,ro"),
 
   /**
    * The name of the cookie used to identify the desired language for
@@ -52,7 +52,7 @@ const defaultLangConfig: IConfig = {
    *
    * @default "onebe:lang"
    */
-  cookie: Env.string("LANG_COOKIE", "onebe:lang"),
+  cookie: getEnv().string("LANG_COOKIE", "onebe:lang"),
 };
 
 export default defaultLangConfig;

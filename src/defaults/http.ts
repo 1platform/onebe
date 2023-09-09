@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -16,7 +16,7 @@ const defaultHTTPConfig: IConfig = {
    *
    * @default "127.0.0.1"
    */
-  listen: Env.string("HTTP_LISTEN", "127.0.0.1"),
+  listen: getEnv().string("HTTP_LISTEN", "127.0.0.1"),
 
   /**
    * The PORT on which we listen for connections. Customize the value for
@@ -24,7 +24,7 @@ const defaultHTTPConfig: IConfig = {
    *
    * @default 7200
    */
-  port: Env.int("HTTP_PORT", 7200),
+  port: getEnv().int("HTTP_PORT", 7200),
 
   /**
    * The URL that can be used to access the application. This URL is used
@@ -34,21 +34,21 @@ const defaultHTTPConfig: IConfig = {
    *
    * @default "http://HTTP_LISTEN:HTTP_PORT"
    */
-  url: Env.url("HTTP_URL", `http://${ Env.string("HTTP_LISTEN", "127.0.0.1") }:${ Env.int("HTTP_PORT", 7200) }`),
+  url: getEnv().url("HTTP_URL", `http://${ getEnv().string("HTTP_LISTEN", "127.0.0.1") }:${ getEnv().int("HTTP_PORT", 7200) }`),
 
   /**
    * The URL that can be used to access the frontend application.
    *
    * @default "http://HTTP_LISTEN:HTTP_PORT"
    */
-  frontend: Env.url("HTTP_FRONTEND", `http://${ Env.string("HTTP_LISTEN", "127.0.0.1") }:${ Env.int("HTTP_PORT", 7200) }`),
+  frontend: getEnv().url("HTTP_FRONTEND", `http://${ getEnv().string("HTTP_LISTEN", "127.0.0.1") }:${ getEnv().int("HTTP_PORT", 7200) }`),
 
   /**
    * The format used to display the log information for HTTP requests.
    *
    * The supported formats are: "combined", "compact", "dev", "short", "tiny"
    */
-  logFormat: Env.string("HTTP_LOG_FORMAT", "combined"),
+  logFormat: getEnv().string("HTTP_LOG_FORMAT", "combined"),
 
   /**
    * Cookie configuration object.
@@ -67,7 +67,7 @@ const defaultHTTPConfig: IConfig = {
      *
      * @default "localhost"
      */
-    domain: Env.string("COOKIE_DOMAIN", "localhost"),
+    domain: getEnv().string("COOKIE_DOMAIN", "localhost"),
 
     /**
      * Flag to mark if a cookie is secure or not.
@@ -77,7 +77,7 @@ const defaultHTTPConfig: IConfig = {
      *
      * @default false
      */
-    secure: Env.flag("COOKIE_SECURE"),
+    secure: getEnv().flag("COOKIE_SECURE"),
   },
 
   /**
@@ -96,14 +96,14 @@ const defaultHTTPConfig: IConfig = {
      *
      * @default "*"
      */
-    origin: Env.string("CORS_ORIGIN", "*"),
+    origin: getEnv().string("CORS_ORIGIN", "*"),
 
     /**
      * The HTTP Verbs/Methods for which we want to enable CORS.
      *
      * @default "GET,HEAD,PUT,PATCH,POST,DELETE"
      */
-    methods: Env.string("CORS_METHODS", "GET,HEAD,PUT,PATCH,POST,DELETE"),
+    methods: getEnv().string("CORS_METHODS", "GET,HEAD,PUT,PATCH,POST,DELETE"),
 
     /**
      * The allowed headers in any request protected by CORS. If you
@@ -111,7 +111,7 @@ const defaultHTTPConfig: IConfig = {
      *
      * @default undefined
      */
-    allowedHeaders: Env.string("CORS_ALLOWED_HEADERS") || undefined,
+    allowedHeaders: getEnv().string("CORS_ALLOWED_HEADERS") || undefined,
 
     /**
      * The exposed headers in any request protected by CORS. If you
@@ -119,35 +119,35 @@ const defaultHTTPConfig: IConfig = {
      *
      * @default undefined
      */
-    exposedHeaders: Env.string("CORS_EXPOSES_HEADERS") || undefined,
+    exposedHeaders: getEnv().string("CORS_EXPOSES_HEADERS") || undefined,
 
     /**
      * The allowed credentials in any request protected by CORS.
      *
      * @default undefined
      */
-    credentials: Env.boolean("CORS_CREDENTIALS") ?? undefined,
+    credentials: getEnv().boolean("CORS_CREDENTIALS") ?? undefined,
 
     /**
      * Sets the maximum age of any CORS request.
      *
      * @default undefined
      */
-    maxAge: Env.int("CORS_MAX_AGE") || undefined,
+    maxAge: getEnv().int("CORS_MAX_AGE") || undefined,
 
     /**
      * Provides a status code to use for successful OPTIONS requests, since some legacy browsers (IE11, various SmartTVs) choke on 204.
      *
      * @default 204
      */
-    optionsSuccessStatus: Env.int("CORS_OPTIONS_SUCCESS", 204) || undefined,
+    optionsSuccessStatus: getEnv().int("CORS_OPTIONS_SUCCESS", 204) || undefined,
 
     /**
      * Pass the CORS preflight response to the next handler.
      *
      * @default undefined
      */
-    preflightContinue: Env.boolean("CORS_PREFLIGHT") ?? undefined,
+    preflightContinue: getEnv().boolean("CORS_PREFLIGHT") ?? undefined,
   },
 };
 

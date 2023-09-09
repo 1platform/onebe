@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -14,7 +14,7 @@ const defaultDocsConfig: IConfig = {
    *
    * @default false
    */
-  expose: Env.flag("EXPOSE_DOCS"),
+  expose: getEnv().flag("EXPOSE_DOCS"),
 
   /**
    * Defines the base path for the documentation controller. Since we want to expose
@@ -23,7 +23,7 @@ const defaultDocsConfig: IConfig = {
    *
    * @default "/docs"
    */
-  path: Env.string("DOCUMENTATION_BASE_PATH", "/docs"),
+  path: getEnv().string("DOCUMENTATION_BASE_PATH", "/docs"),
 };
 
 export default defaultDocsConfig;

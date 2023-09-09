@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 import { getVersion } from "@/version";
 
@@ -14,28 +14,28 @@ const defaultAppConfig: IConfig = {
    *
    * @default false
    */
-  debug: Env.flag("APP_DEBUG"),
+  debug: getEnv().flag("APP_DEBUG"),
 
   /**
    * The name of the application you are developing.
    *
    * @default "One Backend by Spark"
    */
-  name: Env.string("APP_NAME", "One Backend by Spark"),
+  name: getEnv().string("APP_NAME", "One Backend by Spark"),
 
   /**
    * The version of the application you are developing.
    *
    * @default "1.0.0"
    */
-  version: Env.string("APP_VERSION", getVersion()),
+  version: getEnv().string("APP_VERSION", getVersion()),
 
   /**
    * A short text that describes the application you are developing.
    *
    * @default ""
    */
-  description: Env.string("APP_DESCRIPTION", ""),
+  description: getEnv().string("APP_DESCRIPTION", ""),
 
   /**
    * A list with folders used by the framework to store various sources

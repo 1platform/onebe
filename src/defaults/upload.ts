@@ -1,4 +1,4 @@
-import Env from "@/System/Env";
+import { getEnv } from "@/System/Environment";
 import type IConfig from "@/System/IConfig";
 
 /**
@@ -15,7 +15,7 @@ const defaultUploadConfig: IConfig = {
    *
    * @default "./tmp"
    */
-  temp: Env.string("UPLOAD_TEMP", "./tmp"),
+  temp: getEnv().string("UPLOAD_TEMP", "./tmp"),
 
   /**
    * The destination path for the uploaded files. In this folder the framework will store
@@ -24,7 +24,7 @@ const defaultUploadConfig: IConfig = {
    *
    * @default "./storage"
    */
-  storage: Env.string("UPLOAD_DESTINATION", "./storage"),
+  storage: getEnv().string("UPLOAD_DESTINATION", "./storage"),
 };
 
 export default defaultUploadConfig;
