@@ -3,8 +3,7 @@ import i18next, { t } from "i18next";
 import Backend from "i18next-fs-backend";
 import type { I18NextRequest } from "i18next-http-middleware";
 import { LanguageDetector } from "i18next-http-middleware";
-import { existsSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { resolve } from "node:path";
 
 import Config from "@/System/Config";
 
@@ -41,9 +40,9 @@ export const clone = (lang: string): Promise<TFunction> =>
  * @param currentDir The current folder of the application.
  */
 export default function i18n(currentDir: string = __dirname): Promise<TFunction> {
-  if (!existsSync(join(currentDir, "locales"))) {
-    return null;
-  }
+  // if (!existsSync(join(currentDir, "locales"))) {
+  //   return null;
+  // }
 
   return i18next
     .use(Backend)
